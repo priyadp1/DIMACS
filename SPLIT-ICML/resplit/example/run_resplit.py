@@ -16,7 +16,7 @@ X = df.drop(columns=["id", "diagnosis"])
 Y = df["diagnosis"]
 print("X shape:" , X.shape)
 print("Y dist:\n" , Y.value_counts())
-
+ 
 X_train, X_test, y_train, y_test = train_test_split(
     X,Y,test_size=0.2, random_state=42, stratify=Y
 )

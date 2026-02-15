@@ -14,7 +14,7 @@ TIME_LIMIT = 60
 VERBOSE = True
 
 # Read the dataset
-df = pd.read_csv("/Users/prishapriyadashini/Downloads/DIMACS/SPLIT-ICML/resplit/test/fixtures/breast_cancer_dataset/data.csv",)
+df = pd.read_csv('/Users/prishapriyadashini/Downloads/DIMACS/datasets/Mine/breast_cancer_data.csv')
 df = df.dropna(axis=1, how="all")
 print("Mapping diagnosis to binary...")
 df["diagnosis"] = df["diagnosis"].map({"M": 1, "B": 0})

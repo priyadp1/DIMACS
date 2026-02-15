@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 from sklearn.metrics import accuracy_score, classification_report
 from sklearn.model_selection import train_test_split
 
-path = '/Users/prishapriyadashini/Downloads/DIMACS/SPLIT-ICML/resplit/test/fixtures/breast_cancer_dataset/data.csv'
+path = '/Users/prishapriyadashini/Downloads/DIMACS/datasets/Mine/breast_cancer_data.csv'
 df = pd.read_csv(path)
 df = df.dropna(axis=1, how="all")
 df["diagnosis"] = df["diagnosis"].map({"M": 1, "B": 0})

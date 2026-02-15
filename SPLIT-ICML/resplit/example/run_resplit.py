@@ -4,7 +4,7 @@ from resplit.model.treefarms import TREEFARMS
 from resplit import RESPLIT
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score, classification_report , confusion_matrix
-path = '/Users/prishapriyadashini/Downloads/DIMACS/SPLIT-ICML/resplit/test/fixtures/breast_cancer_dataset/data.csv'
+path = '/Users/prishapriyadashini/Downloads/DIMACS/datasets/Mine/breast_cancer_data.csv'
 print(f"Loading dataset from: {path}")
 df = pd.read_csv(path)
 print("Mapping diagnosis to binary...")

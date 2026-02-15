@@ -4,7 +4,7 @@ from sklearn.metrics import accuracy_score, classification_report, confusion_mat
 from sklearn.model_selection import train_test_split
 
 print("Loading dataset...")
-dataset = pd.read_csv('/Users/prishapriyadashini/Downloads/DIMACS/SPLIT-ICML/resplit/test/fixtures/breast_cancer_dataset/data.csv') 
+dataset = pd.read_csv('/Users/prishapriyadashini/Downloads/DIMACS/datasets/Mine/breast_cancer_data.csv') 
 dataset = dataset.dropna(axis=1, how="all")
 
 print("Mapping diagnosis to binary...")

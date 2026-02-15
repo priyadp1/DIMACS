@@ -2,7 +2,7 @@
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/tmpch9pgnyo/wheel/platlib")
+  set(CMAKE_INSTALL_PREFIX "/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/tmpyi43mqyq/wheel/platlib")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 

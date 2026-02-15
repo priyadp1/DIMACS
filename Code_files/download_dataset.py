@@ -3,7 +3,7 @@ import os
 import shutil
 
 # Download latest version
-target = "/Users/prishapriyadashini/Downloads/DIMACS/SPLIT-ICML/resplit/test/fixtures"
+target = '/Users/prishapriyadashini/Downloads/DIMACS/datasets/Mine/breast_cancer_data.csv'
 os.makedirs(target, exist_ok=True)
 path = kagglehub.dataset_download("uciml/breast-cancer-wisconsin-data")
 for i in os.listdir(path):

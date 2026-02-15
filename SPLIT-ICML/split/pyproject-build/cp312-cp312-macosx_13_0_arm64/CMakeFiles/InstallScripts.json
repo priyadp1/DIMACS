@@ -1,0 +1,8 @@
+{
+	"InstallScripts" : 
+	[
+		"/Users/prishapriyadashini/Downloads/DIMACS/SPLIT-ICML/split/pyproject-build/cp312-cp312-macosx_13_0_arm64/cmake_install.cmake",
+		"/Users/prishapriyadashini/Downloads/DIMACS/SPLIT-ICML/split/pyproject-build/cp312-cp312-macosx_13_0_arm64/_deps/json-build/cmake_install.cmake"
+	],
+	"Parallel" : false
+}

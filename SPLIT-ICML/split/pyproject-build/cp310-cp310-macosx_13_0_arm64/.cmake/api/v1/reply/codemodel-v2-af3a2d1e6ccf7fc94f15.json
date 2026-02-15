@@ -1,0 +1,292 @@
+{
+	"configurations" : 
+	[
+		{
+			"abstractTargets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "PkgConfig::GMP::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-PkgConfig__GMP-Release-dccc6b4912aae089f165.json",
+					"name" : "PkgConfig::GMP",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "Python::Interpreter::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Python__Interpreter-Release-a1843fea42d478f2e5ed.json",
+					"name" : "Python::Interpreter",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "Python::InterpreterMultiConfig::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Python__InterpreterMultiConfig-Release-589aae22cf133ed8d31b.json",
+					"name" : "Python::InterpreterMultiConfig",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "Python::Module::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Python__Module-Release-8b0c0acffe57b636a0b6.json",
+					"name" : "Python::Module",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "TBB::tbb::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-TBB__tbb-Release-fe13867870104e3e0601.json",
+					"name" : "TBB::tbb",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "TBB::tbbbind_2_5::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-TBB__tbbbind_2_5-Release-4e473d304b5b2a8de247.json",
+					"name" : "TBB::tbbbind_2_5",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "TBB::tbbmalloc::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-TBB__tbbmalloc-Release-e5b121b066f1b4245971.json",
+					"name" : "TBB::tbbmalloc",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "TBB::tbbmalloc_proxy::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-TBB__tbbmalloc_proxy-Release-99dd77751b22badd85c0.json",
+					"name" : "TBB::tbbmalloc_proxy",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "nlohmann_json::@1f73e43ed239fe3d59ae",
+					"jsonFile" : "target-nlohmann_json-Release-5da0b7ac0f601a5bbb0a.json",
+					"name" : "nlohmann_json",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "pybind11::embed::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-pybind11__embed-Release-d3ebddfc7f4b060d27ae.json",
+					"name" : "pybind11::embed",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "pybind11::headers::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-pybind11__headers-Release-c09fc287482fdc982e2b.json",
+					"name" : "pybind11::headers",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "pybind11::lto::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-pybind11__lto-Release-a0086b97ae9a7147cb13.json",
+					"name" : "pybind11::lto",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "pybind11::module::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-pybind11__module-Release-6dd5ba70915b4f79795c.json",
+					"name" : "pybind11::module",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "pybind11::opt_size::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-pybind11__opt_size-Release-6bf0092da9ddd2ec02b0.json",
+					"name" : "pybind11::opt_size",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "pybind11::pybind11::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-pybind11__pybind11-Release-eb3e274a8421c1c18a0c.json",
+					"name" : "pybind11::pybind11",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "pybind11::pybind11_headers::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-pybind11__pybind11_headers-Release-3d5e6112578b66c07262.json",
+					"name" : "pybind11::pybind11_headers",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "pybind11::python_headers::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-pybind11__python_headers-Release-8815b19dcc34a651d3e4.json",
+					"name" : "pybind11::python_headers",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "pybind11::python_link_helper::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-pybind11__python_link_helper-Release-75205a8c7df99176381d.json",
+					"name" : "pybind11::python_link_helper",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "pybind11::thin_lto::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-pybind11__thin_lto-Release-47984131e0d41929707d.json",
+					"name" : "pybind11::thin_lto",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "pybind11::windows_extras::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-pybind11__windows_extras-Release-5297476e38d8747fd6e3.json",
+					"name" : "pybind11::windows_extras",
+					"projectIndex" : 0
+				}
+			],
+			"directories" : 
+			[
+				{
+					"abstractTargetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14,
+						15,
+						16,
+						17,
+						18,
+						19
+					],
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Release-66606c39e985b10bd759.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.15"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1
+					]
+				},
+				{
+					"abstractTargetIndexes" : 
+					[
+						8
+					],
+					"build" : "_deps/json-build",
+					"jsonFile" : "directory-_deps.json-build-Release-db5b71bf1cffd05853a8.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.1"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 1,
+					"source" : "pyproject-build/cp310-cp310-macosx_13_0_arm64/_deps/json-src"
+				}
+			],
+			"name" : "Release",
+			"projects" : 
+			[
+				{
+					"abstractTargetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14,
+						15,
+						16,
+						17,
+						18,
+						19
+					],
+					"childIndexes" : 
+					[
+						1
+					],
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "split",
+					"targetIndexes" : 
+					[
+						0,
+						1
+					]
+				},
+				{
+					"abstractTargetIndexes" : 
+					[
+						8
+					],
+					"directoryIndexes" : 
+					[
+						1
+					],
+					"name" : "nlohmann_json",
+					"parentIndex" : 0
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "_libgosdt::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-_libgosdt-Release-34744e258914a19d8502.json",
+					"name" : "_libgosdt",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "gosdt_cli::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-gosdt_cli-Release-37597da42855e6659413.json",
+					"name" : "gosdt_cli",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/Users/prishapriyadashini/Downloads/DIMACS/SPLIT-ICML/split/pyproject-build/cp310-cp310-macosx_13_0_arm64",
+		"source" : "/Users/prishapriyadashini/Downloads/DIMACS/SPLIT-ICML/split"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 9
+	}
+}

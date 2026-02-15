@@ -1,0 +1,1 @@
+/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/tmpch9pgnyo/wheel/platlib/split/_libgosdt.cpython-310-darwin.so

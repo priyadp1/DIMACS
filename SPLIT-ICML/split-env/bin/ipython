@@ -1,0 +1,6 @@
+#!/Users/prishapriyadashini/Downloads/DIMACS/SPLIT-ICML/split-env/bin/python3.10
+import sys
+from IPython import start_ipython
+if __name__ == '__main__':
+    sys.argv[0] = sys.argv[0].removesuffix('.exe')
+    sys.exit(start_ipython())

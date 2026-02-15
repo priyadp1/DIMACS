@@ -1,0 +1,8 @@
+{
+  "source_dir": "/Users/prishapriyadashini/Downloads/DIMACS/SPLIT-ICML/split",
+  "build_dir": "/Users/prishapriyadashini/Downloads/DIMACS/SPLIT-ICML/split/pyproject-build/cp310-cp310-macosx_13_0_arm64",
+  "cmake_path": "/opt/homebrew/bin/cmake",
+  "skbuild_path": "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-je9vtvkf/overlay/lib/python3.10/site-packages/scikit_build_core",
+  "skbuild_version": "0.11.6",
+  "python_executable": "/Users/prishapriyadashini/Downloads/DIMACS/SPLIT-ICML/split-env/bin/python3.10"
+}

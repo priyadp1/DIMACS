@@ -1,0 +1,21 @@
+# ninja log v7
+1	16	1770595073021575269	json-populate-prefix/src/json-populate-stamp/json-populate-mkdir	4efbadb1f3445455
+1	16	1770595073021575269	/Users/prishapriyadashini/Downloads/DIMACS/SPLIT-ICML/split/pyproject-build/cp312-cp312-macosx_13_0_arm64/_deps/json-subbuild/json-populate-prefix/src/json-populate-stamp/json-populate-mkdir	4efbadb1f3445455
+17	286	1770595073291182939	json-populate-prefix/src/json-populate-stamp/json-populate-download	2d8e517909e22cf
+17	286	1770595073291182939	/Users/prishapriyadashini/Downloads/DIMACS/SPLIT-ICML/split/pyproject-build/cp312-cp312-macosx_13_0_arm64/_deps/json-subbuild/json-populate-prefix/src/json-populate-stamp/json-populate-download	2d8e517909e22cf
+286	302	1770595073306823278	json-populate-prefix/src/json-populate-stamp/json-populate-update	c90a21939d4b927
+286	302	1770595073306823278	/Users/prishapriyadashini/Downloads/DIMACS/SPLIT-ICML/split/pyproject-build/cp312-cp312-macosx_13_0_arm64/_deps/json-subbuild/json-populate-prefix/src/json-populate-stamp/json-populate-update	c90a21939d4b927
+302	317	1770595073321728830	json-populate-prefix/src/json-populate-stamp/json-populate-patch	99ad11776ab93cbb
+302	317	1770595073321728830	/Users/prishapriyadashini/Downloads/DIMACS/SPLIT-ICML/split/pyproject-build/cp312-cp312-macosx_13_0_arm64/_deps/json-subbuild/json-populate-prefix/src/json-populate-stamp/json-populate-patch	99ad11776ab93cbb
+317	331	1770595073336554923	json-populate-prefix/src/json-populate-stamp/json-populate-configure	7e7905d863427387
+317	331	1770595073336554923	/Users/prishapriyadashini/Downloads/DIMACS/SPLIT-ICML/split/pyproject-build/cp312-cp312-macosx_13_0_arm64/_deps/json-subbuild/json-populate-prefix/src/json-populate-stamp/json-populate-configure	7e7905d863427387
+331	346	1770595073350971685	json-populate-prefix/src/json-populate-stamp/json-populate-build	d57c5d0c7ff630fc
+331	346	1770595073350971685	/Users/prishapriyadashini/Downloads/DIMACS/SPLIT-ICML/split/pyproject-build/cp312-cp312-macosx_13_0_arm64/_deps/json-subbuild/json-populate-prefix/src/json-populate-stamp/json-populate-build	d57c5d0c7ff630fc
+346	361	1770595073365807445	json-populate-prefix/src/json-populate-stamp/json-populate-install	8ebf367157a14dc5
+346	361	1770595073365807445	/Users/prishapriyadashini/Downloads/DIMACS/SPLIT-ICML/split/pyproject-build/cp312-cp312-macosx_13_0_arm64/_deps/json-subbuild/json-populate-prefix/src/json-populate-stamp/json-populate-install	8ebf367157a14dc5
+361	379	1770595073384058022	json-populate-prefix/src/json-populate-stamp/json-populate-test	bcd81ebc10f3baa0
+361	379	1770595073384058022	/Users/prishapriyadashini/Downloads/DIMACS/SPLIT-ICML/split/pyproject-build/cp312-cp312-macosx_13_0_arm64/_deps/json-subbuild/json-populate-prefix/src/json-populate-stamp/json-populate-test	bcd81ebc10f3baa0
+379	400	1770595073404747045	CMakeFiles/json-populate-complete	44690966c032d86
+379	400	1770595073404747045	json-populate-prefix/src/json-populate-stamp/json-populate-done	44690966c032d86
+379	400	1770595073404747045	/Users/prishapriyadashini/Downloads/DIMACS/SPLIT-ICML/split/pyproject-build/cp312-cp312-macosx_13_0_arm64/_deps/json-subbuild/CMakeFiles/json-populate-complete	44690966c032d86
+379	400	1770595073404747045	/Users/prishapriyadashini/Downloads/DIMACS/SPLIT-ICML/split/pyproject-build/cp312-cp312-macosx_13_0_arm64/_deps/json-subbuild/json-populate-prefix/src/json-populate-stamp/json-populate-done	44690966c032d86

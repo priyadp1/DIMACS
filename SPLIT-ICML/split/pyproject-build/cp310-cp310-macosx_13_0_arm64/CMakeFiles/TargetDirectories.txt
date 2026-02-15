@@ -1,0 +1,14 @@
+/Users/prishapriyadashini/Downloads/DIMACS/SPLIT-ICML/split/pyproject-build/cp310-cp310-macosx_13_0_arm64/CMakeFiles/_libgosdt.dir
+/Users/prishapriyadashini/Downloads/DIMACS/SPLIT-ICML/split/pyproject-build/cp310-cp310-macosx_13_0_arm64/CMakeFiles/gosdt_cli.dir
+/Users/prishapriyadashini/Downloads/DIMACS/SPLIT-ICML/split/pyproject-build/cp310-cp310-macosx_13_0_arm64/CMakeFiles/edit_cache.dir
+/Users/prishapriyadashini/Downloads/DIMACS/SPLIT-ICML/split/pyproject-build/cp310-cp310-macosx_13_0_arm64/CMakeFiles/rebuild_cache.dir
+/Users/prishapriyadashini/Downloads/DIMACS/SPLIT-ICML/split/pyproject-build/cp310-cp310-macosx_13_0_arm64/CMakeFiles/list_install_components.dir
+/Users/prishapriyadashini/Downloads/DIMACS/SPLIT-ICML/split/pyproject-build/cp310-cp310-macosx_13_0_arm64/CMakeFiles/install.dir
+/Users/prishapriyadashini/Downloads/DIMACS/SPLIT-ICML/split/pyproject-build/cp310-cp310-macosx_13_0_arm64/CMakeFiles/install/local.dir
+/Users/prishapriyadashini/Downloads/DIMACS/SPLIT-ICML/split/pyproject-build/cp310-cp310-macosx_13_0_arm64/CMakeFiles/install/strip.dir
+/Users/prishapriyadashini/Downloads/DIMACS/SPLIT-ICML/split/pyproject-build/cp310-cp310-macosx_13_0_arm64/_deps/json-build/CMakeFiles/edit_cache.dir
+/Users/prishapriyadashini/Downloads/DIMACS/SPLIT-ICML/split/pyproject-build/cp310-cp310-macosx_13_0_arm64/_deps/json-build/CMakeFiles/rebuild_cache.dir
+/Users/prishapriyadashini/Downloads/DIMACS/SPLIT-ICML/split/pyproject-build/cp310-cp310-macosx_13_0_arm64/_deps/json-build/CMakeFiles/list_install_components.dir
+/Users/prishapriyadashini/Downloads/DIMACS/SPLIT-ICML/split/pyproject-build/cp310-cp310-macosx_13_0_arm64/_deps/json-build/CMakeFiles/install.dir
+/Users/prishapriyadashini/Downloads/DIMACS/SPLIT-ICML/split/pyproject-build/cp310-cp310-macosx_13_0_arm64/_deps/json-build/CMakeFiles/install/local.dir
+/Users/prishapriyadashini/Downloads/DIMACS/SPLIT-ICML/split/pyproject-build/cp310-cp310-macosx_13_0_arm64/_deps/json-build/CMakeFiles/install/strip.dir

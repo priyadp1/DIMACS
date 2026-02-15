@@ -1,0 +1,1 @@
+/Users/prishapriyadashini/Downloads/DIMACS/SPLIT-ICML/resplit/_skbuild/macosx-13.0-arm64-3.10/cmake-install/resplit/./libgosdt.abi3.so

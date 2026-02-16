@@ -4,7 +4,14 @@ from resplit.model.treefarms import TREEFARMS
 from resplit import RESPLIT
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score, classification_report , confusion_matrix
-path = '/Users/prishapriyadashini/Downloads/DIMACS/datasets/Mine/breast_cancer_data.csv'
+from pathlib import Path
+current = Path(__file__).resolve()
+while current.name != "DIMACS":
+    current = current.parent
+
+BASEDIR = current
+DATAPATH = BASEDIR / "datasets" / "Mine" / "breast_cancer_data.csv"
+path = DATAPATH
 print(f"Loading dataset from: {path}")
 df = pd.read_csv(path)
 print("Mapping diagnosis to binary...")

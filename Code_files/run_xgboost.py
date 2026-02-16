@@ -3,9 +3,15 @@ import pandas as pd
 from sklearn.metrics import accuracy_score, classification_report, confusion_matrix
 from sklearn.model_selection import train_test_split
 import numpy as np 
+from pathlib import Path
+current = Path(__file__).resolve()
+while current.name != "DIMACS":
+    current = current.parent
 
+BASEDIR = current
+DATAPATH = BASEDIR / "datasets" / "Mine" / "breast_cancer_data.csv"
 print("Loading dataset...")
-dataset = pd.read_csv('/Users/prishapriyadashini/Downloads/DIMACS/datasets/Mine/breast_cancer_data.csv') 
+dataset = pd.read_csv(DATAPATH) 
 dataset = dataset.dropna(axis=1, how="all")
 
 print("Mapping diagnosis to binary...")

@@ -1,9 +1,15 @@
 import kagglehub
 import os
 import shutil
+from pathlib import Path
+current = Path(__file__).resolve()
+while current.name != "DIMACS":
+    current = current.parent
 
+BASEDIR = current
+DATAPATH = BASEDIR / "datasets" / "Mine" / "breast_cancer_data.csv"
 # Download latest version
-target = '/Users/prishapriyadashini/Downloads/DIMACS/datasets/Mine/breast_cancer_data.csv'
+target = DATAPATH
 os.makedirs(target, exist_ok=True)
 path = kagglehub.dataset_download("uciml/breast-cancer-wisconsin-data")
 for i in os.listdir(path):

@@ -1,0 +1,1 @@
+{"args": ["/opt/homebrew/bin/cmake", "-DCMAKE_OSX_DEPLOYMENT_TARGET:STRING=13.0", "-DCMAKE_OSX_ARCHITECTURES:STRING=arm64", "-DCMAKE_BUILD_TYPE:STRING=Release"], "version": "4.2.3", "environment": {"PYTHONNOUSERSITE": "1", "PYTHONPATH": "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-l1hnprc1/site"}}

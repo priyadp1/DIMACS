@@ -1,0 +1,9 @@
+/Users/prishapriyadashini/Downloads/DIMACS/SPLIT-ICML/resplit/_skbuild/macosx-13.0-arm64-3.12/cmake-build/CMakeFiles/resplit.dir
+/Users/prishapriyadashini/Downloads/DIMACS/SPLIT-ICML/resplit/_skbuild/macosx-13.0-arm64-3.12/cmake-build/CMakeFiles/resplit_tests.dir
+/Users/prishapriyadashini/Downloads/DIMACS/SPLIT-ICML/resplit/_skbuild/macosx-13.0-arm64-3.12/cmake-build/CMakeFiles/libgosdt.dir
+/Users/prishapriyadashini/Downloads/DIMACS/SPLIT-ICML/resplit/_skbuild/macosx-13.0-arm64-3.12/cmake-build/CMakeFiles/edit_cache.dir
+/Users/prishapriyadashini/Downloads/DIMACS/SPLIT-ICML/resplit/_skbuild/macosx-13.0-arm64-3.12/cmake-build/CMakeFiles/rebuild_cache.dir
+/Users/prishapriyadashini/Downloads/DIMACS/SPLIT-ICML/resplit/_skbuild/macosx-13.0-arm64-3.12/cmake-build/CMakeFiles/list_install_components.dir
+/Users/prishapriyadashini/Downloads/DIMACS/SPLIT-ICML/resplit/_skbuild/macosx-13.0-arm64-3.12/cmake-build/CMakeFiles/install.dir
+/Users/prishapriyadashini/Downloads/DIMACS/SPLIT-ICML/resplit/_skbuild/macosx-13.0-arm64-3.12/cmake-build/CMakeFiles/install/local.dir
+/Users/prishapriyadashini/Downloads/DIMACS/SPLIT-ICML/resplit/_skbuild/macosx-13.0-arm64-3.12/cmake-build/CMakeFiles/install/strip.dir

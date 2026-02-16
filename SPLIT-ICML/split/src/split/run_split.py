@@ -2,12 +2,21 @@ from split import SPLIT
 import pandas as pd
 from sklearn.metrics import accuracy_score , classification_report, confusion_matrix
 from sklearn.model_selection import train_test_split
+from pathlib import Path
+
+current = Path(__file__).resolve()
+while current.name != "DIMACS":
+    current = current.parent
+
+BASEDIR = current
+DATAPATH = BASEDIR / "datasets" / "Mine" / "breast_cancer_data.csv"
+
 print("Loading dataset...")
 lookahead_depth = 2
 depth_buget = 5
 regularization = 0.01
 
-dataset = pd.read_csv('/Users/prishapriyadashini/Downloads/DIMACS/SPLIT-ICML/resplit/test/fixtures/breast_cancer_dataset/data.csv') 
+dataset = pd.read_csv(DATAPATH) 
 dataset = dataset.dropna(axis=1, how="all")
 
 print("Mapping diagnosis to binary...")

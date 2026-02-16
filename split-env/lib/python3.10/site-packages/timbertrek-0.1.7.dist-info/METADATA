@@ -1,0 +1,31 @@
+Metadata-Version: 2.1
+Name: timbertrek
+Version: 0.1.7
+Summary: A Python package to run TimberTrek in your computational notebooks.
+Home-page: https://github.com/poloclub/timbertrek
+Author: Jay Wang
+Author-email: jayw@zijie.wang
+License: MIT license
+Keywords: Jupyter,JupyterLab,JupyterLab3,Machine Learning,Interpretable ML,Visualization,Interactive Visualization
+Platform: Linux
+Platform: Mac OS X
+Platform: Windows
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Framework :: Jupyter
+Classifier: Framework :: Jupyter :: JupyterLab
+Classifier: Framework :: Jupyter :: JupyterLab :: 3
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+Requires-Dist: numpy
+Requires-Dist: ipython
+Requires-Dist: tqdm
+
+# TimberTrek
+
+A Python package to run TimberTrek in your computation notebooks.

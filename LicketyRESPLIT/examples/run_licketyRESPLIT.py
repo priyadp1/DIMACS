@@ -4,8 +4,14 @@ from licketyresplit import LicketyRESPLIT
 import matplotlib.pyplot as plt
 from sklearn.metrics import accuracy_score, classification_report
 from sklearn.model_selection import train_test_split
+from pathlib import Path
+current = Path(__file__).resolve()
+while current.name != "DIMACS":
+    current = current.parent
 
-path = '/Users/prishapriyadashini/Downloads/DIMACS/datasets/Mine/breast_cancer_data.csv'
+BASEDIR = current
+DATAPATH = BASEDIR / "datasets" / "Mine" / "breast_cancer_data.csv"
+path = DATAPATH
 df = pd.read_csv(path)
 df = df.dropna(axis=1, how="all")
 df["diagnosis"] = df["diagnosis"].map({"M": 1, "B": 0})

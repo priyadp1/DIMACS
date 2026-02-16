@@ -3,6 +3,13 @@ from sklearn.ensemble import GradientBoostingClassifier
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import classification_report, confusion_matrix
 from gosdt import ThresholdGuessBinarizer, GOSDTClassifier
+from pathlib import Path
+current = Path(__file__).resolve()
+while current.name != "DIMACS":
+    current = current.parent
+
+BASEDIR = current
+DATAPATH = BASEDIR/"datasets/Mine/breast_cancer_data.csv"
 
 # Parameters
 GBDT_N_EST = 40
@@ -14,7 +21,7 @@ TIME_LIMIT = 60
 VERBOSE = True
 
 # Read the dataset
-df = pd.read_csv('/Users/prishapriyadashini/Downloads/DIMACS/datasets/Mine/breast_cancer_data.csv')
+df = pd.read_csv(DATAPATH)
 df = df.dropna(axis=1, how="all")
 print("Mapping diagnosis to binary...")
 df["diagnosis"] = df["diagnosis"].map({"M": 1, "B": 0})

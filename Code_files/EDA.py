@@ -1,6 +1,12 @@
 import pandas as pd
+from pathlib import Path
+current = Path(__file__).resolve()
+while current.name != "DIMACS":
+    current = current.parent
 
-df = pd.read_csv("/Users/prishapriyadashini/Downloads/DIMACS/datasets/Mine/breast_cancer_data.csv")
+BASEDIR = current
+DATAPATH = BASEDIR / "datasets" / "Mine" / "breast_cancer_data.csv"
+df = pd.read_csv(DATAPATH)
 print("\nInformation: ")
 df.info()
 print("\n Statistics: ")

@@ -2,6 +2,7 @@ from xgboost import XGBClassifier
 import pandas as pd
 from sklearn.metrics import accuracy_score, classification_report, confusion_matrix
 from sklearn.model_selection import train_test_split
+import numpy as np 
 
 print("Loading dataset...")
 dataset = pd.read_csv('/Users/prishapriyadashini/Downloads/DIMACS/datasets/Mine/breast_cancer_data.csv') 
@@ -38,3 +39,13 @@ y_pred = xgb.predict(X_test)
 print("\nAccuracy: " , accuracy_score(y_test,y_pred))
 print("\nConfusion Matrix: " , confusion_matrix(y_test, y_pred))
 print("\nClassification Report: " , classification_report(y_test, y_pred))
+
+print("\n Feature Importance: ")
+importances = xgb.feature_importances_
+feature_names = X.columns
+importance_df = pd.DataFrame({
+    "Feature": feature_names,
+    "Importance" : importances
+}).sort_values(by="Importance" , ascending=False)
+print("\n Importance Df: ")
+print(importance_df.head(3))

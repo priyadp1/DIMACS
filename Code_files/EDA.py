@@ -5,7 +5,7 @@ while current.name != "DIMACS":
     current = current.parent
 
 BASEDIR = current
-DATAPATH = BASEDIR / "datasets" / "Mine" / "breast_cancer_data.csv"
+DATAPATH = BASEDIR / "datasets" / "Given" / "bike_binarized.csv"
 df = pd.read_csv(DATAPATH)
 print("\nInformation: ")
 df.info()
@@ -19,3 +19,4 @@ print("\nValue Counts")
 for i in df.columns:
     print(f"{i}: ")
     print(df[i].value_counts())
+print(df.columns.tolist())

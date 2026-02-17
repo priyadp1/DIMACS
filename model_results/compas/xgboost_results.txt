@@ -1,0 +1,21 @@
+
+Accuracy: 0.6837916063675832
+Confusion Matrix:
+[[551 192]
+ [245 394]]
+Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.69      0.74      0.72       743
+           1       0.67      0.62      0.64       639
+
+    accuracy                           0.68      1382
+   macro avg       0.68      0.68      0.68      1382
+weighted avg       0.68      0.68      0.68      1382
+
+XGBoost completed in 0.04 seconds
+Top 3 Features:
+     Feature  Importance
+priors_count    0.495166
+         age    0.255466
+  sex=female    0.091584

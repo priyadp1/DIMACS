@@ -1,7 +1,8 @@
+import os
 import pandas as pd
 from sklearn.ensemble import GradientBoostingClassifier
 from sklearn.model_selection import train_test_split
-from sklearn.metrics import classification_report, confusion_matrix
+from sklearn.metrics import accuracy_score, classification_report, confusion_matrix
 from gosdt import ThresholdGuessBinarizer, GOSDTClassifier
 from pathlib import Path
 current = Path(__file__).resolve()
@@ -10,6 +11,23 @@ while current.name != "DIMACS":
 
 BASEDIR = current
 DATAPATH = BASEDIR/"datasets/Mine/breast_cancer_data.csv"
+results_dir = BASEDIR / "model_results"
+os.makedirs(results_dir, exist_ok=True)
+import json as _json
+_cfg_file = BASEDIR / "_run_config.json"
+if _cfg_file.exists():
+    with open(_cfg_file) as _f:
+        _cfg = _json.load(_f)
+    DATAPATH    = Path(_cfg['dataset_path'])
+    results_dir = Path(_cfg['results_dir'])
+    os.makedirs(results_dir, exist_ok=True)
+    _target_col = _cfg['target_column']
+    _drop_cols  = _cfg['drop_columns']
+    _label_map  = _cfg.get('label_map')
+else:
+    _target_col = 'diagnosis'
+    _drop_cols  = ['id', 'diagnosis']
+    _label_map  = {'M': 1, 'B': 0}
 
 # Parameters
 GBDT_N_EST = 40
@@ -24,10 +42,11 @@ VERBOSE = True
 df = pd.read_csv(DATAPATH)
 df = df.dropna(axis=1, how="all")
 print("Mapping diagnosis to binary...")
-df["diagnosis"] = df["diagnosis"].map({"M": 1, "B": 0})
+if _label_map:
+    df[_target_col] = df[_target_col].map(_label_map)
 print("Preparing features and labels...")
-X = df.drop(columns=["id", "diagnosis"])
-Y = df["diagnosis"]
+X = df.drop(columns=_drop_cols)
+Y = df[_target_col]
 print("X shape:" , X.shape)
 print("Y dist:\n" , Y.value_counts())
 h = X.columns
@@ -65,3 +84,9 @@ print(f"Training accuracy: {clf.score(X_train_guessed, y_train)}")
 print(f"Test accuracy: {clf.score(X_test_guessed, y_test)}")
 print("\nConfusion Matrix: " , confusion_matrix(y_test, y_pred))
 print("\nClassification Report: " , classification_report(y_test, y_pred))
+with open(results_dir / "gosdt_results.txt", "w") as f:
+    f.write(f"\nAccuracy: {accuracy_score(y_test, y_pred)}")
+    f.write(f"\nTraining Accuracy: {clf.score(X_train_guessed, y_train)}")
+    f.write(f"\nConfusion Matrix:\n{confusion_matrix(y_test, y_pred)}")
+    f.write(f"\nClassification Report:\n{classification_report(y_test, y_pred)}")
+    f.write(f"\nGOSDT completed in {clf.result_.time:.2f} seconds")

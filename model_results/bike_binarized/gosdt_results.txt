@@ -1,0 +1,17 @@
+
+Accuracy: 0.8552934407364787
+Training Accuracy: 0.8634107746529526
+Confusion Matrix:
+[[1469  265]
+ [ 238 1504]]
+Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.86      0.85      0.85      1734
+           1       0.85      0.86      0.86      1742
+
+    accuracy                           0.86      3476
+   macro avg       0.86      0.86      0.86      3476
+weighted avg       0.86      0.86      0.86      3476
+
+GOSDT completed in 1.61 seconds

@@ -77,9 +77,29 @@ importance_df = pd.DataFrame({
 }).sort_values(by="Importance" , ascending=False)
 print("\n Importance Df: ")
 print(importance_df.head(3))
+try:
+    _trees_df = xgb.get_booster().trees_to_dataframe()
+    _n_leaves = int((_trees_df['Feature'] == 'Leaf').sum())
+    _n_nodes = int(len(_trees_df))
+    _n_trees = int(_trees_df['Tree'].nunique())
+    _tree_size = {
+        "n_trees": _n_trees,
+        "total_leaves": _n_leaves,
+        "total_nodes": _n_nodes,
+        "avg_leaves_per_tree": round(_n_leaves / _n_trees, 2),
+    }
+except Exception as _e:
+    _tree_size = {"error": str(_e)}
+with open(results_dir / "xgboost_tree_size.json", "w") as f:
+    import json as _json_sz; _json_sz.dump(_tree_size, f)
+
 with open(results_dir / "xgboost_results.txt", "w") as f:
     f.write(f"\nAccuracy: {accuracy_score(y_test, y_pred)}")
     f.write(f"\nConfusion Matrix:\n{confusion_matrix(y_test, y_pred)}")
     f.write(f"\nClassification Report:\n{classification_report(y_test, y_pred)}")
     f.write(f"\nXGBoost completed in {duration:.2f} seconds")
     f.write(f"\nTop 3 Features:\n{importance_df.head(3).to_string(index=False)}")
+    if "error" not in _tree_size:
+        f.write(f"\nTree Size: {_tree_size['n_trees']} trees, {_tree_size['total_leaves']} total leaves, {_tree_size['avg_leaves_per_tree']:.1f} avg leaves/tree")
+    else:
+        f.write(f"\nTree Size: Error - {_tree_size['error']}")

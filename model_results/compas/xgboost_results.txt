@@ -13,9 +13,10 @@ Classification Report:
    macro avg       0.68      0.68      0.68      1382
 weighted avg       0.68      0.68      0.68      1382
 
-XGBoost completed in 0.04 seconds
+XGBoost completed in 0.05 seconds
 Top 3 Features:
      Feature  Importance
 priors_count    0.495166
          age    0.255466
   sex=female    0.091584
+Tree Size: 25 trees, 200 total leaves, 8.0 avg leaves/tree

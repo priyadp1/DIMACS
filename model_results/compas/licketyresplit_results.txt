@@ -15,3 +15,4 @@ weighted avg       0.66      0.61      0.55      1382
 
 Ensemble Accuracy: 0.6374819102749638
 LicketyRESPLIT completed in 0.00 seconds with 400 trees
+Tree Size (tree 0): 2 leaves, 3 total nodes

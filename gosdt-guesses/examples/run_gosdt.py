@@ -84,9 +84,29 @@ print(f"Training accuracy: {clf.score(X_train_guessed, y_train)}")
 print(f"Test accuracy: {clf.score(X_test_guessed, y_test)}")
 print("\nConfusion Matrix: " , confusion_matrix(y_test, y_pred))
 print("\nClassification Report: " , classification_report(y_test, y_pred))
+def _count_tree_nodes(node):
+    """Return (total_nodes, n_leaves) for a gosdt/split Node/Leaf tree."""
+    if hasattr(node, 'left_child'):
+        l_n, l_l = _count_tree_nodes(node.left_child)
+        r_n, r_l = _count_tree_nodes(node.right_child)
+        return 1 + l_n + r_n, l_l + r_l
+    return 1, 1
+
+try:
+    _n_nodes, _n_leaves = _count_tree_nodes(clf.trees_[0].tree)
+    _tree_size = {"n_leaves": _n_leaves, "n_nodes": _n_nodes}
+except Exception as _e:
+    _tree_size = {"error": str(_e)}
+with open(results_dir / "gosdt_tree_size.json", "w") as f:
+    _json.dump(_tree_size, f)
+
 with open(results_dir / "gosdt_results.txt", "w") as f:
     f.write(f"\nAccuracy: {accuracy_score(y_test, y_pred)}")
     f.write(f"\nTraining Accuracy: {clf.score(X_train_guessed, y_train)}")
     f.write(f"\nConfusion Matrix:\n{confusion_matrix(y_test, y_pred)}")
     f.write(f"\nClassification Report:\n{classification_report(y_test, y_pred)}")
     f.write(f"\nGOSDT completed in {clf.result_.time:.2f} seconds")
+    if "error" not in _tree_size:
+        f.write(f"\nTree Size: {_tree_size['n_leaves']} leaves, {_tree_size['n_nodes']} total nodes")
+    else:
+        f.write(f"\nTree Size: Error - {_tree_size['error']}")

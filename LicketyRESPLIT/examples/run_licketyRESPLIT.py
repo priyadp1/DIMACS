@@ -80,10 +80,22 @@ all_preds_mat = model.get_all_predictions(X_test, stack=True)
 majority_vote = (all_preds_mat.mean(axis=0) >= 0.5).astype(np.uint8)
 ensemble_acc = accuracy_score(y_test, majority_vote)
 print("Ensemble Accuracy:", ensemble_acc)
+try:
+    _paths, _preds = model.get_tree_paths(tree_idx)
+    _n_leaves_lr = len(_paths)
+    _n_nodes_lr = 2 * _n_leaves_lr - 1  # binary tree: internal nodes = leaves - 1
+    _tree_size_lr = {"n_leaves": _n_leaves_lr, "n_nodes": _n_nodes_lr, "n_trees_in_set": model.count_trees()}
+except Exception as _e:
+    _tree_size_lr = {"error": str(_e)}
+with open(results_dir / "licketyresplit_tree_size.json", "w") as f:
+    _json.dump(_tree_size_lr, f)
+
 with open(results_dir / "licketyresplit_results.txt", "w") as f:
     f.write(f"\nAccuracy: {accuracy_score(y_test, test_preds)}")
     f.write(f"\nConfusion Matrix:\n{confusion_matrix(y_test, test_preds)}")
     f.write(f"\nClassification Report:\n{classification_report(y_test, test_preds)}")
     f.write(f"\nEnsemble Accuracy: {ensemble_acc}")
     f.write(f"\nLicketyRESPLIT completed in {duration:.2f} seconds with {model.count_trees()} trees")
+    if "error" not in _tree_size_lr:
+        f.write(f"\nTree Size (tree 0): {_tree_size_lr['n_leaves']} leaves, {_tree_size_lr['n_nodes']} total nodes")
 

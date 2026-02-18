@@ -63,11 +63,29 @@ duration = time.perf_counter() - start
 print("Done training RESPLIT")
 print("Making predicitions...")
 y_pred = model.predict(X_test, idx=0)
+def _count_tree_nodes(node):
+    """Return (total_nodes, n_leaves) for a gosdt/split Node/Leaf tree."""
+    if hasattr(node, 'left_child'):
+        l_n, l_l = _count_tree_nodes(node.left_child)
+        r_n, r_l = _count_tree_nodes(node.right_child)
+        return 1 + l_n + r_n, l_l + r_l
+    return 1, 1
+
+try:
+    _n_nodes, _n_leaves = _count_tree_nodes(model[0])
+    _tree_size_resplit = {"n_leaves": _n_leaves, "n_nodes": _n_nodes, "n_trees_in_set": len(model)}
+except Exception as _e:
+    _tree_size_resplit = {"error": str(_e)}
+with open(results_dir / "resplit_tree_size.json", "w") as f:
+    _json.dump(_tree_size_resplit, f)
+
 with open(results_dir / "resplit_results.txt", "w") as f:
     f.write(f"\nAccuracy: {accuracy_score(y_test, y_pred)}")
     f.write(f"\nConfusion Matrix:\n{confusion_matrix(y_test, y_pred)}")
     f.write(f"\nClassification Report:\n{classification_report(y_test, y_pred)}")
     f.write(f"\nRESPLIT completed in {duration:.2f} seconds with {len(model)} trees")
+    if "error" not in _tree_size_resplit:
+        f.write(f"\nTree Size (tree 0): {_tree_size_resplit['n_leaves']} leaves, {_tree_size_resplit['n_nodes']} total nodes")
 print("\nAccuracy: " , accuracy_score(y_test,y_pred))
 print("\nConfusion Matrix: " , confusion_matrix(y_test, y_pred))
 print("\nClassification Report: " , classification_report(y_test, y_pred))
@@ -93,10 +111,28 @@ print("\nAccuracy: " , accuracy_score(y_test,y_pred))
 print("\nConfusion Matrix: " , confusion_matrix(y_test, y_pred))
 print("\nClassification Report: " , classification_report(y_test, y_pred))
 print(f" TREEFARMS completed in {duration:.2f} seconds with {model.get_tree_count()} trees")
+def _count_dict_tree(source):
+    """Return (total_nodes, n_leaves) for a TreeClassifier dict tree (keys: 'true'/'false')."""
+    if "prediction" in source:
+        return 1, 1
+    l_n, l_l = _count_dict_tree(source["true"])
+    r_n, r_l = _count_dict_tree(source["false"])
+    return 1 + l_n + r_n, l_l + r_l
+
+try:
+    _n_nodes_tf, _n_leaves_tf = _count_dict_tree(vars(model[0])['source'])
+    _tree_size_tf = {"n_leaves": _n_leaves_tf, "n_nodes": _n_nodes_tf, "n_trees_in_set": model.get_tree_count()}
+except Exception as _e:
+    _tree_size_tf = {"error": str(_e)}
+with open(results_dir / "treefarms_tree_size.json", "w") as f:
+    _json.dump(_tree_size_tf, f)
+
 with open(results_dir / "treefarms_results.txt", "w") as f:
     f.write(f"\nAccuracy: {accuracy_score(y_test, y_pred)}")
     f.write(f"\nConfusion Matrix:\n{confusion_matrix(y_test, y_pred)}")
     f.write(f"\nClassification Report:\n{classification_report(y_test, y_pred)}")
     f.write(f"\nTREEFARMS completed in {duration:.2f} seconds with {model.get_tree_count()} trees")
+    if "error" not in _tree_size_tf:
+        f.write(f"\nTree Size (tree 0): {_tree_size_tf['n_leaves']} leaves, {_tree_size_tf['n_nodes']} total nodes")
 
 

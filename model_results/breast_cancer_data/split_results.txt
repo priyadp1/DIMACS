@@ -1,16 +1,17 @@
 
 Accuracy: 0.956140350877193
 Confusion Matrix:
-[[72  0]
- [ 5 37]]
+[[71  1]
+ [ 4 38]]
 Classification Report:
               precision    recall  f1-score   support
 
-           0       0.94      1.00      0.97        72
-           1       1.00      0.88      0.94        42
+           0       0.95      0.99      0.97        72
+           1       0.97      0.90      0.94        42
 
     accuracy                           0.96       114
-   macro avg       0.97      0.94      0.95       114
+   macro avg       0.96      0.95      0.95       114
 weighted avg       0.96      0.96      0.96       114
 
-SPLIT completed in 0.30 seconds
+SPLIT completed in 0.21 seconds
+Tree Size: 4 leaves, 7 total nodes

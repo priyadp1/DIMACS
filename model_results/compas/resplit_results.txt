@@ -14,3 +14,4 @@ Classification Report:
 weighted avg       0.29      0.54      0.38      1382
 
 RESPLIT completed in 0.31 seconds with 1 trees
+Tree Size (tree 0): 1 leaves, 1 total nodes

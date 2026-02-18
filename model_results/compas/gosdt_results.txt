@@ -15,3 +15,4 @@ Classification Report:
 weighted avg       0.67      0.67      0.67      1382
 
 GOSDT completed in 0.29 seconds
+Tree Size: 7 leaves, 13 total nodes

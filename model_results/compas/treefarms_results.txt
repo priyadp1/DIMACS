@@ -13,4 +13,5 @@ Classification Report:
    macro avg       0.27      0.50      0.35      1382
 weighted avg       0.29      0.54      0.38      1382
 
-TREEFARMS completed in 0.09 seconds with 1 trees
+TREEFARMS completed in 0.13 seconds with 1 trees
+Tree Size (tree 0): 1 leaves, 1 total nodes

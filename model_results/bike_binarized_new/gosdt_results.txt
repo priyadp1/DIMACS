@@ -14,4 +14,4 @@ Classification Report:
    macro avg       0.86      0.86      0.86      3476
 weighted avg       0.86      0.86      0.86      3476
 
-GOSDT completed in 1.61 seconds
+GOSDT completed in 1.47 seconds

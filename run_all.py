@@ -20,7 +20,7 @@ BASEDIR = Path(__file__).resolve().parent
 # DATASET CONFIGURATION — only edit this section to change the dataset
 # =============================================================================
 
-DATASET_PATH  = BASEDIR / "datasets" / "Given" / "bike_binarized.csv"
+DATASET_PATH  = BASEDIR / "datasets" / "Given" / "bike_binarized_new.csv"
 TARGET_COLUMN = 'label'
 DROP_COLUMNS  = ['label']   # all columns to remove (must include target)
 #LABEL_MAP     = {"3711": 1, "3196": 0}      # set to None if labels are already numeric

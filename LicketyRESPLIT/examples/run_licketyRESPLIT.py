@@ -50,14 +50,17 @@ X_train, X_test, y_train, y_test = train_test_split(
 
 # Train model
 model = LicketyRESPLIT()
+depth_budget = 5
+lambda_reg = 0.01
+rashomon_mult = 0.05
 
 start = time.perf_counter()
 model.fit(
     X_train,
     y_train,
-    lambda_reg=0.01,
-    depth_budget=5,
-    rashomon_mult=0.05,
+    lambda_reg=lambda_reg,
+    depth_budget=depth_budget,
+    rashomon_mult=rashomon_mult,
     multiplicative_slack=0,
     key_mode="hash",
     trie_cache_enabled=False,
@@ -87,10 +90,10 @@ try:
     _tree_size_lr = {"n_leaves": _n_leaves_lr, "n_nodes": _n_nodes_lr, "n_trees_in_set": model.count_trees()}
 except Exception as _e:
     _tree_size_lr = {"error": str(_e)}
-with open(results_dir / "licketyresplit_tree_size.json", "w") as f:
+with open(results_dir / f"{depth_budget}_{lambda_reg}_{rashomon_mult}" / "licketyresplit_tree_size.json", "w") as f:
     _json.dump(_tree_size_lr, f)
 
-with open(results_dir / "licketyresplit_results.txt", "w") as f:
+with open(results_dir / f"{depth_budget}_{lambda_reg}_{rashomon_mult}" / "licketyresplit_results.txt", "w") as f:
     f.write(f"\nAccuracy: {accuracy_score(y_test, test_preds)}")
     f.write(f"\nConfusion Matrix:\n{confusion_matrix(y_test, test_preds)}")
     f.write(f"\nClassification Report:\n{classification_report(y_test, test_preds)}")

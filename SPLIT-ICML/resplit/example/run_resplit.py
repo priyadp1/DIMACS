@@ -47,13 +47,16 @@ print("Y dist:\n" , Y.value_counts())
 X_train, X_test, y_train, y_test = train_test_split(
     X,Y,test_size=0.2, random_state=42, stratify=Y
 )
-
+regularization = 0.01
+rashomon_bound_multiplier = 0.01
+depth_budget = 5
+cart_lookahead_depth = 3
 print("\n Running RESPLIT...")
 config = {
-        "regularization": 0.01,
-        "rashomon_bound_multiplier": 0.01,
-        "depth_budget": 3,
-        "cart_lookahead_depth": 1,
+        "regularization": regularization,
+        "rashomon_bound_multiplier": rashomon_bound_multiplier,
+        "depth_budget": depth_budget,
+        "cart_lookahead_depth": cart_lookahead_depth,
         "verbose": True
     }
 model = RESPLIT(config, fill_tree='treefarms')
@@ -79,7 +82,7 @@ except Exception as _e:
 with open(results_dir / "resplit_tree_size.json", "w") as f:
     _json.dump(_tree_size_resplit, f)
 
-with open(results_dir / "resplit_results.txt", "w") as f:
+with open(results_dir / f"{depth_budget}_{regularization}_{rashomon_bound_multiplier}" / "resplit_results.txt", "w") as f:
     f.write(f"\nAccuracy: {accuracy_score(y_test, y_pred)}")
     f.write(f"\nConfusion Matrix:\n{confusion_matrix(y_test, y_pred)}")
     f.write(f"\nClassification Report:\n{classification_report(y_test, y_pred)}")
@@ -93,10 +96,13 @@ print(f" RESPLIT completed in {duration:.2f} seconds with {len(model)} trees")
 
 
 print("\n Running TREEFARMS...")
+reg_treefarms = 0.01
+rashomon_mult_treefarms = 0.01
+depth_budget_treefarms = 3
 config = {
-        "regularization": 0.01,
-        "rashomon_bound_multiplier": 0.01,
-        "depth_budget": 3,
+        "regularization": reg_treefarms,
+        "rashomon_bound_multiplier": rashomon_mult_treefarms,
+        "depth_budget": depth_budget_treefarms,
         "verbose": True
     }
 model = TREEFARMS(config)
@@ -124,10 +130,10 @@ try:
     _tree_size_tf = {"n_leaves": _n_leaves_tf, "n_nodes": _n_nodes_tf, "n_trees_in_set": model.get_tree_count()}
 except Exception as _e:
     _tree_size_tf = {"error": str(_e)}
-with open(results_dir / "treefarms_tree_size.json", "w") as f:
+with open(results_dir / f"{depth_budget_treefarms}_{reg_treefarms}_{rashomon_mult_treefarms}" / "treefarms_tree_size.json", "w") as f:
     _json.dump(_tree_size_tf, f)
 
-with open(results_dir / "treefarms_results.txt", "w") as f:
+with open(results_dir / f"{depth_budget_treefarms}_{reg_treefarms}_{rashomon_mult_treefarms}" / "treefarms_results.txt", "w") as f:
     f.write(f"\nAccuracy: {accuracy_score(y_test, y_pred)}")
     f.write(f"\nConfusion Matrix:\n{confusion_matrix(y_test, y_pred)}")
     f.write(f"\nClassification Report:\n{classification_report(y_test, y_pred)}")

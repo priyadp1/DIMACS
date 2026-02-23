@@ -21,23 +21,26 @@ from resplit.model.treefarms import TREEFARMS
 from split._tree import Leaf as SplitLeaf
 
 # ============================
-# CONFIGURATION
+# CONFIGURATION - EDIT THIS SECTION
 # ============================
 
 BASEDIR = Path(__file__).resolve().parent
 
-# Load dataset config from run_all.py
-config_file = BASEDIR / "_run_config.json"
-if config_file.exists():
-    with open(config_file) as f:
-        cfg = json.load(f)
-    DATAPATH = Path(cfg['dataset_path'])
-    results_dir = Path(cfg['results_dir'])
-    target_col = cfg['target_column']
-    drop_cols = cfg['drop_columns']
-    label_map = cfg.get('label_map')
-else:
-    raise FileNotFoundError("No _run_config.json found. Run run_all.py first.")
+# Dataset configuration (copy these from run_all.py DATASET CONFIGURATION section)
+DATAPATH = BASEDIR / "datasets" / "Mine" / "breast_cancer_data.csv"
+TARGET_COLUMN = 'diagnosis'
+DROP_COLUMNS = ['diagnosis']
+LABEL_MAP = {"M": 1, "B": 0}  # set to None if labels are already numeric
+
+# Results directory
+dataset_name = DATAPATH.stem
+results_dir = BASEDIR / "model_results" / dataset_name
+os.makedirs(results_dir, exist_ok=True)
+
+# Assign to internal variables
+target_col = TARGET_COLUMN
+drop_cols = DROP_COLUMNS
+label_map = LABEL_MAP
 
 # Parameter grids (customize these as needed)
 DEPTH_BUDGETS = [3, 5]

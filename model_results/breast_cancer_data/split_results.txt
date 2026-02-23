@@ -13,5 +13,5 @@ Classification Report:
    macro avg       0.96      0.95      0.95       114
 weighted avg       0.96      0.96      0.96       114
 
-SPLIT completed in 0.21 seconds
+SPLIT completed in 0.24 seconds
 Tree Size: 4 leaves, 7 total nodes

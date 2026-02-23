@@ -1,0 +1,24 @@
+# Core scientific computing
+numpy>=1.21.0
+pandas>=1.3.0
+scipy>=1.7.0
+
+# Machine learning
+scikit-learn>=1.0.0
+xgboost>=1.5.0
+
+# Visualization
+matplotlib>=3.4.0
+seaborn>=0.11.0
+
+# Note: The following packages are installed locally from subdirectories:
+# - gosdt (from gosdt-guesses/)
+# - split (from SPLIT-ICML/split/)
+# - resplit (from SPLIT-ICML/resplit/)
+# - licketyresplit (from LicketyRESPLIT/)
+#
+# To install these, run:
+#   pip install -e ./gosdt-guesses
+#   pip install -e ./SPLIT-ICML/split
+#   pip install -e ./SPLIT-ICML/resplit
+#   pip install -e ./LicketyRESPLIT

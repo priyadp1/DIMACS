@@ -79,10 +79,15 @@ try:
     _tree_size_resplit = {"n_leaves": _n_leaves, "n_nodes": _n_nodes, "n_trees_in_set": len(model)}
 except Exception as _e:
     _tree_size_resplit = {"error": str(_e)}
-with open(results_dir / "resplit_tree_size.json", "w") as f:
+
+# Create subdirectory for this parameter combination
+resplit_param_dir = results_dir / f"{depth_budget}_{regularization}_{rashomon_bound_multiplier}"
+os.makedirs(resplit_param_dir, exist_ok=True)
+
+with open(resplit_param_dir / "resplit_tree_size.json", "w") as f:
     _json.dump(_tree_size_resplit, f)
 
-with open(results_dir / f"{depth_budget}_{regularization}_{rashomon_bound_multiplier}" / "resplit_results.txt", "w") as f:
+with open(resplit_param_dir / "resplit_results.txt", "w") as f:
     f.write(f"\nAccuracy: {accuracy_score(y_test, y_pred)}")
     f.write(f"\nConfusion Matrix:\n{confusion_matrix(y_test, y_pred)}")
     f.write(f"\nClassification Report:\n{classification_report(y_test, y_pred)}")
@@ -130,10 +135,15 @@ try:
     _tree_size_tf = {"n_leaves": _n_leaves_tf, "n_nodes": _n_nodes_tf, "n_trees_in_set": model.get_tree_count()}
 except Exception as _e:
     _tree_size_tf = {"error": str(_e)}
-with open(results_dir / f"{depth_budget_treefarms}_{reg_treefarms}_{rashomon_mult_treefarms}" / "treefarms_tree_size.json", "w") as f:
+
+# Create subdirectory for this parameter combination
+treefarms_param_dir = results_dir / f"{depth_budget_treefarms}_{reg_treefarms}_{rashomon_mult_treefarms}"
+os.makedirs(treefarms_param_dir, exist_ok=True)
+
+with open(treefarms_param_dir / "treefarms_tree_size.json", "w") as f:
     _json.dump(_tree_size_tf, f)
 
-with open(results_dir / f"{depth_budget_treefarms}_{reg_treefarms}_{rashomon_mult_treefarms}" / "treefarms_results.txt", "w") as f:
+with open(treefarms_param_dir / "treefarms_results.txt", "w") as f:
     f.write(f"\nAccuracy: {accuracy_score(y_test, y_pred)}")
     f.write(f"\nConfusion Matrix:\n{confusion_matrix(y_test, y_pred)}")
     f.write(f"\nClassification Report:\n{classification_report(y_test, y_pred)}")

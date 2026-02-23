@@ -90,10 +90,15 @@ try:
     _tree_size_lr = {"n_leaves": _n_leaves_lr, "n_nodes": _n_nodes_lr, "n_trees_in_set": model.count_trees()}
 except Exception as _e:
     _tree_size_lr = {"error": str(_e)}
-with open(results_dir / f"{depth_budget}_{lambda_reg}_{rashomon_mult}" / "licketyresplit_tree_size.json", "w") as f:
+
+# Create subdirectory for this parameter combination
+param_dir = results_dir / f"{depth_budget}_{lambda_reg}_{rashomon_mult}"
+os.makedirs(param_dir, exist_ok=True)
+
+with open(param_dir / "licketyresplit_tree_size.json", "w") as f:
     _json.dump(_tree_size_lr, f)
 
-with open(results_dir / f"{depth_budget}_{lambda_reg}_{rashomon_mult}" / "licketyresplit_results.txt", "w") as f:
+with open(param_dir / "licketyresplit_results.txt", "w") as f:
     f.write(f"\nAccuracy: {accuracy_score(y_test, test_preds)}")
     f.write(f"\nConfusion Matrix:\n{confusion_matrix(y_test, test_preds)}")
     f.write(f"\nClassification Report:\n{classification_report(y_test, test_preds)}")

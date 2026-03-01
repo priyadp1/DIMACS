@@ -13,10 +13,10 @@ Classification Report:
    macro avg       0.97      0.95      0.96       114
 weighted avg       0.97      0.96      0.96       114
 
-XGBoost completed in 0.04 seconds
+XGBoost completed in 0.03 seconds
 Top 3 Features:
-            Feature  Importance
-    perimeter_worst    0.353628
-concave points_mean    0.235708
-       radius_worst    0.118287
+             Feature  Importance
+     perimeter_worst    0.313670
+ concave points_mean    0.227705
+concave points_worst    0.115025
 Tree Size: 25 trees, 179 total leaves, 7.2 avg leaves/tree

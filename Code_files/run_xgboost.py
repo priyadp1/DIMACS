@@ -46,6 +46,10 @@ print("Y dist:\n" , Y.value_counts())
 X_train, X_test, y_train, y_test = train_test_split(
     X,Y,test_size=0.2, random_state=42, stratify=Y
 )
+
+# XGBoost disallows [ ] < in feature names — replace with safe characters
+X_train.columns = X_train.columns.str.replace('[', '{', regex=False).str.replace(']', '}', regex=False).str.replace('<', 'lt', regex=False)
+X_test.columns  = X_test.columns.str.replace('[', '{', regex=False).str.replace(']', '}', regex=False).str.replace('<', 'lt', regex=False)
 print("\n Training XGBoost")
 
 xgb = XGBClassifier(

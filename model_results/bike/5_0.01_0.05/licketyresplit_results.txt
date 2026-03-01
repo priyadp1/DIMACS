@@ -1,0 +1,18 @@
+
+Accuracy: 0.6067318757192175
+Ensemble Accuracy: 0.6067318757192175
+Confusion Matrix:
+[[1093  649]
+ [ 718 1016]]
+Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.60      0.63      0.62      1742
+           1       0.61      0.59      0.60      1734
+
+    accuracy                           0.61      3476
+   macro avg       0.61      0.61      0.61      3476
+weighted avg       0.61      0.61      0.61      3476
+
+LicketyRESPLIT completed in 0.03 seconds with 2184 trees
+Tree Size (tree 0): 3 leaves, 5 total nodes

@@ -97,7 +97,17 @@ os.makedirs(param_dir, exist_ok=True)
 
 with open(param_dir / "licketyresplit_tree_size.json", "w") as f:
     _json.dump(_tree_size_lr, f)
+with open(results_dir / "licketyresplit_tree_size.json", "w") as f:
+    _json.dump(_tree_size_lr, f)
 
+with open(results_dir / "licketyresplit_results.txt", "w") as f:
+    f.write(f"\nAccuracy: {accuracy_score(y_test, test_preds)}")
+    f.write(f"\nConfusion Matrix:\n{confusion_matrix(y_test, test_preds)}")
+    f.write(f"\nClassification Report:\n{classification_report(y_test, test_preds)}")
+    f.write(f"\nEnsemble Accuracy: {ensemble_acc}")
+    f.write(f"\nLicketyRESPLIT completed in {duration:.2f} seconds with {model.count_trees()} trees")
+    if "error" not in _tree_size_lr:
+        f.write(f"\nTree Size (tree 0): {_tree_size_lr['n_leaves']} leaves, {_tree_size_lr['n_nodes']} total nodes")
 with open(param_dir / "licketyresplit_results.txt", "w") as f:
     f.write(f"\nAccuracy: {accuracy_score(y_test, test_preds)}")
     f.write(f"\nConfusion Matrix:\n{confusion_matrix(y_test, test_preds)}")

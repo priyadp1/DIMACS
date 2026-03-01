@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Run parameter sweep experiments for LicketyRESPLIT, RESPLIT, and TREEFARMS.
+Run parameter sweep experiments for LicketyRESPLIT and TREEFARMS.
 Results are saved to: model_results/<dataset_name>/<depth>_<reg>_<rashomon>/
 """
 
@@ -16,9 +16,7 @@ from sklearn.metrics import accuracy_score, classification_report, confusion_mat
 
 # Import models
 from licketyresplit import LicketyRESPLIT
-from resplit import RESPLIT
 from resplit.model.treefarms import TREEFARMS
-from split._tree import Leaf as SplitLeaf
 
 # ============================
 # CONFIGURATION - EDIT THIS SECTION
@@ -47,15 +45,11 @@ DEPTH_BUDGETS = [3, 5]
 LAMBDA_REGS = [0.01, 0.05]
 RASHOMON_MULTS = [0.01, 0.05]
 
-# For RESPLIT, also define cart_lookahead_depth (can loop over this too if desired)
-CART_LOOKAHEAD_DEPTHS = [1, 3]
-
 # ============================
 # HELPER FUNCTIONS
 # ============================
 
 def count_tree_nodes(node):
-    """Count (total_nodes, n_leaves) for split/gosdt Node/Leaf tree."""
     if hasattr(node, 'left_child'):
         l_n, l_l = count_tree_nodes(node.left_child)
         r_n, r_l = count_tree_nodes(node.right_child)
@@ -63,7 +57,6 @@ def count_tree_nodes(node):
     return 1, 1
 
 def count_dict_tree(source):
-    """Count (total_nodes, n_leaves) for TreeClassifier dict tree."""
     if "prediction" in source:
         return 1, 1
     l_n, l_l = count_dict_tree(source["true"])
@@ -155,59 +148,6 @@ for depth, reg, rash in product(DEPTH_BUDGETS, LAMBDA_REGS, RASHOMON_MULTS):
             f.write(f"\nTree Size (tree 0): {tree_size['n_leaves']} leaves, {tree_size['n_nodes']} total nodes")
 
     print(f"  Accuracy: {acc:.4f}, Ensemble: {ensemble_acc:.4f}, Rashomon size: {model.count_trees()}")
-
-# ============================
-# RESPLIT SWEEP
-# ============================
-
-print("\n" + "=" * 60)
-print("Running RESPLIT parameter sweep...")
-print("=" * 60)
-
-for depth, reg, rash, lookahead in product(DEPTH_BUDGETS, LAMBDA_REGS, RASHOMON_MULTS, CART_LOOKAHEAD_DEPTHS):
-    print(f"\nRESPLIT: depth={depth}, reg={reg}, rashomon={rash}, lookahead={lookahead}")
-
-    # Create param directory
-    param_dir = results_dir / f"{depth}_{reg}_{rash}_{lookahead}"
-    os.makedirs(param_dir, exist_ok=True)
-
-    # Train model
-    config = {
-        "regularization": reg,
-        "rashomon_bound_multiplier": rash,
-        "depth_budget": depth,
-        "cart_lookahead_depth": lookahead,
-        "verbose": False
-    }
-    model = RESPLIT(config, fill_tree='treefarms')
-    start = time.perf_counter()
-    model.fit(X_train, y_train)
-    duration = time.perf_counter() - start
-
-    # Evaluate
-    y_pred = model.predict(X_test, idx=0)
-    acc = accuracy_score(y_test, y_pred)
-
-    # Tree size
-    try:
-        n_nodes, n_leaves = count_tree_nodes(model[0])
-        tree_size = {"n_leaves": n_leaves, "n_nodes": n_nodes, "n_trees_in_set": len(model)}
-    except Exception as e:
-        tree_size = {"error": str(e)}
-
-    # Save results
-    with open(param_dir / "resplit_tree_size.json", "w") as f:
-        json.dump(tree_size, f)
-
-    with open(param_dir / "resplit_results.txt", "w") as f:
-        f.write(f"\nAccuracy: {acc}")
-        f.write(f"\nConfusion Matrix:\n{confusion_matrix(y_test, y_pred)}")
-        f.write(f"\nClassification Report:\n{classification_report(y_test, y_pred)}")
-        f.write(f"\nRESPLIT completed in {duration:.2f} seconds with {len(model)} trees")
-        if "error" not in tree_size:
-            f.write(f"\nTree Size (tree 0): {tree_size['n_leaves']} leaves, {tree_size['n_nodes']} total nodes")
-
-    print(f"  Accuracy: {acc:.4f}, Rashomon size: {len(model)}")
 
 # ============================
 # TREEFARMS SWEEP

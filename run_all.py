@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 """
 Run all models on a single dataset.
 Edit only the DATASET CONFIGURATION section below to switch datasets.
@@ -44,11 +43,10 @@ with open(config_file, "w") as f:
     json.dump(config, f)
 
 SCRIPTS = [
-    ("XGBoost",        BASEDIR / "Code_files/run_xgboost.py"),
-    ("SPLIT",          BASEDIR / "SPLIT-ICML/split/src/split/run_split.py"),
-    ("GOSDT",          BASEDIR / "gosdt-guesses/examples/run_gosdt.py"),
-    ("RESPLIT",        BASEDIR / "SPLIT-ICML/resplit/example/run_resplit.py"),
-    ("LicketyRESPLIT", BASEDIR / "LicketyRESPLIT/examples/run_licketyRESPLIT.py"),
+    ("XGBoost",           BASEDIR / "Code_files/run_xgboost.py"),
+    ("Threshold Guessing", BASEDIR / "gosdt-guesses/examples/run_gosdt.py"),
+    ("LicketyRESPLIT",    BASEDIR / "LicketyRESPLIT/examples/run_licketyRESPLIT.py"),
+    ("TREEFARMS",         BASEDIR / "Code_files/run_treefarms.py"),
 ]
 
 try:
@@ -67,12 +65,10 @@ print(f"All results saved to: {results_dir}")
 
 # ── Tree Size Summary ──────────────────────────────────────────
 size_files = [
-    ("XGBoost",         results_dir / "xgboost_tree_size.json"),
-    ("SPLIT",           results_dir / "split_tree_size.json"),
-    ("GOSDT",           results_dir / "gosdt_tree_size.json"),
-    ("RESPLIT",         results_dir / "resplit_tree_size.json"),
-    ("TREEFARMS",       results_dir / "treefarms_tree_size.json"),
-    ("LicketyRESPLIT",  results_dir / "licketyresplit_tree_size.json"),
+    ("XGBoost",           results_dir / "xgboost_tree_size.json"),
+    ("Threshold Guessing", results_dir / "gosdt_tree_size.json"),
+    ("LicketyRESPLIT",    results_dir / "licketyresplit_tree_size.json"),
+    ("TREEFARMS",         results_dir / "treefarms_tree_size.json"),
 ]
 
 print(f"\n{'='*60}")

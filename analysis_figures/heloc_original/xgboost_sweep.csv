@@ -1,0 +1,5 @@
+model,max_depth,n_estimators,accuracy,macro_f1,n_trees,total_leaves,total_nodes,avg_leaves_per_tree,duration
+XGBoost,5,50,0.7265774378585086,0.73,50,1419,2788,28.38,0.1
+XGBoost,3,50,0.7241873804971319,0.72,50,399,748,7.98,0.06
+XGBoost,3,25,0.722753346080306,0.72,25,200,375,8.0,0.04
+XGBoost,5,25,0.722753346080306,0.72,25,785,1545,31.4,0.05

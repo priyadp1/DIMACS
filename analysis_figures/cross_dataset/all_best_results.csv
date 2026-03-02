@@ -1,0 +1,13 @@
+dataset,model,accuracy,macro_f1,n_leaves,params
+bike,LicketyRESPLIT,0.6067318757192175,0.61,3,"d=3, λ=0.01, ρ=0.01"
+bike,Threshold Guessing,0.8512658227848101,0.85,5,"d=3, reg=0.001"
+bike,XGBoost,0.9283659378596087,0.93,1293,"depth=5, n=50"
+breast_cancer_data,LicketyRESPLIT,0.6491228070175439,0.44,2,"d=3, λ=0.01, ρ=0.01"
+breast_cancer_data,Threshold Guessing,0.9473684210526315,0.94,6,"d=3, reg=0.001"
+breast_cancer_data,XGBoost,0.9736842105263158,0.97,447,"depth=5, n=50"
+heloc_original,LicketyRESPLIT,0.6615678776290631,0.65,3,"d=3, λ=0.01, ρ=0.01"
+heloc_original,Threshold Guessing,0.7170172084130019,0.72,8,"d=5, reg=0.001"
+heloc_original,XGBoost,0.7265774378585086,0.73,1419,"depth=5, n=50"
+spambase,LicketyRESPLIT,0.7882736156351792,0.77,5,"d=5, λ=0.01, ρ=0.01"
+spambase,Threshold Guessing,0.9022801302931596,0.9,13,"d=5, reg=0.001"
+spambase,XGBoost,0.9435396308360477,0.94,942,"depth=5, n=50"

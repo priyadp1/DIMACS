@@ -1,0 +1,4 @@
+model,best_accuracy,params
+LicketyRESPLIT,0.6615678776290631,"d=3, λ=0.01, ρ=0.01"
+Threshold Guessing,0.7170172084130019,"d=5, reg=0.001"
+XGBoost,0.7265774378585086,"depth=5, n=50"

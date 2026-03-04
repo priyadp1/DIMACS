@@ -1,0 +1,5 @@
+{
+    "train_path": "/Users/prishapriyadashini/Downloads/DIMACS/model_results/leukemia_data/fold_4/train.csv",
+    "test_path": "/Users/prishapriyadashini/Downloads/DIMACS/model_results/leukemia_data/fold_4/test.csv",
+    "results_dir": "/Users/prishapriyadashini/Downloads/DIMACS/model_results/leukemia_data/fold_4"
+}

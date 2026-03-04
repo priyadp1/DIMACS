@@ -1,22 +1,65 @@
-#!/usr/bin/env python3
-"""
-Run all models on every dataset in datasets/Mine/.
-Results are saved to: model_results/<dataset_name>/
-
-Note: each model runs in its own subprocess to avoid C++ library conflicts
-between gosdt, split, and resplit (pybind11 type registration clashes).
-"""
-
 import os
 import sys
 import json
 import subprocess
 from pathlib import Path
 
-BASEDIR = Path(__file__).resolve().parent
+BASEDIR = Path(__file__).resolve().parent.parent  # project root (DIMACS/)
+CODEDIR = Path(__file__).resolve().parent         # Code_files/
 
 # =============================================================================
-# DATASETS — add / remove entries here to control which datasets are run
+# MODEL SCRIPTS
+# =============================================================================
+
+SCRIPTS = [
+    ("XGBoost",            CODEDIR / "run_xgboost.py"),
+    ("Threshold Guessing", CODEDIR / "run_gosdt.py"),
+    ("LicketyRESPLIT",     CODEDIR / "run_licketyRESPLIT.py"),
+]
+
+CONFIG_FILE = CODEDIR / "_run_config.json"
+
+
+# =============================================================================
+# CV MODE (if config path is passed as argument)
+# =============================================================================
+
+if len(sys.argv) > 1:
+    config_path = Path(sys.argv[1])
+    with open(config_path) as f:
+        config = json.load(f)
+
+    results_dir = Path(config["results_dir"])
+    os.makedirs(results_dir, exist_ok=True)
+
+    print(f"\n{'='*60}")
+    print("CROSS-VALIDATION MODE")
+    print(f"{'='*60}")
+    print(f"Train: {config['train_path']}")
+    print(f"Test:  {config['test_path']}")
+    print(f"Results: {results_dir}")
+
+    try:
+        # Write temp config file that model scripts expect
+        with open(CONFIG_FILE, "w") as f:
+            json.dump(config, f)
+
+        for name, script in SCRIPTS:
+            print(f"\n{'='*60}\nRunning {name}...")
+            result = subprocess.run([sys.executable, str(script)])
+            if result.returncode != 0:
+                print(f"[WARNING] {name} exited with code {result.returncode}")
+            else:
+                print(f"{name} done.")
+    finally:
+        CONFIG_FILE.unlink(missing_ok=True)
+
+    print(f"\nAll fold results saved to: {results_dir}")
+    sys.exit(0)
+
+
+# =============================================================================
+# NORMAL DATASET MODE
 # =============================================================================
 
 DATASETS = [
@@ -46,17 +89,6 @@ DATASETS = [
     },
 ]
 
-# =============================================================================
-
-SCRIPTS = [
-    ("XGBoost",            BASEDIR / "Code_files/run_xgboost.py"),
-    ("Threshold Guessing", BASEDIR / "gosdt-guesses/examples/run_gosdt.py"),
-    ("LicketyRESPLIT",     BASEDIR / "LicketyRESPLIT/examples/run_licketyRESPLIT.py"),
-    # ("TREEFARMS",          BASEDIR / "Code_files/run_treefarms.py"),
-]
-
-config_file = BASEDIR / "_run_config.json"
-
 for dataset in DATASETS:
     dataset_name = dataset["path"].stem
     results_dir  = BASEDIR / "model_results" / dataset_name
@@ -75,7 +107,7 @@ for dataset in DATASETS:
     print(f"{'='*60}")
 
     try:
-        with open(config_file, "w") as f:
+        with open(CONFIG_FILE, "w") as f:
             json.dump(config, f)
 
         for name, script in SCRIPTS:
@@ -86,37 +118,6 @@ for dataset in DATASETS:
             else:
                 print(f"{name} done.")
     finally:
-        config_file.unlink(missing_ok=True)
+        CONFIG_FILE.unlink(missing_ok=True)
 
-    print(f"\n{'='*60}")
-    print(f"All results saved to: {results_dir}")
-
-    # ── Tree Size Summary ──────────────────────────────────────────
-    size_files = [
-        ("XGBoost",            results_dir / "xgboost_tree_size.json"),
-        ("Threshold Guessing", results_dir / "gosdt_tree_size.json"),
-        ("LicketyRESPLIT",     results_dir / "licketyresplit_tree_size.json"),
-        # ("TREEFARMS",          results_dir / "treefarms_tree_size.json"),
-    ]
-
-    print(f"\n{'='*60}")
-    print(f"Tree Size Summary — {dataset_name}")
-    print(f"{'='*60}")
-    print(f"{'Model':<20} {'Leaves':>7} {'Nodes':>7}  Notes")
-    print("-" * 60)
-    for name, path in size_files:
-        if not path.exists():
-            print(f"{name:<20} {'N/A':>7} {'N/A':>7}")
-            continue
-        with open(path) as _f:
-            _sz = json.load(_f)
-        if "error" in _sz:
-            print(f"{name:<20}  ERROR: {_sz['error']}")
-        elif "n_trees" in _sz:           # XGBoost ensemble
-            notes = f"({_sz['n_trees']} trees, {_sz['avg_leaves_per_tree']:.1f} leaves/tree avg)"
-            print(f"{name:<20} {_sz['total_leaves']:>7} {_sz['total_nodes']:>7}  {notes}")
-        elif "n_trees_in_set" in _sz:    # Rashomon-set model
-            notes = f"(Rashomon set: {_sz['n_trees_in_set']} trees)"
-            print(f"{name:<20} {_sz['n_leaves']:>7} {_sz['n_nodes']:>7}  {notes}")
-        else:                            # single-tree model
-            print(f"{name:<20} {_sz['n_leaves']:>7} {_sz['n_nodes']:>7}")
+    print(f"\nAll results saved to: {results_dir}")

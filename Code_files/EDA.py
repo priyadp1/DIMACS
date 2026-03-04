@@ -5,7 +5,7 @@ while current.name != "DIMACS":
     current = current.parent
 
 BASEDIR = current
-DATAPATH = BASEDIR / "datasets" / "Given" / "compas.csv"
+DATAPATH = BASEDIR / "datasets" / "Mine" / "leukemia_data.csv"
 df = pd.read_csv(DATAPATH)
 print("\nInformation: ")
 df.info()
@@ -15,8 +15,5 @@ print("\n Number of Null Values: ")
 print(df.isna().sum())
 print("\nShape: ")
 print(df.shape)
-print("\nValue Counts")
-for i in df.columns:
-    print(f"{i}: ")
-    print(df[i].value_counts())
 print(df.columns.tolist())
+print(df["label"].value_counts())

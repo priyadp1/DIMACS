@@ -7,6 +7,7 @@ from pathlib import Path
 from licketyresplit import LicketyRESPLIT
 from sklearn.metrics import accuracy_score, classification_report, confusion_matrix
 from sklearn.model_selection import train_test_split
+from gosdt import ThresholdGuessBinarizer
 
 current = Path(__file__).resolve()
 while current.name != "DIMACS":
@@ -29,22 +30,22 @@ DATASETS = {
         "drop_cols": ["instant", "cnt_binary"],
         "label_map": None,
     },
-    "compas": {
-        "path": BASEDIR / "datasets" / "Mine" / "compas.csv",
-        "target_col": "two_year_recid",
-        "drop_cols": ["two_year_recid"],
-        "label_map": None,
-    },
-    "heloc": {
-        "path": BASEDIR / "datasets" / "Mine" / "heloc_original.csv",
-        "target_col": "RiskPerformance",
-        "drop_cols": ["RiskPerformance"],
-        "label_map": None,
-    },
+     #"compas": {
+        #"path": BASEDIR / "datasets" / "Mine" / "compas.csv",
+       #"target_col": "two_year_recid",
+        #"drop_cols": ["two_year_recid"],
+         #"label_map": None,
+    # },
+    #"heloc": {
+        #"path": BASEDIR / "datasets" / "Mine" / "heloc_original.csv",
+        #"target_col": "RiskPerformance",
+        #"drop_cols": ["RiskPerformance"],
+       #"label_map": None,
+   # },
 }
 
-depth_budget = 5
-lambda_reg = 0.001
+depth_budget = 3
+lambda_reg = 0.003
 rashomon_mult = 0.05
 
 for dataset_name, cfg in DATASETS.items():
@@ -64,12 +65,19 @@ for dataset_name, cfg in DATASETS.items():
     X_train, X_test, y_train, y_test = train_test_split(
         X, Y, test_size=0.2, random_state=42, stratify=Y
     )
+    # Step 1: Guess Thresholds
+    enc = ThresholdGuessBinarizer(n_estimators=50, max_depth=2, random_state=42)
+    enc.set_output(transform="pandas")
+    X_train_guessed = enc.fit_transform(X_train, y_train)
+    X_test_guessed = enc.transform(X_test)
+    print(f"After guessing, X train shape:{X_train_guessed.shape}, X test shape:{X_test_guessed.shape}")
+    print(f"train set column names == test set column names: {list(X_train_guessed.columns)==list(X_test_guessed.columns)}")
 
     model = LicketyRESPLIT()
 
     start = time.perf_counter()
     model.fit(
-        X_train,
+        X_train_guessed,
         y_train,
         lambda_reg=lambda_reg,
         depth_budget=depth_budget,
@@ -86,16 +94,22 @@ for dataset_name, cfg in DATASETS.items():
     print("Rashomon set size:", model.count_trees())
 
     tree_idx = 0
-    test_preds = model.get_predictions(tree_idx, X_test)
+    test_preds = model.get_predictions(tree_idx, X_test_guessed)
     print("Test Accuracy:", accuracy_score(y_test, test_preds))
     print(classification_report(y_test, test_preds))
 
-    all_preds_mat = model.get_all_predictions(X_test, stack=True)
-    majority_vote = (all_preds_mat.mean(axis=0) >= 0.5).astype(np.uint8)
+    n_samples = X_test_guessed.shape[0]
+    votes = np.zeros(n_samples, dtype=np.int32)
+    n_trees = model.count_trees()
+    for tree_idx in range(n_trees):
+        preds = model.get_predictions(tree_idx, X_test_guessed)
+        votes += preds
+    majority_vote = (votes >= (n_trees / 2)).astype(int)
     ensemble_acc = accuracy_score(y_test, majority_vote)
     print("Ensemble Accuracy:", ensemble_acc)
 
     try:
+        tree_idx = 0
         _paths, _preds = model.get_tree_paths(tree_idx)
         _n_leaves = len(_paths)
         _n_nodes = 2 * _n_leaves - 1
@@ -103,7 +117,7 @@ for dataset_name, cfg in DATASETS.items():
     except Exception as e:
         tree_size = {"error": str(e)}
 
-    out_dir = BASEDIR / "LicketyRESPLIT_EXP" / f"{depth_budget}_{lambda_reg}_{rashomon_mult}"
+    out_dir = BASEDIR / "LicketyRESPLIT_EXP_ThresholdBinarizer" / f"{depth_budget}_{lambda_reg}_{rashomon_mult}"
     os.makedirs(out_dir, exist_ok=True)
 
     with open(out_dir / f"{dataset_name}_tree_size.json", "w") as f:

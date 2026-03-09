@@ -11,7 +11,6 @@ while current.name != "DIMACS":
 BASEDIR = current
 
 EXP_DIR   = BASEDIR / "LicketyRESPLIT_EXP"
-BINAR_DIR = BASEDIR / "LicketyRESPLIT_EXP_ThresholdBinarizer"
 PLOTS_DIR = BASEDIR / "plots"
 PLOTS_DIR.mkdir(exist_ok=True)
 
@@ -32,8 +31,8 @@ def parse_tree_size_file(path):
     try:
         d = json.loads(path.read_text())
         return {
-            "n_leaves":      d.get("n_leaves"),
-            "n_nodes":       d.get("n_nodes"),
+            "n_leaves":       d.get("n_leaves"),
+            "n_nodes":        d.get("n_nodes"),
             "n_trees_in_set": d.get("n_trees_in_set"),
         }
     except Exception:
@@ -69,17 +68,8 @@ def load_folder(folder):
     return pd.DataFrame(rows)
 
 
-df_exp   = load_folder(EXP_DIR)
-df_binar = load_folder(BINAR_DIR)
-
-# Only keep (dataset, param_label) pairs present in both
-common_keys = set(zip(df_exp["dataset"], df_exp["param_label"])) & \
-              set(zip(df_binar["dataset"], df_binar["param_label"]))
-
-df_exp   = df_exp[df_exp.apply(lambda r: (r["dataset"], r["param_label"]) in common_keys, axis=1)].reset_index(drop=True)
-df_binar = df_binar[df_binar.apply(lambda r: (r["dataset"], r["param_label"]) in common_keys, axis=1)].reset_index(drop=True)
-
-datasets = sorted(df_exp["dataset"].unique())
+df = load_folder(EXP_DIR)
+datasets = sorted(df["dataset"].unique())
 
 METRICS = [
     ("accuracy",          "Test Accuracy"),
@@ -89,10 +79,8 @@ METRICS = [
     ("duration_sec",      "Training Time (s)"),
 ]
 
-COLORS = {"No Binarizer": "#4C72B0", "ThresholdBinarizer": "#DD8452"}
-
 for metric_col, metric_label in METRICS:
-    if metric_col not in df_exp.columns:
+    if metric_col not in df.columns:
         continue
 
     fig, axes = plt.subplots(1, len(datasets), figsize=(5 * len(datasets), 5), sharey=False)
@@ -100,28 +88,21 @@ for metric_col, metric_label in METRICS:
         axes = [axes]
 
     for ax, dataset in zip(axes, datasets):
-        sub_exp   = df_exp[df_exp["dataset"] == dataset].sort_values("param_label")
-        sub_binar = df_binar[df_binar["dataset"] == dataset].sort_values("param_label")
+        sub = df[df["dataset"] == dataset].sort_values("param_label")
+        x = range(len(sub))
+        labels = sub["param_label"].tolist()
 
-        x = range(len(sub_exp))
-        labels = sub_exp["param_label"].tolist()
-
-        ax.bar([i - 0.2 for i in x], sub_exp[metric_col],   width=0.4,
-               label="No Binarizer",      color=COLORS["No Binarizer"],      alpha=0.85)
-        ax.bar([i + 0.2 for i in x], sub_binar[metric_col], width=0.4,
-               label="ThresholdBinarizer", color=COLORS["ThresholdBinarizer"], alpha=0.85)
-
+        ax.bar(list(x), sub[metric_col], width=0.5, color="#4C72B0", alpha=0.85)
         ax.set_xticks(list(x))
         ax.set_xticklabels(labels, rotation=30, ha="right", fontsize=8)
         ax.set_title(dataset, fontsize=11, fontweight="bold")
         ax.set_ylabel(metric_label if ax == axes[0] else "")
         ax.yaxis.set_major_formatter(ticker.FormatStrFormatter("%.3g"))
-        ax.legend(fontsize=8)
         ax.grid(axis="y", linestyle="--", alpha=0.5)
 
-    fig.suptitle(f"{metric_label}: No Binarizer vs ThresholdBinarizer", fontsize=13, fontweight="bold")
+    fig.suptitle(f"{metric_label}: LicketyRESPLIT (No Binarizer)", fontsize=13, fontweight="bold")
     plt.tight_layout()
-    out_path = PLOTS_DIR / f"compare_{metric_col}.png"
+    out_path = PLOTS_DIR / f"noBin_{metric_col}.png"
     plt.savefig(out_path, dpi=150, bbox_inches="tight")
     plt.close()
     print(f"Saved: {out_path}")

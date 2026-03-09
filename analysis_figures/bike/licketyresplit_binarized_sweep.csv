@@ -1,0 +1,2 @@
+model,depth_budget,lambda_reg,rashomon_mult,accuracy,macro_f1,ensemble_accuracy,n_leaves,n_nodes,n_trees_in_set,duration
+LicketyRESPLIT (Threshold Guessing),,,,0.8547180667433832,0.85,0.8567318757192175,6,11,30755,0.05

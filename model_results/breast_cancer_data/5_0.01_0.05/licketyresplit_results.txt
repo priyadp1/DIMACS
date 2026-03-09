@@ -1,6 +1,5 @@
 
 Accuracy: 0.6491228070175439
-Ensemble Accuracy: 0.6491228070175439
 Confusion Matrix:
 [[72  0]
  [40  2]]
@@ -14,5 +13,6 @@ Classification Report:
    macro avg       0.82      0.52      0.44       114
 weighted avg       0.77      0.65      0.53       114
 
+Ensemble Accuracy: 0.6491228070175439
 LicketyRESPLIT completed in 0.00 seconds with 33 trees
 Tree Size (tree 0): 2 leaves, 3 total nodes

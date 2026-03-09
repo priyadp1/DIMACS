@@ -18,7 +18,10 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 from pathlib import Path
 
-BASEDIR       = Path(__file__).resolve().parent
+current = Path(__file__).resolve()
+while current.name != "DIMACS":
+    current = current.parent
+BASEDIR       = current
 MODEL_RESULTS = BASEDIR / "model_results"
 ANALYSIS_DIR  = BASEDIR / "analysis_figures"
 
@@ -99,6 +102,31 @@ def collect_licketyresplit(folder, depth, lambda_reg, rashomon):
         "duration":         parse_duration(txt),
     }
 
+def collect_licketyresplit_binarized(folder, depth, lambda_reg, rashomon):
+    txt = read_txt(folder / "licketyresplit_binarized_results.txt")
+    sz  = read_json(folder / "licketyresplit_binarized_tree_size.json")
+    if not txt and not sz:
+        return None
+    n_trees = parse_n_trees_text(txt)
+    n_leaves = sz.get("n_leaves")      if "error" not in sz else None
+    n_nodes  = sz.get("n_nodes")       if "error" not in sz else None
+    if n_trees is None:
+        n_trees = sz.get("n_trees_in_set") if "error" not in sz else None
+    return {
+        "model":             "LicketyRESPLIT (Threshold Guessing)",
+        "depth_budget":      depth,
+        "lambda_reg":        lambda_reg,
+        "rashomon_mult":     rashomon,
+        "accuracy":          parse_accuracy(txt),
+        "macro_f1":          parse_macro_f1(txt),
+        "ensemble_accuracy": parse_ensemble_acc(txt),
+        "n_leaves":          n_leaves,
+        "n_nodes":           n_nodes,
+        "n_trees_in_set":    n_trees,
+        "duration":          parse_duration(txt),
+    }
+
+
 def collect_gosdt(folder, depth, reg):
     txt = read_txt(folder / "gosdt_results.txt")
     sz  = read_json(folder / "gosdt_tree_size.json")
@@ -143,9 +171,11 @@ def depth_color_map(depths):
     return {d: colors[i] for i, d in enumerate(sorted(depths))}
 
 MODEL_COLORS = {
-    "LicketyRESPLIT":    "#2196F3",
-    "Threshold Guessing": "#FF9800",
-    "XGBoost":            "#4CAF50",
+    "LicketyRESPLIT":                      "#2196F3",
+    "LicketyRESPLIT (Threshold Guessing)": "#9C27B0",
+    "Threshold Guessing":                  "#FF9800",
+    "GOSDT (Threshold Guessing)":          "#FF9800",
+    "XGBoost":                             "#4CAF50",
 }
 
 # ============================
@@ -167,9 +197,10 @@ for dataset_dir in sorted(MODEL_RESULTS.iterdir()):
     print(f"DATASET: {dataset_name}")
     print(f"{'='*60}")
 
-    lr_rows  = []
-    gsd_rows = []
-    xgb_rows = []
+    lr_rows      = []
+    lr_bin_rows  = []
+    gsd_rows     = []
+    xgb_rows     = []
 
     # ── Scan parameter-sweep subdirectories ───────────────────────
     for folder in sorted(dataset_dir.iterdir()):
@@ -181,6 +212,9 @@ for dataset_dir in sorted(MODEL_RESULTS.iterdir()):
             row = collect_licketyresplit(folder, int(m.group(1)), float(m.group(2)), float(m.group(3)))
             if row:
                 lr_rows.append(row)
+            row_bin = collect_licketyresplit_binarized(folder, int(m.group(1)), float(m.group(2)), float(m.group(3)))
+            if row_bin:
+                lr_bin_rows.append(row_bin)
             continue
 
         m = GSD_PATTERN.match(folder.name)
@@ -204,6 +238,11 @@ for dataset_dir in sorted(MODEL_RESULTS.iterdir()):
         if row:
             lr_rows.append(row)
 
+    if not lr_bin_rows:
+        row = collect_licketyresplit_binarized(dataset_dir, depth=None, lambda_reg=None, rashomon=None)
+        if row:
+            lr_bin_rows.append(row)
+
     if not gsd_rows:
         row = collect_gosdt(dataset_dir, depth=None, reg=None)
         if row:
@@ -214,12 +253,14 @@ for dataset_dir in sorted(MODEL_RESULTS.iterdir()):
         if row:
             xgb_rows.append(row)
 
-    df_lr  = pd.DataFrame(lr_rows)
-    df_gsd = pd.DataFrame(gsd_rows)
-    df_xgb = pd.DataFrame(xgb_rows)
+    df_lr      = pd.DataFrame(lr_rows)
+    df_lr_bin  = pd.DataFrame(lr_bin_rows)
+    df_gsd     = pd.DataFrame(gsd_rows)
+    df_xgb     = pd.DataFrame(xgb_rows)
 
     # ── Print summary tables ──────────────────────────────────────
     for label, df in [("LicketyRESPLIT", df_lr),
+                      ("LicketyRESPLIT (Threshold Guessing)", df_lr_bin),
                       ("Threshold Guessing", df_gsd),
                       ("XGBoost", df_xgb)]:
         if df.empty:
@@ -229,9 +270,10 @@ for dataset_dir in sorted(MODEL_RESULTS.iterdir()):
             print(df.to_string(index=False))
 
     # ── Save raw CSVs ─────────────────────────────────────────────
-    for fname, df in [("licketyresplit_sweep.csv", df_lr),
-                      ("gosdt_sweep.csv",          df_gsd),
-                      ("xgboost_sweep.csv",        df_xgb)]:
+    for fname, df in [("licketyresplit_sweep.csv",          df_lr),
+                      ("licketyresplit_binarized_sweep.csv", df_lr_bin),
+                      ("gosdt_sweep.csv",                    df_gsd),
+                      ("xgboost_sweep.csv",                  df_xgb)]:
         if not df.empty:
             df.sort_values("accuracy", ascending=False).to_csv(out_dir / fname, index=False)
             print(f"Saved: {out_dir / fname}")
@@ -413,9 +455,10 @@ for dataset_dir in sorted(MODEL_RESULTS.iterdir()):
 
     best_rows = []
     for df, label, param_fn, leaves_col in [
-        (df_lr,  "LicketyRESPLIT",    lambda r: f"d={r['depth_budget']}, λ={r['lambda_reg']}, ρ={r['rashomon_mult']}", "n_leaves"),
-        (df_gsd, "Threshold Guessing", lambda r: f"d={r['depth_budget']}, reg={r['regularization']}",                   "n_leaves"),
-        (df_xgb, "XGBoost",           lambda r: f"depth={r['max_depth']}, n={r['n_estimators']}",                       "total_leaves"),
+        (df_lr,     "LicketyRESPLIT",                    lambda r: f"d={r['depth_budget']}, λ={r['lambda_reg']}, ρ={r['rashomon_mult']}", "n_leaves"),
+        (df_lr_bin, "LicketyRESPLIT (Threshold Guessing)", lambda r: f"d={r['depth_budget']}, λ={r['lambda_reg']}, ρ={r['rashomon_mult']}", "n_leaves"),
+        (df_gsd,    "GOSDT (Threshold Guessing)",         lambda r: f"d={r['depth_budget']}, reg={r['regularization']}",                    "n_leaves"),
+        (df_xgb,    "XGBoost",                            lambda r: f"depth={r['max_depth']}, n={r['n_estimators']}",                       "total_leaves"),
     ]:
         if df.empty or df["accuracy"].isna().all():
             continue
@@ -432,14 +475,25 @@ for dataset_dir in sorted(MODEL_RESULTS.iterdir()):
             "best_accuracy": best["accuracy"],
             "params":        params,
         })
-        cross_dataset_rows.append({
-            "dataset":  dataset_name,
-            "model":    label,
-            "accuracy": best["accuracy"],
-            "macro_f1": macro_f1,
-            "n_leaves": n_leaves,
-            "params":   params,
-        })
+
+    # Cross-dataset summary: top-level results only, exclude compas and heloc_original
+    CROSS_DATASET_SKIP = {"compas", "heloc_original", "5_0.001_0.05", "5_0.01_0.05"}
+    if dataset_name not in CROSS_DATASET_SKIP:
+        for row, label, leaves_col in [
+            (collect_licketyresplit(dataset_dir, None, None, None),           "LicketyRESPLIT",                    "n_leaves"),
+            (collect_licketyresplit_binarized(dataset_dir, None, None, None), "LicketyRESPLIT (Threshold Guessing)", "n_leaves"),
+            (collect_gosdt(dataset_dir, None, None),                          "GOSDT (Threshold Guessing)",         "n_leaves"),
+            (collect_xgboost(dataset_dir, None, None),                        "XGBoost",                           "total_leaves"),
+        ]:
+            if row and row.get("accuracy") is not None:
+                cross_dataset_rows.append({
+                    "dataset":  dataset_name,
+                    "model":    label,
+                    "accuracy": row["accuracy"],
+                    "macro_f1": row.get("macro_f1"),
+                    "n_leaves": row.get(leaves_col),
+                    "params":   "default",
+                })
 
     if best_rows:
         df_best = pd.DataFrame(best_rows)
@@ -479,7 +533,7 @@ if cross_dataset_rows:
     df_cross.to_csv(cross_out / "all_best_results.csv", index=False)
     print(f"\n✓ Saved: {cross_out / 'all_best_results.csv'}")
 
-    MODEL_ORDER = ["XGBoost", "Threshold Guessing", "LicketyRESPLIT"]
+    MODEL_ORDER = ["XGBoost", "GOSDT (Threshold Guessing)", "LicketyRESPLIT", "LicketyRESPLIT (Threshold Guessing)"]
 
     for metric, cmap, label, fname in [
         ("accuracy", "viridis", "Best Test Accuracy",  "cross_dataset_accuracy_heatmap.png"),
@@ -494,17 +548,22 @@ if cross_dataset_rows:
         if pivot.isna().all().all():
             continue
 
-        plt.figure(figsize=(max(6, len(pivot.columns) * 1.8), max(4, len(pivot) * 1.2)))
+        n_cols = len(pivot.columns)
+        n_rows = len(pivot)
+        fig_w  = max(10, n_cols * 2.5)
+        fig_h  = max(5,  n_rows * 1.8)
+        plt.figure(figsize=(fig_w, fig_h))
         sns.heatmap(pivot, annot=True, fmt=".3f", cmap=cmap,
                     cbar_kws={"label": label}, linewidths=0.5,
-                    mask=pivot.isna())
+                    mask=pivot.isna(), annot_kws={"size": 12})
         plt.title(f"{label} — All Models × All Datasets",
-                  fontsize=13, fontweight="bold")
-        plt.xlabel("Dataset", fontsize=11)
-        plt.ylabel("Model", fontsize=11)
-        plt.xticks(rotation=30, ha="right")
-        plt.tight_layout()
-        plt.savefig(cross_out / fname, dpi=300)
+                  fontsize=15, fontweight="bold", pad=16)
+        plt.xlabel("Dataset", fontsize=13)
+        plt.ylabel("Model", fontsize=13)
+        plt.xticks(rotation=30, ha="right", fontsize=11)
+        plt.yticks(rotation=0, fontsize=11)
+        plt.tight_layout(pad=2.0)
+        plt.savefig(cross_out / fname, dpi=150, bbox_inches="tight")
         plt.close()
         print(f"Saved: {cross_out / fname}")
 

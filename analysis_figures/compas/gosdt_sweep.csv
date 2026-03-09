@@ -1,0 +1,2 @@
+model,depth_budget,regularization,accuracy,macro_f1,training_accuracy,n_leaves,n_nodes,duration
+Threshold Guessing,,,0.6714905933429812,0.67,0.683076923076923,7,13,0.28

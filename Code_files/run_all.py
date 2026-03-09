@@ -12,9 +12,10 @@ CODEDIR = Path(__file__).resolve().parent         # Code_files/
 # =============================================================================
 
 SCRIPTS = [
-    ("XGBoost",            CODEDIR / "run_xgboost.py"),
-    ("Threshold Guessing", CODEDIR / "run_gosdt.py"),
-    ("LicketyRESPLIT",     CODEDIR / "run_licketyRESPLIT.py"),
+    ("XGBoost",                        CODEDIR / "run_xgboost.py"),
+    ("Threshold Guessing",             CODEDIR / "run_gosdt.py"),
+    ("LicketyRESPLIT",                 CODEDIR / "run_licketyRESPLIT.py"),
+    ("LicketyRESPLIT + Binarizer",     CODEDIR / "run_licketyRESPLIT_given.py"),
 ]
 
 CONFIG_FILE = CODEDIR / "_run_config.json"
@@ -63,28 +64,34 @@ if len(sys.argv) > 1:
 # =============================================================================
 
 DATASETS = [
+    # {
+    #     "path":          BASEDIR / "datasets/Mine/bike.csv",
+    #     "target_column": "cnt_binary",
+    #     "drop_columns":  ["cnt_binary"],
+    #     "label_map":     None,
+    # },
+    # {
+    #     "path":          BASEDIR / "datasets/Mine/breast_cancer_data.csv",
+    #     "target_column": "diagnosis",
+    #     "drop_columns":  ["id", "diagnosis"],
+    #     "label_map":     {"M": 1, "B": 0},
+    # },
+    # {
+    #     "path":          BASEDIR / "datasets/Mine/heloc_original.csv",
+    #     "target_column": "RiskPerformance",
+    #     "drop_columns":  ["RiskPerformance"],
+    #     "label_map":     None,
+    # },
+    # {
+    #     "path":          BASEDIR / "datasets/Mine/spambase.csv",
+    #     "target_column": "class",
+    #     "drop_columns":  ["class"],
+    #     "label_map":     None,
+    # },
     {
-        "path":          BASEDIR / "datasets/Mine/bike.csv",
-        "target_column": "cnt_binary",
-        "drop_columns":  ["cnt_binary"],
-        "label_map":     None,
-    },
-    {
-        "path":          BASEDIR / "datasets/Mine/breast_cancer_data.csv",
-        "target_column": "diagnosis",
-        "drop_columns":  ["id", "diagnosis"],
-        "label_map":     {"M": 1, "B": 0},
-    },
-    {
-        "path":          BASEDIR / "datasets/Mine/heloc_original.csv",
-        "target_column": "RiskPerformance",
-        "drop_columns":  ["RiskPerformance"],
-        "label_map":     None,
-    },
-    {
-        "path":          BASEDIR / "datasets/Mine/spambase.csv",
-        "target_column": "class",
-        "drop_columns":  ["class"],
+        "path":          BASEDIR / "datasets/Mine/compas.csv",
+        "target_column": "two_year_recid",
+        "drop_columns":  ["two_year_recid"],
         "label_map":     None,
     },
 ]

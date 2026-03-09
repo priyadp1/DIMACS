@@ -5,7 +5,7 @@ while current.name != "DIMACS":
     current = current.parent
 
 BASEDIR = current
-DATAPATH = BASEDIR / "datasets" / "Mine" / "leukemia_data.csv"
+DATAPATH = BASEDIR / "datasets" / "Mine" / "bike.csv"
 df = pd.read_csv(DATAPATH)
 print("\nInformation: ")
 df.info()

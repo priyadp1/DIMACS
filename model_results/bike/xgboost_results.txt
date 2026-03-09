@@ -13,7 +13,7 @@ Classification Report:
    macro avg       0.89      0.88      0.88      3476
 weighted avg       0.89      0.88      0.88      3476
 
-XGBoost completed in 0.09 seconds
+XGBoost completed in 0.06 seconds
 Top 3 Features:
 Feature  Importance
    temp    0.307783

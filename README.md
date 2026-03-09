@@ -1,6 +1,6 @@
 # DIMACS
 
-Comparison of interpretable tree-based classifiers — **LicketyRESPLIT**, **Threshold Guessing (GOSDT)**, and **XGBoost** — across multiple tabular datasets.
+Comparison of interpretable tree-based classifiers — **SPLIT** , **RESPLIT**, **TREEFARMS**, **LicketyRESPLIT**, **Threshold Guessing (GOSDT)**, and **XGBoost** — across multiple tabular datasets.
 
 ---
 
@@ -12,10 +12,15 @@ Comparison of interpretable tree-based classifiers — **LicketyRESPLIT**, **Thr
 | Threshold Guessing | `run_gosdt.py` | GOSDT with ThresholdGuessBinarizer preprocessing |
 | LicketyRESPLIT | `run_licketyRESPLIT.py` | Rashomon-set decision tree on raw numeric features |
 | LicketyRESPLIT + Binarizer | `run_licketyRESPLIT_given.py` | LicketyRESPLIT after ThresholdGuessBinarizer |
+| SPLIT | `run_split.py` | Single optimal decision tree with internal binarization (`binarize=True`) |
+| RESPLIT | `run_resplit.py` | Rashomon-set decision tree using CART lookahead; fills the set via TREEFARMS |
+| TREEFARMS | `run_resplit.py` | Rashomon-set model from `resplit.model.treefarms` (run alongside RESPLIT) |
 
 **ThresholdGuessBinarizer** (from the `gosdt` package) fits a GradientBoosting model internally to find optimal split thresholds, then replaces each continuous feature with binary columns of the form `feature <= threshold`. Both GOSDT and the binarized LicketyRESPLIT variant receive this binary representation; the plain LicketyRESPLIT receives raw numeric features.
 
-**Rashomon set**: LicketyRESPLIT returns all decision trees whose training objective is within `rashomon_mult * 100`% of the optimal. Ensemble accuracy is the majority vote over this set.
+**SPLIT** uses `binarize=True`, so it handles binarization internally — raw numeric features are passed directly and the model computes its own thresholds during training. Parameters: `lookahead_depth_budget=2`, `full_depth_budget=5`, `reg=0.01`.
+
+**Rashomon set**: LicketyRESPLIT, RESPLIT, and TREEFARMS return all decision trees whose training objective is within `rashomon_mult * 100`% of the optimal. Ensemble accuracy is the majority vote over this set. RESPLIT uses CART lookahead (`cart_lookahead_depth=3`) with `fill_tree='treefarms'`. TREEFARMS runs independently with `depth_budget=3`, `reg=0.01`, `rashomon_bound_multiplier=0.01`.
 
 ---
 
@@ -35,7 +40,7 @@ All datasets are in `datasets/Mine/`. All feature columns are numeric (no catego
 
 ## Running Experiments
 
-### Single dataset (all four models)
+### Single dataset (all models)
 
 Edit the active dataset in `run_all.py` (uncomment the desired entry in `DATASETS`), then run:
 
@@ -104,7 +109,13 @@ model_results/
     licketyresplit_tree_size.json
     licketyresplit_binarized_results.txt
     licketyresplit_binarized_tree_size.json
-    <depth>_<lambda>_<rashomon>/      # LicketyRESPLIT sweep subfolders
+    split_results.txt
+    split_tree_size.json
+    <depth>_<lambda>_<rashomon>/      # LicketyRESPLIT / RESPLIT / TREEFARMS subfolders
+      resplit_results.txt
+      resplit_tree_size.json
+      treefarms_results.txt
+      treefarms_tree_size.json
     gosdt_<depth>_<reg>/
     xgboost_<depth>_<n_est>/
   leukemia_data/
@@ -128,6 +139,8 @@ analysis_figures/
 ## Dependencies
 
 - `licketyresplit`
+- `split`
+- `resplit` (provides `RESPLIT` and `resplit.model.treefarms.TREEFARMS`)
 - `gosdt` (provides `ThresholdGuessBinarizer` and `GOSDTClassifier`)
 - `xgboost`
 - `scikit-learn`

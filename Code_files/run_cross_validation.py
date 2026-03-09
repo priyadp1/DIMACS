@@ -18,7 +18,7 @@ if "label" not in df.columns:
     raise ValueError("Dataset must contain a 'label' column.")
 
 X = df.drop(columns=["label"])
-y = df["label"]
+y = df["label"].map({'ALL': 1, 'AML': 0})
 
 print("\nClass distribution:")
 print(y.value_counts())
@@ -61,9 +61,12 @@ for fold, (train_index, test_index) in enumerate(skf.split(X, y), start=1):
     test_df.to_csv(test_path, index=False)
 
     config = {
-        "train_path": str(train_path),
-        "test_path":  str(test_path),
-        "results_dir": str(fold_dir),
+        "train_path":    str(train_path),
+        "test_path":     str(test_path),
+        "results_dir":   str(fold_dir),
+        "target_column": "label",
+        "drop_columns":  ["label"],
+        "label_map":     None,
     }
 
     config_path = fold_dir / "config.json"

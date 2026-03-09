@@ -14,20 +14,41 @@ DATAPATH = BASEDIR/"datasets/Mine/breast_cancer_data.csv"
 results_dir = BASEDIR / "model_results"
 os.makedirs(results_dir, exist_ok=True)
 import json as _json
-_cfg_file = BASEDIR / "_run_config.json"
+_cfg_file = BASEDIR / "Code_files" / "_run_config.json"
 if _cfg_file.exists():
     with open(_cfg_file) as _f:
         _cfg = _json.load(_f)
-    DATAPATH    = Path(_cfg['dataset_path'])
     results_dir = Path(_cfg['results_dir'])
     os.makedirs(results_dir, exist_ok=True)
     _target_col = _cfg['target_column']
     _drop_cols  = _cfg['drop_columns']
     _label_map  = _cfg.get('label_map')
+    if 'train_path' in _cfg:
+        train_df = pd.read_csv(_cfg['train_path']).dropna(axis=1, how="all")
+        test_df  = pd.read_csv(_cfg['test_path']).dropna(axis=1, how="all")
+        if _label_map:
+            train_df[_target_col] = train_df[_target_col].map(_label_map)
+            test_df[_target_col]  = test_df[_target_col].map(_label_map)
+        X_train = train_df.drop(columns=_drop_cols)
+        y_train = train_df[_target_col]
+        X_test  = test_df.drop(columns=_drop_cols)
+        y_test  = test_df[_target_col]
+    else:
+        df = pd.read_csv(Path(_cfg['dataset_path'])).dropna(axis=1, how="all")
+        if _label_map:
+            df[_target_col] = df[_target_col].map(_label_map)
+        X = df.drop(columns=_drop_cols)
+        Y = df[_target_col]
+        X_train, X_test, y_train, y_test = train_test_split(X, Y, test_size=0.2, random_state=42, stratify=Y)
 else:
     _target_col = 'diagnosis'
     _drop_cols  = ['id', 'diagnosis']
     _label_map  = {'M': 1, 'B': 0}
+    df = pd.read_csv(DATAPATH).dropna(axis=1, how="all")
+    df[_target_col] = df[_target_col].map(_label_map)
+    X = df.drop(columns=_drop_cols)
+    Y = df[_target_col]
+    X_train, X_test, y_train, y_test = train_test_split(X, Y, test_size=0.2, random_state=42, stratify=Y)
 
 # Parameters
 GBDT_N_EST = 40
@@ -38,21 +59,6 @@ DEPTH_BUDGET = 6
 TIME_LIMIT = 60
 VERBOSE = True
 
-# Read the dataset
-df = pd.read_csv(DATAPATH)
-df = df.dropna(axis=1, how="all")
-print("Mapping diagnosis to binary...")
-if _label_map:
-    df[_target_col] = df[_target_col].map(_label_map)
-print("Preparing features and labels...")
-X = df.drop(columns=_drop_cols)
-Y = df[_target_col]
-print("X shape:" , X.shape)
-print("Y dist:\n" , Y.value_counts())
-h = X.columns
-
-# Train test split
-X_train, X_test, y_train, y_test = train_test_split(X, Y, test_size=0.2, random_state=42, stratify=Y)
 print("X train shape:{}, X test shape:{}".format(X_train.shape, X_test.shape))
 
 # Step 1: Guess Thresholds

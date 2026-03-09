@@ -1,5 +1,10 @@
 {
     "train_path": "/Users/prishapriyadashini/Downloads/DIMACS/model_results/leukemia_data/fold_5/train.csv",
     "test_path": "/Users/prishapriyadashini/Downloads/DIMACS/model_results/leukemia_data/fold_5/test.csv",
-    "results_dir": "/Users/prishapriyadashini/Downloads/DIMACS/model_results/leukemia_data/fold_5"
+    "results_dir": "/Users/prishapriyadashini/Downloads/DIMACS/model_results/leukemia_data/fold_5",
+    "target_column": "label",
+    "drop_columns": [
+        "label"
+    ],
+    "label_map": null
 }

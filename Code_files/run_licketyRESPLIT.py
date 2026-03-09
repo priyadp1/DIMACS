@@ -17,36 +17,50 @@ path = DATAPATH
 results_dir = BASEDIR / "model_results"
 os.makedirs(results_dir, exist_ok=True)
 import json as _json
-_cfg_file = BASEDIR / "_run_config.json"
+_cfg_file = BASEDIR / "Code_files" / "_run_config.json"
 if _cfg_file.exists():
     with open(_cfg_file) as _f:
         _cfg = _json.load(_f)
-    DATAPATH    = Path(_cfg['dataset_path'])
-    path        = DATAPATH
     results_dir = Path(_cfg['results_dir'])
     os.makedirs(results_dir, exist_ok=True)
     _target_col = _cfg['target_column']
     _drop_cols  = _cfg['drop_columns']
     _label_map  = _cfg.get('label_map')
+    if 'train_path' in _cfg:
+        # CV mode: use pre-split fold data
+        train_df = pd.read_csv(_cfg['train_path']).dropna(axis=1, how="all")
+        test_df  = pd.read_csv(_cfg['test_path']).dropna(axis=1, how="all")
+        if _label_map:
+            train_df[_target_col] = train_df[_target_col].map(_label_map)
+            test_df[_target_col]  = test_df[_target_col].map(_label_map)
+        X_train = train_df.drop(columns=_drop_cols).values
+        y_train = train_df[_target_col].values
+        X_test  = test_df.drop(columns=_drop_cols).values
+        y_test  = test_df[_target_col].values
+    else:
+        DATAPATH = Path(_cfg['dataset_path'])
+        path     = DATAPATH
+        df = pd.read_csv(path)
+        df = df.dropna(axis=1, how="all")
+        if _label_map:
+            df[_target_col] = df[_target_col].map(_label_map)
+        X = df.drop(columns=_drop_cols).values
+        Y = df[_target_col].values
+        X_train, X_test, y_train, y_test = train_test_split(
+            X, Y, test_size=0.2, random_state=42, stratify=Y
+        )
 else:
     _target_col = 'diagnosis'
     _drop_cols  = ['id', 'diagnosis']
     _label_map  = {'M': 1, 'B': 0}
-df = pd.read_csv(path)
-df = df.dropna(axis=1, how="all")
-if _label_map:
+    df = pd.read_csv(path)
+    df = df.dropna(axis=1, how="all")
     df[_target_col] = df[_target_col].map(_label_map)
-X = df.drop(columns=_drop_cols)
-Y = df[_target_col]
-
-
-X = X.values
-Y = Y.values
-
-# Train-test split
-X_train, X_test, y_train, y_test = train_test_split(
-    X, Y, test_size=0.2, random_state=42, stratify=Y
-)
+    X = df.drop(columns=_drop_cols).values
+    Y = df[_target_col].values
+    X_train, X_test, y_train, y_test = train_test_split(
+        X, Y, test_size=0.2, random_state=42, stratify=Y
+    )
 
 # Train model
 model = LicketyRESPLIT()

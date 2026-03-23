@@ -1,5 +1,4 @@
 Accuracy: 0.9473684210526315
-Training Accuracy: 0.978021978021978
 Confusion Matrix:
 [[72  0]
  [ 6 36]]
@@ -13,5 +12,10 @@ Classification Report:
    macro avg       0.96      0.93      0.94       114
 weighted avg       0.95      0.95      0.95       114
 
-GOSDT completed in 0.05 seconds
-Tree Size: 6 leaves, 11 total nodes
+XGBoost completed in 0.03 seconds
+Top 3 Features:
+                                    Feature  Importance
+     perimeter_worst lt= 112.79999923706055    0.614796
+concave points_mean lt= 0.05127999931573868    0.104444
+        radius_worst lt= 16.795000076293945    0.084151
+Tree Size: 25 trees, 183 total leaves, 7.3 avg leaves/tree

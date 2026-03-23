@@ -1,17 +1,17 @@
-Accuracy: 0.8968512486427795
-Training Accuracy: 0.9116847826086957
+Accuracy: 0.9142236699239956
+Training Accuracy: 0.9255434782608696
 Confusion Matrix:
-[[524  34]
- [ 61 302]]
+[[523  35]
+ [ 44 319]]
 Classification Report:
               precision    recall  f1-score   support
 
-           0       0.90      0.94      0.92       558
-           1       0.90      0.83      0.86       363
+           0       0.92      0.94      0.93       558
+           1       0.90      0.88      0.89       363
 
-    accuracy                           0.90       921
-   macro avg       0.90      0.89      0.89       921
-weighted avg       0.90      0.90      0.90       921
+    accuracy                           0.91       921
+   macro avg       0.91      0.91      0.91       921
+weighted avg       0.91      0.91      0.91       921
 
-GOSDT completed in 60.76 seconds
-Tree Size: 12 leaves, 23 total nodes
+GOSDT completed in 17.95 seconds
+Tree Size: 15 leaves, 29 total nodes

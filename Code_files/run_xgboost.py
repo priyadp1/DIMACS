@@ -11,7 +11,7 @@ while current.name != "DIMACS":
     current = current.parent
 
 BASEDIR = current
-DATAPATH = BASEDIR / "datasets" / "Mine" / "breast_cancer_data.csv"
+DATAPATH = BASEDIR / "datasets" / "Mine" / "spambase.csv"
 results_dir = BASEDIR / "model_results"
 os.makedirs(results_dir, exist_ok=True)
 import json as _json

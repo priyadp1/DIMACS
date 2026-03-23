@@ -13,5 +13,5 @@ Classification Report:
    macro avg       0.86      0.86      0.86      3476
 weighted avg       0.86      0.86      0.86      3476
 
-GOSDT completed in 14.72 seconds
+GOSDT completed in 5.77 seconds
 Tree Size: 11 leaves, 21 total nodes

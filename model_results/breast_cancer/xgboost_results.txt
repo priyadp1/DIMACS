@@ -12,7 +12,7 @@ Classification Report:
    macro avg       0.96      0.93      0.94       114
 weighted avg       0.95      0.95      0.95       114
 
-XGBoost completed in 0.04 seconds
+XGBoost completed in 0.05 seconds
 Top 3 Features:
                                     Feature  Importance
      perimeter_worst lt= 112.79999923706055    0.614796

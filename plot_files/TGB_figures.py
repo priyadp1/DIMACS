@@ -85,7 +85,7 @@ for dataset in DATASETS:
     files = {
         "GOSDT":              ("gosdt_results.txt",                    "gosdt_tree_size.json",                    parse_gosdt),
         "LicketyRESPLIT+TGB": ("licketyresplit_binarized_results.txt", "licketyresplit_binarized_tree_size.json", parse_licketyresplit_bin),
-        "XGBoost":            ("xgboost_results.txt",                  "xgboost_tree_size.json",                  parse_xgboost),
+        "XGBoost":            ("xgboost_binarized_results.txt",          "xgboost_tree_size_binarized.json",        parse_xgboost),
     }
 
     for model, (res_f, sz_f, parser) in files.items():
@@ -199,3 +199,78 @@ plt.close()
 print(f"Saved: {out}")
 
 print(f"\nAll TGB plots saved to: {PLOTS_DIR}")
+
+# ── XGBoost: with TGB vs without TGB ─────────────────────────────────────────
+
+XGB_COLORS = {"XGBoost (raw)": "#ff7f0e", "XGBoost+TGB": "#d62728"}
+xgb_offsets = np.array([-bar_w / 2, bar_w / 2])
+
+xgb_raw = {}
+for dataset in DATASETS:
+    res_path = RESULTS_DIR / dataset / "xgboost_results.txt"
+    sz_path  = RESULTS_DIR / dataset / "xgboost_tree_size.json"
+    if res_path.exists():
+        xgb_raw[dataset] = {**parse_xgboost(res_path), **(parse_tree_size(sz_path) if sz_path.exists() else {})}
+    else:
+        xgb_raw[dataset] = {}
+
+xgb_tgb = {ds: data[ds].get("XGBoost", {}) for ds in DATASETS}
+
+
+def xgb_bar_chart(ax, raw_vals, tgb_vals, ylabel):
+    ax.bar(x + xgb_offsets[0], raw_vals, width=bar_w,
+           label="XGBoost (raw)", color=XGB_COLORS["XGBoost (raw)"], alpha=0.85)
+    ax.bar(x + xgb_offsets[1], tgb_vals, width=bar_w,
+           label="XGBoost+TGB",  color=XGB_COLORS["XGBoost+TGB"],  alpha=0.85)
+    ax.set_xticks(x)
+    ax.set_xticklabels(DATASETS, rotation=20, ha="right", fontsize=9)
+    ax.set_ylabel(ylabel)
+    ax.yaxis.set_major_formatter(ticker.FormatStrFormatter("%.3g"))
+    ax.legend(fontsize=8)
+    ax.grid(axis="y", linestyle="--", alpha=0.5)
+
+
+# Figure 6: XGBoost accuracy — raw vs TGB
+fig, ax = plt.subplots(figsize=(8, 4))
+xgb_bar_chart(
+    ax,
+    [xgb_raw[ds].get("accuracy", float("nan")) for ds in DATASETS],
+    [xgb_tgb[ds].get("accuracy", float("nan")) for ds in DATASETS],
+    "Test Accuracy",
+)
+ax.set_title("XGBoost: Raw Features vs TGB Features — Test Accuracy", fontweight="bold")
+plt.tight_layout()
+out = PLOTS_DIR / "xgb_tgb_vs_raw_accuracy.png"
+plt.savefig(out, dpi=150, bbox_inches="tight")
+plt.close()
+print(f"Saved: {out}")
+
+# Figure 7: XGBoost training time — raw vs TGB
+fig, ax = plt.subplots(figsize=(8, 4))
+xgb_bar_chart(
+    ax,
+    [xgb_raw[ds].get("duration_sec", float("nan")) for ds in DATASETS],
+    [xgb_tgb[ds].get("duration_sec", float("nan")) for ds in DATASETS],
+    "Training Time (s)",
+)
+ax.set_title("XGBoost: Raw Features vs TGB Features — Training Time", fontweight="bold")
+plt.tight_layout()
+out = PLOTS_DIR / "xgb_tgb_vs_raw_duration.png"
+plt.savefig(out, dpi=150, bbox_inches="tight")
+plt.close()
+print(f"Saved: {out}")
+
+# Figure 8: XGBoost tree size (total leaves) — raw vs TGB
+fig, ax = plt.subplots(figsize=(8, 4))
+xgb_bar_chart(
+    ax,
+    [xgb_raw[ds].get("total_leaves", float("nan")) for ds in DATASETS],
+    [xgb_tgb[ds].get("total_leaves", float("nan")) for ds in DATASETS],
+    "Total Leaves",
+)
+ax.set_title("XGBoost: Raw Features vs TGB Features — Tree Size (Leaves)", fontweight="bold")
+plt.tight_layout()
+out = PLOTS_DIR / "xgb_tgb_vs_raw_tree_size.png"
+plt.savefig(out, dpi=150, bbox_inches="tight")
+plt.close()
+print(f"Saved: {out}")

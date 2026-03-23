@@ -12,7 +12,7 @@ Classification Report:
    macro avg       0.92      0.91      0.91       921
 weighted avg       0.92      0.92      0.91       921
 
-XGBoost completed in 0.08 seconds
+XGBoost completed in 0.05 seconds
 Top 3 Features:
                             Feature  Importance
 char_freq_$ lt= 0.04450000077486038    0.322510

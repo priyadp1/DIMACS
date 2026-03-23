@@ -13,5 +13,5 @@ Classification Report:
 weighted avg       0.84      0.84      0.84      3476
 
 Ensemble Accuracy: 0.8423475258918297
-LicketyRESPLIT completed in 0.03 seconds with 23293 trees
+LicketyRESPLIT completed in 0.02 seconds with 23293 trees
 Tree Size (tree 0): 6 leaves, 11 total nodes

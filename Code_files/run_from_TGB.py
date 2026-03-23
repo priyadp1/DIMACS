@@ -196,10 +196,10 @@ for dataset_name in DATASETS:
         "Importance": xgb.feature_importances_,
     }).sort_values("Importance", ascending=False))
 
-    with open(out_dir / "xgboost_tree_size.json", "w") as f:
+    with open(out_dir / "xgboost_tree_size_binarized.json", "w") as f:
         json.dump(xgb_tree_size, f)
 
-    with open(out_dir / "xgboost_results.txt", "w") as f:
+    with open(out_dir / "xgboost_binarized_results.txt", "w") as f:
         f.write(f"Accuracy: {accuracy_score(y_test, y_pred_xgb)}")
         f.write(f"\nConfusion Matrix:\n{confusion_matrix(y_test, y_pred_xgb)}")
         f.write(f"\nClassification Report:\n{classification_report(y_test, y_pred_xgb)}")

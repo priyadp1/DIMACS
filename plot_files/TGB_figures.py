@@ -14,7 +14,7 @@ RESULTS_DIR = BASEDIR / "model_results"
 PLOTS_DIR   = BASEDIR / "analysis_figures"
 PLOTS_DIR.mkdir(exist_ok=True)
 
-DATASETS = ["bike", "breast_cancer", "compas", "spambase", "diabetes"]
+DATASETS = ["bike", "breast_cancer", "compas", "spambase", "diabetes", "diabetes_smote"]
 
 MODELS = ["GOSDT", "LicketyRESPLIT+TGB", "XGBoost"]
 
@@ -283,13 +283,15 @@ path2 = TGB_DIR / "breast_cancer" / "gbdt_warm_label_results.txt"
 path3 = TGB_DIR / "compas" / "gbdt_warm_label_results.txt"
 path4 = TGB_DIR / "spambase" / "gbdt_warm_label_results.txt"
 path5 = TGB_DIR / "diabetes" / "gbdt_warm_label_results.txt"
+path6 = TGB_DIR / "diabetes_smote" / "gbdt_warm_label_results.txt"
 print(f"\nGradient Boosting warm-label ensemble accuracy on bike: {parse_gradient_boosting_acc(path1):.4f}")
 print(f"Gradient Boosting warm-label ensemble accuracy on breast_cancer: {parse_gradient_boosting_acc(path2):.4f}")
 print(f"Gradient Boosting warm-label ensemble accuracy on compas: {parse_gradient_boosting_acc(path3):.4f}")
 print(f"Gradient Boosting warm-label ensemble accuracy on spambase: {parse_gradient_boosting_acc(path4):.4f}")
 print(f"Gradient Boosting warm-label ensemble accuracy on diabetes: {parse_gradient_boosting_acc(path5):.4f}")
+print(f"Gradient Boosting warm-label ensemble accuracy on diabetes with SMOTE: {parse_gradient_boosting_acc(path6):.4f}")
 fig, ax = plt.subplots(figsize=(8, 4))
-ax.bar(x, [parse_gradient_boosting_acc(path) for path in [path1, path2, path3, path4, path5]], width=0.5, color="#ff7f0e", alpha=0.85)
+ax.bar(x, [parse_gradient_boosting_acc(path) for path in [path1, path2, path3, path4, path5, path6]], width=0.5, color="#ff7f0e", alpha=0.85)
 ax.set_xticks(x)
 ax.set_xticklabels(DATASETS, rotation=20, ha="right", fontsize=9)
 ax.set_ylabel("Warm-label Ensemble Test Accuracy")
@@ -304,7 +306,7 @@ print(f"Saved: {out}")
 
 # Figure 10: Separate bar chart per dataset — GOSDT, LicketyRESPLIT+TGB,
 # XGBoost+TGB, and GBDT warm-label ensemble accuracy side by side
-gbdt_paths = [path1, path2, path3, path4, path5]
+gbdt_paths = [path1, path2, path3, path4, path5, path6]
 fig10_models = ["GOSDT", "LicketyRESPLIT+TGB", "XGBoost", "GBDT Warm-label"]
 fig10_colors = {**COLORS, "GBDT Warm-label": "#ff7f0e"}
 

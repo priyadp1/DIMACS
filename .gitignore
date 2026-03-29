@@ -2,3 +2,4 @@
 **/.DS_Store
 .split-env
 __pycache__/
+datasets

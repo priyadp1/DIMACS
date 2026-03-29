@@ -4,6 +4,7 @@ import os
 from pathlib import Path
 from sklearn.ensemble import GradientBoostingClassifier
 from sklearn.model_selection import train_test_split
+from sklearn.metrics import accuracy_score
 
 current = Path(__file__).resolve()
 while current.name != "DIMACS":
@@ -92,6 +93,34 @@ for dataset_name, cfg in DATASETS.items():
     gbdt = GradientBoostingClassifier(n_estimators=GBDT_N_EST, max_depth=GBDT_MAX_DEPTH, random_state=42)
     gbdt.fit(X_train_guessed, y_train)
     warm_labels = gbdt.predict(X_train_guessed)
+    gbdt_acc = accuracy_score(y_test, gbdt.predict(X_test_guessed))
+    print(f"GBDT warm-label ensemble accuracy on test set: {gbdt_acc:.4f}")
+    out_dir = results_dir / dataset_name
+    os.makedirs(out_dir, exist_ok=True)
+    with open(out_dir / "gbdt_warm_label_results.txt", "w") as f:
+        f.write(f"GBDT warm-label ensemble accuracy on test set: {gbdt_acc:.4f}")
+
+    # Count how often each binary variable appears as a split node
+    # across a subsample of the GBDT trees
+    SUBSAMPLE_N = 10  # number of trees to sample
+    feature_names = list(X_train_guessed.columns)
+    from collections import Counter
+    split_counts = Counter()
+    sampled_trees = gbdt.estimators_[:SUBSAMPLE_N]  # first N trees (each is a 1-element array for binary classification)
+    for tree_arr in sampled_trees:
+        tree = tree_arr[0].tree_
+        for feat_idx in tree.feature:
+            if feat_idx >= 0:  # -2 marks leaf nodes
+                split_counts[feature_names[feat_idx]] += 1
+
+    binary_var_df = pd.DataFrame(
+        split_counts.most_common(),
+        columns=["binary_variable", "tree_count"]
+    )
+    binary_var_df["total_binary_variables"] = len(feature_names)
+    binary_var_df.to_csv(out_dir / "binary_variable_counts.csv", index=False)
+    print(f"Top 5 binary variables across {SUBSAMPLE_N} sampled trees:")
+    print(binary_var_df.head(5).to_string(index=False))
 
     # Save TGB outputs (per-dataset subdirectory)
     dataset_results_dir = results_dir / dataset_name

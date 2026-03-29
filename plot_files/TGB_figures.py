@@ -1,9 +1,3 @@
-"""
-Plots results from run_from_TGB.py experiments.
-Compares GOSDT, LicketyRESPLIT+TGB (binarized), and XGBoost
-across bike, breast_cancer, compas, and spambase datasets.
-Saves figures to analysis_figures/.
-"""
 import re
 import json
 from pathlib import Path
@@ -27,7 +21,7 @@ MODELS = ["GOSDT", "LicketyRESPLIT+TGB", "XGBoost"]
 COLORS = {
     "GOSDT":              "#2ca02c",
     "LicketyRESPLIT+TGB": "#4C72B0",
-    "XGBoost":            "#d62728",
+    "XGBoost":           "#d62728",
 }
 
 
@@ -72,6 +66,11 @@ def parse_tree_size(path):
         return json.loads(path.read_text())
     except Exception:
         return {}
+
+def parse_gradient_boosting_acc(path):
+    text = path.read_text()
+    acc = re.search(r"GBDT warm-label ensemble accuracy on test set:\s*([\d.]+)", text)
+    return float(acc.group(1)) if acc else None
 
 
 # ── Load all results ──────────────────────────────────────────────────────────
@@ -134,6 +133,7 @@ out = PLOTS_DIR / "tgb_accuracy.png"
 plt.savefig(out, dpi=150, bbox_inches="tight")
 plt.close()
 print(f"Saved: {out}")
+
 
 # ── Figure 2: Ensemble Accuracy (LicketyRESPLIT) vs Test Accuracy (others) ───
 
@@ -274,3 +274,58 @@ out = PLOTS_DIR / "xgb_tgb_vs_raw_tree_size.png"
 plt.savefig(out, dpi=150, bbox_inches="tight")
 plt.close()
 print(f"Saved: {out}")
+
+
+#Figure 9: Gradient Boosting warm-label ensemble test accuracy on each dataset
+TGB_DIR = BASEDIR / "TGB_Variables"
+path1 = TGB_DIR / "bike" / "gbdt_warm_label_results.txt"
+path2 = TGB_DIR / "breast_cancer" / "gbdt_warm_label_results.txt"
+path3 = TGB_DIR / "compas" / "gbdt_warm_label_results.txt"
+path4 = TGB_DIR / "spambase" / "gbdt_warm_label_results.txt"
+print(f"\nGradient Boosting warm-label ensemble accuracy on bike: {parse_gradient_boosting_acc(path1):.4f}")
+print(f"Gradient Boosting warm-label ensemble accuracy on breast_cancer: {parse_gradient_boosting_acc(path2):.4f}")
+print(f"Gradient Boosting warm-label ensemble accuracy on compas: {parse_gradient_boosting_acc(path3):.4f}")
+print(f"Gradient Boosting warm-label ensemble accuracy on spambase: {parse_gradient_boosting_acc(path4):.4f}")
+fig, ax = plt.subplots(figsize=(8, 4))
+ax.bar(x, [parse_gradient_boosting_acc(path) for path in [path1, path2, path3, path4]], width=0.5, color="#ff7f0e", alpha=0.85)
+ax.set_xticks(x)
+ax.set_xticklabels(DATASETS, rotation=20, ha="right", fontsize=9)
+ax.set_ylabel("Warm-label Ensemble Test Accuracy")
+ax.set_title("Gradient Boosting: Warm-label Ensemble Test Accuracy", fontweight="bold")
+ax.yaxis.set_major_formatter(ticker.FormatStrFormatter("%.3g"))
+ax.grid(axis="y", linestyle="--", alpha=0.5)
+plt.tight_layout()
+out = PLOTS_DIR / "gradient_boosting_warm_label_ensemble_accuracy.png"
+plt.savefig(out, dpi=150, bbox_inches="tight")
+plt.close()
+print(f"Saved: {out}")
+
+# Figure 10: Separate bar chart per dataset — GOSDT, LicketyRESPLIT+TGB,
+# XGBoost+TGB, and GBDT warm-label ensemble accuracy side by side
+gbdt_paths = [path1, path2, path3, path4]
+fig10_models = ["GOSDT", "LicketyRESPLIT+TGB", "XGBoost", "GBDT Warm-label"]
+fig10_colors = {**COLORS, "GBDT Warm-label": "#ff7f0e"}
+
+for dataset, gbdt_path in zip(DATASETS, gbdt_paths):
+    metric_map = {"GOSDT": "accuracy", "LicketyRESPLIT+TGB": "ensemble_accuracy", "XGBoost": "accuracy"}
+    vals = [data[dataset].get(m, {}).get(metric_map.get(m, "accuracy"), float("nan"))
+            for m in ["GOSDT", "LicketyRESPLIT+TGB", "XGBoost"]]
+    vals.append(parse_gradient_boosting_acc(gbdt_path))
+
+    fig, ax = plt.subplots(figsize=(6, 4))
+    xi = np.arange(len(fig10_models))
+    for i, (model, val) in enumerate(zip(fig10_models, vals)):
+        ax.bar(xi[i], val, width=0.6, label=model, color=fig10_colors[model], alpha=0.85)
+
+    ax.set_xticks(xi)
+    ax.set_xticklabels(fig10_models, rotation=25, ha="right", fontsize=8)
+    ax.set_title(f"{dataset}: GOSDT vs LicketyRESPLIT+TGB vs XGBoost+TGB vs GBDT Warm-label",
+                 fontsize=10, fontweight="bold")
+    ax.set_ylabel("Test Accuracy")
+    ax.yaxis.set_major_formatter(ticker.FormatStrFormatter("%.3g"))
+    ax.grid(axis="y", linestyle="--", alpha=0.5)
+    plt.tight_layout()
+    out = PLOTS_DIR / f"tgb_accuracy_comparison_{dataset}.png"
+    plt.savefig(out, dpi=150, bbox_inches="tight")
+    plt.close()
+    print(f"Saved: {out}")

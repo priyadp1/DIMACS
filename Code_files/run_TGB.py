@@ -51,6 +51,18 @@ DATASETS = {
         "drop_cols": ["label"],
         "label_map": {"ALL": 0, "AML": 1},
     },
+    "diabetes" : {
+        "path": BASEDIR / "datasets" / "Mine" / "diabetic_data.csv",
+        "target_col": 'readmitted',
+        "drop_cols": ['encounter_id', 'patient_nbr', 'weight', 'payer_code', 'medical_specialty', 'max_glu_serum', 'A1Cresult', 'readmitted'],
+        "label_map": {">30": 1, "<30": 1, "NO": 0},
+    },
+    "diabetes_smote" : {
+        "path": BASEDIR / "datasets" / "Mine" / "diabetes_smote.csv",
+        "target_col": 'readmitted',
+        "drop_cols": ['readmitted'],
+        "label_map": None,
+    },
 }
 
 # Parameters
@@ -81,6 +93,13 @@ for dataset_name, cfg in DATASETS.items():
     )
     print("X train shape:{}, X test shape:{}".format(X_train.shape, X_test.shape))
 
+    # Encode categorical columns (ThresholdGuessBinarizer requires numeric input)
+    cat_cols = X_train.select_dtypes(include=["object", "category"]).columns.tolist()
+    if cat_cols:
+        X_train = pd.get_dummies(X_train, columns=cat_cols, drop_first=False)
+        X_test = pd.get_dummies(X_test, columns=cat_cols, drop_first=False)
+        X_train, X_test = X_train.align(X_test, join="left", axis=1, fill_value=0)
+
     # Step 1: Guess Thresholds
     enc = ThresholdGuessBinarizer(n_estimators=GBDT_N_EST, max_depth=GBDT_MAX_DEPTH, random_state=42)
     enc.set_output(transform="pandas")
@@ -108,10 +127,11 @@ for dataset_name, cfg in DATASETS.items():
     split_counts = Counter()
     sampled_trees = gbdt.estimators_[:SUBSAMPLE_N]  # first N trees (each is a 1-element array for binary classification)
     for tree_arr in sampled_trees:
-        tree = tree_arr[0].tree_
-        for feat_idx in tree.feature:
-            if feat_idx >= 0:  # -2 marks leaf nodes
-                split_counts[feature_names[feat_idx]] += 1
+        for estimator in tree_arr:  # tree_arr has shape (n_classes,) for multiclass
+            tree = estimator.tree_
+            for feat_idx in tree.feature:
+                if feat_idx >= 0:  # -2 marks leaf nodes
+                    split_counts[feature_names[feat_idx]] += 1
 
     binary_var_df = pd.DataFrame(
         split_counts.most_common(),

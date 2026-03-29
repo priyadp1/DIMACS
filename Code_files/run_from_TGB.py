@@ -17,7 +17,7 @@ TGB_DIR     = BASEDIR / "TGB_Variables"
 RESULTS_DIR = BASEDIR / "model_results"
 RESULTS_DIR.mkdir(exist_ok=True)
 
-DATASETS = ["bike", "breast_cancer", "compas", "spambase"]
+DATASETS = ["diabetes_smote"]
 
 # ── GOSDT parameters (match run_gosdt.py) ────────────────────────────────────
 GOSDT_REG         = 0.001
@@ -72,7 +72,13 @@ for dataset_name in DATASETS:
         depth_budget=GOSDT_DEPTH,
         verbose=True,
     )
-    clf.fit(X_train, y_train, y_ref=warm_labels)
+    warm_classes = set(pd.Series(warm_labels).unique())
+    y_classes = set(y_train.unique())
+    if warm_classes == y_classes:
+        clf.fit(X_train, y_train, y_ref=warm_labels)
+    else:
+        print(f"  [GOSDT] Warning: warm_labels classes {sorted(warm_classes)} != y classes {sorted(y_classes)}, skipping y_ref")
+        clf.fit(X_train, y_train)
     y_pred_gosdt = clf.predict(X_test)
 
     try:
@@ -97,57 +103,6 @@ for dataset_name in DATASETS:
 
     print(f"  [GOSDT] Accuracy: {accuracy_score(y_test, y_pred_gosdt):.4f} | "
           f"Time: {clf.result_.time:.2f}s")
-
-    # ── LicketyRESPLIT (binarized) ────────────────────────────────────────────
-    print(f"\n  [LicketyRESPLIT] Training on {dataset_name}...")
-    model = LicketyRESPLIT()
-    start = time.perf_counter()
-    model.fit(
-        X_train,
-        y_train,
-        lambda_reg=LR_LAMBDA,
-        depth_budget=LR_DEPTH,
-        rashomon_mult=LR_RASHOMON,
-        multiplicative_slack=0,
-        key_mode="hash",
-        trie_cache_enabled=False,
-        lookahead_k=1,
-    )
-    lr_duration = time.perf_counter() - start
-
-    test_preds_lr = model.get_predictions(0, X_test)
-
-    n_trees = model.count_trees()
-    votes = np.zeros(X_test.shape[0], dtype=np.int32)
-    for idx in range(n_trees):
-        votes += model.get_predictions(idx, X_test)
-    ensemble_preds = (votes >= (n_trees / 2)).astype(int)
-    ensemble_acc = accuracy_score(y_test, ensemble_preds)
-
-    try:
-        _paths, _ = model.get_tree_paths(0)
-        lr_n_leaves = len(_paths)
-        lr_n_nodes  = 2 * lr_n_leaves - 1
-        lr_tree_size = {"n_leaves": lr_n_leaves, "n_nodes": lr_n_nodes, "n_trees_in_set": n_trees}
-    except Exception as e:
-        lr_tree_size = {"error": str(e)}
-
-    with open(out_dir / "licketyresplit_binarized_tree_size.json", "w") as f:
-        json.dump(lr_tree_size, f)
-
-    with open(out_dir / "licketyresplit_binarized_results.txt", "w") as f:
-        f.write(f"Accuracy: {accuracy_score(y_test, test_preds_lr)}")
-        f.write(f"\nConfusion Matrix:\n{confusion_matrix(y_test, test_preds_lr)}")
-        f.write(f"\nClassification Report:\n{classification_report(y_test, test_preds_lr)}")
-        f.write(f"\nEnsemble Accuracy: {ensemble_acc}")
-        f.write(f"\nLicketyRESPLIT completed in {lr_duration:.2f} seconds with {n_trees} trees")
-        if "error" not in lr_tree_size:
-            f.write(f"\nTree Size (tree 0): {lr_tree_size['n_leaves']} leaves, {lr_tree_size['n_nodes']} total nodes")
-        else:
-            f.write(f"\nTree Size: Error - {lr_tree_size['error']}")
-
-    print(f"  [LicketyRESPLIT] Accuracy: {accuracy_score(y_test, test_preds_lr):.4f} | "
-          f"Ensemble: {ensemble_acc:.4f} | Trees: {n_trees} | Time: {lr_duration:.2f}s")
 
     # ── XGBoost ───────────────────────────────────────────────────────────────
     print(f"\n  [XGBoost] Training on {dataset_name}...")
@@ -213,6 +168,59 @@ for dataset_name in DATASETS:
             f.write(f"\nTree Size: Error - {xgb_tree_size['error']}")
 
     print(f"  [XGBoost]  Accuracy: {accuracy_score(y_test, y_pred_xgb):.4f} | Time: {xgb_duration:.2f}s")
+
+
+    # ── LicketyRESPLIT (binarized) ────────────────────────────────────────────
+    print(f"\n  [LicketyRESPLIT] Training on {dataset_name}...")
+    model = LicketyRESPLIT()
+    start = time.perf_counter()
+    model.fit(
+        X_train,
+        y_train,
+        lambda_reg=LR_LAMBDA,
+        depth_budget=LR_DEPTH,
+        rashomon_mult=LR_RASHOMON,
+        multiplicative_slack=0,
+        key_mode="hash",
+        trie_cache_enabled=False,
+        lookahead_k=1,
+    )
+    lr_duration = time.perf_counter() - start
+
+    test_preds_lr = model.get_predictions(0, X_test)
+
+    n_trees = model.count_trees()
+    votes = np.zeros(X_test.shape[0], dtype=np.int32)
+    for idx in range(n_trees):
+        votes += model.get_predictions(idx, X_test)
+    ensemble_preds = (votes >= (n_trees / 2)).astype(int)
+    ensemble_acc = accuracy_score(y_test, ensemble_preds)
+
+    try:
+        _paths, _ = model.get_tree_paths(0)
+        lr_n_leaves = len(_paths)
+        lr_n_nodes  = 2 * lr_n_leaves - 1
+        lr_tree_size = {"n_leaves": lr_n_leaves, "n_nodes": lr_n_nodes, "n_trees_in_set": n_trees}
+    except Exception as e:
+        lr_tree_size = {"error": str(e)}
+
+    with open(out_dir / "licketyresplit_binarized_tree_size.json", "w") as f:
+        json.dump(lr_tree_size, f)
+
+    with open(out_dir / "licketyresplit_binarized_results.txt", "w") as f:
+        f.write(f"Accuracy: {accuracy_score(y_test, test_preds_lr)}")
+        f.write(f"\nConfusion Matrix:\n{confusion_matrix(y_test, test_preds_lr)}")
+        f.write(f"\nClassification Report:\n{classification_report(y_test, test_preds_lr)}")
+        f.write(f"\nEnsemble Accuracy: {ensemble_acc}")
+        f.write(f"\nLicketyRESPLIT completed in {lr_duration:.2f} seconds with {n_trees} trees")
+        if "error" not in lr_tree_size:
+            f.write(f"\nTree Size (tree 0): {lr_tree_size['n_leaves']} leaves, {lr_tree_size['n_nodes']} total nodes")
+        else:
+            f.write(f"\nTree Size: Error - {lr_tree_size['error']}")
+
+    print(f"  [LicketyRESPLIT] Accuracy: {accuracy_score(y_test, test_preds_lr):.4f} | "
+          f"Ensemble: {ensemble_acc:.4f} | Trees: {n_trees} | Time: {lr_duration:.2f}s")
+
 
 print(f"\n{'='*60}")
 print(f"All results saved to: {RESULTS_DIR}")

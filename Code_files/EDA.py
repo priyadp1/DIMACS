@@ -5,7 +5,7 @@ while current.name != "DIMACS":
     current = current.parent
 
 BASEDIR = current
-DATAPATH = BASEDIR / "datasets" / "Mine" / "bike.csv"
+DATAPATH = BASEDIR / "datasets" / "Mine" / "diabetic_data.csv"
 df = pd.read_csv(DATAPATH)
 print("\nInformation: ")
 df.info()
@@ -16,4 +16,3 @@ print(df.isna().sum())
 print("\nShape: ")
 print(df.shape)
 print(df.columns.tolist())
-print(df["label"].value_counts())

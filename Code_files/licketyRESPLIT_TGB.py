@@ -14,46 +14,20 @@ while current.name != "DIMACS":
     current = current.parent
 
 BASEDIR = current
-results_dir = BASEDIR / "model_results"
+results_dir = BASEDIR / "model_results" / "diabetic_data"
 os.makedirs(results_dir, exist_ok=True)
-
-_cfg_file = BASEDIR / "Code_files" / "_run_config.json"
-if _cfg_file.exists():
-    with open(_cfg_file) as _f:
-        _cfg = json.load(_f)
-    results_dir = Path(_cfg['results_dir'])
-    os.makedirs(results_dir, exist_ok=True)
-    _target_col = _cfg['target_column']
-    _drop_cols  = _cfg['drop_columns']
-    _label_map  = _cfg.get('label_map')
-    if 'train_path' in _cfg:
-        train_df = pd.read_csv(_cfg['train_path']).dropna(axis=1, how="all")
-        test_df  = pd.read_csv(_cfg['test_path']).dropna(axis=1, how="all")
-        if _label_map:
-            train_df[_target_col] = train_df[_target_col].map(_label_map)
-            test_df[_target_col]  = test_df[_target_col].map(_label_map)
-        X_train = train_df.drop(columns=_drop_cols)
-        y_train = train_df[_target_col]
-        X_test  = test_df.drop(columns=_drop_cols)
-        y_test  = test_df[_target_col]
-    else:
-        df = pd.read_csv(Path(_cfg['dataset_path'])).dropna(axis=1, how="all")
-        if _label_map:
-            df[_target_col] = df[_target_col].map(_label_map)
-        X = df.drop(columns=_drop_cols)
-        Y = df[_target_col]
-        X_train, X_test, y_train, y_test = train_test_split(
-            X, Y, test_size=0.2, random_state=42, stratify=Y
-        )
-else:
-    _target_col = 'class'
-    _drop_cols  = ['class']
-    _label_map  = None
-    df = pd.read_csv(BASEDIR / "datasets" / "Mine" / "spambase.csv").dropna(axis=1, how="all")
-    X = df.drop(columns=_drop_cols)
-    Y = df[_target_col]
-    X_train, X_test, y_train, y_test = train_test_split(
-        X, Y, test_size=0.2, random_state=42, stratify=Y
+_target_col = 'readmitted'
+_drop_cols  = ['encounter_id', 'patient_nbr', 'weight', 'payer_code', 'medical_specialty', 'max_glu_serum', 'A1Cresult']
+_label_map  = None
+df = pd.read_csv(BASEDIR / "datasets" / "Mine" / "diabetic_data.csv").dropna(axis=1, how="all")
+# Drop unwanted columns first, then encode remaining string columns
+df = df.drop(columns=_drop_cols)
+string_cols = [c for c in df.select_dtypes(include="object").columns if c != _target_col]
+df = pd.get_dummies(df, columns=string_cols, drop_first=True)
+Y = df[_target_col]
+X = df.drop(columns=[_target_col])
+X_train, X_test, y_train, y_test = train_test_split(
+    X, Y, test_size=0.2, random_state=42, stratify=Y
     )
 
 depth_budget = 3

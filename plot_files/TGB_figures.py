@@ -14,7 +14,7 @@ RESULTS_DIR = BASEDIR / "model_results"
 PLOTS_DIR   = BASEDIR / "analysis_figures"
 PLOTS_DIR.mkdir(exist_ok=True)
 
-DATASETS = ["bike", "breast_cancer", "compas", "spambase"]
+DATASETS = ["bike", "breast_cancer", "compas", "spambase", "diabetes"]
 
 MODELS = ["GOSDT", "LicketyRESPLIT+TGB", "XGBoost"]
 
@@ -282,12 +282,14 @@ path1 = TGB_DIR / "bike" / "gbdt_warm_label_results.txt"
 path2 = TGB_DIR / "breast_cancer" / "gbdt_warm_label_results.txt"
 path3 = TGB_DIR / "compas" / "gbdt_warm_label_results.txt"
 path4 = TGB_DIR / "spambase" / "gbdt_warm_label_results.txt"
+path5 = TGB_DIR / "diabetes" / "gbdt_warm_label_results.txt"
 print(f"\nGradient Boosting warm-label ensemble accuracy on bike: {parse_gradient_boosting_acc(path1):.4f}")
 print(f"Gradient Boosting warm-label ensemble accuracy on breast_cancer: {parse_gradient_boosting_acc(path2):.4f}")
 print(f"Gradient Boosting warm-label ensemble accuracy on compas: {parse_gradient_boosting_acc(path3):.4f}")
 print(f"Gradient Boosting warm-label ensemble accuracy on spambase: {parse_gradient_boosting_acc(path4):.4f}")
+print(f"Gradient Boosting warm-label ensemble accuracy on diabetes: {parse_gradient_boosting_acc(path5):.4f}")
 fig, ax = plt.subplots(figsize=(8, 4))
-ax.bar(x, [parse_gradient_boosting_acc(path) for path in [path1, path2, path3, path4]], width=0.5, color="#ff7f0e", alpha=0.85)
+ax.bar(x, [parse_gradient_boosting_acc(path) for path in [path1, path2, path3, path4, path5]], width=0.5, color="#ff7f0e", alpha=0.85)
 ax.set_xticks(x)
 ax.set_xticklabels(DATASETS, rotation=20, ha="right", fontsize=9)
 ax.set_ylabel("Warm-label Ensemble Test Accuracy")
@@ -302,7 +304,7 @@ print(f"Saved: {out}")
 
 # Figure 10: Separate bar chart per dataset — GOSDT, LicketyRESPLIT+TGB,
 # XGBoost+TGB, and GBDT warm-label ensemble accuracy side by side
-gbdt_paths = [path1, path2, path3, path4]
+gbdt_paths = [path1, path2, path3, path4, path5]
 fig10_models = ["GOSDT", "LicketyRESPLIT+TGB", "XGBoost", "GBDT Warm-label"]
 fig10_colors = {**COLORS, "GBDT Warm-label": "#ff7f0e"}
 
@@ -329,3 +331,44 @@ for dataset, gbdt_path in zip(DATASETS, gbdt_paths):
     plt.savefig(out, dpi=150, bbox_inches="tight")
     plt.close()
     print(f"Saved: {out}")
+
+#Figure 11 SMOTE vs No SMOTE for diabetes dataset (Warm labels)
+path_smote = TGB_DIR / "diabetes_smote" / "gbdt_warm_label_results.txt"
+path_no_smote = TGB_DIR / "diabetes" / "gbdt_warm_label_results.txt"
+print(f"\nGradient Boosting warm-label ensemble accuracy on diabetes with SMOTE: {parse_gradient_boosting_acc(path_smote):.4f}")
+print(f"Gradient Boosting warm-label ensemble accuracy on diabetes without SMOTE: {parse_gradient_boosting_acc(path_no_smote):.4f}")
+fig, ax = plt.subplots(figsize=(6, 4))
+ax.bar(["Diabetes (SMOTE)", "Diabetes (No SMOTE)"],
+       [parse_gradient_boosting_acc(path_smote), parse_gradient_boosting_acc(path_no_smote)],
+       width=0.5, color=["#d62728", "#ff7f0e"], alpha=0.85)
+ax.set_ylabel("Warm-label Ensemble Test Accuracy")
+ax.set_title("Gradient Boosting: Warm-label Ensemble Test Accuracy on Diabetes with vs without SMOTE", fontweight="bold")
+ax.yaxis.set_major_formatter(ticker.FormatStrFormatter("%.3g"))
+ax.grid(axis="y", linestyle="--", alpha=0.5)
+plt.tight_layout()
+out = PLOTS_DIR / "gradient_boosting_diabetes_smote_vs_no_smote_accuracy.png"
+plt.savefig(out, dpi=150, bbox_inches="tight")
+plt.close()
+print(f"Saved: {out}")
+
+#Figure 12 SMOTE vs No SMOTE Rashamon set size for diabetes dataset (LicketyRESPLIT+TGB)
+path_smote_sz = RESULTS_DIR / "diabetes_smote" / "licketyresplit_binarized_tree_size.json"
+path_no_smote_sz = RESULTS_DIR / "diabetes" / "licketyresplit_binarized_tree_size.json"
+smote_sz = parse_tree_size(path_smote_sz).get("n_trees_in_set", float("nan"))
+no_smote_sz = parse_tree_size(path_no_smote_sz).get("n_trees_in_set", float("nan"))
+print(f"\nLicketyRESPLIT+TGB Rashomon set size on diabetes with SMOTE: {smote_sz}")
+print(f"LicketyRESPLIT+TGB Rashomon set size on diabetes without SMOTE: {no_smote_sz}")
+fig, ax = plt.subplots(figsize=(6, 4))
+ax.bar(["Diabetes (SMOTE)", "Diabetes (No SMOTE)"],
+       [smote_sz, no_smote_sz],
+       width=0.5, color=["#4C72B0", "#2ca02c"], alpha=0.85)
+ax.set_ylabel("Rashomon Set Size")
+ax.set_title("LicketyRESPLIT+TGB: Rashomon Set Size on Diabetes with vs without SMOTE", fontweight="bold")
+ax.yaxis.set_major_formatter(ticker.FormatStrFormatter("%.3g"))
+ax.grid(axis="y", linestyle="--", alpha=0.5)
+plt.tight_layout()
+out = PLOTS_DIR / "licketyresplit_diabetes_smote_vs_no_smote_rashomon_set_size.png"
+plt.savefig(out, dpi=150, bbox_inches="tight")
+plt.close()
+print(f"Saved: {out}")
+

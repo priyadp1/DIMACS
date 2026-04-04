@@ -15,11 +15,19 @@ target = DATAPATH
 os.makedirs(target, exist_ok=True)
 path1 = kagglehub.dataset_download("uciml/breast-cancer-wisconsin-data")
 path2 = kagglehub.dataset_download("orvile/leukemia-gene-expression-data-by-golub-et-al")
+path3 = kagglehub.dataset_download("gzdekzlkaya/credit-card-fraud-detection-dataset")
 for i in os.listdir(path1):
     if i.endswith(".csv"):
         src1 = os.path.join(path1,i)
         dest = os.path.join(target,i)
         shutil.copy(src1, dest)
+        print(f"Copied {i} to {target}")
+
+for i in os.listdir(path3):
+    if i.endswith(".csv"):
+        src3 = os.path.join(path3,i)
+        dest = os.path.join(target,i)
+        shutil.copy(src3, dest)
         print(f"Copied {i} to {target}")
 
 rda_file = next(Path(path2).glob("*.rda"))

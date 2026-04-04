@@ -14,7 +14,8 @@ RESULTS_DIR = BASEDIR / "model_results"
 PLOTS_DIR   = BASEDIR / "analysis_figures"
 PLOTS_DIR.mkdir(exist_ok=True)
 
-DATASETS = ["bike", "breast_cancer", "compas", "spambase", "diabetes", "diabetes_smote"]
+DATASETS = ["bike", "breast_cancer", "compas", "spambase", "diabetes", "diabetes_smote",
+            "creditcard_fraud", "creditcard_fraud_smote"]
 
 MODELS = ["GOSDT", "LicketyRESPLIT+TGB", "XGBoost"]
 
@@ -118,13 +119,13 @@ def bar_chart(ax, vals_by_model, ylabel):
     ax.set_xticklabels(DATASETS, rotation=20, ha="right", fontsize=9)
     ax.set_ylabel(ylabel)
     ax.yaxis.set_major_formatter(ticker.FormatStrFormatter("%.3g"))
-    ax.legend(fontsize=8)
+    ax.legend(fontsize=8, bbox_to_anchor=(1.01, 1), loc="upper left", borderaxespad=0)
     ax.grid(axis="y", linestyle="--", alpha=0.5)
 
 
 # ── Figure 1: Test Accuracy ───────────────────────────────────────────────────
 
-fig, ax = plt.subplots(figsize=(9, 4))
+fig, ax = plt.subplots(figsize=(12, 6))
 bar_chart(ax, get_vals("accuracy"), "Test Accuracy")
 ax.set_title("Test Accuracy: GOSDT vs LicketyRESPLIT+TGB vs XGBoost",
              fontweight="bold")
@@ -137,7 +138,7 @@ print(f"Saved: {out}")
 
 # ── Figure 2: Ensemble Accuracy (LicketyRESPLIT) vs Test Accuracy (others) ───
 
-fig, ax = plt.subplots(figsize=(9, 4))
+fig, ax = plt.subplots(figsize=(12, 6))
 ens_vals = {}
 for model in MODELS:
     metric = "ensemble_accuracy" if model == "LicketyRESPLIT+TGB" else "accuracy"
@@ -153,7 +154,7 @@ print(f"Saved: {out}")
 
 # ── Figure 3: Training Time ───────────────────────────────────────────────────
 
-fig, ax = plt.subplots(figsize=(9, 4))
+fig, ax = plt.subplots(figsize=(12, 6))
 bar_chart(ax, get_vals("duration_sec"), "Training Time (s)")
 ax.set_title("Training Time: GOSDT vs LicketyRESPLIT+TGB vs XGBoost",
              fontweight="bold")
@@ -166,7 +167,7 @@ print(f"Saved: {out}")
 # ── Figure 4: Tree Size (leaves) ──────────────────────────────────────────────
 # GOSDT/LicketyRESPLIT+TGB → n_leaves, XGBoost → total_leaves
 
-fig, ax = plt.subplots(figsize=(9, 4))
+fig, ax = plt.subplots(figsize=(12, 6))
 leaf_vals = {}
 for model in MODELS:
     metric = "total_leaves" if model == "XGBoost" else "n_leaves"
@@ -182,7 +183,7 @@ print(f"Saved: {out}")
 
 # ── Figure 5: Rashomon Set Size (LicketyRESPLIT+TGB only) ────────────────────
 
-fig, ax = plt.subplots(figsize=(6, 4))
+fig, ax = plt.subplots(figsize=(12, 6))
 rashomon_vals = [data[ds].get("LicketyRESPLIT+TGB", {}).get("n_trees_in_set", float("nan"))
                  for ds in DATASETS]
 ax.bar(x, rashomon_vals, width=0.5, color=COLORS["LicketyRESPLIT+TGB"], alpha=0.85)
@@ -226,12 +227,12 @@ def xgb_bar_chart(ax, raw_vals, tgb_vals, ylabel):
     ax.set_xticklabels(DATASETS, rotation=20, ha="right", fontsize=9)
     ax.set_ylabel(ylabel)
     ax.yaxis.set_major_formatter(ticker.FormatStrFormatter("%.3g"))
-    ax.legend(fontsize=8)
+    ax.legend(fontsize=8, bbox_to_anchor=(1.01, 1), loc="upper left", borderaxespad=0)
     ax.grid(axis="y", linestyle="--", alpha=0.5)
 
 
 # Figure 6: XGBoost accuracy — raw vs TGB
-fig, ax = plt.subplots(figsize=(8, 4))
+fig, ax = plt.subplots(figsize=(12, 6))
 xgb_bar_chart(
     ax,
     [xgb_raw[ds].get("accuracy", float("nan")) for ds in DATASETS],
@@ -246,7 +247,7 @@ plt.close()
 print(f"Saved: {out}")
 
 # Figure 7: XGBoost training time — raw vs TGB
-fig, ax = plt.subplots(figsize=(8, 4))
+fig, ax = plt.subplots(figsize=(12, 6))
 xgb_bar_chart(
     ax,
     [xgb_raw[ds].get("duration_sec", float("nan")) for ds in DATASETS],
@@ -261,7 +262,7 @@ plt.close()
 print(f"Saved: {out}")
 
 # Figure 8: XGBoost tree size (total leaves) — raw vs TGB
-fig, ax = plt.subplots(figsize=(8, 4))
+fig, ax = plt.subplots(figsize=(12, 6))
 xgb_bar_chart(
     ax,
     [xgb_raw[ds].get("total_leaves", float("nan")) for ds in DATASETS],
@@ -284,14 +285,10 @@ path3 = TGB_DIR / "compas" / "gbdt_warm_label_results.txt"
 path4 = TGB_DIR / "spambase" / "gbdt_warm_label_results.txt"
 path5 = TGB_DIR / "diabetes" / "gbdt_warm_label_results.txt"
 path6 = TGB_DIR / "diabetes_smote" / "gbdt_warm_label_results.txt"
-print(f"\nGradient Boosting warm-label ensemble accuracy on bike: {parse_gradient_boosting_acc(path1):.4f}")
-print(f"Gradient Boosting warm-label ensemble accuracy on breast_cancer: {parse_gradient_boosting_acc(path2):.4f}")
-print(f"Gradient Boosting warm-label ensemble accuracy on compas: {parse_gradient_boosting_acc(path3):.4f}")
-print(f"Gradient Boosting warm-label ensemble accuracy on spambase: {parse_gradient_boosting_acc(path4):.4f}")
-print(f"Gradient Boosting warm-label ensemble accuracy on diabetes: {parse_gradient_boosting_acc(path5):.4f}")
-print(f"Gradient Boosting warm-label ensemble accuracy on diabetes with SMOTE: {parse_gradient_boosting_acc(path6):.4f}")
-fig, ax = plt.subplots(figsize=(8, 4))
-ax.bar(x, [parse_gradient_boosting_acc(path) for path in [path1, path2, path3, path4, path5, path6]], width=0.5, color="#ff7f0e", alpha=0.85)
+path7 = TGB_DIR / "creditcard_fraud" / "gbdt_warm_label_results.txt"
+path8 = TGB_DIR / "creditcard_fraud_smote" / "gbdt_warm_label_results.txt"
+fig, ax = plt.subplots(figsize=(12, 6))
+ax.bar(x, [parse_gradient_boosting_acc(path) for path in [path1, path2, path3, path4, path5, path6, path7, path8]], width=0.5, color="#ff7f0e", alpha=0.85)
 ax.set_xticks(x)
 ax.set_xticklabels(DATASETS, rotation=20, ha="right", fontsize=9)
 ax.set_ylabel("Warm-label Ensemble Test Accuracy")
@@ -306,7 +303,7 @@ print(f"Saved: {out}")
 
 # Figure 10: Separate bar chart per dataset — GOSDT, LicketyRESPLIT+TGB,
 # XGBoost+TGB, and GBDT warm-label ensemble accuracy side by side
-gbdt_paths = [path1, path2, path3, path4, path5, path6]
+gbdt_paths = [path1, path2, path3, path4, path5, path6, path7, path8]
 fig10_models = ["GOSDT", "LicketyRESPLIT+TGB", "XGBoost", "GBDT Warm-label"]
 fig10_colors = {**COLORS, "GBDT Warm-label": "#ff7f0e"}
 
@@ -316,7 +313,7 @@ for dataset, gbdt_path in zip(DATASETS, gbdt_paths):
             for m in ["GOSDT", "LicketyRESPLIT+TGB", "XGBoost"]]
     vals.append(parse_gradient_boosting_acc(gbdt_path))
 
-    fig, ax = plt.subplots(figsize=(6, 4))
+    fig, ax = plt.subplots(figsize=(12, 6))
     xi = np.arange(len(fig10_models))
     for i, (model, val) in enumerate(zip(fig10_models, vals)):
         ax.bar(xi[i], val, width=0.6, label=model, color=fig10_colors[model], alpha=0.85)
@@ -339,7 +336,7 @@ path_smote = TGB_DIR / "diabetes_smote" / "gbdt_warm_label_results.txt"
 path_no_smote = TGB_DIR / "diabetes" / "gbdt_warm_label_results.txt"
 print(f"\nGradient Boosting warm-label ensemble accuracy on diabetes with SMOTE: {parse_gradient_boosting_acc(path_smote):.4f}")
 print(f"Gradient Boosting warm-label ensemble accuracy on diabetes without SMOTE: {parse_gradient_boosting_acc(path_no_smote):.4f}")
-fig, ax = plt.subplots(figsize=(6, 4))
+fig, ax = plt.subplots(figsize=(12, 6))
 ax.bar(["Diabetes (SMOTE)", "Diabetes (No SMOTE)"],
        [parse_gradient_boosting_acc(path_smote), parse_gradient_boosting_acc(path_no_smote)],
        width=0.5, color=["#d62728", "#ff7f0e"], alpha=0.85)
@@ -360,7 +357,7 @@ smote_sz = parse_tree_size(path_smote_sz).get("n_trees_in_set", float("nan"))
 no_smote_sz = parse_tree_size(path_no_smote_sz).get("n_trees_in_set", float("nan"))
 print(f"\nLicketyRESPLIT+TGB Rashomon set size on diabetes with SMOTE: {smote_sz}")
 print(f"LicketyRESPLIT+TGB Rashomon set size on diabetes without SMOTE: {no_smote_sz}")
-fig, ax = plt.subplots(figsize=(6, 4))
+fig, ax = plt.subplots(figsize=(12, 6))
 ax.bar(["Diabetes (SMOTE)", "Diabetes (No SMOTE)"],
        [smote_sz, no_smote_sz],
        width=0.5, color=["#4C72B0", "#2ca02c"], alpha=0.85)
@@ -370,6 +367,27 @@ ax.yaxis.set_major_formatter(ticker.FormatStrFormatter("%.3g"))
 ax.grid(axis="y", linestyle="--", alpha=0.5)
 plt.tight_layout()
 out = PLOTS_DIR / "licketyresplit_diabetes_smote_vs_no_smote_rashomon_set_size.png"
+plt.savefig(out, dpi=150, bbox_inches="tight")
+plt.close()
+print(f"Saved: {out}")
+
+#Figure 13 SMOTE vs no SMOTE Rashmomon set size for creditcard fraud dataset (LicketyRESPLIT+TGB)
+path_smote_sz_cc = RESULTS_DIR / "creditcard_fraud_smote" / "licketyresplit_binarized_tree_size.json"
+path_no_smote_sz_cc = RESULTS_DIR / "creditcard_fraud" / "licketyresplit_binarized_tree_size.json"
+smote_sz_cc = parse_tree_size(path_smote_sz_cc).get("n_trees_in_set", float("nan"))
+no_smote_sz_cc = parse_tree_size(path_no_smote_sz_cc).get("n_trees_in_set", float("nan"))
+print(f"\nLicketyRESPLIT+TGB Rashomon set size on creditcard fraud with SMOTE: {smote_sz_cc}") 
+print(f"LicketyRESPLIT+TGB Rashomon set size on creditcard fraud without SMOTE: {no_smote_sz_cc}")
+fig, ax = plt.subplots(figsize=(12, 6))
+ax.bar(["Credit Card Fraud (SMOTE)", "Credit Card Fraud (No SMOTE)"],
+       [smote_sz_cc, no_smote_sz_cc],
+       width=0.5, color=["#4C72B0", "#2ca02c"], alpha=0.85)
+ax.set_ylabel("Rashomon Set Size")
+ax.set_title("LicketyRESPLIT+TGB: Rashomon Set Size on Credit Card Fraud with vs without SMOTE", fontweight="bold")
+ax.yaxis.set_major_formatter(ticker.FormatStrFormatter("%.3g"))
+ax.grid(axis="y", linestyle="--", alpha=0.5)
+plt.tight_layout()
+out = PLOTS_DIR / "licketyresplit_creditcard_fraud_smote_vs_no_smote_rashomon_set_size.png"
 plt.savefig(out, dpi=150, bbox_inches="tight")
 plt.close()
 print(f"Saved: {out}")

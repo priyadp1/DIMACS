@@ -17,7 +17,7 @@ TGB_DIR     = BASEDIR / "TGB_Variables"
 RESULTS_DIR = BASEDIR / "model_results"
 RESULTS_DIR.mkdir(exist_ok=True)
 
-DATASETS = ["diabetes_smote"]
+DATASETS = ["creditcard_fraud_smote", "creditcard_fraud"]  # Add more dataset names as needed, matching subdirectories in TGB_Variables
 
 # ── GOSDT parameters (match run_gosdt.py) ────────────────────────────────────
 GOSDT_REG         = 0.001

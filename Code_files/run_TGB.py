@@ -15,54 +15,66 @@ results_dir = BASEDIR / "TGB_Variables"
 os.makedirs(results_dir, exist_ok=True)
 
 DATASETS = {
-     "spambase": {
-        "path": BASEDIR / "datasets" / "Mine" / "spambase.csv",
-         "target_col": "class",
-         "drop_cols": ["class"],
+    # "spambase": {
+    #    "path": BASEDIR / "datasets" / "Mine" / "spambase.csv",
+    #     "target_col": "class",
+    #     "drop_cols": ["class"],
+    #    "label_map": None,
+    # },
+    # "bike": {
+    #     "path": BASEDIR / "datasets" / "Mine" / "bike.csv",
+    #    "target_col": "cnt_binary",
+    #   "drop_cols": ["instant", "cnt_binary"],
+    #    "label_map": None,
+    # },
+    # "compas": {
+    #     "path": BASEDIR / "datasets" / "Mine" / "compas.csv",
+    #     "target_col": "two_year_recid",
+    #     "drop_cols": ["two_year_recid"],
+    #     "label_map": None,
+    # },
+    # "heloc": {
+    #     "path": BASEDIR / "datasets" / "Mine" / "heloc_original.csv",
+    #     "target_col": "RiskPerformance",
+    #     "drop_cols": ["RiskPerformance"],
+    #     "label_map": None,
+    # },
+    # "breast_cancer": {
+    #     "path": BASEDIR / "datasets" / "Mine" / "breast_cancer_data.csv",
+    #     "target_col": "diagnosis",
+    #     "drop_cols": ["id", "diagnosis"],
+    #     "label_map": {"M": 1, "B": 0},
+    # },
+    # "leukemia": {
+    #     "path": BASEDIR / "datasets" / "Mine" / "leukemia_data.csv",
+    #     "target_col": "label",
+    #     "drop_cols": ["label"],
+    #     "label_map": {"ALL": 0, "AML": 1},
+    # },
+    # "diabetes" : {
+    #     "path": BASEDIR / "datasets" / "Mine" / "diabetic_data.csv",
+    #     "target_col": 'readmitted',
+    #     "drop_cols": ['encounter_id', 'patient_nbr', 'weight', 'payer_code', 'medical_specialty', 'max_glu_serum', 'A1Cresult', 'readmitted'],
+    #     "label_map": {">30": 1, "<30": 1, "NO": 0},
+    # },
+    # "diabetes_smote" : {
+    #     "path": BASEDIR / "datasets" / "Mine" / "diabetes_smote.csv",
+    #     "target_col": 'readmitted',
+    #     "drop_cols": ['readmitted'],
+    #     "label_map": None,
+    # },
+    "creditcard_fraud_smote" : {
+        "path": BASEDIR / "datasets" / "Mine" / "creditcard_fraud_detection_smote.csv",
+        "target_col": 'Class',
+        "drop_cols": ['Class'],
         "label_map": None,
      },
-    "bike": {
-         "path": BASEDIR / "datasets" / "Mine" / "bike.csv",
-        "target_col": "cnt_binary",
-       "drop_cols": ["instant", "cnt_binary"],
+     "creditcard_fraud" : {
+        "path": BASEDIR / "datasets" / "Mine" / "creditcard_fraud_detection_test.csv",
+        "target_col": 'Class',
+        "drop_cols": ['Class'],
         "label_map": None,
-    },
-    "compas": {
-        "path": BASEDIR / "datasets" / "Mine" / "compas.csv",
-        "target_col": "two_year_recid",
-        "drop_cols": ["two_year_recid"],
-        "label_map": None,
-    },
-    "heloc": {
-        "path": BASEDIR / "datasets" / "Mine" / "heloc_original.csv",
-        "target_col": "RiskPerformance",
-        "drop_cols": ["RiskPerformance"],
-        "label_map": None,
-    },
-    "breast_cancer": {
-        "path": BASEDIR / "datasets" / "Mine" / "breast_cancer_data.csv",
-        "target_col": "diagnosis",
-        "drop_cols": ["id", "diagnosis"],
-        "label_map": {"M": 1, "B": 0},
-    },
-    "leukemia": {
-        "path": BASEDIR / "datasets" / "Mine" / "leukemia_data.csv",
-        "target_col": "label",
-        "drop_cols": ["label"],
-        "label_map": {"ALL": 0, "AML": 1},
-    },
-    "diabetes" : {
-        "path": BASEDIR / "datasets" / "Mine" / "diabetic_data.csv",
-        "target_col": 'readmitted',
-        "drop_cols": ['encounter_id', 'patient_nbr', 'weight', 'payer_code', 'medical_specialty', 'max_glu_serum', 'A1Cresult', 'readmitted'],
-        "label_map": {">30": 1, "<30": 1, "NO": 0},
-    },
-    "diabetes_smote" : {
-        "path": BASEDIR / "datasets" / "Mine" / "diabetes_smote.csv",
-        "target_col": 'readmitted',
-        "drop_cols": ['readmitted'],
-        "label_map": None,
-    },
+     },
 }
 
 # Parameters

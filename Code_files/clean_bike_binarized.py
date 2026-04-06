@@ -1,11 +1,3 @@
-"""
-Cleans bike_binarized.csv by sanitizing column names so they are
-compatible with XGBoost (which forbids '<', '[', ']' in feature names).
-
-Replaces ' <= ' with '_le_' in all column headers.
-Output: datasets/Given/bike_binarized_new.csv
-"""
-
 import pandas as pd
 from pathlib import Path
 

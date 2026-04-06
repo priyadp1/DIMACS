@@ -1,0 +1,6 @@
+<class 'gosdt._tree.Tree'>: { feature: 1, orig feature: 1, [ left child: { prediction: 1, loss: 0.04361990839242935 }, right child: { feature: 2, orig feature: 2, [ left child: { feature: 7, orig feature: 7, [ left child: { prediction: 0, loss: 0.0483257919549942 }, right child: { prediction: 1, loss: 0.050497736781835556 }] }, right child: { feature: 8, orig feature: 8, [ left child: { prediction: 0, loss: 0.08018099516630173 }, right child: { feature: 11, orig feature: 11, [ left child: { feature: 13, orig feature: 13, [ left child: { prediction: 1, loss: 0.031674206256866455 }, right child: { prediction: 0, loss: 0.028235293924808502 }] }, right child: { prediction: 1, loss: 0.03438913822174072 }] }] }] }] }, Index(['age <= 20.5', 'age <= 22.5', 'age <= 29.5', 'age <= 33.5',
+       'age <= 34.5', 'juvenile_crimes <= 0.5', 'priors_count <= 0.5',
+       'priors_count <= 1.5', 'priors_count <= 2.5', 'priors_count <= 3.5',
+       'priors_count <= 5.5', 'priors_count <= 7.5', 'priors_count <= 8.5',
+       'age <= 38.5'],
+      dtype='object'), 2

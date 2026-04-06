@@ -376,7 +376,7 @@ path_smote_sz_cc = RESULTS_DIR / "creditcard_fraud_smote" / "licketyresplit_bina
 path_no_smote_sz_cc = RESULTS_DIR / "creditcard_fraud" / "licketyresplit_binarized_tree_size.json"
 smote_sz_cc = parse_tree_size(path_smote_sz_cc).get("n_trees_in_set", float("nan"))
 no_smote_sz_cc = parse_tree_size(path_no_smote_sz_cc).get("n_trees_in_set", float("nan"))
-print(f"\nLicketyRESPLIT+TGB Rashomon set size on creditcard fraud with SMOTE: {smote_sz_cc}") 
+print(f"\nLicketyRESPLIT+TGB Rashomon set size on creditcard fraud with SMOTE: {smote_sz_cc}")
 print(f"LicketyRESPLIT+TGB Rashomon set size on creditcard fraud without SMOTE: {no_smote_sz_cc}")
 fig, ax = plt.subplots(figsize=(12, 6))
 ax.bar(["Credit Card Fraud (SMOTE)", "Credit Card Fraud (No SMOTE)"],
@@ -391,4 +391,144 @@ out = PLOTS_DIR / "licketyresplit_creditcard_fraud_smote_vs_no_smote_rashomon_se
 plt.savefig(out, dpi=150, bbox_inches="tight")
 plt.close()
 print(f"Saved: {out}")
+
+# ── Figure 14: Rashomon Set Size vs Test Accuracy (one scatter plot per dataset) ──
+
+EXP_DIR      = BASEDIR / "LicketyRESPLIT_EXP"
+EXP_BIN_DIR  = BASEDIR / "LicketyRESPLIT_EXP_ThresholdBinarizer"
+
+SCATTER_COLORS = {"No Binarizer": "#4C72B0", "ThresholdBinarizer": "#DD8452"}
+SCATTER_MARKERS = {"No Binarizer": "o", "ThresholdBinarizer": "s"}
+
+
+def collect_sweep_points(dataset):
+    """Return list of (n_trees_in_set, accuracy, param_label, variant) for one dataset."""
+    points = []
+
+    # --- model_results/<dataset>/<depth>_<lambda>_<rashomon>/ (no binarizer) ---
+    ds_dir = RESULTS_DIR / dataset
+    if ds_dir.exists():
+        # default (top-level) run
+        res_f = ds_dir / "licketyresplit_results.txt"
+        sz_f  = ds_dir / "licketyresplit_tree_size.json"
+        if res_f.exists() and sz_f.exists():
+            res  = parse_licketyresplit_bin(res_f)
+            sz   = parse_tree_size(sz_f)
+            n    = sz.get("n_trees_in_set")
+            acc  = res.get("accuracy")
+            if n is not None and acc is not None:
+                points.append((n, acc, "default", "No Binarizer"))
+
+        # default binarized run
+        res_f_bin = ds_dir / "licketyresplit_binarized_results.txt"
+        sz_f_bin  = ds_dir / "licketyresplit_binarized_tree_size.json"
+        if res_f_bin.exists() and sz_f_bin.exists():
+            res  = parse_licketyresplit_bin(res_f_bin)
+            sz   = parse_tree_size(sz_f_bin)
+            n    = sz.get("n_trees_in_set")
+            acc  = res.get("accuracy")
+            if n is not None and acc is not None:
+                points.append((n, acc, "default", "ThresholdBinarizer"))
+
+        # param sweep subdirs
+        for param_dir in sorted(ds_dir.iterdir()):
+            if not param_dir.is_dir():
+                continue
+            parts = param_dir.name.split("_")
+            if len(parts) < 3:
+                continue
+            depth, lam, rash = parts[0], parts[1], parts[2]
+            label = f"d={depth} λ={lam} ε={rash}"
+
+            res_f = param_dir / "licketyresplit_results.txt"
+            sz_f  = param_dir / "licketyresplit_tree_size.json"
+            if res_f.exists() and sz_f.exists():
+                res = parse_licketyresplit_bin(res_f)
+                sz  = parse_tree_size(sz_f)
+                n   = sz.get("n_trees_in_set")
+                acc = res.get("accuracy")
+                if n is not None and acc is not None:
+                    points.append((n, acc, label, "No Binarizer"))
+
+    # --- LicketyRESPLIT_EXP/<param>/<dataset>_results.txt (no binarizer) ---
+    if EXP_DIR.exists():
+        for param_dir in sorted(EXP_DIR.iterdir()):
+            if not param_dir.is_dir():
+                continue
+            parts = param_dir.name.split("_")
+            if len(parts) < 3:
+                continue
+            depth, lam, rash = parts[0], parts[1], parts[2]
+            label = f"d={depth} λ={lam} ε={rash}"
+
+            res_f = param_dir / f"{dataset}_results.txt"
+            sz_f  = param_dir / f"{dataset}_tree_size.json"
+            if res_f.exists() and sz_f.exists():
+                res = parse_licketyresplit_bin(res_f)
+                sz  = parse_tree_size(sz_f)
+                n   = sz.get("n_trees_in_set")
+                acc = res.get("accuracy")
+                if n is not None and acc is not None:
+                    points.append((n, acc, label, "No Binarizer"))
+
+    # --- LicketyRESPLIT_EXP_ThresholdBinarizer/<param>/<dataset>_results.txt ---
+    if EXP_BIN_DIR.exists():
+        for param_dir in sorted(EXP_BIN_DIR.iterdir()):
+            if not param_dir.is_dir():
+                continue
+            parts = param_dir.name.split("_")
+            if len(parts) < 3:
+                continue
+            depth, lam, rash = parts[0], parts[1], parts[2]
+            label = f"d={depth} λ={lam} ε={rash}"
+
+            res_f = param_dir / f"{dataset}_results.txt"
+            sz_f  = param_dir / f"{dataset}_tree_size.json"
+            if res_f.exists() and sz_f.exists():
+                res = parse_licketyresplit_bin(res_f)
+                sz  = parse_tree_size(sz_f)
+                n   = sz.get("n_trees_in_set")
+                acc = res.get("accuracy")
+                if n is not None and acc is not None:
+                    points.append((n, acc, label, "ThresholdBinarizer"))
+
+    # Deduplicate identical (n, acc, label, variant) tuples
+    return list(dict.fromkeys(points))
+
+
+for dataset in DATASETS:
+    pts = collect_sweep_points(dataset)
+    if not pts:
+        print(f"No Rashomon set data for {dataset}, skipping.")
+        continue
+
+    fig, ax = plt.subplots(figsize=(7, 5))
+
+    legend_handles = {}
+    for n_trees, acc, label, variant in pts:
+        color  = SCATTER_COLORS[variant]
+        marker = SCATTER_MARKERS[variant]
+        sc = ax.scatter(n_trees, acc, color=color, marker=marker,
+                        s=60, alpha=0.85, zorder=3)
+        ax.annotate(label, (n_trees, acc), textcoords="offset points",
+                    xytext=(5, 3), fontsize=6, color=color)
+        if variant not in legend_handles:
+            legend_handles[variant] = sc
+
+    # Use log scale on x-axis when the range spans more than one order of magnitude
+    n_vals = [p[0] for p in pts]
+    if max(n_vals, default=1) / max(min(n_vals, default=1), 1) > 10:
+        ax.set_xscale("log")
+
+    ax.set_xlabel("Rashomon Set Size (# trees)")
+    ax.set_ylabel("Test Accuracy")
+    ax.set_title(f"{dataset}: Rashomon Set Size vs Test Accuracy\n(LicketyRESPLIT)",
+                 fontsize=10, fontweight="bold")
+    ax.legend(legend_handles.values(), legend_handles.keys(), fontsize=8)
+    ax.grid(linestyle="--", alpha=0.4)
+    plt.tight_layout()
+    out = PLOTS_DIR / f"rashomon_vs_accuracy_{dataset}.png"
+    plt.savefig(out, dpi=150, bbox_inches="tight")
+    plt.close()
+    print(f"Saved: {out}")
 

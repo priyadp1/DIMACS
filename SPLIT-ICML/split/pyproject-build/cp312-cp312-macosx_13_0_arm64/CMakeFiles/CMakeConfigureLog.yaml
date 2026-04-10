@@ -20,17 +20,16 @@ events:
     names:
       - "uname"
     candidate_directories:
-      - "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/bin/"
-      - "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/sbin/"
-      - "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/"
-      - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-qtjix7k9/overlay/lib/python3.12/site-packages/bin/"
-      - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-qtjix7k9/overlay/lib/python3.12/site-packages/sbin/"
-      - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-qtjix7k9/overlay/lib/python3.12/site-packages/"
-      - "/opt/homebrew/opt/tbb/bin/"
-      - "/opt/homebrew/opt/tbb/sbin/"
-      - "/opt/homebrew/opt/tbb/"
-      - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-qtjix7k9/overlay/bin/"
-      - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-qtjix7k9/normal/bin/"
+      - "/Users/prishapriyadashini/Downloads/DIMACS/split-env/lib/python3.12/site-packages/bin/"
+      - "/Users/prishapriyadashini/Downloads/DIMACS/split-env/lib/python3.12/site-packages/sbin/"
+      - "/Users/prishapriyadashini/Downloads/DIMACS/split-env/lib/python3.12/site-packages/"
+      - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-i5ftj49l/overlay/lib/python3.12/site-packages/bin/"
+      - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-i5ftj49l/overlay/lib/python3.12/site-packages/sbin/"
+      - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-i5ftj49l/overlay/lib/python3.12/site-packages/"
+      - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-i5ftj49l/overlay/bin/"
+      - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-i5ftj49l/normal/bin/"
+      - "/Users/prishapriyadashini/Downloads/DIMACS/split-env/bin/"
+      - "/Users/prishapriyadashini/Downloads/DIMACS/SPLIT-ICML/split-env/bin/"
       - "/Library/Frameworks/Python.framework/Versions/3.12/bin/"
       - "/Users/prishapriyadashini/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/"
       - "/Users/prishapriyadashini/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli/"
@@ -47,18 +46,18 @@ events:
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin/"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/"
+      - "/Users/prishapriyadashini/.vscode/extensions/ms-python.debugpy-2025.18.0-darwin-arm64/bundled/scripts/noConfigScripts/"
     searched_directories:
-      - "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/bin/uname"
-      - "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/sbin/uname"
-      - "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/uname"
-      - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-qtjix7k9/overlay/lib/python3.12/site-packages/bin/uname"
-      - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-qtjix7k9/overlay/lib/python3.12/site-packages/sbin/uname"
-      - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-qtjix7k9/overlay/lib/python3.12/site-packages/uname"
-      - "/opt/homebrew/opt/tbb/bin/uname"
-      - "/opt/homebrew/opt/tbb/sbin/uname"
-      - "/opt/homebrew/opt/tbb/uname"
-      - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-qtjix7k9/overlay/bin/uname"
-      - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-qtjix7k9/normal/bin/uname"
+      - "/Users/prishapriyadashini/Downloads/DIMACS/split-env/lib/python3.12/site-packages/bin/uname"
+      - "/Users/prishapriyadashini/Downloads/DIMACS/split-env/lib/python3.12/site-packages/sbin/uname"
+      - "/Users/prishapriyadashini/Downloads/DIMACS/split-env/lib/python3.12/site-packages/uname"
+      - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-i5ftj49l/overlay/lib/python3.12/site-packages/bin/uname"
+      - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-i5ftj49l/overlay/lib/python3.12/site-packages/sbin/uname"
+      - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-i5ftj49l/overlay/lib/python3.12/site-packages/uname"
+      - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-i5ftj49l/overlay/bin/uname"
+      - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-i5ftj49l/normal/bin/uname"
+      - "/Users/prishapriyadashini/Downloads/DIMACS/split-env/bin/uname"
+      - "/Users/prishapriyadashini/Downloads/DIMACS/SPLIT-ICML/split-env/bin/uname"
       - "/Library/Frameworks/Python.framework/Versions/3.12/bin/uname"
       - "/Users/prishapriyadashini/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/uname"
       - "/Users/prishapriyadashini/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli/uname"
@@ -70,13 +69,13 @@ events:
     found: "/usr/bin/uname"
     search_context:
       CMAKE_PREFIX_PATH:
-        - "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages"
-        - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-qtjix7k9/overlay/lib/python3.12/site-packages"
-      ENV{CMAKE_PREFIX_PATH}:
-        - "/opt/homebrew/opt/tbb"
+        - "/Users/prishapriyadashini/Downloads/DIMACS/split-env/lib/python3.12/site-packages"
+        - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-i5ftj49l/overlay/lib/python3.12/site-packages"
       ENV{PATH}:
-        - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-qtjix7k9/overlay/bin"
-        - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-qtjix7k9/normal/bin"
+        - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-i5ftj49l/overlay/bin"
+        - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-i5ftj49l/normal/bin"
+        - "/Users/prishapriyadashini/Downloads/DIMACS/split-env/bin"
+        - "/Users/prishapriyadashini/Downloads/DIMACS/SPLIT-ICML/split-env/bin"
         - "/Library/Frameworks/Python.framework/Versions/3.12/bin"
         - "/Users/prishapriyadashini/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand"
         - "/Users/prishapriyadashini/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli"
@@ -100,7 +99,8 @@ events:
         - "/Library/Frameworks/Python.framework/Versions/3.12/bin"
         - "/Library/Frameworks/Python.framework/Versions/3.11/bin"
         - "/opt/homebrew/sbin"
-      CMAKE_INSTALL_PREFIX: "/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/tmpqif9jwce/wheel/platlib"
+        - "/Users/prishapriyadashini/.vscode/extensions/ms-python.debugpy-2025.18.0-darwin-arm64/bundled/scripts/noConfigScripts"
+      CMAKE_INSTALL_PREFIX: "/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/tmp62w1kvjc/wheel/platlib"
   -
     kind: "message-v1"
     backtrace:
@@ -128,17 +128,16 @@ events:
     names:
       - "/usr/bin/clang++"
     candidate_directories:
-      - "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/bin/"
-      - "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/sbin/"
-      - "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/"
-      - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-qtjix7k9/overlay/lib/python3.12/site-packages/bin/"
-      - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-qtjix7k9/overlay/lib/python3.12/site-packages/sbin/"
-      - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-qtjix7k9/overlay/lib/python3.12/site-packages/"
-      - "/opt/homebrew/opt/tbb/bin/"
-      - "/opt/homebrew/opt/tbb/sbin/"
-      - "/opt/homebrew/opt/tbb/"
-      - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-qtjix7k9/overlay/bin/"
-      - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-qtjix7k9/normal/bin/"
+      - "/Users/prishapriyadashini/Downloads/DIMACS/split-env/lib/python3.12/site-packages/bin/"
+      - "/Users/prishapriyadashini/Downloads/DIMACS/split-env/lib/python3.12/site-packages/sbin/"
+      - "/Users/prishapriyadashini/Downloads/DIMACS/split-env/lib/python3.12/site-packages/"
+      - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-i5ftj49l/overlay/lib/python3.12/site-packages/bin/"
+      - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-i5ftj49l/overlay/lib/python3.12/site-packages/sbin/"
+      - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-i5ftj49l/overlay/lib/python3.12/site-packages/"
+      - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-i5ftj49l/overlay/bin/"
+      - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-i5ftj49l/normal/bin/"
+      - "/Users/prishapriyadashini/Downloads/DIMACS/split-env/bin/"
+      - "/Users/prishapriyadashini/Downloads/DIMACS/SPLIT-ICML/split-env/bin/"
       - "/Library/Frameworks/Python.framework/Versions/3.12/bin/"
       - "/Users/prishapriyadashini/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/"
       - "/Users/prishapriyadashini/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli/"
@@ -155,16 +154,17 @@ events:
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin/"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/"
+      - "/Users/prishapriyadashini/.vscode/extensions/ms-python.debugpy-2025.18.0-darwin-arm64/bundled/scripts/noConfigScripts/"
     found: "/usr/bin/clang++"
     search_context:
       CMAKE_PREFIX_PATH:
-        - "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages"
-        - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-qtjix7k9/overlay/lib/python3.12/site-packages"
-      ENV{CMAKE_PREFIX_PATH}:
-        - "/opt/homebrew/opt/tbb"
+        - "/Users/prishapriyadashini/Downloads/DIMACS/split-env/lib/python3.12/site-packages"
+        - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-i5ftj49l/overlay/lib/python3.12/site-packages"
       ENV{PATH}:
-        - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-qtjix7k9/overlay/bin"
-        - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-qtjix7k9/normal/bin"
+        - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-i5ftj49l/overlay/bin"
+        - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-i5ftj49l/normal/bin"
+        - "/Users/prishapriyadashini/Downloads/DIMACS/split-env/bin"
+        - "/Users/prishapriyadashini/Downloads/DIMACS/SPLIT-ICML/split-env/bin"
         - "/Library/Frameworks/Python.framework/Versions/3.12/bin"
         - "/Users/prishapriyadashini/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand"
         - "/Users/prishapriyadashini/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli"
@@ -188,7 +188,8 @@ events:
         - "/Library/Frameworks/Python.framework/Versions/3.12/bin"
         - "/Library/Frameworks/Python.framework/Versions/3.11/bin"
         - "/opt/homebrew/sbin"
-      CMAKE_INSTALL_PREFIX: "/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/tmpqif9jwce/wheel/platlib"
+        - "/Users/prishapriyadashini/.vscode/extensions/ms-python.debugpy-2025.18.0-darwin-arm64/bundled/scripts/noConfigScripts"
+      CMAKE_INSTALL_PREFIX: "/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/tmp62w1kvjc/wheel/platlib"
   -
     kind: "find-v1"
     backtrace:
@@ -216,13 +217,13 @@ events:
     found: "/opt/homebrew/share/cmake/Modules/CMakeCXXCompilerId.cpp.in"
     search_context:
       CMAKE_PREFIX_PATH:
-        - "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages"
-        - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-qtjix7k9/overlay/lib/python3.12/site-packages"
-      ENV{CMAKE_PREFIX_PATH}:
-        - "/opt/homebrew/opt/tbb"
+        - "/Users/prishapriyadashini/Downloads/DIMACS/split-env/lib/python3.12/site-packages"
+        - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-i5ftj49l/overlay/lib/python3.12/site-packages"
       ENV{PATH}:
-        - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-qtjix7k9/overlay/bin"
-        - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-qtjix7k9/normal/bin"
+        - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-i5ftj49l/overlay/bin"
+        - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-i5ftj49l/normal/bin"
+        - "/Users/prishapriyadashini/Downloads/DIMACS/split-env/bin"
+        - "/Users/prishapriyadashini/Downloads/DIMACS/SPLIT-ICML/split-env/bin"
         - "/Library/Frameworks/Python.framework/Versions/3.12/bin"
         - "/Users/prishapriyadashini/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand"
         - "/Users/prishapriyadashini/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli"
@@ -246,7 +247,8 @@ events:
         - "/Library/Frameworks/Python.framework/Versions/3.12/bin"
         - "/Library/Frameworks/Python.framework/Versions/3.11/bin"
         - "/opt/homebrew/sbin"
-      CMAKE_INSTALL_PREFIX: "/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/tmpqif9jwce/wheel/platlib"
+        - "/Users/prishapriyadashini/.vscode/extensions/ms-python.debugpy-2025.18.0-darwin-arm64/bundled/scripts/noConfigScripts"
+      CMAKE_INSTALL_PREFIX: "/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/tmp62w1kvjc/wheel/platlib"
   -
     kind: "message-v1"
     backtrace:
@@ -318,8 +320,10 @@ events:
       - "ar"
     candidate_directories:
       - "/usr/bin/"
-      - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-qtjix7k9/overlay/bin/"
-      - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-qtjix7k9/normal/bin/"
+      - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-i5ftj49l/overlay/bin/"
+      - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-i5ftj49l/normal/bin/"
+      - "/Users/prishapriyadashini/Downloads/DIMACS/split-env/bin/"
+      - "/Users/prishapriyadashini/Downloads/DIMACS/SPLIT-ICML/split-env/bin/"
       - "/Library/Frameworks/Python.framework/Versions/3.12/bin/"
       - "/Users/prishapriyadashini/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/"
       - "/Users/prishapriyadashini/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli/"
@@ -335,16 +339,17 @@ events:
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin/"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/"
+      - "/Users/prishapriyadashini/.vscode/extensions/ms-python.debugpy-2025.18.0-darwin-arm64/bundled/scripts/noConfigScripts/"
     found: "/usr/bin/ar"
     search_context:
       CMAKE_PREFIX_PATH:
-        - "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages"
-        - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-qtjix7k9/overlay/lib/python3.12/site-packages"
-      ENV{CMAKE_PREFIX_PATH}:
-        - "/opt/homebrew/opt/tbb"
+        - "/Users/prishapriyadashini/Downloads/DIMACS/split-env/lib/python3.12/site-packages"
+        - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-i5ftj49l/overlay/lib/python3.12/site-packages"
       ENV{PATH}:
-        - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-qtjix7k9/overlay/bin"
-        - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-qtjix7k9/normal/bin"
+        - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-i5ftj49l/overlay/bin"
+        - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-i5ftj49l/normal/bin"
+        - "/Users/prishapriyadashini/Downloads/DIMACS/split-env/bin"
+        - "/Users/prishapriyadashini/Downloads/DIMACS/SPLIT-ICML/split-env/bin"
         - "/Library/Frameworks/Python.framework/Versions/3.12/bin"
         - "/Users/prishapriyadashini/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand"
         - "/Users/prishapriyadashini/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli"
@@ -368,7 +373,8 @@ events:
         - "/Library/Frameworks/Python.framework/Versions/3.12/bin"
         - "/Library/Frameworks/Python.framework/Versions/3.11/bin"
         - "/opt/homebrew/sbin"
-      CMAKE_INSTALL_PREFIX: "/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/tmpqif9jwce/wheel/platlib"
+        - "/Users/prishapriyadashini/.vscode/extensions/ms-python.debugpy-2025.18.0-darwin-arm64/bundled/scripts/noConfigScripts"
+      CMAKE_INSTALL_PREFIX: "/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/tmp62w1kvjc/wheel/platlib"
   -
     kind: "find-v1"
     backtrace:
@@ -390,8 +396,10 @@ events:
       - "ranlib"
     candidate_directories:
       - "/usr/bin/"
-      - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-qtjix7k9/overlay/bin/"
-      - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-qtjix7k9/normal/bin/"
+      - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-i5ftj49l/overlay/bin/"
+      - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-i5ftj49l/normal/bin/"
+      - "/Users/prishapriyadashini/Downloads/DIMACS/split-env/bin/"
+      - "/Users/prishapriyadashini/Downloads/DIMACS/SPLIT-ICML/split-env/bin/"
       - "/Library/Frameworks/Python.framework/Versions/3.12/bin/"
       - "/Users/prishapriyadashini/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/"
       - "/Users/prishapriyadashini/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli/"
@@ -407,16 +415,17 @@ events:
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin/"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/"
+      - "/Users/prishapriyadashini/.vscode/extensions/ms-python.debugpy-2025.18.0-darwin-arm64/bundled/scripts/noConfigScripts/"
     found: "/usr/bin/ranlib"
     search_context:
       CMAKE_PREFIX_PATH:
-        - "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages"
-        - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-qtjix7k9/overlay/lib/python3.12/site-packages"
-      ENV{CMAKE_PREFIX_PATH}:
-        - "/opt/homebrew/opt/tbb"
+        - "/Users/prishapriyadashini/Downloads/DIMACS/split-env/lib/python3.12/site-packages"
+        - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-i5ftj49l/overlay/lib/python3.12/site-packages"
       ENV{PATH}:
-        - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-qtjix7k9/overlay/bin"
-        - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-qtjix7k9/normal/bin"
+        - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-i5ftj49l/overlay/bin"
+        - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-i5ftj49l/normal/bin"
+        - "/Users/prishapriyadashini/Downloads/DIMACS/split-env/bin"
+        - "/Users/prishapriyadashini/Downloads/DIMACS/SPLIT-ICML/split-env/bin"
         - "/Library/Frameworks/Python.framework/Versions/3.12/bin"
         - "/Users/prishapriyadashini/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand"
         - "/Users/prishapriyadashini/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli"
@@ -440,7 +449,8 @@ events:
         - "/Library/Frameworks/Python.framework/Versions/3.12/bin"
         - "/Library/Frameworks/Python.framework/Versions/3.11/bin"
         - "/opt/homebrew/sbin"
-      CMAKE_INSTALL_PREFIX: "/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/tmpqif9jwce/wheel/platlib"
+        - "/Users/prishapriyadashini/.vscode/extensions/ms-python.debugpy-2025.18.0-darwin-arm64/bundled/scripts/noConfigScripts"
+      CMAKE_INSTALL_PREFIX: "/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/tmp62w1kvjc/wheel/platlib"
   -
     kind: "find-v1"
     backtrace:
@@ -462,8 +472,10 @@ events:
       - "strip"
     candidate_directories:
       - "/usr/bin/"
-      - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-qtjix7k9/overlay/bin/"
-      - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-qtjix7k9/normal/bin/"
+      - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-i5ftj49l/overlay/bin/"
+      - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-i5ftj49l/normal/bin/"
+      - "/Users/prishapriyadashini/Downloads/DIMACS/split-env/bin/"
+      - "/Users/prishapriyadashini/Downloads/DIMACS/SPLIT-ICML/split-env/bin/"
       - "/Library/Frameworks/Python.framework/Versions/3.12/bin/"
       - "/Users/prishapriyadashini/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/"
       - "/Users/prishapriyadashini/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli/"
@@ -479,16 +491,17 @@ events:
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin/"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/"
+      - "/Users/prishapriyadashini/.vscode/extensions/ms-python.debugpy-2025.18.0-darwin-arm64/bundled/scripts/noConfigScripts/"
     found: "/usr/bin/strip"
     search_context:
       CMAKE_PREFIX_PATH:
-        - "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages"
-        - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-qtjix7k9/overlay/lib/python3.12/site-packages"
-      ENV{CMAKE_PREFIX_PATH}:
-        - "/opt/homebrew/opt/tbb"
+        - "/Users/prishapriyadashini/Downloads/DIMACS/split-env/lib/python3.12/site-packages"
+        - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-i5ftj49l/overlay/lib/python3.12/site-packages"
       ENV{PATH}:
-        - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-qtjix7k9/overlay/bin"
-        - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-qtjix7k9/normal/bin"
+        - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-i5ftj49l/overlay/bin"
+        - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-i5ftj49l/normal/bin"
+        - "/Users/prishapriyadashini/Downloads/DIMACS/split-env/bin"
+        - "/Users/prishapriyadashini/Downloads/DIMACS/SPLIT-ICML/split-env/bin"
         - "/Library/Frameworks/Python.framework/Versions/3.12/bin"
         - "/Users/prishapriyadashini/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand"
         - "/Users/prishapriyadashini/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli"
@@ -512,7 +525,8 @@ events:
         - "/Library/Frameworks/Python.framework/Versions/3.12/bin"
         - "/Library/Frameworks/Python.framework/Versions/3.11/bin"
         - "/opt/homebrew/sbin"
-      CMAKE_INSTALL_PREFIX: "/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/tmpqif9jwce/wheel/platlib"
+        - "/Users/prishapriyadashini/.vscode/extensions/ms-python.debugpy-2025.18.0-darwin-arm64/bundled/scripts/noConfigScripts"
+      CMAKE_INSTALL_PREFIX: "/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/tmp62w1kvjc/wheel/platlib"
   -
     kind: "find-v1"
     backtrace:
@@ -534,8 +548,10 @@ events:
       - "ld"
     candidate_directories:
       - "/usr/bin/"
-      - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-qtjix7k9/overlay/bin/"
-      - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-qtjix7k9/normal/bin/"
+      - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-i5ftj49l/overlay/bin/"
+      - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-i5ftj49l/normal/bin/"
+      - "/Users/prishapriyadashini/Downloads/DIMACS/split-env/bin/"
+      - "/Users/prishapriyadashini/Downloads/DIMACS/SPLIT-ICML/split-env/bin/"
       - "/Library/Frameworks/Python.framework/Versions/3.12/bin/"
       - "/Users/prishapriyadashini/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/"
       - "/Users/prishapriyadashini/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli/"
@@ -551,16 +567,17 @@ events:
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin/"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/"
+      - "/Users/prishapriyadashini/.vscode/extensions/ms-python.debugpy-2025.18.0-darwin-arm64/bundled/scripts/noConfigScripts/"
     found: "/usr/bin/ld"
     search_context:
       CMAKE_PREFIX_PATH:
-        - "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages"
-        - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-qtjix7k9/overlay/lib/python3.12/site-packages"
-      ENV{CMAKE_PREFIX_PATH}:
-        - "/opt/homebrew/opt/tbb"
+        - "/Users/prishapriyadashini/Downloads/DIMACS/split-env/lib/python3.12/site-packages"
+        - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-i5ftj49l/overlay/lib/python3.12/site-packages"
       ENV{PATH}:
-        - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-qtjix7k9/overlay/bin"
-        - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-qtjix7k9/normal/bin"
+        - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-i5ftj49l/overlay/bin"
+        - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-i5ftj49l/normal/bin"
+        - "/Users/prishapriyadashini/Downloads/DIMACS/split-env/bin"
+        - "/Users/prishapriyadashini/Downloads/DIMACS/SPLIT-ICML/split-env/bin"
         - "/Library/Frameworks/Python.framework/Versions/3.12/bin"
         - "/Users/prishapriyadashini/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand"
         - "/Users/prishapriyadashini/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli"
@@ -584,7 +601,8 @@ events:
         - "/Library/Frameworks/Python.framework/Versions/3.12/bin"
         - "/Library/Frameworks/Python.framework/Versions/3.11/bin"
         - "/opt/homebrew/sbin"
-      CMAKE_INSTALL_PREFIX: "/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/tmpqif9jwce/wheel/platlib"
+        - "/Users/prishapriyadashini/.vscode/extensions/ms-python.debugpy-2025.18.0-darwin-arm64/bundled/scripts/noConfigScripts"
+      CMAKE_INSTALL_PREFIX: "/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/tmp62w1kvjc/wheel/platlib"
   -
     kind: "find-v1"
     backtrace:
@@ -606,8 +624,10 @@ events:
       - "nm"
     candidate_directories:
       - "/usr/bin/"
-      - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-qtjix7k9/overlay/bin/"
-      - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-qtjix7k9/normal/bin/"
+      - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-i5ftj49l/overlay/bin/"
+      - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-i5ftj49l/normal/bin/"
+      - "/Users/prishapriyadashini/Downloads/DIMACS/split-env/bin/"
+      - "/Users/prishapriyadashini/Downloads/DIMACS/SPLIT-ICML/split-env/bin/"
       - "/Library/Frameworks/Python.framework/Versions/3.12/bin/"
       - "/Users/prishapriyadashini/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/"
       - "/Users/prishapriyadashini/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli/"
@@ -623,16 +643,17 @@ events:
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin/"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/"
+      - "/Users/prishapriyadashini/.vscode/extensions/ms-python.debugpy-2025.18.0-darwin-arm64/bundled/scripts/noConfigScripts/"
     found: "/usr/bin/nm"
     search_context:
       CMAKE_PREFIX_PATH:
-        - "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages"
-        - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-qtjix7k9/overlay/lib/python3.12/site-packages"
-      ENV{CMAKE_PREFIX_PATH}:
-        - "/opt/homebrew/opt/tbb"
+        - "/Users/prishapriyadashini/Downloads/DIMACS/split-env/lib/python3.12/site-packages"
+        - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-i5ftj49l/overlay/lib/python3.12/site-packages"
       ENV{PATH}:
-        - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-qtjix7k9/overlay/bin"
-        - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-qtjix7k9/normal/bin"
+        - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-i5ftj49l/overlay/bin"
+        - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-i5ftj49l/normal/bin"
+        - "/Users/prishapriyadashini/Downloads/DIMACS/split-env/bin"
+        - "/Users/prishapriyadashini/Downloads/DIMACS/SPLIT-ICML/split-env/bin"
         - "/Library/Frameworks/Python.framework/Versions/3.12/bin"
         - "/Users/prishapriyadashini/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand"
         - "/Users/prishapriyadashini/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli"
@@ -656,7 +677,8 @@ events:
         - "/Library/Frameworks/Python.framework/Versions/3.12/bin"
         - "/Library/Frameworks/Python.framework/Versions/3.11/bin"
         - "/opt/homebrew/sbin"
-      CMAKE_INSTALL_PREFIX: "/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/tmpqif9jwce/wheel/platlib"
+        - "/Users/prishapriyadashini/.vscode/extensions/ms-python.debugpy-2025.18.0-darwin-arm64/bundled/scripts/noConfigScripts"
+      CMAKE_INSTALL_PREFIX: "/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/tmp62w1kvjc/wheel/platlib"
   -
     kind: "find-v1"
     backtrace:
@@ -678,8 +700,10 @@ events:
       - "objdump"
     candidate_directories:
       - "/usr/bin/"
-      - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-qtjix7k9/overlay/bin/"
-      - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-qtjix7k9/normal/bin/"
+      - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-i5ftj49l/overlay/bin/"
+      - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-i5ftj49l/normal/bin/"
+      - "/Users/prishapriyadashini/Downloads/DIMACS/split-env/bin/"
+      - "/Users/prishapriyadashini/Downloads/DIMACS/SPLIT-ICML/split-env/bin/"
       - "/Library/Frameworks/Python.framework/Versions/3.12/bin/"
       - "/Users/prishapriyadashini/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/"
       - "/Users/prishapriyadashini/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli/"
@@ -695,16 +719,17 @@ events:
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin/"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/"
+      - "/Users/prishapriyadashini/.vscode/extensions/ms-python.debugpy-2025.18.0-darwin-arm64/bundled/scripts/noConfigScripts/"
     found: "/usr/bin/objdump"
     search_context:
       CMAKE_PREFIX_PATH:
-        - "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages"
-        - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-qtjix7k9/overlay/lib/python3.12/site-packages"
-      ENV{CMAKE_PREFIX_PATH}:
-        - "/opt/homebrew/opt/tbb"
+        - "/Users/prishapriyadashini/Downloads/DIMACS/split-env/lib/python3.12/site-packages"
+        - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-i5ftj49l/overlay/lib/python3.12/site-packages"
       ENV{PATH}:
-        - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-qtjix7k9/overlay/bin"
-        - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-qtjix7k9/normal/bin"
+        - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-i5ftj49l/overlay/bin"
+        - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-i5ftj49l/normal/bin"
+        - "/Users/prishapriyadashini/Downloads/DIMACS/split-env/bin"
+        - "/Users/prishapriyadashini/Downloads/DIMACS/SPLIT-ICML/split-env/bin"
         - "/Library/Frameworks/Python.framework/Versions/3.12/bin"
         - "/Users/prishapriyadashini/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand"
         - "/Users/prishapriyadashini/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli"
@@ -728,7 +753,8 @@ events:
         - "/Library/Frameworks/Python.framework/Versions/3.12/bin"
         - "/Library/Frameworks/Python.framework/Versions/3.11/bin"
         - "/opt/homebrew/sbin"
-      CMAKE_INSTALL_PREFIX: "/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/tmpqif9jwce/wheel/platlib"
+        - "/Users/prishapriyadashini/.vscode/extensions/ms-python.debugpy-2025.18.0-darwin-arm64/bundled/scripts/noConfigScripts"
+      CMAKE_INSTALL_PREFIX: "/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/tmp62w1kvjc/wheel/platlib"
   -
     kind: "find-v1"
     backtrace:
@@ -750,8 +776,10 @@ events:
       - "objcopy"
     candidate_directories:
       - "/usr/bin/"
-      - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-qtjix7k9/overlay/bin/"
-      - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-qtjix7k9/normal/bin/"
+      - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-i5ftj49l/overlay/bin/"
+      - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-i5ftj49l/normal/bin/"
+      - "/Users/prishapriyadashini/Downloads/DIMACS/split-env/bin/"
+      - "/Users/prishapriyadashini/Downloads/DIMACS/SPLIT-ICML/split-env/bin/"
       - "/Library/Frameworks/Python.framework/Versions/3.12/bin/"
       - "/Users/prishapriyadashini/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/"
       - "/Users/prishapriyadashini/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli/"
@@ -767,10 +795,13 @@ events:
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin/"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/"
+      - "/Users/prishapriyadashini/.vscode/extensions/ms-python.debugpy-2025.18.0-darwin-arm64/bundled/scripts/noConfigScripts/"
     searched_directories:
       - "/usr/bin/objcopy"
-      - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-qtjix7k9/overlay/bin/objcopy"
-      - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-qtjix7k9/normal/bin/objcopy"
+      - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-i5ftj49l/overlay/bin/objcopy"
+      - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-i5ftj49l/normal/bin/objcopy"
+      - "/Users/prishapriyadashini/Downloads/DIMACS/split-env/bin/objcopy"
+      - "/Users/prishapriyadashini/Downloads/DIMACS/SPLIT-ICML/split-env/bin/objcopy"
       - "/Library/Frameworks/Python.framework/Versions/3.12/bin/objcopy"
       - "/Users/prishapriyadashini/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/objcopy"
       - "/Users/prishapriyadashini/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli/objcopy"
@@ -786,16 +817,17 @@ events:
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin/objcopy"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/objcopy"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/objcopy"
+      - "/Users/prishapriyadashini/.vscode/extensions/ms-python.debugpy-2025.18.0-darwin-arm64/bundled/scripts/noConfigScripts/objcopy"
     found: false
     search_context:
       CMAKE_PREFIX_PATH:
-        - "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages"
-        - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-qtjix7k9/overlay/lib/python3.12/site-packages"
-      ENV{CMAKE_PREFIX_PATH}:
-        - "/opt/homebrew/opt/tbb"
+        - "/Users/prishapriyadashini/Downloads/DIMACS/split-env/lib/python3.12/site-packages"
+        - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-i5ftj49l/overlay/lib/python3.12/site-packages"
       ENV{PATH}:
-        - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-qtjix7k9/overlay/bin"
-        - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-qtjix7k9/normal/bin"
+        - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-i5ftj49l/overlay/bin"
+        - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-i5ftj49l/normal/bin"
+        - "/Users/prishapriyadashini/Downloads/DIMACS/split-env/bin"
+        - "/Users/prishapriyadashini/Downloads/DIMACS/SPLIT-ICML/split-env/bin"
         - "/Library/Frameworks/Python.framework/Versions/3.12/bin"
         - "/Users/prishapriyadashini/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand"
         - "/Users/prishapriyadashini/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli"
@@ -819,7 +851,8 @@ events:
         - "/Library/Frameworks/Python.framework/Versions/3.12/bin"
         - "/Library/Frameworks/Python.framework/Versions/3.11/bin"
         - "/opt/homebrew/sbin"
-      CMAKE_INSTALL_PREFIX: "/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/tmpqif9jwce/wheel/platlib"
+        - "/Users/prishapriyadashini/.vscode/extensions/ms-python.debugpy-2025.18.0-darwin-arm64/bundled/scripts/noConfigScripts"
+      CMAKE_INSTALL_PREFIX: "/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/tmp62w1kvjc/wheel/platlib"
   -
     kind: "find-v1"
     backtrace:
@@ -841,8 +874,10 @@ events:
       - "readelf"
     candidate_directories:
       - "/usr/bin/"
-      - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-qtjix7k9/overlay/bin/"
-      - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-qtjix7k9/normal/bin/"
+      - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-i5ftj49l/overlay/bin/"
+      - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-i5ftj49l/normal/bin/"
+      - "/Users/prishapriyadashini/Downloads/DIMACS/split-env/bin/"
+      - "/Users/prishapriyadashini/Downloads/DIMACS/SPLIT-ICML/split-env/bin/"
       - "/Library/Frameworks/Python.framework/Versions/3.12/bin/"
       - "/Users/prishapriyadashini/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/"
       - "/Users/prishapriyadashini/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli/"
@@ -858,10 +893,13 @@ events:
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin/"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/"
+      - "/Users/prishapriyadashini/.vscode/extensions/ms-python.debugpy-2025.18.0-darwin-arm64/bundled/scripts/noConfigScripts/"
     searched_directories:
       - "/usr/bin/readelf"
-      - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-qtjix7k9/overlay/bin/readelf"
-      - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-qtjix7k9/normal/bin/readelf"
+      - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-i5ftj49l/overlay/bin/readelf"
+      - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-i5ftj49l/normal/bin/readelf"
+      - "/Users/prishapriyadashini/Downloads/DIMACS/split-env/bin/readelf"
+      - "/Users/prishapriyadashini/Downloads/DIMACS/SPLIT-ICML/split-env/bin/readelf"
       - "/Library/Frameworks/Python.framework/Versions/3.12/bin/readelf"
       - "/Users/prishapriyadashini/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/readelf"
       - "/Users/prishapriyadashini/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli/readelf"
@@ -877,16 +915,17 @@ events:
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin/readelf"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/readelf"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/readelf"
+      - "/Users/prishapriyadashini/.vscode/extensions/ms-python.debugpy-2025.18.0-darwin-arm64/bundled/scripts/noConfigScripts/readelf"
     found: false
     search_context:
       CMAKE_PREFIX_PATH:
-        - "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages"
-        - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-qtjix7k9/overlay/lib/python3.12/site-packages"
-      ENV{CMAKE_PREFIX_PATH}:
-        - "/opt/homebrew/opt/tbb"
+        - "/Users/prishapriyadashini/Downloads/DIMACS/split-env/lib/python3.12/site-packages"
+        - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-i5ftj49l/overlay/lib/python3.12/site-packages"
       ENV{PATH}:
-        - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-qtjix7k9/overlay/bin"
-        - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-qtjix7k9/normal/bin"
+        - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-i5ftj49l/overlay/bin"
+        - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-i5ftj49l/normal/bin"
+        - "/Users/prishapriyadashini/Downloads/DIMACS/split-env/bin"
+        - "/Users/prishapriyadashini/Downloads/DIMACS/SPLIT-ICML/split-env/bin"
         - "/Library/Frameworks/Python.framework/Versions/3.12/bin"
         - "/Users/prishapriyadashini/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand"
         - "/Users/prishapriyadashini/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli"
@@ -910,7 +949,8 @@ events:
         - "/Library/Frameworks/Python.framework/Versions/3.12/bin"
         - "/Library/Frameworks/Python.framework/Versions/3.11/bin"
         - "/opt/homebrew/sbin"
-      CMAKE_INSTALL_PREFIX: "/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/tmpqif9jwce/wheel/platlib"
+        - "/Users/prishapriyadashini/.vscode/extensions/ms-python.debugpy-2025.18.0-darwin-arm64/bundled/scripts/noConfigScripts"
+      CMAKE_INSTALL_PREFIX: "/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/tmp62w1kvjc/wheel/platlib"
   -
     kind: "find-v1"
     backtrace:
@@ -932,8 +972,10 @@ events:
       - "dlltool"
     candidate_directories:
       - "/usr/bin/"
-      - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-qtjix7k9/overlay/bin/"
-      - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-qtjix7k9/normal/bin/"
+      - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-i5ftj49l/overlay/bin/"
+      - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-i5ftj49l/normal/bin/"
+      - "/Users/prishapriyadashini/Downloads/DIMACS/split-env/bin/"
+      - "/Users/prishapriyadashini/Downloads/DIMACS/SPLIT-ICML/split-env/bin/"
       - "/Library/Frameworks/Python.framework/Versions/3.12/bin/"
       - "/Users/prishapriyadashini/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/"
       - "/Users/prishapriyadashini/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli/"
@@ -949,10 +991,13 @@ events:
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin/"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/"
+      - "/Users/prishapriyadashini/.vscode/extensions/ms-python.debugpy-2025.18.0-darwin-arm64/bundled/scripts/noConfigScripts/"
     searched_directories:
       - "/usr/bin/dlltool"
-      - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-qtjix7k9/overlay/bin/dlltool"
-      - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-qtjix7k9/normal/bin/dlltool"
+      - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-i5ftj49l/overlay/bin/dlltool"
+      - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-i5ftj49l/normal/bin/dlltool"
+      - "/Users/prishapriyadashini/Downloads/DIMACS/split-env/bin/dlltool"
+      - "/Users/prishapriyadashini/Downloads/DIMACS/SPLIT-ICML/split-env/bin/dlltool"
       - "/Library/Frameworks/Python.framework/Versions/3.12/bin/dlltool"
       - "/Users/prishapriyadashini/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/dlltool"
       - "/Users/prishapriyadashini/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli/dlltool"
@@ -968,16 +1013,17 @@ events:
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin/dlltool"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/dlltool"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/dlltool"
+      - "/Users/prishapriyadashini/.vscode/extensions/ms-python.debugpy-2025.18.0-darwin-arm64/bundled/scripts/noConfigScripts/dlltool"
     found: false
     search_context:
       CMAKE_PREFIX_PATH:
-        - "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages"
-        - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-qtjix7k9/overlay/lib/python3.12/site-packages"
-      ENV{CMAKE_PREFIX_PATH}:
-        - "/opt/homebrew/opt/tbb"
+        - "/Users/prishapriyadashini/Downloads/DIMACS/split-env/lib/python3.12/site-packages"
+        - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-i5ftj49l/overlay/lib/python3.12/site-packages"
       ENV{PATH}:
-        - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-qtjix7k9/overlay/bin"
-        - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-qtjix7k9/normal/bin"
+        - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-i5ftj49l/overlay/bin"
+        - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-i5ftj49l/normal/bin"
+        - "/Users/prishapriyadashini/Downloads/DIMACS/split-env/bin"
+        - "/Users/prishapriyadashini/Downloads/DIMACS/SPLIT-ICML/split-env/bin"
         - "/Library/Frameworks/Python.framework/Versions/3.12/bin"
         - "/Users/prishapriyadashini/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand"
         - "/Users/prishapriyadashini/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli"
@@ -1001,7 +1047,8 @@ events:
         - "/Library/Frameworks/Python.framework/Versions/3.12/bin"
         - "/Library/Frameworks/Python.framework/Versions/3.11/bin"
         - "/opt/homebrew/sbin"
-      CMAKE_INSTALL_PREFIX: "/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/tmpqif9jwce/wheel/platlib"
+        - "/Users/prishapriyadashini/.vscode/extensions/ms-python.debugpy-2025.18.0-darwin-arm64/bundled/scripts/noConfigScripts"
+      CMAKE_INSTALL_PREFIX: "/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/tmp62w1kvjc/wheel/platlib"
   -
     kind: "find-v1"
     backtrace:
@@ -1023,8 +1070,10 @@ events:
       - "addr2line"
     candidate_directories:
       - "/usr/bin/"
-      - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-qtjix7k9/overlay/bin/"
-      - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-qtjix7k9/normal/bin/"
+      - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-i5ftj49l/overlay/bin/"
+      - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-i5ftj49l/normal/bin/"
+      - "/Users/prishapriyadashini/Downloads/DIMACS/split-env/bin/"
+      - "/Users/prishapriyadashini/Downloads/DIMACS/SPLIT-ICML/split-env/bin/"
       - "/Library/Frameworks/Python.framework/Versions/3.12/bin/"
       - "/Users/prishapriyadashini/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/"
       - "/Users/prishapriyadashini/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli/"
@@ -1040,10 +1089,13 @@ events:
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin/"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/"
+      - "/Users/prishapriyadashini/.vscode/extensions/ms-python.debugpy-2025.18.0-darwin-arm64/bundled/scripts/noConfigScripts/"
     searched_directories:
       - "/usr/bin/addr2line"
-      - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-qtjix7k9/overlay/bin/addr2line"
-      - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-qtjix7k9/normal/bin/addr2line"
+      - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-i5ftj49l/overlay/bin/addr2line"
+      - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-i5ftj49l/normal/bin/addr2line"
+      - "/Users/prishapriyadashini/Downloads/DIMACS/split-env/bin/addr2line"
+      - "/Users/prishapriyadashini/Downloads/DIMACS/SPLIT-ICML/split-env/bin/addr2line"
       - "/Library/Frameworks/Python.framework/Versions/3.12/bin/addr2line"
       - "/Users/prishapriyadashini/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/addr2line"
       - "/Users/prishapriyadashini/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli/addr2line"
@@ -1059,16 +1111,17 @@ events:
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin/addr2line"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/addr2line"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/addr2line"
+      - "/Users/prishapriyadashini/.vscode/extensions/ms-python.debugpy-2025.18.0-darwin-arm64/bundled/scripts/noConfigScripts/addr2line"
     found: false
     search_context:
       CMAKE_PREFIX_PATH:
-        - "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages"
-        - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-qtjix7k9/overlay/lib/python3.12/site-packages"
-      ENV{CMAKE_PREFIX_PATH}:
-        - "/opt/homebrew/opt/tbb"
+        - "/Users/prishapriyadashini/Downloads/DIMACS/split-env/lib/python3.12/site-packages"
+        - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-i5ftj49l/overlay/lib/python3.12/site-packages"
       ENV{PATH}:
-        - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-qtjix7k9/overlay/bin"
-        - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-qtjix7k9/normal/bin"
+        - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-i5ftj49l/overlay/bin"
+        - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-i5ftj49l/normal/bin"
+        - "/Users/prishapriyadashini/Downloads/DIMACS/split-env/bin"
+        - "/Users/prishapriyadashini/Downloads/DIMACS/SPLIT-ICML/split-env/bin"
         - "/Library/Frameworks/Python.framework/Versions/3.12/bin"
         - "/Users/prishapriyadashini/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand"
         - "/Users/prishapriyadashini/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli"
@@ -1092,7 +1145,8 @@ events:
         - "/Library/Frameworks/Python.framework/Versions/3.12/bin"
         - "/Library/Frameworks/Python.framework/Versions/3.11/bin"
         - "/opt/homebrew/sbin"
-      CMAKE_INSTALL_PREFIX: "/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/tmpqif9jwce/wheel/platlib"
+        - "/Users/prishapriyadashini/.vscode/extensions/ms-python.debugpy-2025.18.0-darwin-arm64/bundled/scripts/noConfigScripts"
+      CMAKE_INSTALL_PREFIX: "/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/tmp62w1kvjc/wheel/platlib"
   -
     kind: "find-v1"
     backtrace:
@@ -1114,8 +1168,10 @@ events:
       - "tapi"
     candidate_directories:
       - "/usr/bin/"
-      - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-qtjix7k9/overlay/bin/"
-      - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-qtjix7k9/normal/bin/"
+      - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-i5ftj49l/overlay/bin/"
+      - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-i5ftj49l/normal/bin/"
+      - "/Users/prishapriyadashini/Downloads/DIMACS/split-env/bin/"
+      - "/Users/prishapriyadashini/Downloads/DIMACS/SPLIT-ICML/split-env/bin/"
       - "/Library/Frameworks/Python.framework/Versions/3.12/bin/"
       - "/Users/prishapriyadashini/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/"
       - "/Users/prishapriyadashini/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli/"
@@ -1131,10 +1187,13 @@ events:
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin/"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/"
+      - "/Users/prishapriyadashini/.vscode/extensions/ms-python.debugpy-2025.18.0-darwin-arm64/bundled/scripts/noConfigScripts/"
     searched_directories:
       - "/usr/bin/tapi"
-      - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-qtjix7k9/overlay/bin/tapi"
-      - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-qtjix7k9/normal/bin/tapi"
+      - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-i5ftj49l/overlay/bin/tapi"
+      - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-i5ftj49l/normal/bin/tapi"
+      - "/Users/prishapriyadashini/Downloads/DIMACS/split-env/bin/tapi"
+      - "/Users/prishapriyadashini/Downloads/DIMACS/SPLIT-ICML/split-env/bin/tapi"
       - "/Library/Frameworks/Python.framework/Versions/3.12/bin/tapi"
       - "/Users/prishapriyadashini/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/tapi"
       - "/Users/prishapriyadashini/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli/tapi"
@@ -1150,16 +1209,17 @@ events:
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin/tapi"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/tapi"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/tapi"
+      - "/Users/prishapriyadashini/.vscode/extensions/ms-python.debugpy-2025.18.0-darwin-arm64/bundled/scripts/noConfigScripts/tapi"
     found: false
     search_context:
       CMAKE_PREFIX_PATH:
-        - "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages"
-        - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-qtjix7k9/overlay/lib/python3.12/site-packages"
-      ENV{CMAKE_PREFIX_PATH}:
-        - "/opt/homebrew/opt/tbb"
+        - "/Users/prishapriyadashini/Downloads/DIMACS/split-env/lib/python3.12/site-packages"
+        - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-i5ftj49l/overlay/lib/python3.12/site-packages"
       ENV{PATH}:
-        - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-qtjix7k9/overlay/bin"
-        - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-qtjix7k9/normal/bin"
+        - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-i5ftj49l/overlay/bin"
+        - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-i5ftj49l/normal/bin"
+        - "/Users/prishapriyadashini/Downloads/DIMACS/split-env/bin"
+        - "/Users/prishapriyadashini/Downloads/DIMACS/SPLIT-ICML/split-env/bin"
         - "/Library/Frameworks/Python.framework/Versions/3.12/bin"
         - "/Users/prishapriyadashini/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand"
         - "/Users/prishapriyadashini/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli"
@@ -1183,7 +1243,8 @@ events:
         - "/Library/Frameworks/Python.framework/Versions/3.12/bin"
         - "/Library/Frameworks/Python.framework/Versions/3.11/bin"
         - "/opt/homebrew/sbin"
-      CMAKE_INSTALL_PREFIX: "/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/tmpqif9jwce/wheel/platlib"
+        - "/Users/prishapriyadashini/.vscode/extensions/ms-python.debugpy-2025.18.0-darwin-arm64/bundled/scripts/noConfigScripts"
+      CMAKE_INSTALL_PREFIX: "/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/tmp62w1kvjc/wheel/platlib"
   -
     kind: "find-v1"
     backtrace:
@@ -1204,17 +1265,16 @@ events:
     names:
       - "install_name_tool"
     candidate_directories:
-      - "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/bin/"
-      - "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/sbin/"
-      - "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/"
-      - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-qtjix7k9/overlay/lib/python3.12/site-packages/bin/"
-      - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-qtjix7k9/overlay/lib/python3.12/site-packages/sbin/"
-      - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-qtjix7k9/overlay/lib/python3.12/site-packages/"
-      - "/opt/homebrew/opt/tbb/bin/"
-      - "/opt/homebrew/opt/tbb/sbin/"
-      - "/opt/homebrew/opt/tbb/"
-      - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-qtjix7k9/overlay/bin/"
-      - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-qtjix7k9/normal/bin/"
+      - "/Users/prishapriyadashini/Downloads/DIMACS/split-env/lib/python3.12/site-packages/bin/"
+      - "/Users/prishapriyadashini/Downloads/DIMACS/split-env/lib/python3.12/site-packages/sbin/"
+      - "/Users/prishapriyadashini/Downloads/DIMACS/split-env/lib/python3.12/site-packages/"
+      - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-i5ftj49l/overlay/lib/python3.12/site-packages/bin/"
+      - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-i5ftj49l/overlay/lib/python3.12/site-packages/sbin/"
+      - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-i5ftj49l/overlay/lib/python3.12/site-packages/"
+      - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-i5ftj49l/overlay/bin/"
+      - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-i5ftj49l/normal/bin/"
+      - "/Users/prishapriyadashini/Downloads/DIMACS/split-env/bin/"
+      - "/Users/prishapriyadashini/Downloads/DIMACS/SPLIT-ICML/split-env/bin/"
       - "/Library/Frameworks/Python.framework/Versions/3.12/bin/"
       - "/Users/prishapriyadashini/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/"
       - "/Users/prishapriyadashini/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli/"
@@ -1231,18 +1291,18 @@ events:
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin/"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/"
+      - "/Users/prishapriyadashini/.vscode/extensions/ms-python.debugpy-2025.18.0-darwin-arm64/bundled/scripts/noConfigScripts/"
     searched_directories:
-      - "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/bin/install_name_tool"
-      - "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/sbin/install_name_tool"
-      - "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/install_name_tool"
-      - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-qtjix7k9/overlay/lib/python3.12/site-packages/bin/install_name_tool"
-      - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-qtjix7k9/overlay/lib/python3.12/site-packages/sbin/install_name_tool"
-      - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-qtjix7k9/overlay/lib/python3.12/site-packages/install_name_tool"
-      - "/opt/homebrew/opt/tbb/bin/install_name_tool"
-      - "/opt/homebrew/opt/tbb/sbin/install_name_tool"
-      - "/opt/homebrew/opt/tbb/install_name_tool"
-      - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-qtjix7k9/overlay/bin/install_name_tool"
-      - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-qtjix7k9/normal/bin/install_name_tool"
+      - "/Users/prishapriyadashini/Downloads/DIMACS/split-env/lib/python3.12/site-packages/bin/install_name_tool"
+      - "/Users/prishapriyadashini/Downloads/DIMACS/split-env/lib/python3.12/site-packages/sbin/install_name_tool"
+      - "/Users/prishapriyadashini/Downloads/DIMACS/split-env/lib/python3.12/site-packages/install_name_tool"
+      - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-i5ftj49l/overlay/lib/python3.12/site-packages/bin/install_name_tool"
+      - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-i5ftj49l/overlay/lib/python3.12/site-packages/sbin/install_name_tool"
+      - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-i5ftj49l/overlay/lib/python3.12/site-packages/install_name_tool"
+      - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-i5ftj49l/overlay/bin/install_name_tool"
+      - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-i5ftj49l/normal/bin/install_name_tool"
+      - "/Users/prishapriyadashini/Downloads/DIMACS/split-env/bin/install_name_tool"
+      - "/Users/prishapriyadashini/Downloads/DIMACS/SPLIT-ICML/split-env/bin/install_name_tool"
       - "/Library/Frameworks/Python.framework/Versions/3.12/bin/install_name_tool"
       - "/Users/prishapriyadashini/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/install_name_tool"
       - "/Users/prishapriyadashini/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli/install_name_tool"
@@ -1254,13 +1314,13 @@ events:
     found: "/usr/bin/install_name_tool"
     search_context:
       CMAKE_PREFIX_PATH:
-        - "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages"
-        - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-qtjix7k9/overlay/lib/python3.12/site-packages"
-      ENV{CMAKE_PREFIX_PATH}:
-        - "/opt/homebrew/opt/tbb"
+        - "/Users/prishapriyadashini/Downloads/DIMACS/split-env/lib/python3.12/site-packages"
+        - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-i5ftj49l/overlay/lib/python3.12/site-packages"
       ENV{PATH}:
-        - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-qtjix7k9/overlay/bin"
-        - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-qtjix7k9/normal/bin"
+        - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-i5ftj49l/overlay/bin"
+        - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-i5ftj49l/normal/bin"
+        - "/Users/prishapriyadashini/Downloads/DIMACS/split-env/bin"
+        - "/Users/prishapriyadashini/Downloads/DIMACS/SPLIT-ICML/split-env/bin"
         - "/Library/Frameworks/Python.framework/Versions/3.12/bin"
         - "/Users/prishapriyadashini/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand"
         - "/Users/prishapriyadashini/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli"
@@ -1284,7 +1344,8 @@ events:
         - "/Library/Frameworks/Python.framework/Versions/3.12/bin"
         - "/Library/Frameworks/Python.framework/Versions/3.11/bin"
         - "/opt/homebrew/sbin"
-      CMAKE_INSTALL_PREFIX: "/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/tmpqif9jwce/wheel/platlib"
+        - "/Users/prishapriyadashini/.vscode/extensions/ms-python.debugpy-2025.18.0-darwin-arm64/bundled/scripts/noConfigScripts"
+      CMAKE_INSTALL_PREFIX: "/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/tmp62w1kvjc/wheel/platlib"
   -
     kind: "try_compile-v1"
     backtrace:
@@ -1294,8 +1355,8 @@ events:
     checks:
       - "Detecting CXX compiler ABI info"
     directories:
-      source: "/Users/prishapriyadashini/Downloads/DIMACS/SPLIT-ICML/split/pyproject-build/cp312-cp312-macosx_13_0_arm64/CMakeFiles/CMakeScratch/TryCompile-8BzRVf"
-      binary: "/Users/prishapriyadashini/Downloads/DIMACS/SPLIT-ICML/split/pyproject-build/cp312-cp312-macosx_13_0_arm64/CMakeFiles/CMakeScratch/TryCompile-8BzRVf"
+      source: "/Users/prishapriyadashini/Downloads/DIMACS/SPLIT-ICML/split/pyproject-build/cp312-cp312-macosx_13_0_arm64/CMakeFiles/CMakeScratch/TryCompile-CTTokp"
+      binary: "/Users/prishapriyadashini/Downloads/DIMACS/SPLIT-ICML/split/pyproject-build/cp312-cp312-macosx_13_0_arm64/CMakeFiles/CMakeScratch/TryCompile-CTTokp"
     cmakeVariables:
       CMAKE_CXX_FLAGS: ""
       CMAKE_CXX_FLAGS_DEBUG: "-g"
@@ -1308,16 +1369,16 @@ events:
       variable: "CMAKE_CXX_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: '/Users/prishapriyadashini/Downloads/DIMACS/SPLIT-ICML/split/pyproject-build/cp312-cp312-macosx_13_0_arm64/CMakeFiles/CMakeScratch/TryCompile-8BzRVf'
+        Change Dir: '/Users/prishapriyadashini/Downloads/DIMACS/SPLIT-ICML/split/pyproject-build/cp312-cp312-macosx_13_0_arm64/CMakeFiles/CMakeScratch/TryCompile-CTTokp'
         
-        Run Build Command(s): /opt/homebrew/bin/ninja -v cmTC_502db
-        [1/2] /usr/bin/clang++   -arch arm64   -v -Wl,-v -MD -MT CMakeFiles/cmTC_502db.dir/CMakeCXXCompilerABI.cpp.o -MF CMakeFiles/cmTC_502db.dir/CMakeCXXCompilerABI.cpp.o.d -o CMakeFiles/cmTC_502db.dir/CMakeCXXCompilerABI.cpp.o -c /opt/homebrew/share/cmake/Modules/CMakeCXXCompilerABI.cpp
+        Run Build Command(s): /opt/homebrew/bin/ninja -v cmTC_4e934
+        [1/2] /usr/bin/clang++   -arch arm64   -v -Wl,-v -MD -MT CMakeFiles/cmTC_4e934.dir/CMakeCXXCompilerABI.cpp.o -MF CMakeFiles/cmTC_4e934.dir/CMakeCXXCompilerABI.cpp.o.d -o CMakeFiles/cmTC_4e934.dir/CMakeCXXCompilerABI.cpp.o -c /opt/homebrew/share/cmake/Modules/CMakeCXXCompilerABI.cpp
         Apple clang version 14.0.3 (clang-1403.0.22.14.1)
         Target: arm64-apple-darwin22.5.0
         Thread model: posix
         InstalledDir: /Library/Developer/CommandLineTools/usr/bin
         clang: warning: -Wl,-v: 'linker' input unused [-Wunused-command-line-argument]
-         "/Library/Developer/CommandLineTools/usr/bin/clang" -cc1 -triple arm64-apple-macosx13.0.0 -Wundef-prefix=TARGET_OS_ -Wdeprecated-objc-isa-usage -Werror=deprecated-objc-isa-usage -Werror=implicit-function-declaration -emit-obj -mrelax-all --mrelax-relocations -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCXXCompilerABI.cpp -mrelocation-model pic -pic-level 2 -mframe-pointer=non-leaf -fno-strict-return -ffp-contract=on -fno-rounding-math -funwind-tables=1 -fobjc-msgsend-selector-stubs -target-sdk-version=13.3 -fvisibility-inlines-hidden-static-local-var -target-cpu apple-m1 -target-feature +v8.5a -target-feature +crc -target-feature +lse -target-feature +rdm -target-feature +crypto -target-feature +dotprod -target-feature +fp-armv8 -target-feature +neon -target-feature +fp16fml -target-feature +ras -target-feature +rcpc -target-feature +zcm -target-feature +zcz -target-feature +fullfp16 -target-feature +sm4 -target-feature +sha3 -target-feature +sha2 -target-feature +aes -target-abi darwinpcs -fallow-half-arguments-and-returns -mllvm -treat-scalable-fixed-error-as-warning -debugger-tuning=lldb -target-linker-version 857.1 -v -fcoverage-compilation-dir=/Users/prishapriyadashini/Downloads/DIMACS/SPLIT-ICML/split/pyproject-build/cp312-cp312-macosx_13_0_arm64/CMakeFiles/CMakeScratch/TryCompile-8BzRVf -resource-dir /Library/Developer/CommandLineTools/usr/lib/clang/14.0.3 -dependency-file CMakeFiles/cmTC_502db.dir/CMakeCXXCompilerABI.cpp.o.d -skip-unused-modulemap-deps -MT CMakeFiles/cmTC_502db.dir/CMakeCXXCompilerABI.cpp.o -sys-header-deps -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -I/usr/local/include -stdlib=libc++ -internal-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1 -internal-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/local/include -internal-isystem /Library/Developer/CommandLineTools/usr/lib/clang/14.0.3/include -internal-externc-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include -internal-externc-isystem /Library/Developer/CommandLineTools/usr/include -Wno-reorder-init-list -Wno-implicit-int-float-conversion -Wno-c99-designator -Wno-final-dtor-non-final-class -Wno-extra-semi-stmt -Wno-misleading-indentation -Wno-quoted-include-in-framework-header -Wno-implicit-fallthrough -Wno-enum-enum-conversion -Wno-enum-float-conversion -Wno-elaborated-enum-base -Wno-reserved-identifier -Wno-gnu-folding-constant -fdeprecated-macro -fdebug-compilation-dir=/Users/prishapriyadashini/Downloads/DIMACS/SPLIT-ICML/split/pyproject-build/cp312-cp312-macosx_13_0_arm64/CMakeFiles/CMakeScratch/TryCompile-8BzRVf -ferror-limit 19 -stack-protector 1 -fstack-check -mdarwin-stkchk-strong-link -fblocks -fencode-extended-block-signature -fregister-global-dtors-with-atexit -fgnuc-version=4.2.1 -fno-cxx-modules -no-opaque-pointers -fcxx-exceptions -fexceptions -fmax-type-align=16 -fcommon -clang-vendor-feature=+disableNonDependentMemberExprInCurrentInstantiation -fno-odr-hash-protocols -clang-vendor-feature=+enableAggressiveVLAFolding -clang-vendor-feature=+revert09abecef7bbf -clang-vendor-feature=+thisNoAlignAttr -clang-vendor-feature=+thisNoNullAttr -mllvm -disable-aligned-alloc-awareness=1 -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_502db.dir/CMakeCXXCompilerABI.cpp.o -x c++ /opt/homebrew/share/cmake/Modules/CMakeCXXCompilerABI.cpp
+         "/Library/Developer/CommandLineTools/usr/bin/clang" -cc1 -triple arm64-apple-macosx13.0.0 -Wundef-prefix=TARGET_OS_ -Wdeprecated-objc-isa-usage -Werror=deprecated-objc-isa-usage -Werror=implicit-function-declaration -emit-obj -mrelax-all --mrelax-relocations -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCXXCompilerABI.cpp -mrelocation-model pic -pic-level 2 -mframe-pointer=non-leaf -fno-strict-return -ffp-contract=on -fno-rounding-math -funwind-tables=1 -fobjc-msgsend-selector-stubs -target-sdk-version=13.3 -fvisibility-inlines-hidden-static-local-var -target-cpu apple-m1 -target-feature +v8.5a -target-feature +crc -target-feature +lse -target-feature +rdm -target-feature +crypto -target-feature +dotprod -target-feature +fp-armv8 -target-feature +neon -target-feature +fp16fml -target-feature +ras -target-feature +rcpc -target-feature +zcm -target-feature +zcz -target-feature +fullfp16 -target-feature +sm4 -target-feature +sha3 -target-feature +sha2 -target-feature +aes -target-abi darwinpcs -fallow-half-arguments-and-returns -mllvm -treat-scalable-fixed-error-as-warning -debugger-tuning=lldb -target-linker-version 857.1 -v -fcoverage-compilation-dir=/Users/prishapriyadashini/Downloads/DIMACS/SPLIT-ICML/split/pyproject-build/cp312-cp312-macosx_13_0_arm64/CMakeFiles/CMakeScratch/TryCompile-CTTokp -resource-dir /Library/Developer/CommandLineTools/usr/lib/clang/14.0.3 -dependency-file CMakeFiles/cmTC_4e934.dir/CMakeCXXCompilerABI.cpp.o.d -skip-unused-modulemap-deps -MT CMakeFiles/cmTC_4e934.dir/CMakeCXXCompilerABI.cpp.o -sys-header-deps -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -I/usr/local/include -stdlib=libc++ -internal-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1 -internal-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/local/include -internal-isystem /Library/Developer/CommandLineTools/usr/lib/clang/14.0.3/include -internal-externc-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include -internal-externc-isystem /Library/Developer/CommandLineTools/usr/include -Wno-reorder-init-list -Wno-implicit-int-float-conversion -Wno-c99-designator -Wno-final-dtor-non-final-class -Wno-extra-semi-stmt -Wno-misleading-indentation -Wno-quoted-include-in-framework-header -Wno-implicit-fallthrough -Wno-enum-enum-conversion -Wno-enum-float-conversion -Wno-elaborated-enum-base -Wno-reserved-identifier -Wno-gnu-folding-constant -fdeprecated-macro -fdebug-compilation-dir=/Users/prishapriyadashini/Downloads/DIMACS/SPLIT-ICML/split/pyproject-build/cp312-cp312-macosx_13_0_arm64/CMakeFiles/CMakeScratch/TryCompile-CTTokp -ferror-limit 19 -stack-protector 1 -fstack-check -mdarwin-stkchk-strong-link -fblocks -fencode-extended-block-signature -fregister-global-dtors-with-atexit -fgnuc-version=4.2.1 -fno-cxx-modules -no-opaque-pointers -fcxx-exceptions -fexceptions -fmax-type-align=16 -fcommon -clang-vendor-feature=+disableNonDependentMemberExprInCurrentInstantiation -fno-odr-hash-protocols -clang-vendor-feature=+enableAggressiveVLAFolding -clang-vendor-feature=+revert09abecef7bbf -clang-vendor-feature=+thisNoAlignAttr -clang-vendor-feature=+thisNoNullAttr -mllvm -disable-aligned-alloc-awareness=1 -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_4e934.dir/CMakeCXXCompilerABI.cpp.o -x c++ /opt/homebrew/share/cmake/Modules/CMakeCXXCompilerABI.cpp
         clang -cc1 version 14.0.3 (clang-1403.0.22.14.1) default target arm64-apple-darwin22.5.0
         ignoring nonexistent directory "/usr/local/include"
         ignoring nonexistent directory "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/local/include"
@@ -1330,12 +1391,12 @@ events:
          /Library/Developer/CommandLineTools/usr/include
          /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks (framework directory)
         End of search list.
-        [2/2] : && /usr/bin/clang++ -arch arm64 -Wl,-search_paths_first -Wl,-headerpad_max_install_names  -v -Wl,-v CMakeFiles/cmTC_502db.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_502db   && :
+        [2/2] : && /usr/bin/clang++ -arch arm64 -Wl,-search_paths_first -Wl,-headerpad_max_install_names  -v -Wl,-v CMakeFiles/cmTC_4e934.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_4e934   && :
         Apple clang version 14.0.3 (clang-1403.0.22.14.1)
         Target: arm64-apple-darwin22.5.0
         Thread model: posix
         InstalledDir: /Library/Developer/CommandLineTools/usr/bin
-         "/Library/Developer/CommandLineTools/usr/bin/ld" -demangle -lto_library /Library/Developer/CommandLineTools/usr/lib/libLTO.dylib -dynamic -arch arm64 -platform_version macos 13.0.0 13.3 -syslibroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -o cmTC_502db -L/usr/local/lib -search_paths_first -headerpad_max_install_names -v CMakeFiles/cmTC_502db.dir/CMakeCXXCompilerABI.cpp.o -lc++ -lSystem /Library/Developer/CommandLineTools/usr/lib/clang/14.0.3/lib/darwin/libclang_rt.osx.a
+         "/Library/Developer/CommandLineTools/usr/bin/ld" -demangle -lto_library /Library/Developer/CommandLineTools/usr/lib/libLTO.dylib -dynamic -arch arm64 -platform_version macos 13.0.0 13.3 -syslibroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -o cmTC_4e934 -L/usr/local/lib -search_paths_first -headerpad_max_install_names -v CMakeFiles/cmTC_4e934.dir/CMakeCXXCompilerABI.cpp.o -lc++ -lSystem /Library/Developer/CommandLineTools/usr/lib/clang/14.0.3/lib/darwin/libclang_rt.osx.a
         @(#)PROGRAM:ld  PROJECT:ld64-857.1
         BUILD 23:13:29 May  7 2023
         configured to support archs: armv6 armv7 armv7s arm64 arm64e arm64_32 i386 x86_64 x86_64h armv6m armv7k armv7m armv7em
@@ -1386,16 +1447,16 @@ events:
       Parsed CXX implicit link information:
         link line regex: [^( *|.*[/\\])(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
         linker tool regex: [^[ 	]*(->|"|[0-9]+>[ 	-]*Build:[ 	0-9]+ ms[ 	]*)?[ 	]*(([^"]*[/\\])?(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)))("|,| |$)]
-        ignore line: [Change Dir: '/Users/prishapriyadashini/Downloads/DIMACS/SPLIT-ICML/split/pyproject-build/cp312-cp312-macosx_13_0_arm64/CMakeFiles/CMakeScratch/TryCompile-8BzRVf']
+        ignore line: [Change Dir: '/Users/prishapriyadashini/Downloads/DIMACS/SPLIT-ICML/split/pyproject-build/cp312-cp312-macosx_13_0_arm64/CMakeFiles/CMakeScratch/TryCompile-CTTokp']
         ignore line: []
-        ignore line: [Run Build Command(s): /opt/homebrew/bin/ninja -v cmTC_502db]
-        ignore line: [[1/2] /usr/bin/clang++   -arch arm64   -v -Wl -v -MD -MT CMakeFiles/cmTC_502db.dir/CMakeCXXCompilerABI.cpp.o -MF CMakeFiles/cmTC_502db.dir/CMakeCXXCompilerABI.cpp.o.d -o CMakeFiles/cmTC_502db.dir/CMakeCXXCompilerABI.cpp.o -c /opt/homebrew/share/cmake/Modules/CMakeCXXCompilerABI.cpp]
+        ignore line: [Run Build Command(s): /opt/homebrew/bin/ninja -v cmTC_4e934]
+        ignore line: [[1/2] /usr/bin/clang++   -arch arm64   -v -Wl -v -MD -MT CMakeFiles/cmTC_4e934.dir/CMakeCXXCompilerABI.cpp.o -MF CMakeFiles/cmTC_4e934.dir/CMakeCXXCompilerABI.cpp.o.d -o CMakeFiles/cmTC_4e934.dir/CMakeCXXCompilerABI.cpp.o -c /opt/homebrew/share/cmake/Modules/CMakeCXXCompilerABI.cpp]
         ignore line: [Apple clang version 14.0.3 (clang-1403.0.22.14.1)]
         ignore line: [Target: arm64-apple-darwin22.5.0]
         ignore line: [Thread model: posix]
         ignore line: [InstalledDir: /Library/Developer/CommandLineTools/usr/bin]
         ignore line: [clang: warning: -Wl -v: 'linker' input unused [-Wunused-command-line-argument]]
-        ignore line: [ "/Library/Developer/CommandLineTools/usr/bin/clang" -cc1 -triple arm64-apple-macosx13.0.0 -Wundef-prefix=TARGET_OS_ -Wdeprecated-objc-isa-usage -Werror=deprecated-objc-isa-usage -Werror=implicit-function-declaration -emit-obj -mrelax-all --mrelax-relocations -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCXXCompilerABI.cpp -mrelocation-model pic -pic-level 2 -mframe-pointer=non-leaf -fno-strict-return -ffp-contract=on -fno-rounding-math -funwind-tables=1 -fobjc-msgsend-selector-stubs -target-sdk-version=13.3 -fvisibility-inlines-hidden-static-local-var -target-cpu apple-m1 -target-feature +v8.5a -target-feature +crc -target-feature +lse -target-feature +rdm -target-feature +crypto -target-feature +dotprod -target-feature +fp-armv8 -target-feature +neon -target-feature +fp16fml -target-feature +ras -target-feature +rcpc -target-feature +zcm -target-feature +zcz -target-feature +fullfp16 -target-feature +sm4 -target-feature +sha3 -target-feature +sha2 -target-feature +aes -target-abi darwinpcs -fallow-half-arguments-and-returns -mllvm -treat-scalable-fixed-error-as-warning -debugger-tuning=lldb -target-linker-version 857.1 -v -fcoverage-compilation-dir=/Users/prishapriyadashini/Downloads/DIMACS/SPLIT-ICML/split/pyproject-build/cp312-cp312-macosx_13_0_arm64/CMakeFiles/CMakeScratch/TryCompile-8BzRVf -resource-dir /Library/Developer/CommandLineTools/usr/lib/clang/14.0.3 -dependency-file CMakeFiles/cmTC_502db.dir/CMakeCXXCompilerABI.cpp.o.d -skip-unused-modulemap-deps -MT CMakeFiles/cmTC_502db.dir/CMakeCXXCompilerABI.cpp.o -sys-header-deps -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -I/usr/local/include -stdlib=libc++ -internal-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1 -internal-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/local/include -internal-isystem /Library/Developer/CommandLineTools/usr/lib/clang/14.0.3/include -internal-externc-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include -internal-externc-isystem /Library/Developer/CommandLineTools/usr/include -Wno-reorder-init-list -Wno-implicit-int-float-conversion -Wno-c99-designator -Wno-final-dtor-non-final-class -Wno-extra-semi-stmt -Wno-misleading-indentation -Wno-quoted-include-in-framework-header -Wno-implicit-fallthrough -Wno-enum-enum-conversion -Wno-enum-float-conversion -Wno-elaborated-enum-base -Wno-reserved-identifier -Wno-gnu-folding-constant -fdeprecated-macro -fdebug-compilation-dir=/Users/prishapriyadashini/Downloads/DIMACS/SPLIT-ICML/split/pyproject-build/cp312-cp312-macosx_13_0_arm64/CMakeFiles/CMakeScratch/TryCompile-8BzRVf -ferror-limit 19 -stack-protector 1 -fstack-check -mdarwin-stkchk-strong-link -fblocks -fencode-extended-block-signature -fregister-global-dtors-with-atexit -fgnuc-version=4.2.1 -fno-cxx-modules -no-opaque-pointers -fcxx-exceptions -fexceptions -fmax-type-align=16 -fcommon -clang-vendor-feature=+disableNonDependentMemberExprInCurrentInstantiation -fno-odr-hash-protocols -clang-vendor-feature=+enableAggressiveVLAFolding -clang-vendor-feature=+revert09abecef7bbf -clang-vendor-feature=+thisNoAlignAttr -clang-vendor-feature=+thisNoNullAttr -mllvm -disable-aligned-alloc-awareness=1 -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_502db.dir/CMakeCXXCompilerABI.cpp.o -x c++ /opt/homebrew/share/cmake/Modules/CMakeCXXCompilerABI.cpp]
+        ignore line: [ "/Library/Developer/CommandLineTools/usr/bin/clang" -cc1 -triple arm64-apple-macosx13.0.0 -Wundef-prefix=TARGET_OS_ -Wdeprecated-objc-isa-usage -Werror=deprecated-objc-isa-usage -Werror=implicit-function-declaration -emit-obj -mrelax-all --mrelax-relocations -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCXXCompilerABI.cpp -mrelocation-model pic -pic-level 2 -mframe-pointer=non-leaf -fno-strict-return -ffp-contract=on -fno-rounding-math -funwind-tables=1 -fobjc-msgsend-selector-stubs -target-sdk-version=13.3 -fvisibility-inlines-hidden-static-local-var -target-cpu apple-m1 -target-feature +v8.5a -target-feature +crc -target-feature +lse -target-feature +rdm -target-feature +crypto -target-feature +dotprod -target-feature +fp-armv8 -target-feature +neon -target-feature +fp16fml -target-feature +ras -target-feature +rcpc -target-feature +zcm -target-feature +zcz -target-feature +fullfp16 -target-feature +sm4 -target-feature +sha3 -target-feature +sha2 -target-feature +aes -target-abi darwinpcs -fallow-half-arguments-and-returns -mllvm -treat-scalable-fixed-error-as-warning -debugger-tuning=lldb -target-linker-version 857.1 -v -fcoverage-compilation-dir=/Users/prishapriyadashini/Downloads/DIMACS/SPLIT-ICML/split/pyproject-build/cp312-cp312-macosx_13_0_arm64/CMakeFiles/CMakeScratch/TryCompile-CTTokp -resource-dir /Library/Developer/CommandLineTools/usr/lib/clang/14.0.3 -dependency-file CMakeFiles/cmTC_4e934.dir/CMakeCXXCompilerABI.cpp.o.d -skip-unused-modulemap-deps -MT CMakeFiles/cmTC_4e934.dir/CMakeCXXCompilerABI.cpp.o -sys-header-deps -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -I/usr/local/include -stdlib=libc++ -internal-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1 -internal-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/local/include -internal-isystem /Library/Developer/CommandLineTools/usr/lib/clang/14.0.3/include -internal-externc-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include -internal-externc-isystem /Library/Developer/CommandLineTools/usr/include -Wno-reorder-init-list -Wno-implicit-int-float-conversion -Wno-c99-designator -Wno-final-dtor-non-final-class -Wno-extra-semi-stmt -Wno-misleading-indentation -Wno-quoted-include-in-framework-header -Wno-implicit-fallthrough -Wno-enum-enum-conversion -Wno-enum-float-conversion -Wno-elaborated-enum-base -Wno-reserved-identifier -Wno-gnu-folding-constant -fdeprecated-macro -fdebug-compilation-dir=/Users/prishapriyadashini/Downloads/DIMACS/SPLIT-ICML/split/pyproject-build/cp312-cp312-macosx_13_0_arm64/CMakeFiles/CMakeScratch/TryCompile-CTTokp -ferror-limit 19 -stack-protector 1 -fstack-check -mdarwin-stkchk-strong-link -fblocks -fencode-extended-block-signature -fregister-global-dtors-with-atexit -fgnuc-version=4.2.1 -fno-cxx-modules -no-opaque-pointers -fcxx-exceptions -fexceptions -fmax-type-align=16 -fcommon -clang-vendor-feature=+disableNonDependentMemberExprInCurrentInstantiation -fno-odr-hash-protocols -clang-vendor-feature=+enableAggressiveVLAFolding -clang-vendor-feature=+revert09abecef7bbf -clang-vendor-feature=+thisNoAlignAttr -clang-vendor-feature=+thisNoNullAttr -mllvm -disable-aligned-alloc-awareness=1 -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_4e934.dir/CMakeCXXCompilerABI.cpp.o -x c++ /opt/homebrew/share/cmake/Modules/CMakeCXXCompilerABI.cpp]
         ignore line: [clang -cc1 version 14.0.3 (clang-1403.0.22.14.1) default target arm64-apple-darwin22.5.0]
         ignore line: [ignoring nonexistent directory "/usr/local/include"]
         ignore line: [ignoring nonexistent directory "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/local/include"]
@@ -1408,12 +1469,12 @@ events:
         ignore line: [ /Library/Developer/CommandLineTools/usr/include]
         ignore line: [ /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks (framework directory)]
         ignore line: [End of search list.]
-        ignore line: [[2/2] : && /usr/bin/clang++ -arch arm64 -Wl -search_paths_first -Wl -headerpad_max_install_names  -v -Wl -v CMakeFiles/cmTC_502db.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_502db   && :]
+        ignore line: [[2/2] : && /usr/bin/clang++ -arch arm64 -Wl -search_paths_first -Wl -headerpad_max_install_names  -v -Wl -v CMakeFiles/cmTC_4e934.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_4e934   && :]
         ignore line: [Apple clang version 14.0.3 (clang-1403.0.22.14.1)]
         ignore line: [Target: arm64-apple-darwin22.5.0]
         ignore line: [Thread model: posix]
         ignore line: [InstalledDir: /Library/Developer/CommandLineTools/usr/bin]
-        link line: [ "/Library/Developer/CommandLineTools/usr/bin/ld" -demangle -lto_library /Library/Developer/CommandLineTools/usr/lib/libLTO.dylib -dynamic -arch arm64 -platform_version macos 13.0.0 13.3 -syslibroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -o cmTC_502db -L/usr/local/lib -search_paths_first -headerpad_max_install_names -v CMakeFiles/cmTC_502db.dir/CMakeCXXCompilerABI.cpp.o -lc++ -lSystem /Library/Developer/CommandLineTools/usr/lib/clang/14.0.3/lib/darwin/libclang_rt.osx.a]
+        link line: [ "/Library/Developer/CommandLineTools/usr/bin/ld" -demangle -lto_library /Library/Developer/CommandLineTools/usr/lib/libLTO.dylib -dynamic -arch arm64 -platform_version macos 13.0.0 13.3 -syslibroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -o cmTC_4e934 -L/usr/local/lib -search_paths_first -headerpad_max_install_names -v CMakeFiles/cmTC_4e934.dir/CMakeCXXCompilerABI.cpp.o -lc++ -lSystem /Library/Developer/CommandLineTools/usr/lib/clang/14.0.3/lib/darwin/libclang_rt.osx.a]
           arg [/Library/Developer/CommandLineTools/usr/bin/ld] ==> ignore
           arg [-demangle] ==> ignore
           arg [-lto_library] ==> ignore, skip following value
@@ -1428,12 +1489,12 @@ events:
           arg [-syslibroot] ==> ignore
           arg [/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk] ==> ignore
           arg [-o] ==> ignore
-          arg [cmTC_502db] ==> ignore
+          arg [cmTC_4e934] ==> ignore
           arg [-L/usr/local/lib] ==> dir [/usr/local/lib]
           arg [-search_paths_first] ==> ignore
           arg [-headerpad_max_install_names] ==> ignore
           arg [-v] ==> ignore
-          arg [CMakeFiles/cmTC_502db.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+          arg [CMakeFiles/cmTC_4e934.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
           arg [-lc++] ==> lib [c++]
           arg [-lSystem] ==> lib [System]
           arg [/Library/Developer/CommandLineTools/usr/lib/clang/14.0.3/lib/darwin/libclang_rt.osx.a] ==> lib [/Library/Developer/CommandLineTools/usr/lib/clang/14.0.3/lib/darwin/libclang_rt.osx.a]
@@ -1471,16 +1532,16 @@ events:
       - "/opt/homebrew/share/cmake/Modules/Internal/CheckSourceCompiles.cmake:104 (try_compile)"
       - "/opt/homebrew/share/cmake/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
       - "/opt/homebrew/share/cmake/Modules/CheckCXXCompilerFlag.cmake:103 (cmake_check_compiler_flag)"
-      - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-qtjix7k9/overlay/lib/python3.12/site-packages/pybind11/share/cmake/pybind11/pybind11Common.cmake:321 (check_cxx_compiler_flag)"
-      - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-qtjix7k9/overlay/lib/python3.12/site-packages/pybind11/share/cmake/pybind11/pybind11Common.cmake:361 (_pybind11_return_if_cxx_and_linker_flags_work)"
-      - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-qtjix7k9/overlay/lib/python3.12/site-packages/pybind11/share/cmake/pybind11/pybind11Common.cmake:427 (_pybind11_generate_lto)"
-      - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-qtjix7k9/overlay/lib/python3.12/site-packages/pybind11/share/cmake/pybind11/pybind11Config.cmake:257 (include)"
+      - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-i5ftj49l/overlay/lib/python3.12/site-packages/pybind11/share/cmake/pybind11/pybind11Common.cmake:332 (check_cxx_compiler_flag)"
+      - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-i5ftj49l/overlay/lib/python3.12/site-packages/pybind11/share/cmake/pybind11/pybind11Common.cmake:372 (_pybind11_return_if_cxx_and_linker_flags_work)"
+      - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-i5ftj49l/overlay/lib/python3.12/site-packages/pybind11/share/cmake/pybind11/pybind11Common.cmake:438 (_pybind11_generate_lto)"
+      - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-i5ftj49l/overlay/lib/python3.12/site-packages/pybind11/share/cmake/pybind11/pybind11Config.cmake:257 (include)"
       - "CMakeLists.txt:17 (find_package)"
     checks:
       - "Performing Test HAS_FLTO_THIN"
     directories:
-      source: "/Users/prishapriyadashini/Downloads/DIMACS/SPLIT-ICML/split/pyproject-build/cp312-cp312-macosx_13_0_arm64/CMakeFiles/CMakeScratch/TryCompile-VFUWRH"
-      binary: "/Users/prishapriyadashini/Downloads/DIMACS/SPLIT-ICML/split/pyproject-build/cp312-cp312-macosx_13_0_arm64/CMakeFiles/CMakeScratch/TryCompile-VFUWRH"
+      source: "/Users/prishapriyadashini/Downloads/DIMACS/SPLIT-ICML/split/pyproject-build/cp312-cp312-macosx_13_0_arm64/CMakeFiles/CMakeScratch/TryCompile-AkCj51"
+      binary: "/Users/prishapriyadashini/Downloads/DIMACS/SPLIT-ICML/split/pyproject-build/cp312-cp312-macosx_13_0_arm64/CMakeFiles/CMakeScratch/TryCompile-AkCj51"
     cmakeVariables:
       CMAKE_CXX_FLAGS: ""
       CMAKE_CXX_FLAGS_DEBUG: "-g"
@@ -1492,11 +1553,11 @@ events:
       variable: "HAS_FLTO_THIN"
       cached: true
       stdout: |
-        Change Dir: '/Users/prishapriyadashini/Downloads/DIMACS/SPLIT-ICML/split/pyproject-build/cp312-cp312-macosx_13_0_arm64/CMakeFiles/CMakeScratch/TryCompile-VFUWRH'
+        Change Dir: '/Users/prishapriyadashini/Downloads/DIMACS/SPLIT-ICML/split/pyproject-build/cp312-cp312-macosx_13_0_arm64/CMakeFiles/CMakeScratch/TryCompile-AkCj51'
         
-        Run Build Command(s): /opt/homebrew/bin/ninja -v cmTC_74017
-        [1/2] /usr/bin/clang++ -DHAS_FLTO_THIN  -std=gnu++20 -arch arm64   -flto -MD -MT CMakeFiles/cmTC_74017.dir/src.cxx.o -MF CMakeFiles/cmTC_74017.dir/src.cxx.o.d -o CMakeFiles/cmTC_74017.dir/src.cxx.o -c /Users/prishapriyadashini/Downloads/DIMACS/SPLIT-ICML/split/pyproject-build/cp312-cp312-macosx_13_0_arm64/CMakeFiles/CMakeScratch/TryCompile-VFUWRH/src.cxx
-        [2/2] : && /usr/bin/clang++ -arch arm64 -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_74017.dir/src.cxx.o -o cmTC_74017  -flto && :
+        Run Build Command(s): /opt/homebrew/bin/ninja -v cmTC_5b391
+        [1/2] /usr/bin/clang++ -DHAS_FLTO_THIN  -std=gnu++20 -arch arm64   -flto -MD -MT CMakeFiles/cmTC_5b391.dir/src.cxx.o -MF CMakeFiles/cmTC_5b391.dir/src.cxx.o.d -o CMakeFiles/cmTC_5b391.dir/src.cxx.o -c /Users/prishapriyadashini/Downloads/DIMACS/SPLIT-ICML/split/pyproject-build/cp312-cp312-macosx_13_0_arm64/CMakeFiles/CMakeScratch/TryCompile-AkCj51/src.cxx
+        [2/2] : && /usr/bin/clang++ -arch arm64 -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_5b391.dir/src.cxx.o -o cmTC_5b391  -flto && :
         
       exitCode: 0
   -
@@ -1505,16 +1566,16 @@ events:
       - "/opt/homebrew/share/cmake/Modules/Internal/CheckSourceCompiles.cmake:104 (try_compile)"
       - "/opt/homebrew/share/cmake/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
       - "/opt/homebrew/share/cmake/Modules/CheckCXXCompilerFlag.cmake:103 (cmake_check_compiler_flag)"
-      - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-qtjix7k9/overlay/lib/python3.12/site-packages/pybind11/share/cmake/pybind11/pybind11Common.cmake:321 (check_cxx_compiler_flag)"
-      - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-qtjix7k9/overlay/lib/python3.12/site-packages/pybind11/share/cmake/pybind11/pybind11Common.cmake:371 (_pybind11_return_if_cxx_and_linker_flags_work)"
-      - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-qtjix7k9/overlay/lib/python3.12/site-packages/pybind11/share/cmake/pybind11/pybind11Common.cmake:427 (_pybind11_generate_lto)"
-      - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-qtjix7k9/overlay/lib/python3.12/site-packages/pybind11/share/cmake/pybind11/pybind11Config.cmake:257 (include)"
+      - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-i5ftj49l/overlay/lib/python3.12/site-packages/pybind11/share/cmake/pybind11/pybind11Common.cmake:332 (check_cxx_compiler_flag)"
+      - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-i5ftj49l/overlay/lib/python3.12/site-packages/pybind11/share/cmake/pybind11/pybind11Common.cmake:382 (_pybind11_return_if_cxx_and_linker_flags_work)"
+      - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-i5ftj49l/overlay/lib/python3.12/site-packages/pybind11/share/cmake/pybind11/pybind11Common.cmake:438 (_pybind11_generate_lto)"
+      - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-i5ftj49l/overlay/lib/python3.12/site-packages/pybind11/share/cmake/pybind11/pybind11Config.cmake:257 (include)"
       - "CMakeLists.txt:17 (find_package)"
     checks:
       - "Performing Test HAS_FLTO"
     directories:
-      source: "/Users/prishapriyadashini/Downloads/DIMACS/SPLIT-ICML/split/pyproject-build/cp312-cp312-macosx_13_0_arm64/CMakeFiles/CMakeScratch/TryCompile-V4q4pC"
-      binary: "/Users/prishapriyadashini/Downloads/DIMACS/SPLIT-ICML/split/pyproject-build/cp312-cp312-macosx_13_0_arm64/CMakeFiles/CMakeScratch/TryCompile-V4q4pC"
+      source: "/Users/prishapriyadashini/Downloads/DIMACS/SPLIT-ICML/split/pyproject-build/cp312-cp312-macosx_13_0_arm64/CMakeFiles/CMakeScratch/TryCompile-MKjNNa"
+      binary: "/Users/prishapriyadashini/Downloads/DIMACS/SPLIT-ICML/split/pyproject-build/cp312-cp312-macosx_13_0_arm64/CMakeFiles/CMakeScratch/TryCompile-MKjNNa"
     cmakeVariables:
       CMAKE_CXX_FLAGS: ""
       CMAKE_CXX_FLAGS_DEBUG: "-g"
@@ -1526,11 +1587,11 @@ events:
       variable: "HAS_FLTO"
       cached: true
       stdout: |
-        Change Dir: '/Users/prishapriyadashini/Downloads/DIMACS/SPLIT-ICML/split/pyproject-build/cp312-cp312-macosx_13_0_arm64/CMakeFiles/CMakeScratch/TryCompile-V4q4pC'
+        Change Dir: '/Users/prishapriyadashini/Downloads/DIMACS/SPLIT-ICML/split/pyproject-build/cp312-cp312-macosx_13_0_arm64/CMakeFiles/CMakeScratch/TryCompile-MKjNNa'
         
-        Run Build Command(s): /opt/homebrew/bin/ninja -v cmTC_b3077
-        [1/2] /usr/bin/clang++ -DHAS_FLTO  -std=gnu++20 -arch arm64   -flto -MD -MT CMakeFiles/cmTC_b3077.dir/src.cxx.o -MF CMakeFiles/cmTC_b3077.dir/src.cxx.o.d -o CMakeFiles/cmTC_b3077.dir/src.cxx.o -c /Users/prishapriyadashini/Downloads/DIMACS/SPLIT-ICML/split/pyproject-build/cp312-cp312-macosx_13_0_arm64/CMakeFiles/CMakeScratch/TryCompile-V4q4pC/src.cxx
-        [2/2] : && /usr/bin/clang++ -arch arm64 -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_b3077.dir/src.cxx.o -o cmTC_b3077  -flto && :
+        Run Build Command(s): /opt/homebrew/bin/ninja -v cmTC_6b1ae
+        [1/2] /usr/bin/clang++ -DHAS_FLTO  -std=gnu++20 -arch arm64   -flto -MD -MT CMakeFiles/cmTC_6b1ae.dir/src.cxx.o -MF CMakeFiles/cmTC_6b1ae.dir/src.cxx.o.d -o CMakeFiles/cmTC_6b1ae.dir/src.cxx.o -c /Users/prishapriyadashini/Downloads/DIMACS/SPLIT-ICML/split/pyproject-build/cp312-cp312-macosx_13_0_arm64/CMakeFiles/CMakeScratch/TryCompile-MKjNNa/src.cxx
+        [2/2] : && /usr/bin/clang++ -arch arm64 -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_6b1ae.dir/src.cxx.o -o cmTC_6b1ae  -flto && :
         
       exitCode: 0
   -
@@ -1577,50 +1638,50 @@ events:
         mode: "config"
         reason: "no_exist"
       -
-        path: "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pybind11Config.cmake"
+        path: "/Users/prishapriyadashini/Downloads/DIMACS/split-env/lib/python3.12/site-packages/pybind11Config.cmake"
         mode: "config"
         reason: "no_exist"
       -
-        path: "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pybind11-config.cmake"
+        path: "/Users/prishapriyadashini/Downloads/DIMACS/split-env/lib/python3.12/site-packages/pybind11-config.cmake"
         mode: "config"
         reason: "no_exist"
       -
-        path: "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-qtjix7k9/overlay/lib/python3.12/site-packages/pybind11Config.cmake"
+        path: "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-i5ftj49l/overlay/lib/python3.12/site-packages/pybind11Config.cmake"
         mode: "config"
         reason: "no_exist"
       -
-        path: "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-qtjix7k9/overlay/lib/python3.12/site-packages/pybind11-config.cmake"
+        path: "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-i5ftj49l/overlay/lib/python3.12/site-packages/pybind11-config.cmake"
         mode: "config"
         reason: "no_exist"
       -
-        path: "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-qtjix7k9/overlay/lib/python3.12/site-packages/pybind11-3.0.1.dist-info/pybind11Config.cmake"
+        path: "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-i5ftj49l/overlay/lib/python3.12/site-packages/pybind11-3.0.3.dist-info/pybind11Config.cmake"
         mode: "config"
         reason: "no_exist"
       -
-        path: "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-qtjix7k9/overlay/lib/python3.12/site-packages/pybind11-3.0.1.dist-info/pybind11-config.cmake"
+        path: "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-i5ftj49l/overlay/lib/python3.12/site-packages/pybind11-3.0.3.dist-info/pybind11-config.cmake"
         mode: "config"
         reason: "no_exist"
       -
-        path: "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-qtjix7k9/overlay/lib/python3.12/site-packages/pybind11/pybind11Config.cmake"
+        path: "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-i5ftj49l/overlay/lib/python3.12/site-packages/pybind11/pybind11Config.cmake"
         mode: "config"
         reason: "no_exist"
       -
-        path: "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-qtjix7k9/overlay/lib/python3.12/site-packages/pybind11/pybind11-config.cmake"
+        path: "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-i5ftj49l/overlay/lib/python3.12/site-packages/pybind11/pybind11-config.cmake"
         mode: "config"
         reason: "no_exist"
     found:
-      path: "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-qtjix7k9/overlay/lib/python3.12/site-packages/pybind11/share/cmake/pybind11/pybind11Config.cmake"
+      path: "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-i5ftj49l/overlay/lib/python3.12/site-packages/pybind11/share/cmake/pybind11/pybind11Config.cmake"
       mode: "config"
-      version: "3.0.1"
+      version: "3.0.3"
     search_context:
       CMAKE_PREFIX_PATH:
-        - "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages"
-        - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-qtjix7k9/overlay/lib/python3.12/site-packages"
-      ENV{CMAKE_PREFIX_PATH}:
-        - "/opt/homebrew/opt/tbb"
+        - "/Users/prishapriyadashini/Downloads/DIMACS/split-env/lib/python3.12/site-packages"
+        - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-i5ftj49l/overlay/lib/python3.12/site-packages"
       ENV{PATH}:
-        - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-qtjix7k9/overlay/bin"
-        - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-qtjix7k9/normal/bin"
+        - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-i5ftj49l/overlay/bin"
+        - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-i5ftj49l/normal/bin"
+        - "/Users/prishapriyadashini/Downloads/DIMACS/split-env/bin"
+        - "/Users/prishapriyadashini/Downloads/DIMACS/SPLIT-ICML/split-env/bin"
         - "/Library/Frameworks/Python.framework/Versions/3.12/bin"
         - "/Users/prishapriyadashini/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand"
         - "/Users/prishapriyadashini/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli"
@@ -1644,7 +1705,8 @@ events:
         - "/Library/Frameworks/Python.framework/Versions/3.12/bin"
         - "/Library/Frameworks/Python.framework/Versions/3.11/bin"
         - "/opt/homebrew/sbin"
-      CMAKE_INSTALL_PREFIX: "/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/tmpqif9jwce/wheel/platlib"
+        - "/Users/prishapriyadashini/.vscode/extensions/ms-python.debugpy-2025.18.0-darwin-arm64/bundled/scripts/noConfigScripts"
+      CMAKE_INSTALL_PREFIX: "/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/tmp62w1kvjc/wheel/platlib"
       CMAKE_SYSTEM_PREFIX_PATH:
         - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr"
         - "/opt/homebrew"
@@ -1652,7 +1714,7 @@ events:
         - "/usr"
         - "/"
         - "/opt/homebrew"
-        - "/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/tmpqif9jwce/wheel/platlib"
+        - "/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/tmp62w1kvjc/wheel/platlib"
         - "/usr/X11R6"
         - "/usr/pkg"
         - "/opt"
@@ -1688,17 +1750,16 @@ events:
       - "pkg-config"
       - "pkgconf"
     candidate_directories:
-      - "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/bin/"
-      - "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/sbin/"
-      - "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/"
-      - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-qtjix7k9/overlay/lib/python3.12/site-packages/bin/"
-      - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-qtjix7k9/overlay/lib/python3.12/site-packages/sbin/"
-      - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-qtjix7k9/overlay/lib/python3.12/site-packages/"
-      - "/opt/homebrew/opt/tbb/bin/"
-      - "/opt/homebrew/opt/tbb/sbin/"
-      - "/opt/homebrew/opt/tbb/"
-      - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-qtjix7k9/overlay/bin/"
-      - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-qtjix7k9/normal/bin/"
+      - "/Users/prishapriyadashini/Downloads/DIMACS/split-env/lib/python3.12/site-packages/bin/"
+      - "/Users/prishapriyadashini/Downloads/DIMACS/split-env/lib/python3.12/site-packages/sbin/"
+      - "/Users/prishapriyadashini/Downloads/DIMACS/split-env/lib/python3.12/site-packages/"
+      - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-i5ftj49l/overlay/lib/python3.12/site-packages/bin/"
+      - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-i5ftj49l/overlay/lib/python3.12/site-packages/sbin/"
+      - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-i5ftj49l/overlay/lib/python3.12/site-packages/"
+      - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-i5ftj49l/overlay/bin/"
+      - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-i5ftj49l/normal/bin/"
+      - "/Users/prishapriyadashini/Downloads/DIMACS/split-env/bin/"
+      - "/Users/prishapriyadashini/Downloads/DIMACS/SPLIT-ICML/split-env/bin/"
       - "/Library/Frameworks/Python.framework/Versions/3.12/bin/"
       - "/Users/prishapriyadashini/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/"
       - "/Users/prishapriyadashini/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli/"
@@ -1715,6 +1776,7 @@ events:
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin/"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/"
+      - "/Users/prishapriyadashini/.vscode/extensions/ms-python.debugpy-2025.18.0-darwin-arm64/bundled/scripts/noConfigScripts/"
       - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/bin/"
       - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/sbin/"
       - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/"
@@ -1729,9 +1791,9 @@ events:
       - "/usr/"
       - "/bin/"
       - "/sbin/"
-      - "/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/tmpqif9jwce/wheel/platlib/bin/"
-      - "/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/tmpqif9jwce/wheel/platlib/sbin/"
-      - "/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/tmpqif9jwce/wheel/platlib/"
+      - "/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/tmp62w1kvjc/wheel/platlib/bin/"
+      - "/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/tmp62w1kvjc/wheel/platlib/sbin/"
+      - "/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/tmp62w1kvjc/wheel/platlib/"
       - "/usr/X11R6/bin/"
       - "/usr/X11R6/sbin/"
       - "/usr/X11R6/"
@@ -1750,28 +1812,26 @@ events:
       - "/Users/prishapriyadashini/Applications/"
       - "/Applications/"
     searched_directories:
-      - "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/bin/pkg-config"
-      - "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/bin/pkgconf"
-      - "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/sbin/pkg-config"
-      - "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/sbin/pkgconf"
-      - "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pkg-config"
-      - "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pkgconf"
-      - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-qtjix7k9/overlay/lib/python3.12/site-packages/bin/pkg-config"
-      - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-qtjix7k9/overlay/lib/python3.12/site-packages/bin/pkgconf"
-      - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-qtjix7k9/overlay/lib/python3.12/site-packages/sbin/pkg-config"
-      - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-qtjix7k9/overlay/lib/python3.12/site-packages/sbin/pkgconf"
-      - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-qtjix7k9/overlay/lib/python3.12/site-packages/pkg-config"
-      - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-qtjix7k9/overlay/lib/python3.12/site-packages/pkgconf"
-      - "/opt/homebrew/opt/tbb/bin/pkg-config"
-      - "/opt/homebrew/opt/tbb/bin/pkgconf"
-      - "/opt/homebrew/opt/tbb/sbin/pkg-config"
-      - "/opt/homebrew/opt/tbb/sbin/pkgconf"
-      - "/opt/homebrew/opt/tbb/pkg-config"
-      - "/opt/homebrew/opt/tbb/pkgconf"
-      - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-qtjix7k9/overlay/bin/pkg-config"
-      - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-qtjix7k9/overlay/bin/pkgconf"
-      - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-qtjix7k9/normal/bin/pkg-config"
-      - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-qtjix7k9/normal/bin/pkgconf"
+      - "/Users/prishapriyadashini/Downloads/DIMACS/split-env/lib/python3.12/site-packages/bin/pkg-config"
+      - "/Users/prishapriyadashini/Downloads/DIMACS/split-env/lib/python3.12/site-packages/bin/pkgconf"
+      - "/Users/prishapriyadashini/Downloads/DIMACS/split-env/lib/python3.12/site-packages/sbin/pkg-config"
+      - "/Users/prishapriyadashini/Downloads/DIMACS/split-env/lib/python3.12/site-packages/sbin/pkgconf"
+      - "/Users/prishapriyadashini/Downloads/DIMACS/split-env/lib/python3.12/site-packages/pkg-config"
+      - "/Users/prishapriyadashini/Downloads/DIMACS/split-env/lib/python3.12/site-packages/pkgconf"
+      - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-i5ftj49l/overlay/lib/python3.12/site-packages/bin/pkg-config"
+      - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-i5ftj49l/overlay/lib/python3.12/site-packages/bin/pkgconf"
+      - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-i5ftj49l/overlay/lib/python3.12/site-packages/sbin/pkg-config"
+      - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-i5ftj49l/overlay/lib/python3.12/site-packages/sbin/pkgconf"
+      - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-i5ftj49l/overlay/lib/python3.12/site-packages/pkg-config"
+      - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-i5ftj49l/overlay/lib/python3.12/site-packages/pkgconf"
+      - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-i5ftj49l/overlay/bin/pkg-config"
+      - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-i5ftj49l/overlay/bin/pkgconf"
+      - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-i5ftj49l/normal/bin/pkg-config"
+      - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-i5ftj49l/normal/bin/pkgconf"
+      - "/Users/prishapriyadashini/Downloads/DIMACS/split-env/bin/pkg-config"
+      - "/Users/prishapriyadashini/Downloads/DIMACS/split-env/bin/pkgconf"
+      - "/Users/prishapriyadashini/Downloads/DIMACS/SPLIT-ICML/split-env/bin/pkg-config"
+      - "/Users/prishapriyadashini/Downloads/DIMACS/SPLIT-ICML/split-env/bin/pkgconf"
       - "/Library/Frameworks/Python.framework/Versions/3.12/bin/pkg-config"
       - "/Library/Frameworks/Python.framework/Versions/3.12/bin/pkgconf"
       - "/Users/prishapriyadashini/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/pkg-config"
@@ -1783,13 +1843,13 @@ events:
     found: "/opt/homebrew/bin/pkg-config"
     search_context:
       CMAKE_PREFIX_PATH:
-        - "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages"
-        - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-qtjix7k9/overlay/lib/python3.12/site-packages"
-      ENV{CMAKE_PREFIX_PATH}:
-        - "/opt/homebrew/opt/tbb"
+        - "/Users/prishapriyadashini/Downloads/DIMACS/split-env/lib/python3.12/site-packages"
+        - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-i5ftj49l/overlay/lib/python3.12/site-packages"
       ENV{PATH}:
-        - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-qtjix7k9/overlay/bin"
-        - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-qtjix7k9/normal/bin"
+        - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-i5ftj49l/overlay/bin"
+        - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-i5ftj49l/normal/bin"
+        - "/Users/prishapriyadashini/Downloads/DIMACS/split-env/bin"
+        - "/Users/prishapriyadashini/Downloads/DIMACS/SPLIT-ICML/split-env/bin"
         - "/Library/Frameworks/Python.framework/Versions/3.12/bin"
         - "/Users/prishapriyadashini/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand"
         - "/Users/prishapriyadashini/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli"
@@ -1813,7 +1873,8 @@ events:
         - "/Library/Frameworks/Python.framework/Versions/3.12/bin"
         - "/Library/Frameworks/Python.framework/Versions/3.11/bin"
         - "/opt/homebrew/sbin"
-      CMAKE_INSTALL_PREFIX: "/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/tmpqif9jwce/wheel/platlib"
+        - "/Users/prishapriyadashini/.vscode/extensions/ms-python.debugpy-2025.18.0-darwin-arm64/bundled/scripts/noConfigScripts"
+      CMAKE_INSTALL_PREFIX: "/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/tmp62w1kvjc/wheel/platlib"
       CMAKE_SYSTEM_PREFIX_PATH:
         - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr"
         - "/opt/homebrew"
@@ -1821,7 +1882,7 @@ events:
         - "/usr"
         - "/"
         - "/opt/homebrew"
-        - "/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/tmpqif9jwce/wheel/platlib"
+        - "/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/tmp62w1kvjc/wheel/platlib"
         - "/usr/X11R6"
         - "/usr/pkg"
         - "/opt"
@@ -1874,34 +1935,90 @@ events:
         mode: "config"
         reason: "no_exist"
       -
-        path: "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/TBBConfig.cmake"
+        path: "/Users/prishapriyadashini/Downloads/DIMACS/split-env/lib/python3.12/site-packages/TBBConfig.cmake"
         mode: "config"
         reason: "no_exist"
       -
-        path: "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/tbb-config.cmake"
+        path: "/Users/prishapriyadashini/Downloads/DIMACS/split-env/lib/python3.12/site-packages/tbb-config.cmake"
         mode: "config"
         reason: "no_exist"
       -
-        path: "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-qtjix7k9/overlay/lib/python3.12/site-packages/TBBConfig.cmake"
+        path: "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-i5ftj49l/overlay/lib/python3.12/site-packages/TBBConfig.cmake"
         mode: "config"
         reason: "no_exist"
       -
-        path: "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-qtjix7k9/overlay/lib/python3.12/site-packages/tbb-config.cmake"
+        path: "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-i5ftj49l/overlay/lib/python3.12/site-packages/tbb-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-i5ftj49l/overlay/TBBConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-i5ftj49l/overlay/tbb-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/Users/prishapriyadashini/Downloads/DIMACS/split-env/TBBConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/Users/prishapriyadashini/Downloads/DIMACS/split-env/tbb-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/Library/Frameworks/Python.framework/Versions/3.12/TBBConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/Library/Frameworks/Python.framework/Versions/3.12/tbb-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/Users/prishapriyadashini/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/TBBConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/Users/prishapriyadashini/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/tbb-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/Users/prishapriyadashini/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli/TBBConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/Users/prishapriyadashini/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli/tbb-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/Library/Frameworks/Python.framework/Versions/3.11/TBBConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/Library/Frameworks/Python.framework/Versions/3.11/tbb-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/opt/homebrew/TBBConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/opt/homebrew/tbb-config.cmake"
         mode: "config"
         reason: "no_exist"
     found:
-      path: "/opt/homebrew/opt/tbb/lib/cmake/TBB/TBBConfig.cmake"
+      path: "/opt/homebrew/lib/cmake/TBB/TBBConfig.cmake"
       mode: "config"
       version: "2022.3.0"
     search_context:
       CMAKE_PREFIX_PATH:
-        - "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages"
-        - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-qtjix7k9/overlay/lib/python3.12/site-packages"
-      ENV{CMAKE_PREFIX_PATH}:
-        - "/opt/homebrew/opt/tbb"
+        - "/Users/prishapriyadashini/Downloads/DIMACS/split-env/lib/python3.12/site-packages"
+        - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-i5ftj49l/overlay/lib/python3.12/site-packages"
       ENV{PATH}:
-        - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-qtjix7k9/overlay/bin"
-        - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-qtjix7k9/normal/bin"
+        - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-i5ftj49l/overlay/bin"
+        - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-i5ftj49l/normal/bin"
+        - "/Users/prishapriyadashini/Downloads/DIMACS/split-env/bin"
+        - "/Users/prishapriyadashini/Downloads/DIMACS/SPLIT-ICML/split-env/bin"
         - "/Library/Frameworks/Python.framework/Versions/3.12/bin"
         - "/Users/prishapriyadashini/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand"
         - "/Users/prishapriyadashini/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli"
@@ -1925,7 +2042,8 @@ events:
         - "/Library/Frameworks/Python.framework/Versions/3.12/bin"
         - "/Library/Frameworks/Python.framework/Versions/3.11/bin"
         - "/opt/homebrew/sbin"
-      CMAKE_INSTALL_PREFIX: "/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/tmpqif9jwce/wheel/platlib"
+        - "/Users/prishapriyadashini/.vscode/extensions/ms-python.debugpy-2025.18.0-darwin-arm64/bundled/scripts/noConfigScripts"
+      CMAKE_INSTALL_PREFIX: "/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/tmp62w1kvjc/wheel/platlib"
       CMAKE_SYSTEM_PREFIX_PATH:
         - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr"
         - "/opt/homebrew"
@@ -1933,7 +2051,7 @@ events:
         - "/usr"
         - "/"
         - "/opt/homebrew"
-        - "/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/tmpqif9jwce/wheel/platlib"
+        - "/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/tmp62w1kvjc/wheel/platlib"
         - "/usr/X11R6"
         - "/usr/pkg"
         - "/opt"
@@ -1975,13 +2093,13 @@ events:
     found: "/opt/homebrew/Cellar/gmp/6.3.0/lib/libgmp.dylib"
     search_context:
       CMAKE_PREFIX_PATH:
-        - "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages"
-        - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-qtjix7k9/overlay/lib/python3.12/site-packages"
-      ENV{CMAKE_PREFIX_PATH}:
-        - "/opt/homebrew/opt/tbb"
+        - "/Users/prishapriyadashini/Downloads/DIMACS/split-env/lib/python3.12/site-packages"
+        - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-i5ftj49l/overlay/lib/python3.12/site-packages"
       ENV{PATH}:
-        - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-qtjix7k9/overlay/bin"
-        - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-qtjix7k9/normal/bin"
+        - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-i5ftj49l/overlay/bin"
+        - "/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-i5ftj49l/normal/bin"
+        - "/Users/prishapriyadashini/Downloads/DIMACS/split-env/bin"
+        - "/Users/prishapriyadashini/Downloads/DIMACS/SPLIT-ICML/split-env/bin"
         - "/Library/Frameworks/Python.framework/Versions/3.12/bin"
         - "/Users/prishapriyadashini/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand"
         - "/Users/prishapriyadashini/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli"
@@ -2005,7 +2123,8 @@ events:
         - "/Library/Frameworks/Python.framework/Versions/3.12/bin"
         - "/Library/Frameworks/Python.framework/Versions/3.11/bin"
         - "/opt/homebrew/sbin"
-      CMAKE_INSTALL_PREFIX: "/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/tmpqif9jwce/wheel/platlib"
+        - "/Users/prishapriyadashini/.vscode/extensions/ms-python.debugpy-2025.18.0-darwin-arm64/bundled/scripts/noConfigScripts"
+      CMAKE_INSTALL_PREFIX: "/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/tmp62w1kvjc/wheel/platlib"
       CMAKE_SYSTEM_PREFIX_PATH:
         - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr"
         - "/opt/homebrew"
@@ -2013,7 +2132,7 @@ events:
         - "/usr"
         - "/"
         - "/opt/homebrew"
-        - "/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/tmpqif9jwce/wheel/platlib"
+        - "/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/tmp62w1kvjc/wheel/platlib"
         - "/usr/X11R6"
         - "/usr/pkg"
         - "/opt"

@@ -5,7 +5,16 @@ from numpy import array
 from sklearn.metrics import confusion_matrix, accuracy_score
 import timbertrek
 
-import resplit.libgosdt as treefarms # Import the TREEFARMS extension ()
+import sys as _sys
+if 'split._libgosdt' in _sys.modules:
+    # split._libgosdt is already loaded; importing gosdt._libgosdt would cause
+    # pybind11 double-registration of shared types. Use resplit's own TREEFARMS copy.
+    import resplit.libgosdt as treefarms
+else:
+    try:
+        from gosdt import _libgosdt as treefarms  # reuse gosdt's copy to avoid pybind11 double-registration
+    except ImportError:
+        import resplit.libgosdt as treefarms  # Import the TREEFARMS extension ()
 from resplit.model.encoder import Encoder
 from resplit.model.imbalance.osdt_imb_v9 import bbound, predict # Import the special objective implementation
 from resplit.model.tree_classifier import TreeClassifier # Import the tree classification model

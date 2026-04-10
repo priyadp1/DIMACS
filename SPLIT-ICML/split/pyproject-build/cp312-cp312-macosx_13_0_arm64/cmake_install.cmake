@@ -2,7 +2,7 @@
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/tmpqif9jwce/wheel/platlib")
+  set(CMAKE_INSTALL_PREFIX "/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/tmp62w1kvjc/wheel/platlib")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -42,7 +42,7 @@ if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/split/_libgosdt.cpython-312-darwin.so" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/split/_libgosdt.cpython-312-darwin.so")
     execute_process(COMMAND /usr/bin/install_name_tool
-      -delete_rpath "/opt/homebrew/opt/tbb/lib"
+      -delete_rpath "/opt/homebrew/lib"
       "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/split/_libgosdt.cpython-312-darwin.so")
     if(CMAKE_INSTALL_DO_STRIP)
       execute_process(COMMAND "/usr/bin/strip" -x "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/split/_libgosdt.cpython-312-darwin.so")

@@ -16,6 +16,7 @@ PLOTS_DIR.mkdir(exist_ok=True)
 
 DATASETS = ["bike", "breast_cancer", "compas", "spambase", "diabetes", "diabetes_smote",
             "creditcard_fraud", "creditcard_fraud_smote"]
+NO_TGB_DATASETS = ["bike", "breast_cancer", "compas", "spambase"]
 
 MODELS = ["GOSDT", "LicketyRESPLIT+TGB", "XGBoost"]
 
@@ -33,10 +34,12 @@ def parse_licketyresplit_bin(path):
     acc      = re.search(r"^Accuracy:\s*([\d.]+)", text, re.MULTILINE)
     ens_acc  = re.search(r"Ensemble Accuracy:\s*([\d.]+)", text)
     duration = re.search(r"completed in ([\d.]+) seconds", text)
+    n_leaves = re.search(r"Tree Size:\s*(\d+)\s*leaves", text)
     return {
-        "accuracy":          float(acc.group(1))      if acc      else None,
-        "ensemble_accuracy": float(ens_acc.group(1))  if ens_acc  else None,
-        "duration_sec":      float(duration.group(1)) if duration else None,
+        "accuracy":          float(acc.group(1))       if acc       else None,
+        "ensemble_accuracy": float(ens_acc.group(1))   if ens_acc   else None,
+        "duration_sec":      float(duration.group(1))  if duration  else None,
+        "n_leaves":          int(n_leaves.group(1))    if n_leaves  else None,
     }
 
 
@@ -85,7 +88,8 @@ for dataset in DATASETS:
     files = {
         "GOSDT":              ("gosdt_results.txt",                    "gosdt_tree_size.json",                    parse_gosdt),
         "LicketyRESPLIT+TGB": ("licketyresplit_binarized_results.txt", "licketyresplit_binarized_tree_size.json", parse_licketyresplit_bin),
-        "XGBoost":            ("xgboost_binarized_results.txt",          "xgboost_tree_size_binarized.json",        parse_xgboost),
+        "LicketyRESPLIT":     ("licketyresplit_binarized_results.txt", "licketyresplit_binarized_tree_size.json", parse_licketyresplit_bin),
+        "XGBoost":            ("xgboost_binarized_results.txt",        "xgboost_tree_size_binarized.json",        parse_xgboost),
     }
 
     for model, (res_f, sz_f, parser) in files.items():
@@ -95,6 +99,21 @@ for dataset in DATASETS:
             d[model] = {**parser(res_path), **(parse_tree_size(sz_path) if sz_path.exists() else {})}
         else:
             d[model] = {}
+
+    # Load benchmark models from benchmarks_TGB_results
+    bench_dir = BASEDIR / "benchmarks_TGB_results" / dataset
+    for model, res_f, sz_f in [
+        ("LightGBM",    "lightgbm_results.txt",    "lightgbm_tree_size.json"),
+        ("CatBoost",    "catboost_results.txt",    "catboost_tree_size.json"),
+        ("LicketySPLIT", "licketysplit_results.txt", None),
+        ("SPLIT",        "split_results.txt",        None),
+    ]:
+        res_path = bench_dir / res_f
+        parsed = parse_licketyresplit_bin(res_path) if res_path.exists() else {}
+        if sz_f:
+            sz_path = bench_dir / sz_f
+            parsed = {**parsed, **(parse_tree_size(sz_path) if sz_path.exists() else {})}
+        d[model] = parsed
 
     data[dataset] = d
 
@@ -392,143 +411,385 @@ plt.savefig(out, dpi=150, bbox_inches="tight")
 plt.close()
 print(f"Saved: {out}")
 
-# ── Figure 14: Rashomon Set Size vs Test Accuracy (one scatter plot per dataset) ──
+# ── Figure 14: XGBoost vs LightGBM vs CatBoost (all with TGB features) ─────────────────────────────────────────
+benchmarks_dir = BASEDIR / "benchmarks_TGB_results"
+models = ["XGBoost", "LightGBM", "CatBoost"]
+model_colors = {"XGBoost": "#d62728", "LightGBM": "#2ca02c", "CatBoost": "#4C72B0"}
+fig, ax = plt.subplots(figsize=(12, 6))
+fig14_offsets = np.array([-1, 0, 1]) * bar_w
+for m_idx, model in enumerate(models):
+    vals = [data[ds].get(model, {}).get("accuracy", float("nan")) for ds in DATASETS]
+    ax.bar(x + fig14_offsets[m_idx], vals, width=bar_w,
+           label=model, color=model_colors[model], alpha=0.85)
+ax.set_xticks(x)
+ax.set_xticklabels(DATASETS, rotation=20, ha="right", fontsize=9)
+ax.set_ylabel("Test Accuracy")
+ax.set_title("XGBoost vs LightGBM vs CatBoost (all with TGB features) — Test Accuracy", fontweight="bold")
+ax.yaxis.set_major_formatter(ticker.FormatStrFormatter("%.3g"))
+ax.legend(fontsize=8, bbox_to_anchor=(1.01, 1), loc="upper left", borderaxespad=0)
+ax.grid(axis="y", linestyle="--", alpha=0.5)
+plt.tight_layout()
+out = PLOTS_DIR / "xgboost_lightgbm_catboost_tgb_accuracy.png"
+plt.savefig(out, dpi=150, bbox_inches="tight")
+plt.close()
+print(f"Saved: {out}")
 
-EXP_DIR      = BASEDIR / "LicketyRESPLIT_EXP"
-EXP_BIN_DIR  = BASEDIR / "LicketyRESPLIT_EXP_ThresholdBinarizer"
+# Layout shared by Figures 15-18
+x_dt       = np.arange(len(DATASETS)) * 1.8
+bw_dt      = 0.32
+dt_offsets = np.array([-1.5, -0.5, 0.5, 1.5]) * bw_dt
 
-SCATTER_COLORS = {"No Binarizer": "#4C72B0", "ThresholdBinarizer": "#DD8452"}
-SCATTER_MARKERS = {"No Binarizer": "o", "ThresholdBinarizer": "s"}
+#Figure 15 Decision Tree Accuracies Across Datasets (TGB Features)
+opt_models = ["GOSDT", "LicketyRESPLIT", "LicketySPLIT", "SPLIT"]
+model_colors = {"GOSDT": "#2ca02c", "LicketyRESPLIT": "#4C72B0", "LicketySPLIT": "#ff7f0e", "SPLIT": "#d62728"}
+fig, ax = plt.subplots(figsize=(18, 7))
+for m_idx, model in enumerate(opt_models):
+    vals = [data[ds].get(model, {}).get("accuracy", float("nan")) for ds in DATASETS]
+    ax.bar(x_dt + dt_offsets[m_idx], vals, width=bw_dt,
+           label=model, color=model_colors[model], alpha=0.85)
+ax.set_xticks(x_dt)
+ax.set_xticklabels(DATASETS, rotation=20, ha="right", fontsize=10)
+ax.set_ylabel("Test Accuracy", fontsize=11)
+ax.set_title("Decision Tree Accuracies Across Datasets (TGB Features)", fontweight="bold", fontsize=12)
+ax.yaxis.set_major_formatter(ticker.FormatStrFormatter("%.3g"))
+ax.legend(fontsize=9, bbox_to_anchor=(1.01, 1), loc="upper left", borderaxespad=0)
+ax.grid(axis="y", linestyle="--", alpha=0.5)
+plt.tight_layout()
+out = PLOTS_DIR / "decision_tree_accuracies_tgb.png"
+plt.savefig(out, dpi=150, bbox_inches="tight")
+plt.close()
+print(f"Saved: {out}")
 
+def dt_vs_bar(ax, boost_accs, boost_label, boost_color):
+    for i, dataset in enumerate(DATASETS):
+        gosdt_acc        = data[dataset].get("GOSDT",         {}).get("accuracy", float("nan"))
+        licketyresplit_acc = data[dataset].get("LicketyRESPLIT", {}).get("accuracy", float("nan"))
+        licketysplit_acc = data[dataset].get("LicketySPLIT",  {}).get("accuracy", float("nan"))
+        split_acc        = data[dataset].get("SPLIT",         {}).get("accuracy", float("nan"))
+        ax.bar(x_dt[i] + dt_offsets[0], gosdt_acc,          width=bw_dt, label="GOSDT"          if i == 0 else None, color="#2ca02c", alpha=0.85)
+        ax.bar(x_dt[i] + dt_offsets[1], licketyresplit_acc, width=bw_dt, label="LicketyRESPLIT" if i == 0 else None, color="#4C72B0", alpha=0.85)
+        ax.bar(x_dt[i] + dt_offsets[2], licketysplit_acc,   width=bw_dt, label="LicketySPLIT"   if i == 0 else None, color="#FF7F0E", alpha=0.85)
+        ax.bar(x_dt[i] + dt_offsets[3], split_acc,          width=bw_dt, label="SPLIT"          if i == 0 else None, color="#9467bd", alpha=0.85)
+    ax.plot(x_dt, boost_accs, label=boost_label, color=boost_color, marker="o", zorder=5)
+    ax.set_xticks(x_dt)
+    ax.set_xticklabels(DATASETS, rotation=20, ha="right", fontsize=10)
+    ax.set_ylabel("Test Accuracy", fontsize=11)
+    ax.yaxis.set_major_formatter(ticker.FormatStrFormatter("%.3g"))
+    ax.legend(fontsize=9, bbox_to_anchor=(1.01, 1), loc="upper left", borderaxespad=0)
+    ax.grid(axis="y", linestyle="--", alpha=0.5)
 
-def collect_sweep_points(dataset):
-    """Return list of (n_trees_in_set, accuracy, param_label, variant) for one dataset."""
-    points = []
+#Figure 16: Decision Tree Accuracies vs XGBoost Accuracy (TGB features)
+fig, ax = plt.subplots(figsize=(18, 7))
+xgboost_accs = [data[ds].get("XGBoost", {}).get("accuracy", float("nan")) for ds in DATASETS]
+dt_vs_bar(ax, xgboost_accs, "XGBoost (TGB)", "#d62728")
+ax.set_title("Decision Tree Accuracies vs XGBoost Accuracy (TGB features)", fontweight="bold", fontsize=12)
+plt.tight_layout()
+out = PLOTS_DIR / "decision_tree_vs_xgboost_tgb_accuracy.png"
+plt.savefig(out, dpi=150, bbox_inches="tight")
+plt.close()
+print(f"Saved: {out}")
 
-    # --- model_results/<dataset>/<depth>_<lambda>_<rashomon>/ (no binarizer) ---
-    ds_dir = RESULTS_DIR / dataset
-    if ds_dir.exists():
-        # default (top-level) run
-        res_f = ds_dir / "licketyresplit_results.txt"
-        sz_f  = ds_dir / "licketyresplit_tree_size.json"
-        if res_f.exists() and sz_f.exists():
-            res  = parse_licketyresplit_bin(res_f)
-            sz   = parse_tree_size(sz_f)
-            n    = sz.get("n_trees_in_set")
-            acc  = res.get("accuracy")
-            if n is not None and acc is not None:
-                points.append((n, acc, "default", "No Binarizer"))
+#Figure 17 Decision Tree Accuracies vs LightGBM Accuracy (TGB features)
+fig, ax = plt.subplots(figsize=(18, 7))
+lightgbm_accs = [data[ds].get("LightGBM", {}).get("accuracy", float("nan")) for ds in DATASETS]
+dt_vs_bar(ax, lightgbm_accs, "LightGBM (TGB)", "#d62728")
+ax.set_title("Decision Tree Accuracies vs LightGBM Accuracy (TGB features)", fontweight="bold", fontsize=12)
+plt.tight_layout()
+out = PLOTS_DIR / "decision_tree_vs_lightgbm_tgb_accuracy.png"
+plt.savefig(out, dpi=150, bbox_inches="tight")
+plt.close()
+print(f"Saved: {out}")
 
-        # default binarized run
-        res_f_bin = ds_dir / "licketyresplit_binarized_results.txt"
-        sz_f_bin  = ds_dir / "licketyresplit_binarized_tree_size.json"
-        if res_f_bin.exists() and sz_f_bin.exists():
-            res  = parse_licketyresplit_bin(res_f_bin)
-            sz   = parse_tree_size(sz_f_bin)
-            n    = sz.get("n_trees_in_set")
-            acc  = res.get("accuracy")
-            if n is not None and acc is not None:
-                points.append((n, acc, "default", "ThresholdBinarizer"))
-
-        # param sweep subdirs
-        for param_dir in sorted(ds_dir.iterdir()):
-            if not param_dir.is_dir():
-                continue
-            parts = param_dir.name.split("_")
-            if len(parts) < 3:
-                continue
-            depth, lam, rash = parts[0], parts[1], parts[2]
-            label = f"d={depth} λ={lam} ε={rash}"
-
-            res_f = param_dir / "licketyresplit_results.txt"
-            sz_f  = param_dir / "licketyresplit_tree_size.json"
-            if res_f.exists() and sz_f.exists():
-                res = parse_licketyresplit_bin(res_f)
-                sz  = parse_tree_size(sz_f)
-                n   = sz.get("n_trees_in_set")
-                acc = res.get("accuracy")
-                if n is not None and acc is not None:
-                    points.append((n, acc, label, "No Binarizer"))
-
-    # --- LicketyRESPLIT_EXP/<param>/<dataset>_results.txt (no binarizer) ---
-    if EXP_DIR.exists():
-        for param_dir in sorted(EXP_DIR.iterdir()):
-            if not param_dir.is_dir():
-                continue
-            parts = param_dir.name.split("_")
-            if len(parts) < 3:
-                continue
-            depth, lam, rash = parts[0], parts[1], parts[2]
-            label = f"d={depth} λ={lam} ε={rash}"
-
-            res_f = param_dir / f"{dataset}_results.txt"
-            sz_f  = param_dir / f"{dataset}_tree_size.json"
-            if res_f.exists() and sz_f.exists():
-                res = parse_licketyresplit_bin(res_f)
-                sz  = parse_tree_size(sz_f)
-                n   = sz.get("n_trees_in_set")
-                acc = res.get("accuracy")
-                if n is not None and acc is not None:
-                    points.append((n, acc, label, "No Binarizer"))
-
-    # --- LicketyRESPLIT_EXP_ThresholdBinarizer/<param>/<dataset>_results.txt ---
-    if EXP_BIN_DIR.exists():
-        for param_dir in sorted(EXP_BIN_DIR.iterdir()):
-            if not param_dir.is_dir():
-                continue
-            parts = param_dir.name.split("_")
-            if len(parts) < 3:
-                continue
-            depth, lam, rash = parts[0], parts[1], parts[2]
-            label = f"d={depth} λ={lam} ε={rash}"
-
-            res_f = param_dir / f"{dataset}_results.txt"
-            sz_f  = param_dir / f"{dataset}_tree_size.json"
-            if res_f.exists() and sz_f.exists():
-                res = parse_licketyresplit_bin(res_f)
-                sz  = parse_tree_size(sz_f)
-                n   = sz.get("n_trees_in_set")
-                acc = res.get("accuracy")
-                if n is not None and acc is not None:
-                    points.append((n, acc, label, "ThresholdBinarizer"))
-
-    # Deduplicate identical (n, acc, label, variant) tuples
-    return list(dict.fromkeys(points))
+#Figure 18 Decision Tree Accuracies vs CatBoost Accuracy (TGB features)
+fig, ax = plt.subplots(figsize=(18, 7))
+catboost_accs = [data[ds].get("CatBoost", {}).get("accuracy", float("nan")) for ds in DATASETS]
+dt_vs_bar(ax, catboost_accs, "CatBoost (TGB)", "#d62728")
+ax.set_title("Decision Tree Accuracies vs CatBoost Accuracy (TGB features)", fontweight="bold", fontsize=12)
+plt.tight_layout()
+out = PLOTS_DIR / "decision_tree_vs_catboost_tgb_accuracy.png"
+plt.savefig(out, dpi=150, bbox_inches="tight")
+plt.close()
+print(f"Saved: {out}")
 
 
-for dataset in DATASETS:
-    pts = collect_sweep_points(dataset)
-    if not pts:
-        print(f"No Rashomon set data for {dataset}, skipping.")
-        continue
+#Rashomon Set Sizes for GOSDT, LicketyRESPLIT, LicketySPLIT, and SPLIT (TGB features)
+fig, ax = plt.subplots(figsize=(12, 6))
+for i, dataset in enumerate(DATASETS):
+    gosdt_sz = data[dataset].get("GOSDT", {}).get("n_trees_in_set", float("nan"))
+    licketyresplit_sz = data[dataset].get("LicketyRESPLIT", {}).get("n_trees_in_set", float("nan"))
+    licketysplit_sz = data[dataset].get("LicketySPLIT", {}).get("n_trees_in_set", float("nan"))
+    split_sz = data[dataset].get("SPLIT", {}).get("n_trees_in_set", float("nan"))
+    ax.bar(i - 1.5 * bar_w, gosdt_sz, width=bar_w, label="GOSDT" if i == 0 else None, color="#2ca02c", alpha=0.85)
+    ax.bar(i - 0.5 * bar_w, licketyresplit_sz, width=bar_w, label="LicketyRESPLIT+TGB" if i == 0 else None, color="#4C72B0", alpha=0.85)
+    ax.bar(i + 0.5 * bar_w, licketysplit_sz, width=bar_w, label="LicketySPLIT+TGB" if i == 0 else None, color="#FF7F0E", alpha=0.85)
+    ax.bar(i + 1.5 * bar_w, split_sz, width=bar_w, label="SPLIT" if i == 0 else None, color="#d62728", alpha=0.85)
+ax.set_xticks(x)
+ax.set_xticklabels(DATASETS, rotation=20, ha="right", fontsize=9)
+ax.set_ylabel("Rashomon Set Size")
+ax.set_title("Rashomon Set Sizes for GOSDT, LicketyRESPLIT, LicketySPLIT, and SPLIT (TGB features)", fontweight="bold")
+ax.yaxis.set_major_formatter(ticker.FormatStrFormatter("%.3g"))
+ax.legend(fontsize=8, bbox_to_anchor=(1.01, 1), loc="upper left", borderaxespad=0)
+ax.grid(axis="y", linestyle="--", alpha=0.5)
+plt.tight_layout()
+out = PLOTS_DIR / "decision_tree_rashomon_set_sizes_tgb.png"
+plt.savefig(out, dpi=150, bbox_inches="tight")
+plt.close()
+print(f"Saved: {out}")
 
-    fig, ax = plt.subplots(figsize=(7, 5))
+# Figure 19: Rashomon Set Size (total_leaves) — XGBoost vs LightGBM vs CatBoost (TGB features)
+boost_models  = ["XGBoost", "LightGBM", "CatBoost"]
+boost_colors  = {"XGBoost": "#d62728", "LightGBM": "#2ca02c", "CatBoost": "#4C72B0"}
+boost_offsets = np.array([-1, 0, 1]) * bw_dt
 
-    legend_handles = {}
-    for n_trees, acc, label, variant in pts:
-        color  = SCATTER_COLORS[variant]
-        marker = SCATTER_MARKERS[variant]
-        sc = ax.scatter(n_trees, acc, color=color, marker=marker,
-                        s=60, alpha=0.85, zorder=3)
-        ax.annotate(label, (n_trees, acc), textcoords="offset points",
-                    xytext=(5, 3), fontsize=6, color=color)
-        if variant not in legend_handles:
-            legend_handles[variant] = sc
+fig, ax = plt.subplots(figsize=(18, 7))
+for m_idx, model in enumerate(boost_models):
+    vals = [data[ds].get(model, {}).get("total_leaves", float("nan")) for ds in DATASETS]
+    ax.bar(x_dt + boost_offsets[m_idx], vals, width=bw_dt,
+           label=model, color=boost_colors[model], alpha=0.85)
+ax.set_xticks(x_dt)
+ax.set_xticklabels(DATASETS, rotation=20, ha="right", fontsize=10)
+ax.set_ylabel("Total Leaves", fontsize=11)
+ax.set_title("Rashomon Set Size (Total Leaves): XGBoost vs LightGBM vs CatBoost (TGB features)",
+             fontweight="bold", fontsize=12)
+ax.yaxis.set_major_formatter(ticker.FormatStrFormatter("%.3g"))
+ax.legend(fontsize=9, bbox_to_anchor=(1.01, 1), loc="upper left", borderaxespad=0)
+ax.grid(axis="y", linestyle="--", alpha=0.5)
+plt.tight_layout()
+out = PLOTS_DIR / "xgb_lgbm_catboost_rashomon_set_size.png"
+plt.savefig(out, dpi=150, bbox_inches="tight")
+plt.close()
+print(f"Saved: {out}")
 
-    # Use log scale on x-axis when the range spans more than one order of magnitude
-    n_vals = [p[0] for p in pts]
-    if max(n_vals, default=1) / max(min(n_vals, default=1), 1) > 10:
-        ax.set_xscale("log")
 
-    ax.set_xlabel("Rashomon Set Size (# trees)")
-    ax.set_ylabel("Test Accuracy")
-    ax.set_title(f"{dataset}: Rashomon Set Size vs Test Accuracy\n(LicketyRESPLIT)",
-                 fontsize=10, fontweight="bold")
-    ax.legend(legend_handles.values(), legend_handles.keys(), fontsize=8)
-    ax.grid(linestyle="--", alpha=0.4)
-    plt.tight_layout()
-    out = PLOTS_DIR / f"rashomon_vs_accuracy_{dataset}.png"
-    plt.savefig(out, dpi=150, bbox_inches="tight")
-    plt.close()
-    print(f"Saved: {out}")
+# ── Load No-TGB results ───────────────────────────────────────────────────────
+
+NO_TGB_DIR = BASEDIR / "benchmarks_no_TGB_results"
+NO_TGB_MODELS = ["XGBoost", "LightGBM", "CatBoost", "LicketyRESPLIT", "LicketySPLIT", "GOSDT", "SPLIT"]
+
+no_tgb_data = {}
+for dataset in NO_TGB_DATASETS:
+    d2 = {}
+    nd = NO_TGB_DIR / dataset
+    for model, res_f, sz_f, parser in [
+        ("XGBoost",       "xgboost_binarized_results.txt",         "xgboost_tree_size_binarized.json",        parse_xgboost),
+        ("LightGBM",      "lightgbm_results.txt",                  "lightgbm_tree_size.json",                 parse_xgboost),
+        ("CatBoost",      "catboost_results.txt",                  "catboost_tree_size.json",                 parse_xgboost),
+        ("LicketyRESPLIT","licketyresplit_binarized_results.txt",  "licketyresplit_binarized_tree_size.json", parse_licketyresplit_bin),
+        ("LicketySPLIT",  "licketysplit_results.txt",              None,                                      parse_licketyresplit_bin),
+        ("GOSDT",         "gosdt_results.txt",                     "gosdt_tree_size.json",                    parse_gosdt),
+        ("SPLIT",         "split_results.txt",                     None,                                      parse_licketyresplit_bin),
+    ]:
+        res_path = nd / res_f
+        parsed = parser(res_path) if res_path.exists() else {}
+        if sz_f:
+            sz_path = nd / sz_f
+            parsed = {**parsed, **(parse_tree_size(sz_path) if sz_path.exists() else {})}
+        d2[model] = parsed
+    no_tgb_data[dataset] = d2
+
+# Shared layout for No-TGB figures (7 models, 4 datasets)
+no_tgb_colors = {
+    "XGBoost":        "#d62728",
+    "LightGBM":       "#2ca02c",
+    "CatBoost":       "#4C72B0",
+    "LicketyRESPLIT": "#9467bd",
+    "LicketySPLIT":   "#FF7F0E",
+    "GOSDT":          "#8c564b",
+    "SPLIT":          "#e377c2",
+}
+n_no_tgb   = len(NO_TGB_MODELS)
+bw_nt      = 0.25
+nt_offsets = (np.arange(n_no_tgb) - (n_no_tgb - 1) / 2) * bw_nt
+x_nt       = np.arange(len(NO_TGB_DATASETS)) * 2.4
+
+
+def no_tgb_bar(ax, metric, ylabel):
+    for m_idx, model in enumerate(NO_TGB_MODELS):
+        vals = [no_tgb_data[ds].get(model, {}).get(metric, float("nan")) for ds in NO_TGB_DATASETS]
+        ax.bar(x_nt + nt_offsets[m_idx], vals, width=bw_nt,
+               label=model, color=no_tgb_colors[model], alpha=0.85)
+    ax.set_xticks(x_nt)
+    ax.set_xticklabels(NO_TGB_DATASETS, rotation=20, ha="right", fontsize=10)
+    ax.set_ylabel(ylabel, fontsize=11)
+    ax.yaxis.set_major_formatter(ticker.FormatStrFormatter("%.3g"))
+    ax.legend(fontsize=9, bbox_to_anchor=(1.01, 1), loc="upper left", borderaxespad=0)
+    ax.grid(axis="y", linestyle="--", alpha=0.5)
+
+
+# Figure 20: Test Accuracy — all 7 models, No-TGB features
+fig, ax = plt.subplots(figsize=(20, 7))
+no_tgb_bar(ax, "accuracy", "Test Accuracy")
+ax.set_title("Test Accuracy (No TGB): XGBoost vs LightGBM vs CatBoost vs LicketyRESPLIT vs LicketySPLIT vs GOSDT vs SPLIT",
+             fontweight="bold", fontsize=11)
+plt.tight_layout()
+out = PLOTS_DIR / "no_tgb_accuracy_all.png"
+plt.savefig(out, dpi=150, bbox_inches="tight")
+plt.close()
+print(f"Saved: {out}")
+
+# Figure 21: Training Time — all 7 models, No-TGB features
+fig, ax = plt.subplots(figsize=(20, 7))
+no_tgb_bar(ax, "duration_sec", "Training Time (s)")
+ax.set_title("Training Time (No TGB): XGBoost vs LightGBM vs CatBoost vs LicketyRESPLIT vs LicketySPLIT vs GOSDT vs SPLIT",
+             fontweight="bold", fontsize=11)
+plt.tight_layout()
+out = PLOTS_DIR / "no_tgb_duration_all.png"
+plt.savefig(out, dpi=150, bbox_inches="tight")
+plt.close()
+print(f"Saved: {out}")
+
+# Figure 22: Total Leaves — all 7 models, No-TGB features
+fig, ax = plt.subplots(figsize=(20, 7))
+for m_idx, model in enumerate(NO_TGB_MODELS):
+    metric = "n_leaves" if model in ("GOSDT", "LicketyRESPLIT") else "total_leaves"
+    vals = [no_tgb_data[ds].get(model, {}).get(metric, float("nan")) for ds in NO_TGB_DATASETS]
+    ax.bar(x_nt + nt_offsets[m_idx], vals, width=bw_nt,
+           label=model, color=no_tgb_colors[model], alpha=0.85)
+ax.set_xticks(x_nt)
+ax.set_xticklabels(NO_TGB_DATASETS, rotation=20, ha="right", fontsize=10)
+ax.set_ylabel("Number of Leaves", fontsize=11)
+ax.set_title("Tree Size / Leaves (No TGB): XGBoost vs LightGBM vs CatBoost vs LicketyRESPLIT vs LicketySPLIT vs GOSDT vs SPLIT",
+             fontweight="bold", fontsize=11)
+ax.yaxis.set_major_formatter(ticker.FormatStrFormatter("%.3g"))
+ax.legend(fontsize=9, bbox_to_anchor=(1.01, 1), loc="upper left", borderaxespad=0)
+ax.grid(axis="y", linestyle="--", alpha=0.5)
+plt.tight_layout()
+out = PLOTS_DIR / "no_tgb_tree_size_all.png"
+plt.savefig(out, dpi=150, bbox_inches="tight")
+plt.close()
+print(f"Saved: {out}")
+
+# Figure 23-25: Decision Trees vs boosting models, No-TGB
+dt_no_tgb_models  = ["GOSDT", "LicketyRESPLIT", "LicketySPLIT", "SPLIT"]
+dt_no_tgb_colors  = {m: no_tgb_colors[m] for m in dt_no_tgb_models}
+dt_nt_offsets     = np.array([-1.5, -0.5, 0.5, 1.5]) * bw_dt
+x_nt4             = np.arange(len(NO_TGB_DATASETS)) * 1.8
+
+def dt_no_tgb_vs_bar(ax, boost_accs, boost_label):
+    for i, dataset in enumerate(NO_TGB_DATASETS):
+        for j, model in enumerate(dt_no_tgb_models):
+            val = no_tgb_data[dataset].get(model, {}).get("accuracy", float("nan"))
+            ax.bar(x_nt4[i] + dt_nt_offsets[j], val, width=bw_dt,
+                   label=model if i == 0 else None,
+                   color=dt_no_tgb_colors[model], alpha=0.85)
+    ax.plot(x_nt4, boost_accs, label=boost_label, color="#d62728", marker="o", zorder=5)
+    ax.set_xticks(x_nt4)
+    ax.set_xticklabels(NO_TGB_DATASETS, rotation=20, ha="right", fontsize=10)
+    ax.set_ylabel("Test Accuracy", fontsize=11)
+    ax.yaxis.set_major_formatter(ticker.FormatStrFormatter("%.3g"))
+    ax.legend(fontsize=9, bbox_to_anchor=(1.01, 1), loc="upper left", borderaxespad=0)
+    ax.grid(axis="y", linestyle="--", alpha=0.5)
+
+fig, ax = plt.subplots(figsize=(18, 7))
+xgb_nt_accs = [no_tgb_data[ds].get("XGBoost", {}).get("accuracy", float("nan")) for ds in NO_TGB_DATASETS]
+dt_no_tgb_vs_bar(ax, xgb_nt_accs, "XGBoost (No TGB)")
+ax.set_title("Decision Tree Accuracies vs XGBoost Accuracy (No TGB features)", fontweight="bold", fontsize=12)
+plt.tight_layout()
+out = PLOTS_DIR / "no_tgb_decision_tree_vs_xgboost.png"
+plt.savefig(out, dpi=150, bbox_inches="tight")
+plt.close()
+print(f"Saved: {out}")
+
+# Figure 24: Decision Trees vs LightGBM accuracy, No-TGB
+fig, ax = plt.subplots(figsize=(18, 7))
+lgbm_nt_accs = [no_tgb_data[ds].get("LightGBM", {}).get("accuracy", float("nan")) for ds in NO_TGB_DATASETS]
+dt_no_tgb_vs_bar(ax, lgbm_nt_accs, "LightGBM (No TGB)")
+ax.set_title("Decision Tree Accuracies vs LightGBM Accuracy (No TGB features)", fontweight="bold", fontsize=12)
+plt.tight_layout()
+out = PLOTS_DIR / "no_tgb_decision_tree_vs_lightgbm.png"
+plt.savefig(out, dpi=150, bbox_inches="tight")
+plt.close()
+print(f"Saved: {out}")
+
+# Figure 25: Decision Trees vs CatBoost accuracy, No-TGB
+fig, ax = plt.subplots(figsize=(18, 7))
+cb_nt_accs = [no_tgb_data[ds].get("CatBoost", {}).get("accuracy", float("nan")) for ds in NO_TGB_DATASETS]
+dt_no_tgb_vs_bar(ax, cb_nt_accs, "CatBoost (No TGB)")
+ax.set_title("Decision Tree Accuracies vs CatBoost Accuracy (No TGB features)", fontweight="bold", fontsize=12)
+plt.tight_layout()
+out = PLOTS_DIR / "no_tgb_decision_tree_vs_catboost.png"
+plt.savefig(out, dpi=150, bbox_inches="tight")
+plt.close()
+print(f"Saved: {out}")
+
+# Figure 26: Rashomon Set Size (total_leaves) — XGBoost vs LightGBM vs CatBoost, No-TGB
+x_nt3        = np.arange(len(NO_TGB_DATASETS)) * 1.8
+nt3_offsets  = np.array([-1, 0, 1]) * bw_dt
+fig, ax = plt.subplots(figsize=(18, 7))
+for m_idx, model in enumerate(["XGBoost", "LightGBM", "CatBoost"]):
+    vals = [no_tgb_data[ds].get(model, {}).get("total_leaves", float("nan")) for ds in NO_TGB_DATASETS]
+    ax.bar(x_nt3 + nt3_offsets[m_idx], vals, width=bw_dt,
+           label=model, color=no_tgb_colors[model], alpha=0.85)
+ax.set_xticks(x_nt3)
+ax.set_xticklabels(NO_TGB_DATASETS, rotation=20, ha="right", fontsize=10)
+ax.set_ylabel("Total Leaves", fontsize=11)
+ax.set_title("Rashomon Set Size (Total Leaves): XGBoost vs LightGBM vs CatBoost (No TGB features)",
+             fontweight="bold", fontsize=12)
+ax.yaxis.set_major_formatter(ticker.FormatStrFormatter("%.3g"))
+ax.legend(fontsize=9, bbox_to_anchor=(1.01, 1), loc="upper left", borderaxespad=0)
+ax.grid(axis="y", linestyle="--", alpha=0.5)
+plt.tight_layout()
+out = PLOTS_DIR / "no_tgb_xgb_lgbm_catboost_rashomon_set_size.png"
+plt.savefig(out, dpi=150, bbox_inches="tight")
+plt.close()
+print(f"Saved: {out}")
+
+# Figure 27: Decision Tree Accuracies, No-TGB
+fig, ax = plt.subplots(figsize=(18, 7))
+for m_idx, model in enumerate(dt_no_tgb_models):
+    vals = [no_tgb_data[ds].get(model, {}).get("accuracy", float("nan")) for ds in NO_TGB_DATASETS]
+    ax.bar(x_nt4 + dt_nt_offsets[m_idx], vals, width=bw_dt,
+           label=model, color=dt_no_tgb_colors[model], alpha=0.85)
+ax.set_xticks(x_nt4)
+ax.set_xticklabels(NO_TGB_DATASETS, rotation=20, ha="right", fontsize=10)
+ax.set_ylabel("Test Accuracy", fontsize=11)
+ax.set_title("Decision Tree Accuracies (No TGB features)", fontweight="bold", fontsize=12)
+ax.yaxis.set_major_formatter(ticker.FormatStrFormatter("%.3g"))
+ax.legend(fontsize=9, bbox_to_anchor=(1.01, 1), loc="upper left", borderaxespad=0)
+ax.grid(axis="y", linestyle="--", alpha=0.5)
+plt.tight_layout()
+out = PLOTS_DIR / "no_tgb_decision_tree_accuracies.png"
+plt.savefig(out, dpi=150, bbox_inches="tight")
+plt.close()
+print(f"Saved: {out}")
+
+# Figure 28: Decision Tree Rashomon Set Sizes, No-TGB
+# (GOSDT and LicketyRESPLIT have n_trees_in_set; LicketySPLIT and SPLIT have no tree size JSON)
+fig, ax = plt.subplots(figsize=(18, 7))
+for m_idx, model in enumerate(dt_no_tgb_models):
+    vals = [no_tgb_data[ds].get(model, {}).get("n_trees_in_set", float("nan")) for ds in NO_TGB_DATASETS]
+    ax.bar(x_nt4 + dt_nt_offsets[m_idx], vals, width=bw_dt,
+           label=model, color=dt_no_tgb_colors[model], alpha=0.85)
+ax.set_xticks(x_nt4)
+ax.set_xticklabels(NO_TGB_DATASETS, rotation=20, ha="right", fontsize=10)
+ax.set_ylabel("Rashomon Set Size", fontsize=11)
+ax.set_title("Decision Tree Rashomon Set Sizes (No TGB features)", fontweight="bold", fontsize=12)
+ax.yaxis.set_major_formatter(ticker.FormatStrFormatter("%.3g"))
+ax.legend(fontsize=9, bbox_to_anchor=(1.01, 1), loc="upper left", borderaxespad=0)
+ax.grid(axis="y", linestyle="--", alpha=0.5)
+plt.tight_layout()
+out = PLOTS_DIR / "no_tgb_decision_tree_rashomon_set.png"
+plt.savefig(out, dpi=150, bbox_inches="tight")
+plt.close()
+print(f"Saved: {out}")
+
+# Figure 29: XGBoost vs LightGBM vs CatBoost Accuracy, No-TGB
+boost3_offsets = np.array([-1, 0, 1]) * bw_dt
+fig, ax = plt.subplots(figsize=(18, 7))
+for m_idx, model in enumerate(["XGBoost", "LightGBM", "CatBoost"]):
+    vals = [no_tgb_data[ds].get(model, {}).get("accuracy", float("nan")) for ds in NO_TGB_DATASETS]
+    ax.bar(x_nt4 + boost3_offsets[m_idx], vals, width=bw_dt,
+           label=model, color=no_tgb_colors[model], alpha=0.85)
+ax.set_xticks(x_nt4)
+ax.set_xticklabels(NO_TGB_DATASETS, rotation=20, ha="right", fontsize=10)
+ax.set_ylabel("Test Accuracy", fontsize=11)
+ax.set_title("XGBoost vs LightGBM vs CatBoost Accuracy (No TGB features)", fontweight="bold", fontsize=12)
+ax.yaxis.set_major_formatter(ticker.FormatStrFormatter("%.3g"))
+ax.legend(fontsize=9, bbox_to_anchor=(1.01, 1), loc="upper left", borderaxespad=0)
+ax.grid(axis="y", linestyle="--", alpha=0.5)
+plt.tight_layout()
+out = PLOTS_DIR / "no_tgb_xgb_lgbm_catboost_accuracy.png"
+plt.savefig(out, dpi=150, bbox_inches="tight")
+plt.close()
+print(f"Saved: {out}")
 

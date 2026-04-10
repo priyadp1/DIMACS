@@ -107,7 +107,7 @@ CMAKE_INSTALL_NAME_TOOL:FILEPATH=/usr/bin/install_name_tool
 CMAKE_INSTALL_OLDINCLUDEDIR:PATH=/usr/include
 
 //Install path prefix, prepended onto install directories.
-CMAKE_INSTALL_PREFIX:PATH=/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/tmpqif9jwce/wheel/platlib
+CMAKE_INSTALL_PREFIX:PATH=/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/tmp62w1kvjc/wheel/platlib
 
 //Run-time variable data (LOCALSTATEDIR/run)
 CMAKE_INSTALL_RUNSTATEDIR:PATH=
@@ -167,7 +167,7 @@ CMAKE_OSX_DEPLOYMENT_TARGET:STRING=
 // inside the indicated SDK.
 CMAKE_OSX_SYSROOT:STRING=
 
-CMAKE_PREFIX_PATH:PATH=/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages;/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-qtjix7k9/overlay/lib/python3.12/site-packages
+CMAKE_PREFIX_PATH:PATH=/Users/prishapriyadashini/Downloads/DIMACS/split-env/lib/python3.12/site-packages;/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-i5ftj49l/overlay/lib/python3.12/site-packages
 
 //Value Computed by CMake
 CMAKE_PROJECT_COMPAT_VERSION:STATIC=
@@ -320,13 +320,13 @@ PKG_CONFIG_ARGN:STRING=
 //pkg-config executable
 PKG_CONFIG_EXECUTABLE:FILEPATH=/opt/homebrew/bin/pkg-config
 
-PYTHON_EXECUTABLE:PATH=/Library/Frameworks/Python.framework/Versions/3.12/bin/python3.12
+PYTHON_EXECUTABLE:PATH=/Users/prishapriyadashini/Downloads/DIMACS/split-env/bin/python3.12
 
 PYTHON_INCLUDE_DIR:PATH=/Library/Frameworks/Python.framework/Versions/3.12/include/python3.12
 
 PYTHON_LIBRARY:PATH=/Library/Frameworks/Python.framework/Versions/3.12/Python
 
-Python3_EXECUTABLE:PATH=/Library/Frameworks/Python.framework/Versions/3.12/bin/python3.12
+Python3_EXECUTABLE:PATH=/Users/prishapriyadashini/Downloads/DIMACS/split-env/bin/python3.12
 
 Python3_FIND_REGISTRY:STRING=NEVER
 
@@ -334,7 +334,7 @@ Python3_INCLUDE_DIR:PATH=/Library/Frameworks/Python.framework/Versions/3.12/incl
 
 Python3_ROOT_DIR:PATH=/Library/Frameworks/Python.framework/Versions/3.12
 
-Python_EXECUTABLE:PATH=/Library/Frameworks/Python.framework/Versions/3.12/bin/python3.12
+Python_EXECUTABLE:PATH=/Users/prishapriyadashini/Downloads/DIMACS/split-env/bin/python3.12
 
 Python_FIND_REGISTRY:STRING=NEVER
 
@@ -344,17 +344,17 @@ Python_ROOT_DIR:PATH=/Library/Frameworks/Python.framework/Versions/3.12
 
 SKBUILD:STRING=2
 
-SKBUILD_CORE_VERSION:STRING=0.11.6
+SKBUILD_CORE_VERSION:STRING=0.12.2
 
-SKBUILD_DATA_DIR:PATH=/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/tmpqif9jwce/wheel/data
+SKBUILD_DATA_DIR:PATH=/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/tmp62w1kvjc/wheel/data
 
-SKBUILD_HEADERS_DIR:PATH=/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/tmpqif9jwce/wheel/headers
+SKBUILD_HEADERS_DIR:PATH=/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/tmp62w1kvjc/wheel/headers
 
-SKBUILD_METADATA_DIR:PATH=/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/tmpqif9jwce/wheel/metadata
+SKBUILD_METADATA_DIR:PATH=/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/tmp62w1kvjc/wheel/metadata
 
-SKBUILD_NULL_DIR:PATH=/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/tmpqif9jwce/wheel/null
+SKBUILD_NULL_DIR:PATH=/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/tmp62w1kvjc/wheel/null
 
-SKBUILD_PLATLIB_DIR:PATH=/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/tmpqif9jwce/wheel/platlib
+SKBUILD_PLATLIB_DIR:PATH=/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/tmp62w1kvjc/wheel/platlib
 
 SKBUILD_PROJECT_NAME:STRING=split
 
@@ -366,14 +366,14 @@ SKBUILD_SABI_COMPONENT:STRING=
 
 SKBUILD_SABI_VERSION:STRING=
 
-SKBUILD_SCRIPTS_DIR:PATH=/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/tmpqif9jwce/wheel/scripts
+SKBUILD_SCRIPTS_DIR:PATH=/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/tmp62w1kvjc/wheel/scripts
 
 SKBUILD_SOABI:STRING=cpython-312-darwin
 
 SKBUILD_STATE:STRING=editable
 
 //The directory containing a CMake configuration file for TBB.
-TBB_DIR:PATH=/opt/homebrew/opt/tbb/lib/cmake/TBB
+TBB_DIR:PATH=/opt/homebrew/lib/cmake/TBB
 
 //Value Computed by CMake
 nlohmann_json_BINARY_DIR:STATIC=/Users/prishapriyadashini/Downloads/DIMACS/SPLIT-ICML/split/pyproject-build/cp312-cp312-macosx_13_0_arm64/_deps/json-build
@@ -388,7 +388,7 @@ nlohmann_json_SOURCE_DIR:STATIC=/Users/prishapriyadashini/Downloads/DIMACS/SPLIT
 pkgcfg_lib_GMP_gmp:FILEPATH=/opt/homebrew/Cellar/gmp/6.3.0/lib/libgmp.dylib
 
 //The directory containing a CMake configuration file for pybind11.
-pybind11_DIR:PATH=/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-qtjix7k9/overlay/lib/python3.12/site-packages/pybind11/share/cmake/pybind11
+pybind11_DIR:PATH=/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-i5ftj49l/overlay/lib/python3.12/site-packages/pybind11/share/cmake/pybind11
 
 //Value Computed by CMake
 split_BINARY_DIR:STATIC=/Users/prishapriyadashini/Downloads/DIMACS/SPLIT-ICML/split/pyproject-build/cp312-cp312-macosx_13_0_arm64
@@ -567,7 +567,7 @@ CMAKE_VERBOSE_MAKEFILE-ADVANCED:INTERNAL=1
 //Details about finding PkgConfig
 FIND_PACKAGE_MESSAGE_DETAILS_PkgConfig:INTERNAL=[/opt/homebrew/bin/pkg-config][v2.5.1()]
 //Details about finding Python
-FIND_PACKAGE_MESSAGE_DETAILS_Python:INTERNAL=[/Library/Frameworks/Python.framework/Versions/3.12/bin/python3.12][/Library/Frameworks/Python.framework/Versions/3.12/include/python3.12][found components: Interpreter Development.Module ][v3.12.1()]
+FIND_PACKAGE_MESSAGE_DETAILS_Python:INTERNAL=[/Users/prishapriyadashini/Downloads/DIMACS/split-env/bin/python3.12][/Library/Frameworks/Python.framework/Versions/3.12/include/python3.12][found components: Interpreter Development.Module ][v3.12.1()]
 GMP_CFLAGS:INTERNAL=-I/opt/homebrew/Cellar/gmp/6.3.0/include
 GMP_CFLAGS_I:INTERNAL=
 GMP_CFLAGS_OTHER:INTERNAL=
@@ -613,13 +613,13 @@ PKG_CONFIG_ARGN-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: PKG_CONFIG_EXECUTABLE
 PKG_CONFIG_EXECUTABLE-ADVANCED:INTERNAL=1
 //Python executable during the last CMake run
-PYBIND11_PYTHON_EXECUTABLE_LAST:INTERNAL=/Library/Frameworks/Python.framework/Versions/3.12/bin/python3.12
+PYBIND11_PYTHON_EXECUTABLE_LAST:INTERNAL=/Users/prishapriyadashini/Downloads/DIMACS/split-env/bin/python3.12
 //Python debug status
 PYTHON_IS_DEBUG:INTERNAL=0
 PYTHON_MODULE_DEBUG_POSTFIX:INTERNAL=
 PYTHON_MODULE_EXTENSION:INTERNAL=.cpython-312-darwin.so
 //CMAKE_INSTALL_PREFIX during last run
-_GNUInstallDirs_LAST_CMAKE_INSTALL_PREFIX:INTERNAL=/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/tmpqif9jwce/wheel/platlib
+_GNUInstallDirs_LAST_CMAKE_INSTALL_PREFIX:INTERNAL=/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/tmp62w1kvjc/wheel/platlib
 _PYBIND11_CROSSCOMPILING:INTERNAL=OFF
 _Python:INTERNAL=Python
 //Compiler reason failure
@@ -627,11 +627,11 @@ _Python_Compiler_REASON_FAILURE:INTERNAL=
 _Python_DEVELOPMENT_MODULE_SIGNATURE:INTERNAL=ccb3838a369eb2a53aebcae9c18fb815
 //Development reason failure
 _Python_Development_REASON_FAILURE:INTERNAL=
-_Python_EXECUTABLE:INTERNAL=/Library/Frameworks/Python.framework/Versions/3.12/bin/python3.12
+_Python_EXECUTABLE:INTERNAL=/Users/prishapriyadashini/Downloads/DIMACS/split-env/bin/python3.12
 _Python_INCLUDE_DIR:INTERNAL=/Library/Frameworks/Python.framework/Versions/3.12/include/python3.12
 //Python Properties
-_Python_INTERPRETER_PROPERTIES:INTERNAL=Python;3;12;1;64;<none>;cpython-312-darwin;abi3;/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12;/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12;/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages;/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages
-_Python_INTERPRETER_SIGNATURE:INTERNAL=c8dc8657e353ae6d71090d55448f9d72
+_Python_INTERPRETER_PROPERTIES:INTERNAL=Python;3;12;1;64;<none>;cpython-312-darwin;abi3;/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12;/Users/prishapriyadashini/Downloads/DIMACS/split-env/lib/python3.12;/Users/prishapriyadashini/Downloads/DIMACS/split-env/lib/python3.12/site-packages;/Users/prishapriyadashini/Downloads/DIMACS/split-env/lib/python3.12/site-packages
+_Python_INTERPRETER_SIGNATURE:INTERNAL=f414a4afe11f781494c1533d58a8c62a
 //NumPy reason failure
 _Python_NumPy_REASON_FAILURE:INTERNAL=
 __pkg_config_arguments_GMP:INTERNAL=REQUIRED;IMPORTED_TARGET;gmp
@@ -640,5 +640,5 @@ __pkg_config_checked_GMP:INTERNAL=1
 pkgcfg_lib_GMP_gmp-ADVANCED:INTERNAL=1
 prefix_result:INTERNAL=/opt/homebrew/Cellar/gmp/6.3.0/lib
 //Directories where pybind11 and possibly Python headers are located
-pybind11_INCLUDE_DIRS:INTERNAL=/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-qtjix7k9/overlay/lib/python3.12/site-packages/pybind11/include;/Library/Frameworks/Python.framework/Versions/3.12/include/python3.12
+pybind11_INCLUDE_DIRS:INTERNAL=/private/var/folders/4r/ryq591ln7n94m62xq15x2kgw0000gn/T/pip-build-env-i5ftj49l/overlay/lib/python3.12/site-packages/pybind11/include;/Library/Frameworks/Python.framework/Versions/3.12/include/python3.12
 

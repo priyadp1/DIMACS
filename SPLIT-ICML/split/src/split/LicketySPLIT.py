@@ -99,6 +99,8 @@ class LicketySPLIT:
         Requires X_train to be binary
         '''
         if isinstance(tree, Leaf):
+            if len(y_train) == 0:
+                return tree
             #rescale regularization to be the same as the original model
             # despite training on a subset of the data
             config = child_config.copy()

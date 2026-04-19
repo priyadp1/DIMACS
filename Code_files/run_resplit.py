@@ -19,8 +19,9 @@ TGB_DIR     = BASEDIR / "TGB_Variables"
 RESULTS_DIR = BASEDIR / "benchmarks_TGB_results"
 
 dataset_name = sys.argv[1]
-tgb_dir = TGB_DIR / dataset_name
-out_dir = RESULTS_DIR / dataset_name
+param_tag    = sys.argv[2]
+tgb_dir = TGB_DIR / dataset_name / param_tag
+out_dir = RESULTS_DIR / dataset_name / param_tag
 out_dir.mkdir(parents=True, exist_ok=True)
 
 if (out_dir / "resplit_results.txt").exists():

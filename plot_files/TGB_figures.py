@@ -72,9 +72,11 @@ def parse_tree_size(path):
         return {}
 
 def parse_gradient_boosting_acc(path):
+    if not path.exists():
+        return float("nan")
     text = path.read_text()
     acc = re.search(r"GBDT warm-label ensemble accuracy on test set:\s*([\d.]+)", text)
-    return float(acc.group(1)) if acc else None
+    return float(acc.group(1)) if acc else float("nan")
 
 
 # ── Load all results ──────────────────────────────────────────────────────────
@@ -792,4 +794,121 @@ out = PLOTS_DIR / "no_tgb_xgb_lgbm_catboost_accuracy.png"
 plt.savefig(out, dpi=150, bbox_inches="tight")
 plt.close()
 print(f"Saved: {out}")
+
+
+# ── Figures 30+: Bike dataset parameter sweeps ────────────────────────────────
+# Grouped bar charts: one bar per model per x-tick.
+# Accuracy: all 7 models.  Rashomon: n_trees for boosting, n_trees_in_set for
+# LicketyRESPLIT, n_leaves for GOSDT/SPLIT/LicketySPLIT (single-tree models).
+
+_bike_sweep_dir = BASEDIR / "benchmarks_TGB_results" / "bike"
+_nest_values    = [40, 100, 200]
+_depth_values   = [1, 2, 3]
+
+_all_sweep_models = [
+    "XGBoost", "LightGBM", "CatBoost",
+    "GOSDT", "LicketyRESPLIT", "LicketySPLIT", "SPLIT",
+]
+_sweep_model_colors = {
+    "XGBoost":       "#d62728",
+    "LightGBM":      "#2ca02c",
+    "CatBoost":      "#4C72B0",
+    "GOSDT":         "#8c564b",
+    "LicketyRESPLIT":"#9467bd",
+    "LicketySPLIT":  "#FF7F0E",
+    "SPLIT":         "#e377c2",
+}
+
+def _load_sweep_all(nest, depth):
+    pdir = _bike_sweep_dir / f"nest{nest}_depth{depth}"
+    row = {}
+    specs = [
+        ("XGBoost",       "xgboost_binarized_results.txt",        "xgboost_tree_size_binarized.json",        parse_xgboost,            "n_trees"),
+        ("LightGBM",      "lightgbm_results.txt",                  "lightgbm_tree_size.json",                 parse_xgboost,            "n_trees"),
+        ("CatBoost",      "catboost_results.txt",                  "catboost_tree_size.json",                 parse_xgboost,            "n_trees"),
+        ("GOSDT",         "gosdt_results.txt",                     "gosdt_tree_size.json",                    parse_gosdt,              "n_leaves"),
+        ("LicketyRESPLIT","licketyresplit_binarized_results.txt",  "licketyresplit_binarized_tree_size.json", parse_licketyresplit_bin, "n_trees_in_set"),
+        ("LicketySPLIT",  "licketysplit_results.txt",              None,                                      parse_licketyresplit_bin, None),
+        ("SPLIT",         "split_results.txt",                     None,                                      parse_licketyresplit_bin, None),
+    ]
+    for model, res_f, sz_f, parser, rashomon_key in specs:
+        res_path = pdir / res_f
+        parsed   = parser(res_path) if res_path.exists() else {}
+        acc      = parsed.get("accuracy", float("nan"))
+        if sz_f and rashomon_key:
+            sz_path  = pdir / sz_f
+            rashomon = parse_tree_size(sz_path).get(rashomon_key, float("nan")) if sz_path.exists() else float("nan")
+        else:
+            rashomon = float("nan")
+        row[model] = {"accuracy": acc, "rashomon": rashomon}
+    return row
+
+
+def _sweep_bar_plot(x_vals, x_label, bike_data_dict, metric, ylabel, title, out_path):
+    n_models  = len(_all_sweep_models)
+    n_x       = len(x_vals)
+    bw        = 0.10
+    offsets   = (np.arange(n_models) - (n_models - 1) / 2) * bw
+    xi        = np.arange(n_x)
+
+    fig, ax = plt.subplots(figsize=(max(14, n_x * n_models * bw * 6), 6))
+    for m_idx, model in enumerate(_all_sweep_models):
+        vals = [bike_data_dict[(xv, model)][metric] for xv in x_vals]
+        ax.bar(xi + offsets[m_idx], vals, width=bw,
+               label=model, color=_sweep_model_colors[model], alpha=0.85)
+    ax.set_xticks(xi)
+    ax.set_xticklabels([str(v) for v in x_vals], fontsize=11)
+    ax.set_xlabel(x_label, fontsize=11)
+    ax.set_ylabel(ylabel, fontsize=11)
+    ax.set_title(title, fontweight="bold", fontsize=11)
+    ax.yaxis.set_major_formatter(ticker.FormatStrFormatter("%.3g"))
+    ax.legend(fontsize=9, bbox_to_anchor=(1.01, 1), loc="upper left", borderaxespad=0)
+    ax.grid(axis="y", linestyle="--", alpha=0.5)
+    plt.tight_layout()
+    plt.savefig(out_path, dpi=150, bbox_inches="tight")
+    plt.close()
+    print(f"Saved: {out_path}")
+
+
+# Pre-load all bike sweep data (all 7 models)
+_bike_data_all = {}
+for _n in _nest_values:
+    for _d in _depth_values:
+        _row = _load_sweep_all(_n, _d)
+        for _m in _all_sweep_models:
+            _bike_data_all[(_n, _d, _m)] = _row[_m]
+
+# Sweep over n_estimators for each fixed depth
+for _d in _depth_values:
+    _series = {(_n, _m): _bike_data_all[(_n, _d, _m)]
+               for _n in _nest_values for _m in _all_sweep_models}
+    _sweep_bar_plot(
+        x_vals=_nest_values, x_label="n_estimators",
+        bike_data_dict=_series, metric="accuracy", ylabel="Test Accuracy",
+        title=f"Bike (depth={_d}): Accuracy vs n_estimators",
+        out_path=PLOTS_DIR / f"bike_sweep_depth{_d}_accuracy.png",
+    )
+    _sweep_bar_plot(
+        x_vals=_nest_values, x_label="n_estimators",
+        bike_data_dict=_series, metric="rashomon", ylabel="Rashomon Set Size",
+        title=f"Bike (depth={_d}): Rashomon Set Size vs n_estimators",
+        out_path=PLOTS_DIR / f"bike_sweep_depth{_d}_rashomon.png",
+    )
+
+# Sweep over depth for each fixed n_estimators
+for _n in _nest_values:
+    _series = {(_d, _m): _bike_data_all[(_n, _d, _m)]
+               for _d in _depth_values for _m in _all_sweep_models}
+    _sweep_bar_plot(
+        x_vals=_depth_values, x_label="max_depth",
+        bike_data_dict=_series, metric="accuracy", ylabel="Test Accuracy",
+        title=f"Bike (n_estimators={_n}): Accuracy vs depth",
+        out_path=PLOTS_DIR / f"bike_sweep_nest{_n}_accuracy.png",
+    )
+    _sweep_bar_plot(
+        x_vals=_depth_values, x_label="max_depth",
+        bike_data_dict=_series, metric="rashomon", ylabel="Rashomon Set Size",
+        title=f"Bike (n_estimators={_n}): Rashomon Set Size vs depth",
+        out_path=PLOTS_DIR / f"bike_sweep_nest{_n}_rashomon.png",
+    )
 

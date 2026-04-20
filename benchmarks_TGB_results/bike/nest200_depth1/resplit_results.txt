@@ -1,0 +1,16 @@
+
+Accuracy: 0.8072497123130035
+Confusion Matrix:
+[[1326  416]
+ [ 254 1480]]
+Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.84      0.76      0.80      1742
+           1       0.78      0.85      0.82      1734
+
+    accuracy                           0.81      3476
+   macro avg       0.81      0.81      0.81      3476
+weighted avg       0.81      0.81      0.81      3476
+
+RESPLIT completed in 964.11 seconds with 323834 trees

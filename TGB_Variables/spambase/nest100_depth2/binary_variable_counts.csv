@@ -1,0 +1,19 @@
+binary_variable,tree_count,total_binary_variables
+word_freq_hp <= 0.38499999046325684,4,109
+char_freq_! <= 0.079500000923872,4,109
+word_freq_remove <= 0.054999999701976776,3,109
+char_freq_$ <= 0.05550000071525574,2,109
+word_freq_remove <= 0.044999999925494194,2,109
+char_freq_$ <= 0.02949999924749136,2,109
+word_freq_hp <= 0.11999999731779099,2,109
+capital_run_length_longest <= 17.5,1,109
+capital_run_length_average <= 2.399500012397766,1,109
+char_freq_$ <= 0.039499999955296516,1,109
+word_freq_free <= 0.19500000029802322,1,109
+capital_run_length_total <= 68.5,1,109
+char_freq_$ <= 0.08050000295042992,1,109
+word_freq_hp <= 0.2199999988079071,1,109
+word_freq_money <= 0.009999999776482582,1,109
+word_freq_free <= 0.024999999441206455,1,109
+word_freq_your <= 0.6050000190734863,1,109
+capital_run_length_average <= 3.7345000505447388,1,109

@@ -1,0 +1,17 @@
+binary_variable,tree_count,total_binary_variables
+texture_mean <= 14.990000247955322,4,22
+radius_worst <= 16.795000076293945,4,22
+concave points_worst <= 0.16029999405145645,3,22
+concave points_mean <= 0.05127999931573868,3,22
+perimeter_worst <= 112.79999923706055,2,22
+concave points_worst <= 0.14169999957084656,2,22
+concavity_worst <= 0.2248000055551529,2,22
+concavity_worst <= 0.20795000344514847,2,22
+perimeter_worst <= 114.45000076293945,1,22
+concave points_worst <= 0.17584999650716782,1,22
+area_worst <= 953.7000122070312,1,22
+area_mean <= 696.25,1,22
+concave points_mean <= 0.0559299997985363,1,22
+texture_mean <= 15.87999963760376,1,22
+area_se <= 34.404998779296875,1,22
+smoothness_worst <= 0.1782499998807907,1,22

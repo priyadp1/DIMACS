@@ -1,7 +1,0 @@
-binary_variable,tree_count,total_binary_variables
-perimeter_worst <= 112.79999923706055,2,30
-concave points_worst <= 0.14169999957084656,2,30
-radius_worst <= 16.795000076293945,2,30
-concave points_mean <= 0.05127999931573868,2,30
-perimeter_worst <= 114.45000076293945,1,30
-concave points_mean <= 0.05591999925673008,1,30

@@ -1,0 +1,15 @@
+binary_variable,tree_count,total_binary_variables
+age <= 22.5,5,82
+priors_count <= 2.5,4,82
+age <= 33.5,4,82
+priors_count <= 1.5,3,82
+priors_count <= 8.5,2,82
+age <= 36.5,2,82
+priors_count <= 5.0,2,82
+priors_count <= 9.5,2,82
+age <= 24.5,1,82
+priors_count <= 3.5,1,82
+age <= 29.0,1,82
+age <= 34.5,1,82
+age <= 20.5,1,82
+age <= 38.5,1,82

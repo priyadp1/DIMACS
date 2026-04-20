@@ -1,0 +1,4 @@
+binary_variable,tree_count,total_binary_variables
+hr <= 6.5,8,40
+temp <= 0.4699999988079071,1,40
+atemp <= 0.5985000133514404,1,40

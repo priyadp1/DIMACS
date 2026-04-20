@@ -1,0 +1,2 @@
+n_estimators=200, max_depth=3
+GBDT warm-label ensemble accuracy on test set: 0.9235

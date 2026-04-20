@@ -3,4 +3,9 @@
 .split-env
 __pycache__/
 datasets
-TGB_Variables
+TGB_Variables/heloc
+TGB_Variables/leukemia
+TGB_Variables/creditcard_fraud
+TGB_Variables/creditcard_fraud_smote
+TGB_Variables/diabetes
+TGB_Variables/diabetes_smote

@@ -167,6 +167,8 @@ for dataset_name, cfg in DATASETS.items():
             columns=["binary_variable", "tree_count"]
         )
         binary_var_df["total_binary_variables"] = len(feature_names)
+        importance_map = dict(zip(feature_names, gbdt.feature_importances_))
+        binary_var_df["importance"] = binary_var_df["binary_variable"].map(importance_map)
         binary_var_df.to_csv(out_dir / "binary_variable_counts.csv", index=False)
 
         X_train_guessed.to_csv(out_dir / "X_train_guessed.csv", index=False)

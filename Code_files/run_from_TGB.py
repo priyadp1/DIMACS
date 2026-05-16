@@ -198,6 +198,12 @@ for dataset_name in DATASETS:
                     f.write(f"\nTree Size: {split_tree_size['n_leaves']} leaves, {split_tree_size['n_nodes']} total nodes")
                 else:
                     f.write(f"\nTree Size: Error - {split_tree_size['error']}")
+            with open(out_dir / "split_first_tree.txt", "w", encoding="utf-8") as fh:
+                try:
+                    fh.write(str(model.clf.trees_[0]))
+                except Exception as e:
+                    fh.write(f"Tree unavailable: {e}\n")
+
             print(f"  [SPLIT] Accuracy: {accuracy_score(y_test, y_pred_split):.4f} | Time: {split_duration:.2f}s")
 
         # ── RESPLIT (subprocess to avoid C++ abort() crash) ───────────────────
@@ -279,6 +285,12 @@ for dataset_name in DATASETS:
                 else:
                     f.write(f"\nTree Size: Error - {xgb_tree_size['error']}")
 
+            with open(out_dir / "xgboost_ensemble.txt", "w", encoding="utf-8") as fh:
+                try:
+                    fh.write("\n".join(xgb.get_booster().get_dump()))
+                except Exception as e:
+                    fh.write(f"Ensemble unavailable: {e}\n")
+
             print(f"  [XGBoost]  Accuracy: {accuracy_score(y_test, y_pred_xgb):.4f} | Time: {xgb_duration:.2f}s")
 
         # ── LightGBM ──────────────────────────────────────────────────────────
@@ -354,6 +366,12 @@ for dataset_name in DATASETS:
                 else:
                     f.write(f"\nTree Size: Error - {lgb_tree_size['error']}")
 
+            with open(out_dir / "lightgbm_ensemble.txt", "w", encoding="utf-8") as fh:
+                try:
+                    fh.write(lgbm.booster_.model_to_string())
+                except Exception as e:
+                    fh.write(f"Ensemble unavailable: {e}\n")
+
             print(f"  [LightGBM] Accuracy: {accuracy_score(y_test, y_pred_lgb):.4f} | Time: {lgb_duration:.2f}s")
 
         # ── CatBoost ──────────────────────────────────────────────────────────
@@ -407,6 +425,12 @@ for dataset_name in DATASETS:
                 else:
                     f.write(f"\nTree Size: Error - {cb_tree_size['error']}")
 
+            try:
+                cb.save_model(str(out_dir / "catboost_ensemble.json"), format="json")
+            except Exception as e:
+                with open(out_dir / "catboost_ensemble.txt", "w", encoding="utf-8") as fh:
+                    fh.write(f"Ensemble unavailable: {e}\n")
+
             print(f"  [CatBoost] Accuracy: {accuracy_score(y_test, y_pred_cb):.4f} | Time: {cb_duration:.2f}s")
 
         # ── LicketySPLIT ──────────────────────────────────────────────────────
@@ -440,6 +464,12 @@ for dataset_name in DATASETS:
                     f.write(f"\nTree Size: {ls_tree_size['n_leaves']} leaves, {ls_tree_size['n_nodes']} total nodes")
                 else:
                     f.write(f"\nTree Size: Error - {ls_tree_size['error']}")
+
+            with open(out_dir / "licketysplit_first_tree.txt", "w", encoding="utf-8") as fh:
+                try:
+                    fh.write(str(ls_model.clf.trees_[0]))
+                except Exception as e:
+                    fh.write(f"Tree unavailable: {e}\n")
 
             print(f"  [LicketySPLIT] Accuracy: {accuracy_score(y_test, y_pred_ls):.4f} | Time: {ls_duration:.2f}s")
 
@@ -493,6 +523,39 @@ for dataset_name in DATASETS:
                     f.write(f"\nTree Size (tree 0): {lr_tree_size['n_leaves']} leaves, {lr_tree_size['n_nodes']} total nodes")
                 else:
                     f.write(f"\nTree Size: Error - {lr_tree_size['error']}")
+
+            with open(out_dir / "licketyresplit_binarized_first_tree.txt", "w", encoding="utf-8") as fh:
+                try:
+                    paths, labels = lr_model.get_tree_paths(0)
+                    cols = list(X_train.columns)
+
+                    def _insert(node, path, label):
+                        if not path:
+                            node["prediction"] = int(label)
+                            return
+                        idx = path[0]
+                        feat = abs(idx) - 1
+                        node.setdefault("feature", feat)
+                        child = "right" if idx > 0 else "left"
+                        node.setdefault(child, {})
+                        _insert(node[child], path[1:], label)
+
+                    def _fmt(node):
+                        if "prediction" in node:
+                            return f"{{ prediction: {node['prediction']}, loss: 0.0 }}"
+                        feat = node["feature"]
+                        left  = _fmt(node.get("left",  {"prediction": 0}))
+                        right = _fmt(node.get("right", {"prediction": 1}))
+                        return (f"{{ feature: {feat}, orig feature: {feat}, "
+                                f"[ left child: {left}, right child: {right}] }}")
+
+                    root = {}
+                    for path, label in zip(paths, labels):
+                        _insert(root, list(path), label)
+
+                    fh.write(f"{_fmt(root)}, Index({cols}, dtype='object')\n")
+                except Exception as e:
+                    fh.write(f"Tree unavailable: {e}\n")
 
             print(f"  [LicketyRESPLIT] Accuracy: {accuracy_score(y_test, test_preds_lr):.4f} | "
                   f"Ensemble: {ensemble_acc:.4f} | Trees: {n_trees} | Time: {lr_duration:.2f}s")

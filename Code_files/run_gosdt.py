@@ -67,6 +67,12 @@ except Exception as e:
 with open(out_dir / "gosdt_tree_size.json", "w") as f:
     json.dump(tree_size, f)
 
+with open(out_dir / "gosdt_first_tree.txt", "w", encoding="utf-8") as fh:
+    try:
+        fh.write(str(clf.trees_[0]))
+    except Exception as e:
+        fh.write(f"Tree unavailable: {e}\n")
+
 with open(out_dir / "gosdt_results.txt", "w") as f:
     f.write(f"Accuracy: {accuracy_score(y_test, y_pred)}")
     f.write(f"\nTraining Accuracy: {clf.score(X_train, y_train)}")

@@ -12,7 +12,7 @@ while current.name != "DIMACS":
     current = current.parent
 
 BASEDIR = current
-results_dir = BASEDIR / "TGB_Variables"
+results_dir = BASEDIR / "TGB_Variables_Feature_Importance"
 os.makedirs(results_dir, exist_ok=True)
 
 DATASETS = {
@@ -66,12 +66,6 @@ DATASETS = {
     },
     "creditcard_fraud_smote": {
         "path": BASEDIR / "datasets" / "Mine" / "creditcard_fraud_detection_smote.csv",
-        "target_col": 'Class',
-        "drop_cols": ['Class'],
-        "label_map": None,
-    },
-    "creditcard_fraud": {
-        "path": BASEDIR / "datasets" / "Mine" / "creditcard_fraud_detection_test.csv",
         "target_col": 'Class',
         "drop_cols": ['Class'],
         "label_map": None,

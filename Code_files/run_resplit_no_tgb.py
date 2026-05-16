@@ -53,6 +53,12 @@ if n_trees == 0:
 
 y_pred = model.predict(X_test, idx=0)
 
+with open(out_dir / "resplit_first_tree.txt", "w", encoding="utf-8") as fh:
+    try:
+        fh.write(str(model[0]))
+    except Exception as e:
+        fh.write(f"Tree unavailable: {e}\n")
+
 with open(out_dir / "resplit_results.txt", "w") as f:
     f.write(f"\nAccuracy: {accuracy_score(y_test, y_pred)}")
     f.write(f"\nConfusion Matrix:\n{confusion_matrix(y_test, y_pred)}")

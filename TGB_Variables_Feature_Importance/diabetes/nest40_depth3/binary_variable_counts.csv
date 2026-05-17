@@ -1,0 +1,22 @@
+binary_variable,tree_count,total_binary_variables,importance
+number_inpatient <= 0.5,10,74,0.4123507756200121
+number_inpatient <= 1.5,6,74,0.0641162094913777
+number_outpatient <= 0.5,6,74,0.040630103535636376
+number_emergency <= 0.5,5,74,0.046353231095834294
+discharge_disposition_id <= 10.5,5,74,0.023788802116810764
+number_diagnoses <= 5.5,4,74,0.04241993404951101
+admission_source_id <= 6.5,4,74,0.023652269561402352
+discharge_disposition_id <= 10.0,3,74,0.01632487129806862
+discharge_disposition_id <= 9.5,3,74,0.021616268906365577
+discharge_disposition_id <= 7.5,3,74,0.010705565396279175
+number_diagnoses <= 6.5,3,74,0.020511173528572832
+number_inpatient <= 2.5,3,74,0.020255053693522436
+diabetesMed_No <= 0.5,3,74,0.0131197784125646
+discharge_disposition_id <= 8.5,2,74,0.018513878345837963
+diag_1_428 <= 0.5,2,74,0.020654375536904274
+diag_1_278 <= 0.5,2,74,0.005011789859177693
+discharge_disposition_id <= 1.5,2,74,0.003355006363826882
+diabetesMed_Yes <= 0.5,1,74,0.0050860976377024945
+number_inpatient <= 4.5,1,74,0.0038703432152454175
+number_inpatient <= 3.5,1,74,0.008201505248203147
+number_emergency <= 1.5,1,74,0.0045472110777011274

@@ -1,0 +1,4 @@
+binary_variable,tree_count,total_binary_variables,importance
+number_inpatient <= 0.5,6,38,0.3464970793298902
+number_inpatient <= 1.5,3,38,0.14135672309310637
+number_emergency <= 0.5,1,38,0.05630058672911477

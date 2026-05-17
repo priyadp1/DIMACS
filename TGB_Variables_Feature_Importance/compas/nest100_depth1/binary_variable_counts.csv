@@ -1,0 +1,7 @@
+binary_variable,tree_count,total_binary_variables,importance
+priors_count <= 2.5,3,27,0.23900417077052183
+priors_count <= 1.5,2,27,0.11531693502075759
+age <= 33.5,2,27,0.08993410982102724
+priors_count <= 3.5,1,27,0.054461527294534795
+priors_count <= 5.5,1,27,0.05381615626293069
+age <= 34.5,1,27,0.02560072693532637

@@ -1,0 +1,12 @@
+binary_variable,tree_count,total_binary_variables,importance
+number_inpatient <= 0.5,8,33,0.4103177300865125
+number_inpatient <= 1.5,4,33,0.10979434831906931
+number_diagnoses <= 5.5,3,33,0.053772091761377656
+discharge_disposition_id <= 9.5,3,33,0.03271507479567234
+number_diagnoses <= 6.5,2,33,0.021999152994979145
+number_inpatient <= 2.5,2,33,0.02315285543552334
+number_emergency <= 0.5,2,33,0.05561266647763882
+discharge_disposition_id <= 10.5,2,33,0.014832278327813586
+number_outpatient <= 0.5,2,33,0.04959056438323333
+number_inpatient <= 3.5,1,33,0.005927199617368272
+diabetesMed_Yes <= 0.5,1,33,0.011787239716662594

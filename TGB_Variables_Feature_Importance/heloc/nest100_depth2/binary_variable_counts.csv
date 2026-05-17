@@ -1,0 +1,19 @@
+binary_variable,tree_count,total_binary_variables,importance
+ExternalRiskEstimate <= 70.5,4,115,0.12541034033070844
+MSinceMostRecentInqexcl7days <= 1.5,3,115,0.025275850151068376
+ExternalRiskEstimate <= 74.5,2,115,0.16898281014419655
+ExternalRiskEstimate <= 67.5,2,115,0.03167629639641207
+ExternalRiskEstimate <= 73.5,2,115,0.13752059145680998
+ExternalRiskEstimate <= 78.5,2,115,0.04085982814994724
+MSinceMostRecentInqexcl7days <= -7.5,2,115,0.048316393901642114
+ExternalRiskEstimate <= 75.5,2,115,0.052092851834095906
+MSinceMostRecentInqexcl7days <= 0.5,2,115,0.0382152755541498
+ExternalRiskEstimate <= 81.5,1,115,0.006733878460732104
+PercentTradesWBalance <= 73.5,1,115,0.008156553892181347
+AverageMInFile <= 59.5,1,115,0.01040069383756736
+ExternalRiskEstimate <= 80.5,1,115,0.0057478686088051
+NetFractionRevolvingBurden <= 57.5,1,115,0.01168509129346362
+PercentTradesWBalance <= 43.5,1,115,0.006355219164024962
+AverageMInFile <= 63.5,1,115,0.013828615895303101
+AverageMInFile <= 49.5,1,115,0.00616058499766691
+PercentTradesWBalance <= 47.5,1,115,0.011015795948970335

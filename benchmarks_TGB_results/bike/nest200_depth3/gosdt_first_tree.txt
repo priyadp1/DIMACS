@@ -1,0 +1,10 @@
+<class 'gosdt._tree.Tree'>: { feature: 15, orig feature: 15, [ left child: { prediction: 0, loss: 0.008199669420719147 }, right child: { feature: 44, orig feature: 44, [ left child: { prediction: 0, loss: 0.036323096603155136 }, right child: { prediction: 1, loss: 0.13284902274608612 }] }] }, Index(['season <= 1.5', 'season <= 2.5', 'season <= 3.5', 'yr <= 0.5',
+       'mnth <= 1.5', 'mnth <= 2.5', 'mnth <= 3.5', 'mnth <= 4.5',
+       'mnth <= 5.5', 'mnth <= 7.5',
+       ...
+       'windspeed <= 0.2910500019788742', 'windspeed <= 0.31344999372959137',
+       'windspeed <= 0.40299999713897705', 'windspeed <= 0.4328500032424927',
+       'windspeed <= 0.45525000989437103', 'windspeed <= 0.47760000824928284',
+       'windspeed <= 0.5074500143527985', 'windspeed <= 0.6492500007152557',
+       'windspeed <= 0.7014999985694885', 'hum <= 0.8849999904632568'],
+      dtype='str', length=130), 2

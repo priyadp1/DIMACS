@@ -20,9 +20,6 @@ print("Loading SPLIT / LicketySPLIT...")
 from split import SPLIT, LicketySPLIT
 print("  SPLIT OK")
 
-print("Loading RESPLIT...")
-from resplit import RESPLIT  # keep import to validate install at startup
-print("  RESPLIT OK")
 
 from pathlib import Path
 from sklearn.metrics import accuracy_score, classification_report, confusion_matrix
@@ -53,8 +50,7 @@ DATASETS = [
     "bike",
     "compas",
     "breast_cancer",
-    "diabetes",
-    "diabetes_smote",
+    "spambase",
     #"creditcard_fraud_smote",
     #"creditcard_fraud",
 ]  # Add more dataset names as needed, matching subdirectories in TGB_Variables
@@ -92,11 +88,7 @@ lookahead_depth = 2
 depth_buget = 5
 regularization = 0.01
 
-#RESPLIT parameters (match run_resplit.py) ───────────────────────────────────────
-resplit_regularization = 0.01
-resplit_rashomon_bound_multiplier = 0.05
-resplit_depth_budget = 5
-resplit_cart_lookahead_depth = 3
+
 
 
 def count_gosdt_tree_nodes(node):
@@ -138,15 +130,22 @@ for dataset_name in DATASETS:
         out_dir.mkdir(parents=True, exist_ok=True)
 
         _expected_results = [
-            "gosdt_results.txt",
-            "split_results.txt",
-            "resplit_results.txt",
-            "xgboost_binarized_results.txt",
-            "lightgbm_results.txt",
-            "catboost_results.txt",
-            "licketysplit_results.txt",
-            "licketyresplit_binarized_results.txt",
-        ]
+        "gosdt_results.txt",
+        "split_results.txt",
+        "xgboost_binarized_results.txt",
+        "lightgbm_results.txt",
+        "catboost_results.txt",
+        "licketysplit_results.txt",
+        "licketyresplit_binarized_results.txt",
+        "split_first_tree.txt",
+        "gosdt_first_tree.txt",
+        "licketysplit_first_tree.txt",
+        "licketyresplit_binarized_first_tree.txt",
+        "catboost_ensemble.json",
+        "xgboost_ensemble.txt",
+        "lightgbm_ensemble.txt",
+    ]
+
         if all((out_dir / f).exists() for f in _expected_results):
             print(f"  [SKIP] Results already exist for {dataset_name}/{param_tag}")
             continue
@@ -205,19 +204,6 @@ for dataset_name in DATASETS:
                     fh.write(f"Tree unavailable: {e}\n")
 
             print(f"  [SPLIT] Accuracy: {accuracy_score(y_test, y_pred_split):.4f} | Time: {split_duration:.2f}s")
-
-        # ── RESPLIT (subprocess to avoid C++ abort() crash) ───────────────────
-        if (out_dir / "resplit_results.txt").exists():
-            print(f"  [SKIP] RESPLIT already exists for {dataset_name}/{param_tag}")
-        else:
-            print(f"\n  [RESPLIT] Training on {dataset_name}/{param_tag}...")
-            _resplit_script = Path(__file__).parent / "run_resplit.py"
-            _result = subprocess.run(
-                [sys.executable, str(_resplit_script), dataset_name, param_tag],
-                capture_output=False,
-            )
-            if _result.returncode not in (0, 1):
-                print(f"  [RESPLIT] ERROR: subprocess exited with code {_result.returncode}")
 
         # ── XGBoost ───────────────────────────────────────────────────────────
         if (out_dir / "xgboost_binarized_results.txt").exists():

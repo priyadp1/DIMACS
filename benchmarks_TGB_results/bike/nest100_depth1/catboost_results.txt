@@ -12,7 +12,7 @@ Classification Report:
    macro avg       0.87      0.87      0.87      3476
 weighted avg       0.87      0.87      0.87      3476
 
-CatBoost completed in 0.14 seconds
+CatBoost completed in 0.27 seconds
 Top 3 Features:
   Feature  Importance
 hr <= 6.5   43.387734

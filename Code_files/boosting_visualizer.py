@@ -65,6 +65,10 @@ def parse_lightgbm(file_path):
     with open(file_path, "r") as f:
         text = f.read()
 
+    header = text.split("Tree=")[0]
+    names_match = re.search(r'feature_names=(.*)', header)
+    feature_names = names_match.group(1).split() if names_match else []
+
     trees_raw = text.split("Tree=")[1:]
     parsed_trees = []
 
@@ -92,9 +96,9 @@ def parse_lightgbm(file_path):
 
         for i in range(num_internal):
             th = float(thresholds[i]) if i < len(thresholds) else None
-            tree[i] = TreeNode(
-                i, feature=f"feature_{features[i]}", threshold=th
-            )
+            idx = int(features[i])
+            fname = feature_names[idx] if idx < len(feature_names) else f"feature_{idx}"
+            tree[i] = TreeNode(i, feature=fname, threshold=th)
 
         for i, val in enumerate(leaf_values):
             leaf_id = num_internal + i
@@ -118,6 +122,11 @@ def parse_catboost(file_path):
     with open(file_path, "r") as f:
         model = json.load(f)
 
+    feat_map = {
+        f["flat_feature_index"]: f["feature_id"]
+        for f in model.get("features_info", {}).get("float_features", [])
+    }
+
     trees = []
 
     for tree_data in model["oblivious_trees"]:
@@ -133,10 +142,14 @@ def parse_catboost(file_path):
         nid = 0
         for level in range(depth):
             split = splits[level]
+            fname = feat_map.get(
+                split["float_feature_index"],
+                f"feature_{split['float_feature_index']}",
+            )
             for _ in range(1 << level):
                 tree[nid] = TreeNode(
                     nid,
-                    feature=f"feature_{split['float_feature_index']}",
+                    feature=fname,
                     threshold=split["border"],
                 )
                 nid += 1

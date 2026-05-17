@@ -20,10 +20,6 @@ print("Loading SPLIT / LicketySPLIT...")
 from split import SPLIT, LicketySPLIT
 print("  SPLIT OK")
 
-print("Loading RESPLIT...")
-from resplit import RESPLIT  # keep import to validate install at startup
-print("  RESPLIT OK")
-
 from pathlib import Path
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score, classification_report, confusion_matrix
@@ -111,12 +107,6 @@ lookahead_depth = 2
 depth_buget = 5
 regularization = 0.01
 
-# RESPLIT parameters (match run_resplit.py) ───────────────────────────────────────
-resplit_regularization = 0.01
-resplit_rashomon_bound_multiplier = 0.05
-resplit_depth_budget = 5
-resplit_cart_lookahead_depth = 3
-
 # ── Feature selection (applied when features exceed threshold) ────────────────
 FEATURE_SELECTION_THRESHOLD = 500
 TOP_K_FEATURES              = 200
@@ -186,18 +176,24 @@ for dataset_name, cfg in DATASETS.items():
     _expected_results = [
         "gosdt_results.txt",
         "split_results.txt",
-        "resplit_results.txt",
         "xgboost_binarized_results.txt",
         "lightgbm_results.txt",
         "catboost_results.txt",
         "licketysplit_results.txt",
         "licketyresplit_binarized_results.txt",
+        "split_first_tree.txt",
+        "gosdt_first_tree.txt",
+        "licketysplit_first_tree.txt",
+        "licketyresplit_binarized_first_tree.txt",
+        "catboost_ensemble.json",
+        "xgboost_ensemble.txt",
+        "lightgbm_ensemble.txt",
     ]
     if all((out_dir / f).exists() for f in _expected_results):
         print(f"  [SKIP] Results already exist for {dataset_name}")
         continue
 
-    # Save splits for subprocess scripts (GOSDT, RESPLIT)
+    # Save splits for GOSDT subprocess
     tmp_dir = TMP_DIR / dataset_name
     tmp_dir.mkdir(parents=True, exist_ok=True)
     X_train.to_csv(tmp_dir / "X_train.csv", index=False)
@@ -253,16 +249,6 @@ for dataset_name, cfg in DATASETS.items():
             fh.write(f"Tree unavailable: {e}\n")
 
     print(f"  [SPLIT] Accuracy: {accuracy_score(y_test, y_pred_split):.4f} | "f"Time: {split_duration:.2f}s")
-
-    # ── RESPLIT (subprocess to avoid C++ abort() crash) ───────────────────────
-    print(f"\n  [RESPLIT] Training on {dataset_name}...")
-    _resplit_script = Path(__file__).parent / "run_resplit_no_tgb.py"
-    _result = subprocess.run(
-        [sys.executable, str(_resplit_script), dataset_name],
-        capture_output=False,
-    )
-    if _result.returncode not in (0, 1):
-        print(f"  [RESPLIT] ERROR: subprocess exited with code {_result.returncode}")
 
     # ── XGBoost ───────────────────────────────────────────────────────────────
     print(f"\n  [XGBoost] Training on {dataset_name}...")

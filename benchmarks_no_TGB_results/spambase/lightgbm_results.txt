@@ -12,7 +12,7 @@ Classification Report:
    macro avg       0.91      0.90      0.91       921
 weighted avg       0.91      0.91      0.91       921
 
-LightGBM completed in 0.06 seconds
+LightGBM completed in 0.25 seconds
 Top 3 Features:
          Feature  Importance
     word_freq_hp          25

@@ -12,5 +12,5 @@ Classification Report:
    macro avg       0.67      0.58      0.54      1382
 weighted avg       0.66      0.61      0.55      1382
 
-LicketySPLIT completed in 0.04 seconds
+LicketySPLIT completed in 0.10 seconds
 Tree Size: 2 leaves, 3 total nodes

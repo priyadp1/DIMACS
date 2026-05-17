@@ -1,8 +1,0 @@
-<class 'gosdt._tree.Tree'>: { feature: 3, orig feature: 3, [ left child: { prediction: 0, loss: 0.007400000002235174 }, right child: { feature: 10, orig feature: 10, [ left child: { feature: 5, orig feature: 5, [ left child: { feature: 0, orig feature: 0, [ left child: { feature: 1, orig feature: 1, [ left child: { prediction: 0, loss: 0.014099999330937862 }, right child: { feature: 7, orig feature: 7, [ left child: { prediction: 0, loss: 0.016300000250339508 }, right child: { prediction: 1, loss: 0.006199999712407589 }] }] }, right child: { feature: 1, orig feature: 1, [ left child: { feature: 15, orig feature: 15, [ left child: { prediction: 1, loss: 0.01679999940097332 }, right child: { prediction: 0, loss: 0.00559999980032444 }] }, right child: { prediction: 1, loss: 0.008700000122189522 }] }] }, right child: { prediction: 0, loss: 0.00279999990016222 }] }, right child: { feature: 6, orig feature: 6, [ left child: { prediction: 1, loss: 0.05049999803304672 }, right child: { prediction: 0, loss: 0.00559999980032444 }] }] }] }, Index(['season <= 1.5', 'yr <= 0.5', 'hr <= 5.5', 'hr <= 6.5', 'hr <= 7.5',
-       'hr <= 21.5', 'hr <= 22.5', 'temp <= 0.3100000023841858',
-       'temp <= 0.3500000089406967', 'temp <= 0.3700000047683716',
-       'temp <= 0.45000000298023224', 'temp <= 0.4699999988079071',
-       'atemp <= 0.3257499933242798', 'atemp <= 0.5985000133514404',
-       'atemp <= 0.6136500239372253', 'hum <= 0.7950000166893005',
-       'atemp <= 0.31059999763965607'],
-      dtype='object'), 2

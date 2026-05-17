@@ -12,7 +12,7 @@ Classification Report:
    macro avg       0.97      0.95      0.96       114
 weighted avg       0.97      0.96      0.96       114
 
-LightGBM completed in 0.03 seconds
+LightGBM completed in 0.04 seconds
 Top 3 Features:
              Feature  Importance
              area_se          18

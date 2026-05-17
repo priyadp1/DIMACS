@@ -23,7 +23,7 @@ tmp_dir = TMP_DIR / dataset_name
 out_dir = RESULTS_DIR / dataset_name
 out_dir.mkdir(parents=True, exist_ok=True)
 
-if (out_dir / "resplit_results.txt").exists():
+if (out_dir / "resplit_results.txt").exists() and (out_dir / "resplit_first_tree.txt").exists():
     print(f"  [RESPLIT] Skipping {dataset_name} — results already exist.")
     sys.exit(0)
 

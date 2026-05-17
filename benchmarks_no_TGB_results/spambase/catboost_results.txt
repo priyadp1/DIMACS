@@ -12,7 +12,7 @@ Classification Report:
    macro avg       0.93      0.91      0.92       921
 weighted avg       0.93      0.93      0.92       921
 
-CatBoost completed in 0.11 seconds
+CatBoost completed in 0.24 seconds
 Top 3 Features:
          Feature  Importance
     word_freq_hp   15.879240

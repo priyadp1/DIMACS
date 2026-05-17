@@ -1,0 +1,1 @@
+{ feature: 1, orig feature: 1, [ left child: { prediction: 0, loss: 0.0 }, right child: { feature: 3, orig feature: 3, [ left child: { prediction: 0, loss: 0.0 }, right child: { prediction: 1, loss: 0.0 }] }] }, Index(['season', 'yr', 'mnth', 'hr', 'holiday', 'weekday', 'workingday', 'weathersit', 'temp', 'atemp', 'hum', 'windspeed'], dtype='object')

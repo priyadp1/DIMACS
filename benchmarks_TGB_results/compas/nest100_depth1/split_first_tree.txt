@@ -1,0 +1,9 @@
+<class 'split._tree.Tree'>: { feature: 1 [ left child: { feature: 11 [ left child: { prediction: 1, loss: 0.15931925177574158 }, right child: { prediction: 0, loss: 0.17039163410663605 }] }, right child: { prediction: 1, loss: 0.3719135820865631 }] }, Index(['age <= 20.5 <= 0.5', 'age <= 22.5 <= 0.5', 'age <= 24.5 <= 0.5',
+       'age <= 29.5 <= 0.5', 'age <= 33.5 <= 0.5', 'age <= 34.5 <= 0.5',
+       'age <= 36.5 <= 0.5', 'age <= 38.5 <= 0.5',
+       'juvenile_crimes <= 0.5 <= 0.5', 'priors_count <= 0.5 <= 0.5',
+       'priors_count <= 1.5 <= 0.5', 'priors_count <= 2.5 <= 0.5',
+       'priors_count <= 3.5 <= 0.5', 'priors_count <= 5.5 <= 0.5',
+       'priors_count <= 7.5 <= 0.5', 'priors_count <= 8.5 <= 0.5',
+       'priors_count <= 9.5 <= 0.5', 'age <= 52.5 <= 0.5'],
+      dtype='str'), 2

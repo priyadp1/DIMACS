@@ -1,0 +1,21 @@
+Accuracy: 0.956140350877193
+Confusion Matrix:
+[[70  2]
+ [ 3 39]]
+Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.96      0.97      0.97        72
+           1       0.95      0.93      0.94        42
+
+    accuracy                           0.96       114
+   macro avg       0.96      0.95      0.95       114
+weighted avg       0.96      0.96      0.96       114
+
+LightGBM completed in 0.07 seconds
+Top 3 Features:
+                             Feature  Importance
+      area_se lt= 34.404998779296875          14
+    area_worst lt= 727.1000061035156          10
+texture_worst lt= 29.295000076293945           9
+Tree Size: 25 trees, 129 total leaves, 5.2 avg leaves/tree

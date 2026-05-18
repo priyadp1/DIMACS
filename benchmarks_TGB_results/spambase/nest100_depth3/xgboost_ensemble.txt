@@ -1,0 +1,385 @@
+0:[char_freq_$ lt= 0.05550000071525574<1] yes=1,no=2,missing=2
+	1:[word_freq_hp lt= 0.38499999046325684<1] yes=3,no=4,missing=4
+		3:[word_freq_remove lt= 0.009999999776482582<1] yes=7,no=8,missing=8
+			7:leaf=0.13810885
+			8:leaf=-0.144153967
+		4:[word_freq_edu lt= 0.48999999463558197<1] yes=9,no=10,missing=10
+			9:leaf=-0.122328281
+			10:leaf=0.234131098
+	2:[word_freq_remove lt= 0.05999999865889549<1] yes=5,no=6,missing=6
+		5:[word_freq_george lt= 0.004999999888241291<1] yes=11,no=12,missing=12
+			11:leaf=-0.119517259
+			12:leaf=0.22556293
+		6:[char_freq_! lt= 0.5065000057220459<1] yes=13,no=14,missing=14
+			13:leaf=0.104617417
+			14:leaf=-0.120303713
+
+0:[char_freq_$ lt= 0.04450000077486038<1] yes=1,no=2,missing=2
+	1:[word_freq_hp lt= 0.38499999046325684<1] yes=3,no=4,missing=4
+		3:[word_freq_remove lt= 0.009999999776482582<1] yes=7,no=8,missing=8
+			7:leaf=0.1287435
+			8:leaf=-0.133649185
+		4:[word_freq_edu lt= 0.16499999910593033<1] yes=9,no=10,missing=10
+			9:leaf=-0.0692248493
+			10:leaf=0.202669412
+	2:[word_freq_remove lt= 0.05999999865889549<1] yes=5,no=6,missing=6
+		5:[word_freq_george lt= 0.004999999888241291<1] yes=11,no=12,missing=12
+			11:leaf=-0.113302171
+			12:leaf=0.200828388
+		6:[char_freq_! lt= 0.5065000057220459<1] yes=13,no=14,missing=14
+			13:leaf=0.0912693143
+			14:leaf=-0.113029875
+
+0:[char_freq_! lt= 0.079500000923872<1] yes=1,no=2,missing=2
+	1:[capital_run_length_longest lt= 17.5<1] yes=3,no=4,missing=4
+		3:[word_freq_hp lt= 0.38499999046325684<1] yes=7,no=8,missing=8
+			7:leaf=-0.0852223188
+			8:leaf=0.186097905
+		4:[word_freq_free lt= 0.10500000044703484<1] yes=9,no=10,missing=10
+			9:leaf=0.151541889
+			10:leaf=-0.050785996
+	2:[word_freq_remove lt= 0.044999999925494194<1] yes=5,no=6,missing=6
+		5:[word_freq_george lt= 0.004999999888241291<1] yes=11,no=12,missing=12
+			11:leaf=-0.117607884
+			12:leaf=0.162690848
+		6:[word_freq_money lt= 0.009999999776482582<1] yes=13,no=14,missing=14
+			13:leaf=0.0921696126
+			14:leaf=-0.117282286
+
+0:[char_freq_! lt= 0.079500000923872<1] yes=1,no=2,missing=2
+	1:[capital_run_length_average lt= 2.399500012397766<1] yes=3,no=4,missing=4
+		3:[word_freq_hp lt= 0.38499999046325684<1] yes=7,no=8,missing=8
+			7:leaf=-0.0842905343
+			8:leaf=0.167382777
+		4:[word_freq_your lt= 0.375<1] yes=9,no=10,missing=10
+			9:leaf=0.0775315985
+			10:leaf=-0.0992125794
+	2:[word_freq_remove lt= 0.044999999925494194<1] yes=5,no=6,missing=6
+		5:[word_freq_george lt= 0.004999999888241291<1] yes=11,no=12,missing=12
+			11:leaf=-0.111847177
+			12:leaf=0.147742748
+		6:[char_freq_$ lt= 0.164000004529953<1] yes=13,no=14,missing=14
+			13:leaf=0.102546431
+			14:leaf=-0.109518819
+
+0:[char_freq_$ lt= 0.02949999924749136<1] yes=1,no=2,missing=2
+	1:[word_freq_hp lt= 0.38499999046325684<1] yes=3,no=4,missing=4
+		3:[word_freq_remove lt= 0.009999999776482582<1] yes=7,no=8,missing=8
+			7:leaf=0.125378519
+			8:leaf=-0.119763426
+		4:[word_freq_edu lt= 0.16499999910593033<1] yes=9,no=10,missing=10
+			9:leaf=-0.0688126013
+			10:leaf=0.157538056
+	2:[word_freq_free lt= 0.11499999836087227<1] yes=5,no=6,missing=6
+		5:[word_freq_1999 lt= 0.06499999947845936<1] yes=11,no=12,missing=12
+			11:leaf=-0.0526478067
+			12:leaf=0.123646058
+		6:[word_freq_remove lt= 0.05999999865889549<1] yes=13,no=14,missing=14
+			13:leaf=0.120152332
+			14:leaf=-0.0997113064
+
+0:[char_freq_! lt= 0.079500000923872<1] yes=1,no=2,missing=2
+	1:[capital_run_length_total lt= 68.5<1] yes=3,no=4,missing=4
+		3:[word_freq_hp lt= 0.38499999046325684<1] yes=7,no=8,missing=8
+			7:leaf=-0.104564667
+			8:leaf=0.14240703
+		4:[word_freq_remove lt= 0.009999999776482582<1] yes=9,no=10,missing=10
+			9:leaf=0.147093877
+			10:leaf=-0.0495792292
+	2:[word_freq_remove lt= 0.044999999925494194<1] yes=5,no=6,missing=6
+		5:[word_freq_george lt= 0.004999999888241291<1] yes=11,no=12,missing=12
+			11:leaf=-0.112726264
+			12:leaf=0.125678003
+		6:[word_freq_money lt= 0.009999999776482582<1] yes=13,no=14,missing=14
+			13:leaf=0.0813876912
+			14:leaf=-0.0999318287
+
+0:[char_freq_$ lt= 0.02949999924749136<1] yes=1,no=2,missing=2
+	1:[word_freq_hp lt= 0.2199999988079071<1] yes=3,no=4,missing=4
+		3:[word_freq_remove lt= 0.009999999776482582<1] yes=7,no=8,missing=8
+			7:leaf=0.104870632
+			8:leaf=-0.0986312777
+		4:[word_freq_edu lt= 0.16499999910593033<1] yes=9,no=10,missing=10
+			9:leaf=-0.0636282638
+			10:leaf=0.141243741
+	2:[word_freq_free lt= 0.11499999836087227<1] yes=5,no=6,missing=6
+		5:[word_freq_george lt= 0.004999999888241291<1] yes=11,no=12,missing=12
+			11:leaf=-0.121263161
+			12:leaf=0.100476854
+		6:[word_freq_remove lt= 0.05999999865889549<1] yes=13,no=14,missing=14
+			13:leaf=0.101870239
+			14:leaf=-0.089770861
+
+0:[char_freq_! lt= 0.079500000923872<1] yes=1,no=2,missing=2
+	1:[capital_run_length_average lt= 2.291999936103821<1] yes=3,no=4,missing=4
+		3:[word_freq_hp lt= 0.38499999046325684<1] yes=7,no=8,missing=8
+			7:leaf=-0.0717458054
+			8:leaf=0.129964799
+		4:[word_freq_your lt= 0.6050000190734863<1] yes=9,no=10,missing=10
+			9:leaf=0.0592612214
+			10:leaf=-0.0800754577
+	2:[char_freq_$ lt= 0.05550000071525574<1] yes=5,no=6,missing=6
+		5:[word_freq_hp lt= 0.2199999988079071<1] yes=11,no=12,missing=12
+			11:leaf=-0.105100594
+			12:leaf=0.0979019552
+		6:[word_freq_remove lt= 0.05999999865889549<1] yes=13,no=14,missing=14
+			13:leaf=0.0617025271
+			14:leaf=-0.0928302631
+
+0:[char_freq_! lt= 0.079500000923872<1] yes=1,no=2,missing=2
+	1:[capital_run_length_average lt= 2.7545000314712524<1] yes=3,no=4,missing=4
+		3:[word_freq_meeting lt= 0.4599999934434891<1] yes=7,no=8,missing=8
+			7:leaf=-0.106897488
+			8:leaf=0.127227649
+		4:[word_freq_your lt= 0.375<1] yes=9,no=10,missing=10
+			9:leaf=0.0615867153
+			10:leaf=-0.0739346668
+	2:[word_freq_remove lt= 0.044999999925494194<1] yes=5,no=6,missing=6
+		5:[word_freq_george lt= 0.004999999888241291<1] yes=11,no=12,missing=12
+			11:leaf=-0.116222434
+			12:leaf=0.105174243
+		6:[word_freq_money lt= 0.009999999776482582<1] yes=13,no=14,missing=14
+			13:leaf=0.0693280026
+			14:leaf=-0.0865693539
+
+0:[char_freq_$ lt= 0.016500000841915607<1] yes=1,no=2,missing=2
+	1:[word_freq_hp lt= 0.2199999988079071<1] yes=3,no=4,missing=4
+		3:[char_freq_! lt= 0.15450000017881393<1] yes=7,no=8,missing=8
+			7:leaf=0.0670266598
+			8:leaf=-0.105060637
+		4:[word_freq_edu lt= 0.16499999910593033<1] yes=9,no=10,missing=10
+			9:leaf=-0.0700524673
+			10:leaf=0.125231922
+	2:[word_freq_free lt= 0.3050000071525574<1] yes=5,no=6,missing=6
+		5:[word_freq_george lt= 0.004999999888241291<1] yes=11,no=12,missing=12
+			11:leaf=-0.108550824
+			12:leaf=0.0988000855
+		6:[word_freq_remove lt= 0.044999999925494194<1] yes=13,no=14,missing=14
+			13:leaf=0.0875087827
+			14:leaf=-0.0787693337
+
+0:[word_freq_your lt= 0.6050000190734863<1] yes=1,no=2,missing=2
+	1:[word_freq_hp lt= 0.1100000012665987<1] yes=3,no=4,missing=4
+		3:[char_freq_$ lt= 0.08050000295042992<1] yes=7,no=8,missing=8
+			7:leaf=0.0252296273
+			8:leaf=-0.1118569
+		4:[capital_run_length_longest lt= 9.5<1] yes=9,no=10,missing=10
+			9:leaf=0.114073873
+			10:leaf=-0.024379842
+	2:[capital_run_length_average lt= 3.7410000562667847<1] yes=5,no=6,missing=6
+		5:[word_freq_hp lt= 0.2199999988079071<1] yes=11,no=12,missing=12
+			11:leaf=-0.0857746974
+			12:leaf=0.0921956524
+		6:[word_freq_free lt= 0.10500000044703484<1] yes=13,no=14,missing=14
+			13:leaf=0.019727625
+			14:leaf=-0.0908677801
+
+0:[char_freq_! lt= 0.079500000923872<1] yes=1,no=2,missing=2
+	1:[capital_run_length_average lt= 2.291999936103821<1] yes=3,no=4,missing=4
+		3:[word_freq_hp lt= 0.38499999046325684<1] yes=7,no=8,missing=8
+			7:leaf=-0.063123554
+			8:leaf=0.108087651
+		4:[word_freq_business lt= 0.13499999791383743<1] yes=9,no=10,missing=10
+			9:leaf=0.127911747
+			10:leaf=-0.0350425206
+	2:[char_freq_$ lt= 0.08050000295042992<1] yes=5,no=6,missing=6
+		5:[word_freq_george lt= 0.004999999888241291<1] yes=11,no=12,missing=12
+			11:leaf=-0.127891436
+			12:leaf=0.0762620121
+		6:[word_freq_free lt= 0.10500000044703484<1] yes=13,no=14,missing=14
+			13:leaf=0.0200726613
+			14:leaf=-0.0822361335
+
+0:[char_freq_$ lt= 0.016500000841915607<1] yes=1,no=2,missing=2
+	1:[word_freq_hp lt= 0.2199999988079071<1] yes=3,no=4,missing=4
+		3:[char_freq_! lt= 0.15450000017881393<1] yes=7,no=8,missing=8
+			7:leaf=0.0655248389
+			8:leaf=-0.0949359462
+		4:[word_freq_edu lt= 0.16499999910593033<1] yes=9,no=10,missing=10
+			9:leaf=-0.0694857761
+			10:leaf=0.112245932
+	2:[word_freq_remove lt= 0.044999999925494194<1] yes=5,no=6,missing=6
+		5:[word_freq_george lt= 0.004999999888241291<1] yes=11,no=12,missing=12
+			11:leaf=-0.0993957892
+			12:leaf=0.112446129
+		6:[char_freq_! lt= 0.5065000057220459<1] yes=13,no=14,missing=14
+			13:leaf=0.0573553704
+			14:leaf=-0.0713173002
+
+0:[word_freq_your lt= 0.6050000190734863<1] yes=1,no=2,missing=2
+	1:[word_freq_george lt= 0.004999999888241291<1] yes=3,no=4,missing=4
+		3:[word_freq_will lt= 2.034999966621399<1] yes=7,no=8,missing=8
+			7:leaf=0.0213400926
+			8:leaf=-0.123093329
+		4:[word_freq_edu lt= 0.16499999910593033<1] yes=9,no=10,missing=10
+			9:leaf=-0.114897385
+			10:leaf=0.0901968852
+	2:[capital_run_length_average lt= 3.7410000562667847<1] yes=5,no=6,missing=6
+		5:[word_freq_george lt= 0.004999999888241291<1] yes=11,no=12,missing=12
+			11:leaf=-0.109028198
+			12:leaf=0.0767390579
+		6:[word_freq_000 lt= 0.26000000536441803<1] yes=13,no=14,missing=14
+			13:leaf=0.111494496
+			14:leaf=-0.0762775242
+
+0:[word_freq_hp lt= 0.1100000012665987<1] yes=1,no=2,missing=2
+	1:[char_freq_! lt= 0.5900000035762787<1] yes=3,no=4,missing=4
+		3:[capital_run_length_longest lt= 17.5<1] yes=7,no=8,missing=8
+			7:leaf=0.10917975
+			8:leaf=-0.0696377978
+		4:[word_freq_000 lt= 0.13000000268220901<1] yes=9,no=10,missing=10
+			9:leaf=0.0196822267
+			10:leaf=-0.11063651
+	2:[capital_run_length_longest lt= 9.5<1] yes=5,no=6,missing=6
+		5:[word_freq_edu lt= 0.1249999962747097<1] yes=11,no=12,missing=12
+			11:leaf=-0.0883364752
+			12:leaf=0.0983339548
+		6:[word_freq_remove lt= 0.14500000327825546<1] yes=13,no=14,missing=14
+			13:leaf=0.106568359
+			14:leaf=-0.0803363472
+
+0:[word_freq_free lt= 0.024999999441206455<1] yes=1,no=2,missing=2
+	1:[word_freq_hp lt= 0.1100000012665987<1] yes=3,no=4,missing=4
+		3:[char_freq_! lt= 0.18849999457597733<1] yes=7,no=8,missing=8
+			7:leaf=0.0919481143
+			8:leaf=-0.0863083526
+		4:[word_freq_edu lt= 0.1249999962747097<1] yes=9,no=10,missing=10
+			9:leaf=-0.0501396321
+			10:leaf=0.0999033079
+	2:[capital_run_length_average lt= 3.3830000162124634<1] yes=5,no=6,missing=6
+		5:[word_freq_george lt= 0.004999999888241291<1] yes=11,no=12,missing=12
+			11:leaf=-0.110269263
+			12:leaf=0.0724237487
+		6:[word_freq_remove lt= 0.009999999776482582<1] yes=13,no=14,missing=14
+			13:leaf=0.0734488517
+			14:leaf=-0.0696446821
+
+0:[word_freq_hp lt= 0.1100000012665987<1] yes=1,no=2,missing=2
+	1:[word_freq_free lt= 0.6299999952316284<1] yes=3,no=4,missing=4
+		3:[word_freq_email lt= 0.35500000417232513<1] yes=7,no=8,missing=8
+			7:leaf=0.12661244
+			8:leaf=-0.00311987824
+		4:[word_freq_credit lt= 0.3049999922513962<1] yes=9,no=10,missing=10
+			9:leaf=0.0481356457
+			10:leaf=-0.106504016
+	2:[capital_run_length_longest lt= 9.5<1] yes=5,no=6,missing=6
+		5:[word_freq_edu lt= 0.1249999962747097<1] yes=11,no=12,missing=12
+			11:leaf=-0.0814540088
+			12:leaf=0.0892979577
+		6:[word_freq_remove lt= 0.14500000327825546<1] yes=13,no=14,missing=14
+			13:leaf=0.0962878093
+			14:leaf=-0.0737383217
+
+0:[word_freq_our lt= 0.0950000025331974<1] yes=1,no=2,missing=2
+	1:[word_freq_hp lt= 0.1100000012665987<1] yes=3,no=4,missing=4
+		3:[char_freq_! lt= 0.5065000057220459<1] yes=7,no=8,missing=8
+			7:leaf=0.0921214074
+			8:leaf=-0.0848241001
+		4:[word_freq_george lt= 0.004999999888241291<1] yes=9,no=10,missing=10
+			9:leaf=-0.121688977
+			10:leaf=0.103027821
+	2:[char_freq_$ lt= 0.08050000295042992<1] yes=5,no=6,missing=6
+		5:[char_freq_! lt= 0.01850000023841858<1] yes=11,no=12,missing=12
+			11:leaf=0.0960524306
+			12:leaf=-0.00157539849
+		6:[char_freq_! lt= 0.5065000057220459<1] yes=13,no=14,missing=14
+			13:leaf=0.0392486639
+			14:leaf=-0.0695134848
+
+0:[word_freq_george lt= 0.004999999888241291<1] yes=1,no=2,missing=2
+	1:[word_freq_over lt= 0.7849999964237213<1] yes=3,no=4,missing=4
+		3:leaf=-0.0139345666
+		4:leaf=-0.115890577
+	2:[word_freq_our lt= 0.0950000025331974<1] yes=5,no=6,missing=6
+		5:[word_freq_hp lt= 0.07500000111758709<1] yes=7,no=8,missing=8
+			7:leaf=-0.0482731536
+			8:leaf=0.096728839
+		6:[capital_run_length_average lt= 2.2984999418258667<1] yes=9,no=10,missing=10
+			9:leaf=0.0238061044
+			10:leaf=-0.055472102
+
+0:[word_freq_george lt= 0.004999999888241291<1] yes=1,no=2,missing=2
+	1:[word_freq_over lt= 0.7849999964237213<1] yes=3,no=4,missing=4
+		3:leaf=-0.0130730318
+		4:leaf=-0.113780476
+	2:[word_freq_hp lt= 0.1100000012665987<1] yes=5,no=6,missing=6
+		5:[word_freq_free lt= 0.6299999952316284<1] yes=7,no=8,missing=8
+			7:leaf=0.081323944
+			8:leaf=-0.0905109197
+		6:[capital_run_length_longest lt= 9.5<1] yes=9,no=10,missing=10
+			9:leaf=0.0705843642
+			10:leaf=-0.0421640091
+
+0:[char_freq_$ lt= 0.010499999858438969<1] yes=1,no=2,missing=2
+	1:[word_freq_hp lt= 0.38499999046325684<1] yes=3,no=4,missing=4
+		3:[word_freq_email lt= 0.35500000417232513<1] yes=7,no=8,missing=8
+			7:leaf=0.106454469
+			8:leaf=-0.0750852451
+		4:[word_freq_meeting lt= 0.11499999836087227<1] yes=9,no=10,missing=10
+			9:leaf=-0.111666143
+			10:leaf=0.0883938
+	2:[word_freq_free lt= 0.3050000071525574<1] yes=5,no=6,missing=6
+		5:[word_freq_re lt= 0.4749999940395355<1] yes=11,no=12,missing=12
+			11:leaf=-0.0325410664
+			12:leaf=0.0757426545
+		6:[word_freq_hp lt= 0.1100000012665987<1] yes=13,no=14,missing=14
+			13:leaf=-0.106897585
+			14:leaf=-0.0259263497
+
+0:[word_freq_george lt= 0.004999999888241291<1] yes=1,no=2,missing=2
+	1:[word_freq_over lt= 0.7849999964237213<1] yes=3,no=4,missing=4
+		3:leaf=-0.0126715768
+		4:leaf=-0.111533239
+	2:[word_freq_our lt= 0.0950000025331974<1] yes=5,no=6,missing=6
+		5:[word_freq_hp lt= 0.07500000111758709<1] yes=7,no=8,missing=8
+			7:leaf=-0.0370629095
+			8:leaf=0.0864959806
+		6:[word_freq_money lt= 0.009999999776482582<1] yes=9,no=10,missing=10
+			9:leaf=0.0883718282
+			10:leaf=-0.0294226799
+
+0:[word_freq_your lt= 0.6150000095367432<1] yes=1,no=2,missing=2
+	1:[word_freq_edu lt= 0.16499999910593033<1] yes=3,no=4,missing=4
+		3:[char_freq_$ lt= 0.1339999958872795<1] yes=7,no=8,missing=8
+			7:leaf=0.017667992
+			8:leaf=-0.11896684
+		4:[word_freq_george lt= 0.004999999888241291<1] yes=9,no=10,missing=10
+			9:leaf=-0.0944747701
+			10:leaf=0.0699463859
+	2:[char_freq_! lt= 0.7664999961853027<1] yes=5,no=6,missing=6
+		5:[word_freq_re lt= 1.1850000023841858<1] yes=11,no=12,missing=12
+			11:leaf=-0.0566394739
+			12:leaf=0.105315745
+		6:[word_freq_000 lt= 0.26000000536441803<1] yes=13,no=14,missing=14
+			13:leaf=0.0997917652
+			14:leaf=-0.0544210449
+
+0:[word_freq_george lt= 0.004999999888241291<1] yes=1,no=2,missing=2
+	1:[word_freq_over lt= 0.7849999964237213<1] yes=3,no=4,missing=4
+		3:leaf=-0.00683556637
+		4:[char_freq_! lt= 0.5065000057220459<1] yes=7,no=8,missing=8
+			7:leaf=-0.0356242023
+			8:leaf=-0.109918892
+	2:[capital_run_length_average lt= 2.2984999418258667<1] yes=5,no=6,missing=6
+		5:[word_freq_hp lt= 0.2199999988079071<1] yes=9,no=10,missing=10
+			9:leaf=-0.0496311635
+			10:leaf=0.0672330186
+		6:[word_freq_free lt= 0.2750000059604645<1] yes=11,no=12,missing=12
+			11:leaf=0.0673132613
+			12:leaf=-0.0468414463
+
+0:[char_freq_$ lt= 0.010499999858438969<1] yes=1,no=2,missing=2
+	1:[word_freq_george lt= 0.004999999888241291<1] yes=3,no=4,missing=4
+		3:[char_freq_! lt= 0.15450000017881393<1] yes=7,no=8,missing=8
+			7:leaf=0.0364838392
+			8:leaf=-0.109795205
+		4:[word_freq_hp lt= 1.2149999737739563<1] yes=9,no=10,missing=10
+			9:leaf=-0.0747360513
+			10:leaf=0.079320699
+	2:[word_freq_hp lt= 0.1100000012665987<1] yes=5,no=6,missing=6
+		5:[word_freq_free lt= 0.6299999952316284<1] yes=11,no=12,missing=12
+			11:leaf=0.037870273
+			12:leaf=-0.102515914
+		6:[word_freq_business lt= 0.0950000025331974<1] yes=13,no=14,missing=14
+			13:leaf=0.122018993
+			14:leaf=-0.0201579258

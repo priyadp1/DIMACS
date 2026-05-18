@@ -1,0 +1,10 @@
+<class 'gosdt._tree.Tree'>: { feature: 1, orig feature: 1, [ left child: { prediction: 1, loss: 0.00018099547014571726 }, right child: { feature: 22, orig feature: 22, [ left child: { feature: 17, orig feature: 17, [ left child: { feature: 4, orig feature: 4, [ left child: { feature: 0, orig feature: 0, [ left child: { prediction: 1, loss: 0.030045248568058014 }, right child: { prediction: 0, loss: 0.006696832366287708 }] }, right child: { feature: 5, orig feature: 5, [ left child: { feature: 16, orig feature: 16, [ left child: { prediction: 0, loss: 0.017737556248903275 }, right child: { prediction: 1, loss: 0.004524886608123779 }] }, right child: { prediction: 0, loss: 0.1230769231915474 }] }] }, right child: { feature: 10, orig feature: 10, [ left child: { prediction: 1, loss: 0.05411764606833458 }, right child: { prediction: 0, loss: 0.032941173762083054 }] }] }, right child: { prediction: 1, loss: 0.04036198928952217 }] }] }, Index(['sex=female <= 0.5', 'age <= 19.5', 'age <= 20.5', 'age <= 21.5',
+       'age <= 22.5', 'age <= 24.5', 'age <= 27.5', 'age <= 29.5',
+       'age <= 33.5', 'age <= 34.5', 'age <= 36.5', 'age <= 38.5',
+       'age <= 52.5', 'age <= 55.5', 'juvenile_crimes <= 0.5',
+       'priors_count <= 0.5', 'priors_count <= 1.5', 'priors_count <= 2.5',
+       'priors_count <= 3.5', 'priors_count <= 4.5', 'priors_count <= 5.5',
+       'priors_count <= 6.5', 'priors_count <= 7.5', 'priors_count <= 8.5',
+       'priors_count <= 9.5', 'priors_count <= 15.5',
+       'current_charge_degree=felony <= 0.5'],
+      dtype='str'), 2

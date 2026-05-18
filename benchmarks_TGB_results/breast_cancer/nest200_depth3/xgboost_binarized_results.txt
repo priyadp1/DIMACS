@@ -1,0 +1,21 @@
+Accuracy: 0.9473684210526315
+Confusion Matrix:
+[[72  0]
+ [ 6 36]]
+Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.92      1.00      0.96        72
+           1       1.00      0.86      0.92        42
+
+    accuracy                           0.95       114
+   macro avg       0.96      0.93      0.94       114
+weighted avg       0.95      0.95      0.95       114
+
+XGBoost completed in 0.03 seconds
+Top 3 Features:
+                                    Feature  Importance
+     perimeter_worst lt= 112.79999923706055    0.373061
+concave points_mean lt= 0.05127999931573868    0.194183
+        radius_worst lt= 16.795000076293945    0.089541
+Tree Size: 25 trees, 177 total leaves, 7.1 avg leaves/tree

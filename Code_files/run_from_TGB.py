@@ -48,9 +48,9 @@ print(f"Results  : {RESULTS_DIR}")
 
 DATASETS = [
     "bike",
-    "compas",
     "breast_cancer",
     "spambase",
+    "compas",
     #"creditcard_fraud_smote",
     #"creditcard_fraud",
 ]  # Add more dataset names as needed, matching subdirectories in TGB_Variables

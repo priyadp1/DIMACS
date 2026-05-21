@@ -3,4 +3,6 @@
 split-env/
 __pycache__/
 datasets
+TGB_Variables_Feature_Importance/
 TGB_Variables/
+Presentation_Slides/

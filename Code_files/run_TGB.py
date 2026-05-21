@@ -6,6 +6,95 @@ from pathlib import Path
 from sklearn.ensemble import GradientBoostingClassifier
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score
+from sklearn.tree import _tree as _sklearn_tree
+import matplotlib
+matplotlib.use('Agg')
+import matplotlib.pyplot as plt
+
+
+def _render_tgb_tree(estimator, feature_names, out_path, title, max_depth):
+    font_size = 18 if max_depth >= 3 else 14
+    tree = estimator.tree_
+
+    nodes = {}
+
+    def _build(nid):
+        left = tree.children_left[nid]
+        right = tree.children_right[nid]
+        feat = tree.feature[nid]
+        nodes[nid] = {
+            "feature": feature_names[feat] if feat >= 0 else None,
+            "threshold": tree.threshold[nid] if feat >= 0 else None,
+            "left": left if left != _sklearn_tree.TREE_LEAF else None,
+            "right": right if right != _sklearn_tree.TREE_LEAF else None,
+            "value": float(tree.value[nid][0][0]) if feat < 0 else None,
+        }
+        if left != _sklearn_tree.TREE_LEAF:
+            _build(left)
+            _build(right)
+
+    _build(0)
+
+    pos = {}
+    counter = [0]
+
+    def _layout(nid, depth):
+        n = nodes[nid]
+        if n["left"] is None:
+            pos[nid] = (counter[0], -depth)
+            counter[0] += 1
+            return
+        _layout(n["left"], depth + 1)
+        _layout(n["right"], depth + 1)
+        pos[nid] = ((pos[n["left"]][0] + pos[n["right"]][0]) / 2, -depth)
+
+    _layout(0, 0)
+
+    xs = [p[0] for p in pos.values()]
+    ys = [p[1] for p in pos.values()]
+    x_span = max(xs) - min(xs) + 2
+    y_span = abs(min(ys)) + 2
+
+    fig, ax = plt.subplots(figsize=(max(22, x_span * 3.5), max(9, y_span * 2.8)))
+    ax.axis("off")
+    ax.set_title(title, fontsize=font_size + 6, pad=14)
+
+    for nid, n in nodes.items():
+        x, y = pos[nid]
+        for child_id, label in [(n["left"], "True"), (n["right"], "False")]:
+            if child_id is None:
+                continue
+            cx, cy = pos[child_id]
+            ax.plot([x, cx], [y, cy], "k-", linewidth=0.8, zorder=1)
+            ax.text(
+                (x + cx) / 2, (y + cy) / 2, label,
+                fontsize=font_size, ha="center", va="center",
+                fontweight="bold",
+                bbox=dict(facecolor="white", edgecolor="none", pad=2),
+                zorder=3,
+            )
+
+    for nid, n in nodes.items():
+        x, y = pos[nid]
+        if n["value"] is not None:
+            label = f"Leaf\n{round(n['value'], 4)}"
+            color = "#AED6F1"
+        else:
+            label = f"{n['feature']}\n≤ {round(float(n['threshold']), 4)}"
+            color = "#A9DFBF"
+        ax.text(
+            x, y, label,
+            ha="center", va="center", fontsize=font_size,
+            bbox=dict(boxstyle="round,pad=1.0", facecolor=color,
+                      edgecolor="black", linewidth=1.2),
+            zorder=2,
+        )
+
+    ax.set_xlim(min(xs) - 1.5, max(xs) + 1.5)
+    ax.set_ylim(min(ys) - 1.5, 1.5)
+    plt.tight_layout()
+    fig.savefig(out_path, dpi=120, bbox_inches="tight")
+    plt.close(fig)
 
 current = Path(__file__).resolve()
 while current.name != "DIMACS":
@@ -16,16 +105,16 @@ results_dir = BASEDIR / "TGB_Variables_Feature_Importance"
 os.makedirs(results_dir, exist_ok=True)
 
 DATASETS = {
-    "spambase": {
-        "path": BASEDIR / "datasets" / "Mine" / "spambase.csv",
-        "target_col": "class",
-        "drop_cols": ["class"],
-        "label_map": None,
-    },
     "bike": {
         "path": BASEDIR / "datasets" / "Mine" / "bike.csv",
         "target_col": "cnt_binary",
         "drop_cols": ["instant", "cnt_binary"],
+        "label_map": None,
+    },
+    "spambase": {
+        "path": BASEDIR / "datasets" / "Mine" / "spambase.csv",
+        "target_col": "class",
+        "drop_cols": ["class"],
         "label_map": None,
     },
     "compas": {
@@ -34,23 +123,11 @@ DATASETS = {
         "drop_cols": ["two_year_recid"],
         "label_map": None,
     },
-    "heloc": {
-        "path": BASEDIR / "datasets" / "Mine" / "heloc_original.csv",
-        "target_col": "RiskPerformance",
-        "drop_cols": ["RiskPerformance"],
-        "label_map": None,
-    },
     "breast_cancer": {
         "path": BASEDIR / "datasets" / "Mine" / "breast_cancer_data.csv",
         "target_col": "diagnosis",
         "drop_cols": ["id", "diagnosis"],
         "label_map": {"M": 1, "B": 0},
-    },
-    "leukemia": {
-        "path": BASEDIR / "datasets" / "Mine" / "leukemia_data.csv",
-        "target_col": "label",
-        "drop_cols": ["label"],
-        "label_map": {"ALL": 0, "AML": 1},
     },
     "diabetes": {
         "path": BASEDIR / "datasets" / "Mine" / "diabetic_data.csv",
@@ -62,6 +139,12 @@ DATASETS = {
         "path": BASEDIR / "datasets" / "Mine" / "diabetes_smote.csv",
         "target_col": 'readmitted',
         "drop_cols": ['readmitted'],
+        "label_map": None,
+    },
+    "creditcard_fraud": {
+        "path": BASEDIR / "datasets" / "Mine" / "creditcard_fraud_detection.csv",
+        "target_col": 'Class',
+        "drop_cols": ['Class'],
         "label_map": None,
     },
     "creditcard_fraud_smote": {
@@ -164,6 +247,31 @@ for dataset_name, cfg in DATASETS.items():
         importance_map = dict(zip(feature_names, gbdt.feature_importances_))
         binary_var_df["importance"] = binary_var_df["binary_variable"].map(importance_map)
         binary_var_df.to_csv(out_dir / "binary_variable_counts.csv", index=False)
+
+        # Find and render the best TGB tree: the one whose split features have
+        # the highest total feature importance.
+        best_idx, best_score = 0, -1.0
+        for i, tree_arr in enumerate(gbdt.estimators_):
+            tree = tree_arr[0].tree_
+            score = sum(
+                importance_map.get(feature_names[f], 0.0)
+                for f in tree.feature if f >= 0
+            )
+            if score > best_score:
+                best_score, best_idx = score, i
+
+        best_estimator = gbdt.estimators_[best_idx][0]
+        _render_tgb_tree(
+            best_estimator,
+            feature_names,
+            out_dir / "best_tgb_tree.png",
+            title=(
+                f"{dataset_name} | n_est={n_est}, depth={max_depth} | "
+                f"best TGB tree (tree #{best_idx}, importance score={best_score:.4f})"
+            ),
+            max_depth=max_depth,
+        )
+        print(f"  Best TGB tree: #{best_idx} (importance score={best_score:.4f})")
 
         X_train_guessed.to_csv(out_dir / "X_train_guessed.csv", index=False)
         X_test_guessed.to_csv(out_dir / "X_test_guessed.csv", index=False)

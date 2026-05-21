@@ -1,7 +1,0 @@
-binary_variable,tree_count,total_binary_variables,importance
-ExternalRiskEstimate <= 70.5,3,21,0.19039218361734953
-ExternalRiskEstimate <= 74.5,2,21,0.17907052393159575
-ExternalRiskEstimate <= 78.5,2,21,0.11098570291735134
-ExternalRiskEstimate <= 73.5,1,21,0.10945061078288318
-ExternalRiskEstimate <= 75.5,1,21,0.07642522609920444
-ExternalRiskEstimate <= 67.5,1,21,0.06074424384009978

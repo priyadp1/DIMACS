@@ -12,7 +12,7 @@ while current.name != "DIMACS":
 BASEDIR = current
 tgb_dir = BASEDIR / "TGB_Variables_Feature_Importance"
 no_tgb_dir = BASEDIR / "tmp_splits_no_tgb"
-pacmap_output_dir = BASEDIR / "pacmap_embeddings"
+pacmap_output_dir = BASEDIR / "pacmap_plots"
 os.makedirs(pacmap_output_dir, exist_ok=True)
 parameters = ["nest40_depth1", "nest40_depth2", "nest40_depth3", "nest100_depth1", "nest100_depth2", "nest100_depth3", "nest200_depth1", "nest200_depth2", "nest200_depth3"]
 datasets = ["bike", "compas", "breast_cancer", "spambase"]
@@ -67,7 +67,9 @@ for i in datasets:
 
         fig.suptitle(f"PaCMAP: {i} — {j}", fontsize=14)
         plt.tight_layout()
-        out_path = pacmap_output_dir / f"{i}_{j}_pacmap.png"
+        plot_dir = pacmap_output_dir / i / j
+        os.makedirs(plot_dir, exist_ok=True)
+        out_path = plot_dir / "pacmap.png"
         plt.savefig(out_path, dpi=150)
         plt.close()
         print(f"Saved {out_path}")

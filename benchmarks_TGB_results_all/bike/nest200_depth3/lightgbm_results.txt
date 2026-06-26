@@ -1,0 +1,148 @@
+Accuracy: 0.8734177215189873
+Confusion Matrix:
+[[1417  325]
+ [ 115 1619]]
+Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.92      0.81      0.87      1742
+           1       0.83      0.93      0.88      1734
+
+    accuracy                           0.87      3476
+   macro avg       0.88      0.87      0.87      3476
+weighted avg       0.88      0.87      0.87      3476
+
+LightGBM completed in 0.10 seconds
+All Features:
+                          Feature  Importance
+                       yr lt= 0.5          29
+                       hr lt= 5.5          24
+                       hr lt= 6.5          22
+                       hr lt= 0.5          20
+                      hr lt= 21.5           7
+                      hr lt= 22.5           7
+     atemp lt= 0.5985000133514404           5
+               workingday lt= 0.5           5
+               weathersit lt= 2.5           5
+                     mnth lt= 4.5           5
+                   season lt= 1.5           4
+                      hr lt= 19.5           4
+     temp lt= 0.45000000298023224           3
+                      hr lt= 20.5           3
+      temp lt= 0.3100000023841858           3
+                      hr lt= 11.5           3
+                  weekday lt= 3.5           3
+       hum lt= 0.7450000047683716           2
+      temp lt= 0.4699999988079071           2
+      temp lt= 0.4299999922513962           2
+      temp lt= 0.4099999964237213           1
+       hum lt= 0.8149999976158142           1
+      temp lt= 0.3700000047683716           1
+       hum lt= 0.8050000071525574           1
+     temp lt= 0.26999999582767487           1
+     temp lt= 0.48999999463558197           1
+                   season lt= 2.5           1
+     atemp lt= 0.3409000039100647           1
+                    hum lt= 0.625           1
+       hum lt= 0.8349999785423279           1
+    atemp lt= 0.31059999763965607           1
+                       hr lt= 7.5           1
+                  weekday lt= 0.5           0
+       hum lt= 0.5049999952316284           0
+                     mnth lt= 2.5           0
+       hum lt= 0.7950000166893005           0
+       hum lt= 0.7849999964237213           0
+                     mnth lt= 3.5           0
+       hum lt= 0.7049999833106995           0
+       hum lt= 0.6349999904632568           0
+                     mnth lt= 5.5           0
+       hum lt= 0.6150000095367432           0
+       hum lt= 0.5550000071525574           0
+       hum lt= 0.4650000035762787           0
+                   season lt= 3.5           0
+      hum lt= 0.41499999165534973           0
+      hum lt= 0.36500000953674316           0
+       hum lt= 0.3150000125169754           0
+       hum lt= 0.2549999952316284           0
+       hum lt= 0.2149999961256981           0
+      hum lt= 0.19500000029802322           0
+     atemp lt= 0.9393500089645386           0
+     atemp lt= 0.9166499972343445           0
+     atemp lt= 0.8409000039100647           0
+     atemp lt= 0.8257499933242798           0
+                     mnth lt= 1.5           0
+       hum lt= 0.8599999845027924           0
+       atemp lt= 0.79544997215271           0
+       hum lt= 0.8949999809265137           0
+ windspeed lt= 0.7014999985694885           0
+ windspeed lt= 0.6492500007152557           0
+ windspeed lt= 0.5074500143527985           0
+windspeed lt= 0.47760000824928284           0
+windspeed lt= 0.45525000989437103           0
+ windspeed lt= 0.4328500032424927           0
+windspeed lt= 0.40299999713897705           0
+windspeed lt= 0.31344999372959137           0
+ windspeed lt= 0.2910500019788742           0
+ windspeed lt= 0.2760999947786331           0
+windspeed lt= 0.26864999532699585           0
+windspeed lt= 0.23879999667406082           0
+windspeed lt= 0.23134999722242355           0
+ windspeed lt= 0.2089500054717064           0
+windspeed lt= 0.11939999833703041           0
+ windspeed lt= 0.0970499999821186           0
+windspeed lt= 0.04479999840259552           0
+       hum lt= 0.9850000143051147           0
+       hum lt= 0.9699999988079071           0
+       hum lt= 0.9350000023841858           0
+       hum lt= 0.9050000011920929           0
+     atemp lt= 0.8105999827384949           0
+     atemp lt= 0.7802999913692474           0
+                  weekday lt= 1.5           0
+                   atemp lt= 0.75           0
+       temp lt= 0.550000011920929           0
+      temp lt= 0.5300000011920929           0
+      temp lt= 0.5099999904632568           0
+                    mnth lt= 11.5           0
+                       hr lt= 8.5           0
+                       hr lt= 9.5           0
+                      hr lt= 10.5           0
+     temp lt= 0.39000000059604645           0
+                      hr lt= 14.0           0
+                      hr lt= 15.5           0
+      temp lt= 0.2900000065565109           0
+                      hr lt= 16.5           0
+     temp lt= 0.22999999672174454           0
+     temp lt= 0.17999999970197678           0
+                      hr lt= 17.5           0
+               weathersit lt= 1.5           0
+                      hr lt= 18.5           0
+                  weekday lt= 5.5           0
+                  weekday lt= 4.5           0
+                  holiday lt= 0.5           0
+                  weekday lt= 2.5           0
+      temp lt= 0.6299999952316284           0
+      temp lt= 0.7699999809265137           0
+      temp lt= 0.8299999833106995           0
+     atemp lt= 0.4317999929189682           0
+     atemp lt= 0.6439499855041504           0
+     atemp lt= 0.6136500239372253           0
+                     mnth lt= 7.5           0
+     atemp lt= 0.5681999921798706           0
+     atemp lt= 0.5379000008106232           0
+     atemp lt= 0.5227500200271606           0
+     atemp lt= 0.5076000094413757           0
+    atemp lt= 0.49240000545978546           0
+    atemp lt= 0.47725000977516174           0
+     atemp lt= 0.3560499995946884           0
+      temp lt= 0.9300000071525574           0
+                     mnth lt= 9.0           0
+     atemp lt= 0.3257499933242798           0
+                    mnth lt= 10.5           0
+    atemp lt= 0.28030000627040863           0
+    atemp lt= 0.21970000118017197           0
+    atemp lt= 0.18939999490976334           0
+    atemp lt= 0.17424999922513962           0
+     atemp lt= 0.1591000035405159           0
+    atemp lt= 0.14395000040531158           0
+       hum lt= 0.8849999904632568           0
+Tree Size: 25 trees, 195 total leaves, 7.8 avg leaves/tree

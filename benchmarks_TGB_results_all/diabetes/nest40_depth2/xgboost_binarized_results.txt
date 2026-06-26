@@ -1,0 +1,51 @@
+Accuracy: 0.6319642330745799
+Confusion Matrix:
+[[8616 2357]
+ [5134 4247]]
+Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.63      0.79      0.70     10973
+           1       0.64      0.45      0.53      9381
+
+    accuracy                           0.63     20354
+   macro avg       0.63      0.62      0.61     20354
+weighted avg       0.63      0.63      0.62     20354
+
+XGBoost completed in 0.10 seconds
+All Features:
+                          Feature  Importance
+         number_inpatient lt= 0.5    0.293131
+         number_inpatient lt= 1.5    0.062107
+discharge_disposition_id lt= 10.0    0.061886
+         number_diagnoses lt= 6.5    0.055958
+         number_diagnoses lt= 5.5    0.050894
+         number_inpatient lt= 2.5    0.044433
+         number_inpatient lt= 3.5    0.042206
+         number_emergency lt= 0.5    0.038442
+        number_outpatient lt= 0.5    0.031086
+         num_medications lt= 10.5    0.027975
+               diag_1_428 lt= 0.5    0.026754
+      admission_source_id lt= 6.5    0.023385
+           diabetesMed_No lt= 0.5    0.022282
+ discharge_disposition_id lt= 8.5    0.020026
+discharge_disposition_id lt= 14.5    0.019618
+           num_procedures lt= 0.5    0.019291
+ discharge_disposition_id lt= 9.5    0.016246
+        admission_type_id lt= 5.5    0.015550
+         number_emergency lt= 1.5    0.014899
+               diag_1_491 lt= 0.5    0.014054
+      num_lab_procedures lt= 18.5    0.014001
+         time_in_hospital lt= 3.5    0.013941
+         number_inpatient lt= 4.5    0.013772
+              age_{70-80) lt= 0.5    0.012272
+      num_lab_procedures lt= 30.5    0.011730
+         number_emergency lt= 2.5    0.010152
+               diag_1_278 lt= 0.5    0.009587
+ discharge_disposition_id lt= 1.5    0.009099
+               diag_2_403 lt= 0.5    0.005225
+          num_medications lt= 7.5    0.000000
+               diag_2_648 lt= 0.5    0.000000
+discharge_disposition_id lt= 10.5    0.000000
+          diabetesMed_Yes lt= 0.5    0.000000
+Tree Size: 25 trees, 200 total leaves, 8.0 avg leaves/tree

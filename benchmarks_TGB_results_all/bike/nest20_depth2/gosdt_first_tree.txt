@@ -1,0 +1,10 @@
+<class 'gosdt._tree.Tree'>: { feature: 5, orig feature: 5, [ left child: { prediction: 0, loss: 0.008199669420719147 }, right child: { feature: 1, orig feature: 1, [ left child: { feature: 7, orig feature: 7, [ left child: { feature: 11, orig feature: 11, [ left child: { prediction: 0, loss: 0.002301661530509591 }, right child: { prediction: 1, loss: 0.005538373254239559 }] }, right child: { feature: 10, orig feature: 10, [ left child: { feature: 2, orig feature: 2, [ left child: { feature: 17, orig feature: 17, [ left child: { prediction: 0, loss: 0.01654319278895855 }, right child: { prediction: 1, loss: 0.024311300367116928 }] }, right child: { feature: 13, orig feature: 13, [ left child: { prediction: 0, loss: 0.01287491898983717 }, right child: { prediction: 1, loss: 0.016255484893918037 }] }] }, right child: { prediction: 0, loss: 0.005394519306719303 }] }] }, right child: { feature: 9, orig feature: 9, [ left child: { prediction: 1, loss: 0.0295619647949934 }, right child: { prediction: 0, loss: 0.004531396087259054 }] }] }] }, Index(['season <= 1.5', 'season <= 3.5', 'yr <= 0.5', 'mnth <= 3.5',
+       'hr <= 5.5', 'hr <= 6.5', 'hr <= 7.5', 'hr <= 8.5', 'hr <= 19.5',
+       'hr <= 21.5', 'hr <= 22.5', 'workingday <= 0.5', 'weathersit <= 2.5',
+       'temp <= 0.3100000023841858', 'temp <= 0.32999999821186066',
+       'temp <= 0.3700000047683716', 'temp <= 0.39000000059604645',
+       'temp <= 0.45000000298023224', 'temp <= 0.4699999988079071',
+       'temp <= 0.48999999463558197', 'atemp <= 0.3257499933242798',
+       'atemp <= 0.5985000133514404', 'hum <= 0.7950000166893005',
+       'weekday <= 3.5'],
+      dtype='object'), 2

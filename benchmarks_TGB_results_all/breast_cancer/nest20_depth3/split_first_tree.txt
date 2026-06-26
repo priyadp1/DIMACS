@@ -1,0 +1,9 @@
+<class 'split._tree.Tree'>: { feature: 1 [ left child: { prediction: 1, loss: 0.05806451663374901 }, right child: { feature: 0 [ left child: { feature: 7 [ left child: { prediction: 1, loss: 0.0033333334140479565 }, right child: { prediction: 0, loss: 0.009999999776482582 }] }, right child: { prediction: 0, loss: 0.01666666753590107 }] }] }, Index(['concave points_mean <= 0.05127999931573868 <= 0.5',
+       'radius_worst <= 16.795000076293945 <= 0.5',
+       'perimeter_worst <= 112.79999923706055 <= 0.5',
+       'perimeter_worst <= 114.45000076293945 <= 0.5',
+       'area_worst <= 768.1000061035156 <= 0.5',
+       'concave points_worst <= 0.14169999957084656 <= 0.5',
+       'concave points_worst <= 0.14559999853372574 <= 0.5',
+       'texture_worst <= 26.28499984741211 <= 0.5'],
+      dtype='object'), 2

@@ -1,0 +1,5 @@
+<class 'gosdt._tree.Tree'>: { feature: 1, orig feature: 1, [ left child: { prediction: 0, loss: 0.048351649194955826 }, right child: { prediction: 1, loss: 0.021978022530674934 }] }, Index(['radius_worst <= 16.795000076293945',
+       'perimeter_worst <= 112.79999923706055',
+       'concave points_worst <= 0.14169999957084656',
+       'concave points_mean <= 0.05127999931573868'],
+      dtype='object'), 2

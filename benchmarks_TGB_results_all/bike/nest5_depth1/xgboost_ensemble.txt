@@ -1,0 +1,99 @@
+0:[hr lt= 6.5<1] yes=1,no=2,missing=2
+	1:leaf=0.076314263
+	2:leaf=-0.188030273
+
+0:[hr lt= 6.5<1] yes=1,no=2,missing=2
+	1:leaf=0.0687780753
+	2:leaf=-0.170870885
+
+0:[hr lt= 6.5<1] yes=1,no=2,missing=2
+	1:leaf=0.0621411763
+	2:leaf=-0.157646537
+
+0:[hr lt= 6.5<1] yes=1,no=2,missing=2
+	1:leaf=0.0562440157
+	2:leaf=-0.147098541
+
+0:[hr lt= 6.5<1] yes=1,no=2,missing=2
+	1:leaf=0.0509679988
+	2:leaf=-0.138447687
+
+0:[hr lt= 6.5<1] yes=1,no=2,missing=2
+	1:leaf=0.0462229401
+	2:leaf=-0.131183729
+
+0:[hr lt= 6.5<1] yes=1,no=2,missing=2
+	1:leaf=0.0419385768
+	2:leaf=-0.124957182
+
+0:[hr lt= 6.5<1] yes=1,no=2,missing=2
+	1:leaf=0.0380589403
+	2:leaf=-0.119519889
+
+0:[hr lt= 6.5<1] yes=1,no=2,missing=2
+	1:leaf=0.0345385671
+	2:leaf=-0.114690125
+
+0:[hr lt= 6.5<1] yes=1,no=2,missing=2
+	1:leaf=0.0313396975
+	2:leaf=-0.110331491
+
+0:[hr lt= 6.5<1] yes=1,no=2,missing=2
+	1:leaf=0.0284303874
+	2:leaf=-0.106339328
+
+0:[hr lt= 6.5<1] yes=1,no=2,missing=2
+	1:leaf=0.02578317
+	2:leaf=-0.102631964
+
+0:[hr lt= 6.5<1] yes=1,no=2,missing=2
+	1:leaf=0.0233739763
+	2:leaf=-0.0991447493
+
+0:[hr lt= 6.5<1] yes=1,no=2,missing=2
+	1:leaf=0.0211815983
+	2:leaf=-0.0958259702
+
+0:[hr lt= 6.5<1] yes=1,no=2,missing=2
+	1:leaf=0.0191869959
+	2:leaf=-0.092633985
+
+0:[hr lt= 6.5<1] yes=1,no=2,missing=2
+	1:leaf=0.0173729565
+	2:leaf=-0.0895352289
+
+0:[hr lt= 6.5<1] yes=1,no=2,missing=2
+	1:leaf=0.0157239418
+	2:leaf=-0.0865027383
+
+0:[hr lt= 6.5<1] yes=1,no=2,missing=2
+	1:leaf=0.0142256757
+	2:leaf=-0.0835150778
+
+0:[hr lt= 6.5<1] yes=1,no=2,missing=2
+	1:leaf=0.0128651336
+	2:leaf=-0.0805555731
+
+0:[hr lt= 6.5<1] yes=1,no=2,missing=2
+	1:leaf=0.0116303666
+	2:leaf=-0.0776117221
+
+0:[hr lt= 6.5<1] yes=1,no=2,missing=2
+	1:leaf=0.0105103413
+	2:leaf=-0.0746746734
+
+0:[hr lt= 6.5<1] yes=1,no=2,missing=2
+	1:leaf=0.00949502643
+	2:leaf=-0.0717388913
+
+0:[hr lt= 6.5<1] yes=1,no=2,missing=2
+	1:leaf=0.00857506879
+	2:leaf=-0.0688018277
+
+0:[hr lt= 6.5<1] yes=1,no=2,missing=2
+	1:leaf=0.00774198491
+	2:leaf=-0.0658635646
+
+0:[hr lt= 6.5<1] yes=1,no=2,missing=2
+	1:leaf=0.00698792888
+	2:leaf=-0.0629265457

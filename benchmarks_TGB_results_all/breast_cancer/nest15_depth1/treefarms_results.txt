@@ -1,0 +1,17 @@
+Accuracy: 0.9385964912280702
+Confusion Matrix:
+[[68  4]
+ [ 3 39]]
+Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.96      0.94      0.95        72
+           1       0.91      0.93      0.92        42
+
+    accuracy                           0.94       114
+   macro avg       0.93      0.94      0.93       114
+weighted avg       0.94      0.94      0.94       114
+
+TREEFARMS completed in 0.01 seconds
+Rashomon set size: 6
+Tree Size (tree 0): 3 leaves, 5 total nodes

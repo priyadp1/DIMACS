@@ -1,0 +1,375 @@
+0:[hr lt= 6.5<1] yes=1,no=2,missing=2
+	1:[temp lt= 0.3700000047683716<1] yes=3,no=4,missing=4
+		3:[hr lt= 22.5<1] yes=7,no=8,missing=8
+			7:leaf=-0.103035964
+			8:leaf=0.137773424
+		4:[yr lt= 0.5<1] yes=9,no=10,missing=10
+			9:leaf=0.0214606728
+			10:leaf=-0.101022258
+	2:[hr lt= 5.5<1] yes=5,no=6,missing=6
+		5:[yr lt= 0.5<1] yes=11,no=12,missing=12
+			11:leaf=-0.0898897871
+			12:leaf=-0.196931407
+		6:leaf=-0.195378542
+
+0:[hr lt= 6.5<1] yes=1,no=2,missing=2
+	1:[temp lt= 0.45000000298023224<1] yes=3,no=4,missing=4
+		3:[hr lt= 22.5<1] yes=7,no=8,missing=8
+			7:leaf=-0.0813760683
+			8:leaf=0.138450071
+		4:[yr lt= 0.5<1] yes=9,no=10,missing=10
+			9:leaf=0.0457669981
+			10:leaf=-0.0734651163
+	2:[hr lt= 5.5<1] yes=5,no=6,missing=6
+		5:[yr lt= 0.5<1] yes=11,no=12,missing=12
+			11:leaf=-0.081204474
+			12:leaf=-0.179342911
+		6:leaf=-0.177683696
+
+0:[hr lt= 6.5<1] yes=1,no=2,missing=2
+	1:[temp lt= 0.39000000059604645<1] yes=3,no=4,missing=4
+		3:[hr lt= 21.5<1] yes=7,no=8,missing=8
+			7:leaf=-0.0267929919
+			8:leaf=0.122150414
+		4:[hr lt= 19.5<1] yes=9,no=10,missing=10
+			9:leaf=-0.134818181
+			10:leaf=0.00162601343
+	2:[hr lt= 5.5<1] yes=5,no=6,missing=6
+		5:[yr lt= 0.5<1] yes=11,no=12,missing=12
+			11:leaf=-0.0736078694
+			12:leaf=-0.166037545
+		6:leaf=-0.164256766
+
+0:[hr lt= 6.5<1] yes=1,no=2,missing=2
+	1:[temp lt= 0.3100000023841858<1] yes=3,no=4,missing=4
+		3:[hr lt= 21.5<1] yes=7,no=8,missing=8
+			7:leaf=-0.0466082133
+			8:leaf=0.101655297
+		4:[hr lt= 19.5<1] yes=9,no=10,missing=10
+			9:leaf=-0.150900483
+			10:leaf=-0.0447118357
+	2:[hr lt= 5.5<1] yes=5,no=6,missing=6
+		5:[yr lt= 0.5<1] yes=11,no=12,missing=12
+			11:leaf=-0.0668838695
+			12:leaf=-0.1556416
+		6:leaf=-0.15371944
+
+0:[hr lt= 6.5<1] yes=1,no=2,missing=2
+	1:[temp lt= 0.4699999988079071<1] yes=3,no=4,missing=4
+		3:[hum lt= 0.7950000166893005<1] yes=7,no=8,missing=8
+			7:leaf=0.00329929404
+			8:leaf=0.121007919
+		4:[yr lt= 0.5<1] yes=9,no=10,missing=10
+			9:leaf=0.0419291779
+			10:leaf=-0.0639014468
+	2:[hr lt= 5.5<1] yes=5,no=6,missing=6
+		5:[yr lt= 0.5<1] yes=11,no=12,missing=12
+			11:leaf=-0.0608765073
+			12:leaf=-0.147314355
+		6:leaf=-0.145228967
+
+0:[hr lt= 6.5<1] yes=1,no=2,missing=2
+	1:[season lt= 1.5<1] yes=3,no=4,missing=4
+		3:[hum lt= 0.7950000166893005<1] yes=7,no=8,missing=8
+			7:leaf=-0.0182285421
+			8:leaf=0.101724163
+		4:[yr lt= 0.5<1] yes=9,no=10,missing=10
+			9:leaf=0.0124882394
+			10:leaf=-0.104501285
+	2:[hr lt= 5.5<1] yes=5,no=6,missing=6
+		5:[yr lt= 0.5<1] yes=11,no=12,missing=12
+			11:leaf=-0.0554704256
+			12:leaf=-0.140510663
+		6:leaf=-0.138239011
+
+0:[hr lt= 6.5<1] yes=1,no=2,missing=2
+	1:[temp lt= 0.48999999463558197<1] yes=3,no=4,missing=4
+		3:[hr lt= 22.5<1] yes=7,no=8,missing=8
+			7:leaf=-0.069460392
+			8:leaf=0.101889931
+		4:[hr lt= 21.5<1] yes=9,no=10,missing=10
+			9:leaf=-0.143778414
+			10:leaf=0.00874871574
+	2:[hr lt= 5.5<1] yes=5,no=6,missing=6
+		5:[temp lt= 0.45000000298023224<1] yes=11,no=12,missing=12
+			11:leaf=-0.0443587415
+			12:leaf=-0.129440024
+		6:leaf=-0.132378504
+
+0:[hr lt= 6.5<1] yes=1,no=2,missing=2
+	1:[atemp lt= 0.3257499933242798<1] yes=3,no=4,missing=4
+		3:[weathersit lt= 2.5<1] yes=7,no=8,missing=8
+			7:leaf=-0.0690414384
+			8:leaf=0.0799457058
+		4:[hr lt= 19.5<1] yes=9,no=10,missing=10
+			9:leaf=-0.125071213
+			10:leaf=-0.0252890289
+	2:[hr lt= 5.5<1] yes=5,no=6,missing=6
+		5:[yr lt= 0.5<1] yes=11,no=12,missing=12
+			11:leaf=-0.0428681038
+			12:leaf=-0.131682202
+		6:leaf=-0.12738581
+
+0:[hr lt= 6.5<1] yes=1,no=2,missing=2
+	1:[season lt= 1.5<1] yes=3,no=4,missing=4
+		3:[hr lt= 21.5<1] yes=7,no=8,missing=8
+			7:leaf=-0.0490405634
+			8:leaf=0.0815557092
+		4:[yr lt= 0.5<1] yes=9,no=10,missing=10
+			9:leaf=0.0109353503
+			10:leaf=-0.0950914472
+	2:[hr lt= 5.5<1] yes=5,no=6,missing=6
+		5:[yr lt= 0.5<1] yes=11,no=12,missing=12
+			11:leaf=-0.0390999839
+			12:leaf=-0.127403259
+		6:leaf=-0.123070478
+
+0:[hr lt= 6.5<1] yes=1,no=2,missing=2
+	1:[atemp lt= 0.5985000133514404<1] yes=3,no=4,missing=4
+		3:[hr lt= 22.5<1] yes=7,no=8,missing=8
+			7:leaf=-0.040394526
+			8:leaf=0.106012605
+		4:[yr lt= 0.5<1] yes=9,no=10,missing=10
+			9:leaf=0.0461693406
+			10:leaf=-0.0408079848
+	2:[hr lt= 5.5<1] yes=5,no=6,missing=6
+		5:[temp lt= 0.45000000298023224<1] yes=11,no=12,missing=12
+			11:leaf=-0.0274280589
+			12:leaf=-0.115562081
+		6:[temp lt= 0.48999999463558197<1] yes=13,no=14,missing=14
+			13:leaf=-0.113161743
+			14:leaf=-0.123912908
+
+0:[hr lt= 6.5<1] yes=1,no=2,missing=2
+	1:[atemp lt= 0.5985000133514404<1] yes=3,no=4,missing=4
+		3:[yr lt= 0.5<1] yes=7,no=8,missing=8
+			7:leaf=0.122102678
+			8:leaf=0.0630549416
+		4:[hr lt= 21.5<1] yes=9,no=10,missing=10
+			9:leaf=-0.101481102
+			10:leaf=0.0182787552
+	2:[hr lt= 5.5<1] yes=5,no=6,missing=6
+		5:[yr lt= 0.5<1] yes=11,no=12,missing=12
+			11:leaf=-0.029313514
+			12:leaf=-0.121922366
+		6:[temp lt= 0.48999999463558197<1] yes=13,no=14,missing=14
+			13:leaf=-0.109544456
+			14:leaf=-0.120802216
+
+0:[hr lt= 6.5<1] yes=1,no=2,missing=2
+	1:[temp lt= 0.3100000023841858<1] yes=3,no=4,missing=4
+		3:[weathersit lt= 2.5<1] yes=7,no=8,missing=8
+			7:leaf=-0.0751024932
+			8:leaf=0.06200343
+		4:[hr lt= 19.5<1] yes=9,no=10,missing=10
+			9:leaf=-0.121337749
+			10:leaf=-0.0364896283
+	2:[hr lt= 5.5<1] yes=5,no=6,missing=6
+		5:[yr lt= 0.5<1] yes=11,no=12,missing=12
+			11:leaf=-0.0266931094
+			12:leaf=-0.118974231
+		6:[temp lt= 0.48999999463558197<1] yes=13,no=14,missing=14
+			13:leaf=-0.106210522
+			14:leaf=-0.11808648
+
+0:[hr lt= 6.5<1] yes=1,no=2,missing=2
+	1:[season lt= 1.5<1] yes=3,no=4,missing=4
+		3:[hum lt= 0.7950000166893005<1] yes=7,no=8,missing=8
+			7:leaf=-0.0312869512
+			8:leaf=0.0715714619
+		4:[yr lt= 0.5<1] yes=9,no=10,missing=10
+			9:leaf=0.0046558748
+			10:leaf=-0.0844861418
+	2:[hr lt= 5.5<1] yes=5,no=6,missing=6
+		5:[temp lt= 0.45000000298023224<1] yes=11,no=12,missing=12
+			11:leaf=-0.0136365322
+			12:leaf=-0.105380155
+		6:[temp lt= 0.48999999463558197<1] yes=13,no=14,missing=14
+			13:leaf=-0.103097513
+			14:leaf=-0.115695789
+
+0:[hr lt= 6.5<1] yes=1,no=2,missing=2
+	1:[temp lt= 0.4699999988079071<1] yes=3,no=4,missing=4
+		3:[hr lt= 22.5<1] yes=7,no=8,missing=8
+			7:leaf=-0.0763068423
+			8:leaf=0.0714067146
+		4:[hr lt= 19.5<1] yes=9,no=10,missing=10
+			9:leaf=-0.0915336013
+			10:leaf=0.00937278755
+	2:[hr lt= 5.5<1] yes=5,no=6,missing=6
+		5:[yr lt= 0.5<1] yes=11,no=12,missing=12
+			11:leaf=-0.0189754087
+			12:leaf=-0.115332358
+		6:[temp lt= 0.48999999463558197<1] yes=13,no=14,missing=14
+			13:leaf=-0.100154832
+			14:leaf=-0.113574199
+
+0:[hr lt= 6.5<1] yes=1,no=2,missing=2
+	1:[yr lt= 0.5<1] yes=3,no=4,missing=4
+		3:[temp lt= 0.3100000023841858<1] yes=7,no=8,missing=8
+			7:leaf=0.0793888345
+			8:leaf=-0.0218355767
+		4:[mnth lt= 3.5<1] yes=9,no=10,missing=10
+			9:leaf=0.0102973972
+			10:leaf=-0.0842068717
+	2:[hr lt= 5.5<1] yes=5,no=6,missing=6
+		5:[yr lt= 0.5<1] yes=11,no=12,missing=12
+			11:leaf=-0.0172348041
+			12:leaf=-0.113150358
+		6:[temp lt= 0.48999999463558197<1] yes=13,no=14,missing=14
+			13:leaf=-0.0973410234
+			14:leaf=-0.111676387
+
+0:[hr lt= 6.5<1] yes=1,no=2,missing=2
+	1:[atemp lt= 0.5985000133514404<1] yes=3,no=4,missing=4
+		3:[hr lt= 22.5<1] yes=7,no=8,missing=8
+			7:leaf=-0.053807389
+			8:leaf=0.0837801695
+		4:[weathersit lt= 2.5<1] yes=9,no=10,missing=10
+			9:leaf=-0.102636173
+			10:leaf=0.0112480074
+	2:[hr lt= 5.5<1] yes=5,no=6,missing=6
+		5:[temp lt= 0.45000000298023224<1] yes=11,no=12,missing=12
+			11:leaf=-0.00246907538
+			12:leaf=-0.0972717181
+		6:[temp lt= 0.48999999463558197<1] yes=13,no=14,missing=14
+			13:leaf=-0.0946218744
+			14:leaf=-0.109964989
+
+0:[hr lt= 6.5<1] yes=1,no=2,missing=2
+	1:[hr lt= 21.5<1] yes=3,no=4,missing=4
+		3:[weekday lt= 3.5<1] yes=7,no=8,missing=8
+			7:leaf=-0.0147484718
+			8:leaf=-0.117496409
+		4:[yr lt= 0.5<1] yes=9,no=10,missing=10
+			9:leaf=0.0702183098
+			10:leaf=-0.00329362345
+	2:[hr lt= 5.5<1] yes=5,no=6,missing=6
+		5:[yr lt= 0.5<1] yes=11,no=12,missing=12
+			11:leaf=-0.0111810416
+			12:leaf=-0.110584036
+		6:[temp lt= 0.48999999463558197<1] yes=13,no=14,missing=14
+			13:leaf=-0.091969043
+			14:leaf=-0.108408891
+
+0:[hr lt= 7.5<1] yes=1,no=2,missing=2
+	1:[season lt= 1.5<1] yes=3,no=4,missing=4
+		3:[hum lt= 0.7950000166893005<1] yes=7,no=8,missing=8
+			7:leaf=-0.0356801637
+			8:leaf=0.061749544
+		4:[hr lt= 19.5<1] yes=9,no=10,missing=10
+			9:leaf=-0.106693797
+			10:leaf=-0.0136352135
+	2:[hr lt= 5.5<1] yes=5,no=6,missing=6
+		5:[yr lt= 0.5<1] yes=11,no=12,missing=12
+			11:leaf=-0.0116342967
+			12:leaf=-0.0687954053
+		6:[temp lt= 0.48999999463558197<1] yes=13,no=14,missing=14
+			13:leaf=-0.0893590748
+			14:leaf=-0.106981814
+
+0:[hr lt= 6.5<1] yes=1,no=2,missing=2
+	1:[yr lt= 0.5<1] yes=3,no=4,missing=4
+		3:[weathersit lt= 2.5<1] yes=7,no=8,missing=8
+			7:leaf=-0.0650191605
+			8:leaf=0.0618027709
+		4:[mnth lt= 3.5<1] yes=9,no=10,missing=10
+			9:leaf=0.00547250547
+			10:leaf=-0.0753846914
+	2:[hr lt= 5.5<1] yes=5,no=6,missing=6
+		5:[temp lt= 0.45000000298023224<1] yes=11,no=12,missing=12
+			11:leaf=0.00515092304
+			12:leaf=-0.0906604454
+		6:[temp lt= 0.48999999463558197<1] yes=13,no=14,missing=14
+			13:leaf=-0.0867726728
+			14:leaf=-0.105661273
+
+0:[hr lt= 7.5<1] yes=1,no=2,missing=2
+	1:[hr lt= 21.5<1] yes=3,no=4,missing=4
+		3:[weekday lt= 3.5<1] yes=7,no=8,missing=8
+			7:leaf=-0.016547557
+			8:leaf=-0.111082233
+		4:[weathersit lt= 2.5<1] yes=9,no=10,missing=10
+			9:leaf=-0.0708314925
+			10:leaf=0.043759957
+	2:[hr lt= 5.5<1] yes=5,no=6,missing=6
+		5:[season lt= 1.5<1] yes=11,no=12,missing=12
+			11:leaf=-0.0172497649
+			12:leaf=-0.0824235082
+		6:[temp lt= 0.48999999463558197<1] yes=13,no=14,missing=14
+			13:leaf=-0.084194161
+			14:leaf=-0.104427867
+
+0:[hr lt= 5.5<1] yes=1,no=2,missing=2
+	1:[atemp lt= 0.5985000133514404<1] yes=3,no=4,missing=4
+		3:[hr lt= 11.5<1] yes=7,no=8,missing=8
+			7:leaf=0.0852893963
+			8:leaf=-5.74145888e-05
+		4:[hr lt= 21.5<1] yes=9,no=10,missing=10
+			9:leaf=-0.0853946432
+			10:leaf=0.00268147094
+	2:[temp lt= 0.48999999463558197<1] yes=5,no=6,missing=6
+		5:[yr lt= 0.5<1] yes=11,no=12,missing=12
+			11:leaf=-0.0614167564
+			12:leaf=-0.101468563
+		6:leaf=-0.10326457
+
+0:[hr lt= 5.5<1] yes=1,no=2,missing=2
+	1:[temp lt= 0.3100000023841858<1] yes=3,no=4,missing=4
+		3:[yr lt= 0.5<1] yes=7,no=8,missing=8
+			7:leaf=0.0625665635
+			8:leaf=-0.00813187566
+		4:[hr lt= 19.5<1] yes=9,no=10,missing=10
+			9:leaf=-0.101972722
+			10:leaf=-0.038047336
+	2:[temp lt= 0.48999999463558197<1] yes=5,no=6,missing=6
+		5:[yr lt= 0.5<1] yes=11,no=12,missing=12
+			11:leaf=-0.0584334992
+			12:leaf=-0.100002967
+		6:leaf=-0.102156401
+
+0:[hr lt= 7.5<1] yes=1,no=2,missing=2
+	1:[temp lt= 0.45000000298023224<1] yes=3,no=4,missing=4
+		3:[yr lt= 0.5<1] yes=7,no=8,missing=8
+			7:leaf=0.0825063586
+			8:leaf=0.0101379221
+		4:[hr lt= 19.5<1] yes=9,no=10,missing=10
+			9:leaf=-0.0837551653
+			10:leaf=0.00348323281
+	2:[hr lt= 5.5<1] yes=5,no=6,missing=6
+		5:[season lt= 1.5<1] yes=11,no=12,missing=12
+			11:leaf=-0.0177836847
+			12:leaf=-0.075316444
+		6:[temp lt= 0.48999999463558197<1] yes=13,no=14,missing=14
+			13:leaf=-0.0764652193
+			14:leaf=-0.10108991
+
+0:[atemp lt= 0.5985000133514404<1] yes=1,no=2,missing=2
+	1:[hr lt= 11.5<1] yes=3,no=4,missing=4
+		3:[hr lt= 22.5<1] yes=7,no=8,missing=8
+			7:leaf=-0.0578939505
+			8:leaf=0.0911272988
+		4:[yr lt= 0.5<1] yes=9,no=10,missing=10
+			9:leaf=0.0463289246
+			10:leaf=-0.0764382258
+	2:[weathersit lt= 2.5<1] yes=5,no=6,missing=6
+		5:[hr lt= 8.5<1] yes=11,no=12,missing=12
+			11:leaf=-0.0958071873
+			12:leaf=-0.0564869717
+		6:[hr lt= 5.5<1] yes=13,no=14,missing=14
+			13:leaf=0.00283791288
+			14:leaf=-0.0920553505
+
+0:[hr lt= 6.5<1] yes=1,no=2,missing=2
+	1:[hr lt= 21.5<1] yes=3,no=4,missing=4
+		3:[weekday lt= 3.5<1] yes=7,no=8,missing=8
+			7:leaf=-0.0102586318
+			8:leaf=-0.103643969
+		4:[season lt= 1.5<1] yes=9,no=10,missing=10
+			9:leaf=0.0414541885
+			10:leaf=-0.0235891659
+	2:[yr lt= 0.5<1] yes=5,no=6,missing=6
+		5:[temp lt= 0.45000000298023224<1] yes=11,no=12,missing=12
+			11:leaf=-0.0132704778
+			12:leaf=-0.0870479122
+		6:leaf=-0.102056161

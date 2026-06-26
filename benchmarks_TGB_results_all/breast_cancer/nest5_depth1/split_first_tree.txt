@@ -1,0 +1,5 @@
+<class 'split._tree.Tree'>: { feature: 0 [ left child: { prediction: 1, loss: 0.05806451663374901 }, right child: { feature: 2 [ left child: { prediction: 1, loss: 0.03333333507180214 }, right child: { prediction: 0, loss: 0.019999999552965164 }] }] }, Index(['radius_worst <= 16.795000076293945 <= 0.5',
+       'perimeter_worst <= 112.79999923706055 <= 0.5',
+       'concave points_worst <= 0.14169999957084656 <= 0.5',
+       'concave points_mean <= 0.05127999931573868 <= 0.5'],
+      dtype='object'), 2

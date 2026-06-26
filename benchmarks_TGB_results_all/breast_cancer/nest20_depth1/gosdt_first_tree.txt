@@ -1,0 +1,11 @@
+<class 'gosdt._tree.Tree'>: { feature: 7, orig feature: 7, [ left child: { feature: 9, orig feature: 9, [ left child: { prediction: 0, loss: 0.019780220463871956 }, right child: { prediction: 1, loss: 0.00659340713173151 }] }, right child: { feature: 0, orig feature: 0, [ left child: { prediction: 0, loss: 0.004395604599267244 }, right child: { prediction: 1, loss: 0.015384616330265999 }] }] }, Index(['concave points_mean <= 0.05127999931573868',
+       'concave points_mean <= 0.05591999925673008',
+       'radius_worst <= 16.795000076293945',
+       'perimeter_worst <= 102.4000015258789',
+       'perimeter_worst <= 112.79999923706055',
+       'perimeter_worst <= 114.45000076293945',
+       'concave points_worst <= 0.11099999770522118',
+       'concave points_worst <= 0.14169999957084656',
+       'concave points_worst <= 0.14545000344514847',
+       'area_worst <= 953.7000122070312'],
+      dtype='object'), 2

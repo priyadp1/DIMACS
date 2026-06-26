@@ -1,0 +1,1 @@
+<class 'split._tree.Tree'>: { feature: 0 [ left child: { feature: 1 [ left child: { prediction: 0, loss: 0.0 }, right child: { prediction: 1, loss: 0.22999998927116394 }] }, right child: { prediction: 0, loss: 0.47826087474823 }] }, Index(['num_medications <= 15.5 <= 0.5', 'num_lab_procedures <= 95.5 <= 0.5'], dtype='object'), 2

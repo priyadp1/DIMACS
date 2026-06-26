@@ -1,0 +1,69 @@
+Accuracy: 0.9824561403508771
+Confusion Matrix:
+[[72  0]
+ [ 2 40]]
+Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.97      1.00      0.99        72
+           1       1.00      0.95      0.98        42
+
+    accuracy                           0.98       114
+   macro avg       0.99      0.98      0.98       114
+weighted avg       0.98      0.98      0.98       114
+
+LightGBM completed in 0.03 seconds
+All Features:
+                                        Feature  Importance
+    concave points_mean lt= 0.05127999931573868          11
+           texture_worst lt= 29.795000076293945           8
+           texture_worst lt= 24.869999885559082           8
+               area_worst lt= 768.1000061035156           7
+               area_worst lt= 957.4500122070312           7
+                           area_mean lt= 696.25           7
+            radius_worst lt= 16.795000076293945           6
+            texture_worst lt= 33.35000038146973           6
+   concave points_worst lt= 0.14559999853372574           5
+               area_worst lt= 710.2000122070312           5
+      compactness_worst lt= 0.08237000182271004           5
+   concave points_worst lt= 0.14169999957084656           4
+         perimeter_worst lt= 114.45000076293945           4
+                       texture_worst lt= 20.875           3
+               area_worst lt= 724.0499877929688           3
+   concave points_worst lt= 0.11099999770522118           3
+        concavity_worst lt= 0.20795000344514847           3
+                     perimeter_worst lt= 104.25           3
+            texture_worst lt= 26.28499984741211           3
+            texture_mean lt= 15.425000190734863           2
+         perimeter_worst lt= 112.79999923706055           2
+             texture_mean lt= 19.54499912261963           2
+               area_worst lt= 929.8000183105469           1
+            texture_mean lt= 15.535000324249268           1
+   concave points_worst lt= 0.16029999405145645           1
+              texture_mean lt= 18.4950008392334           1
+               area_worst lt= 810.1000061035156           1
+    concave points_worst lt= 0.1359499990940094           1
+   concave points_worst lt= 0.18074999749660492           0
+        smoothness_worst lt= 0.0879799984395504           0
+fractal_dimension_worst lt= 0.06492000073194504           0
+        smoothness_worst lt= 0.1782499998807907           0
+         concavity_worst lt= 0.2248000055551529           0
+       smoothness_worst lt= 0.19054999947547913           0
+            texture_mean lt= 14.954999923706055           0
+          perimeter_worst lt= 108.3499984741211           0
+         perimeter_worst lt= 101.64999771118164           0
+             radius_worst lt= 16.80500030517578           0
+ fractal_dimension_se lt= 0.0013155000051483512           0
+           concavity_se lt= 0.13565000146627426           0
+         compactness_se lt= 0.01717500016093254           0
+                  area_se lt= 48.70000076293945           0
+                 area_se lt= 45.170000076293945           0
+                 area_se lt= 13.929999828338623           0
+            perimeter_se lt= 1.5684999823570251           0
+             texture_se lt= 0.47314999997615814           0
+               radius_se lt= 0.6255500018596649           0
+       compactness_mean lt= 0.06130499951541424           0
+        smoothness_mean lt= 0.10830000042915344           0
+            texture_mean lt= 20.299999237060547           0
+         smoothness_se lt= 0.003298999974504113           0
+Tree Size: 25 trees, 138 total leaves, 5.5 avg leaves/tree

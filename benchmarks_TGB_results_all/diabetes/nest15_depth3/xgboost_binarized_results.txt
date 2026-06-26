@@ -1,0 +1,51 @@
+Accuracy: 0.7333333333333333
+Confusion Matrix:
+[[14 11]
+ [ 5 30]]
+Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.74      0.56      0.64        25
+           1       0.73      0.86      0.79        35
+
+    accuracy                           0.73        60
+   macro avg       0.73      0.71      0.71        60
+weighted avg       0.73      0.73      0.73        60
+
+XGBoost completed in 0.04 seconds
+All Features:
+                         Feature  Importance
+        num_medications lt= 10.5    0.120328
+     num_lab_procedures lt= 55.5    0.074180
+        number_inpatient lt= 0.5    0.071931
+             age_{80-90) lt= 0.5    0.063132
+        time_in_hospital lt= 7.5    0.060865
+        num_medications lt= 15.5    0.052035
+              diag_3_250 lt= 0.5    0.051844
+              diag_3_599 lt= 0.5    0.049606
+     num_lab_procedures lt= 95.5    0.049103
+     admission_source_id lt= 4.5    0.046858
+              diag_1_428 lt= 0.5    0.045463
+           gender_Female lt= 0.5    0.045155
+     num_lab_procedures lt= 47.5    0.043376
+        num_medications lt= 17.5    0.042571
+        number_inpatient lt= 1.5    0.041763
+                  race_? lt= 0.5    0.040089
+     num_lab_procedures lt= 88.5    0.035644
+discharge_disposition_id lt= 1.5    0.028909
+     num_lab_procedures lt= 50.5    0.015189
+         num_medications lt= 9.5    0.012563
+discharge_disposition_id lt= 4.5    0.009398
+            glyburide_No lt= 0.5    0.000000
+          repaglinide_No lt= 0.5    0.000000
+            metformin_Up lt= 0.5    0.000000
+              diag_3_682 lt= 0.5    0.000000
+    race_AfricanAmerican lt= 0.5    0.000000
+              diag_2_781 lt= 0.5    0.000000
+            diag_2_250.6 lt= 0.5    0.000000
+           diag_2_250.12 lt= 0.5    0.000000
+              diag_1_574 lt= 0.5    0.000000
+              diag_1_515 lt= 0.5    0.000000
+             gender_Male lt= 0.5    0.000000
+              diag_1_493 lt= 0.5    0.000000
+Tree Size: 25 trees, 153 total leaves, 6.1 avg leaves/tree

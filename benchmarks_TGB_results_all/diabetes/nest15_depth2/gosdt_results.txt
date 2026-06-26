@@ -1,0 +1,18 @@
+Accuracy: 0.6833333333333333
+Training Accuracy: 0.7773109243697479
+Confusion Matrix:
+[[15 10]
+ [ 9 26]]
+Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.62      0.60      0.61        25
+           1       0.72      0.74      0.73        35
+
+    accuracy                           0.68        60
+   macro avg       0.67      0.67      0.67        60
+weighted avg       0.68      0.68      0.68        60
+
+GOSDT completed in 5.32 seconds
+Rashomon set size: 1
+Tree Size: 15 leaves, 29 total nodes

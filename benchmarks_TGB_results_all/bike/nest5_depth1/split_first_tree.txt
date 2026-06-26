@@ -1,0 +1,1 @@
+<class 'split._tree.Tree'>: { feature: 0 [ left child: { prediction: 1, loss: 0.31018099188804626 }, right child: { prediction: 0, loss: 0.028414756059646606 }] }, Index(['hr <= 6.5 <= 0.5'], dtype='object'), 2

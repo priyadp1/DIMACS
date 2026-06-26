@@ -1,0 +1,7 @@
+<class 'gosdt._tree.Tree'>: { feature: 2, orig feature: 2, [ left child: { prediction: 0, loss: 0.008199669420719147 }, right child: { feature: 5, orig feature: 5, [ left child: { feature: 13, orig feature: 13, [ left child: { feature: 0, orig feature: 0, [ left child: { prediction: 0, loss: 0.01776595041155815 }, right child: { prediction: 1, loss: 0.03265482187271118 }] }, right child: { feature: 0, orig feature: 0, [ left child: { feature: 10, orig feature: 10, [ left child: { prediction: 0, loss: 0.009422427043318748 }, right child: { prediction: 1, loss: 0.05185931175947189 }] }, right child: { prediction: 1, loss: 0.021578077226877213 }] }] }, right child: { prediction: 0, loss: 0.006545349955558777 }] }] }, Index(['yr <= 0.5', 'hr <= 5.5', 'hr <= 6.5', 'hr <= 7.5', 'hr <= 21.5',
+       'hr <= 22.5', 'temp <= 0.3100000023841858',
+       'temp <= 0.3500000089406967', 'temp <= 0.3700000047683716',
+       'temp <= 0.4699999988079071', 'atemp <= 0.3257499933242798',
+       'atemp <= 0.5985000133514404', 'atemp <= 0.6136500239372253',
+       'season <= 1.5'],
+      dtype='object'), 2

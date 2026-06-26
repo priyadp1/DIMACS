@@ -1,0 +1,279 @@
+0:[hr lt= 6.5<1] yes=1,no=2,missing=2
+	1:[temp lt= 0.45000000298023224<1] yes=3,no=4,missing=4
+		3:leaf=0.138732716
+		4:[atemp lt= 0.3257499933242798<1] yes=7,no=8,missing=8
+			7:leaf=0.0432584733
+			8:leaf=-0.0673152283
+	2:[temp lt= 0.45000000298023224<1] yes=5,no=6,missing=6
+		5:leaf=-0.180077031
+		6:leaf=-0.195765421
+
+0:[hr lt= 6.5<1] yes=1,no=2,missing=2
+	1:[temp lt= 0.45000000298023224<1] yes=3,no=4,missing=4
+		3:leaf=0.125454292
+		4:[atemp lt= 0.3257499933242798<1] yes=7,no=8,missing=8
+			7:leaf=0.0389569439
+			8:leaf=-0.060676422
+	2:[temp lt= 0.45000000298023224<1] yes=5,no=6,missing=6
+		5:leaf=-0.163533255
+		6:leaf=-0.178057715
+
+0:[hr lt= 6.5<1] yes=1,no=2,missing=2
+	1:[temp lt= 0.45000000298023224<1] yes=3,no=4,missing=4
+		3:leaf=0.114387266
+		4:[atemp lt= 0.3257499933242798<1] yes=7,no=8,missing=8
+			7:leaf=0.0351114236
+			8:leaf=-0.054797139
+	2:[temp lt= 0.45000000298023224<1] yes=5,no=6,missing=6
+		5:leaf=-0.150582924
+		6:leaf=-0.164632097
+
+0:[hr lt= 6.5<1] yes=1,no=2,missing=2
+	1:[temp lt= 0.45000000298023224<1] yes=3,no=4,missing=4
+		3:leaf=0.104921654
+		4:[atemp lt= 0.3257499933242798<1] yes=7,no=8,missing=8
+			7:leaf=0.0316634215
+			8:leaf=-0.0495542698
+	2:[temp lt= 0.45000000298023224<1] yes=5,no=6,missing=6
+		5:leaf=-0.140093237
+		6:leaf=-0.154105887
+
+0:[hr lt= 6.5<1] yes=1,no=2,missing=2
+	1:[temp lt= 0.45000000298023224<1] yes=3,no=4,missing=4
+		3:leaf=0.0966539681
+		4:[atemp lt= 0.3257499933242798<1] yes=7,no=8,missing=8
+			7:leaf=0.0285649784
+			8:leaf=-0.0448540337
+	2:[temp lt= 0.45000000298023224<1] yes=5,no=6,missing=6
+		5:leaf=-0.131354079
+		6:leaf=-0.14563407
+
+0:[hr lt= 6.5<1] yes=1,no=2,missing=2
+	1:[temp lt= 0.45000000298023224<1] yes=3,no=4,missing=4
+		3:leaf=0.0893078521
+		4:[atemp lt= 0.3257499933242798<1] yes=7,no=8,missing=8
+			7:leaf=0.025775969
+			8:leaf=-0.0406231694
+	2:[temp lt= 0.45000000298023224<1] yes=5,no=6,missing=6
+		5:leaf=-0.1238961
+		6:leaf=-0.138669014
+
+0:[hr lt= 6.5<1] yes=1,no=2,missing=2
+	1:[temp lt= 0.45000000298023224<1] yes=3,no=4,missing=4
+		3:leaf=0.0826890394
+		4:[atemp lt= 0.3257499933242798<1] yes=7,no=8,missing=8
+			7:leaf=0.0232623685
+			8:leaf=-0.0368033759
+	2:[temp lt= 0.45000000298023224<1] yes=5,no=6,missing=6
+		5:leaf=-0.11739587
+		6:leaf=-0.132838964
+
+0:[hr lt= 6.5<1] yes=1,no=2,missing=2
+	1:[temp lt= 0.45000000298023224<1] yes=3,no=4,missing=4
+		3:leaf=0.0766582265
+		4:[atemp lt= 0.3257499933242798<1] yes=7,no=8,missing=8
+			7:leaf=0.0209950432
+			8:leaf=-0.033347141
+	2:[temp lt= 0.45000000298023224<1] yes=5,no=6,missing=6
+		5:leaf=-0.111622848
+		6:leaf=-0.127881929
+
+0:[hr lt= 6.5<1] yes=1,no=2,missing=2
+	1:[temp lt= 0.45000000298023224<1] yes=3,no=4,missing=4
+		3:leaf=0.0711140633
+		4:[atemp lt= 0.3257499933242798<1] yes=7,no=8,missing=8
+			7:leaf=0.0189485047
+			8:leaf=-0.0302150548
+	2:[temp lt= 0.45000000298023224<1] yes=5,no=6,missing=6
+		5:leaf=-0.106408313
+		6:leaf=-0.123607278
+
+0:[hr lt= 6.5<1] yes=1,no=2,missing=2
+	1:[temp lt= 0.45000000298023224<1] yes=3,no=4,missing=4
+		3:leaf=0.0659819767
+		4:[atemp lt= 0.3257499933242798<1] yes=7,no=8,missing=8
+			7:leaf=0.0171005726
+			8:leaf=-0.0273737945
+	2:[temp lt= 0.45000000298023224<1] yes=5,no=6,missing=6
+		5:leaf=-0.101626053
+		6:leaf=-0.119872667
+
+0:[hr lt= 6.5<1] yes=1,no=2,missing=2
+	1:[temp lt= 0.45000000298023224<1] yes=3,no=4,missing=4
+		3:leaf=0.0612065755
+		4:[atemp lt= 0.3257499933242798<1] yes=7,no=8,missing=8
+			7:leaf=0.0154315457
+			8:leaf=-0.0247946661
+	2:[temp lt= 0.45000000298023224<1] yes=5,no=6,missing=6
+		5:leaf=-0.0971801728
+		6:leaf=-0.116569094
+
+0:[hr lt= 6.5<1] yes=1,no=2,missing=2
+	1:[temp lt= 0.45000000298023224<1] yes=3,no=4,missing=4
+		3:leaf=0.0567464344
+		4:[atemp lt= 0.3257499933242798<1] yes=7,no=8,missing=8
+			7:leaf=0.0139239719
+			8:leaf=-0.0224527773
+	2:[temp lt= 0.45000000298023224<1] yes=5,no=6,missing=6
+		5:leaf=-0.0929968879
+		6:leaf=-0.113611512
+
+0:[hr lt= 6.5<1] yes=1,no=2,missing=2
+	1:[temp lt= 0.45000000298023224<1] yes=3,no=4,missing=4
+		3:leaf=0.0525702536
+		4:[atemp lt= 0.3257499933242798<1] yes=7,no=8,missing=8
+			7:leaf=0.0125621399
+			8:leaf=-0.0203260984
+	2:[temp lt= 0.45000000298023224<1] yes=5,no=6,missing=6
+		5:leaf=-0.0890191719
+		6:leaf=-0.110932171
+
+0:[hr lt= 6.5<1] yes=1,no=2,missing=2
+	1:[temp lt= 0.45000000298023224<1] yes=3,no=4,missing=4
+		3:leaf=0.04865418
+		4:[atemp lt= 0.3257499933242798<1] yes=7,no=8,missing=8
+			7:leaf=0.0113320677
+			8:leaf=-0.0183950495
+	2:[temp lt= 0.45000000298023224<1] yes=5,no=6,missing=6
+		5:leaf=-0.0852028951
+		6:leaf=-0.108476222
+
+0:[hr lt= 6.5<1] yes=1,no=2,missing=2
+	1:[temp lt= 0.45000000298023224<1] yes=3,no=4,missing=4
+		3:leaf=0.0449796952
+		4:[atemp lt= 0.3257499933242798<1] yes=7,no=8,missing=8
+			7:leaf=0.0102210585
+			8:leaf=-0.0166419633
+	2:[temp lt= 0.45000000298023224<1] yes=5,no=6,missing=6
+		5:leaf=-0.0815141276
+		6:leaf=-0.106198564
+
+0:[hr lt= 6.5<1] yes=1,no=2,missing=2
+	1:[temp lt= 0.45000000298023224<1] yes=3,no=4,missing=4
+		3:leaf=0.0415321887
+		4:[atemp lt= 0.3257499933242798<1] yes=7,no=8,missing=8
+			7:leaf=0.00921776239
+			8:leaf=-0.0150509989
+	2:[temp lt= 0.45000000298023224<1] yes=5,no=6,missing=6
+		5:leaf=-0.0779271498
+		6:leaf=-0.104061559
+
+0:[hr lt= 6.5<1] yes=1,no=2,missing=2
+	1:[temp lt= 0.45000000298023224<1] yes=3,no=4,missing=4
+		3:leaf=0.0382995419
+		4:[atemp lt= 0.3257499933242798<1] yes=7,no=8,missing=8
+			7:leaf=0.00831185933
+			8:leaf=-0.0136076678
+	2:[temp lt= 0.45000000298023224<1] yes=5,no=6,missing=6
+		5:leaf=-0.0744230077
+		6:leaf=-0.102033414
+
+0:[hr lt= 6.5<1] yes=1,no=2,missing=2
+	1:[temp lt= 0.45000000298023224<1] yes=3,no=4,missing=4
+		3:[atemp lt= 0.3257499933242798<1] yes=7,no=8,missing=8
+			7:leaf=0.0351698622
+			8:leaf=0.0556996949
+		4:[atemp lt= 0.3257499933242798<1] yes=9,no=10,missing=10
+			9:leaf=0.00749404309
+			10:leaf=-0.012298801
+	2:[temp lt= 0.45000000298023224<1] yes=5,no=6,missing=6
+		5:leaf=-0.0709883571
+		6:leaf=-0.10008692
+
+0:[hr lt= 6.5<1] yes=1,no=2,missing=2
+	1:[temp lt= 0.45000000298023224<1] yes=3,no=4,missing=4
+		3:[atemp lt= 0.3257499933242798<1] yes=7,no=8,missing=8
+			7:leaf=0.0323437117
+			8:leaf=0.0531048849
+		4:[atemp lt= 0.3257499933242798<1] yes=9,no=10,missing=10
+			9:leaf=0.006755888
+			10:leaf=-0.0111124469
+	2:[temp lt= 0.45000000298023224<1] yes=5,no=6,missing=6
+		5:leaf=-0.0676145479
+		6:[atemp lt= 0.3257499933242798<1] yes=11,no=12,missing=12
+			11:leaf=-0.0883123428
+			12:leaf=-0.104136586
+
+0:[hr lt= 6.5<1] yes=1,no=2,missing=2
+	1:[temp lt= 0.45000000298023224<1] yes=3,no=4,missing=4
+		3:[atemp lt= 0.3257499933242798<1] yes=7,no=8,missing=8
+			7:leaf=0.0297046509
+			8:leaf=0.0506364107
+		4:[atemp lt= 0.3257499933242798<1] yes=9,no=10,missing=10
+			9:leaf=0.00608971389
+			10:leaf=-0.0100375898
+	2:[temp lt= 0.45000000298023224<1] yes=5,no=6,missing=6
+		5:leaf=-0.0642968193
+		6:[atemp lt= 0.3257499933242798<1] yes=11,no=12,missing=12
+			11:leaf=-0.0859225094
+			12:leaf=-0.102715366
+
+0:[hr lt= 6.5<1] yes=1,no=2,missing=2
+	1:[temp lt= 0.45000000298023224<1] yes=3,no=4,missing=4
+		3:[atemp lt= 0.3257499933242798<1] yes=7,no=8,missing=8
+			7:leaf=0.0272447895
+			8:leaf=0.0482853316
+		4:[atemp lt= 0.3257499933242798<1] yes=9,no=10,missing=10
+			9:leaf=0.00548864854
+			10:leaf=-0.00906416867
+	2:[temp lt= 0.45000000298023224<1] yes=5,no=6,missing=6
+		5:leaf=-0.061033722
+		6:[atemp lt= 0.3257499933242798<1] yes=11,no=12,missing=12
+			11:leaf=-0.0835243016
+			12:leaf=-0.101353996
+
+0:[hr lt= 6.5<1] yes=1,no=2,missing=2
+	1:[temp lt= 0.45000000298023224<1] yes=3,no=4,missing=4
+		3:[atemp lt= 0.3257499933242798<1] yes=7,no=8,missing=8
+			7:leaf=0.0249562841
+			8:leaf=0.0460440405
+		4:[atemp lt= 0.3257499933242798<1] yes=9,no=10,missing=10
+			9:leaf=0.00494639715
+			10:leaf=-0.00818301551
+	2:[temp lt= 0.45000000298023224<1] yes=5,no=6,missing=6
+		5:leaf=-0.057826411
+		6:[atemp lt= 0.3257499933242798<1] yes=11,no=12,missing=12
+			11:leaf=-0.0811079815
+			12:leaf=-0.100036301
+
+0:[hr lt= 6.5<1] yes=1,no=2,missing=2
+	1:[temp lt= 0.45000000298023224<1] yes=3,no=4,missing=4
+		3:[atemp lt= 0.3257499933242798<1] yes=7,no=8,missing=8
+			7:leaf=0.0228313301
+			8:leaf=0.0439059362
+		4:[atemp lt= 0.3257499933242798<1] yes=9,no=10,missing=10
+			9:leaf=0.00445730332
+			10:leaf=-0.00738573214
+	2:[temp lt= 0.45000000298023224<1] yes=5,no=6,missing=6
+		5:leaf=-0.0546781905
+		6:[atemp lt= 0.3257499933242798<1] yes=11,no=12,missing=12
+			11:leaf=-0.0786663219
+			12:leaf=-0.0987477973
+
+0:[hr lt= 6.5<1] yes=1,no=2,missing=2
+	1:[temp lt= 0.45000000298023224<1] yes=3,no=4,missing=4
+		3:[atemp lt= 0.3257499933242798<1] yes=7,no=8,missing=8
+			7:leaf=0.0208621752
+			8:leaf=0.0418652557
+		4:[atemp lt= 0.3257499933242798<1] yes=9,no=10,missing=10
+			9:leaf=0.00401621405
+			10:leaf=-0.00666459044
+	2:[temp lt= 0.45000000298023224<1] yes=5,no=6,missing=6
+		5:leaf=-0.0515939109
+		6:[atemp lt= 0.3257499933242798<1] yes=11,no=12,missing=12
+			11:leaf=-0.0761943385
+			12:leaf=-0.0974754691
+
+0:[hr lt= 6.5<1] yes=1,no=2,missing=2
+	1:[temp lt= 0.45000000298023224<1] yes=3,no=4,missing=4
+		3:[atemp lt= 0.3257499933242798<1] yes=7,no=8,missing=8
+			7:leaf=0.019040972
+			8:leaf=0.0399168842
+		4:[atemp lt= 0.3257499933242798<1] yes=9,no=10,missing=10
+			9:leaf=0.00361848786
+			10:leaf=-0.00601262553
+	2:[temp lt= 0.45000000298023224<1] yes=5,no=6,missing=6
+		5:leaf=-0.0485795997
+		6:[atemp lt= 0.3257499933242798<1] yes=11,no=12,missing=12
+			11:leaf=-0.0736892298
+			12:leaf=-0.0962074623

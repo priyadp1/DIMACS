@@ -1,0 +1,20 @@
+Accuracy: 0.770138089758343
+Confusion Matrix:
+[[1504  238]
+ [ 561 1173]]
+Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.73      0.86      0.79      1742
+           1       0.83      0.68      0.75      1734
+
+    accuracy                           0.77      3476
+   macro avg       0.78      0.77      0.77      3476
+weighted avg       0.78      0.77      0.77      3476
+
+CatBoost completed in 0.03 seconds
+Top 3 Features:
+                   Feature  Importance
+                 hr <= 6.5   80.717837
+temp <= 0.4699999988079071   19.282163
+Tree Size: 25 trees, 98 total leaves, 3.9 avg leaves/tree

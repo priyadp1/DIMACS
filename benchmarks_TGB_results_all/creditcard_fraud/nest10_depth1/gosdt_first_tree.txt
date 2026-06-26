@@ -1,0 +1,1 @@
+<class 'gosdt._tree.Tree'>: { prediction: 0, loss: 0.001729245763272047 }, Index(['V17 <= -2.70379102230072', 'V17 <= -2.722497582435608'], dtype='object'), 2

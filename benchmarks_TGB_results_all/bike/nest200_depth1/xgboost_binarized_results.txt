@@ -1,0 +1,58 @@
+Accuracy: 0.8777330264672036
+Confusion Matrix:
+[[1429  313]
+ [ 112 1622]]
+Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.93      0.82      0.87      1742
+           1       0.84      0.94      0.88      1734
+
+    accuracy                           0.88      3476
+   macro avg       0.88      0.88      0.88      3476
+weighted avg       0.88      0.88      0.88      3476
+
+XGBoost completed in 0.05 seconds
+All Features:
+                      Feature  Importance
+  temp lt= 0.3700000047683716    0.150004
+                   hr lt= 6.5    0.138348
+ atemp lt= 0.3409000039100647    0.106076
+atemp lt= 0.31059999763965607    0.055629
+  temp lt= 0.4699999988079071    0.052422
+  temp lt= 0.3100000023841858    0.042450
+  temp lt= 0.5099999904632568    0.040718
+   hum lt= 0.7950000166893005    0.039739
+               season lt= 1.5    0.037805
+ temp lt= 0.45000000298023224    0.033189
+ atemp lt= 0.5985000133514404    0.029384
+   hum lt= 0.7450000047683716    0.028474
+  temp lt= 0.4099999964237213    0.027536
+                  hr lt= 21.5    0.025804
+                   hr lt= 7.5    0.024871
+                  hr lt= 20.5    0.024013
+                  hr lt= 22.5    0.021360
+           weathersit lt= 2.5    0.020909
+   hum lt= 0.8149999976158142    0.020318
+               season lt= 2.5    0.015531
+ temp lt= 0.26999999582767487    0.011576
+                   yr lt= 0.5    0.011241
+                  hr lt= 19.5    0.009444
+                 mnth lt= 4.5    0.009270
+                  hr lt= 11.5    0.008574
+              weekday lt= 3.5    0.006241
+                   hr lt= 5.5    0.004066
+ atemp lt= 0.5227500200271606    0.003412
+           workingday lt= 0.5    0.001594
+                hum lt= 0.625    0.000000
+ atemp lt= 0.6136500239372253    0.000000
+   hum lt= 0.8349999785423279    0.000000
+  temp lt= 0.3500000089406967    0.000000
+ atemp lt= 0.3257499933242798    0.000000
+atemp lt= 0.28030000627040863    0.000000
+ temp lt= 0.39000000059604645    0.000000
+              weekday lt= 1.5    0.000000
+                  hr lt= 15.5    0.000000
+                 mnth lt= 1.5    0.000000
+           weathersit lt= 1.5    0.000000
+Tree Size: 25 trees, 196 total leaves, 7.8 avg leaves/tree

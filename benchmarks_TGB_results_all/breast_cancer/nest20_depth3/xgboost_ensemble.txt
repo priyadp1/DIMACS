@@ -1,0 +1,353 @@
+0:[perimeter_worst lt= 112.79999923706055<1] yes=1,no=2,missing=2
+	1:[texture_mean lt= 14.954999923706055<1] yes=3,no=4,missing=4
+		3:[area_worst lt= 810.1000061035156<1] yes=7,no=8,missing=8
+			7:leaf=0.254349679
+			8:leaf=0.00607645744
+		4:leaf=-0.0233258568
+	2:[concave points_worst lt= 0.16029999405145645<1] yes=5,no=6,missing=6
+		5:leaf=0.144852087
+		6:[area_mean lt= 696.25<1] yes=9,no=10,missing=10
+			9:leaf=0.0731327534
+			10:leaf=-0.145173535
+
+0:[perimeter_worst lt= 112.79999923706055<1] yes=1,no=2,missing=2
+	1:[concave points_mean lt= 0.05127999931573868<1] yes=3,no=4,missing=4
+		3:[perimeter_worst lt= 114.45000076293945<1] yes=7,no=8,missing=8
+			7:leaf=0.224327952
+			8:leaf=0.043553751
+		4:[texture_worst lt= 26.28499984741211<1] yes=9,no=10,missing=10
+			9:leaf=0.122975089
+			10:leaf=-0.0949031115
+	2:[concave points_worst lt= 0.1359499990940094<1] yes=5,no=6,missing=6
+		5:[texture_worst lt= 26.28499984741211<1] yes=11,no=12,missing=12
+			11:leaf=0.177482352
+			12:leaf=-0.0670050904
+		6:[area_worst lt= 768.1000061035156<1] yes=13,no=14,missing=14
+			13:leaf=-0.0775736645
+			14:leaf=-0.143515989
+
+0:[perimeter_worst lt= 112.79999923706055<1] yes=1,no=2,missing=2
+	1:[texture_mean lt= 14.954999923706055<1] yes=3,no=4,missing=4
+		3:[area_worst lt= 810.1000061035156<1] yes=7,no=8,missing=8
+			7:leaf=0.194561765
+			8:leaf=0.00145014573
+		4:leaf=-0.0242432412
+	2:[concave points_worst lt= 0.1359499990940094<1] yes=5,no=6,missing=6
+		5:[texture_worst lt= 26.28499984741211<1] yes=9,no=10,missing=10
+			9:leaf=0.159466892
+			10:leaf=-0.0626662597
+		6:[area_worst lt= 768.1000061035156<1] yes=11,no=12,missing=12
+			11:leaf=-0.0726865083
+			12:leaf=-0.13633123
+
+0:[concave points_mean lt= 0.05127999931573868<1] yes=1,no=2,missing=2
+	1:[concavity_worst lt= 0.2248000055551529<1] yes=3,no=4,missing=4
+		3:[area_worst lt= 710.2000122070312<1] yes=7,no=8,missing=8
+			7:leaf=0.178161666
+			8:leaf=0.00769016985
+		4:leaf=-0.0955283344
+	2:[radius_worst lt= 16.795000076293945<1] yes=5,no=6,missing=6
+		5:[texture_worst lt= 26.28499984741211<1] yes=9,no=10,missing=10
+			9:leaf=0.125530899
+			10:leaf=-0.0907316059
+		6:[concave points_worst lt= 0.14169999957084656<1] yes=11,no=12,missing=12
+			11:leaf=-0.0345007442
+			12:leaf=-0.129615024
+
+0:[concave points_mean lt= 0.05127999931573868<1] yes=1,no=2,missing=2
+	1:[concavity_worst lt= 0.2248000055551529<1] yes=3,no=4,missing=4
+		3:[area_worst lt= 710.2000122070312<1] yes=7,no=8,missing=8
+			7:leaf=0.163417056
+			8:leaf=0.00711594522
+		4:leaf=-0.0917202681
+	2:[radius_worst lt= 16.795000076293945<1] yes=5,no=6,missing=6
+		5:[texture_worst lt= 26.28499984741211<1] yes=9,no=10,missing=10
+			9:leaf=0.116518877
+			10:leaf=-0.0869140625
+		6:[concave points_worst lt= 0.14169999957084656<1] yes=11,no=12,missing=12
+			11:leaf=-0.0328708254
+			12:leaf=-0.124279141
+
+0:[concave points_mean lt= 0.05127999931573868<1] yes=1,no=2,missing=2
+	1:[concavity_worst lt= 0.2248000055551529<1] yes=3,no=4,missing=4
+		3:[texture_mean lt= 15.425000190734863<1] yes=7,no=8,missing=8
+			7:leaf=0.150502026
+			8:leaf=-0.00748719228
+		4:leaf=-0.0882207304
+	2:[radius_worst lt= 16.795000076293945<1] yes=5,no=6,missing=6
+		5:[texture_worst lt= 26.28499984741211<1] yes=9,no=10,missing=10
+			9:leaf=0.108722679
+			10:leaf=-0.0834094211
+		6:[concave points_worst lt= 0.14169999957084656<1] yes=11,no=12,missing=12
+			11:leaf=-0.031325426
+			12:leaf=-0.119612969
+
+0:[perimeter_worst lt= 112.79999923706055<1] yes=1,no=2,missing=2
+	1:[concave points_worst lt= 0.14169999957084656<1] yes=3,no=4,missing=4
+		3:leaf=0.149058893
+		4:[texture_worst lt= 20.875<1] yes=7,no=8,missing=8
+			7:leaf=0.0812105313
+			8:leaf=-0.0832972899
+	2:[concave points_worst lt= 0.16029999405145645<1] yes=5,no=6,missing=6
+		5:leaf=0.0906485617
+		6:[area_mean lt= 696.25<1] yes=9,no=10,missing=10
+			9:leaf=0.0676885769
+			10:leaf=-0.111331359
+
+0:[concave points_mean lt= 0.05127999931573868<1] yes=1,no=2,missing=2
+	1:[concavity_worst lt= 0.2248000055551529<1] yes=3,no=4,missing=4
+		3:[area_worst lt= 710.2000122070312<1] yes=7,no=8,missing=8
+			7:leaf=0.136556566
+			8:leaf=-0.00201896206
+		4:leaf=-0.081196934
+	2:[area_mean lt= 696.25<1] yes=5,no=6,missing=6
+		5:[texture_worst lt= 26.28499984741211<1] yes=9,no=10,missing=10
+			9:leaf=0.0877361745
+			10:leaf=-0.03552467
+		6:[texture_worst lt= 29.795000076293945<1] yes=11,no=12,missing=12
+			11:leaf=-0.0552789047
+			12:leaf=-0.118719876
+
+0:[radius_worst lt= 16.795000076293945<1] yes=1,no=2,missing=2
+	1:[texture_mean lt= 14.954999923706055<1] yes=3,no=4,missing=4
+		3:[concavity_worst lt= 0.2248000055551529<1] yes=7,no=8,missing=8
+			7:leaf=0.136434183
+			8:leaf=0.00954519492
+		4:leaf=-0.0336603634
+	2:[concave points_worst lt= 0.14169999957084656<1] yes=5,no=6,missing=6
+		5:[texture_worst lt= 26.28499984741211<1] yes=9,no=10,missing=10
+			9:leaf=0.121941268
+			10:leaf=-0.0568913706
+		6:[concave points_worst lt= 0.1359499990940094<1] yes=11,no=12,missing=12
+			11:leaf=-0.0202252865
+			12:leaf=-0.109658659
+
+0:[concave points_worst lt= 0.14559999853372574<1] yes=1,no=2,missing=2
+	1:[area_worst lt= 710.2000122070312<1] yes=3,no=4,missing=4
+		3:leaf=0.129339084
+		4:leaf=-0.00715602795
+	2:[area_mean lt= 696.25<1] yes=5,no=6,missing=6
+		5:[texture_worst lt= 20.875<1] yes=7,no=8,missing=8
+			7:leaf=0.100876153
+			8:leaf=-0.0818510503
+		6:[texture_worst lt= 29.795000076293945<1] yes=9,no=10,missing=10
+			9:leaf=-0.0349551402
+			10:leaf=-0.11213918
+
+0:[concave points_mean lt= 0.05127999931573868<1] yes=1,no=2,missing=2
+	1:[texture_mean lt= 15.425000190734863<1] yes=3,no=4,missing=4
+		3:[area_worst lt= 710.2000122070312<1] yes=7,no=8,missing=8
+			7:leaf=0.126904652
+			8:leaf=-0.00341351586
+		4:[perimeter_worst lt= 112.79999923706055<1] yes=9,no=10,missing=10
+			9:leaf=0.0291107576
+			10:leaf=-0.0894307494
+	2:[area_mean lt= 696.25<1] yes=5,no=6,missing=6
+		5:[texture_worst lt= 26.28499984741211<1] yes=11,no=12,missing=12
+			11:leaf=0.073541902
+			12:leaf=-0.0318677835
+		6:[texture_worst lt= 29.795000076293945<1] yes=13,no=14,missing=14
+			13:leaf=-0.0456006452
+			14:leaf=-0.110565558
+
+0:[concave points_worst lt= 0.14559999853372574<1] yes=1,no=2,missing=2
+	1:[area_worst lt= 710.2000122070312<1] yes=3,no=4,missing=4
+		3:leaf=0.120591402
+		4:leaf=-0.0046558897
+	2:[area_mean lt= 696.25<1] yes=5,no=6,missing=6
+		5:[texture_worst lt= 20.875<1] yes=7,no=8,missing=8
+			7:leaf=0.090988785
+			8:leaf=-0.0773297474
+		6:[texture_worst lt= 29.795000076293945<1] yes=9,no=10,missing=10
+			9:leaf=-0.0303988606
+			10:leaf=-0.107123874
+
+0:[concave points_mean lt= 0.05127999931573868<1] yes=1,no=2,missing=2
+	1:[texture_worst lt= 20.875<1] yes=3,no=4,missing=4
+		3:[area_worst lt= 710.2000122070312<1] yes=7,no=8,missing=8
+			7:leaf=0.121081173
+			8:leaf=-0.000258619839
+		4:[perimeter_worst lt= 114.45000076293945<1] yes=9,no=10,missing=10
+			9:leaf=0.0734007359
+			10:leaf=-0.0956227779
+	2:[radius_worst lt= 16.795000076293945<1] yes=5,no=6,missing=6
+		5:[texture_worst lt= 26.28499984741211<1] yes=11,no=12,missing=12
+			11:leaf=0.0781604499
+			12:leaf=-0.0734058768
+		6:[area_worst lt= 768.1000061035156<1] yes=13,no=14,missing=14
+			13:leaf=-0.0429941379
+			14:leaf=-0.100167207
+
+0:[concave points_worst lt= 0.14169999957084656<1] yes=1,no=2,missing=2
+	1:[area_worst lt= 768.1000061035156<1] yes=3,no=4,missing=4
+		3:leaf=0.113416485
+		4:[texture_worst lt= 26.28499984741211<1] yes=7,no=8,missing=8
+			7:leaf=0.0875802562
+			8:leaf=-0.0895857289
+	2:[area_mean lt= 696.25<1] yes=5,no=6,missing=6
+		5:[texture_worst lt= 24.78499984741211<1] yes=9,no=10,missing=10
+			9:leaf=0.077318728
+			10:leaf=-0.0333622135
+		6:[texture_worst lt= 29.795000076293945<1] yes=11,no=12,missing=12
+			11:leaf=-0.039099928
+			12:leaf=-0.102111451
+
+0:[concave points_mean lt= 0.05127999931573868<1] yes=1,no=2,missing=2
+	1:[texture_mean lt= 15.425000190734863<1] yes=3,no=4,missing=4
+		3:[area_worst lt= 710.2000122070312<1] yes=7,no=8,missing=8
+			7:leaf=0.114041664
+			8:leaf=-0.000415745482
+		4:[perimeter_worst lt= 112.79999923706055<1] yes=9,no=10,missing=10
+			9:leaf=0.0224203821
+			10:leaf=-0.0795709491
+	2:[radius_worst lt= 16.795000076293945<1] yes=5,no=6,missing=6
+		5:[texture_worst lt= 29.795000076293945<1] yes=11,no=12,missing=12
+			11:leaf=0.0917003974
+			12:leaf=-0.0517672561
+		6:[texture_worst lt= 29.795000076293945<1] yes=13,no=14,missing=14
+			13:leaf=-0.0499163084
+			14:leaf=-0.0981247053
+
+0:[concave points_worst lt= 0.14559999853372574<1] yes=1,no=2,missing=2
+	1:[area_worst lt= 768.1000061035156<1] yes=3,no=4,missing=4
+		3:leaf=0.110983729
+		4:[texture_worst lt= 24.78499984741211<1] yes=7,no=8,missing=8
+			7:leaf=0.0925704241
+			8:leaf=-0.0826689675
+	2:[area_mean lt= 696.25<1] yes=5,no=6,missing=6
+		5:[texture_worst lt= 20.875<1] yes=9,no=10,missing=10
+			9:leaf=0.0770729259
+			10:leaf=-0.0703092143
+		6:[texture_worst lt= 29.795000076293945<1] yes=11,no=12,missing=12
+			11:leaf=-0.0208061468
+			12:leaf=-0.0991500169
+
+0:[concave points_mean lt= 0.05127999931573868<1] yes=1,no=2,missing=2
+	1:[texture_worst lt= 20.875<1] yes=3,no=4,missing=4
+		3:[area_worst lt= 710.2000122070312<1] yes=7,no=8,missing=8
+			7:leaf=0.110943273
+			8:leaf=0.00102222606
+		4:[concave points_worst lt= 0.14559999853372574<1] yes=9,no=10,missing=10
+			9:leaf=0.0283183493
+			10:leaf=-0.0765934065
+	2:[area_mean lt= 696.25<1] yes=5,no=6,missing=6
+		5:[texture_worst lt= 29.795000076293945<1] yes=11,no=12,missing=12
+			11:leaf=0.0707116351
+			12:leaf=-0.0181535464
+		6:[area_worst lt= 768.1000061035156<1] yes=13,no=14,missing=14
+			13:leaf=-0.0119686993
+			14:leaf=-0.0958354473
+
+0:[concave points_worst lt= 0.14559999853372574<1] yes=1,no=2,missing=2
+	1:[area_worst lt= 768.1000061035156<1] yes=3,no=4,missing=4
+		3:leaf=0.106301002
+		4:[texture_worst lt= 24.78499984741211<1] yes=7,no=8,missing=8
+			7:leaf=0.0877532288
+			8:leaf=-0.0792565569
+	2:[area_mean lt= 696.25<1] yes=5,no=6,missing=6
+		5:[texture_worst lt= 20.875<1] yes=9,no=10,missing=10
+			9:leaf=0.0707247183
+			10:leaf=-0.0665026233
+		6:[texture_worst lt= 29.795000076293945<1] yes=11,no=12,missing=12
+			11:leaf=-0.014954011
+			12:leaf=-0.0955381021
+
+0:[concave points_mean lt= 0.05127999931573868<1] yes=1,no=2,missing=2
+	1:[perimeter_worst lt= 114.45000076293945<1] yes=3,no=4,missing=4
+		3:leaf=0.105669998
+		4:[texture_worst lt= 26.28499984741211<1] yes=7,no=8,missing=8
+			7:leaf=0.0891019627
+			8:leaf=-0.0607681684
+	2:[texture_worst lt= 29.795000076293945<1] yes=5,no=6,missing=6
+		5:[area_worst lt= 768.1000061035156<1] yes=9,no=10,missing=10
+			9:leaf=0.0876937062
+			10:leaf=-0.0669721738
+		6:[area_mean lt= 696.25<1] yes=11,no=12,missing=12
+			11:leaf=-0.0188241731
+			12:leaf=-0.0959055945
+
+0:[concave points_mean lt= 0.05127999931573868<1] yes=1,no=2,missing=2
+	1:[texture_worst lt= 20.875<1] yes=3,no=4,missing=4
+		3:[area_worst lt= 710.2000122070312<1] yes=7,no=8,missing=8
+			7:leaf=0.105732873
+			8:leaf=0.000686200045
+		4:[perimeter_worst lt= 112.79999923706055<1] yes=9,no=10,missing=10
+			9:leaf=0.0241223127
+			10:leaf=-0.0703290626
+	2:[texture_worst lt= 29.795000076293945<1] yes=5,no=6,missing=6
+		5:[area_worst lt= 768.1000061035156<1] yes=11,no=12,missing=12
+			11:leaf=0.0823172778
+			12:leaf=-0.0644060448
+		6:[area_mean lt= 696.25<1] yes=13,no=14,missing=14
+			13:leaf=-0.0176377129
+			14:leaf=-0.0941713527
+
+0:[concave points_worst lt= 0.14559999853372574<1] yes=1,no=2,missing=2
+	1:[area_worst lt= 768.1000061035156<1] yes=3,no=4,missing=4
+		3:leaf=0.100533843
+		4:[texture_worst lt= 24.78499984741211<1] yes=7,no=8,missing=8
+			7:leaf=0.0802491754
+			8:leaf=-0.0727987811
+	2:[area_se lt= 48.70000076293945<1] yes=5,no=6,missing=6
+		5:leaf=0.0725725815
+		6:[texture_worst lt= 29.795000076293945<1] yes=9,no=10,missing=10
+			9:leaf=0.00764575601
+			10:leaf=-0.0924563482
+
+0:[concave points_worst lt= 0.1359499990940094<1] yes=1,no=2,missing=2
+	1:[perimeter_worst lt= 114.45000076293945<1] yes=3,no=4,missing=4
+		3:leaf=0.100165665
+		4:[texture_worst lt= 26.28499984741211<1] yes=7,no=8,missing=8
+			7:leaf=0.0858554766
+			8:leaf=-0.0510526188
+	2:[area_mean lt= 696.25<1] yes=5,no=6,missing=6
+		5:[perimeter_worst lt= 114.45000076293945<1] yes=9,no=10,missing=10
+			9:leaf=0.00698053604
+			10:leaf=0.0630237684
+		6:[area_worst lt= 768.1000061035156<1] yes=11,no=12,missing=12
+			11:leaf=-0.0182361808
+			12:leaf=-0.0874824449
+
+0:[concave points_mean lt= 0.05127999931573868<1] yes=1,no=2,missing=2
+	1:[area_worst lt= 810.1000061035156<1] yes=3,no=4,missing=4
+		3:[texture_worst lt= 20.875<1] yes=7,no=8,missing=8
+			7:leaf=0.102506116
+			8:leaf=0.0113711506
+		4:[texture_worst lt= 26.28499984741211<1] yes=9,no=10,missing=10
+			9:leaf=0.0759666488
+			10:leaf=-0.0853668749
+	2:[texture_worst lt= 29.795000076293945<1] yes=5,no=6,missing=6
+		5:[area_worst lt= 768.1000061035156<1] yes=11,no=12,missing=12
+			11:leaf=0.0756500065
+			12:leaf=-0.0587719753
+		6:[area_mean lt= 696.25<1] yes=13,no=14,missing=14
+			13:leaf=-0.0147045078
+			14:leaf=-0.0894680843
+
+0:[concave points_worst lt= 0.14559999853372574<1] yes=1,no=2,missing=2
+	1:[area_worst lt= 768.1000061035156<1] yes=3,no=4,missing=4
+		3:leaf=0.0953024104
+		4:[texture_worst lt= 24.78499984741211<1] yes=7,no=8,missing=8
+			7:leaf=0.0719479695
+			8:leaf=-0.0658539757
+	2:[area_se lt= 48.70000076293945<1] yes=5,no=6,missing=6
+		5:leaf=0.0701399371
+		6:[texture_worst lt= 29.795000076293945<1] yes=9,no=10,missing=10
+			9:leaf=0.0102956295
+			10:leaf=-0.0875238627
+
+0:[concave points_mean lt= 0.05127999931573868<1] yes=1,no=2,missing=2
+	1:[area_worst lt= 810.1000061035156<1] yes=3,no=4,missing=4
+		3:[texture_worst lt= 20.875<1] yes=7,no=8,missing=8
+			7:leaf=0.100128531
+			8:leaf=0.00994191784
+		4:[texture_worst lt= 26.28499984741211<1] yes=9,no=10,missing=10
+			9:leaf=0.0710625499
+			10:leaf=-0.0812278911
+	2:[area_mean lt= 696.25<1] yes=5,no=6,missing=6
+		5:[perimeter_worst lt= 114.45000076293945<1] yes=11,no=12,missing=12
+			11:leaf=-0.0160062592
+			12:leaf=0.0561226606
+		6:[area_worst lt= 768.1000061035156<1] yes=13,no=14,missing=14
+			13:leaf=-0.0035797935
+			14:leaf=-0.0814384967

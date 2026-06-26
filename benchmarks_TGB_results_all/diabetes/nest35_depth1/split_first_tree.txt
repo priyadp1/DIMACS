@@ -1,0 +1,6 @@
+<class 'split._tree.Tree'>: { feature: 6 [ left child: { prediction: 0, loss: 0.1666666716337204 }, right child: { feature: 3 [ left child: { feature: 1 [ left child: { prediction: 0, loss: 0.0 }, right child: { prediction: 1, loss: 0.09051723778247833 }] }, right child: { feature: 0 [ left child: { prediction: 1, loss: 0.012931033968925476 }, right child: { feature: 4 [ left child: { prediction: 1, loss: 0.03017241321504116 }, right child: { prediction: 0, loss: 0.15948276221752167 }] }] }] }] }, Index(['time_in_hospital <= 7.5 <= 0.5', 'num_lab_procedures <= 95.5 <= 0.5',
+       'num_medications <= 10.5 <= 0.5', 'num_medications <= 15.5 <= 0.5',
+       'number_inpatient <= 0.5 <= 0.5', 'number_inpatient <= 1.5 <= 0.5',
+       'race_? <= 0.5 <= 0.5', 'diag_2_250.6 <= 0.5 <= 0.5',
+       'diag_3_250 <= 0.5 <= 0.5', 'metformin_Up <= 0.5 <= 0.5'],
+      dtype='object'), 2

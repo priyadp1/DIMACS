@@ -1,0 +1,21 @@
+Accuracy: 0.6333333333333333
+Confusion Matrix:
+[[ 9 16]
+ [ 6 29]]
+Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.60      0.36      0.45        25
+           1       0.64      0.83      0.72        35
+
+    accuracy                           0.63        60
+   macro avg       0.62      0.59      0.59        60
+weighted avg       0.63      0.63      0.61        60
+
+CatBoost completed in 0.02 seconds
+Top 3 Features:
+                Feature  Importance
+time_in_hospital <= 7.5   16.458766
+num_medications <= 15.5    8.189631
+      diag_3_250 <= 0.5    7.968695
+Tree Size: 25 trees, 194 total leaves, 7.8 avg leaves/tree

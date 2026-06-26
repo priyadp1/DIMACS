@@ -105,58 +105,64 @@ results_dir = BASEDIR / "TGB_Variables_Feature_Importance"
 os.makedirs(results_dir, exist_ok=True)
 
 DATASETS = {
-    "bike": {
-        "path": BASEDIR / "datasets" / "Mine" / "bike.csv",
-        "target_col": "cnt_binary",
-        "drop_cols": ["instant", "cnt_binary"],
+    # "bike": {
+    #     "path": BASEDIR / "datasets" / "Mine" / "bike.csv",
+    #     "target_col": "cnt_binary",
+    #     "drop_cols": ["instant", "cnt_binary"],
+    #     "label_map": None,
+    # },
+    # "spambase": {
+    #     "path": BASEDIR / "datasets" / "Mine" / "spambase.csv",
+    #     "target_col": "class",
+    #     "drop_cols": ["class"],
+    #     "label_map": None,
+    # },
+    # "compas": {
+    #     "path": BASEDIR / "datasets" / "Mine" / "compas.csv",
+    #     "target_col": "two_year_recid",
+    #     "drop_cols": ["two_year_recid"],
+    #     "label_map": None,
+    # },
+    # "breast_cancer": {
+    #     "path": BASEDIR / "datasets" / "Mine" / "breast_cancer_data.csv",
+    #     "target_col": "diagnosis",
+    #     "drop_cols": ["id", "diagnosis"],
+    #     "label_map": {"M": 1, "B": 0},
+    # },
+    # "diabetes": {
+    #     "path": BASEDIR / "datasets" / "Mine" / "diabetic_data.csv",
+    #     "target_col": 'readmitted',
+    #     "drop_cols": ['encounter_id', 'patient_nbr', 'weight', 'payer_code', 'medical_specialty', 'max_glu_serum', 'A1Cresult', 'readmitted'],
+    #     "label_map": {">30": 1, "<30": 1, "NO": 0},
+    # },
+    # "diabetes_smote": {
+    #     "path": BASEDIR / "datasets" / "Mine" / "diabetes_smote.csv",
+    #     "target_col": 'readmitted',
+    #     "drop_cols": ['readmitted'],
+    #     "label_map": None,
+    # },
+    # "creditcard_fraud": {
+    #     "path": BASEDIR / "datasets" / "Mine" / "creditcard_fraud_detection.csv",
+    #     "target_col": 'Class',
+    #     "drop_cols": ['Class'],
+    #     "label_map": None,
+    # },
+    # "creditcard_fraud_smote": {
+    #     "path": BASEDIR / "datasets" / "Mine" / "creditcard_fraud_detection_smote.csv",
+    #     "target_col": 'Class',
+    #     "drop_cols": ['Class'],
+    #     "label_map": None,
+    # },
+    "heloc_original": {
+        "path": BASEDIR / "datasets" / "Mine" / "heloc_original.csv",
+        "target_col": 'RiskPerformance',
+        "drop_cols": ['RiskPerformance'],
         "label_map": None,
-    },
-    "spambase": {
-        "path": BASEDIR / "datasets" / "Mine" / "spambase.csv",
-        "target_col": "class",
-        "drop_cols": ["class"],
-        "label_map": None,
-    },
-    "compas": {
-        "path": BASEDIR / "datasets" / "Mine" / "compas.csv",
-        "target_col": "two_year_recid",
-        "drop_cols": ["two_year_recid"],
-        "label_map": None,
-    },
-    "breast_cancer": {
-        "path": BASEDIR / "datasets" / "Mine" / "breast_cancer_data.csv",
-        "target_col": "diagnosis",
-        "drop_cols": ["id", "diagnosis"],
-        "label_map": {"M": 1, "B": 0},
-    },
-    "diabetes": {
-        "path": BASEDIR / "datasets" / "Mine" / "diabetic_data.csv",
-        "target_col": 'readmitted',
-        "drop_cols": ['encounter_id', 'patient_nbr', 'weight', 'payer_code', 'medical_specialty', 'max_glu_serum', 'A1Cresult', 'readmitted'],
-        "label_map": {">30": 1, "<30": 1, "NO": 0},
-    },
-    "diabetes_smote": {
-        "path": BASEDIR / "datasets" / "Mine" / "diabetes_smote.csv",
-        "target_col": 'readmitted',
-        "drop_cols": ['readmitted'],
-        "label_map": None,
-    },
-    "creditcard_fraud": {
-        "path": BASEDIR / "datasets" / "Mine" / "creditcard_fraud_detection.csv",
-        "target_col": 'Class',
-        "drop_cols": ['Class'],
-        "label_map": None,
-    },
-    "creditcard_fraud_smote": {
-        "path": BASEDIR / "datasets" / "Mine" / "creditcard_fraud_detection_smote.csv",
-        "target_col": 'Class',
-        "drop_cols": ['Class'],
-        "label_map": None,
-    },
+    }
 }
 
 # TGB Parameters to sweep
-GBDT_N_EST = [40, 100, 200]       # number of trees for guessing thresholds
+GBDT_N_EST = [5, 10, 15, 20, 25, 30, 35, 40, 100, 200]       # number of trees for guessing thresholds
 GBDT_MAX_DEPTH = [1, 2, 3]        # max depth for GBDT trees when guessing thresholds
 REGULARIZATION = [0.001, 0.01, 0.1]  # regularization for downstream GOSDT (saved in metadata)
 
@@ -174,6 +180,7 @@ for dataset_name, cfg in DATASETS.items():
 
     df = pd.read_csv(cfg["path"])
     df = df.dropna(axis=1, how="all")
+    df = df.dropna()
 
     if cfg["label_map"]:
         df[cfg["target_col"]] = df[cfg["target_col"]].map(cfg["label_map"])
@@ -194,6 +201,8 @@ for dataset_name, cfg in DATASETS.items():
         X_train, X_test = X_train.align(X_test, join="left", axis=1, fill_value=0)
 
     for n_est, max_depth in itertools.product(GBDT_N_EST, GBDT_MAX_DEPTH):
+        if dataset_name == "complete_1" and (n_est, max_depth) != (40, 1):
+            continue
         param_tag = f"nest{n_est}_depth{max_depth}"
 
         # Skip if this param combination already has results for this dataset

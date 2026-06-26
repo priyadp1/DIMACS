@@ -8,7 +8,7 @@ current = Path(__file__).resolve()
 while current.name != "DIMACS":
     current = current.parent
 BASEDIR = current
-DATAPATH = BASEDIR / "datasets" / "Mine" / "creditcard_fraud_detection.csv"
+DATAPATH = BASEDIR / "datasets" / "Mine" / "Complete 1.csv"
 
 df = pd.read_csv(DATAPATH)
 print("Original class distribution:\n", df['Class'].value_counts())
@@ -36,13 +36,13 @@ print("\nAfter SMOTE, class distribution in training set:\n", pd.Series(y_train_
 # Save resampled training set
 df_resampled = pd.DataFrame(X_train_resampled, columns=X_train.columns)
 df_resampled['Class'] = y_train_resampled
-OUTPATH = BASEDIR / "datasets" / "Mine" / "creditcard_fraud_detection_smote.csv"
+OUTPATH = BASEDIR / "datasets" / "Mine" / "Complete 1_smote.csv"
 df_resampled.to_csv(OUTPATH, index=False)
 print(f"\nSaved SMOTE-resampled training data to {OUTPATH}")
 
 # Save scaled test set separately for consistent evaluation
 df_test = pd.DataFrame(X_test, columns=X_test.columns)
 df_test['Class'] = y_test.values
-TESTPATH = BASEDIR / "datasets" / "Mine" / "creditcard_fraud_detection_test.csv"
+TESTPATH = BASEDIR / "datasets" / "Mine" / "Complete 1_test.csv"
 df_test.to_csv(TESTPATH, index=False)
 print(f"Saved scaled test data to {TESTPATH}")

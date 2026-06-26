@@ -39,20 +39,22 @@ while current.name != "DIMACS":
     current = current.parent
 BASEDIR = current
 
-TGB_DIR     = BASEDIR / "TGB_Variables"
-RESULTS_DIR = BASEDIR / "benchmarks_TGB_results"
+TGB_DIR     = BASEDIR / "TGB_Variables_Feature_Importance"
+RESULTS_DIR = BASEDIR / "benchmarks_TGB_results_all"
 RESULTS_DIR.mkdir(exist_ok=True)
 print(f"Base dir : {BASEDIR}")
 print(f"TGB dir  : {TGB_DIR}")
 print(f"Results  : {RESULTS_DIR}")
 
 DATASETS = [
-    "bike",
-    "breast_cancer",
-    "spambase",
-    "compas",
+    #"bike",
+    #"breast_cancer",
+    #"spambase",
+    #"compas",
     #"creditcard_fraud_smote",
+    #"diabetes",
     #"creditcard_fraud",
+    "heloc_original"
 ]  # Add more dataset names as needed, matching subdirectories in TGB_Variables
 
 # ── GOSDT parameters (match run_gosdt.py) ────────────────────────────────────
@@ -144,6 +146,7 @@ for dataset_name in DATASETS:
         "catboost_ensemble.json",
         "xgboost_ensemble.txt",
         "lightgbm_ensemble.txt",
+        "treefarms_results.txt",
     ]
 
         if all((out_dir / f).exists() for f in _expected_results):
@@ -193,6 +196,10 @@ for dataset_name in DATASETS:
                 f.write(f"\nConfusion Matrix:\n{confusion_matrix(y_test, y_pred_split)}")
                 f.write(f"\nClassification Report:\n{classification_report(y_test, y_pred_split)}")
                 f.write(f"\nSPLIT completed in {split_duration:.2f} seconds")
+                try:
+                    f.write(f"\nRashomon set size: {len(model.clf.trees_)}")
+                except Exception as e:
+                    f.write(f"\nRashomon set size: unavailable ({e})")
                 if "error" not in split_tree_size:
                     f.write(f"\nTree Size: {split_tree_size['n_leaves']} leaves, {split_tree_size['n_nodes']} total nodes")
                 else:
@@ -263,7 +270,7 @@ for dataset_name in DATASETS:
                 f.write(f"\nConfusion Matrix:\n{confusion_matrix(y_test, y_pred_xgb)}")
                 f.write(f"\nClassification Report:\n{classification_report(y_test, y_pred_xgb)}")
                 f.write(f"\nXGBoost completed in {xgb_duration:.2f} seconds")
-                f.write(f"\nTop 3 Features:\n{importance_df.head(3).to_string(index=False)}")
+                f.write(f"\nAll Features:\n{importance_df.to_string(index=False)}")
                 if "error" not in xgb_tree_size:
                     f.write(f"\nTree Size: {xgb_tree_size['n_trees']} trees, "
                             f"{xgb_tree_size['total_leaves']} total leaves, "
@@ -344,7 +351,7 @@ for dataset_name in DATASETS:
                 f.write(f"\nConfusion Matrix:\n{confusion_matrix(y_test, y_pred_lgb)}")
                 f.write(f"\nClassification Report:\n{classification_report(y_test, y_pred_lgb)}")
                 f.write(f"\nLightGBM completed in {lgb_duration:.2f} seconds")
-                f.write(f"\nTop 3 Features:\n{lgb_importance_df.head(3).to_string(index=False)}")
+                f.write(f"\nAll Features:\n{lgb_importance_df.to_string(index=False)}")
                 if "error" not in lgb_tree_size:
                     f.write(f"\nTree Size: {lgb_tree_size['n_trees']} trees, "
                             f"{lgb_tree_size['total_leaves']} total leaves, "
@@ -419,132 +426,145 @@ for dataset_name in DATASETS:
 
             print(f"  [CatBoost] Accuracy: {accuracy_score(y_test, y_pred_cb):.4f} | Time: {cb_duration:.2f}s")
 
-        # ── LicketySPLIT ──────────────────────────────────────────────────────
-        if (out_dir / "licketysplit_results.txt").exists():
-            print(f"  [SKIP] LicketySPLIT already exists for {dataset_name}/{param_tag}")
+        # ── TREEFARMS (subprocess to avoid potential library conflicts) ───────
+        if (out_dir / "treefarms_results.txt").exists():
+            print(f"  [SKIP] TREEFARMS already exists for {dataset_name}/{param_tag}")
         else:
-            print(f"\n  [LicketySPLIT] Training on {dataset_name}/{param_tag}...")
-            ls_model = LicketySPLIT(
-                reg=LS_REG,
-                full_depth_budget=LS_DEPTH,
-                verbose=False,
+            print(f"\n  [TREEFARMS] Training on {dataset_name}/{param_tag}...")
+            _treefarms_script = Path(__file__).parent / "run_treefarms.py"
+            _result = subprocess.run(
+                [sys.executable, str(_treefarms_script), dataset_name, param_tag],
+                capture_output=False,
             )
-            start = time.perf_counter()
-            ls_model.fit(X_train, y_train)
-            ls_duration = time.perf_counter() - start
-            y_pred_ls = ls_model.predict(X_test)
+            if _result.returncode != 0:
+                print(f"  [TREEFARMS] ERROR: subprocess exited with code {_result.returncode}")
 
-            try:
-                _ls_root = ls_model.tree if ls_model.tree is not None else ls_model.clf.trees_[0].tree
-                ls_n_nodes, ls_n_leaves = count_gosdt_tree_nodes(_ls_root)
-                ls_tree_size = {"n_leaves": ls_n_leaves, "n_nodes": ls_n_nodes}
-            except Exception as e:
-                ls_tree_size = {"error": str(e)}
-
-            with open(out_dir / "licketysplit_results.txt", "w") as f:
-                f.write(f"Accuracy: {accuracy_score(y_test, y_pred_ls)}")
-                f.write(f"\nConfusion Matrix:\n{confusion_matrix(y_test, y_pred_ls)}")
-                f.write(f"\nClassification Report:\n{classification_report(y_test, y_pred_ls)}")
-                f.write(f"\nLicketySPLIT completed in {ls_duration:.2f} seconds")
-                if "error" not in ls_tree_size:
-                    f.write(f"\nTree Size: {ls_tree_size['n_leaves']} leaves, {ls_tree_size['n_nodes']} total nodes")
-                else:
-                    f.write(f"\nTree Size: Error - {ls_tree_size['error']}")
-
-            with open(out_dir / "licketysplit_first_tree.txt", "w", encoding="utf-8") as fh:
-                try:
-                    fh.write(str(ls_model.clf.trees_[0]))
-                except Exception as e:
-                    fh.write(f"Tree unavailable: {e}\n")
-
-            print(f"  [LicketySPLIT] Accuracy: {accuracy_score(y_test, y_pred_ls):.4f} | Time: {ls_duration:.2f}s")
+        # ── LicketySPLIT ──────────────────────────────────────────────────────
+        # if (out_dir / "licketysplit_results.txt").exists():
+        #     print(f"  [SKIP] LicketySPLIT already exists for {dataset_name}/{param_tag}")
+        # else:
+        #     print(f"\n  [LicketySPLIT] Training on {dataset_name}/{param_tag}...")
+        #     ls_model = LicketySPLIT(
+        #         reg=LS_REG,
+        #         full_depth_budget=LS_DEPTH,
+        #         verbose=False,
+        #     )
+        #     start = time.perf_counter()
+        #     ls_model.fit(X_train, y_train)
+        #     ls_duration = time.perf_counter() - start
+        #     y_pred_ls = ls_model.predict(X_test)
+        #
+        #     try:
+        #         _ls_root = ls_model.tree if ls_model.tree is not None else ls_model.clf.trees_[0].tree
+        #         ls_n_nodes, ls_n_leaves = count_gosdt_tree_nodes(_ls_root)
+        #         ls_tree_size = {"n_leaves": ls_n_leaves, "n_nodes": ls_n_nodes}
+        #     except Exception as e:
+        #         ls_tree_size = {"error": str(e)}
+        #
+        #     with open(out_dir / "licketysplit_results.txt", "w") as f:
+        #         f.write(f"Accuracy: {accuracy_score(y_test, y_pred_ls)}")
+        #         f.write(f"\nConfusion Matrix:\n{confusion_matrix(y_test, y_pred_ls)}")
+        #         f.write(f"\nClassification Report:\n{classification_report(y_test, y_pred_ls)}")
+        #         f.write(f"\nLicketySPLIT completed in {ls_duration:.2f} seconds")
+        #         if "error" not in ls_tree_size:
+        #             f.write(f"\nTree Size: {ls_tree_size['n_leaves']} leaves, {ls_tree_size['n_nodes']} total nodes")
+        #         else:
+        #             f.write(f"\nTree Size: Error - {ls_tree_size['error']}")
+        #
+        #     with open(out_dir / "licketysplit_first_tree.txt", "w", encoding="utf-8") as fh:
+        #         try:
+        #             fh.write(str(ls_model.clf.trees_[0]))
+        #         except Exception as e:
+        #             fh.write(f"Tree unavailable: {e}\n")
+        #
+        #     print(f"  [LicketySPLIT] Accuracy: {accuracy_score(y_test, y_pred_ls):.4f} | Time: {ls_duration:.2f}s")
 
         # ── LicketyRESPLIT (binarized) ────────────────────────────────────────
-        if (out_dir / "licketyresplit_binarized_results.txt").exists():
-            print(f"  [SKIP] LicketyRESPLIT already exists for {dataset_name}/{param_tag}")
-        else:
-            print(f"\n  [LicketyRESPLIT] Training on {dataset_name}/{param_tag}...")
-            lr_model = LicketyRESPLIT()
-            start = time.perf_counter()
-            lr_model.fit(
-                X_train,
-                y_train,
-                lambda_reg=LR_LAMBDA,
-                depth_budget=LR_DEPTH,
-                rashomon_mult=LR_RASHOMON,
-                multiplicative_slack=0,
-                key_mode="hash",
-                trie_cache_enabled=False,
-                lookahead_k=1,
-            )
-            lr_duration = time.perf_counter() - start
-
-            test_preds_lr = lr_model.get_predictions(0, X_test)
-
-            n_trees = lr_model.count_trees()
-            votes = np.zeros(X_test.shape[0], dtype=np.int32)
-            for idx in range(n_trees):
-                votes += lr_model.get_predictions(idx, X_test)
-            ensemble_preds = (votes >= (n_trees / 2)).astype(int)
-            ensemble_acc = accuracy_score(y_test, ensemble_preds)
-
-            try:
-                _paths, _ = lr_model.get_tree_paths(0)
-                lr_n_leaves = len(_paths)
-                lr_n_nodes  = 2 * lr_n_leaves - 1
-                lr_tree_size = {"n_leaves": lr_n_leaves, "n_nodes": lr_n_nodes, "n_trees_in_set": n_trees}
-            except Exception as e:
-                lr_tree_size = {"error": str(e)}
-
-            with open(out_dir / "licketyresplit_binarized_tree_size.json", "w") as f:
-                json.dump(lr_tree_size, f)
-
-            with open(out_dir / "licketyresplit_binarized_results.txt", "w") as f:
-                f.write(f"Accuracy: {accuracy_score(y_test, test_preds_lr)}")
-                f.write(f"\nConfusion Matrix:\n{confusion_matrix(y_test, test_preds_lr)}")
-                f.write(f"\nClassification Report:\n{classification_report(y_test, test_preds_lr)}")
-                f.write(f"\nEnsemble Accuracy: {ensemble_acc}")
-                f.write(f"\nLicketyRESPLIT completed in {lr_duration:.2f} seconds with {n_trees} trees")
-                if "error" not in lr_tree_size:
-                    f.write(f"\nTree Size (tree 0): {lr_tree_size['n_leaves']} leaves, {lr_tree_size['n_nodes']} total nodes")
-                else:
-                    f.write(f"\nTree Size: Error - {lr_tree_size['error']}")
-
-            with open(out_dir / "licketyresplit_binarized_first_tree.txt", "w", encoding="utf-8") as fh:
-                try:
-                    paths, labels = lr_model.get_tree_paths(0)
-                    cols = list(X_train.columns)
-
-                    def _insert(node, path, label):
-                        if not path:
-                            node["prediction"] = int(label)
-                            return
-                        idx = path[0]
-                        feat = abs(idx) - 1
-                        node.setdefault("feature", feat)
-                        child = "right" if idx > 0 else "left"
-                        node.setdefault(child, {})
-                        _insert(node[child], path[1:], label)
-
-                    def _fmt(node):
-                        if "prediction" in node:
-                            return f"{{ prediction: {node['prediction']}, loss: 0.0 }}"
-                        feat = node["feature"]
-                        left  = _fmt(node.get("left",  {"prediction": 0}))
-                        right = _fmt(node.get("right", {"prediction": 1}))
-                        return (f"{{ feature: {feat}, orig feature: {feat}, "
-                                f"[ left child: {left}, right child: {right}] }}")
-
-                    root = {}
-                    for path, label in zip(paths, labels):
-                        _insert(root, list(path), label)
-
-                    fh.write(f"{_fmt(root)}, Index({cols}, dtype='object')\n")
-                except Exception as e:
-                    fh.write(f"Tree unavailable: {e}\n")
-
-            print(f"  [LicketyRESPLIT] Accuracy: {accuracy_score(y_test, test_preds_lr):.4f} | "
-                  f"Ensemble: {ensemble_acc:.4f} | Trees: {n_trees} | Time: {lr_duration:.2f}s")
+        # if (out_dir / "licketyresplit_binarized_results.txt").exists():
+        #     print(f"  [SKIP] LicketyRESPLIT already exists for {dataset_name}/{param_tag}")
+        # else:
+        #     print(f"\n  [LicketyRESPLIT] Training on {dataset_name}/{param_tag}...")
+        #     lr_model = LicketyRESPLIT()
+        #     start = time.perf_counter()
+        #     lr_model.fit(
+        #         X_train,
+        #         y_train,
+        #         lambda_reg=LR_LAMBDA,
+        #         depth_budget=LR_DEPTH,
+        #         rashomon_mult=LR_RASHOMON,
+        #         multiplicative_slack=0,
+        #         key_mode="hash",
+        #         trie_cache_enabled=False,
+        #         lookahead_k=1,
+        #     )
+        #     lr_duration = time.perf_counter() - start
+        #
+        #     test_preds_lr = lr_model.get_predictions(0, X_test)
+        #
+        #     n_trees = lr_model.count_trees()
+        #     votes = np.zeros(X_test.shape[0], dtype=np.int32)
+        #     for idx in range(n_trees):
+        #         votes += lr_model.get_predictions(idx, X_test)
+        #     ensemble_preds = (votes >= (n_trees / 2)).astype(int)
+        #     ensemble_acc = accuracy_score(y_test, ensemble_preds)
+        #
+        #     try:
+        #         _paths, _ = lr_model.get_tree_paths(0)
+        #         lr_n_leaves = len(_paths)
+        #         lr_n_nodes  = 2 * lr_n_leaves - 1
+        #         lr_tree_size = {"n_leaves": lr_n_leaves, "n_nodes": lr_n_nodes, "n_trees_in_set": n_trees}
+        #     except Exception as e:
+        #         lr_tree_size = {"error": str(e)}
+        #
+        #     with open(out_dir / "licketyresplit_binarized_tree_size.json", "w") as f:
+        #         json.dump(lr_tree_size, f)
+        #
+        #     with open(out_dir / "licketyresplit_binarized_results.txt", "w") as f:
+        #         f.write(f"Accuracy: {accuracy_score(y_test, test_preds_lr)}")
+        #         f.write(f"\nConfusion Matrix:\n{confusion_matrix(y_test, test_preds_lr)}")
+        #         f.write(f"\nClassification Report:\n{classification_report(y_test, test_preds_lr)}")
+        #         f.write(f"\nEnsemble Accuracy: {ensemble_acc}")
+        #         f.write(f"\nLicketyRESPLIT completed in {lr_duration:.2f} seconds with {n_trees} trees")
+        #         if "error" not in lr_tree_size:
+        #             f.write(f"\nTree Size (tree 0): {lr_tree_size['n_leaves']} leaves, {lr_tree_size['n_nodes']} total nodes")
+        #         else:
+        #             f.write(f"\nTree Size: Error - {lr_tree_size['error']}")
+        #
+        #     with open(out_dir / "licketyresplit_binarized_first_tree.txt", "w", encoding="utf-8") as fh:
+        #         try:
+        #             paths, labels = lr_model.get_tree_paths(0)
+        #             cols = list(X_train.columns)
+        #
+        #             def _insert(node, path, label):
+        #                 if not path:
+        #                     node["prediction"] = int(label)
+        #                     return
+        #                 idx = path[0]
+        #                 feat = abs(idx) - 1
+        #                 node.setdefault("feature", feat)
+        #                 child = "right" if idx > 0 else "left"
+        #                 node.setdefault(child, {})
+        #                 _insert(node[child], path[1:], label)
+        #
+        #             def _fmt(node):
+        #                 if "prediction" in node:
+        #                     return f"{{ prediction: {node['prediction']}, loss: 0.0 }}"
+        #                 feat = node["feature"]
+        #                 left  = _fmt(node.get("left",  {"prediction": 0}))
+        #                 right = _fmt(node.get("right", {"prediction": 1}))
+        #                 return (f"{{ feature: {feat}, orig feature: {feat}, "
+        #                         f"[ left child: {left}, right child: {right}] }}")
+        #
+        #             root = {}
+        #             for path, label in zip(paths, labels):
+        #                 _insert(root, list(path), label)
+        #
+        #             fh.write(f"{_fmt(root)}, Index({cols}, dtype='object')\n")
+        #         except Exception as e:
+        #             fh.write(f"Tree unavailable: {e}\n")
+        #
+        #     print(f"  [LicketyRESPLIT] Accuracy: {accuracy_score(y_test, test_preds_lr):.4f} | "
+        #           f"Ensemble: {ensemble_acc:.4f} | Trees: {n_trees} | Time: {lr_duration:.2f}s")
 
 
 

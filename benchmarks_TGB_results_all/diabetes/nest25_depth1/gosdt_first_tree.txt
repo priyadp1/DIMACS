@@ -1,0 +1,4 @@
+<class 'gosdt._tree.Tree'>: { feature: 1, orig feature: 1, [ left child: { feature: 0, orig feature: 0, [ left child: { feature: 2, orig feature: 2, [ left child: { feature: 4, orig feature: 4, [ left child: { prediction: 0, loss: 0.08403361588716507 }, right child: { prediction: 1, loss: 0.004201680887490511 }] }, right child: { prediction: 1, loss: 0.18487395346164703 }] }, right child: { prediction: 1, loss: 0.03781512752175331 }] }, right child: { prediction: 0, loss: 0.0 }] }, Index(['time_in_hospital <= 7.5', 'num_lab_procedures <= 95.5',
+       'num_medications <= 10.5', 'num_medications <= 15.5',
+       'number_inpatient <= 1.5'],
+      dtype='object'), 2

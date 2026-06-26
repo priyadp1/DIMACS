@@ -1,0 +1,99 @@
+Accuracy: 0.75
+Confusion Matrix:
+[[14 11]
+ [ 4 31]]
+Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.78      0.56      0.65        25
+           1       0.74      0.89      0.81        35
+
+    accuracy                           0.75        60
+   macro avg       0.76      0.72      0.73        60
+weighted avg       0.75      0.75      0.74        60
+
+XGBoost completed in 0.04 seconds
+All Features:
+                         Feature  Importance
+        num_medications lt= 10.5    0.081992
+        number_inpatient lt= 0.5    0.061443
+        num_medications lt= 15.5    0.055777
+     num_lab_procedures lt= 55.5    0.051910
+        time_in_hospital lt= 7.5    0.043748
+     admission_source_id lt= 4.5    0.039199
+          insulin_Steady lt= 0.5    0.038252
+              diag_3_599 lt= 0.5    0.037874
+           gender_Female lt= 0.5    0.036750
+             age_{80-90) lt= 0.5    0.036615
+     num_lab_procedures lt= 47.5    0.036600
+              diag_1_428 lt= 0.5    0.036105
+        num_medications lt= 17.5    0.035719
+             age_{30-40) lt= 0.5    0.034490
+discharge_disposition_id lt= 3.5    0.033940
+              diag_3_250 lt= 0.5    0.033853
+        number_inpatient lt= 1.0    0.033277
+     num_lab_procedures lt= 85.0    0.032455
+     num_lab_procedures lt= 95.5    0.031327
+                  race_? lt= 0.5    0.028229
+discharge_disposition_id lt= 1.5    0.025633
+     num_lab_procedures lt= 87.5    0.024922
+         num_medications lt= 6.5    0.024630
+     pioglitazone_Steady lt= 0.5    0.021192
+             age_{70-80) lt= 0.5    0.018069
+        number_diagnoses lt= 5.5    0.016990
+        number_diagnoses lt= 7.0    0.011944
+          race_Caucasian lt= 0.5    0.011644
+     num_lab_procedures lt= 74.0    0.011320
+          diabetesMed_No lt= 0.5    0.010905
+         num_medications lt= 9.5    0.003197
+              diag_3_424 lt= 0.5    0.000000
+              diag_3_458 lt= 0.5    0.000000
+              diag_3_446 lt= 0.5    0.000000
+              diag_3_427 lt= 0.5    0.000000
+        number_inpatient lt= 1.5    0.000000
+              diag_3_288 lt= 0.5    0.000000
+              diag_3_276 lt= 0.5    0.000000
+           diag_3_250.43 lt= 0.5    0.000000
+           diag_3_250.03 lt= 0.5    0.000000
+            diag_3_250.6 lt= 0.5    0.000000
+              diag_3_V58 lt= 0.5    0.000000
+              diag_3_682 lt= 0.5    0.000000
+             diag_3_E880 lt= 0.5    0.000000
+              diag_2_781 lt= 0.5    0.000000
+            metformin_Up lt= 0.5    0.000000
+          repaglinide_No lt= 0.5    0.000000
+            glipizide_Up lt= 0.5    0.000000
+            glyburide_No lt= 0.5    0.000000
+              insulin_No lt= 0.5    0.000000
+     num_lab_procedures lt= 50.5    0.000000
+               change_Ch lt= 0.5    0.000000
+         diabetesMed_Yes lt= 0.5    0.000000
+              diag_2_792 lt= 0.5    0.000000
+              diag_2_348 lt= 0.5    0.000000
+              diag_2_569 lt= 0.5    0.000000
+              diag_2_401 lt= 0.5    0.000000
+        number_emergency lt= 0.5    0.000000
+    race_AfricanAmerican lt= 0.5    0.000000
+           race_Hispanic lt= 0.5    0.000000
+        num_medications lt= 25.5    0.000000
+             gender_Male lt= 0.5    0.000000
+        num_medications lt= 18.5    0.000000
+             age_{40-50) lt= 0.5    0.000000
+             age_{50-60) lt= 0.5    0.000000
+           diag_1_250.03 lt= 0.5    0.000000
+           diag_1_250.12 lt= 0.5    0.000000
+              diag_1_276 lt= 0.5    0.000000
+              diag_1_296 lt= 0.5    0.000000
+              diag_1_340 lt= 0.5    0.000000
+              diag_1_453 lt= 0.5    0.000000
+              diag_1_491 lt= 0.5    0.000000
+              diag_1_493 lt= 0.5    0.000000
+              diag_1_515 lt= 0.5    0.000000
+              diag_1_574 lt= 0.5    0.000000
+              diag_1_807 lt= 0.5    0.000000
+              diag_2_250 lt= 0.5    0.000000
+           diag_2_250.12 lt= 0.5    0.000000
+            diag_2_250.6 lt= 0.5    0.000000
+              diag_2_278 lt= 0.5    0.000000
+              race_Asian lt= 0.5    0.000000
+Tree Size: 25 trees, 165 total leaves, 6.6 avg leaves/tree

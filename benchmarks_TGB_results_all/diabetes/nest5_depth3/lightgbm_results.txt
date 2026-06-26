@@ -1,0 +1,40 @@
+Accuracy: 0.6666666666666666
+Confusion Matrix:
+[[11 14]
+ [ 6 29]]
+Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.65      0.44      0.52        25
+           1       0.67      0.83      0.74        35
+
+    accuracy                           0.67        60
+   macro avg       0.66      0.63      0.63        60
+weighted avg       0.66      0.67      0.65        60
+
+LightGBM completed in 0.02 seconds
+All Features:
+                         Feature  Importance
+        number_inpatient lt= 1.5          17
+           gender_Female lt= 0.5          17
+        time_in_hospital lt= 7.5          16
+        num_medications lt= 10.5          11
+        number_inpatient lt= 0.5          11
+discharge_disposition_id lt= 1.5          10
+              diag_3_250 lt= 0.5          10
+     num_lab_procedures lt= 55.5           7
+        num_medications lt= 15.5           6
+    race_AfricanAmerican lt= 0.5           4
+            diag_2_250.6 lt= 0.5           0
+            glyburide_No lt= 0.5           0
+              diag_3_682 lt= 0.5           0
+              diag_3_599 lt= 0.5           0
+              diag_2_781 lt= 0.5           0
+                  race_? lt= 0.5           0
+              diag_1_574 lt= 0.5           0
+     admission_source_id lt= 4.5           0
+         num_medications lt= 9.5           0
+     num_lab_procedures lt= 95.5           0
+     num_lab_procedures lt= 88.5           0
+              diag_1_493 lt= 0.5           0
+Tree Size: 25 trees, 134 total leaves, 5.4 avg leaves/tree

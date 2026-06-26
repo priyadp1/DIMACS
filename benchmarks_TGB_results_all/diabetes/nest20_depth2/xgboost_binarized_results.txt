@@ -1,0 +1,41 @@
+Accuracy: 0.7333333333333333
+Confusion Matrix:
+[[16  9]
+ [ 7 28]]
+Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.70      0.64      0.67        25
+           1       0.76      0.80      0.78        35
+
+    accuracy                           0.73        60
+   macro avg       0.73      0.72      0.72        60
+weighted avg       0.73      0.73      0.73        60
+
+XGBoost completed in 0.03 seconds
+All Features:
+                         Feature  Importance
+        time_in_hospital lt= 7.5    0.093369
+        num_medications lt= 15.5    0.078315
+           gender_Female lt= 0.5    0.070994
+              diag_3_599 lt= 0.5    0.069926
+        num_medications lt= 10.5    0.069452
+     num_lab_procedures lt= 95.5    0.061875
+        number_inpatient lt= 0.5    0.061036
+     num_lab_procedures lt= 47.5    0.058880
+     admission_source_id lt= 4.5    0.057198
+        number_inpatient lt= 1.5    0.056981
+         num_medications lt= 6.5    0.054969
+             age_{80-90) lt= 0.5    0.050296
+                  race_? lt= 0.5    0.049589
+              diag_3_250 lt= 0.5    0.049291
+             age_{70-80) lt= 0.5    0.044986
+        num_medications lt= 17.5    0.039014
+              diag_2_491 lt= 0.5    0.033829
+              diag_2_781 lt= 0.5    0.000000
+            diag_2_250.6 lt= 0.5    0.000000
+              diag_3_280 lt= 0.5    0.000000
+            diag_1_250.6 lt= 0.5    0.000000
+            metformin_Up lt= 0.5    0.000000
+discharge_disposition_id lt= 6.5    0.000000
+Tree Size: 25 trees, 154 total leaves, 6.2 avg leaves/tree

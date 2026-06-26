@@ -15,8 +15,8 @@ while current.name != "DIMACS":
     current = current.parent
 BASEDIR = current
 
-TGB_DIR     = BASEDIR / "TGB_Variables"
-RESULTS_DIR = BASEDIR / "benchmarks_TGB_results"
+TGB_DIR     = BASEDIR / "TGB_Variables_Feature_Importance"
+RESULTS_DIR = BASEDIR / "benchmarks_TGB_results_all"
 
 dataset_name = sys.argv[1]
 param_tag    = sys.argv[2]
@@ -79,6 +79,7 @@ with open(out_dir / "gosdt_results.txt", "w") as f:
     f.write(f"\nConfusion Matrix:\n{confusion_matrix(y_test, y_pred)}")
     f.write(f"\nClassification Report:\n{classification_report(y_test, y_pred)}")
     f.write(f"\nGOSDT completed in {clf.result_.time:.2f} seconds")
+    f.write(f"\nRashomon set size: {len(clf.trees_)}")
     if "error" not in tree_size:
         f.write(f"\nTree Size: {tree_size['n_leaves']} leaves, {tree_size['n_nodes']} total nodes")
     else:

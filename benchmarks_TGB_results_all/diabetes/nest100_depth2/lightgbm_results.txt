@@ -1,0 +1,103 @@
+Accuracy: 0.6325537977793063
+Confusion Matrix:
+[[8676 2297]
+ [5182 4199]]
+Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.63      0.79      0.70     10973
+           1       0.65      0.45      0.53      9381
+
+    accuracy                           0.63     20354
+   macro avg       0.64      0.62      0.61     20354
+weighted avg       0.64      0.63      0.62     20354
+
+LightGBM completed in 0.42 seconds
+All Features:
+                          Feature  Importance
+ discharge_disposition_id lt= 9.5          16
+         number_inpatient lt= 0.5          14
+        number_outpatient lt= 0.5          12
+ discharge_disposition_id lt= 8.5          12
+      admission_source_id lt= 6.5          11
+         number_emergency lt= 0.5          11
+         number_inpatient lt= 1.5          10
+discharge_disposition_id lt= 10.0           9
+         number_diagnoses lt= 5.5           8
+               diag_1_428 lt= 0.5           6
+discharge_disposition_id lt= 14.5           6
+ discharge_disposition_id lt= 1.5           5
+           diabetesMed_No lt= 0.5           5
+               diag_1_278 lt= 0.5           4
+         number_inpatient lt= 4.5           4
+         number_emergency lt= 1.5           4
+         number_inpatient lt= 2.5           4
+         number_diagnoses lt= 6.5           3
+         number_inpatient lt= 3.5           3
+         time_in_hospital lt= 3.5           2
+      admission_source_id lt= 8.5           2
+              age_(80-90) lt= 0.5           2
+         number_diagnoses lt= 8.5           2
+discharge_disposition_id lt= 21.0           2
+      admission_source_id lt= 3.5           2
+         number_emergency lt= 2.5           2
+           num_procedures lt= 0.5           2
+      num_lab_procedures lt= 18.5           1
+            diag_1_250.11 lt= 0.5           1
+      num_lab_procedures lt= 30.5           1
+              age_(70-80) lt= 0.5           1
+              age_(50-60) lt= 0.5           1
+           race_Caucasian lt= 0.5           1
+         number_diagnoses lt= 4.5           1
+         num_medications lt= 10.5           1
+discharge_disposition_id lt= 22.5           1
+               diag_2_403 lt= 0.5           1
+          num_medications lt= 7.5           1
+         num_medications lt= 11.5           1
+               diag_3_403 lt= 0.5           0
+               diag_3_401 lt= 0.5           0
+          diabetesMed_Yes lt= 0.5           0
+               diag_1_648 lt= 0.5           0
+               diag_1_726 lt= 0.5           0
+             diag_3_250.6 lt= 0.5           0
+               diag_1_493 lt= 0.5           0
+               diag_2_585 lt= 0.5           0
+               diag_2_518 lt= 0.5           0
+               diag_2_162 lt= 0.5           0
+             glipizide_No lt= 0.5           0
+               diag_2_250 lt= 0.5           0
+             metformin_No lt= 0.5           0
+           insulin_Steady lt= 0.5           0
+               diag_2_491 lt= 0.5           0
+             insulin_Down lt= 0.5           0
+         glipizide_Steady lt= 0.5           0
+               diag_2_401 lt= 0.5           0
+               diag_3_730 lt= 0.5           0
+               diag_2_428 lt= 0.5           0
+               diag_2_648 lt= 0.5           0
+        admission_type_id lt= 5.5           0
+               diag_1_491 lt= 0.5           0
+             diag_1_250.6 lt= 0.5           0
+ discharge_disposition_id lt= 2.5           0
+ discharge_disposition_id lt= 4.5           0
+discharge_disposition_id lt= 10.5           0
+discharge_disposition_id lt= 16.0           0
+         time_in_hospital lt= 2.5           0
+      num_lab_procedures lt= 35.5           0
+      num_lab_procedures lt= 88.5           0
+           num_procedures lt= 1.5           0
+          num_medications lt= 5.5           0
+          num_medications lt= 6.5           0
+         num_medications lt= 12.5           0
+         num_medications lt= 14.5           0
+         num_medications lt= 26.5           0
+         num_medications lt= 35.5           0
+         num_medications lt= 36.5           0
+        number_outpatient lt= 1.5           0
+         number_emergency lt= 3.5           0
+        admission_type_id lt= 6.5           0
+         number_diagnoses lt= 7.5           0
+                   race_? lt= 0.5           0
+             age_(90-100) lt= 0.5           0
+         num_medications lt= 20.5           0
+Tree Size: 25 trees, 200 total leaves, 8.0 avg leaves/tree

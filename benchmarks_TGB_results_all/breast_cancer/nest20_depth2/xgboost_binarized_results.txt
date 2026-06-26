@@ -1,0 +1,47 @@
+Accuracy: 0.9649122807017544
+Confusion Matrix:
+[[72  0]
+ [ 4 38]]
+Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.95      1.00      0.97        72
+           1       1.00      0.90      0.95        42
+
+    accuracy                           0.96       114
+   macro avg       0.97      0.95      0.96       114
+weighted avg       0.97      0.96      0.96       114
+
+XGBoost completed in 0.03 seconds
+All Features:
+                                     Feature  Importance
+      perimeter_worst lt= 112.79999923706055    0.370922
+ concave points_mean lt= 0.05127999931573868    0.207309
+concave points_worst lt= 0.14545000344514847    0.059077
+concave points_worst lt= 0.14169999957084656    0.057322
+         radius_worst lt= 16.795000076293945    0.040313
+ concave points_mean lt= 0.05591999925673008    0.033130
+      concavity_worst lt= 0.2248000055551529    0.029400
+ concave points_worst lt= 0.1359499990940094    0.027527
+concave points_worst lt= 0.11099999770522118    0.025838
+concave points_worst lt= 0.16029999405145645    0.022052
+         texture_mean lt= 14.954999923706055    0.019637
+            area_worst lt= 957.4500122070312    0.011686
+                        area_mean lt= 696.25    0.011075
+            area_worst lt= 724.0499877929688    0.010933
+        texture_worst lt= 23.859999656677246    0.010930
+      perimeter_worst lt= 114.45000076293945    0.009644
+     smoothness_worst lt= 0.1782499998807907    0.009154
+              area_se lt= 35.435001373291016    0.008435
+                    texture_worst lt= 20.875    0.008429
+            area_worst lt= 710.2000122070312    0.007565
+concave points_worst lt= 0.18074999749660492    0.006275
+              area_se lt= 34.404998779296875    0.005227
+      concavity_worst lt= 0.1981000006198883    0.004415
+       perimeter_worst lt= 102.4000015258789    0.003705
+        concavity_se lt= 0.13565000146627426    0.000000
+          radius_worst lt= 16.80500030517578    0.000000
+          texture_se lt= 0.47314999997615814    0.000000
+            radius_se lt= 0.9725500047206879    0.000000
+              area_se lt= 13.929999828338623    0.000000
+Tree Size: 25 trees, 170 total leaves, 6.8 avg leaves/tree

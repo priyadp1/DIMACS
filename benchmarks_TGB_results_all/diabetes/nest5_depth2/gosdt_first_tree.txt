@@ -1,0 +1,1 @@
+<class 'gosdt._tree.Tree'>: { feature: 0, orig feature: 0, [ left child: { prediction: 0, loss: 0.27731093764305115 }, right child: { prediction: 1, loss: 0.10924370586872101 }] }, Index(['num_medications <= 15.5', 'num_lab_procedures <= 95.5'], dtype='object'), 2

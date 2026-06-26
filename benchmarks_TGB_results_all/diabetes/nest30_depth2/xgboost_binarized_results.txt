@@ -1,0 +1,61 @@
+Accuracy: 0.7166666666666667
+Confusion Matrix:
+[[15 10]
+ [ 7 28]]
+Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.68      0.60      0.64        25
+           1       0.74      0.80      0.77        35
+
+    accuracy                           0.72        60
+   macro avg       0.71      0.70      0.70        60
+weighted avg       0.71      0.72      0.71        60
+
+XGBoost completed in 0.03 seconds
+All Features:
+                         Feature  Importance
+        num_medications lt= 15.5    0.100983
+        number_inpatient lt= 0.5    0.071620
+        num_medications lt= 10.5    0.062988
+        number_inpatient lt= 1.5    0.062188
+     num_lab_procedures lt= 47.5    0.059009
+              diag_3_599 lt= 0.5    0.056078
+              diag_1_428 lt= 0.5    0.053542
+        time_in_hospital lt= 7.5    0.053241
+           gender_Female lt= 0.5    0.051852
+             age_{30-40) lt= 0.5    0.048673
+              diag_3_250 lt= 0.5    0.048511
+     admission_source_id lt= 4.5    0.046824
+     num_lab_procedures lt= 95.5    0.044827
+             age_{80-90) lt= 0.5    0.042035
+         num_medications lt= 6.5    0.040850
+        num_medications lt= 17.5    0.040777
+                  race_? lt= 0.5    0.037311
+              insulin_No lt= 0.5    0.029600
+             age_{70-80) lt= 0.5    0.028138
+          diabetesMed_No lt= 0.5    0.009344
+        num_medications lt= 18.5    0.009172
+          num_procedures lt= 1.5    0.002438
+              diag_3_238 lt= 0.5    0.000000
+     pioglitazone_Steady lt= 0.5    0.000000
+            metformin_Up lt= 0.5    0.000000
+              diag_3_401 lt= 0.5    0.000000
+              diag_3_357 lt= 0.5    0.000000
+              diag_3_288 lt= 0.5    0.000000
+              diag_3_280 lt= 0.5    0.000000
+discharge_disposition_id lt= 6.5    0.000000
+            diag_1_250.6 lt= 0.5    0.000000
+              diag_2_792 lt= 0.5    0.000000
+              diag_2_781 lt= 0.5    0.000000
+              diag_2_491 lt= 0.5    0.000000
+            diag_2_250.6 lt= 0.5    0.000000
+              diag_1_807 lt= 0.5    0.000000
+              diag_1_574 lt= 0.5    0.000000
+              diag_1_515 lt= 0.5    0.000000
+              diag_1_453 lt= 0.5    0.000000
+           diag_1_250.02 lt= 0.5    0.000000
+           race_Hispanic lt= 0.5    0.000000
+        number_emergency lt= 0.5    0.000000
+              diag_2_276 lt= 0.5    0.000000
+Tree Size: 25 trees, 147 total leaves, 5.9 avg leaves/tree

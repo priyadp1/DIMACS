@@ -1,0 +1,1 @@
+<class 'split._tree.Tree'>: { prediction: 0, loss: 0.001729245763272047 }, Index(['V17 <= -2.70379102230072 <= 0.5'], dtype='object'), 2

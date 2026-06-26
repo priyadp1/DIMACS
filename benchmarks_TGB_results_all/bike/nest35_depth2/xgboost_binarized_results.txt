@@ -1,0 +1,40 @@
+Accuracy: 0.8716915995397008
+Confusion Matrix:
+[[1408  334]
+ [ 112 1622]]
+Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.93      0.81      0.86      1742
+           1       0.83      0.94      0.88      1734
+
+    accuracy                           0.87      3476
+   macro avg       0.88      0.87      0.87      3476
+weighted avg       0.88      0.87      0.87      3476
+
+XGBoost completed in 0.04 seconds
+All Features:
+                     Feature  Importance
+                  hr lt= 6.5    0.195599
+ temp lt= 0.3700000047683716    0.179479
+temp lt= 0.39000000059604645    0.125918
+ temp lt= 0.4699999988079071    0.068188
+atemp lt= 0.3257499933242798    0.067900
+ temp lt= 0.3100000023841858    0.049530
+atemp lt= 0.5985000133514404    0.036331
+              season lt= 1.5    0.034002
+                  hr lt= 7.5    0.032517
+                 hr lt= 21.5    0.032312
+  hum lt= 0.7950000166893005    0.031885
+                 hr lt= 22.5    0.024591
+          weathersit lt= 2.5    0.024374
+temp lt= 0.45000000298023224    0.023166
+                mnth lt= 3.5    0.018733
+                 hr lt= 19.5    0.014198
+                  yr lt= 0.5    0.012748
+                 hr lt= 11.5    0.010519
+             weekday lt= 3.5    0.006934
+                  hr lt= 5.5    0.005330
+temp lt= 0.48999999463558197    0.005184
+                  hr lt= 8.5    0.000562
+Tree Size: 25 trees, 188 total leaves, 7.5 avg leaves/tree

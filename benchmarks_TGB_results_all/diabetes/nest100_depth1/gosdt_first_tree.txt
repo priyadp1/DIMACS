@@ -1,0 +1,12 @@
+<class 'gosdt._tree.Tree'>: { feature: 11, orig feature: 11, [ left child: { feature: 9, orig feature: 9, [ left child: { prediction: 0, loss: 0.2321033775806427 }, right child: { prediction: 1, loss: 0.021471036598086357 }] }, right child: { feature: 1, orig feature: 1, [ left child: { prediction: 1, loss: 0.11139635741710663 }, right child: { prediction: 0, loss: 0.013916867785155773 }] }] }, Index(['admission_type_id <= 5.5', 'discharge_disposition_id <= 10.5',
+       'discharge_disposition_id <= 14.5', 'discharge_disposition_id <= 21.0',
+       'admission_source_id <= 6.5', 'time_in_hospital <= 3.5',
+       'num_medications <= 7.5', 'num_medications <= 10.5',
+       'number_outpatient <= 0.5', 'number_emergency <= 0.5',
+       'number_emergency <= 1.5', 'number_inpatient <= 0.5',
+       'number_inpatient <= 1.5', 'number_inpatient <= 2.5',
+       'number_inpatient <= 3.5', 'number_inpatient <= 4.5',
+       'number_diagnoses <= 5.5', 'number_diagnoses <= 6.5',
+       'diag_1_428 <= 0.5', 'diag_1_491 <= 0.5', 'diag_2_648 <= 0.5',
+       'diabetesMed_Yes <= 0.5', 'diag_2_403 <= 0.5'],
+      dtype='object'), 2

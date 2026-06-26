@@ -1,0 +1,86 @@
+Accuracy: 0.8734177215189873
+Confusion Matrix:
+[[1417  325]
+ [ 115 1619]]
+Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.92      0.81      0.87      1742
+           1       0.83      0.93      0.88      1734
+
+    accuracy                           0.87      3476
+   macro avg       0.88      0.87      0.87      3476
+weighted avg       0.88      0.87      0.87      3476
+
+LightGBM completed in 0.09 seconds
+All Features:
+                          Feature  Importance
+                       yr lt= 0.5          29
+                       hr lt= 5.5          24
+                       hr lt= 6.5          22
+                       hr lt= 0.5          20
+                      hr lt= 21.5           7
+                      hr lt= 22.5           7
+               workingday lt= 0.5           5
+                     mnth lt= 4.5           5
+               weathersit lt= 2.5           5
+     atemp lt= 0.5985000133514404           5
+                      hr lt= 19.5           4
+                   season lt= 1.5           4
+                      hr lt= 11.5           3
+                  weekday lt= 3.5           3
+     temp lt= 0.45000000298023224           3
+      temp lt= 0.3100000023841858           3
+                      hr lt= 20.5           3
+       hum lt= 0.7400000095367432           2
+     atemp lt= 0.4317999929189682           2
+      temp lt= 0.4699999988079071           2
+      temp lt= 0.4099999964237213           1
+                   season lt= 2.5           1
+     atemp lt= 0.3409000039100647           1
+     temp lt= 0.48999999463558197           1
+    atemp lt= 0.31059999763965607           1
+                    hum lt= 0.625           1
+       hum lt= 0.8050000071525574           1
+       hum lt= 0.8149999976158142           1
+       hum lt= 0.8349999785423279           1
+     temp lt= 0.26999999582767487           1
+      temp lt= 0.3700000047683716           1
+                       hr lt= 7.5           1
+               weathersit lt= 1.5           0
+                       hr lt= 9.5           0
+     atemp lt= 0.8105999827384949           0
+     atemp lt= 0.8257499933242798           0
+     atemp lt= 0.8409000039100647           0
+     atemp lt= 0.9166499972343445           0
+                       hr lt= 8.5           0
+       hum lt= 0.6349999904632568           0
+       hum lt= 0.7950000166893005           0
+                    mnth lt= 11.5           0
+                     mnth lt= 3.5           0
+                     mnth lt= 1.5           0
+windspeed lt= 0.26864999532699585           0
+ windspeed lt= 0.2910500019788742           0
+windspeed lt= 0.31344999372959137           0
+ windspeed lt= 0.5074500143527985           0
+     atemp lt= 0.7802999913692474           0
+     atemp lt= 0.5227500200271606           0
+      temp lt= 0.2900000065565109           0
+     atemp lt= 0.5076000094413757           0
+                  weekday lt= 4.5           0
+                  weekday lt= 1.5           0
+     temp lt= 0.39000000059604645           0
+                  weekday lt= 0.5           0
+                  holiday lt= 0.5           0
+                      hr lt= 18.5           0
+                      hr lt= 17.5           0
+      temp lt= 0.5099999904632568           0
+    atemp lt= 0.18939999490976334           0
+                      hr lt= 16.5           0
+     atemp lt= 0.3257499933242798           0
+                      hr lt= 15.5           0
+                      hr lt= 10.5           0
+    atemp lt= 0.47725000977516174           0
+    atemp lt= 0.49240000545978546           0
+       hum lt= 0.9850000143051147           0
+Tree Size: 25 trees, 195 total leaves, 7.8 avg leaves/tree

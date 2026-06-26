@@ -1,0 +1,73 @@
+Accuracy: 0.7
+Confusion Matrix:
+[[13 12]
+ [ 6 29]]
+Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.68      0.52      0.59        25
+           1       0.71      0.83      0.76        35
+
+    accuracy                           0.70        60
+   macro avg       0.70      0.67      0.68        60
+weighted avg       0.70      0.70      0.69        60
+
+XGBoost completed in 0.03 seconds
+All Features:
+                         Feature  Importance
+        num_medications lt= 10.5    0.095623
+        number_inpatient lt= 0.5    0.069543
+     num_lab_procedures lt= 55.5    0.059592
+        num_medications lt= 15.5    0.053773
+        time_in_hospital lt= 7.5    0.051235
+           gender_Female lt= 0.5    0.049279
+              diag_3_599 lt= 0.5    0.046149
+              diag_1_428 lt= 0.5    0.043738
+        number_inpatient lt= 1.0    0.040731
+     admission_source_id lt= 4.0    0.040673
+        num_medications lt= 17.5    0.040518
+             age_{30-40) lt= 0.5    0.040312
+             age_{80-90) lt= 0.5    0.039984
+     num_lab_procedures lt= 47.5    0.039713
+     num_lab_procedures lt= 95.5    0.038864
+discharge_disposition_id lt= 1.5    0.034217
+              diag_3_250 lt= 0.5    0.032910
+     num_lab_procedures lt= 87.5    0.032307
+                  race_? lt= 0.5    0.032127
+         num_medications lt= 6.5    0.028583
+discharge_disposition_id lt= 5.5    0.024652
+        num_medications lt= 25.5    0.023366
+             age_{70-80) lt= 0.5    0.023167
+     num_lab_procedures lt= 74.0    0.007741
+     num_lab_procedures lt= 50.5    0.007432
+         num_medications lt= 9.5    0.003771
+              diag_3_427 lt= 0.5    0.000000
+              diag_2_792 lt= 0.5    0.000000
+           diag_3_250.43 lt= 0.5    0.000000
+            diag_3_250.6 lt= 0.5    0.000000
+              diag_3_288 lt= 0.5    0.000000
+        number_emergency lt= 0.5    0.000000
+              diag_3_458 lt= 0.5    0.000000
+              diag_2_348 lt= 0.5    0.000000
+              diag_3_682 lt= 0.5    0.000000
+              diag_3_V58 lt= 0.5    0.000000
+            metformin_Up lt= 0.5    0.000000
+          repaglinide_No lt= 0.5    0.000000
+              diag_2_781 lt= 0.5    0.000000
+              diag_1_574 lt= 0.5    0.000000
+            diag_2_250.6 lt= 0.5    0.000000
+           diag_2_250.12 lt= 0.5    0.000000
+              diag_2_250 lt= 0.5    0.000000
+              diag_1_807 lt= 0.5    0.000000
+              diag_1_515 lt= 0.5    0.000000
+              diag_1_493 lt= 0.5    0.000000
+              diag_1_491 lt= 0.5    0.000000
+              diag_1_453 lt= 0.5    0.000000
+              diag_1_340 lt= 0.5    0.000000
+              diag_1_276 lt= 0.5    0.000000
+             gender_Male lt= 0.5    0.000000
+           race_Hispanic lt= 0.5    0.000000
+    race_AfricanAmerican lt= 0.5    0.000000
+        number_inpatient lt= 1.5    0.000000
+              diag_3_424 lt= 0.5    0.000000
+Tree Size: 25 trees, 161 total leaves, 6.4 avg leaves/tree

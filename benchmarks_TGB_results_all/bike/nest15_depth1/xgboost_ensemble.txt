@@ -1,0 +1,199 @@
+0:[hr lt= 6.5<1] yes=1,no=2,missing=2
+	1:[temp lt= 0.3700000047683716<1] yes=3,no=4,missing=4
+		3:leaf=0.124977887
+		4:leaf=-0.0443324558
+	2:[temp lt= 0.3700000047683716<1] yes=5,no=6,missing=6
+		5:leaf=-0.182825372
+		6:leaf=-0.196363315
+
+0:[hr lt= 6.5<1] yes=1,no=2,missing=2
+	1:[temp lt= 0.3700000047683716<1] yes=3,no=4,missing=4
+		3:leaf=0.112912022
+		4:leaf=-0.0399296395
+	2:[temp lt= 0.3700000047683716<1] yes=5,no=6,missing=6
+		5:leaf=-0.166066244
+		6:leaf=-0.17862466
+
+0:[hr lt= 6.5<1] yes=1,no=2,missing=2
+	1:[temp lt= 0.3700000047683716<1] yes=3,no=4,missing=4
+		3:leaf=0.102696575
+		4:leaf=-0.0359938294
+	2:[temp lt= 0.3700000047683716<1] yes=5,no=6,missing=6
+		5:leaf=-0.153016016
+		6:leaf=-0.165193111
+
+0:[hr lt= 6.5<1] yes=1,no=2,missing=2
+	1:[temp lt= 0.3700000047683716<1] yes=3,no=4,missing=4
+		3:leaf=0.093856357
+		4:leaf=-0.032464724
+	2:[temp lt= 0.3700000047683716<1] yes=5,no=6,missing=6
+		5:leaf=-0.142499134
+		6:leaf=-0.154677585
+
+0:[hr lt= 6.5<1] yes=1,no=2,missing=2
+	1:[temp lt= 0.3700000047683716<1] yes=3,no=4,missing=4
+		3:leaf=0.0860707536
+		4:leaf=-0.0292929988
+	2:[temp lt= 0.3700000047683716<1] yes=5,no=6,missing=6
+		5:leaf=-0.133781716
+		6:leaf=-0.146228775
+
+0:[hr lt= 6.5<1] yes=1,no=2,missing=2
+	1:[temp lt= 0.3700000047683716<1] yes=3,no=4,missing=4
+		3:leaf=0.0791169629
+		4:leaf=-0.0264374744
+	2:[temp lt= 0.3700000047683716<1] yes=5,no=6,missing=6
+		5:leaf=-0.12638019
+		6:leaf=-0.139296681
+
+0:[hr lt= 6.5<1] yes=1,no=2,missing=2
+	1:[temp lt= 0.3700000047683716<1] yes=3,no=4,missing=4
+		3:leaf=0.0728362799
+		4:leaf=-0.0238633938
+	2:[temp lt= 0.3700000047683716<1] yes=5,no=6,missing=6
+		5:leaf=-0.119961955
+		6:leaf=-0.13350825
+
+0:[hr lt= 6.5<1] yes=1,no=2,missing=2
+	1:[temp lt= 0.3700000047683716<1] yes=3,no=4,missing=4
+		3:leaf=0.0671136007
+		4:leaf=-0.0215408728
+	2:[temp lt= 0.3700000047683716<1] yes=5,no=6,missing=6
+		5:leaf=-0.114290141
+		6:leaf=-0.128600717
+
+0:[hr lt= 6.5<1] yes=1,no=2,missing=2
+	1:[temp lt= 0.3700000047683716<1] yes=3,no=4,missing=4
+		3:leaf=0.0618639849
+		4:leaf=-0.0194440316
+	2:[temp lt= 0.3700000047683716<1] yes=5,no=6,missing=6
+		5:leaf=-0.109191298
+		6:leaf=-0.124383211
+
+0:[hr lt= 6.5<1] yes=1,no=2,missing=2
+	1:[temp lt= 0.3700000047683716<1] yes=3,no=4,missing=4
+		3:leaf=0.0570239685
+		4:leaf=-0.0175501909
+	2:[temp lt= 0.3700000047683716<1] yes=5,no=6,missing=6
+		5:leaf=-0.104535453
+		6:leaf=-0.120713197
+
+0:[hr lt= 6.5<1] yes=1,no=2,missing=2
+	1:[temp lt= 0.3700000047683716<1] yes=3,no=4,missing=4
+		3:leaf=0.0525452979
+		4:leaf=-0.0158392619
+	2:[temp lt= 0.3700000047683716<1] yes=5,no=6,missing=6
+		5:leaf=-0.100223422
+		6:leaf=-0.117481805
+
+0:[hr lt= 6.5<1] yes=1,no=2,missing=2
+	1:[temp lt= 0.3700000047683716<1] yes=3,no=4,missing=4
+		3:leaf=0.048390761
+		4:leaf=-0.0142934164
+	2:[temp lt= 0.3700000047683716<1] yes=5,no=6,missing=6
+		5:leaf=-0.0961785242
+		6:leaf=-0.114604108
+
+0:[hr lt= 6.5<1] yes=1,no=2,missing=2
+	1:[temp lt= 0.3700000047683716<1] yes=3,no=4,missing=4
+		3:leaf=0.0445311815
+		4:leaf=-0.0128967231
+	2:[temp lt= 0.3700000047683716<1] yes=5,no=6,missing=6
+		5:leaf=-0.0923409238
+		6:leaf=-0.112012565
+
+0:[hr lt= 6.5<1] yes=1,no=2,missing=2
+	1:[temp lt= 0.3700000047683716<1] yes=3,no=4,missing=4
+		3:leaf=0.0409429669
+		4:leaf=-0.0116348332
+	2:[temp lt= 0.3700000047683716<1] yes=5,no=6,missing=6
+		5:leaf=-0.0886637494
+		6:leaf=-0.109652631
+
+0:[hr lt= 6.5<1] yes=1,no=2,missing=2
+	1:[temp lt= 0.3700000047683716<1] yes=3,no=4,missing=4
+		3:leaf=0.0376067758
+		4:leaf=-0.0104949381
+	2:[temp lt= 0.3700000047683716<1] yes=5,no=6,missing=6
+		5:leaf=-0.0851103961
+		6:leaf=-0.107479475
+
+0:[hr lt= 6.5<1] yes=1,no=2,missing=2
+	1:[temp lt= 0.3700000047683716<1] yes=3,no=4,missing=4
+		3:leaf=0.0345062241
+		4:leaf=-0.00946531538
+	2:[temp lt= 0.3700000047683716<1] yes=5,no=6,missing=6
+		5:leaf=-0.0816524848
+		6:leaf=-0.105455771
+
+0:[hr lt= 6.5<1] yes=1,no=2,missing=2
+	1:[temp lt= 0.3700000047683716<1] yes=3,no=4,missing=4
+		3:leaf=0.0316268727
+		4:leaf=-0.00853552856
+	2:[temp lt= 0.3700000047683716<1] yes=5,no=6,missing=6
+		5:leaf=-0.0782684907
+		6:leaf=-0.10354992
+
+0:[hr lt= 6.5<1] yes=1,no=2,missing=2
+	1:[temp lt= 0.3700000047683716<1] yes=3,no=4,missing=4
+		3:leaf=0.0289559122
+		4:leaf=-0.00769597618
+	2:[temp lt= 0.3700000047683716<1] yes=5,no=6,missing=6
+		5:leaf=-0.074942559
+		6:leaf=-0.101734996
+
+0:[hr lt= 6.5<1] yes=1,no=2,missing=2
+	1:[temp lt= 0.3700000047683716<1] yes=3,no=4,missing=4
+		3:leaf=0.0264814254
+		4:leaf=-0.00693812314
+	2:[temp lt= 0.3700000047683716<1] yes=5,no=6,missing=6
+		5:leaf=-0.0716636926
+		6:leaf=-0.0999876484
+
+0:[hr lt= 6.5<1] yes=1,no=2,missing=2
+	1:[temp lt= 0.3700000047683716<1] yes=3,no=4,missing=4
+		3:leaf=0.024192242
+		4:leaf=-0.00625410769
+	2:[temp lt= 0.3700000047683716<1] yes=5,no=6,missing=6
+		5:leaf=-0.0684250146
+		6:leaf=-0.0982875302
+
+0:[hr lt= 6.5<1] yes=1,no=2,missing=2
+	1:[temp lt= 0.3700000047683716<1] yes=3,no=4,missing=4
+		3:leaf=0.0220776461
+		4:leaf=-0.00563684292
+	2:[temp lt= 0.3700000047683716<1] yes=5,no=6,missing=6
+		5:leaf=-0.0652231872
+		6:leaf=-0.0966167301
+
+0:[hr lt= 6.5<1] yes=1,no=2,missing=2
+	1:[temp lt= 0.3700000047683716<1] yes=3,no=4,missing=4
+		3:leaf=0.0201274082
+		4:leaf=-0.00507998234
+	2:[temp lt= 0.3700000047683716<1] yes=5,no=6,missing=6
+		5:leaf=-0.0620578416
+		6:leaf=-0.0949593931
+
+0:[hr lt= 6.5<1] yes=1,no=2,missing=2
+	1:[temp lt= 0.3700000047683716<1] yes=3,no=4,missing=4
+		3:leaf=0.0183316134
+		4:leaf=-0.00457763253
+	2:[temp lt= 0.3700000047683716<1] yes=5,no=6,missing=6
+		5:leaf=-0.0589311607
+		6:leaf=-0.0933014303
+
+0:[hr lt= 6.5<1] yes=1,no=2,missing=2
+	1:[temp lt= 0.3700000047683716<1] yes=3,no=4,missing=4
+		3:leaf=0.0166806392
+		4:leaf=-0.00412460836
+	2:[temp lt= 0.3700000047683716<1] yes=5,no=6,missing=6
+		5:leaf=-0.0558472946
+		6:leaf=-0.0916303396
+
+0:[hr lt= 6.5<1] yes=1,no=2,missing=2
+	1:[temp lt= 0.3700000047683716<1] yes=3,no=4,missing=4
+		3:leaf=0.0151650449
+		4:leaf=-0.00371604902
+	2:[temp lt= 0.3700000047683716<1] yes=5,no=6,missing=6
+		5:leaf=-0.0528119802
+		6:leaf=-0.0899350345

@@ -1,0 +1,295 @@
+0:[num_medications lt= 15.5<1] yes=1,no=2,missing=2
+	1:[number_inpatient lt= 1.5<1] yes=3,no=4,missing=4
+		3:[age_{80-90) lt= 0.5<1] yes=7,no=8,missing=8
+			7:leaf=0.0191819407
+			8:leaf=0.111536346
+		4:[time_in_hospital lt= 7.5<1] yes=9,no=10,missing=10
+			9:leaf=0.0740405247
+			10:leaf=0.0149439126
+	2:[gender_Female lt= 0.5<1] yes=5,no=6,missing=6
+		5:[num_medications lt= 10.5<1] yes=11,no=12,missing=12
+			11:leaf=0.0294828024
+			12:leaf=-0.0517319627
+		6:[admission_source_id lt= 4.5<1] yes=13,no=14,missing=14
+			13:leaf=-0.104845822
+			14:leaf=0.0478873216
+
+0:[num_medications lt= 15.5<1] yes=1,no=2,missing=2
+	1:[time_in_hospital lt= 7.5<1] yes=3,no=4,missing=4
+		3:[number_inpatient lt= 0.5<1] yes=7,no=8,missing=8
+			7:leaf=0.11960914
+			8:leaf=0.0552297607
+		4:[number_inpatient lt= 1.5<1] yes=9,no=10,missing=10
+			9:leaf=0.0693606585
+			10:leaf=0.0136156259
+	2:[admission_source_id lt= 4.5<1] yes=5,no=6,missing=6
+		5:[gender_Female lt= 0.5<1] yes=11,no=12,missing=12
+			11:leaf=-0.0179981645
+			12:leaf=-0.0936825499
+		6:[num_medications lt= 10.5<1] yes=13,no=14,missing=14
+			13:leaf=0.0916101709
+			14:leaf=0.0183591675
+
+0:[num_medications lt= 10.5<1] yes=1,no=2,missing=2
+	1:[number_inpatient lt= 0.5<1] yes=3,no=4,missing=4
+		3:[diag_3_250 lt= 0.5<1] yes=7,no=8,missing=8
+			7:leaf=0.0123458961
+			8:leaf=0.0808526501
+		4:[time_in_hospital lt= 7.5<1] yes=9,no=10,missing=10
+			9:leaf=0.051069852
+			10:leaf=-0.0186895095
+	2:[time_in_hospital lt= 7.5<1] yes=5,no=6,missing=6
+		5:leaf=0.0391178243
+		6:[admission_source_id lt= 4.5<1] yes=11,no=12,missing=12
+			11:leaf=-0.0897368193
+			12:leaf=0.0465933718
+
+0:[num_medications lt= 15.5<1] yes=1,no=2,missing=2
+	1:[time_in_hospital lt= 7.5<1] yes=3,no=4,missing=4
+		3:[number_inpatient lt= 0.5<1] yes=7,no=8,missing=8
+			7:leaf=0.109762229
+			8:leaf=0.0472428165
+		4:[number_inpatient lt= 1.5<1] yes=9,no=10,missing=10
+			9:leaf=0.0596391559
+			10:leaf=0.0120271686
+	2:[number_inpatient lt= 0.5<1] yes=5,no=6,missing=6
+		5:[num_medications lt= 10.5<1] yes=11,no=12,missing=12
+			11:leaf=0.0614855662
+			12:leaf=-0.0301744975
+		6:[time_in_hospital lt= 7.5<1] yes=13,no=14,missing=14
+			13:leaf=0.0753324851
+			14:leaf=-0.0660627708
+
+0:[num_medications lt= 15.5<1] yes=1,no=2,missing=2
+	1:[time_in_hospital lt= 7.5<1] yes=3,no=4,missing=4
+		3:[number_inpatient lt= 0.5<1] yes=7,no=8,missing=8
+			7:leaf=0.104688726
+			8:leaf=0.0437151492
+		4:[age_{80-90) lt= 0.5<1] yes=9,no=10,missing=10
+			9:leaf=-0.0286213905
+			10:leaf=0.0349465981
+	2:[admission_source_id lt= 4.5<1] yes=5,no=6,missing=6
+		5:[diag_3_250 lt= 0.5<1] yes=11,no=12,missing=12
+			11:leaf=-0.123421527
+			12:leaf=-0.0242021661
+		6:[num_medications lt= 10.5<1] yes=13,no=14,missing=14
+			13:leaf=0.0863829479
+			14:leaf=0.0174699668
+
+0:[num_medications lt= 10.5<1] yes=1,no=2,missing=2
+	1:[number_inpatient lt= 0.5<1] yes=3,no=4,missing=4
+		3:[diag_3_250 lt= 0.5<1] yes=7,no=8,missing=8
+			7:leaf=0.00682793884
+			8:leaf=0.0684787855
+		4:[gender_Female lt= 0.5<1] yes=9,no=10,missing=10
+			9:leaf=0.0292396005
+			10:leaf=-0.0318108089
+	2:[time_in_hospital lt= 7.5<1] yes=5,no=6,missing=6
+		5:leaf=0.0351744853
+		6:[admission_source_id lt= 4.5<1] yes=11,no=12,missing=12
+			11:leaf=-0.0708754882
+			12:leaf=0.0459787883
+
+0:[num_medications lt= 15.5<1] yes=1,no=2,missing=2
+	1:[time_in_hospital lt= 7.5<1] yes=3,no=4,missing=4
+		3:[number_inpatient lt= 0.5<1] yes=7,no=8,missing=8
+			7:leaf=0.0975702703
+			8:leaf=0.0412049629
+		4:[number_inpatient lt= 1.5<1] yes=9,no=10,missing=10
+			9:leaf=0.0498540588
+			10:leaf=0.00610652613
+	2:[gender_Female lt= 0.5<1] yes=5,no=6,missing=6
+		5:[diag_3_250 lt= 0.5<1] yes=11,no=12,missing=12
+			11:leaf=-0.0782780573
+			12:leaf=0.0163677875
+		6:[admission_source_id lt= 4.5<1] yes=13,no=14,missing=14
+			13:leaf=-0.0701410472
+			14:leaf=0.0419163331
+
+0:[num_medications lt= 10.5<1] yes=1,no=2,missing=2
+	1:[race_? lt= 0.5<1] yes=3,no=4,missing=4
+		3:leaf=-0.0951141268
+		4:[time_in_hospital lt= 7.5<1] yes=7,no=8,missing=8
+			7:leaf=0.0698232129
+			8:leaf=0.0115420474
+	2:[time_in_hospital lt= 7.5<1] yes=5,no=6,missing=6
+		5:leaf=0.034205474
+		6:[admission_source_id lt= 4.5<1] yes=9,no=10,missing=10
+			9:leaf=-0.0618611239
+			10:leaf=0.0431441963
+
+0:[number_inpatient lt= 1.5<1] yes=1,no=2,missing=2
+	1:[age_{80-90) lt= 0.5<1] yes=3,no=4,missing=4
+		3:leaf=-0.027763281
+		4:leaf=0.0945630446
+	2:[diag_3_250 lt= 0.5<1] yes=5,no=6,missing=6
+		5:leaf=-0.11373432
+		6:[time_in_hospital lt= 7.5<1] yes=7,no=8,missing=8
+			7:leaf=0.0453574732
+			8:leaf=-0.0150224464
+
+0:[num_lab_procedures lt= 95.5<1] yes=1,no=2,missing=2
+	1:leaf=-0.148552835
+	2:[num_medications lt= 15.5<1] yes=3,no=4,missing=4
+		3:[time_in_hospital lt= 7.5<1] yes=5,no=6,missing=6
+			5:leaf=0.0747340173
+			6:leaf=0.023746362
+		4:[gender_Female lt= 0.5<1] yes=7,no=8,missing=8
+			7:leaf=0.00766600249
+			8:leaf=-0.049768474
+
+0:[num_lab_procedures lt= 95.5<1] yes=1,no=2,missing=2
+	1:leaf=-0.138130352
+	2:[number_inpatient lt= 1.5<1] yes=3,no=4,missing=4
+		3:[age_{80-90) lt= 0.5<1] yes=5,no=6,missing=6
+			5:leaf=-0.0277155936
+			6:leaf=0.100372054
+		4:[diag_3_250 lt= 0.5<1] yes=7,no=8,missing=8
+			7:leaf=-0.104431286
+			8:leaf=0.00457137218
+
+0:[num_lab_procedures lt= 95.5<1] yes=1,no=2,missing=2
+	1:leaf=-0.129100159
+	2:[time_in_hospital lt= 7.5<1] yes=3,no=4,missing=4
+		3:[num_medications lt= 15.5<1] yes=5,no=6,missing=6
+			5:leaf=0.0696115792
+			6:leaf=0.0281760842
+		4:[number_inpatient lt= 1.5<1] yes=7,no=8,missing=8
+			7:leaf=0.0611326508
+			8:leaf=-0.0213567074
+
+0:[num_lab_procedures lt= 95.5<1] yes=1,no=2,missing=2
+	1:leaf=-0.121210948
+	2:[diag_3_250 lt= 0.5<1] yes=3,no=4,missing=4
+		3:[num_lab_procedures lt= 47.5<1] yes=5,no=6,missing=6
+			5:leaf=-0.110285379
+			6:leaf=0.0613756292
+		4:[number_inpatient lt= 1.5<1] yes=7,no=8,missing=8
+			7:leaf=0.0694959983
+			8:leaf=0.00468301727
+
+0:[num_lab_procedures lt= 95.5<1] yes=1,no=2,missing=2
+	1:leaf=-0.114262655
+	2:[num_medications lt= 10.5<1] yes=3,no=4,missing=4
+		3:[race_? lt= 0.5<1] yes=5,no=6,missing=6
+			5:leaf=-0.0911481902
+			6:leaf=0.0284531508
+		4:[time_in_hospital lt= 7.5<1] yes=7,no=8,missing=8
+			7:leaf=0.0292080827
+			8:leaf=-0.0385886542
+
+0:[num_lab_procedures lt= 95.5<1] yes=1,no=2,missing=2
+	1:leaf=-0.10809578
+	2:[time_in_hospital lt= 7.5<1] yes=3,no=4,missing=4
+		3:[num_medications lt= 15.5<1] yes=5,no=6,missing=6
+			5:leaf=0.0631304532
+			6:leaf=0.0241716895
+		4:[number_inpatient lt= 1.5<1] yes=7,no=8,missing=8
+			7:leaf=0.0533938371
+			8:leaf=-0.0191198047
+
+0:[diag_3_250 lt= 0.5<1] yes=1,no=2,missing=2
+	1:[num_lab_procedures lt= 47.5<1] yes=3,no=4,missing=4
+		3:[num_medications lt= 15.5<1] yes=7,no=8,missing=8
+			7:leaf=-0.0131002134
+			8:leaf=-0.124642573
+		4:leaf=0.0586403683
+	2:[num_lab_procedures lt= 95.5<1] yes=5,no=6,missing=6
+		5:leaf=-0.102582589
+		6:[number_inpatient lt= 1.5<1] yes=9,no=10,missing=10
+			9:leaf=0.0611709319
+			10:leaf=0.0040883366
+
+0:[diag_3_250 lt= 0.5<1] yes=1,no=2,missing=2
+	1:[num_lab_procedures lt= 47.5<1] yes=3,no=4,missing=4
+		3:[num_medications lt= 15.5<1] yes=7,no=8,missing=8
+			7:leaf=-0.0123945354
+			8:leaf=-0.118162476
+		4:leaf=0.0556281321
+	2:[num_lab_procedures lt= 95.5<1] yes=5,no=6,missing=6
+		5:leaf=-0.0976203308
+		6:[num_medications lt= 10.5<1] yes=9,no=10,missing=10
+			9:leaf=0.0237405337
+			10:leaf=-0.017083602
+
+0:[race_? lt= 0.5<1] yes=1,no=2,missing=2
+	1:leaf=-0.092149727
+	2:[time_in_hospital lt= 7.5<1] yes=3,no=4,missing=4
+		3:[gender_Female lt= 0.5<1] yes=5,no=6,missing=6
+			5:leaf=0.065673463
+			6:leaf=0.0247425344
+		4:[admission_source_id lt= 4.5<1] yes=7,no=8,missing=8
+			7:leaf=-0.0143642379
+			8:leaf=0.0532060079
+
+0:[num_lab_procedures lt= 95.5<1] yes=1,no=2,missing=2
+	1:leaf=-0.0937555209
+	2:[time_in_hospital lt= 7.5<1] yes=3,no=4,missing=4
+		3:[gender_Female lt= 0.5<1] yes=5,no=6,missing=6
+			5:leaf=0.0596479475
+			6:leaf=0.0222626794
+		4:[number_inpatient lt= 0.5<1] yes=7,no=8,missing=8
+			7:leaf=0.0296332072
+			8:leaf=-0.0205331985
+
+0:[race_? lt= 0.5<1] yes=1,no=2,missing=2
+	1:leaf=-0.0874506384
+	2:[time_in_hospital lt= 7.5<1] yes=3,no=4,missing=4
+		3:[gender_Female lt= 0.5<1] yes=5,no=6,missing=6
+			5:leaf=0.0589633845
+			6:leaf=0.0216638092
+		4:[admission_source_id lt= 4.5<1] yes=7,no=8,missing=8
+			7:leaf=-0.0120899342
+			8:leaf=0.0498039834
+
+0:[diag_3_250 lt= 0.5<1] yes=1,no=2,missing=2
+	1:[num_lab_procedures lt= 47.5<1] yes=3,no=4,missing=4
+		3:[num_medications lt= 15.5<1] yes=7,no=8,missing=8
+			7:leaf=-0.0126138618
+			8:leaf=-0.111086242
+		4:leaf=0.0522681959
+	2:[num_lab_procedures lt= 95.5<1] yes=5,no=6,missing=6
+		5:leaf=-0.0901967064
+		6:[gender_Female lt= 0.5<1] yes=9,no=10,missing=10
+			9:leaf=0.02623046
+			10:leaf=-0.0108904867
+
+0:[race_? lt= 0.5<1] yes=1,no=2,missing=2
+	1:leaf=-0.0826383084
+	2:[num_medications lt= 10.5<1] yes=3,no=4,missing=4
+		3:[number_inpatient lt= 0.5<1] yes=5,no=6,missing=6
+			5:leaf=0.0410113744
+			6:leaf=0.0035256946
+		4:[time_in_hospital lt= 7.5<1] yes=7,no=8,missing=8
+			7:leaf=0.0193734076
+			8:leaf=-0.0288358014
+
+0:[num_lab_procedures lt= 95.5<1] yes=1,no=2,missing=2
+	1:leaf=-0.0867579058
+	2:[diag_3_250 lt= 0.5<1] yes=3,no=4,missing=4
+		3:[num_lab_procedures lt= 47.5<1] yes=5,no=6,missing=6
+			5:leaf=-0.0869533047
+			6:leaf=0.0503376089
+		4:[gender_Female lt= 0.5<1] yes=7,no=8,missing=8
+			7:leaf=0.0239465814
+			8:leaf=-0.010149098
+
+0:[num_lab_procedures lt= 95.5<1] yes=1,no=2,missing=2
+	1:leaf=-0.0831986517
+	2:[num_medications lt= 15.5<1] yes=3,no=4,missing=4
+		3:[time_in_hospital lt= 7.5<1] yes=5,no=6,missing=6
+			5:leaf=0.0497571975
+			6:leaf=0.0125580197
+		4:[admission_source_id lt= 4.5<1] yes=7,no=8,missing=8
+			7:leaf=-0.0183485132
+			8:leaf=0.0537304841
+
+0:[number_inpatient lt= 1.5<1] yes=1,no=2,missing=2
+	1:[age_{80-90) lt= 0.5<1] yes=3,no=4,missing=4
+		3:leaf=-0.0488509759
+		4:leaf=0.0711085126
+	2:[race_? lt= 0.5<1] yes=5,no=6,missing=6
+		5:leaf=-0.0979994237
+		6:[time_in_hospital lt= 7.5<1] yes=7,no=8,missing=8
+			7:leaf=0.0358501263
+			8:leaf=-0.0122807063

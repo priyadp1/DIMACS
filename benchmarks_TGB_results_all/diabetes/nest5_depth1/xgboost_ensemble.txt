@@ -1,0 +1,149 @@
+0:[num_medications lt= 15.5<1] yes=1,no=2,missing=2
+	1:leaf=0.0601728559
+	2:[num_medications lt= 10.5<1] yes=3,no=4,missing=4
+		3:leaf=-0.00819442701
+		4:leaf=-0.0756417736
+
+0:[num_medications lt= 15.5<1] yes=1,no=2,missing=2
+	1:leaf=0.0550302826
+	2:[num_medications lt= 10.5<1] yes=3,no=4,missing=4
+		3:leaf=-0.00741201499
+		4:leaf=-0.0676793456
+
+0:[num_medications lt= 15.5<1] yes=1,no=2,missing=2
+	1:leaf=0.050356824
+	2:[num_medications lt= 10.5<1] yes=3,no=4,missing=4
+		3:leaf=-0.00670532137
+		4:leaf=-0.0607709885
+
+0:[num_medications lt= 15.5<1] yes=1,no=2,missing=2
+	1:leaf=0.0460934043
+	2:[num_medications lt= 10.5<1] yes=3,no=4,missing=4
+		3:leaf=-0.00606684666
+		4:leaf=-0.0547168925
+
+0:[num_medications lt= 15.5<1] yes=1,no=2,missing=2
+	1:leaf=0.0421930291
+	2:[num_medications lt= 10.5<1] yes=3,no=4,missing=4
+		3:leaf=-0.00548981922
+		4:leaf=-0.0493690036
+
+0:[num_medications lt= 15.5<1] yes=1,no=2,missing=2
+	1:leaf=0.038617637
+	2:[num_medications lt= 10.5<1] yes=3,no=4,missing=4
+		3:leaf=-0.00496816821
+		4:leaf=-0.0446149893
+
+0:[num_medications lt= 15.5<1] yes=1,no=2,missing=2
+	1:leaf=0.0353358276
+	2:[num_medications lt= 10.5<1] yes=3,no=4,missing=4
+		3:leaf=-0.00449651573
+		4:leaf=-0.0403676592
+
+0:[num_medications lt= 15.5<1] yes=1,no=2,missing=2
+	1:leaf=0.0323209986
+	2:[num_medications lt= 10.5<1] yes=3,no=4,missing=4
+		3:leaf=-0.00406995183
+		4:leaf=-0.036557924
+
+0:[num_medications lt= 15.5<1] yes=1,no=2,missing=2
+	1:leaf=0.029550422
+	2:[num_medications lt= 10.5<1] yes=3,no=4,missing=4
+		3:leaf=-0.00368410838
+		4:leaf=-0.0331300572
+
+0:[num_medications lt= 15.5<1] yes=1,no=2,missing=2
+	1:leaf=0.0270041209
+	2:[num_medications lt= 10.5<1] yes=3,no=4,missing=4
+		3:leaf=-0.00333505659
+		4:leaf=-0.0300383307
+
+0:[num_medications lt= 15.5<1] yes=1,no=2,missing=2
+	1:leaf=0.024664415
+	2:[num_medications lt= 10.5<1] yes=3,no=4,missing=4
+		3:leaf=-0.00301924883
+		4:leaf=-0.0272444468
+
+0:[num_medications lt= 15.5<1] yes=1,no=2,missing=2
+	1:leaf=0.0225153342
+	2:[num_medications lt= 10.5<1] yes=3,no=4,missing=4
+		3:leaf=-0.0027334902
+		4:leaf=-0.0247160923
+
+0:[num_medications lt= 15.5<1] yes=1,no=2,missing=2
+	1:leaf=0.020542426
+	2:[num_medications lt= 10.5<1] yes=3,no=4,missing=4
+		3:leaf=-0.00247486192
+		4:leaf=-0.0224255398
+
+0:[num_medications lt= 15.5<1] yes=1,no=2,missing=2
+	1:leaf=0.0187323522
+	2:[num_medications lt= 10.5<1] yes=3,no=4,missing=4
+		3:leaf=-0.00224080845
+		4:leaf=-0.0203487705
+
+0:[num_medications lt= 15.5<1] yes=1,no=2,missing=2
+	1:leaf=0.0170728099
+	2:[num_medications lt= 10.5<1] yes=3,no=4,missing=4
+		3:leaf=-0.00202895096
+		4:leaf=-0.0184647068
+
+0:[num_medications lt= 15.5<1] yes=1,no=2,missing=2
+	1:leaf=0.015552396
+	2:[num_medications lt= 10.5<1] yes=3,no=4,missing=4
+		3:leaf=-0.00183717441
+		4:leaf=-0.0167548228
+
+0:[num_medications lt= 15.5<1] yes=1,no=2,missing=2
+	1:leaf=0.0141604384
+	2:[num_medications lt= 10.5<1] yes=3,no=4,missing=4
+		3:leaf=-0.00166358112
+		4:leaf=-0.0152025465
+
+0:[num_medications lt= 15.5<1] yes=1,no=2,missing=2
+	1:leaf=0.0128871277
+	2:[num_medications lt= 10.5<1] yes=3,no=4,missing=4
+		3:leaf=-0.00150644139
+		4:leaf=-0.013793163
+
+0:[num_medications lt= 15.5<1] yes=1,no=2,missing=2
+	1:leaf=0.0117230928
+	2:[num_medications lt= 10.5<1] yes=3,no=4,missing=4
+		3:leaf=-0.00136414671
+		4:leaf=-0.0125134094
+
+0:[num_medications lt= 15.5<1] yes=1,no=2,missing=2
+	1:leaf=0.0106597934
+	2:[num_medications lt= 10.5<1] yes=3,no=4,missing=4
+		3:leaf=-0.00123534596
+		4:leaf=-0.0113513535
+
+0:[num_medications lt= 15.5<1] yes=1,no=2,missing=2
+	1:leaf=0.00968916528
+	2:[num_medications lt= 10.5<1] yes=3,no=4,missing=4
+		3:leaf=-0.00111869245
+		4:leaf=-0.0102962395
+
+0:[num_medications lt= 15.5<1] yes=1,no=2,missing=2
+	1:leaf=0.00880371686
+	2:[num_medications lt= 10.5<1] yes=3,no=4,missing=4
+		3:leaf=-0.00101309491
+		4:leaf=-0.00933824852
+
+0:[num_medications lt= 15.5<1] yes=1,no=2,missing=2
+	1:leaf=0.00799648929
+	2:[num_medications lt= 10.5<1] yes=3,no=4,missing=4
+		3:leaf=-0.000917464436
+		4:leaf=-0.0084685497
+
+0:[num_medications lt= 15.5<1] yes=1,no=2,missing=2
+	1:leaf=0.00726096472
+	2:[num_medications lt= 10.5<1] yes=3,no=4,missing=4
+		3:leaf=-0.000830875419
+		4:leaf=-0.00767909689
+
+0:[num_medications lt= 15.5<1] yes=1,no=2,missing=2
+	1:leaf=0.00659119431
+	2:[num_medications lt= 10.5<1] yes=3,no=4,missing=4
+		3:leaf=-0.000752472726
+		4:leaf=-0.00696258759

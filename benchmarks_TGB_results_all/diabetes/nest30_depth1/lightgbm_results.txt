@@ -1,0 +1,25 @@
+Accuracy: 0.6833333333333333
+Confusion Matrix:
+[[12 13]
+ [ 6 29]]
+Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.67      0.48      0.56        25
+           1       0.69      0.83      0.75        35
+
+    accuracy                           0.68        60
+   macro avg       0.68      0.65      0.66        60
+weighted avg       0.68      0.68      0.67        60
+
+LightGBM completed in 0.02 seconds
+All Features:
+                    Feature  Importance
+   number_inpatient lt= 1.5          24
+   time_in_hospital lt= 7.5          22
+   num_medications lt= 10.5          14
+   num_medications lt= 15.5          12
+         diag_3_250 lt= 0.5          11
+num_lab_procedures lt= 95.5           0
+             race_? lt= 0.5           0
+Tree Size: 25 trees, 108 total leaves, 4.3 avg leaves/tree

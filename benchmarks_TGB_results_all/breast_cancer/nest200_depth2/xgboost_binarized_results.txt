@@ -1,0 +1,40 @@
+Accuracy: 0.9649122807017544
+Confusion Matrix:
+[[71  1]
+ [ 3 39]]
+Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.96      0.99      0.97        72
+           1       0.97      0.93      0.95        42
+
+    accuracy                           0.96       114
+   macro avg       0.97      0.96      0.96       114
+weighted avg       0.97      0.96      0.96       114
+
+XGBoost completed in 0.03 seconds
+All Features:
+                                     Feature  Importance
+      perimeter_worst lt= 112.79999923706055    0.353665
+ concave points_mean lt= 0.05127999931573868    0.180808
+concave points_worst lt= 0.14169999957084656    0.096965
+  concave points_mean lt= 0.0559299997985363    0.082844
+concave points_worst lt= 0.11099999770522118    0.061331
+      concavity_worst lt= 0.2248000055551529    0.032422
+concave points_worst lt= 0.16029999405145645    0.030980
+         texture_mean lt= 14.990000247955322    0.025994
+         radius_worst lt= 16.795000076293945    0.023269
+     concavity_worst lt= 0.20795000344514847    0.021295
+                        area_mean lt= 696.25    0.014967
+            area_worst lt= 953.7000122070312    0.011032
+            area_worst lt= 727.1000061035156    0.010971
+          texture_mean lt= 15.87999963760376    0.008848
+      perimeter_worst lt= 114.45000076293945    0.008694
+        texture_worst lt= 29.295000076293945    0.007985
+concave points_worst lt= 0.17584999650716782    0.007831
+     smoothness_worst lt= 0.1782499998807907    0.006856
+       perimeter_worst lt= 102.4000015258789    0.004996
+              area_se lt= 34.404998779296875    0.004828
+    compactness_mean lt= 0.06130499951541424    0.003418
+            radius_se lt= 0.6255500018596649    0.000000
+Tree Size: 25 trees, 170 total leaves, 6.8 avg leaves/tree

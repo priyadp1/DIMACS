@@ -1,0 +1,48 @@
+Accuracy: 0.75
+Confusion Matrix:
+[[17  8]
+ [ 7 28]]
+Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.71      0.68      0.69        25
+           1       0.78      0.80      0.79        35
+
+    accuracy                           0.75        60
+   macro avg       0.74      0.74      0.74        60
+weighted avg       0.75      0.75      0.75        60
+
+XGBoost completed in 0.03 seconds
+All Features:
+                         Feature  Importance
+        num_medications lt= 15.5    0.089279
+        number_inpatient lt= 0.5    0.070777
+        num_medications lt= 10.5    0.067653
+        number_inpatient lt= 1.5    0.067146
+           gender_Female lt= 0.5    0.065030
+     num_lab_procedures lt= 47.5    0.062582
+     admission_source_id lt= 4.5    0.061030
+        time_in_hospital lt= 7.5    0.059846
+              diag_1_428 lt= 0.5    0.057346
+             age_{30-40) lt= 0.5    0.054134
+              diag_3_599 lt= 0.5    0.053997
+              diag_3_250 lt= 0.5    0.050762
+     num_lab_procedures lt= 95.5    0.049735
+         num_medications lt= 6.5    0.048491
+             age_{80-90) lt= 0.5    0.045485
+                  race_? lt= 0.5    0.039701
+             age_{70-80) lt= 0.5    0.032357
+        num_medications lt= 17.5    0.024649
+            diag_1_250.6 lt= 0.5    0.000000
+              diag_1_453 lt= 0.5    0.000000
+              diag_1_807 lt= 0.5    0.000000
+            diag_2_250.6 lt= 0.5    0.000000
+              diag_2_491 lt= 0.5    0.000000
+              diag_2_781 lt= 0.5    0.000000
+              diag_2_792 lt= 0.5    0.000000
+        number_emergency lt= 0.5    0.000000
+              diag_3_288 lt= 0.5    0.000000
+              diag_3_401 lt= 0.5    0.000000
+            metformin_Up lt= 0.5    0.000000
+discharge_disposition_id lt= 6.5    0.000000
+Tree Size: 25 trees, 140 total leaves, 5.6 avg leaves/tree

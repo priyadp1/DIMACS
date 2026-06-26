@@ -1,0 +1,55 @@
+Accuracy: 0.7166666666666667
+Confusion Matrix:
+[[14 11]
+ [ 6 29]]
+Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.70      0.56      0.62        25
+           1       0.72      0.83      0.77        35
+
+    accuracy                           0.72        60
+   macro avg       0.71      0.69      0.70        60
+weighted avg       0.71      0.72      0.71        60
+
+XGBoost completed in 0.03 seconds
+All Features:
+                         Feature  Importance
+        num_medications lt= 10.5    0.100862
+        number_inpatient lt= 0.5    0.074677
+     num_lab_procedures lt= 55.5    0.065318
+        time_in_hospital lt= 7.5    0.057810
+        num_medications lt= 15.5    0.051273
+         num_medications lt= 6.5    0.048549
+              diag_1_428 lt= 0.5    0.047666
+              diag_3_599 lt= 0.5    0.047313
+             age_{80-90) lt= 0.5    0.045545
+     admission_source_id lt= 4.5    0.045148
+     num_lab_procedures lt= 47.5    0.043725
+     num_lab_procedures lt= 95.5    0.043320
+        number_inpatient lt= 1.0    0.042665
+              diag_3_250 lt= 0.5    0.040198
+     num_lab_procedures lt= 87.5    0.038846
+           gender_Female lt= 0.5    0.036021
+                  race_? lt= 0.5    0.034112
+        num_medications lt= 17.5    0.033002
+discharge_disposition_id lt= 3.5    0.031446
+discharge_disposition_id lt= 1.5    0.026032
+             age_{70-80) lt= 0.5    0.023683
+         num_medications lt= 9.5    0.012396
+     num_lab_procedures lt= 50.0    0.010393
+              diag_1_276 lt= 0.5    0.000000
+        number_inpatient lt= 1.5    0.000000
+              diag_1_493 lt= 0.5    0.000000
+              diag_1_515 lt= 0.5    0.000000
+              diag_1_574 lt= 0.5    0.000000
+              diag_1_807 lt= 0.5    0.000000
+           diag_2_250.12 lt= 0.5    0.000000
+            diag_2_250.6 lt= 0.5    0.000000
+              diag_2_781 lt= 0.5    0.000000
+              diag_3_288 lt= 0.5    0.000000
+              diag_3_682 lt= 0.5    0.000000
+            metformin_Up lt= 0.5    0.000000
+          repaglinide_No lt= 0.5    0.000000
+    race_AfricanAmerican lt= 0.5    0.000000
+Tree Size: 25 trees, 155 total leaves, 6.2 avg leaves/tree

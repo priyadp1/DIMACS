@@ -1,0 +1,41 @@
+Accuracy: 0.6330942320919721
+Confusion Matrix:
+[[8606 2367]
+ [5101 4280]]
+Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.63      0.78      0.70     10973
+           1       0.64      0.46      0.53      9381
+
+    accuracy                           0.63     20354
+   macro avg       0.64      0.62      0.62     20354
+weighted avg       0.64      0.63      0.62     20354
+
+XGBoost completed in 0.10 seconds
+All Features:
+                          Feature  Importance
+         number_inpatient lt= 0.5    0.332021
+         number_inpatient lt= 1.5    0.070754
+         number_diagnoses lt= 6.5    0.062122
+         number_diagnoses lt= 5.5    0.059023
+         number_inpatient lt= 2.5    0.045707
+         number_emergency lt= 0.5    0.043677
+         number_inpatient lt= 3.5    0.039076
+        number_outpatient lt= 0.5    0.037315
+         num_medications lt= 10.5    0.033373
+discharge_disposition_id lt= 14.5    0.032650
+               diag_1_428 lt= 0.5    0.028259
+discharge_disposition_id lt= 10.5    0.026497
+          diabetesMed_Yes lt= 0.5    0.025837
+      admission_source_id lt= 6.5    0.024579
+               diag_1_491 lt= 0.5    0.024150
+discharge_disposition_id lt= 21.0    0.022957
+          num_medications lt= 7.5    0.021282
+        admission_type_id lt= 5.5    0.017201
+         time_in_hospital lt= 3.5    0.017112
+         number_inpatient lt= 4.5    0.014024
+         number_emergency lt= 1.5    0.010637
+               diag_2_648 lt= 0.5    0.006174
+               diag_2_403 lt= 0.5    0.005575
+Tree Size: 25 trees, 200 total leaves, 8.0 avg leaves/tree

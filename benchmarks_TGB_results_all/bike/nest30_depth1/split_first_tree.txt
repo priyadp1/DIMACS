@@ -1,0 +1,10 @@
+<class 'split._tree.Tree'>: { feature: 10 [ left child: { feature: 2 [ left child: { feature: 5 [ left child: { prediction: 0, loss: 0.00858976785093546 }, right child: { prediction: 1, loss: 0.12393807619810104 }] }, right child: { prediction: 0, loss: 0.010383235290646553 }] }, right child: { prediction: 0, loss: 0.21698398888111115 }] }, Index(['yr <= 0.5 <= 0.5', 'hr <= 5.5 <= 0.5', 'hr <= 6.5 <= 0.5',
+       'hr <= 7.5 <= 0.5', 'hr <= 21.5 <= 0.5', 'hr <= 22.5 <= 0.5',
+       'temp <= 0.3100000023841858 <= 0.5',
+       'temp <= 0.3500000089406967 <= 0.5',
+       'temp <= 0.3700000047683716 <= 0.5',
+       'temp <= 0.4699999988079071 <= 0.5',
+       'atemp <= 0.3257499933242798 <= 0.5',
+       'atemp <= 0.5985000133514404 <= 0.5', 'season <= 1.5 <= 0.5',
+       'atemp <= 0.6136500239372253 <= 0.5'],
+      dtype='object'), 2

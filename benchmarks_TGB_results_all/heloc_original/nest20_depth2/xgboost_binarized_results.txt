@@ -1,0 +1,49 @@
+Accuracy: 0.7270554493307839
+Confusion Matrix:
+[[845 247]
+ [324 676]]
+Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.72      0.77      0.75      1092
+           1       0.73      0.68      0.70      1000
+
+    accuracy                           0.73      2092
+   macro avg       0.73      0.72      0.73      2092
+weighted avg       0.73      0.73      0.73      2092
+
+XGBoost completed in 0.04 seconds
+All Features:
+                              Feature  Importance
+        ExternalRiskEstimate lt= 74.5    0.287408
+        ExternalRiskEstimate lt= 73.5    0.196901
+        ExternalRiskEstimate lt= 75.5    0.098594
+        ExternalRiskEstimate lt= 70.5    0.070896
+        ExternalRiskEstimate lt= 78.5    0.037752
+        ExternalRiskEstimate lt= 67.5    0.031052
+       PercentTradesWBalance lt= 73.5    0.026753
+        ExternalRiskEstimate lt= 80.5    0.022319
+       PercentTradesWBalance lt= 47.5    0.018214
+              AverageMInFile lt= 63.5    0.016180
+        ExternalRiskEstimate lt= 65.5    0.015332
+       PercentTradesWBalance lt= 43.5    0.013518
+      PercentTradesNeverDelq lt= 92.5    0.012998
+       PercentTradesWBalance lt= 80.5    0.012169
+  NetFractionRevolvingBurden lt= 57.5    0.011402
+        ExternalRiskEstimate lt= 81.5    0.011320
+              AverageMInFile lt= 59.5    0.010887
+ MSinceMostRecentInqexcl7days lt= 0.5    0.010570
+              AverageMInFile lt= 49.5    0.009933
+              AverageMInFile lt= 75.5    0.008604
+  NetFractionRevolvingBurden lt= 47.5    0.008132
+MSinceMostRecentInqexcl7days lt= -7.5    0.008101
+      PercentTradesNeverDelq lt= 95.5    0.007800
+  NetFractionRevolvingBurden lt= 37.5    0.007694
+       NumSatisfactoryTrades lt= 20.5    0.007304
+       PercentTradesWBalance lt= 66.5    0.007297
+ MSinceMostRecentInqexcl7days lt= 1.5    0.007167
+        ExternalRiskEstimate lt= 63.5    0.007161
+      PercentTradesNeverDelq lt= 76.5    0.006613
+        NumSatisfactoryTrades lt= 9.5    0.006601
+              AverageMInFile lt= 74.5    0.003323
+Tree Size: 25 trees, 200 total leaves, 8.0 avg leaves/tree

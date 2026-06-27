@@ -1,0 +1,82 @@
+Accuracy: 0.7208413001912046
+Confusion Matrix:
+[[841 251]
+ [333 667]]
+Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.72      0.77      0.74      1092
+           1       0.73      0.67      0.70      1000
+
+    accuracy                           0.72      2092
+   macro avg       0.72      0.72      0.72      2092
+weighted avg       0.72      0.72      0.72      2092
+
+XGBoost completed in 0.06 seconds
+All Features:
+                                   Feature  Importance
+             ExternalRiskEstimate lt= 74.5    0.250341
+             ExternalRiskEstimate lt= 73.5    0.175682
+             ExternalRiskEstimate lt= 70.5    0.073112
+             ExternalRiskEstimate lt= 75.5    0.065185
+             ExternalRiskEstimate lt= 67.5    0.028432
+            PercentTradesWBalance lt= 73.5    0.026301
+             ExternalRiskEstimate lt= 78.5    0.026056
+             ExternalRiskEstimate lt= 81.5    0.021203
+             ExternalRiskEstimate lt= 80.5    0.016679
+                   AverageMInFile lt= 63.5    0.016677
+            NumSatisfactoryTrades lt= 27.5    0.015408
+            PercentTradesWBalance lt= 80.5    0.015396
+                   AverageMInFile lt= 59.5    0.013811
+       NetFractionRevolvingBurden lt= 57.5    0.012224
+            PercentTradesWBalance lt= 45.5    0.011857
+       NetFractionRevolvingBurden lt= 58.5    0.010725
+            NumSatisfactoryTrades lt= 26.5    0.010648
+      MSinceMostRecentInqexcl7days lt= 0.5    0.010102
+       NetFractionRevolvingBurden lt= 37.5    0.009614
+            PercentTradesWBalance lt= 66.5    0.009420
+                   AverageMInFile lt= 48.5    0.009336
+            NumSatisfactoryTrades lt= 12.5    0.008928
+       NetFractionRevolvingBurden lt= 71.5    0.008715
+            NumSatisfactoryTrades lt= 18.5    0.008554
+     MSinceMostRecentInqexcl7days lt= -7.5    0.008460
+                   AverageMInFile lt= 75.5    0.008313
+             ExternalRiskEstimate lt= 63.5    0.008222
+           PercentTradesNeverDelq lt= 91.5    0.008136
+                    AverageMInFile lt= 7.5    0.007425
+       NetFractionRevolvingBurden lt= 47.5    0.007261
+             PercentInstallTrades lt= 47.5    0.006950
+      MSinceMostRecentInqexcl7days lt= 1.5    0.006883
+           PercentTradesNeverDelq lt= 95.5    0.006768
+           PercentTradesNeverDelq lt= 85.5    0.006608
+             NumSatisfactoryTrades lt= 9.5    0.006142
+             PercentInstallTrades lt= 43.5    0.006135
+             PercentInstallTrades lt= 45.5    0.005942
+            NumSatisfactoryTrades lt= 13.5    0.005890
+        NumRevolvingTradesWBalance lt= 7.5    0.005837
+           MSinceOldestTradeOpen lt= 134.5    0.005735
+                   AverageMInFile lt= 97.5    0.005643
+           PercentTradesNeverDelq lt= 96.5    0.005472
+             NumInqLast6Mexcl7days lt= 7.5    0.004867
+                   AverageMInFile lt= 69.5    0.004511
+       NetFractionRevolvingBurden lt= 74.5    0.004221
+       NetFractionRevolvingBurden lt= 35.5    0.003919
+             ExternalRiskEstimate lt= 84.5    0.003713
+             MSinceMostRecentDelq lt= 31.5    0.002495
+       NetFractionRevolvingBurden lt= 23.5    0.000050
+NumBank2NatlTradesWHighUtilization lt= 4.5    0.000000
+        NumRevolvingTradesWBalance lt= 5.5    0.000000
+                   NumTotalTrades lt= 46.5    0.000000
+       NetFractionRevolvingBurden lt= 15.5    0.000000
+                      NumInqLast6M lt= 7.5    0.000000
+                      NumInqLast6M lt= 3.5    0.000000
+             PercentInstallTrades lt= 66.5    0.000000
+             PercentInstallTrades lt= 63.5    0.000000
+             PercentInstallTrades lt= 48.5    0.000000
+             PercentInstallTrades lt= 46.5    0.000000
+           NumTradesOpeninLast12M lt= 10.5    0.000000
+          MaxDelq2PublicRecLast12M lt= 5.5    0.000000
+             MSinceMostRecentDelq lt= -3.5    0.000000
+            NumSatisfactoryTrades lt= 17.5    0.000000
+            NumTradesOpeninLast12M lt= 8.5    0.000000
+Tree Size: 25 trees, 200 total leaves, 8.0 avg leaves/tree

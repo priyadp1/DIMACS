@@ -427,17 +427,17 @@ for dataset_name in DATASETS:
             print(f"  [CatBoost] Accuracy: {accuracy_score(y_test, y_pred_cb):.4f} | Time: {cb_duration:.2f}s")
 
         # ── TREEFARMS (subprocess to avoid potential library conflicts) ───────
-        if (out_dir / "treefarms_results.txt").exists():
-            print(f"  [SKIP] TREEFARMS already exists for {dataset_name}/{param_tag}")
-        else:
-            print(f"\n  [TREEFARMS] Training on {dataset_name}/{param_tag}...")
-            _treefarms_script = Path(__file__).parent / "run_treefarms.py"
-            _result = subprocess.run(
-                [sys.executable, str(_treefarms_script), dataset_name, param_tag],
-                capture_output=False,
-            )
-            if _result.returncode != 0:
-                print(f"  [TREEFARMS] ERROR: subprocess exited with code {_result.returncode}")
+        # if (out_dir / "treefarms_results.txt").exists():
+        #     print(f"  [SKIP] TREEFARMS already exists for {dataset_name}/{param_tag}")
+        # else:
+        #     print(f"\n  [TREEFARMS] Training on {dataset_name}/{param_tag}...")
+        #     _treefarms_script = Path(__file__).parent / "run_treefarms.py"
+        #     _result = subprocess.run(
+        #         [sys.executable, str(_treefarms_script), dataset_name, param_tag],
+        #         capture_output=False,
+        #     )
+        #     if _result.returncode != 0:
+        #         print(f"  [TREEFARMS] ERROR: subprocess exited with code {_result.returncode}")
 
         # ── LicketySPLIT ──────────────────────────────────────────────────────
         # if (out_dir / "licketysplit_results.txt").exists():

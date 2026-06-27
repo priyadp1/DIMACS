@@ -1,0 +1,399 @@
+0:[ExternalRiskEstimate lt= 74.5<1] yes=1,no=2,missing=2
+	1:[ExternalRiskEstimate lt= 81.5<1] yes=3,no=4,missing=4
+		3:[MSinceOldestTradeOpen lt= 138.5<1] yes=7,no=8,missing=8
+			7:leaf=0.142354459
+			8:leaf=0.0742263198
+		4:[NumSatisfactoryTrades lt= 12.5<1] yes=9,no=10,missing=10
+			9:leaf=0.0852720141
+			10:leaf=-0.0137538379
+	2:[ExternalRiskEstimate lt= 67.5<1] yes=5,no=6,missing=6
+		5:[MSinceMostRecentInqexcl7days lt= 0.5<1] yes=11,no=12,missing=12
+			11:leaf=0.0409754477
+			12:leaf=-0.0438912623
+		6:[PercentTradesWBalance lt= 47.5<1] yes=13,no=14,missing=14
+			13:leaf=-0.105598271
+			14:leaf=-0.016347196
+
+0:[ExternalRiskEstimate lt= 73.5<1] yes=1,no=2,missing=2
+	1:[ExternalRiskEstimate lt= 78.5<1] yes=3,no=4,missing=4
+		3:[AverageMInFile lt= 49.5<1] yes=7,no=8,missing=8
+			7:leaf=0.115179829
+			8:leaf=0.0052871285
+		4:[MSinceMostRecentInqexcl7days lt= 0.5<1] yes=9,no=10,missing=10
+			9:leaf=0.0951907039
+			10:leaf=0.00965308677
+	2:[PercentTradesWBalance lt= 73.5<1] yes=5,no=6,missing=6
+		5:[ExternalRiskEstimate lt= 63.5<1] yes=11,no=12,missing=12
+			11:leaf=-0.0630784929
+			12:leaf=-0.119351521
+		6:[ExternalRiskEstimate lt= 70.5<1] yes=13,no=14,missing=14
+			13:leaf=0.0139124198
+			14:leaf=-0.0443795808
+
+0:[ExternalRiskEstimate lt= 74.5<1] yes=1,no=2,missing=2
+	1:[ExternalRiskEstimate lt= 80.5<1] yes=3,no=4,missing=4
+		3:[NumSatisfactoryTrades lt= 9.5<1] yes=7,no=8,missing=8
+			7:leaf=0.114158504
+			8:leaf=0.0505187511
+		4:[NumSatisfactoryTrades lt= 14.5<1] yes=9,no=10,missing=10
+			9:leaf=0.0687449574
+			10:leaf=-0.00738781784
+	2:[ExternalRiskEstimate lt= 67.5<1] yes=5,no=6,missing=6
+		5:[NumSatisfactoryTrades lt= 27.5<1] yes=11,no=12,missing=12
+			11:leaf=0.04012293
+			12:leaf=-0.0371240564
+		6:[PercentTradesWBalance lt= 47.5<1] yes=13,no=14,missing=14
+			13:leaf=-0.0886742994
+			14:leaf=-0.0103570549
+
+0:[ExternalRiskEstimate lt= 73.5<1] yes=1,no=2,missing=2
+	1:[ExternalRiskEstimate lt= 78.5<1] yes=3,no=4,missing=4
+		3:[AverageMInFile lt= 49.5<1] yes=7,no=8,missing=8
+			7:leaf=0.0955426618
+			8:leaf=-0.000679899589
+		4:[MSinceMostRecentInqexcl7days lt= 0.5<1] yes=9,no=10,missing=10
+			9:leaf=0.0819954947
+			10:leaf=0.00526365824
+	2:[NetFractionRevolvingBurden lt= 57.5<1] yes=5,no=6,missing=6
+		5:[MSinceMostRecentInqexcl7days lt= 0.5<1] yes=11,no=12,missing=12
+			11:leaf=-0.0381872877
+			12:leaf=-0.0979789421
+		6:[PercentInstallTrades lt= 43.5<1] yes=13,no=14,missing=14
+			13:leaf=-0.0699596703
+			14:leaf=-0.0166057758
+
+0:[ExternalRiskEstimate lt= 74.5<1] yes=1,no=2,missing=2
+	1:[AverageMInFile lt= 59.5<1] yes=3,no=4,missing=4
+		3:[NetFractionRevolvingBurden lt= 47.5<1] yes=7,no=8,missing=8
+			7:leaf=-0.0146524264
+			8:leaf=0.085829109
+		4:[MSinceMostRecentInqexcl7days lt= 0.5<1] yes=9,no=10,missing=10
+			9:leaf=0.0709183514
+			10:leaf=-0.0211346634
+	2:[ExternalRiskEstimate lt= 67.5<1] yes=5,no=6,missing=6
+		5:[MSinceMostRecentInqexcl7days lt= 0.5<1] yes=11,no=12,missing=12
+			11:leaf=0.0414086841
+			12:leaf=-0.03122418
+		6:[PercentTradesWBalance lt= 47.5<1] yes=13,no=14,missing=14
+			13:leaf=-0.075899817
+			14:leaf=-0.00729707256
+
+0:[ExternalRiskEstimate lt= 70.5<1] yes=1,no=2,missing=2
+	1:[ExternalRiskEstimate lt= 78.5<1] yes=3,no=4,missing=4
+		3:[MSinceMostRecentInqexcl7days lt= 1.5<1] yes=7,no=8,missing=8
+			7:leaf=0.108125262
+			8:leaf=0.0615334623
+		4:[MSinceMostRecentInqexcl7days lt= 0.5<1] yes=9,no=10,missing=10
+			9:leaf=0.0601432212
+			10:leaf=-0.00463938341
+	2:[MSinceMostRecentInqexcl7days lt= -7.5<1] yes=5,no=6,missing=6
+		5:[MSinceMostRecentInqexcl7days lt= 0.5<1] yes=11,no=12,missing=12
+			11:leaf=-0.0135897966
+			12:leaf=-0.0743221194
+		6:[ExternalRiskEstimate lt= 62.5<1] yes=13,no=14,missing=14
+			13:leaf=0.138433844
+			14:leaf=-0.00197060523
+
+0:[ExternalRiskEstimate lt= 70.5<1] yes=1,no=2,missing=2
+	1:[AverageMInFile lt= 63.5<1] yes=3,no=4,missing=4
+		3:[NetFractionRevolvingBurden lt= 37.5<1] yes=7,no=8,missing=8
+			7:leaf=0.0109798983
+			8:leaf=0.0709991828
+		4:[MSinceMostRecentInqexcl7days lt= 0.5<1] yes=9,no=10,missing=10
+			9:leaf=0.0406029969
+			10:leaf=-0.0276695527
+	2:[MSinceMostRecentInqexcl7days lt= -7.5<1] yes=5,no=6,missing=6
+		5:[NumSatisfactoryTrades lt= 18.5<1] yes=11,no=12,missing=12
+			11:leaf=-0.0306770988
+			12:leaf=-0.0793712214
+		6:[ExternalRiskEstimate lt= 62.5<1] yes=13,no=14,missing=14
+			13:leaf=0.123779036
+			14:leaf=-0.0017755311
+
+0:[ExternalRiskEstimate lt= 75.5<1] yes=1,no=2,missing=2
+	1:[MSinceMostRecentInqexcl7days lt= 1.5<1] yes=3,no=4,missing=4
+		3:[NetFractionRevolvingBurden lt= 57.5<1] yes=7,no=8,missing=8
+			7:leaf=-0.0640775412
+			8:leaf=0.0937662944
+		4:[MSinceMostRecentInqexcl7days lt= -7.5<1] yes=9,no=10,missing=10
+			9:leaf=0.0306259282
+			10:leaf=0.114160813
+	2:[PercentTradesWBalance lt= 80.5<1] yes=5,no=6,missing=6
+		5:[AverageMInFile lt= 48.5<1] yes=11,no=12,missing=12
+			11:leaf=-0.0456999838
+			12:leaf=-0.102577962
+		6:[MSinceMostRecentInqexcl7days lt= 0.5<1] yes=13,no=14,missing=14
+			13:leaf=0.0244017895
+			14:leaf=-0.0263774898
+
+0:[ExternalRiskEstimate lt= 70.5<1] yes=1,no=2,missing=2
+	1:[AverageMInFile lt= 63.5<1] yes=3,no=4,missing=4
+		3:[ExternalRiskEstimate lt= 84.5<1] yes=7,no=8,missing=8
+			7:leaf=0.0848478451
+			8:leaf=0.0378410779
+		4:[NumSatisfactoryTrades lt= 27.5<1] yes=9,no=10,missing=10
+			9:leaf=0.0554193631
+			10:leaf=-0.0211115479
+	2:[NetFractionRevolvingBurden lt= 57.5<1] yes=5,no=6,missing=6
+		5:[AverageMInFile lt= 85.5<1] yes=11,no=12,missing=12
+			11:leaf=-0.0285701584
+			12:leaf=-0.0792571083
+		6:[PercentInstallTrades lt= 45.5<1] yes=13,no=14,missing=14
+			13:leaf=-0.0618449338
+			14:leaf=-0.0117060142
+
+0:[ExternalRiskEstimate lt= 74.5<1] yes=1,no=2,missing=2
+	1:[NumSatisfactoryTrades lt= 6.5<1] yes=3,no=4,missing=4
+		3:[MSinceMostRecentInqexcl7days lt= 1.5<1] yes=7,no=8,missing=8
+			7:leaf=0.0812226757
+			8:leaf=0.0366504155
+		4:[MSinceMostRecentInqexcl7days lt= -7.5<1] yes=9,no=10,missing=10
+			9:leaf=-0.0675810948
+			10:leaf=0.0648317859
+	2:[MSinceMostRecentInqexcl7days lt= 0.5<1] yes=5,no=6,missing=6
+		5:[ExternalRiskEstimate lt= 63.5<1] yes=11,no=12,missing=12
+			11:leaf=0.0306948759
+			12:leaf=-0.0421262644
+		6:[MSinceMostRecentInqexcl7days lt= -7.5<1] yes=13,no=14,missing=14
+			13:leaf=-0.0484309085
+			14:leaf=0.0180967748
+
+0:[ExternalRiskEstimate lt= 70.5<1] yes=1,no=2,missing=2
+	1:[AverageMInFile lt= 48.5<1] yes=3,no=4,missing=4
+		3:[PercentTradesNeverDelq lt= 95.5<1] yes=7,no=8,missing=8
+			7:leaf=0.0522766002
+			8:leaf=-0.00139848609
+		4:[NumSatisfactoryTrades lt= 14.5<1] yes=9,no=10,missing=10
+			9:leaf=0.000321308878
+			10:leaf=-0.0607781
+	2:[NetFractionRevolvingBurden lt= 71.5<1] yes=5,no=6,missing=6
+		5:[AverageMInFile lt= 85.5<1] yes=11,no=12,missing=12
+			11:leaf=-0.0193094779
+			12:leaf=-0.08446794
+		6:[MSinceMostRecentInqexcl7days lt= 0.5<1] yes=13,no=14,missing=14
+			13:leaf=0.0088302074
+			14:leaf=-0.031760741
+
+0:[ExternalRiskEstimate lt= 78.5<1] yes=1,no=2,missing=2
+	1:[NumSatisfactoryTrades lt= 9.5<1] yes=3,no=4,missing=4
+		3:[ExternalRiskEstimate lt= 84.5<1] yes=7,no=8,missing=8
+			7:leaf=0.0787080228
+			8:leaf=0.0422094427
+		4:[NumInqLast6M lt= 0.5<1] yes=9,no=10,missing=10
+			9:leaf=-0.0509638079
+			10:leaf=0.0269207843
+	2:[ExternalRiskEstimate lt= 63.5<1] yes=5,no=6,missing=6
+		5:[NumSatisfactoryTrades lt= 26.5<1] yes=11,no=12,missing=12
+			11:leaf=0.033075925
+			12:leaf=-0.0195829067
+		6:[PercentTradesWBalance lt= 43.5<1] yes=13,no=14,missing=14
+			13:leaf=-0.062994875
+			14:leaf=0.000553020102
+
+0:[ExternalRiskEstimate lt= 75.5<1] yes=1,no=2,missing=2
+	1:[MSinceMostRecentInqexcl7days lt= 1.5<1] yes=3,no=4,missing=4
+		3:[NetFractionRevolvingBurden lt= 47.5<1] yes=7,no=8,missing=8
+			7:leaf=-0.0286843125
+			8:leaf=0.0746238455
+		4:[MSinceMostRecentInqexcl7days lt= -7.5<1] yes=9,no=10,missing=10
+			9:leaf=0.0145104202
+			10:leaf=0.09392827
+	2:[NumSatisfactoryTrades lt= 26.5<1] yes=5,no=6,missing=6
+		5:[ExternalRiskEstimate lt= 65.5<1] yes=11,no=12,missing=12
+			11:leaf=0.0370252691
+			12:leaf=-0.0266913269
+		6:[MSinceMostRecentInqexcl7days lt= -7.5<1] yes=13,no=14,missing=14
+			13:leaf=-0.0393256694
+			14:leaf=0.0159429796
+
+0:[ExternalRiskEstimate lt= 70.5<1] yes=1,no=2,missing=2
+	1:[AverageMInFile lt= 63.5<1] yes=3,no=4,missing=4
+		3:[MSinceMostRecentInqexcl7days lt= 1.5<1] yes=7,no=8,missing=8
+			7:leaf=0.0654725656
+			8:leaf=0.0242822915
+		4:[PercentTradesNeverDelq lt= 96.5<1] yes=9,no=10,missing=10
+			9:leaf=0.00436196337
+			10:leaf=-0.0559484549
+	2:[NetFractionRevolvingBurden lt= 71.5<1] yes=5,no=6,missing=6
+		5:[AverageMInFile lt= 85.5<1] yes=11,no=12,missing=12
+			11:leaf=-0.0121180872
+			12:leaf=-0.073967509
+		6:[MSinceOldestTradeOpen lt= 171.5<1] yes=13,no=14,missing=14
+			13:leaf=0.00359130348
+			14:leaf=-0.0307606198
+
+0:[ExternalRiskEstimate lt= 78.5<1] yes=1,no=2,missing=2
+	1:[NumSatisfactoryTrades lt= 13.5<1] yes=3,no=4,missing=4
+		3:[NetFractionRevolvingBurden lt= 47.5<1] yes=7,no=8,missing=8
+			7:leaf=-0.0430637486
+			8:leaf=0.0547421649
+		4:[ExternalRiskEstimate lt= 81.5<1] yes=9,no=10,missing=10
+			9:leaf=0.0237727854
+			10:leaf=-0.0394142158
+	2:[MSinceMostRecentInqexcl7days lt= 0.5<1] yes=5,no=6,missing=6
+		5:[PercentTradesNeverDelq lt= 78.5<1] yes=11,no=12,missing=12
+			11:leaf=0.0267407056
+			12:leaf=-0.0565536097
+		6:[MSinceMostRecentInqexcl7days lt= -7.5<1] yes=13,no=14,missing=14
+			13:leaf=-0.032682348
+			14:leaf=0.025789097
+
+0:[ExternalRiskEstimate lt= 70.5<1] yes=1,no=2,missing=2
+	1:[NumSatisfactoryTrades lt= 8.5<1] yes=3,no=4,missing=4
+		3:[ExternalRiskEstimate lt= 84.5<1] yes=7,no=8,missing=8
+			7:leaf=0.0626304969
+			8:leaf=0.0183943752
+		4:[MSinceMostRecentInqexcl7days lt= -7.5<1] yes=9,no=10,missing=10
+			9:leaf=-0.0540231168
+			10:leaf=0.0845026895
+	2:[PercentInstallTrades lt= 45.5<1] yes=5,no=6,missing=6
+		5:[MSinceOldestTradeOpen lt= 134.5<1] yes=11,no=12,missing=12
+			11:leaf=-0.027877152
+			12:leaf=-0.080228366
+		6:[NetFractionRevolvingBurden lt= 57.5<1] yes=13,no=14,missing=14
+			13:leaf=-0.0376371481
+			14:leaf=-0.00100660534
+
+0:[ExternalRiskEstimate lt= 63.5<1] yes=1,no=2,missing=2
+	1:[AverageMInFile lt= 48.5<1] yes=3,no=4,missing=4
+		3:[MSinceMostRecentInqexcl7days lt= -7.5<1] yes=7,no=8,missing=8
+			7:leaf=0.0150119439
+			8:leaf=0.094550781
+		4:[PercentTradesWBalance lt= 80.5<1] yes=9,no=10,missing=10
+			9:leaf=-0.0638741553
+			10:leaf=-0.019639194
+	2:[PercentTradesWBalance lt= 43.5<1] yes=5,no=6,missing=6
+		5:[MSinceOldestTradeOpen lt= 288.5<1] yes=11,no=12,missing=12
+			11:leaf=0.0146411778
+			12:leaf=-0.0585612319
+		6:[NetFractionRevolvingBurden lt= 36.5<1] yes=13,no=14,missing=14
+			13:leaf=-0.0794264898
+			14:leaf=0.00284561911
+
+0:[AverageMInFile lt= 75.5<1] yes=1,no=2,missing=2
+	1:[PercentTradesNeverDelq lt= 92.5<1] yes=3,no=4,missing=4
+		3:[NetFractionRevolvingBurden lt= 37.5<1] yes=7,no=8,missing=8
+			7:leaf=0.00468472391
+			8:leaf=0.0524146669
+		4:[MSinceMostRecentInqexcl7days lt= -7.5<1] yes=9,no=10,missing=10
+			9:leaf=-0.0198487546
+			10:leaf=0.0820071846
+	2:[PercentTradesWBalance lt= 66.5<1] yes=5,no=6,missing=6
+		5:[ExternalRiskEstimate lt= 63.5<1] yes=11,no=12,missing=12
+			11:leaf=-0.0241012815
+			12:leaf=-0.0653362498
+		6:[MSinceMostRecentInqexcl7days lt= 1.5<1] yes=13,no=14,missing=14
+			13:leaf=0.0462169796
+			14:leaf=-0.00629485911
+
+0:[MSinceMostRecentInqexcl7days lt= 1.5<1] yes=1,no=2,missing=2
+	1:[PercentTradesNeverDelq lt= 76.5<1] yes=3,no=4,missing=4
+		3:[NumSatisfactoryTrades lt= 20.5<1] yes=7,no=8,missing=8
+			7:leaf=0.0593374074
+			8:leaf=0.0165249966
+		4:[MSinceMostRecentDelq lt= 31.5<1] yes=9,no=10,missing=10
+			9:leaf=0.0432904325
+			10:leaf=-0.0723506138
+	2:[NetFractionRevolvingBurden lt= 35.5<1] yes=5,no=6,missing=6
+		5:[MSinceMostRecentInqexcl7days lt= -7.5<1] yes=11,no=12,missing=12
+			11:leaf=-0.0356988683
+			12:leaf=0.0799644217
+		6:[PercentInstallTrades lt= 47.5<1] yes=13,no=14,missing=14
+			13:leaf=-0.0343206637
+			14:leaf=0.0141407913
+
+0:[AverageMInFile lt= 75.5<1] yes=1,no=2,missing=2
+	1:[PercentTradesNeverDelq lt= 95.5<1] yes=3,no=4,missing=4
+		3:[NetFractionRevolvingBurden lt= 76.5<1] yes=7,no=8,missing=8
+			7:leaf=-0.039138075
+			8:leaf=0.0441106744
+		4:[MSinceMostRecentInqexcl7days lt= -7.5<1] yes=9,no=10,missing=10
+			9:leaf=-0.0119163413
+			10:leaf=0.0877317712
+	2:[PercentTradesWBalance lt= 86.5<1] yes=5,no=6,missing=6
+		5:[NumSatisfactoryTrades lt= 27.5<1] yes=11,no=12,missing=12
+			11:leaf=0.0127790244
+			12:leaf=-0.0598313026
+		6:[MSinceMostRecentInqexcl7days lt= 1.5<1] yes=13,no=14,missing=14
+			13:leaf=0.0263374597
+			14:leaf=-0.0149477618
+
+0:[ExternalRiskEstimate lt= 63.5<1] yes=1,no=2,missing=2
+	1:[MSinceMostRecentInqexcl7days lt= -7.5<1] yes=3,no=4,missing=4
+		3:[MSinceMostRecentInqexcl7days lt= 0.5<1] yes=7,no=8,missing=8
+			7:leaf=0.0328048058
+			8:leaf=-0.00800335128
+		4:[PercentInstallTrades lt= 24.5<1] yes=9,no=10,missing=10
+			9:leaf=0.103233151
+			10:leaf=0.033298742
+	2:[MaxDelq2PublicRecLast12M lt= 3.5<1] yes=5,no=6,missing=6
+		5:[MSinceOldestTradeOpen lt= 288.5<1] yes=11,no=12,missing=12
+			11:leaf=0.0182284676
+			12:leaf=-0.0518075004
+		6:[NetFractionRevolvingBurden lt= 35.5<1] yes=13,no=14,missing=14
+			13:leaf=-0.045624394
+			14:leaf=0.00564321363
+
+0:[AverageMInFile lt= 75.5<1] yes=1,no=2,missing=2
+	1:[PercentTradesNeverDelq lt= 84.5<1] yes=3,no=4,missing=4
+		3:[NetFractionRevolvingBurden lt= 37.5<1] yes=7,no=8,missing=8
+			7:leaf=0.00356065831
+			8:leaf=0.0376854911
+		4:[MSinceMostRecentDelq lt= 34.5<1] yes=9,no=10,missing=10
+			9:leaf=0.038075652
+			10:leaf=-0.0358547978
+	2:[PercentInstallTrades lt= 45.5<1] yes=5,no=6,missing=6
+		5:[NumSatisfactoryTrades lt= 13.5<1] yes=11,no=12,missing=12
+			11:leaf=-0.02257335
+			12:leaf=-0.0679779276
+		6:[MSinceMostRecentInqexcl7days lt= 1.5<1] yes=13,no=14,missing=14
+			13:leaf=0.029815523
+			14:leaf=-0.0115650846
+
+0:[NetFractionRevolvingBurden lt= 47.5<1] yes=1,no=2,missing=2
+	1:[NumSatisfactoryTrades lt= 20.5<1] yes=3,no=4,missing=4
+		3:[NumRevolvingTradesWBalance lt= 7.5<1] yes=7,no=8,missing=8
+			7:leaf=-0.0447677784
+			8:leaf=0.0167709459
+		4:[MSinceMostRecentInqexcl7days lt= -7.5<1] yes=9,no=10,missing=10
+			9:leaf=-0.0391010679
+			10:leaf=0.0484082401
+	2:[PercentTradesNeverDelq lt= 95.5<1] yes=5,no=6,missing=6
+		5:[AverageMInFile lt= 43.5<1] yes=11,no=12,missing=12
+			11:leaf=0.0335274003
+			12:leaf=-0.038453538
+		6:[MSinceMostRecentDelq lt= 33.5<1] yes=13,no=14,missing=14
+			13:leaf=0.0217242446
+			14:leaf=-0.0151619753
+
+0:[MSinceMostRecentInqexcl7days lt= 1.5<1] yes=1,no=2,missing=2
+	1:[NumSatisfactoryTrades lt= 6.5<1] yes=3,no=4,missing=4
+		3:[PercentTradesNeverDelq lt= 95.5<1] yes=7,no=8,missing=8
+			7:leaf=0.0477382541
+			8:leaf=0.00552118989
+		4:[ExternalRiskEstimate lt= 78.5<1] yes=9,no=10,missing=10
+			9:leaf=-0.0212570149
+			10:leaf=-0.0832595676
+	2:[MSinceMostRecentInqexcl7days lt= -7.5<1] yes=5,no=6,missing=6
+		5:[AverageMInFile lt= 56.5<1] yes=11,no=12,missing=12
+			11:leaf=-0.00402522599
+			12:leaf=-0.0369936936
+		6:[ExternalRiskEstimate lt= 62.5<1] yes=13,no=14,missing=14
+			13:leaf=0.0712118223
+			14:leaf=0.00483327825
+
+0:[NetFractionRevolvingBurden lt= 71.5<1] yes=1,no=2,missing=2
+	1:[AverageMInFile lt= 85.5<1] yes=3,no=4,missing=4
+		3:[MSinceMostRecentDelq lt= 31.5<1] yes=7,no=8,missing=8
+			7:leaf=0.072002165
+			8:leaf=-0.0218112729
+		4:[NetFractionInstallBurden lt= 83.5<1] yes=9,no=10,missing=10
+			9:leaf=-0.0764845759
+			10:leaf=-0.0382959656
+	2:[PercentTradesNeverDelq lt= 95.5<1] yes=5,no=6,missing=6
+		5:[AverageMInFile lt= 43.5<1] yes=11,no=12,missing=12
+			11:leaf=0.026059512
+			12:leaf=-0.0312526338
+		6:[MSinceMostRecentInqexcl7days lt= -7.5<1] yes=13,no=14,missing=14
+			13:leaf=-0.0166866761
+			14:leaf=0.0178926084

@@ -1,0 +1,11 @@
+<class 'gosdt._tree.Tree'>: { feature: 0, orig feature: 0, [ left child: { prediction: 0, loss: 0.06346360594034195 }, right child: { feature: 10, orig feature: 10, [ left child: { prediction: 1, loss: 0.0054977890104055405 }, right child: { feature: 11, orig feature: 11, [ left child: { feature: 15, orig feature: 15, [ left child: { feature: 4, orig feature: 4, [ left child: { prediction: 0, loss: 0.048045895993709564 }, right child: { feature: 8, orig feature: 8, [ left child: { prediction: 0, loss: 0.004900203086435795 }, right child: { prediction: 1, loss: 0.04422134533524513 }] }] }, right child: { feature: 6, orig feature: 6, [ left child: { prediction: 0, loss: 0.03800645470619202 }, right child: { prediction: 1, loss: 0.00908330362290144 }] }] }, right child: { feature: 14, orig feature: 14, [ left child: { prediction: 1, loss: 0.012907852418720722 }, right child: { feature: 2, orig feature: 2, [ left child: { prediction: 0, loss: 0.023544877767562866 }, right child: { prediction: 1, loss: 0.028445081785321236 }] }] }] }] }] }, Index(['ExternalRiskEstimate <= 63.5', 'ExternalRiskEstimate <= 67.5',
+       'ExternalRiskEstimate <= 70.5', 'ExternalRiskEstimate <= 73.5',
+       'ExternalRiskEstimate <= 74.5', 'ExternalRiskEstimate <= 75.5',
+       'ExternalRiskEstimate <= 78.5', 'ExternalRiskEstimate <= 81.5',
+       'AverageMInFile <= 49.5', 'AverageMInFile <= 64.5',
+       'MSinceMostRecentInqexcl7days <= -7.5',
+       'MSinceMostRecentInqexcl7days <= 0.5',
+       'MSinceMostRecentInqexcl7days <= 1.5',
+       'NetFractionRevolvingBurden <= 57.5', 'PercentTradesWBalance <= 47.5',
+       'PercentTradesWBalance <= 73.5', 'NumSatisfactoryTrades <= 27.5'],
+      dtype='str'), 2

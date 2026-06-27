@@ -1,0 +1,12 @@
+<class 'gosdt._tree.Tree'>: { feature: 6, orig feature: 6, [ left child: { feature: 9, orig feature: 9, [ left child: { feature: 0, orig feature: 0, [ left child: { prediction: 0, loss: 0.027488945052027702 }, right child: { prediction: 1, loss: 0.0025098600890487432 }] }, right child: { feature: 10, orig feature: 10, [ left child: { feature: 3, orig feature: 3, [ left child: { prediction: 0, loss: 0.10326281934976578 }, right child: { prediction: 1, loss: 0.04410182684659958 }] }, right child: { feature: 0, orig feature: 0, [ left child: { prediction: 0, loss: 0.025576669722795486 }, right child: { prediction: 1, loss: 0.04087486490607262 }] }] }] }, right child: { prediction: 1, loss: 0.04362376034259796 }] }, Index(['ExternalRiskEstimate <= 67.5', 'ExternalRiskEstimate <= 70.5',
+       'ExternalRiskEstimate <= 73.5', 'ExternalRiskEstimate <= 74.5',
+       'ExternalRiskEstimate <= 75.5', 'ExternalRiskEstimate <= 78.5',
+       'ExternalRiskEstimate <= 80.5', 'ExternalRiskEstimate <= 81.5',
+       'AverageMInFile <= 75.5', 'MSinceMostRecentInqexcl7days <= -7.5',
+       'MSinceMostRecentInqexcl7days <= 0.5',
+       'MSinceMostRecentInqexcl7days <= 1.5',
+       'NetFractionRevolvingBurden <= 37.5',
+       'NetFractionRevolvingBurden <= 47.5',
+       'NetFractionRevolvingBurden <= 57.5', 'PercentTradesWBalance <= 73.5',
+       'PercentTradesWBalance <= 80.5'],
+      dtype='str'), 2

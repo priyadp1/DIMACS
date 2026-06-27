@@ -1,0 +1,13 @@
+<class 'gosdt._tree.Tree'>: { feature: 10, orig feature: 10, [ left child: { feature: 3, orig feature: 3, [ left child: { prediction: 0, loss: 0.1357714831829071 }, right child: { prediction: 1, loss: 0.07708856463432312 }] }, right child: { feature: 0, orig feature: 0, [ left child: { prediction: 0, loss: 0.025576669722795486 }, right child: { prediction: 1, loss: 0.05258754640817642 }] }] }, Index(['ExternalRiskEstimate <= 67.5', 'ExternalRiskEstimate <= 70.5',
+       'ExternalRiskEstimate <= 73.5', 'ExternalRiskEstimate <= 74.5',
+       'ExternalRiskEstimate <= 75.5', 'ExternalRiskEstimate <= 78.5',
+       'ExternalRiskEstimate <= 80.5', 'ExternalRiskEstimate <= 81.5',
+       'AverageMInFile <= 63.5', 'AverageMInFile <= 75.5',
+       'MSinceMostRecentInqexcl7days <= 0.5',
+       'MSinceMostRecentInqexcl7days <= 1.5',
+       'NetFractionRevolvingBurden <= 37.5',
+       'NetFractionRevolvingBurden <= 47.5',
+       'NetFractionRevolvingBurden <= 57.5', 'PercentTradesWBalance <= 73.5',
+       'PercentTradesWBalance <= 80.5',
+       'MSinceMostRecentInqexcl7days <= -7.5'],
+      dtype='str'), 2

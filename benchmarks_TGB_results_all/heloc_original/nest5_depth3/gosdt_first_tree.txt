@@ -1,0 +1,13 @@
+<class 'gosdt._tree.Tree'>: { feature: 18, orig feature: 18, [ left child: { feature: 2, orig feature: 2, [ left child: { prediction: 0, loss: 0.04063583165407181 }, right child: { prediction: 1, loss: 0.04075534641742706 }] }, right child: { feature: 7, orig feature: 7, [ left child: { feature: 14, orig feature: 14, [ left child: { prediction: 1, loss: 0.003944065887480974 }, right child: { feature: 15, orig feature: 15, [ left child: { feature: 4, orig feature: 4, [ left child: { prediction: 0, loss: 0.0865304172039032 }, right child: { feature: 11, orig feature: 11, [ left child: { prediction: 0, loss: 0.011115094646811485 }, right child: { prediction: 1, loss: 0.020915500819683075 }] }] }, right child: { feature: 2, orig feature: 2, [ left child: { prediction: 0, loss: 0.03406238928437233 }, right child: { prediction: 1, loss: 0.022947292774915695 }] }] }] }, right child: { prediction: 1, loss: 0.021274052560329437 }] }] }, Index(['ExternalRiskEstimate <= 63.5', 'ExternalRiskEstimate <= 67.5',
+       'ExternalRiskEstimate <= 70.5', 'ExternalRiskEstimate <= 73.5',
+       'ExternalRiskEstimate <= 74.5', 'ExternalRiskEstimate <= 78.5',
+       'ExternalRiskEstimate <= 80.5', 'ExternalRiskEstimate <= 81.5',
+       'MSinceOldestTradeOpen <= 138.5', 'AverageMInFile <= 49.5',
+       'AverageMInFile <= 59.5', 'NumSatisfactoryTrades <= 15.5',
+       'NumSatisfactoryTrades <= 27.5', 'PercentInstallTrades <= 43.5',
+       'MSinceMostRecentInqexcl7days <= -7.5',
+       'MSinceMostRecentInqexcl7days <= 0.5',
+       'NetFractionRevolvingBurden <= 47.5',
+       'NetFractionRevolvingBurden <= 57.5', 'PercentTradesWBalance <= 47.5',
+       'PercentTradesWBalance <= 73.5', 'MSinceMostRecentInqexcl7days <= 1.5'],
+      dtype='str'), 2

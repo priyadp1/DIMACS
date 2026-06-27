@@ -1,0 +1,1 @@
+<class 'gosdt._tree.Tree'>: { feature: 0, orig feature: 0, [ left child: { prediction: 0, loss: 0.19947412610054016 }, right child: { prediction: 1, loss: 0.10218716412782669 }] }, Index(['ExternalRiskEstimate <= 74.5', 'ExternalRiskEstimate <= 70.5'], dtype='str'), 2

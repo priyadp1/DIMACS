@@ -1,0 +1,39 @@
+Accuracy: 0.722753346080306
+Confusion Matrix:
+[[839 253]
+ [327 673]]
+Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.72      0.77      0.74      1092
+           1       0.73      0.67      0.70      1000
+
+    accuracy                           0.72      2092
+   macro avg       0.72      0.72      0.72      2092
+weighted avg       0.72      0.72      0.72      2092
+
+LightGBM completed in 0.05 seconds
+All Features:
+                              Feature  Importance
+ MSinceMostRecentInqexcl7days lt= 0.5          22
+MSinceMostRecentInqexcl7days lt= -7.5          17
+        ExternalRiskEstimate lt= 63.5          14
+       NumSatisfactoryTrades lt= 15.5          12
+ MSinceMostRecentInqexcl7days lt= 1.5          12
+              AverageMInFile lt= 59.5          10
+       NumSatisfactoryTrades lt= 27.5           9
+        ExternalRiskEstimate lt= 78.5           8
+      MSinceOldestTradeOpen lt= 138.5           8
+        PercentInstallTrades lt= 43.5           7
+        ExternalRiskEstimate lt= 70.5           7
+  NetFractionRevolvingBurden lt= 47.5           7
+  NetFractionRevolvingBurden lt= 57.5           7
+              AverageMInFile lt= 49.5           6
+       PercentTradesWBalance lt= 47.5           6
+        ExternalRiskEstimate lt= 81.5           5
+        ExternalRiskEstimate lt= 74.5           5
+        ExternalRiskEstimate lt= 67.5           4
+       PercentTradesWBalance lt= 73.5           4
+        ExternalRiskEstimate lt= 73.5           3
+        ExternalRiskEstimate lt= 80.5           1
+Tree Size: 25 trees, 199 total leaves, 8.0 avg leaves/tree

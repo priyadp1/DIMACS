@@ -1,0 +1,149 @@
+0:[ExternalRiskEstimate lt= 74.5<1] yes=1,no=2,missing=2
+	1:leaf=0.101495795
+	2:[ExternalRiskEstimate lt= 70.5<1] yes=3,no=4,missing=4
+		3:leaf=-0.000352243514
+		4:leaf=-0.0782481655
+
+0:[ExternalRiskEstimate lt= 74.5<1] yes=1,no=2,missing=2
+	1:leaf=0.0911738276
+	2:[ExternalRiskEstimate lt= 70.5<1] yes=3,no=4,missing=4
+		3:leaf=-0.000317136204
+		4:leaf=-0.0707980916
+
+0:[ExternalRiskEstimate lt= 74.5<1] yes=1,no=2,missing=2
+	1:leaf=0.0822988153
+	2:[ExternalRiskEstimate lt= 70.5<1] yes=3,no=4,missing=4
+		3:leaf=-0.000285572256
+		4:leaf=-0.0642029569
+
+0:[ExternalRiskEstimate lt= 74.5<1] yes=1,no=2,missing=2
+	1:leaf=0.074546814
+	2:[ExternalRiskEstimate lt= 70.5<1] yes=3,no=4,missing=4
+		3:leaf=-0.000257119478
+		4:leaf=-0.0583130382
+
+0:[ExternalRiskEstimate lt= 74.5<1] yes=1,no=2,missing=2
+	1:leaf=0.067691654
+	2:[ExternalRiskEstimate lt= 70.5<1] yes=3,no=4,missing=4
+		3:leaf=-0.000231509082
+		4:leaf=-0.0530172996
+
+0:[ExternalRiskEstimate lt= 74.5<1] yes=1,no=2,missing=2
+	1:leaf=0.0615709685
+	2:[ExternalRiskEstimate lt= 70.5<1] yes=3,no=4,missing=4
+		3:leaf=-0.000208456724
+		4:leaf=-0.0482312515
+
+0:[ExternalRiskEstimate lt= 74.5<1] yes=1,no=2,missing=2
+	1:leaf=0.0560653694
+	2:[ExternalRiskEstimate lt= 70.5<1] yes=3,no=4,missing=4
+		3:leaf=-0.000187682235
+		4:leaf=-0.0438893996
+
+0:[ExternalRiskEstimate lt= 74.5<1] yes=1,no=2,missing=2
+	1:leaf=0.0510849431
+	2:[ExternalRiskEstimate lt= 70.5<1] yes=3,no=4,missing=4
+		3:leaf=-0.000168983926
+		4:leaf=-0.039939601
+
+0:[ExternalRiskEstimate lt= 74.5<1] yes=1,no=2,missing=2
+	1:leaf=0.0465605818
+	2:[ExternalRiskEstimate lt= 70.5<1] yes=3,no=4,missing=4
+		3:leaf=-0.000152135326
+		4:leaf=-0.0363397114
+
+0:[ExternalRiskEstimate lt= 74.5<1] yes=1,no=2,missing=2
+	1:leaf=0.0424379408
+	2:[ExternalRiskEstimate lt= 70.5<1] yes=3,no=4,missing=4
+		3:leaf=-0.000136993694
+		4:leaf=-0.0330546126
+
+0:[ExternalRiskEstimate lt= 74.5<1] yes=1,no=2,missing=2
+	1:leaf=0.0386734232
+	2:[ExternalRiskEstimate lt= 70.5<1] yes=3,no=4,missing=4
+		3:leaf=-0.000123357386
+		4:leaf=-0.0300547667
+
+0:[ExternalRiskEstimate lt= 74.5<1] yes=1,no=2,missing=2
+	1:leaf=0.0352311768
+	2:[ExternalRiskEstimate lt= 70.5<1] yes=3,no=4,missing=4
+		3:leaf=-0.00011107741
+		4:leaf=-0.0273145977
+
+0:[ExternalRiskEstimate lt= 74.5<1] yes=1,no=2,missing=2
+	1:leaf=0.0320811085
+	2:[ExternalRiskEstimate lt= 70.5<1] yes=3,no=4,missing=4
+		3:leaf=-0.000100011057
+		4:leaf=-0.0248117317
+
+0:[ExternalRiskEstimate lt= 74.5<1] yes=1,no=2,missing=2
+	1:leaf=0.0291975681
+	2:[ExternalRiskEstimate lt= 70.5<1] yes=3,no=4,missing=4
+		3:leaf=-9.00217492e-05
+		4:leaf=-0.0225262437
+
+0:[ExternalRiskEstimate lt= 74.5<1] yes=1,no=2,missing=2
+	1:leaf=0.0265580714
+	2:[ExternalRiskEstimate lt= 70.5<1] yes=3,no=4,missing=4
+		3:leaf=-8.10670826e-05
+		4:leaf=-0.020440232
+
+0:[ExternalRiskEstimate lt= 74.5<1] yes=1,no=2,missing=2
+	1:leaf=0.0241426881
+	2:[ExternalRiskEstimate lt= 70.5<1] yes=3,no=4,missing=4
+		3:leaf=-7.29991298e-05
+		4:leaf=-0.0185373239
+
+0:[ExternalRiskEstimate lt= 74.5<1] yes=1,no=2,missing=2
+	1:leaf=0.0219335686
+	2:[ExternalRiskEstimate lt= 70.5<1] yes=3,no=4,missing=4
+		3:leaf=-6.57341006e-05
+		4:leaf=-0.0168026295
+
+0:[ExternalRiskEstimate lt= 74.5<1] yes=1,no=2,missing=2
+	1:leaf=0.0199143421
+	2:[ExternalRiskEstimate lt= 70.5<1] yes=3,no=4,missing=4
+		3:leaf=-5.91716343e-05
+		4:leaf=-0.0152224032
+
+0:[ExternalRiskEstimate lt= 74.5<1] yes=1,no=2,missing=2
+	1:leaf=0.0180700868
+	2:[ExternalRiskEstimate lt= 70.5<1] yes=3,no=4,missing=4
+		3:leaf=-5.32755294e-05
+		4:leaf=-0.0137839392
+
+0:[ExternalRiskEstimate lt= 74.5<1] yes=1,no=2,missing=2
+	1:leaf=0.0163870268
+	2:[ExternalRiskEstimate lt= 70.5<1] yes=3,no=4,missing=4
+		3:leaf=-4.79857517e-05
+		4:leaf=-0.0124754962
+
+0:[ExternalRiskEstimate lt= 74.5<1] yes=1,no=2,missing=2
+	1:leaf=0.0148523152
+	2:[ExternalRiskEstimate lt= 70.5<1] yes=3,no=4,missing=4
+		3:leaf=-4.31843837e-05
+		4:leaf=-0.0112862065
+
+0:[ExternalRiskEstimate lt= 74.5<1] yes=1,no=2,missing=2
+	1:leaf=0.0134540675
+	2:[ExternalRiskEstimate lt= 70.5<1] yes=3,no=4,missing=4
+		3:leaf=-3.88879416e-05
+		4:leaf=-0.0102060121
+
+0:[ExternalRiskEstimate lt= 74.5<1] yes=1,no=2,missing=2
+	1:leaf=0.012181269
+	2:[ExternalRiskEstimate lt= 70.5<1] yes=3,no=4,missing=4
+		3:leaf=-3.5014742e-05
+		4:leaf=-0.00922557432
+
+0:[ExternalRiskEstimate lt= 74.5<1] yes=1,no=2,missing=2
+	1:leaf=0.0110235885
+	2:[ExternalRiskEstimate lt= 70.5<1] yes=3,no=4,missing=4
+		3:leaf=-3.15223369e-05
+		4:leaf=-0.00833625346
+
+0:[ExternalRiskEstimate lt= 74.5<1] yes=1,no=2,missing=2
+	1:leaf=0.00997142959
+	2:[ExternalRiskEstimate lt= 70.5<1] yes=3,no=4,missing=4
+		3:leaf=-2.83807003e-05
+		4:leaf=-0.00753009692

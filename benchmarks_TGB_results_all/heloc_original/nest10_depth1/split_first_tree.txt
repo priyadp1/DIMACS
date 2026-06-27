@@ -1,0 +1,1 @@
+<class 'split._tree.Tree'>: { feature: 0 [ left child: { prediction: 1, loss: 0.2683615982532501 }, right child: { prediction: 0, loss: 0.32213857769966125 }] }, Index(['ExternalRiskEstimate <= 74.5 <= 0.5', 'ExternalRiskEstimate <= 70.5 <= 0.5'], dtype='str'), 2

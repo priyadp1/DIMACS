@@ -1,0 +1,7 @@
+<class 'split._tree.Tree'>: { feature: 4 [ left child: { prediction: 1, loss: 0.36189183592796326 }, right child: { prediction: 0, loss: 0.43031004071235657 }] }, Index(['gender <= 0.5 <= 0.5', 'discharge_disposition_id <= 10.5 <= 0.5',
+       'number_outpatient <= 0.5 <= 0.5', 'number_emergency <= 0.5 <= 0.5',
+       'number_inpatient <= 0.5 <= 0.5', 'number_inpatient <= 1.5 <= 0.5',
+       'number_inpatient <= 2.5 <= 0.5', 'number_inpatient <= 3.5 <= 0.5',
+       'number_diagnoses <= 5.5 <= 0.5', 'metformin <= 1.5 <= 0.5',
+       'change <= 0.5 <= 0.5', 'diag_1 <= 98.5 <= 0.5'],
+      dtype='str'), 2

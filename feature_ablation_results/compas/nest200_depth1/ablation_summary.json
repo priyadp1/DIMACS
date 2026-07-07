@@ -1,0 +1,55 @@
+{
+  "dataset": "compas",
+  "param_tag": "nest200_depth1",
+  "root_features_dropped": [
+    "priors_count"
+  ],
+  "n_dropped_columns": 7,
+  "baseline": {
+    "tgb_accuracy": 0.6808972503617945,
+    "tgb_ci95": [
+      0.6562952243125905,
+      0.7040520984081042
+    ],
+    "tgb_split_features": [
+      "age",
+      "priors_count"
+    ],
+    "gosdt_accuracy": 0.6693198263386396,
+    "gosdt_ci95": [
+      0.6446997105643995,
+      0.6946454413892909
+    ],
+    "gosdt_split_features": [
+      "age",
+      "priors_count"
+    ],
+    "gosdt_tgb_overlap_jaccard": 1.0
+  },
+  "ablated": {
+    "tgb_accuracy": 0.605643994211288,
+    "tgb_ci95": [
+      0.5803183791606368,
+      0.6302641099855282
+    ],
+    "tgb_split_features": [
+      "age",
+      "juvenile_crimes"
+    ],
+    "gosdt_accuracy": 0.605643994211288,
+    "gosdt_ci95": [
+      0.5803183791606368,
+      0.6302641099855282
+    ],
+    "gosdt_split_features": [
+      "age",
+      "juvenile_crimes"
+    ],
+    "gosdt_tgb_overlap_jaccard": 1.0
+  },
+  "delta": {
+    "tgb_accuracy": -0.07525325615050649,
+    "gosdt_accuracy": -0.06367583212735162,
+    "overlap_jaccard": 0.0
+  }
+}

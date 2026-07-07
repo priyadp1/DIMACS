@@ -1,0 +1,67 @@
+{
+  "dataset": "creditcard_fraud_smote",
+  "param_tag": "nest15_depth2",
+  "root_features_dropped": [
+    "V14"
+  ],
+  "n_dropped_columns": 13,
+  "baseline": {
+    "tgb_accuracy": 0.9500994713181873,
+    "tgb_ci95": [
+      0.9486596102482936,
+      0.9514852002066365
+    ],
+    "tgb_split_features": [
+      "V10",
+      "V12",
+      "V14",
+      "V4",
+      "V8"
+    ],
+    "gosdt_accuracy": 0.9435706356272189,
+    "gosdt_ci95": [
+      0.9420648267220628,
+      0.9450437453973907
+    ],
+    "gosdt_split_features": [
+      "V10",
+      "V12",
+      "V14",
+      "V20",
+      "V4",
+      "V8"
+    ],
+    "gosdt_tgb_overlap_jaccard": 0.8333333333333334
+  },
+  "ablated": {
+    "tgb_accuracy": 0.9407568613226938,
+    "tgb_ci95": [
+      0.939294742858399,
+      0.9421750145634803
+    ],
+    "tgb_split_features": [
+      "V10",
+      "V12",
+      "V20",
+      "V4"
+    ],
+    "gosdt_accuracy": 0.9368329651245865,
+    "gosdt_ci95": [
+      0.935239225772414,
+      0.9382840922830041
+    ],
+    "gosdt_split_features": [
+      "V10",
+      "V12",
+      "V20",
+      "V4",
+      "V8"
+    ],
+    "gosdt_tgb_overlap_jaccard": 0.8
+  },
+  "delta": {
+    "tgb_accuracy": -0.009342609995493523,
+    "gosdt_accuracy": -0.006737670502632409,
+    "overlap_jaccard": -0.033333333333333326
+  }
+}

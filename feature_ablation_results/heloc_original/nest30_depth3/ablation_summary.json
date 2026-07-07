@@ -1,0 +1,65 @@
+{
+  "dataset": "heloc_original",
+  "param_tag": "nest30_depth3",
+  "root_features_dropped": [
+    "ExternalRiskEstimate"
+  ],
+  "n_dropped_columns": 16,
+  "baseline": {
+    "tgb_accuracy": 0.7280114722753346,
+    "tgb_ci95": [
+      0.7093570745697897,
+      0.7480879541108987
+    ],
+    "tgb_split_features": [
+      "AverageMInFile",
+      "ExternalRiskEstimate",
+      "MSinceMostRecentInqexcl7days",
+      "NetFractionRevolvingBurden",
+      "PercentTradesWBalance"
+    ],
+    "gosdt_accuracy": 0.6998087954110899,
+    "gosdt_ci95": [
+      0.6787643403441682,
+      0.7198972275334609
+    ],
+    "gosdt_split_features": [
+      "AverageMInFile",
+      "ExternalRiskEstimate",
+      "MSinceMostRecentInqexcl7days"
+    ],
+    "gosdt_tgb_overlap_jaccard": 0.6
+  },
+  "ablated": {
+    "tgb_accuracy": 0.7174952198852772,
+    "tgb_ci95": [
+      0.6978967495219885,
+      0.7380616634799235
+    ],
+    "tgb_split_features": [
+      "AverageMInFile",
+      "MSinceMostRecentInqexcl7days",
+      "NetFractionRevolvingBurden",
+      "PercentTradesNeverDelq",
+      "PercentTradesWBalance"
+    ],
+    "gosdt_accuracy": 0.6806883365200764,
+    "gosdt_ci95": [
+      0.6610779158699809,
+      0.7017327915869981
+    ],
+    "gosdt_split_features": [
+      "AverageMInFile",
+      "MSinceMostRecentInqexcl7days",
+      "NetFractionRevolvingBurden",
+      "NumRevolvingTradesWBalance",
+      "PercentTradesNeverDelq"
+    ],
+    "gosdt_tgb_overlap_jaccard": 0.6666666666666666
+  },
+  "delta": {
+    "tgb_accuracy": -0.010516252390057379,
+    "gosdt_accuracy": -0.019120458891013437,
+    "overlap_jaccard": 0.06666666666666665
+  }
+}

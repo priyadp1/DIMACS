@@ -1,0 +1,10 @@
+<class 'gosdt._tree.Tree'>: { feature: 9, orig feature: 9, [ left child: { feature: 11, orig feature: 11, [ left child: { feature: 8, orig feature: 8, [ left child: { prediction: 0, loss: 0.22209998965263367 }, right child: { feature: 5, orig feature: 5, [ left child: { prediction: 1, loss: 0.019600000232458115 }, right child: { prediction: 0, loss: 0.010400000028312206 }] }] }, right child: { feature: 2, orig feature: 2, [ left child: { prediction: 1, loss: 0.09019999951124191 }, right child: { feature: 3, orig feature: 3, [ left child: { prediction: 0, loss: 0.0007999999797903001 }, right child: { prediction: 1, loss: 0.008299999870359898 }] }] }] }, right child: { feature: 2, orig feature: 2, [ left child: { prediction: 1, loss: 0.03350000083446503 }, right child: { prediction: 0, loss: 0.0017999999690800905 }] }] }, Index(['gender <= 0.5', 'age <= 6.5', 'discharge_disposition_id <= 10.5',
+       'discharge_disposition_id <= 14.5', 'num_procedures <= 0.5',
+       'num_procedures <= 1.5', 'num_medications <= 6.5',
+       'num_medications <= 11.5', 'number_outpatient <= 0.5',
+       'number_emergency <= 0.5', 'number_emergency <= 1.5',
+       'number_inpatient <= 0.5', 'number_inpatient <= 1.5',
+       'number_inpatient <= 2.5', 'number_inpatient <= 3.5', 'diag_1 <= 98.5',
+       'number_diagnoses <= 5.5', 'number_diagnoses <= 6.5',
+       'metformin <= 1.5', 'change <= 0.5', 'age <= 5.5'],
+      dtype='str'), 2

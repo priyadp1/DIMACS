@@ -1,0 +1,399 @@
+0:[number_inpatient lt= 0.5<1] yes=1,no=2,missing=2
+	1:[number_inpatient lt= 1.5<1] yes=3,no=4,missing=4
+		3:[discharge_disposition_id lt= 10.5<1] yes=7,no=8,missing=8
+			7:leaf=-0.00681879511
+			8:leaf=0.0974467099
+		4:[discharge_disposition_id lt= 10.5<1] yes=9,no=10,missing=10
+			9:leaf=-0.038145449
+			10:leaf=0.0385879576
+	2:[number_diagnoses lt= 5.5<1] yes=5,no=6,missing=6
+		5:[discharge_disposition_id lt= 10.5<1] yes=11,no=12,missing=12
+			11:leaf=-0.0583834723
+			12:leaf=-0.0126499329
+		6:[number_outpatient lt= 0.5<1] yes=13,no=14,missing=14
+			13:leaf=-0.0190937351
+			14:leaf=-0.0669186562
+
+0:[number_inpatient lt= 0.5<1] yes=1,no=2,missing=2
+	1:[number_inpatient lt= 1.5<1] yes=3,no=4,missing=4
+		3:[discharge_disposition_id lt= 10.5<1] yes=7,no=8,missing=8
+			7:leaf=-0.00613964396
+			8:leaf=0.087922506
+		4:[discharge_disposition_id lt= 10.5<1] yes=9,no=10,missing=10
+			9:leaf=-0.0343564749
+			10:leaf=0.0347438529
+	2:[number_diagnoses lt= 5.5<1] yes=5,no=6,missing=6
+		5:[number_outpatient lt= 0.5<1] yes=11,no=12,missing=12
+			11:leaf=0.0166082066
+			12:leaf=-0.0205352809
+		6:[number_emergency lt= 0.5<1] yes=13,no=14,missing=14
+			13:leaf=-0.000873371784
+			14:leaf=-0.0594726093
+
+0:[number_inpatient lt= 0.5<1] yes=1,no=2,missing=2
+	1:[number_inpatient lt= 1.5<1] yes=3,no=4,missing=4
+		3:[discharge_disposition_id lt= 10.5<1] yes=7,no=8,missing=8
+			7:leaf=-0.00552824326
+			8:leaf=0.0796511397
+		4:[discharge_disposition_id lt= 10.5<1] yes=9,no=10,missing=10
+			9:leaf=-0.0309629533
+			10:leaf=0.031302508
+	2:[number_diagnoses lt= 5.5<1] yes=5,no=6,missing=6
+		5:[discharge_disposition_id lt= 10.5<1] yes=11,no=12,missing=12
+			11:leaf=-0.0509116724
+			12:leaf=-0.00988237653
+		6:[number_outpatient lt= 0.5<1] yes=13,no=14,missing=14
+			13:leaf=-0.011978603
+			14:leaf=-0.0547345765
+
+0:[number_inpatient lt= 0.5<1] yes=1,no=2,missing=2
+	1:[number_inpatient lt= 1.5<1] yes=3,no=4,missing=4
+		3:[discharge_disposition_id lt= 10.5<1] yes=7,no=8,missing=8
+			7:leaf=-0.00497781485
+			8:leaf=0.0723661035
+		4:[discharge_disposition_id lt= 10.5<1] yes=9,no=10,missing=10
+			9:leaf=-0.0279167444
+			10:leaf=0.0282145627
+	2:[number_diagnoses lt= 5.5<1] yes=5,no=6,missing=6
+		5:[number_outpatient lt= 0.5<1] yes=11,no=12,missing=12
+			11:leaf=0.0161794852
+			12:leaf=-0.0170995612
+		6:[number_emergency lt= 0.5<1] yes=13,no=14,missing=14
+			13:leaf=0.0037490197
+			14:leaf=-0.0487265624
+
+0:[number_inpatient lt= 0.5<1] yes=1,no=2,missing=2
+	1:[number_inpatient lt= 1.5<1] yes=3,no=4,missing=4
+		3:[discharge_disposition_id lt= 10.5<1] yes=7,no=8,missing=8
+			7:leaf=-0.00448220363
+			8:leaf=0.0658786446
+		4:[number_diagnoses lt= 5.5<1] yes=9,no=10,missing=10
+			9:leaf=0.0273643527
+			10:leaf=-0.0136394715
+	2:[number_diagnoses lt= 5.5<1] yes=5,no=6,missing=6
+		5:[number_emergency lt= 0.5<1] yes=11,no=12,missing=12
+			11:leaf=0.0283549186
+			12:leaf=-0.0143102854
+		6:[number_outpatient lt= 0.5<1] yes=13,no=14,missing=14
+			13:leaf=-0.00657778373
+			14:leaf=-0.0450332388
+
+0:[number_inpatient lt= 0.5<1] yes=1,no=2,missing=2
+	1:[number_inpatient lt= 1.5<1] yes=3,no=4,missing=4
+		3:[discharge_disposition_id lt= 10.5<1] yes=7,no=8,missing=8
+			7:leaf=-0.00403597625
+			8:leaf=0.0600517467
+		4:[discharge_disposition_id lt= 10.5<1] yes=9,no=10,missing=10
+			9:leaf=-0.0272949915
+			10:leaf=0.0233908426
+	2:[number_diagnoses lt= 5.5<1] yes=5,no=6,missing=6
+		5:[discharge_disposition_id lt= 10.5<1] yes=11,no=12,missing=12
+			11:leaf=-0.043367248
+			12:leaf=-0.00658490648
+		6:[number_emergency lt= 0.5<1] yes=13,no=14,missing=14
+			13:leaf=0.00704827672
+			14:leaf=-0.0400833078
+
+0:[number_inpatient lt= 0.5<1] yes=1,no=2,missing=2
+	1:[number_emergency lt= 0.5<1] yes=3,no=4,missing=4
+		3:[discharge_disposition_id lt= 10.5<1] yes=7,no=8,missing=8
+			7:leaf=-0.0441370122
+			8:leaf=0.0702495798
+		4:[number_inpatient lt= 1.5<1] yes=9,no=10,missing=10
+			9:leaf=0.0387123115
+			10:leaf=0.0120924246
+	2:[number_outpatient lt= 0.5<1] yes=5,no=6,missing=6
+		5:[discharge_disposition_id lt= 10.5<1] yes=11,no=12,missing=12
+			11:leaf=-0.0366484635
+			12:leaf=0.0163929444
+		6:[number_diagnoses lt= 5.5<1] yes=13,no=14,missing=14
+			13:leaf=-0.013217329
+			14:leaf=-0.0371627174
+
+0:[number_inpatient lt= 0.5<1] yes=1,no=2,missing=2
+	1:[number_outpatient lt= 0.5<1] yes=3,no=4,missing=4
+		3:[discharge_disposition_id lt= 10.5<1] yes=7,no=8,missing=8
+			7:leaf=-0.0229460411
+			8:leaf=0.0604326725
+		4:[number_inpatient lt= 1.5<1] yes=9,no=10,missing=10
+			9:leaf=0.0356249362
+			10:leaf=0.0086361412
+	2:[number_emergency lt= 0.5<1] yes=5,no=6,missing=6
+		5:[discharge_disposition_id lt= 10.5<1] yes=11,no=12,missing=12
+			11:leaf=-0.0453428216
+			12:leaf=0.0277296752
+		6:[number_outpatient lt= 0.5<1] yes=13,no=14,missing=14
+			13:leaf=0.00990380347
+			14:leaf=-0.0196330454
+
+0:[number_inpatient lt= 0.5<1] yes=1,no=2,missing=2
+	1:[number_emergency lt= 0.5<1] yes=3,no=4,missing=4
+		3:[discharge_disposition_id lt= 10.5<1] yes=7,no=8,missing=8
+			7:leaf=-0.0407438949
+			8:leaf=0.0609129928
+		4:[number_outpatient lt= 0.5<1] yes=9,no=10,missing=10
+			9:leaf=0.0400069095
+			10:leaf=0.0121822478
+	2:[number_diagnoses lt= 5.5<1] yes=5,no=6,missing=6
+		5:[discharge_disposition_id lt= 10.5<1] yes=11,no=12,missing=12
+			11:leaf=-0.0359649211
+			12:leaf=-0.00382277253
+		6:[number_emergency lt= 0.5<1] yes=13,no=14,missing=14
+			13:leaf=0.00656600064
+			14:leaf=-0.0315221287
+
+0:[number_inpatient lt= 0.5<1] yes=1,no=2,missing=2
+	1:[discharge_disposition_id lt= 10.5<1] yes=3,no=4,missing=4
+		3:[number_diagnoses lt= 5.5<1] yes=7,no=8,missing=8
+			7:leaf=-0.0233288389
+			8:leaf=0.0112773627
+		4:[number_inpatient lt= 1.5<1] yes=9,no=10,missing=10
+			9:leaf=0.0443122573
+			10:leaf=0.0148506565
+	2:[number_emergency lt= 0.5<1] yes=5,no=6,missing=6
+		5:[discharge_disposition_id lt= 10.5<1] yes=11,no=12,missing=12
+			11:leaf=-0.0383435711
+			12:leaf=0.0251690503
+		6:[number_diagnoses lt= 5.5<1] yes=13,no=14,missing=14
+			13:leaf=-0.0086472258
+			14:leaf=-0.0285447836
+
+0:[number_inpatient lt= 0.5<1] yes=1,no=2,missing=2
+	1:[number_emergency lt= 0.5<1] yes=3,no=4,missing=4
+		3:[discharge_disposition_id lt= 10.5<1] yes=7,no=8,missing=8
+			7:leaf=-0.0348376371
+			8:leaf=0.0530273989
+		4:[number_diagnoses lt= 5.5<1] yes=9,no=10,missing=10
+			9:leaf=0.0182806067
+			10:leaf=-0.00983306207
+	2:[number_outpatient lt= 0.5<1] yes=5,no=6,missing=6
+		5:[discharge_disposition_id lt= 10.5<1] yes=11,no=12,missing=12
+			11:leaf=-0.028700253
+			12:leaf=0.0148361176
+		6:[number_emergency lt= 0.5<1] yes=13,no=14,missing=14
+			13:leaf=0.0197692569
+			14:leaf=-0.0150964996
+
+0:[number_inpatient lt= 1.5<1] yes=1,no=2,missing=2
+	1:[discharge_disposition_id lt= 10.5<1] yes=3,no=4,missing=4
+		3:[number_diagnoses lt= 5.5<1] yes=7,no=8,missing=8
+			7:leaf=-0.0146529665
+			8:leaf=0.0372465514
+		4:[number_emergency lt= 0.5<1] yes=9,no=10,missing=10
+			9:leaf=0.0622727685
+			10:leaf=0.0295697358
+	2:[number_diagnoses lt= 5.5<1] yes=5,no=6,missing=6
+		5:[discharge_disposition_id lt= 10.5<1] yes=11,no=12,missing=12
+			11:leaf=-0.0297668073
+			12:leaf=0.0027623002
+		6:[number_outpatient lt= 0.5<1] yes=13,no=14,missing=14
+			13:leaf=0.0035102726
+			14:leaf=-0.0254756268
+
+0:[number_inpatient lt= 0.5<1] yes=1,no=2,missing=2
+	1:[number_outpatient lt= 0.5<1] yes=3,no=4,missing=4
+		3:[discharge_disposition_id lt= 10.5<1] yes=7,no=8,missing=8
+			7:leaf=-0.0194687583
+			8:leaf=0.0442423858
+		4:[number_inpatient lt= 1.5<1] yes=9,no=10,missing=10
+			9:leaf=0.0222057346
+			10:leaf=0.0036962789
+	2:[number_outpatient lt= 0.5<1] yes=5,no=6,missing=6
+		5:[discharge_disposition_id lt= 10.5<1] yes=11,no=12,missing=12
+			11:leaf=-0.0233755149
+			12:leaf=0.0130657172
+		6:[number_emergency lt= 0.5<1] yes=13,no=14,missing=14
+			13:leaf=0.0181445237
+			14:leaf=-0.0129679888
+
+0:[number_inpatient lt= 0.5<1] yes=1,no=2,missing=2
+	1:[number_emergency lt= 0.5<1] yes=3,no=4,missing=4
+		3:[discharge_disposition_id lt= 10.5<1] yes=7,no=8,missing=8
+			7:leaf=-0.0301048402
+			8:leaf=0.0435132943
+		4:[number_outpatient lt= 0.5<1] yes=9,no=10,missing=10
+			9:leaf=0.0280814767
+			10:leaf=0.00612119259
+	2:[number_diagnoses lt= 5.5<1] yes=5,no=6,missing=6
+		5:[discharge_disposition_id lt= 10.5<1] yes=11,no=12,missing=12
+			11:leaf=-0.0260305144
+			12:leaf=-0.00150209211
+		6:[number_outpatient lt= 0.5<1] yes=13,no=14,missing=14
+			13:leaf=-0.00304838666
+			14:leaf=-0.0218431577
+
+0:[number_inpatient lt= 1.5<1] yes=1,no=2,missing=2
+	1:[discharge_disposition_id lt= 10.5<1] yes=3,no=4,missing=4
+		3:[number_diagnoses lt= 5.5<1] yes=7,no=8,missing=8
+			7:leaf=-0.0148278801
+			8:leaf=0.03168514
+		4:[number_outpatient lt= 0.5<1] yes=9,no=10,missing=10
+			9:leaf=0.0510825813
+			10:leaf=0.0229241028
+	2:[number_diagnoses lt= 5.5<1] yes=5,no=6,missing=6
+		5:[discharge_disposition_id lt= 10.5<1] yes=11,no=12,missing=12
+			11:leaf=-0.0241891779
+			12:leaf=0.0024994181
+		6:[number_outpatient lt= 0.5<1] yes=13,no=14,missing=14
+			13:leaf=0.000837582804
+			14:leaf=-0.0205718242
+
+0:[number_inpatient lt= 0.5<1] yes=1,no=2,missing=2
+	1:[number_emergency lt= 0.5<1] yes=3,no=4,missing=4
+		3:[discharge_disposition_id lt= 10.5<1] yes=7,no=8,missing=8
+			7:leaf=-0.0256744418
+			8:leaf=0.0382012688
+		4:[number_diagnoses lt= 5.5<1] yes=9,no=10,missing=10
+			9:leaf=0.012198355
+			10:leaf=-0.010223492
+	2:[number_emergency lt= 0.5<1] yes=5,no=6,missing=6
+		5:[discharge_disposition_id lt= 10.5<1] yes=11,no=12,missing=12
+			11:leaf=-0.0289726295
+			12:leaf=0.0196914729
+		6:[number_outpatient lt= 0.5<1] yes=13,no=14,missing=14
+			13:leaf=0.00881969463
+			14:leaf=-0.0103796972
+
+0:[number_inpatient lt= 1.5<1] yes=1,no=2,missing=2
+	1:[discharge_disposition_id lt= 10.5<1] yes=3,no=4,missing=4
+		3:[number_diagnoses lt= 5.5<1] yes=7,no=8,missing=8
+			7:leaf=-0.0139324963
+			8:leaf=0.0297785383
+		4:[number_outpatient lt= 0.5<1] yes=9,no=10,missing=10
+			9:leaf=0.0453457311
+			10:leaf=0.0194040127
+	2:[number_diagnoses lt= 5.5<1] yes=5,no=6,missing=6
+		5:[discharge_disposition_id lt= 10.5<1] yes=11,no=12,missing=12
+			11:leaf=-0.0213634912
+			12:leaf=0.00229468662
+		6:[number_outpatient lt= 0.5<1] yes=13,no=14,missing=14
+			13:leaf=-4.00169483e-06
+			14:leaf=-0.0177469756
+
+0:[number_emergency lt= 0.5<1] yes=1,no=2,missing=2
+	1:[discharge_disposition_id lt= 10.5<1] yes=3,no=4,missing=4
+		3:[number_inpatient lt= 1.5<1] yes=7,no=8,missing=8
+			7:leaf=-0.0100357728
+			8:leaf=-0.0307434257
+		4:[number_inpatient lt= 1.5<1] yes=9,no=10,missing=10
+			9:leaf=0.043591734
+			10:leaf=0.0193805676
+	2:[number_inpatient lt= 0.5<1] yes=5,no=6,missing=6
+		5:[discharge_disposition_id lt= 10.5<1] yes=11,no=12,missing=12
+			11:leaf=-0.0129510732
+			12:leaf=0.00970998313
+		6:[number_outpatient lt= 0.5<1] yes=13,no=14,missing=14
+			13:leaf=0.00786603522
+			14:leaf=-0.00893371645
+
+0:[number_inpatient lt= 1.5<1] yes=1,no=2,missing=2
+	1:[number_outpatient lt= 0.5<1] yes=3,no=4,missing=4
+		3:[discharge_disposition_id lt= 10.5<1] yes=7,no=8,missing=8
+			7:leaf=-0.0025095921
+			8:leaf=0.0398864709
+		4:[discharge_disposition_id lt= 10.5<1] yes=9,no=10,missing=10
+			9:leaf=-0.00731479842
+			10:leaf=0.0160093512
+	2:[number_diagnoses lt= 5.5<1] yes=5,no=6,missing=6
+		5:[discharge_disposition_id lt= 10.5<1] yes=11,no=12,missing=12
+			11:leaf=-0.0183398817
+			12:leaf=0.00215336354
+		6:[number_outpatient lt= 0.5<1] yes=13,no=14,missing=14
+			13:leaf=-0.000938572921
+			14:leaf=-0.0155465724
+
+0:[number_emergency lt= 0.5<1] yes=1,no=2,missing=2
+	1:[discharge_disposition_id lt= 10.5<1] yes=3,no=4,missing=4
+		3:[number_inpatient lt= 1.5<1] yes=7,no=8,missing=8
+			7:leaf=-0.00851603318
+			8:leaf=-0.0262619555
+		4:[number_inpatient lt= 1.5<1] yes=9,no=10,missing=10
+			9:leaf=0.038051948
+			10:leaf=0.0174713265
+	2:[number_outpatient lt= 0.5<1] yes=5,no=6,missing=6
+		5:[discharge_disposition_id lt= 10.5<1] yes=11,no=12,missing=12
+			11:leaf=-0.0130309602
+			12:leaf=0.0137093933
+		6:[number_inpatient lt= 0.5<1] yes=13,no=14,missing=14
+			13:leaf=0.00299625681
+			14:leaf=-0.00769542763
+
+0:[number_emergency lt= 0.5<1] yes=1,no=2,missing=2
+	1:[discharge_disposition_id lt= 10.5<1] yes=3,no=4,missing=4
+		3:[number_inpatient lt= 1.5<1] yes=7,no=8,missing=8
+			7:leaf=-0.0076934034
+			8:leaf=-0.0238213204
+		4:[number_inpatient lt= 1.5<1] yes=9,no=10,missing=10
+			9:leaf=0.0349276774
+			10:leaf=0.0157613549
+	2:[number_outpatient lt= 0.5<1] yes=5,no=6,missing=6
+		5:[number_inpatient lt= 1.5<1] yes=11,no=12,missing=12
+			11:leaf=0.024260737
+			12:leaf=0.00783790834
+		6:[number_diagnoses lt= 5.5<1] yes=13,no=14,missing=14
+			13:leaf=-0.00171769119
+			14:leaf=-0.01318035
+
+0:[number_inpatient lt= 0.5<1] yes=1,no=2,missing=2
+	1:[number_outpatient lt= 0.5<1] yes=3,no=4,missing=4
+		3:[discharge_disposition_id lt= 10.5<1] yes=7,no=8,missing=8
+			7:leaf=-0.0137829874
+			8:leaf=0.0253336336
+		4:[number_diagnoses lt= 5.5<1] yes=9,no=10,missing=10
+			9:leaf=0.00742771849
+			10:leaf=-0.00946442597
+	2:[number_emergency lt= 0.5<1] yes=5,no=6,missing=6
+		5:[discharge_disposition_id lt= 10.5<1] yes=11,no=12,missing=12
+			11:leaf=-0.015271333
+			12:leaf=0.0125578707
+		6:[number_outpatient lt= 0.5<1] yes=13,no=14,missing=14
+			13:leaf=0.00501413457
+			14:leaf=-0.00649418775
+
+0:[number_inpatient lt= 1.5<1] yes=1,no=2,missing=2
+	1:[discharge_disposition_id lt= 10.5<1] yes=3,no=4,missing=4
+		3:[number_diagnoses lt= 5.5<1] yes=7,no=8,missing=8
+			7:leaf=-0.0109511595
+			8:leaf=0.0305119995
+		4:[number_emergency lt= 0.5<1] yes=9,no=10,missing=10
+			9:leaf=0.0309494641
+			10:leaf=0.0127759418
+	2:[number_diagnoses lt= 5.5<1] yes=5,no=6,missing=6
+		5:[discharge_disposition_id lt= 10.5<1] yes=11,no=12,missing=12
+			11:leaf=-0.0153501276
+			12:leaf=0.00189305877
+		6:[number_emergency lt= 0.5<1] yes=13,no=14,missing=14
+			13:leaf=-0.000492941879
+			14:leaf=-0.0117094815
+
+0:[number_emergency lt= 0.5<1] yes=1,no=2,missing=2
+	1:[discharge_disposition_id lt= 10.5<1] yes=3,no=4,missing=4
+		3:[number_inpatient lt= 1.5<1] yes=7,no=8,missing=8
+			7:leaf=-0.00615061726
+			8:leaf=-0.0195206683
+		4:[number_inpatient lt= 1.5<1] yes=9,no=10,missing=10
+			9:leaf=0.0283338483
+			10:leaf=0.0128424903
+	2:[number_inpatient lt= 0.5<1] yes=5,no=6,missing=6
+		5:[number_diagnoses lt= 5.5<1] yes=11,no=12,missing=12
+			11:leaf=0.00691948226
+			12:leaf=-0.00774331857
+		6:[number_outpatient lt= 0.5<1] yes=13,no=14,missing=14
+			13:leaf=0.00462175766
+			14:leaf=-0.00559137668
+
+0:[number_outpatient lt= 0.5<1] yes=1,no=2,missing=2
+	1:[number_inpatient lt= 1.5<1] yes=3,no=4,missing=4
+		3:[discharge_disposition_id lt= 10.5<1] yes=7,no=8,missing=8
+			7:leaf=-0.000942903105
+			8:leaf=0.0274849236
+		4:[discharge_disposition_id lt= 10.5<1] yes=9,no=10,missing=10
+			9:leaf=-0.0169057827
+			10:leaf=0.00894440617
+	2:[number_inpatient lt= 1.5<1] yes=5,no=6,missing=6
+		5:[discharge_disposition_id lt= 10.5<1] yes=11,no=12,missing=12
+			11:leaf=-0.00664002076
+			12:leaf=0.0101544624
+		6:[number_diagnoses lt= 5.5<1] yes=13,no=14,missing=14
+			13:leaf=-0.00129908521
+			14:leaf=-0.0102104815

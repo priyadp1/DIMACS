@@ -1,0 +1,53 @@
+Accuracy: 0.6246511362989121
+Confusion Matrix:
+[[6140 2639]
+ [3951 4827]]
+Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.61      0.70      0.65      8779
+           1       0.65      0.55      0.59      8778
+
+    accuracy                           0.62     17557
+   macro avg       0.63      0.62      0.62     17557
+weighted avg       0.63      0.62      0.62     17557
+
+LightGBM completed in 0.15 seconds
+All Features:
+                          Feature  Importance
+discharge_disposition_id lt= 10.0          32
+                   change lt= 0.5          16
+         number_inpatient lt= 0.5          14
+                      age lt= 6.5          11
+        number_outpatient lt= 0.5           9
+         number_inpatient lt= 1.5           9
+         number_diagnoses lt= 5.5           9
+         number_emergency lt= 0.5           8
+discharge_disposition_id lt= 14.5           8
+         number_inpatient lt= 3.5           6
+                   gender lt= 0.5           6
+                metformin lt= 1.5           6
+ discharge_disposition_id lt= 1.5           5
+      num_lab_procedures lt= 30.5           4
+         number_emergency lt= 2.5           3
+           num_procedures lt= 0.5           3
+                      age lt= 5.5           3
+                  diag_1 lt= 98.5           3
+         number_inpatient lt= 2.5           2
+         number_diagnoses lt= 6.5           2
+         num_medications lt= 11.5           2
+          num_medications lt= 6.5           2
+           num_procedures lt= 1.5           2
+      num_lab_procedures lt= 35.5           2
+      admission_source_id lt= 6.5           2
+ discharge_disposition_id lt= 2.5           2
+         number_emergency lt= 1.5           1
+         time_in_hospital lt= 3.5           1
+                  diag_1 lt= 96.5           1
+      admission_source_id lt= 4.5           1
+                 diag_1 lt= 103.5           0
+discharge_disposition_id lt= 10.5           0
+        admission_type_id lt= 1.5           0
+              diabetesMed lt= 0.5           0
+                 diag_1 lt= 403.5           0
+Tree Size: 25 trees, 200 total leaves, 8.0 avg leaves/tree

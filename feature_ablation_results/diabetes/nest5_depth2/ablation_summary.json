@@ -1,0 +1,53 @@
+{
+  "dataset": "diabetes",
+  "param_tag": "nest5_depth2",
+  "root_features_dropped": [
+    "num_medications"
+  ],
+  "n_dropped_columns": 1,
+  "baseline": {
+    "tgb_accuracy": 0.55,
+    "tgb_ci95": [
+      0.4166666666666667,
+      0.6833333333333333
+    ],
+    "tgb_split_features": [
+      "num_lab_procedures",
+      "num_medications"
+    ],
+    "gosdt_accuracy": 0.55,
+    "gosdt_ci95": [
+      0.4166666666666667,
+      0.6833333333333333
+    ],
+    "gosdt_split_features": [
+      "num_lab_procedures",
+      "num_medications"
+    ],
+    "gosdt_tgb_overlap_jaccard": 1.0
+  },
+  "ablated": {
+    "tgb_accuracy": 0.6,
+    "tgb_ci95": [
+      0.48333333333333334,
+      0.7166666666666667
+    ],
+    "tgb_split_features": [
+      "num_lab_procedures"
+    ],
+    "gosdt_accuracy": 0.6,
+    "gosdt_ci95": [
+      0.48333333333333334,
+      0.7166666666666667
+    ],
+    "gosdt_split_features": [
+      "num_lab_procedures"
+    ],
+    "gosdt_tgb_overlap_jaccard": 1.0
+  },
+  "delta": {
+    "tgb_accuracy": 0.04999999999999993,
+    "gosdt_accuracy": 0.04999999999999993,
+    "overlap_jaccard": 0.0
+  }
+}

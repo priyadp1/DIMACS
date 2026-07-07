@@ -1,0 +1,75 @@
+Accuracy: 0.9131378935939196
+Confusion Matrix:
+[[530  28]
+ [ 52 311]]
+Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.91      0.95      0.93       558
+           1       0.92      0.86      0.89       363
+
+    accuracy                           0.91       921
+   macro avg       0.91      0.90      0.91       921
+weighted avg       0.91      0.91      0.91       921
+
+XGBoost completed in 0.04 seconds
+All Features:
+                   Feature  Importance
+               char_freq_$    0.188055
+               char_freq_!    0.136391
+capital_run_length_longest    0.098761
+            word_freq_your    0.076144
+          word_freq_remove    0.073864
+  capital_run_length_total    0.058237
+            word_freq_free    0.054516
+capital_run_length_average    0.053189
+              word_freq_hp    0.045069
+           word_freq_money    0.042066
+             word_freq_our    0.035001
+             word_freq_edu    0.028144
+          word_freq_george    0.024324
+        word_freq_business    0.023553
+            word_freq_1999    0.021594
+             word_freq_000    0.017366
+         word_freq_meeting    0.012279
+            word_freq_mail    0.005095
+         word_freq_receive    0.003519
+            word_freq_will    0.001806
+            word_freq_over    0.000961
+           word_freq_order    0.000066
+          word_freq_direct    0.000000
+         word_freq_project    0.000000
+              word_freq_pm    0.000000
+              word_freq_cs    0.000000
+        word_freq_original    0.000000
+               char_freq_(    0.000000
+              word_freq_re    0.000000
+           word_freq_table    0.000000
+      word_freq_conference    0.000000
+               char_freq_;    0.000000
+               char_freq_{    0.000000
+               char_freq_#    0.000000
+           word_freq_parts    0.000000
+            word_freq_make    0.000000
+      word_freq_technology    0.000000
+          word_freq_credit    0.000000
+             word_freq_all    0.000000
+              word_freq_3d    0.000000
+        word_freq_internet    0.000000
+          word_freq_people    0.000000
+          word_freq_report    0.000000
+       word_freq_addresses    0.000000
+           word_freq_email    0.000000
+             word_freq_you    0.000000
+            word_freq_font    0.000000
+              word_freq_85    0.000000
+             word_freq_hpl    0.000000
+             word_freq_650    0.000000
+         word_freq_address    0.000000
+            word_freq_labs    0.000000
+          word_freq_telnet    0.000000
+             word_freq_857    0.000000
+            word_freq_data    0.000000
+             word_freq_415    0.000000
+             word_freq_lab    0.000000
+Tree Size: 25 trees, 193 total leaves, 7.7 avg leaves/tree

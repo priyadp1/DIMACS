@@ -15,7 +15,7 @@ no_tgb_dir = BASEDIR / "tmp_splits_no_tgb"
 pacmap_output_dir = BASEDIR / "pacmap_plots"
 os.makedirs(pacmap_output_dir, exist_ok=True)
 parameters = ["nest5_depth1", "nest5_depth2", "nest5_depth3", "nest10_depth1", "nest10_depth2", "nest10_depth3", "nest15_depth1", "nest15_depth2", "nest15_depth3", "nest20_depth1", "nest20_depth2", "nest20_depth3" , "nest25_depth1", "nest25_depth2", "nest25_depth3" , "nest30_depth1", "nest30_depth2", "nest30_depth3", "nest35_depth1", "nest35_depth2", "nest35_depth3", "nest40_depth1", "nest40_depth2", "nest40_depth3", "nest100_depth1", "nest100_depth2", "nest100_depth3", "nest200_depth1", "nest200_depth2", "nest200_depth3"]
-datasets = ["bike" , "breast_cancer"]
+datasets = ["creditcard_fraud_smote"]
 
 for i in datasets:
     no_tgb_X_train = no_tgb_dir / i / "X_train.csv"

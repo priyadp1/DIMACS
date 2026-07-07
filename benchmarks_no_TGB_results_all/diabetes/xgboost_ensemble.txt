@@ -1,0 +1,399 @@
+0:[number_inpatient<1] yes=1,no=2,missing=2
+	1:[number_diagnoses<6] yes=3,no=4,missing=4
+		3:[admission_source_id<7] yes=7,no=8,missing=8
+			7:leaf=-0.0802259371
+			8:leaf=-0.0505795553
+		4:[number_emergency<1] yes=9,no=10,missing=10
+			9:leaf=-0.0234732758
+			10:leaf=0.0325048864
+	2:[number_inpatient<2] yes=5,no=6,missing=6
+		5:[discharge_disposition_id<10] yes=11,no=12,missing=12
+			11:leaf=0.0415198877
+			12:leaf=-0.0328421667
+		6:[discharge_disposition_id<11] yes=13,no=14,missing=14
+			13:leaf=0.105100729
+			14:leaf=0.00418148004
+
+0:[number_inpatient<1] yes=1,no=2,missing=2
+	1:[number_diagnoses<7] yes=3,no=4,missing=4
+		3:[number_emergency<1] yes=7,no=8,missing=8
+			7:leaf=-0.0556872599
+			8:leaf=0.0117389178
+		4:[number_outpatient<1] yes=9,no=10,missing=10
+			9:leaf=-0.0203649886
+			10:leaf=0.0210624654
+	2:[number_inpatient<2] yes=5,no=6,missing=6
+		5:[discharge_disposition_id<8] yes=11,no=12,missing=12
+			11:leaf=0.037306603
+			12:leaf=-0.0292580724
+		6:[discharge_disposition_id<11] yes=13,no=14,missing=14
+			13:leaf=0.0940451548
+			14:leaf=0.00376341236
+
+0:[number_inpatient<1] yes=1,no=2,missing=2
+	1:[number_diagnoses<6] yes=3,no=4,missing=4
+		3:[admission_source_id<7] yes=7,no=8,missing=8
+			7:leaf=-0.0679058731
+			8:leaf=-0.040886052
+4:[diabetesMed_No] yes=9,no=10
+			9:leaf=-0.00806405675
+			10:leaf=-0.0387923792
+	2:[number_inpatient<3] yes=5,no=6,missing=6
+		5:[discharge_disposition_id<8] yes=11,no=12,missing=12
+			11:leaf=0.042479489
+			12:leaf=-0.021863943
+		6:[discharge_disposition_id<10] yes=13,no=14,missing=14
+			13:leaf=0.105422869
+			14:leaf=0.0202571265
+
+0:[number_inpatient<1] yes=1,no=2,missing=2
+	1:[number_diagnoses<6] yes=3,no=4,missing=4
+		3:[number_outpatient<1] yes=7,no=8,missing=8
+			7:leaf=-0.053659942
+			8:leaf=-0.00677741319
+		4:[number_emergency<1] yes=9,no=10,missing=10
+			9:leaf=-0.0176227856
+			10:leaf=0.0311941896
+	2:[number_inpatient<2] yes=5,no=6,missing=6
+		5:[discharge_disposition_id<10] yes=11,no=12,missing=12
+			11:leaf=0.0291972812
+			12:leaf=-0.0247053429
+		6:[discharge_disposition_id<11] yes=13,no=14,missing=14
+			13:leaf=0.0776222646
+			14:leaf=0.00356327486
+
+0:[number_inpatient<1] yes=1,no=2,missing=2
+	1:[number_diagnoses<7] yes=3,no=4,missing=4
+3:[diag_1_428] yes=7,no=8
+			7:leaf=-0.042405244
+			8:leaf=0.0321463905
+		4:[discharge_disposition_id<9] yes=9,no=10,missing=10
+			9:leaf=-0.0057725599
+			10:leaf=-0.0503568165
+	2:[number_inpatient<3] yes=5,no=6,missing=6
+		5:[discharge_disposition_id<8] yes=11,no=12,missing=12
+			11:leaf=0.0339850299
+			12:leaf=-0.0182567202
+		6:[discharge_disposition_id<10] yes=13,no=14,missing=14
+			13:leaf=0.0882908925
+			14:leaf=0.0178603139
+
+0:[number_inpatient<1] yes=1,no=2,missing=2
+	1:[number_outpatient<1] yes=3,no=4,missing=4
+		3:[number_diagnoses<6] yes=7,no=8,missing=8
+			7:leaf=-0.0451412573
+			8:leaf=-0.0162940752
+4:[diag_1_278] yes=9,no=10
+			9:leaf=0.0198787283
+			10:leaf=-0.116891615
+	2:[number_inpatient<2] yes=5,no=6,missing=6
+		5:[admission_source_id<7] yes=11,no=12,missing=12
+			11:leaf=-0.0021957038
+			12:leaf=0.0303996056
+		6:[number_inpatient<5] yes=13,no=14,missing=14
+			13:leaf=0.0503590778
+			14:leaf=0.107790247
+
+0:[number_inpatient<1] yes=1,no=2,missing=2
+	1:[number_emergency<1] yes=3,no=4,missing=4
+3:[diag_1_428] yes=7,no=8
+			7:leaf=-0.0228624828
+			8:leaf=0.0327080637
+		4:[discharge_disposition_id<10] yes=9,no=10,missing=10
+			9:leaf=0.0322990045
+			10:leaf=-0.047033824
+	2:[number_inpatient<4] yes=5,no=6,missing=6
+		5:[number_outpatient<1] yes=11,no=12,missing=12
+			11:leaf=0.0179993082
+			12:leaf=0.0543092787
+		6:[discharge_disposition_id<2] yes=13,no=14,missing=14
+			13:leaf=0.108716503
+			14:leaf=0.0586226881
+
+0:[number_inpatient<1] yes=1,no=2,missing=2
+	1:[number_outpatient<1] yes=3,no=4,missing=4
+		3:[admission_source_id<7] yes=7,no=8,missing=8
+			7:leaf=-0.034859471
+			8:leaf=-0.00993990805
+4:[diag_1_278] yes=9,no=10
+			9:leaf=0.0190570988
+			10:leaf=-0.105958931
+	2:[number_inpatient<2] yes=5,no=6,missing=6
+		5:[number_diagnoses<6] yes=11,no=12,missing=12
+			11:leaf=-0.018914409
+			12:leaf=0.0208495427
+		6:[discharge_disposition_id<11] yes=13,no=14,missing=14
+			13:leaf=0.0557097383
+			14:leaf=-0.00553957513
+
+0:[number_inpatient<1] yes=1,no=2,missing=2
+	1:[number_diagnoses<7] yes=3,no=4,missing=4
+3:[diabetesMed_No] yes=7,no=8
+			7:leaf=-0.0224751793
+			8:leaf=-0.051440794
+		4:[discharge_disposition_id<9] yes=9,no=10,missing=10
+			9:leaf=-0.00135421066
+			10:leaf=-0.0410208181
+	2:[number_emergency<1] yes=5,no=6,missing=6
+		5:[number_inpatient<2] yes=11,no=12,missing=12
+			11:leaf=0.00747456402
+			12:leaf=0.0351340286
+		6:[discharge_disposition_id<10] yes=13,no=14,missing=14
+			13:leaf=0.0667800009
+			14:leaf=-0.0378185958
+
+0:[number_inpatient<1] yes=1,no=2,missing=2
+1:[diabetesMed_No] yes=3,no=4
+3:[diag_1_428] yes=7,no=8
+			7:leaf=-0.00865540188
+			8:leaf=0.0397386327
+		4:[number_diagnoses<9] yes=9,no=10,missing=10
+			9:leaf=-0.0430389382
+			10:leaf=-0.0173037536
+	2:[number_inpatient<4] yes=5,no=6,missing=6
+		5:[number_outpatient<1] yes=11,no=12,missing=12
+			11:leaf=0.0114997905
+			12:leaf=0.0433755554
+		6:[discharge_disposition_id<2] yes=13,no=14,missing=14
+			13:leaf=0.0927285701
+			14:leaf=0.0458970219
+
+0:[number_inpatient<2] yes=1,no=2,missing=2
+	1:[number_emergency<1] yes=3,no=4,missing=4
+		3:[number_diagnoses<6] yes=7,no=8,missing=8
+			7:leaf=-0.0313508697
+			8:leaf=-0.00372794573
+		4:[discharge_disposition_id<10] yes=9,no=10,missing=10
+			9:leaf=0.0359267369
+			10:leaf=-0.045980759
+	2:[discharge_disposition_id<11] yes=5,no=6,missing=6
+		5:[number_inpatient<5] yes=11,no=12,missing=12
+			11:leaf=0.0375979915
+			12:leaf=0.0842424259
+		6:[discharge_disposition_id<15] yes=13,no=14,missing=14
+			13:leaf=-0.176696509
+			14:leaf=0.0733129308
+
+0:[number_inpatient<1] yes=1,no=2,missing=2
+	1:[number_outpatient<1] yes=3,no=4,missing=4
+		3:[admission_source_id<7] yes=7,no=8,missing=8
+			7:leaf=-0.027789196
+			8:leaf=-0.00597761152
+4:[diag_1_278] yes=9,no=10
+			9:leaf=0.0193206687
+			10:leaf=-0.0949562266
+	2:[number_emergency<2] yes=5,no=6,missing=6
+		5:[discharge_disposition_id<10] yes=11,no=12,missing=12
+			11:leaf=0.0200517029
+			12:leaf=-0.0179998334
+		6:[discharge_disposition_id<10] yes=13,no=14,missing=14
+			13:leaf=0.0768593848
+			14:leaf=-0.026572464
+
+0:[number_inpatient<2] yes=1,no=2,missing=2
+	1:[number_outpatient<1] yes=3,no=4,missing=4
+		3:[admission_source_id<7] yes=7,no=8,missing=8
+			7:leaf=-0.0237042718
+			8:leaf=-0.00110599026
+		4:[num_lab_procedures<31] yes=9,no=10,missing=10
+			9:leaf=-0.00552859483
+			10:leaf=0.0310423505
+	2:[number_inpatient<5] yes=5,no=6,missing=6
+		5:[discharge_disposition_id<9] yes=11,no=12,missing=12
+			11:leaf=0.0318295918
+			12:leaf=-0.0111099845
+		6:[number_emergency<2] yes=13,no=14,missing=14
+			13:leaf=0.0583233424
+			14:leaf=0.103508733
+
+0:[number_emergency<1] yes=1,no=2,missing=2
+1:[diag_1_428] yes=3,no=4
+		3:[number_inpatient<1] yes=7,no=8,missing=8
+			7:leaf=-0.0137102725
+			8:leaf=0.00814950652
+		4:[discharge_disposition_id<9] yes=9,no=10,missing=10
+			9:leaf=0.0389928259
+			10:leaf=-0.00806526188
+	2:[discharge_disposition_id<10] yes=5,no=6,missing=6
+		5:[number_emergency<3] yes=11,no=12,missing=12
+			11:leaf=0.0330925137
+			12:leaf=0.0790271088
+		6:[discharge_disposition_id<15] yes=13,no=14,missing=14
+			13:leaf=-0.149789974
+			14:leaf=0.0485574231
+
+0:[number_emergency<1] yes=1,no=2,missing=2
+	1:[number_diagnoses<6] yes=3,no=4,missing=4
+		3:[admission_source_id<7] yes=7,no=8,missing=8
+			7:leaf=-0.0362415239
+			8:leaf=-0.00884680916
+		4:[discharge_disposition_id<9] yes=9,no=10,missing=10
+			9:leaf=0.00451235799
+			10:leaf=-0.0285226908
+	2:[discharge_disposition_id<10] yes=5,no=6,missing=6
+		5:[number_emergency<2] yes=11,no=12,missing=12
+			11:leaf=0.0256004874
+			12:leaf=0.0577215627
+		6:[discharge_disposition_id<15] yes=13,no=14,missing=14
+			13:leaf=-0.138940811
+			14:leaf=0.0435660146
+
+0:[number_inpatient<2] yes=1,no=2,missing=2
+	1:[num_medications<11] yes=3,no=4,missing=4
+3:[age_{70-80)] yes=7,no=8
+			7:leaf=-0.0256592538
+			8:leaf=-0.000789166254
+		4:[admission_source_id<7] yes=9,no=10,missing=10
+			9:leaf=-0.0123182656
+			10:leaf=0.00986009836
+	2:[number_inpatient<5] yes=5,no=6,missing=6
+		5:[discharge_disposition_id<15] yes=11,no=12,missing=12
+			11:leaf=0.0187361538
+			12:leaf=0.0636109933
+		6:[number_inpatient<8] yes=13,no=14,missing=14
+			13:leaf=0.0534298122
+			14:leaf=0.0966609046
+
+0:[number_outpatient<1] yes=1,no=2,missing=2
+1:[diabetesMed_No] yes=3,no=4
+		3:[number_diagnoses<6] yes=7,no=8,missing=8
+			7:leaf=-0.0171527807
+			8:leaf=0.005052594
+		4:[admission_type_id<6] yes=9,no=10,missing=10
+			9:leaf=-0.0242419261
+			10:leaf=0.0194137227
+	2:[discharge_disposition_id<9] yes=5,no=6,missing=6
+		5:[num_lab_procedures<31] yes=11,no=12,missing=12
+			11:leaf=0.00328160566
+			12:leaf=0.037285205
+		6:[discharge_disposition_id<15] yes=13,no=14,missing=14
+			13:leaf=-0.160656527
+			14:leaf=0.0394240394
+
+0:[number_inpatient<1] yes=1,no=2,missing=2
+1:[diabetesMed_No] yes=3,no=4
+3:[race_Caucasian] yes=7,no=8
+			7:leaf=-0.0174416881
+			8:leaf=0.00315242982
+4:[diag_2_403] yes=9,no=10
+			9:leaf=-0.0250105839
+			10:leaf=0.038931448
+	2:[number_inpatient<3] yes=5,no=6,missing=6
+		5:[admission_source_id<7] yes=11,no=12,missing=12
+			11:leaf=-0.0047468273
+			12:leaf=0.0162349958
+		6:[discharge_disposition_id<2] yes=13,no=14,missing=14
+			13:leaf=0.0527332239
+			14:leaf=0.0200076401
+
+0:[number_emergency<1] yes=1,no=2,missing=2
+1:[diag_1_428] yes=3,no=4
+		3:[time_in_hospital<4] yes=7,no=8,missing=8
+			7:leaf=-0.0144585539
+			8:leaf=0.00246685673
+		4:[discharge_disposition_id<9] yes=9,no=10,missing=10
+			9:leaf=0.0341016464
+			10:leaf=-0.00497688865
+	2:[discharge_disposition_id<10] yes=5,no=6,missing=6
+		5:[number_emergency<3] yes=11,no=12,missing=12
+			11:leaf=0.0249915104
+			12:leaf=0.0644420087
+		6:[discharge_disposition_id<15] yes=13,no=14,missing=14
+			13:leaf=-0.128354162
+			14:leaf=0.0350296162
+
+0:[number_outpatient<1] yes=1,no=2,missing=2
+	1:[admission_source_id<7] yes=3,no=4,missing=4
+		3:[admission_source_id<4] yes=7,no=8,missing=8
+			7:leaf=-0.00717296218
+			8:leaf=-0.0493839979
+		4:[num_medications<12] yes=9,no=10,missing=10
+			9:leaf=-0.0126688629
+			10:leaf=0.00991548039
+	2:[num_lab_procedures<21] yes=5,no=6,missing=6
+5:[diag_1_278] yes=11,no=12
+			11:leaf=-0.0011297845
+			12:leaf=-0.099364467
+		6:[discharge_disposition_id<9] yes=13,no=14,missing=14
+			13:leaf=0.0304346438
+			14:leaf=-0.0225982163
+
+0:[number_inpatient<1] yes=1,no=2,missing=2
+1:[age_{70-80)] yes=3,no=4
+3:[age_{80-90)] yes=7,no=8
+			7:leaf=-0.0161499474
+			8:leaf=0.00774323195
+		4:[discharge_disposition_id<7] yes=9,no=10,missing=10
+			9:leaf=0.0115561355
+			10:leaf=-0.0213370752
+	2:[number_inpatient<4] yes=5,no=6,missing=6
+		5:[discharge_disposition_id<15] yes=11,no=12,missing=12
+			11:leaf=0.00652370183
+			12:leaf=0.0427049436
+		6:[discharge_disposition_id<2] yes=13,no=14,missing=14
+			13:leaf=0.063363947
+			14:leaf=0.0215412825
+
+0:[number_outpatient<1] yes=1,no=2,missing=2
+	1:[discharge_disposition_id<22] yes=3,no=4,missing=4
+		3:[discharge_disposition_id<11] yes=7,no=8,missing=8
+			7:leaf=-0.00161578727
+			8:leaf=-0.0534627922
+		4:[discharge_disposition_id<23] yes=9,no=10,missing=10
+			9:leaf=0.0526364036
+			10:leaf=0.0223249346
+	2:[discharge_disposition_id<10] yes=5,no=6,missing=6
+		5:[num_lab_procedures<31] yes=11,no=12,missing=12
+			11:leaf=0.00192609394
+			12:leaf=0.0294531193
+		6:[discharge_disposition_id<15] yes=13,no=14,missing=14
+			13:leaf=-0.148835272
+			14:leaf=0.0350671522
+
+0:[number_emergency<1] yes=1,no=2,missing=2
+1:[diag_1_428] yes=3,no=4
+3:[diag_1_491] yes=7,no=8
+			7:leaf=-0.00612107525
+			8:leaf=0.0447048657
+		4:[number_diagnoses<5] yes=9,no=10,missing=10
+			9:leaf=0.0799954459
+			10:leaf=0.0247413944
+	2:[discharge_disposition_id<10] yes=5,no=6,missing=6
+		5:[number_inpatient<5] yes=11,no=12,missing=12
+			11:leaf=0.0226133149
+			12:leaf=0.0740189552
+		6:[discharge_disposition_id<15] yes=13,no=14,missing=14
+			13:leaf=-0.11663001
+			14:leaf=0.0276594646
+
+0:[number_inpatient<2] yes=1,no=2,missing=2
+	1:[num_medications<9] yes=3,no=4,missing=4
+3:[age_{80-90)] yes=7,no=8
+			7:leaf=-0.023659775
+			8:leaf=0.00125879305
+		4:[num_procedures<1] yes=9,no=10,missing=10
+			9:leaf=0.0102962665
+			10:leaf=-0.00694062421
+	2:[discharge_disposition_id<15] yes=5,no=6,missing=6
+		5:[discharge_disposition_id<11] yes=11,no=12,missing=12
+			11:leaf=0.0227393266
+			12:leaf=-0.145667315
+6:[diag_3_585] yes=13,no=14
+			13:leaf=0.0533045605
+			14:leaf=0.15428707
+
+0:[number_outpatient<1] yes=1,no=2,missing=2
+	1:[admission_type_id<6] yes=3,no=4,missing=4
+		3:[number_diagnoses<8] yes=7,no=8,missing=8
+			7:leaf=-0.0144047169
+			8:leaf=0.00137445342
+		4:[admission_type_id<7] yes=9,no=10,missing=10
+			9:leaf=0.032477688
+			10:leaf=-0.0518403165
+	2:[num_lab_procedures<19] yes=5,no=6,missing=6
+		5:[admission_source_id<10] yes=11,no=12,missing=12
+			11:leaf=0.00770066818
+			12:leaf=-0.0359198563
+		6:[discharge_disposition_id<9] yes=13,no=14,missing=14
+			13:leaf=0.0237428565
+			14:leaf=-0.0195417088

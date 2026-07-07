@@ -1,0 +1,53 @@
+{
+  "dataset": "compas",
+  "param_tag": "nest10_depth2",
+  "root_features_dropped": [
+    "priors_count"
+  ],
+  "n_dropped_columns": 3,
+  "baseline": {
+    "tgb_accuracy": 0.670767004341534,
+    "tgb_ci95": [
+      0.6468885672937771,
+      0.6968162083936325
+    ],
+    "tgb_split_features": [
+      "age",
+      "priors_count"
+    ],
+    "gosdt_accuracy": 0.670767004341534,
+    "gosdt_ci95": [
+      0.6468885672937771,
+      0.6968162083936325
+    ],
+    "gosdt_split_features": [
+      "age",
+      "priors_count"
+    ],
+    "gosdt_tgb_overlap_jaccard": 1.0
+  },
+  "ablated": {
+    "tgb_accuracy": 0.5636758321273516,
+    "tgb_ci95": [
+      0.5376266280752533,
+      0.58972503617945
+    ],
+    "tgb_split_features": [
+      "age"
+    ],
+    "gosdt_accuracy": 0.5636758321273516,
+    "gosdt_ci95": [
+      0.5376266280752533,
+      0.58972503617945
+    ],
+    "gosdt_split_features": [
+      "age"
+    ],
+    "gosdt_tgb_overlap_jaccard": 1.0
+  },
+  "delta": {
+    "tgb_accuracy": -0.1070911722141824,
+    "gosdt_accuracy": -0.1070911722141824,
+    "overlap_jaccard": 0.0
+  }
+}

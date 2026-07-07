@@ -47,13 +47,14 @@ print(f"TGB dir  : {TGB_DIR}")
 print(f"Results  : {RESULTS_DIR}")
 
 DATASETS = [
-    #"bike",
-    #"breast_cancer",
-    #"spambase",
-    #"compas",
-    #"creditcard_fraud_smote",
-    #"diabetes",
-    #"creditcard_fraud",
+    "bike",
+    "breast_cancer",
+    "spambase",
+    "compas",
+    "creditcard_fraud_smote",
+    "diabetes_smote"
+    "diabetes",
+    "creditcard_fraud",
     "heloc_original"
 ]  # Add more dataset names as needed, matching subdirectories in TGB_Variables
 
@@ -154,290 +155,290 @@ for dataset_name in DATASETS:
             continue
 
         # ── GOSDT (subprocess to avoid _libgosdt pybind11 conflict with SPLIT) ──────
-        if (out_dir / "gosdt_results.txt").exists():
-            print(f"  [SKIP] GOSDT already exists for {dataset_name}/{param_tag}")
-        else:
-            print(f"\n  [GOSDT] Training on {dataset_name}/{param_tag}...")
-            _gosdt_script = Path(__file__).parent / "run_gosdt.py"
-            _result = subprocess.run(
-                [sys.executable, str(_gosdt_script), dataset_name, param_tag],
-                capture_output=False,
-            )
-            if _result.returncode != 0:
-                print(f"  [GOSDT] ERROR: subprocess exited with code {_result.returncode}")
-
-        # ── SPLIT ─────────────────────────────────────────────────────────────
-        if (out_dir / "split_results.txt").exists():
-            print(f"  [SKIP] SPLIT already exists for {dataset_name}/{param_tag}")
-        else:
-            print(f"\n  [SPLIT] Training on {dataset_name}/{param_tag}...")
-            model = SPLIT(
-                lookahead_depth_budget=lookahead_depth,
-                reg=regularization,
-                full_depth_budget=depth_buget,
-                verbose=True,
-                binarize=True,
-                time_limit=100,
-            )
-            start = time.perf_counter()
-            model.fit(X_train, y_train)
-            split_duration = time.perf_counter() - start
-            y_pred_split = model.predict(X_test)
-
-            try:
-                _split_root = model.tree if model.tree is not None else model.clf.trees_[0].tree
-                split_n_nodes, split_n_leaves = count_gosdt_tree_nodes(_split_root)
-                split_tree_size = {"n_leaves": split_n_leaves, "n_nodes": split_n_nodes}
-            except Exception as e:
-                split_tree_size = {"error": str(e)}
-
-            with open(out_dir / "split_results.txt", "w") as f:
-                f.write(f"\nAccuracy: {accuracy_score(y_test, y_pred_split)}")
-                f.write(f"\nConfusion Matrix:\n{confusion_matrix(y_test, y_pred_split)}")
-                f.write(f"\nClassification Report:\n{classification_report(y_test, y_pred_split)}")
-                f.write(f"\nSPLIT completed in {split_duration:.2f} seconds")
-                try:
-                    f.write(f"\nRashomon set size: {len(model.clf.trees_)}")
-                except Exception as e:
-                    f.write(f"\nRashomon set size: unavailable ({e})")
-                if "error" not in split_tree_size:
-                    f.write(f"\nTree Size: {split_tree_size['n_leaves']} leaves, {split_tree_size['n_nodes']} total nodes")
-                else:
-                    f.write(f"\nTree Size: Error - {split_tree_size['error']}")
-            with open(out_dir / "split_first_tree.txt", "w", encoding="utf-8") as fh:
-                try:
-                    fh.write(str(model.clf.trees_[0]))
-                except Exception as e:
-                    fh.write(f"Tree unavailable: {e}\n")
-
-            print(f"  [SPLIT] Accuracy: {accuracy_score(y_test, y_pred_split):.4f} | Time: {split_duration:.2f}s")
-
-        # ── XGBoost ───────────────────────────────────────────────────────────
-        if (out_dir / "xgboost_binarized_results.txt").exists():
-            print(f"  [SKIP] XGBoost already exists for {dataset_name}/{param_tag}")
-        else:
-            print(f"\n  [XGBoost] Training on {dataset_name}/{param_tag}...")
-
-            # XGBoost forbids '[', ']', '<' in feature names — sanitize
-            X_train_xgb = X_train.copy()
-            X_test_xgb  = X_test.copy()
-            X_train_xgb.columns = (X_train_xgb.columns
-                                   .str.replace("[", "{", regex=False)
-                                   .str.replace("]", "}", regex=False)
-                                   .str.replace("<", "lt", regex=False))
-            X_test_xgb.columns  = X_train_xgb.columns
-
-            xgb = XGBClassifier(
-                max_depth=XGB_MAX_DEPTH,
-                n_estimators=XGB_N_ESTIMATORS,
-                learning_rate=0.1,
-                subsample=1.0,
-                colsample_bytree=1.0,
-                reg_lambda=1.0,
-                reg_alpha=0.0,
-                eval_metric="logloss",
-                random_state=42,
-            )
-            start = time.perf_counter()
-            xgb.fit(X_train_xgb, y_train)
-            xgb_duration = time.perf_counter() - start
-            y_pred_xgb = xgb.predict(X_test_xgb)
-
-            try:
-                trees_df    = xgb.get_booster().trees_to_dataframe()
-                xgb_leaves  = int((trees_df["Feature"] == "Leaf").sum())
-                xgb_nodes   = int(len(trees_df))
-                xgb_n_trees = int(trees_df["Tree"].nunique())
-                xgb_tree_size = {
-                    "n_trees": xgb_n_trees,
-                    "total_leaves": xgb_leaves,
-                    "total_nodes": xgb_nodes,
-                    "avg_leaves_per_tree": round(xgb_leaves / xgb_n_trees, 2),
-                }
-            except Exception as e:
-                xgb_tree_size = {"error": str(e)}
-
-            importance_df = (pd.DataFrame({
-                "Feature":    X_train_xgb.columns,
-                "Importance": xgb.feature_importances_,
-            }).sort_values("Importance", ascending=False))
-
-            with open(out_dir / "xgboost_tree_size_binarized.json", "w") as f:
-                json.dump(xgb_tree_size, f)
-
-            with open(out_dir / "xgboost_binarized_results.txt", "w") as f:
-                f.write(f"Accuracy: {accuracy_score(y_test, y_pred_xgb)}")
-                f.write(f"\nConfusion Matrix:\n{confusion_matrix(y_test, y_pred_xgb)}")
-                f.write(f"\nClassification Report:\n{classification_report(y_test, y_pred_xgb)}")
-                f.write(f"\nXGBoost completed in {xgb_duration:.2f} seconds")
-                f.write(f"\nAll Features:\n{importance_df.to_string(index=False)}")
-                if "error" not in xgb_tree_size:
-                    f.write(f"\nTree Size: {xgb_tree_size['n_trees']} trees, "
-                            f"{xgb_tree_size['total_leaves']} total leaves, "
-                            f"{xgb_tree_size['avg_leaves_per_tree']:.1f} avg leaves/tree")
-                else:
-                    f.write(f"\nTree Size: Error - {xgb_tree_size['error']}")
-
-            with open(out_dir / "xgboost_ensemble.txt", "w", encoding="utf-8") as fh:
-                try:
-                    fh.write("\n".join(xgb.get_booster().get_dump()))
-                except Exception as e:
-                    fh.write(f"Ensemble unavailable: {e}\n")
-
-            print(f"  [XGBoost]  Accuracy: {accuracy_score(y_test, y_pred_xgb):.4f} | Time: {xgb_duration:.2f}s")
-
-        # ── LightGBM ──────────────────────────────────────────────────────────
-        if (out_dir / "lightgbm_results.txt").exists():
-            print(f"  [SKIP] LightGBM already exists for {dataset_name}/{param_tag}")
-        else:
-            print(f"\n  [LightGBM] Training on {dataset_name}/{param_tag}...")
-
-            # LightGBM forbids '[', ']', ',' in feature names — sanitize
-            X_train_lgb = X_train.copy()
-            X_test_lgb  = X_test.copy()
-            X_train_lgb.columns = (X_train_lgb.columns
-                                   .str.replace("[", "(", regex=False)
-                                   .str.replace("]", ")", regex=False)
-                                   .str.replace("<", "lt", regex=False)
-                                   .str.replace(">", "gt", regex=False)
-                                   .str.replace('"', "", regex=False)
-                                   .str.replace("'", "", regex=False))
-            X_test_lgb.columns = X_train_lgb.columns
-
-            lgbm = LGBMClassifier(
-                max_depth=LGB_MAX_DEPTH,
-                n_estimators=LGB_N_ESTIMATORS,
-                num_leaves=LGB_NUM_LEAVES,
-                learning_rate=0.1,
-                subsample=1.0,
-                colsample_bytree=1.0,
-                reg_lambda=1.0,
-                reg_alpha=0.0,
-                random_state=42,
-                verbose=-1,
-            )
-            start = time.perf_counter()
-            lgbm.fit(
-                X_train_lgb, y_train,
-                eval_set=[(X_test_lgb, y_test)],
-                callbacks=[early_stopping(10, verbose=False), log_evaluation(period=-1)],
-            )
-            lgb_duration = time.perf_counter() - start
-            y_pred_lgb = lgbm.predict(X_test_lgb)
-
-            try:
-                lgb_booster  = lgbm.booster_
-                trees_info   = lgb_booster.dump_model()["tree_info"]
-                lgb_n_trees  = len(trees_info)
-                lgb_leaves   = sum(t["num_leaves"] for t in trees_info)
-                lgb_tree_size = {
-                    "n_trees": lgb_n_trees,
-                    "total_leaves": lgb_leaves,
-                    "avg_leaves_per_tree": round(lgb_leaves / lgb_n_trees, 2),
-                }
-            except Exception as e:
-                lgb_tree_size = {"error": str(e)}
-
-            lgb_importance_df = (pd.DataFrame({
-                "Feature":    X_train_lgb.columns,
-                "Importance": lgbm.feature_importances_,
-            }).sort_values("Importance", ascending=False))
-
-            with open(out_dir / "lightgbm_tree_size.json", "w") as f:
-                json.dump(lgb_tree_size, f)
-
-            with open(out_dir / "lightgbm_results.txt", "w") as f:
-                f.write(f"Accuracy: {accuracy_score(y_test, y_pred_lgb)}")
-                f.write(f"\nConfusion Matrix:\n{confusion_matrix(y_test, y_pred_lgb)}")
-                f.write(f"\nClassification Report:\n{classification_report(y_test, y_pred_lgb)}")
-                f.write(f"\nLightGBM completed in {lgb_duration:.2f} seconds")
-                f.write(f"\nAll Features:\n{lgb_importance_df.to_string(index=False)}")
-                if "error" not in lgb_tree_size:
-                    f.write(f"\nTree Size: {lgb_tree_size['n_trees']} trees, "
-                            f"{lgb_tree_size['total_leaves']} total leaves, "
-                            f"{lgb_tree_size['avg_leaves_per_tree']:.1f} avg leaves/tree")
-                else:
-                    f.write(f"\nTree Size: Error - {lgb_tree_size['error']}")
-
-            with open(out_dir / "lightgbm_ensemble.txt", "w", encoding="utf-8") as fh:
-                try:
-                    fh.write(lgbm.booster_.model_to_string())
-                except Exception as e:
-                    fh.write(f"Ensemble unavailable: {e}\n")
-
-            print(f"  [LightGBM] Accuracy: {accuracy_score(y_test, y_pred_lgb):.4f} | Time: {lgb_duration:.2f}s")
-
-        # ── CatBoost ──────────────────────────────────────────────────────────
-        if (out_dir / "catboost_results.txt").exists():
-            print(f"  [SKIP] CatBoost already exists for {dataset_name}/{param_tag}")
-        else:
-            print(f"\n  [CatBoost] Training on {dataset_name}/{param_tag}...")
-
-            cb = CatBoostClassifier(
-                depth=CB_DEPTH,
-                iterations=CB_ITERATIONS,
-                learning_rate=0.1,
-                l2_leaf_reg=1.0,
-                random_state=42,
-                verbose=0,
-            )
-            start = time.perf_counter()
-            cb.fit(X_train, y_train, eval_set=(X_test, y_test))
-            cb_duration = time.perf_counter() - start
-            y_pred_cb = cb.predict(X_test)
-
-            try:
-                cb_n_trees  = cb.tree_count_
-                cb_leaves   = int(cb.get_leaf_values().shape[0])
-                cb_tree_size = {
-                    "n_trees": cb_n_trees,
-                    "total_leaves": cb_leaves,
-                    "avg_leaves_per_tree": round(cb_leaves / cb_n_trees, 2),
-                }
-            except Exception as e:
-                cb_tree_size = {"error": str(e)}
-
-            cb_importance_df = (pd.DataFrame({
-                "Feature":    X_train.columns,
-                "Importance": cb.get_feature_importance(),
-            }).sort_values("Importance", ascending=False))
-
-            with open(out_dir / "catboost_tree_size.json", "w") as f:
-                json.dump(cb_tree_size, f)
-
-            with open(out_dir / "catboost_results.txt", "w") as f:
-                f.write(f"Accuracy: {accuracy_score(y_test, y_pred_cb)}")
-                f.write(f"\nConfusion Matrix:\n{confusion_matrix(y_test, y_pred_cb)}")
-                f.write(f"\nClassification Report:\n{classification_report(y_test, y_pred_cb)}")
-                f.write(f"\nCatBoost completed in {cb_duration:.2f} seconds")
-                f.write(f"\nTop 3 Features:\n{cb_importance_df.head(3).to_string(index=False)}")
-                if "error" not in cb_tree_size:
-                    f.write(f"\nTree Size: {cb_tree_size['n_trees']} trees, "
-                            f"{cb_tree_size['total_leaves']} total leaves, "
-                            f"{cb_tree_size['avg_leaves_per_tree']:.1f} avg leaves/tree")
-                else:
-                    f.write(f"\nTree Size: Error - {cb_tree_size['error']}")
-
-            try:
-                cb.save_model(str(out_dir / "catboost_ensemble.json"), format="json")
-            except Exception as e:
-                with open(out_dir / "catboost_ensemble.txt", "w", encoding="utf-8") as fh:
-                    fh.write(f"Ensemble unavailable: {e}\n")
-
-            print(f"  [CatBoost] Accuracy: {accuracy_score(y_test, y_pred_cb):.4f} | Time: {cb_duration:.2f}s")
-
-        # ── TREEFARMS (subprocess to avoid potential library conflicts) ───────
-        # if (out_dir / "treefarms_results.txt").exists():
-        #     print(f"  [SKIP] TREEFARMS already exists for {dataset_name}/{param_tag}")
+        # if (out_dir / "gosdt_results.txt").exists():
+        #     print(f"  [SKIP] GOSDT already exists for {dataset_name}/{param_tag}")
         # else:
-        #     print(f"\n  [TREEFARMS] Training on {dataset_name}/{param_tag}...")
-        #     _treefarms_script = Path(__file__).parent / "run_treefarms.py"
+        #     print(f"\n  [GOSDT] Training on {dataset_name}/{param_tag}...")
+        #     _gosdt_script = Path(__file__).parent / "run_gosdt.py"
         #     _result = subprocess.run(
-        #         [sys.executable, str(_treefarms_script), dataset_name, param_tag],
+        #         [sys.executable, str(_gosdt_script), dataset_name, param_tag],
         #         capture_output=False,
         #     )
         #     if _result.returncode != 0:
-        #         print(f"  [TREEFARMS] ERROR: subprocess exited with code {_result.returncode}")
+        #         print(f"  [GOSDT] ERROR: subprocess exited with code {_result.returncode}")
+
+        # ── SPLIT ─────────────────────────────────────────────────────────────
+        # if (out_dir / "split_results.txt").exists():
+        #     print(f"  [SKIP] SPLIT already exists for {dataset_name}/{param_tag}")
+        # else:
+        #     print(f"\n  [SPLIT] Training on {dataset_name}/{param_tag}...")
+        #     model = SPLIT(
+        #         lookahead_depth_budget=lookahead_depth,
+        #         reg=regularization,
+        #         full_depth_budget=depth_buget,
+        #         verbose=True,
+        #         binarize=True,
+        #         time_limit=100,
+        #     )
+        #     start = time.perf_counter()
+        #     model.fit(X_train, y_train)
+        #     split_duration = time.perf_counter() - start
+        #     y_pred_split = model.predict(X_test)
+        #
+        #     try:
+        #         _split_root = model.tree if model.tree is not None else model.clf.trees_[0].tree
+        #         split_n_nodes, split_n_leaves = count_gosdt_tree_nodes(_split_root)
+        #         split_tree_size = {"n_leaves": split_n_leaves, "n_nodes": split_n_nodes}
+        #     except Exception as e:
+        #         split_tree_size = {"error": str(e)}
+        #
+        #     with open(out_dir / "split_results.txt", "w") as f:
+        #         f.write(f"\nAccuracy: {accuracy_score(y_test, y_pred_split)}")
+        #         f.write(f"\nConfusion Matrix:\n{confusion_matrix(y_test, y_pred_split)}")
+        #         f.write(f"\nClassification Report:\n{classification_report(y_test, y_pred_split)}")
+        #         f.write(f"\nSPLIT completed in {split_duration:.2f} seconds")
+        #         try:
+        #             f.write(f"\nRashomon set size: {len(model.clf.trees_)}")
+        #         except Exception as e:
+        #             f.write(f"\nRashomon set size: unavailable ({e})")
+        #         if "error" not in split_tree_size:
+        #             f.write(f"\nTree Size: {split_tree_size['n_leaves']} leaves, {split_tree_size['n_nodes']} total nodes")
+        #         else:
+        #             f.write(f"\nTree Size: Error - {split_tree_size['error']}")
+        #     with open(out_dir / "split_first_tree.txt", "w", encoding="utf-8") as fh:
+        #         try:
+        #             fh.write(str(model.clf.trees_[0]))
+        #         except Exception as e:
+        #             fh.write(f"Tree unavailable: {e}\n")
+        #
+        #     print(f"  [SPLIT] Accuracy: {accuracy_score(y_test, y_pred_split):.4f} | Time: {split_duration:.2f}s")
+
+        # ── XGBoost ───────────────────────────────────────────────────────────
+        # if (out_dir / "xgboost_binarized_results.txt").exists():
+        #     print(f"  [SKIP] XGBoost already exists for {dataset_name}/{param_tag}")
+        # else:
+        #     print(f"\n  [XGBoost] Training on {dataset_name}/{param_tag}...")
+        #
+        #     # XGBoost forbids '[', ']', '<' in feature names — sanitize
+        #     X_train_xgb = X_train.copy()
+        #     X_test_xgb  = X_test.copy()
+        #     X_train_xgb.columns = (X_train_xgb.columns
+        #                            .str.replace("[", "{", regex=False)
+        #                            .str.replace("]", "}", regex=False)
+        #                            .str.replace("<", "lt", regex=False))
+        #     X_test_xgb.columns  = X_train_xgb.columns
+        #
+        #     xgb = XGBClassifier(
+        #         max_depth=XGB_MAX_DEPTH,
+        #         n_estimators=XGB_N_ESTIMATORS,
+        #         learning_rate=0.1,
+        #         subsample=1.0,
+        #         colsample_bytree=1.0,
+        #         reg_lambda=1.0,
+        #         reg_alpha=0.0,
+        #         eval_metric="logloss",
+        #         random_state=42,
+        #     )
+        #     start = time.perf_counter()
+        #     xgb.fit(X_train_xgb, y_train)
+        #     xgb_duration = time.perf_counter() - start
+        #     y_pred_xgb = xgb.predict(X_test_xgb)
+        #
+        #     try:
+        #         trees_df    = xgb.get_booster().trees_to_dataframe()
+        #         xgb_leaves  = int((trees_df["Feature"] == "Leaf").sum())
+        #         xgb_nodes   = int(len(trees_df))
+        #         xgb_n_trees = int(trees_df["Tree"].nunique())
+        #         xgb_tree_size = {
+        #             "n_trees": xgb_n_trees,
+        #             "total_leaves": xgb_leaves,
+        #             "total_nodes": xgb_nodes,
+        #             "avg_leaves_per_tree": round(xgb_leaves / xgb_n_trees, 2),
+        #         }
+        #     except Exception as e:
+        #         xgb_tree_size = {"error": str(e)}
+        #
+        #     importance_df = (pd.DataFrame({
+        #         "Feature":    X_train_xgb.columns,
+        #         "Importance": xgb.feature_importances_,
+        #     }).sort_values("Importance", ascending=False))
+        #
+        #     with open(out_dir / "xgboost_tree_size_binarized.json", "w") as f:
+        #         json.dump(xgb_tree_size, f)
+        #
+        #     with open(out_dir / "xgboost_binarized_results.txt", "w") as f:
+        #         f.write(f"Accuracy: {accuracy_score(y_test, y_pred_xgb)}")
+        #         f.write(f"\nConfusion Matrix:\n{confusion_matrix(y_test, y_pred_xgb)}")
+        #         f.write(f"\nClassification Report:\n{classification_report(y_test, y_pred_xgb)}")
+        #         f.write(f"\nXGBoost completed in {xgb_duration:.2f} seconds")
+        #         f.write(f"\nAll Features:\n{importance_df.to_string(index=False)}")
+        #         if "error" not in xgb_tree_size:
+        #             f.write(f"\nTree Size: {xgb_tree_size['n_trees']} trees, "
+        #                     f"{xgb_tree_size['total_leaves']} total leaves, "
+        #                     f"{xgb_tree_size['avg_leaves_per_tree']:.1f} avg leaves/tree")
+        #         else:
+        #             f.write(f"\nTree Size: Error - {xgb_tree_size['error']}")
+        #
+        #     with open(out_dir / "xgboost_ensemble.txt", "w", encoding="utf-8") as fh:
+        #         try:
+        #             fh.write("\n".join(xgb.get_booster().get_dump()))
+        #         except Exception as e:
+        #             fh.write(f"Ensemble unavailable: {e}\n")
+        #
+        #     print(f"  [XGBoost]  Accuracy: {accuracy_score(y_test, y_pred_xgb):.4f} | Time: {xgb_duration:.2f}s")
+
+        # ── LightGBM ──────────────────────────────────────────────────────────
+        # if (out_dir / "lightgbm_results.txt").exists():
+        #     print(f"  [SKIP] LightGBM already exists for {dataset_name}/{param_tag}")
+        # else:
+        #     print(f"\n  [LightGBM] Training on {dataset_name}/{param_tag}...")
+        #
+        #     # LightGBM forbids '[', ']', ',' in feature names — sanitize
+        #     X_train_lgb = X_train.copy()
+        #     X_test_lgb  = X_test.copy()
+        #     X_train_lgb.columns = (X_train_lgb.columns
+        #                            .str.replace("[", "(", regex=False)
+        #                            .str.replace("]", ")", regex=False)
+        #                            .str.replace("<", "lt", regex=False)
+        #                            .str.replace(">", "gt", regex=False)
+        #                            .str.replace('"', "", regex=False)
+        #                            .str.replace("'", "", regex=False))
+        #     X_test_lgb.columns = X_train_lgb.columns
+        #
+        #     lgbm = LGBMClassifier(
+        #         max_depth=LGB_MAX_DEPTH,
+        #         n_estimators=LGB_N_ESTIMATORS,
+        #         num_leaves=LGB_NUM_LEAVES,
+        #         learning_rate=0.1,
+        #         subsample=1.0,
+        #         colsample_bytree=1.0,
+        #         reg_lambda=1.0,
+        #         reg_alpha=0.0,
+        #         random_state=42,
+        #         verbose=-1,
+        #     )
+        #     start = time.perf_counter()
+        #     lgbm.fit(
+        #         X_train_lgb, y_train,
+        #         eval_set=[(X_test_lgb, y_test)],
+        #         callbacks=[early_stopping(10, verbose=False), log_evaluation(period=-1)],
+        #     )
+        #     lgb_duration = time.perf_counter() - start
+        #     y_pred_lgb = lgbm.predict(X_test_lgb)
+        #
+        #     try:
+        #         lgb_booster  = lgbm.booster_
+        #         trees_info   = lgb_booster.dump_model()["tree_info"]
+        #         lgb_n_trees  = len(trees_info)
+        #         lgb_leaves   = sum(t["num_leaves"] for t in trees_info)
+        #         lgb_tree_size = {
+        #             "n_trees": lgb_n_trees,
+        #             "total_leaves": lgb_leaves,
+        #             "avg_leaves_per_tree": round(lgb_leaves / lgb_n_trees, 2),
+        #         }
+        #     except Exception as e:
+        #         lgb_tree_size = {"error": str(e)}
+        #
+        #     lgb_importance_df = (pd.DataFrame({
+        #         "Feature":    X_train_lgb.columns,
+        #         "Importance": lgbm.feature_importances_,
+        #     }).sort_values("Importance", ascending=False))
+        #
+        #     with open(out_dir / "lightgbm_tree_size.json", "w") as f:
+        #         json.dump(lgb_tree_size, f)
+        #
+        #     with open(out_dir / "lightgbm_results.txt", "w") as f:
+        #         f.write(f"Accuracy: {accuracy_score(y_test, y_pred_lgb)}")
+        #         f.write(f"\nConfusion Matrix:\n{confusion_matrix(y_test, y_pred_lgb)}")
+        #         f.write(f"\nClassification Report:\n{classification_report(y_test, y_pred_lgb)}")
+        #         f.write(f"\nLightGBM completed in {lgb_duration:.2f} seconds")
+        #         f.write(f"\nAll Features:\n{lgb_importance_df.to_string(index=False)}")
+        #         if "error" not in lgb_tree_size:
+        #             f.write(f"\nTree Size: {lgb_tree_size['n_trees']} trees, "
+        #                     f"{lgb_tree_size['total_leaves']} total leaves, "
+        #                     f"{lgb_tree_size['avg_leaves_per_tree']:.1f} avg leaves/tree")
+        #         else:
+        #             f.write(f"\nTree Size: Error - {lgb_tree_size['error']}")
+        #
+        #     with open(out_dir / "lightgbm_ensemble.txt", "w", encoding="utf-8") as fh:
+        #         try:
+        #             fh.write(lgbm.booster_.model_to_string())
+        #         except Exception as e:
+        #             fh.write(f"Ensemble unavailable: {e}\n")
+        #
+        #     print(f"  [LightGBM] Accuracy: {accuracy_score(y_test, y_pred_lgb):.4f} | Time: {lgb_duration:.2f}s")
+
+        # ── CatBoost ──────────────────────────────────────────────────────────
+        # if (out_dir / "catboost_results.txt").exists():
+        #     print(f"  [SKIP] CatBoost already exists for {dataset_name}/{param_tag}")
+        # else:
+        #     print(f"\n  [CatBoost] Training on {dataset_name}/{param_tag}...")
+        #
+        #     cb = CatBoostClassifier(
+        #         depth=CB_DEPTH,
+        #         iterations=CB_ITERATIONS,
+        #         learning_rate=0.1,
+        #         l2_leaf_reg=1.0,
+        #         random_state=42,
+        #         verbose=0,
+        #     )
+        #     start = time.perf_counter()
+        #     cb.fit(X_train, y_train, eval_set=(X_test, y_test))
+        #     cb_duration = time.perf_counter() - start
+        #     y_pred_cb = cb.predict(X_test)
+        #
+        #     try:
+        #         cb_n_trees  = cb.tree_count_
+        #         cb_leaves   = int(cb.get_leaf_values().shape[0])
+        #         cb_tree_size = {
+        #             "n_trees": cb_n_trees,
+        #             "total_leaves": cb_leaves,
+        #             "avg_leaves_per_tree": round(cb_leaves / cb_n_trees, 2),
+        #         }
+        #     except Exception as e:
+        #         cb_tree_size = {"error": str(e)}
+        #
+        #     cb_importance_df = (pd.DataFrame({
+        #         "Feature":    X_train.columns,
+        #         "Importance": cb.get_feature_importance(),
+        #     }).sort_values("Importance", ascending=False))
+        #
+        #     with open(out_dir / "catboost_tree_size.json", "w") as f:
+        #         json.dump(cb_tree_size, f)
+        #
+        #     with open(out_dir / "catboost_results.txt", "w") as f:
+        #         f.write(f"Accuracy: {accuracy_score(y_test, y_pred_cb)}")
+        #         f.write(f"\nConfusion Matrix:\n{confusion_matrix(y_test, y_pred_cb)}")
+        #         f.write(f"\nClassification Report:\n{classification_report(y_test, y_pred_cb)}")
+        #         f.write(f"\nCatBoost completed in {cb_duration:.2f} seconds")
+        #         f.write(f"\nTop 3 Features:\n{cb_importance_df.head(3).to_string(index=False)}")
+        #         if "error" not in cb_tree_size:
+        #             f.write(f"\nTree Size: {cb_tree_size['n_trees']} trees, "
+        #                     f"{cb_tree_size['total_leaves']} total leaves, "
+        #                     f"{cb_tree_size['avg_leaves_per_tree']:.1f} avg leaves/tree")
+        #         else:
+        #             f.write(f"\nTree Size: Error - {cb_tree_size['error']}")
+        #
+        #     try:
+        #         cb.save_model(str(out_dir / "catboost_ensemble.json"), format="json")
+        #     except Exception as e:
+        #         with open(out_dir / "catboost_ensemble.txt", "w", encoding="utf-8") as fh:
+        #             fh.write(f"Ensemble unavailable: {e}\n")
+        #
+        #     print(f"  [CatBoost] Accuracy: {accuracy_score(y_test, y_pred_cb):.4f} | Time: {cb_duration:.2f}s")
+
+        # ── TREEFARMS (subprocess to avoid potential library conflicts) ───────
+        if (out_dir / "treefarms_results.txt").exists():
+            print(f"  [SKIP] TREEFARMS already exists for {dataset_name}/{param_tag}")
+        else:
+            print(f"\n  [TREEFARMS] Training on {dataset_name}/{param_tag}...")
+            _treefarms_script = Path(__file__).parent / "run_treefarms.py"
+            _result = subprocess.run(
+                [sys.executable, str(_treefarms_script), dataset_name, param_tag],
+                capture_output=False,
+            )
+            if _result.returncode != 0:
+                print(f"  [TREEFARMS] ERROR: subprocess exited with code {_result.returncode}")
 
         # ── LicketySPLIT ──────────────────────────────────────────────────────
         # if (out_dir / "licketysplit_results.txt").exists():

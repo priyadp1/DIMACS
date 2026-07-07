@@ -1,0 +1,161 @@
+Accuracy: 0.6265876858233184
+Confusion Matrix:
+[[6220 2559]
+ [3997 4781]]
+Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.61      0.71      0.65      8779
+           1       0.65      0.54      0.59      8778
+
+    accuracy                           0.63     17557
+   macro avg       0.63      0.63      0.62     17557
+weighted avg       0.63      0.63      0.62     17557
+
+XGBoost completed in 0.36 seconds
+All Features:
+                          Feature  Importance
+         number_inpatient lt= 0.5    0.203412
+              diabetesMed lt= 0.5    0.140274
+         number_inpatient lt= 1.5    0.055546
+         number_inpatient lt= 2.5    0.052690
+         number_diagnoses lt= 6.5    0.039421
+         number_diagnoses lt= 5.5    0.039231
+        number_outpatient lt= 0.5    0.029642
+discharge_disposition_id lt= 14.5    0.028174
+         number_emergency lt= 0.5    0.027408
+                   change lt= 0.5    0.026697
+           num_procedures lt= 1.5    0.024167
+                metformin lt= 1.5    0.022202
+          num_medications lt= 6.5    0.020801
+                     race lt= 0.5    0.020776
+                   gender lt= 0.5    0.020299
+           num_procedures lt= 0.5    0.019652
+discharge_disposition_id lt= 10.0    0.019295
+discharge_disposition_id lt= 18.5    0.018843
+         number_inpatient lt= 3.5    0.016486
+      admission_source_id lt= 4.5    0.016324
+         number_inpatient lt= 4.5    0.013482
+         num_medications lt= 11.5    0.013248
+                      age lt= 7.5    0.012100
+                  diag_1 lt= 96.5    0.011975
+                      age lt= 6.5    0.011840
+                      age lt= 5.5    0.011537
+                  diag_1 lt= 98.5    0.011271
+      admission_source_id lt= 6.5    0.010939
+         number_emergency lt= 1.5    0.010402
+ discharge_disposition_id lt= 1.5    0.009402
+                     race lt= 3.5    0.009296
+      num_lab_procedures lt= 30.5    0.009165
+         number_emergency lt= 2.5    0.008117
+ discharge_disposition_id lt= 2.5    0.007371
+discharge_disposition_id lt= 21.5    0.006939
+        admission_type_id lt= 5.5    0.001575
+            rosiglitazone lt= 2.5    0.000000
+                 diag_1 lt= 455.0    0.000000
+                 diag_1 lt= 451.0    0.000000
+                 diag_1 lt= 338.5    0.000000
+            rosiglitazone lt= 1.5    0.000000
+                 diag_1 lt= 325.5    0.000000
+                 diag_1 lt= 497.0    0.000000
+                 diag_1 lt= 103.5    0.000000
+                 diag_1 lt= 275.5    0.000000
+                 diag_1 lt= 273.0    0.000000
+                 diag_1 lt= 144.5    0.000000
+                 diag_1 lt= 120.5    0.000000
+                 diag_1 lt= 106.5    0.000000
+                 diag_1 lt= 693.5    0.000000
+                  diag_1 lt= 67.5    0.000000
+         number_inpatient lt= 7.5    0.000000
+                  insulin lt= 1.5    0.000000
+                  insulin lt= 2.5    0.000000
+                 diag_1 lt= 514.5    0.000000
+                 diag_2 lt= 105.5    0.000000
+                 diag_1 lt= 709.5    0.000000
+                 diag_3 lt= 257.5    0.000000
+                metformin lt= 2.5    0.000000
+                glipizide lt= 1.5    0.000000
+         number_diagnoses lt= 8.5    0.000000
+                glyburide lt= 1.5    0.000000
+             pioglitazone lt= 1.5    0.000000
+            rosiglitazone lt= 0.5    0.000000
+                 diag_3 lt= 787.5    0.000000
+                 diag_3 lt= 662.5    0.000000
+                 diag_3 lt= 543.5    0.000000
+                 diag_3 lt= 531.5    0.000000
+                 diag_3 lt= 457.5    0.000000
+                 diag_3 lt= 406.5    0.000000
+                 diag_3 lt= 256.5    0.000000
+                  diag_2 lt= 61.5    0.000000
+                 diag_3 lt= 246.5    0.000000
+                 diag_3 lt= 245.5    0.000000
+                 diag_3 lt= 113.5    0.000000
+                  diag_3 lt= 86.5    0.000000
+                 diag_2 lt= 737.0    0.000000
+                 diag_2 lt= 469.5    0.000000
+                 diag_2 lt= 442.5    0.000000
+                 diag_2 lt= 396.5    0.000000
+                 diag_2 lt= 322.5    0.000000
+                 diag_2 lt= 239.5    0.000000
+              glimepiride lt= 1.5    0.000000
+                  diag_2 lt= 78.5    0.000000
+                 diag_3 lt= 115.5    0.000000
+         num_medications lt= 41.5    0.000000
+         number_emergency lt= 3.5    0.000000
+         time_in_hospital lt= 5.5    0.000000
+         time_in_hospital lt= 3.5    0.000000
+         time_in_hospital lt= 2.5    0.000000
+         time_in_hospital lt= 1.5    0.000000
+     admission_source_id lt= 21.0    0.000000
+     admission_source_id lt= 18.0    0.000000
+     admission_source_id lt= 16.5    0.000000
+      admission_source_id lt= 9.5    0.000000
+      admission_source_id lt= 5.5    0.000000
+      admission_source_id lt= 3.5    0.000000
+discharge_disposition_id lt= 22.5    0.000000
+discharge_disposition_id lt= 17.5    0.000000
+discharge_disposition_id lt= 11.5    0.000000
+discharge_disposition_id lt= 10.5    0.000000
+ discharge_disposition_id lt= 5.5    0.000000
+ discharge_disposition_id lt= 3.5    0.000000
+        admission_type_id lt= 6.5    0.000000
+        admission_type_id lt= 4.5    0.000000
+        admission_type_id lt= 3.5    0.000000
+        admission_type_id lt= 2.5    0.000000
+        admission_type_id lt= 1.5    0.000000
+                      age lt= 8.5    0.000000
+                      age lt= 4.5    0.000000
+                      age lt= 3.5    0.000000
+                     race lt= 4.5    0.000000
+                     race lt= 2.5    0.000000
+         time_in_hospital lt= 4.5    0.000000
+        time_in_hospital lt= 10.5    0.000000
+       number_outpatient lt= 14.5    0.000000
+        time_in_hospital lt= 12.5    0.000000
+        number_outpatient lt= 1.5    0.000000
+         num_medications lt= 49.5    0.000000
+         num_medications lt= 44.5    0.000000
+                     race lt= 1.5    0.000000
+         num_medications lt= 38.5    0.000000
+         num_medications lt= 36.5    0.000000
+         num_medications lt= 35.5    0.000000
+         num_medications lt= 29.5    0.000000
+          num_medications lt= 7.5    0.000000
+          num_medications lt= 5.5    0.000000
+          num_medications lt= 3.5    0.000000
+           num_procedures lt= 5.5    0.000000
+           num_procedures lt= 2.5    0.000000
+      num_lab_procedures lt= 85.5    0.000000
+      num_lab_procedures lt= 75.5    0.000000
+      num_lab_procedures lt= 67.5    0.000000
+      num_lab_procedures lt= 62.5    0.000000
+      num_lab_procedures lt= 43.5    0.000000
+      num_lab_procedures lt= 32.5    0.000000
+      num_lab_procedures lt= 26.5    0.000000
+      num_lab_procedures lt= 24.5    0.000000
+      num_lab_procedures lt= 23.5    0.000000
+      num_lab_procedures lt= 19.5    0.000000
+      num_lab_procedures lt= 18.5    0.000000
+       num_lab_procedures lt= 8.5    0.000000
+                metformin lt= 0.5    0.000000
+Tree Size: 25 trees, 200 total leaves, 8.0 avg leaves/tree

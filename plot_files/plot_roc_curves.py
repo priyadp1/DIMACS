@@ -1,7 +1,6 @@
 import re
 import numpy as np
 import pandas as pd
-import matplotlib.pyplot as plt
 from pathlib import Path
 from sklearn.metrics import roc_curve, auc
 
@@ -14,21 +13,9 @@ tgb_results_dir = BASEDIR / "TGB_Variables_Feature_Importance"
 gbdt_results_dir = BASEDIR / "benchmarks_no_TGB_results_all"
 tmp_splits_dir   = BASEDIR / "tmp_splits_no_tgb"
 
-parameters = [
-    "nest40_depth1", "nest40_depth2", "nest40_depth3",
-    "nest100_depth1", "nest100_depth2", "nest100_depth3",
-    "nest200_depth1", "nest200_depth2", "nest200_depth3",
-]
-datasets = ["bike", "compas", "breast_cancer", "spambase",
-            "creditcard_fraud", "creditcard_fraud_smote",
-            "diabetes", "diabetes_smote"]
+parameters = ["nest5_depth1", "nest5_depth2", "nest5_depth3", "nest10_depth1", "nest10_depth2", "nest10_depth3", "nest15_depth1", "nest15_depth2", "nest15_depth3", "nest20_depth1", "nest20_depth2", "nest20_depth3" , "nest25_depth1", "nest25_depth2", "nest25_depth3" , "nest30_depth1", "nest30_depth2", "nest30_depth3", "nest35_depth1", "nest35_depth2", "nest35_depth3", "nest40_depth1", "nest40_depth2", "nest40_depth3", "nest100_depth1", "nest100_depth2", "nest100_depth3", "nest200_depth1", "nest200_depth2", "nest200_depth3"]
+datasets = ["bike" , "breast_cancer" , "creditcard_fraud" , "diabetes" , "heloc_original" , "creditcard_fraud_smote" , "diabetes_smote"  , "spambase"]
 
-TGB_COLORS  = ["tab:blue", "steelblue", "cornflowerblue"]
-GBDT_COLORS = {
-    "XGBoost":  ["tab:orange",  "darkorange",  "moccasin"],
-    #"LightGBM": ["tab:green",   "seagreen",    "palegreen"],
-    #"CatBoost": ["tab:red",     "firebrick",   "lightsalmon"],
-}
 GBDT_FILES = {
     "XGBoost":  "xgboost_binarized_results.txt",
     #"LightGBM": "lightgbm_results.txt",
@@ -43,13 +30,11 @@ def parse_all_features(results_path):
     if idx == -1:
         return []
     lines = text[idx:].splitlines()
-    # lines[0] = "Top 3 Features:", lines[1] = header, lines[2:5] = data rows
     features = []
     for line in lines[2:5]:
         line = line.strip()
         if not line:
             break
-        # Feature name is all but the last whitespace-delimited token (Importance)
         parts = line.rsplit(None, 1)
         if parts:
             features.append(parts[0].strip())
@@ -68,11 +53,8 @@ def build_reverse_map(original_cols, model):
     """Map sanitized feature name → original column name."""
     if model == "CatBoost":
         return {col: col for col in original_cols}
-
     if model == "XGBoost":
         return {_sanitize_xgb(col): col for col in original_cols}
-
-    # LightGBM — sanitize then deduplicate (must mirror run_no_TGB.py exactly)
     seen, rev = {}, {}
     for col in original_cols:
         s = _sanitize_lgb(col)
@@ -85,9 +67,36 @@ def build_reverse_map(original_cols, model):
     return rev
 
 
+def parse_param(param):
+    """Extract (n_estimators, max_depth) from param string like 'nest5_depth1'."""
+    m = re.match(r'nest(\d+)_depth(\d+)', param)
+    if m:
+        return int(m.group(1)), int(m.group(2))
+    return None, None
+
+
+def parse_tgb_feature(binary_var):
+    """Split 'feature <= threshold' into (feature, threshold). Returns (binary_var, '') if no match."""
+    m = re.match(r'^(.+?)\s*<=\s*(.+)$', binary_var)
+    if m:
+        return m.group(1).strip(), m.group(2).strip()
+    return binary_var, ""
+
+
+def compute_auc_and_threshold(y, scores):
+    """Return (auc, optimal_youden_threshold). Flips scores if AUC < 0.5."""
+    fpr, tpr, thresholds = roc_curve(y, scores)
+    roc_auc = auc(fpr, tpr)
+    if roc_auc < 0.5:
+        fpr, tpr, thresholds = roc_curve(y, 1 - scores)
+        roc_auc = auc(fpr, tpr)
+    optimal_thresh = thresholds[np.argmax(tpr - fpr)]
+    return roc_auc, optimal_thresh
+
+
 # Pre-load GBDT top-3 feature data per dataset (independent of TGB params)
 print("Loading GBDT top-3 feature data...")
-gbdt_data = {}   # dataset -> {split -> {model -> [(feat_original, values)]}}
+gbdt_data = {}   # dataset -> {split -> {model -> [(feat_original, values, y)]}}
 
 for dataset in datasets:
     gbdt_dir = gbdt_results_dir / dataset
@@ -112,13 +121,7 @@ for dataset in datasets:
             rpath = gbdt_dir / fname
             if not rpath.exists():
                 continue
-            sanitized_feats = parse_all_features(rpath)
-            rev_map = build_reverse_map(X.columns, model)
-            entries = []
-            for sf in sanitized_feats:
-                orig = rev_map.get(sf)
-                if orig and orig in X.columns:
-                    entries.append((orig, X[orig].values, y))
+            entries = [(col, X[col].values, y) for col in X.columns]
             by_model[model] = entries
         by_split[split] = by_model
 
@@ -126,17 +129,40 @@ for dataset in datasets:
     print(f"  {dataset}: loaded")
 
 
+out_dir = BASEDIR / "roc_curve_csvs"
+out_dir.mkdir(exist_ok=True)
+
+splits_out_dir = BASEDIR / "split_counts_csvs"
+splits_out_dir.mkdir(exist_ok=True)
+
+COLS = ["n_estimators", "max_depth", "Model", "Feature", "Threshold (≤)",
+        "Train AUC", "Test AUC", "Train-Test gap"]
+
+SPLIT_COLS = ["parameter", "n_estimators", "max_depth", "num_splits_used"]
+
 for dataset in datasets:
+    rows = []
+    split_rows = []
+
+    # TGB rows — one per (param, feature)
     for param in parameters:
+        n_est, max_d = parse_param(param)
         tgb_base = tgb_results_dir / dataset / param
         fi_path  = tgb_base / "binary_variable_counts.csv"
         if not fi_path.exists():
             continue
 
         fi_df = pd.read_csv(fi_path).sort_values("importance", ascending=False)
-        top3  = fi_df["binary_variable"].head(3).tolist()
+        all_feats = fi_df["binary_variable"].tolist()
 
-        splits = {}
+        split_rows.append({
+            "parameter": param,
+            "n_estimators": n_est,
+            "max_depth": max_d,
+            "num_splits_used": len(fi_df),
+        })
+
+        tgb_splits = {}
         for split in ("train", "test"):
             x_path = tgb_base / f"X_{split}_guessed.csv"
             y_path = tgb_base / f"y_{split}.csv"
@@ -146,60 +172,76 @@ for dataset in datasets:
             y = pd.read_csv(y_path).iloc[:, 0].values
             if len(np.unique(y)) != 2:
                 continue
-            splits[split] = (X, y)
+            tgb_splits[split] = (X, y)
 
-        if not splits:
+        if "train" not in tgb_splits:
             continue
 
-        fig, axes = plt.subplots(1, len(splits), figsize=(7 * len(splits), 6), squeeze=False)
+        X_tr, y_tr = tgb_splits["train"]
+        for feat in all_feats:
+            if feat not in X_tr.columns:
+                continue
 
-        for ax, (split, (X_tgb, y_tgb)) in zip(axes[0], splits.items()):
-            all_curves = []  # (roc_auc, label, fpr, tpr, color, linestyle)
+            train_auc, _ = compute_auc_and_threshold(y_tr, X_tr[feat].values)
 
-            # TGB binary variable curves (dashed, blues)
-            tgb_raw = []
-            for feat in top3:
-                if feat not in X_tgb.columns:
-                    continue
-                fpr, tpr, _ = roc_curve(y_tgb, X_tgb[feat].values)
-                roc_auc = auc(fpr, tpr)
-                if roc_auc < 0.5:
-                    fpr, tpr, _ = roc_curve(y_tgb, 1 - X_tgb[feat].values)
-                    roc_auc = auc(fpr, tpr)
-                tgb_raw.append((roc_auc, feat, fpr, tpr))
-            tgb_raw.sort(key=lambda x: x[0], reverse=True)
-            for (roc_auc, feat, fpr, tpr), color in zip(tgb_raw, TGB_COLORS):
-                all_curves.append((roc_auc, f"TGB: {feat}", fpr, tpr, color, "--"))
+            test_auc = None
+            if "test" in tgb_splits:
+                X_te, y_te = tgb_splits["test"]
+                if feat in X_te.columns:
+                    test_auc, _ = compute_auc_and_threshold(y_te, X_te[feat].values)
 
-            # GBDT model feature curves (solid, per-model colors)
-            split_data = (gbdt_data.get(dataset) or {}).get(split, {})
-            for model, entries in split_data.items():
-                colors = GBDT_COLORS[model]
-                for (feat, values, y_gbdt), color in zip(entries, colors):
-                    fpr, tpr, _ = roc_curve(y_gbdt, values)
-                    roc_auc = auc(fpr, tpr)
-                    if roc_auc < 0.5:
-                        fpr, tpr, _ = roc_curve(y_gbdt, 1 - values)
-                        roc_auc = auc(fpr, tpr)
-                    all_curves.append((roc_auc, f"{model}: {feat}", fpr, tpr, color, "-"))
+            orig_feat, threshold = parse_tgb_feature(feat)
+            rows.append({
+                "n_estimators": n_est,
+                "max_depth": max_d,
+                "Model": "TGB",
+                "Feature": orig_feat,
+                "Threshold (≤)": threshold,
+                "Train AUC": round(train_auc, 4),
+                "Test AUC": round(test_auc, 4) if test_auc is not None else "",
+                "Train-Test gap": round(train_auc - test_auc, 4) if test_auc is not None else "",
+            })
 
-            # Sort all curves by AUC descending
-            all_curves.sort(key=lambda x: x[0], reverse=True)
+    # GBDT/XGBoost rows — once per dataset, not repeated per param
+    gbdt_split_data = gbdt_data.get(dataset) or {}
+    train_by_model = gbdt_split_data.get("train", {})
+    test_by_model  = gbdt_split_data.get("test",  {})
 
-            for roc_auc, label, fpr, tpr, color, ls in all_curves:
-                ax.plot(fpr, tpr, color=color, lw=2, linestyle=ls,
-                        label=f"{label} (AUC={roc_auc:.3f})")
+    for model in train_by_model:
+        train_entries = {feat: (vals, y) for feat, vals, y in train_by_model[model]}
+        test_entries  = {feat: (vals, y) for feat, vals, y in test_by_model.get(model, [])}
 
-            ax.plot([0, 1], [0, 1], "k--", lw=1)
-            ax.set_xlim([0, 1])
-            ax.set_ylim([0, 1.02])
-            ax.set_xlabel("False Positive Rate", fontsize=12)
-            ax.set_ylabel("True Positive Rate", fontsize=12)
-            ax.set_title(f"{dataset} | {param} | {split}", fontsize=13)
-            ax.legend(loc="lower right", fontsize=9)
+        for feat, (vals_tr, y_tr) in train_entries.items():
+            train_auc, opt_thresh = compute_auc_and_threshold(y_tr, vals_tr)
 
-        plt.tight_layout()
-        out_path = tgb_base / f"{dataset}_{param}_roc_curves.png"
-        plt.savefig(out_path, dpi=150)
-        plt.close()
-        print(f"Saved: {out_path.relative_to(BASEDIR)}")
+            test_auc = None
+            if feat in test_entries:
+                vals_te, y_te = test_entries[feat]
+                test_auc, _ = compute_auc_and_threshold(y_te, vals_te)
+
+            rows.append({
+                "n_estimators": "",
+                "max_depth": "",
+                "Model": model,
+                "Feature": feat,
+                "Threshold (≤)": round(opt_thresh, 4),
+                "Train AUC": round(train_auc, 4),
+                "Test AUC": round(test_auc, 4) if test_auc is not None else "",
+                "Train-Test gap": round(train_auc - test_auc, 4) if test_auc is not None else "",
+            })
+
+    if split_rows:
+        splits_df = pd.DataFrame(split_rows, columns=SPLIT_COLS)
+        splits_path = splits_out_dir / f"{dataset}_split_counts.csv"
+        splits_df.to_csv(splits_path, index=False)
+        print(f"Saved: {splits_path.relative_to(BASEDIR)}")
+
+    if not rows:
+        continue
+
+    df = (pd.DataFrame(rows, columns=COLS)
+            .sort_values("Test AUC", ascending=False, na_position="last")
+            .reset_index(drop=True))
+    out_path = out_dir / f"{dataset}_roc_auc.csv"
+    df.to_csv(out_path, index=False)
+    print(f"Saved: {out_path.relative_to(BASEDIR)}")

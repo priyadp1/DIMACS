@@ -1,0 +1,57 @@
+{
+  "dataset": "spambase",
+  "param_tag": "nest5_depth1",
+  "root_features_dropped": [
+    "char_freq_$"
+  ],
+  "n_dropped_columns": 2,
+  "baseline": {
+    "tgb_accuracy": 0.8349619978284474,
+    "tgb_ci95": [
+      0.8110749185667753,
+      0.8577633007600435
+    ],
+    "tgb_split_features": [
+      "char_freq_!",
+      "char_freq_$",
+      "word_freq_remove"
+    ],
+    "gosdt_accuracy": 0.8349619978284474,
+    "gosdt_ci95": [
+      0.8110749185667753,
+      0.8577633007600435
+    ],
+    "gosdt_split_features": [
+      "char_freq_!",
+      "char_freq_$",
+      "word_freq_remove"
+    ],
+    "gosdt_tgb_overlap_jaccard": 1.0
+  },
+  "ablated": {
+    "tgb_accuracy": 0.8295331161780674,
+    "tgb_ci95": [
+      0.8034744842562432,
+      0.8523615635179154
+    ],
+    "tgb_split_features": [
+      "char_freq_!",
+      "word_freq_remove"
+    ],
+    "gosdt_accuracy": 0.8295331161780674,
+    "gosdt_ci95": [
+      0.8034744842562432,
+      0.8523615635179154
+    ],
+    "gosdt_split_features": [
+      "char_freq_!",
+      "word_freq_remove"
+    ],
+    "gosdt_tgb_overlap_jaccard": 1.0
+  },
+  "delta": {
+    "tgb_accuracy": -0.005428881650380024,
+    "gosdt_accuracy": -0.005428881650380024,
+    "overlap_jaccard": 0.0
+  }
+}

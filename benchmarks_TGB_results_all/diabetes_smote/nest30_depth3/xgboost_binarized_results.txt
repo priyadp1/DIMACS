@@ -1,0 +1,70 @@
+Accuracy: 0.6238537335535683
+Confusion Matrix:
+[[6211 2568]
+ [4036 4742]]
+Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.61      0.71      0.65      8779
+           1       0.65      0.54      0.59      8778
+
+    accuracy                           0.62     17557
+   macro avg       0.63      0.62      0.62     17557
+weighted avg       0.63      0.62      0.62     17557
+
+XGBoost completed in 0.12 seconds
+All Features:
+                          Feature  Importance
+         number_inpatient lt= 0.5    0.180656
+              diabetesMed lt= 0.5    0.124023
+         number_inpatient lt= 1.5    0.049171
+         number_diagnoses lt= 5.5    0.035671
+         number_inpatient lt= 2.5    0.033600
+         number_diagnoses lt= 6.5    0.026718
+        number_outpatient lt= 0.5    0.026286
+                   change lt= 0.5    0.025668
+         num_medications lt= 11.5    0.025646
+        admission_type_id lt= 1.5    0.024762
+         number_emergency lt= 0.5    0.024543
+discharge_disposition_id lt= 14.5    0.022885
+          num_medications lt= 6.5    0.022426
+      admission_source_id lt= 4.5    0.022080
+           num_procedures lt= 1.5    0.021924
+           num_procedures lt= 0.5    0.020344
+                 diag_1 lt= 338.5    0.019977
+                metformin lt= 1.5    0.019047
+                   gender lt= 0.5    0.017133
+discharge_disposition_id lt= 10.0    0.016895
+discharge_disposition_id lt= 18.5    0.015535
+                     race lt= 0.5    0.015087
+         number_inpatient lt= 3.5    0.014611
+                      age lt= 5.5    0.014151
+                      age lt= 4.5    0.013590
+                  diag_1 lt= 98.5    0.013529
+         time_in_hospital lt= 3.5    0.012736
+         number_inpatient lt= 4.5    0.011960
+      admission_source_id lt= 6.5    0.011675
+                      age lt= 6.5    0.011295
+                  diag_1 lt= 96.5    0.010664
+                  insulin lt= 0.5    0.010116
+                      age lt= 7.5    0.009665
+         number_emergency lt= 1.5    0.008968
+      num_lab_procedures lt= 30.5    0.008710
+ discharge_disposition_id lt= 1.5    0.008123
+ discharge_disposition_id lt= 6.5    0.007613
+      num_lab_procedures lt= 35.5    0.006632
+ discharge_disposition_id lt= 2.5    0.006516
+discharge_disposition_id lt= 21.5    0.006486
+                 diag_1 lt= 103.5    0.006230
+                 diag_1 lt= 403.5    0.006006
+        admission_type_id lt= 2.5    0.005379
+         number_emergency lt= 2.5    0.005270
+        admission_type_id lt= 5.5    0.000000
+                 diag_1 lt= 497.0    0.000000
+                 diag_3 lt= 247.5    0.000000
+                      age lt= 8.5    0.000000
+discharge_disposition_id lt= 10.5    0.000000
+                  insulin lt= 1.5    0.000000
+         num_medications lt= 32.5    0.000000
+                 diag_1 lt= 259.5    0.000000
+Tree Size: 25 trees, 200 total leaves, 8.0 avg leaves/tree

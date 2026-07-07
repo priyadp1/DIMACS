@@ -1,0 +1,9 @@
+<class 'gosdt._tree.Tree'>: { feature: 130, orig feature: 130, [ left child: { feature: 119, orig feature: 119, [ left child: { prediction: 0, loss: 0.23919999599456787 }, right child: { prediction: 1, loss: 0.03799999877810478 }] }, right child: { feature: 26, orig feature: 26, [ left child: { prediction: 1, loss: 0.1054999977350235 }, right child: { prediction: 0, loss: 0.01529999915510416 }] }] }, Index(['race <= 0.5', 'race <= 1.5', 'race <= 2.5', 'race <= 3.5',
+       'race <= 4.5', 'gender <= 0.5', 'age <= 0.5', 'age <= 3.5',
+       'age <= 4.5', 'age <= 5.5',
+       ...
+       'rosiglitazone <= 0.5', 'rosiglitazone <= 1.5', 'rosiglitazone <= 2.5',
+       'insulin <= 0.5', 'insulin <= 1.5', 'insulin <= 2.5',
+       'glyburide-metformin <= 1.5', 'change <= 0.5', 'diabetesMed <= 0.5',
+       'diag_2 <= 81.0'],
+      dtype='str', length=264), 2

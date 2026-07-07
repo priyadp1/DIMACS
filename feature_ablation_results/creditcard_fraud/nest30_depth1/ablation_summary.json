@@ -1,0 +1,27 @@
+{
+  "dataset": "creditcard_fraud",
+  "param_tag": "nest30_depth1",
+  "root_features_dropped": [
+    "V17"
+  ],
+  "n_dropped_columns": 2,
+  "baseline": {
+    "tgb_accuracy": 0.9990519995786665,
+    "tgb_ci95": [
+      0.9987886661282961,
+      0.9992977774656788
+    ],
+    "tgb_split_features": [
+      "V17"
+    ],
+    "gosdt_accuracy": 0.9982795547909132,
+    "gosdt_ci95": [
+      0.9979459990871107,
+      0.9986131104947158
+    ],
+    "gosdt_split_features": [],
+    "gosdt_tgb_overlap_jaccard": 0.0
+  },
+  "ablated": null,
+  "error": "ablating root feature(s) removed all columns; skipped"
+}

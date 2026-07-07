@@ -1,0 +1,83 @@
+{
+  "dataset": "spambase",
+  "param_tag": "nest15_depth2",
+  "root_features_dropped": [
+    "char_freq_$"
+  ],
+  "n_dropped_columns": 5,
+  "baseline": {
+    "tgb_accuracy": 0.9044516829533116,
+    "tgb_ci95": [
+      0.8849077090119435,
+      0.9229098805646037
+    ],
+    "tgb_split_features": [
+      "capital_run_length_average",
+      "capital_run_length_longest",
+      "capital_run_length_total",
+      "char_freq_!",
+      "char_freq_$",
+      "word_freq_free",
+      "word_freq_hp",
+      "word_freq_money",
+      "word_freq_remove",
+      "word_freq_your"
+    ],
+    "gosdt_accuracy": 0.8892508143322475,
+    "gosdt_ci95": [
+      0.8675352877307275,
+      0.9087947882736156
+    ],
+    "gosdt_split_features": [
+      "capital_run_length_total",
+      "char_freq_!",
+      "char_freq_$",
+      "word_freq_free",
+      "word_freq_george",
+      "word_freq_hp",
+      "word_freq_remove"
+    ],
+    "gosdt_tgb_overlap_jaccard": 0.5454545454545454
+  },
+  "ablated": {
+    "tgb_accuracy": 0.8968512486427795,
+    "tgb_ci95": [
+      0.8762214983713354,
+      0.9163952225841476
+    ],
+    "tgb_split_features": [
+      "capital_run_length_average",
+      "capital_run_length_longest",
+      "capital_run_length_total",
+      "char_freq_!",
+      "word_freq_free",
+      "word_freq_george",
+      "word_freq_hp",
+      "word_freq_money",
+      "word_freq_remove",
+      "word_freq_your"
+    ],
+    "gosdt_accuracy": 0.8892508143322475,
+    "gosdt_ci95": [
+      0.8686210640608035,
+      0.9077090119435396
+    ],
+    "gosdt_split_features": [
+      "capital_run_length_average",
+      "capital_run_length_total",
+      "char_freq_!",
+      "word_freq_free",
+      "word_freq_george",
+      "word_freq_hp",
+      "word_freq_money",
+      "word_freq_remove",
+      "word_freq_your"
+    ],
+    "gosdt_tgb_overlap_jaccard": 0.9
+  },
+  "delta": {
+    "tgb_accuracy": -0.007600434310532034,
+    "gosdt_accuracy": 0.0,
+    "overlap_jaccard": 0.3545454545454546
+  }
+}

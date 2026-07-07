@@ -1,0 +1,67 @@
+{
+  "dataset": "diabetes",
+  "param_tag": "nest30_depth1",
+  "root_features_dropped": [
+    "num_medications"
+  ],
+  "n_dropped_columns": 2,
+  "baseline": {
+    "tgb_accuracy": 0.6833333333333333,
+    "tgb_ci95": [
+      0.55,
+      0.8
+    ],
+    "tgb_split_features": [
+      "diag_3_250",
+      "num_lab_procedures",
+      "num_medications",
+      "number_inpatient",
+      "race_?",
+      "time_in_hospital"
+    ],
+    "gosdt_accuracy": 0.65,
+    "gosdt_ci95": [
+      0.5333333333333333,
+      0.7666666666666667
+    ],
+    "gosdt_split_features": [
+      "num_lab_procedures",
+      "num_medications",
+      "number_inpatient",
+      "race_?",
+      "time_in_hospital"
+    ],
+    "gosdt_tgb_overlap_jaccard": 0.8333333333333334
+  },
+  "ablated": {
+    "tgb_accuracy": 0.6166666666666667,
+    "tgb_ci95": [
+      0.48333333333333334,
+      0.7333333333333333
+    ],
+    "tgb_split_features": [
+      "diag_3_250",
+      "num_lab_procedures",
+      "number_inpatient",
+      "race_?",
+      "time_in_hospital"
+    ],
+    "gosdt_accuracy": 0.6333333333333333,
+    "gosdt_ci95": [
+      0.5,
+      0.75
+    ],
+    "gosdt_split_features": [
+      "diag_3_250",
+      "num_lab_procedures",
+      "number_inpatient",
+      "race_?"
+    ],
+    "gosdt_tgb_overlap_jaccard": 0.8
+  },
+  "delta": {
+    "tgb_accuracy": -0.06666666666666665,
+    "gosdt_accuracy": -0.01666666666666672,
+    "overlap_jaccard": -0.033333333333333326
+  }
+}

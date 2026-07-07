@@ -1,0 +1,6 @@
+<class 'gosdt._tree.Tree'>: { feature: 0, orig feature: 0, [ left child: { feature: 3, orig feature: 3, [ left child: { prediction: 1, loss: 0.0011999999405816197 }, right child: { prediction: 0, loss: 0.021900000050663948 }] }, right child: { feature: 9, orig feature: 9, [ left child: { prediction: 1, loss: 0.019999999552965164 }, right child: { prediction: 0, loss: 0.026200000196695328 }] }] }, Index(['V4 <= 0.7563397884368896', 'V4 <= 1.5782626867294312',
+       'V10 <= -1.7765860557556152', 'V14 <= -2.7159359455108643',
+       'V14 <= -1.8273465633392334', 'V14 <= -1.812438189983368',
+       'V14 <= -1.7687879800796509', 'V14 <= -1.5627466440200806',
+       'V14 <= -1.4205476641654968', 'V14 <= -0.7145193219184875'],
+      dtype='str'), 2

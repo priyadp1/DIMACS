@@ -1,0 +1,199 @@
+0:[number_inpatient lt= 0.5<1] yes=1,no=2,missing=2
+	1:[number_diagnoses lt= 5.5<1] yes=3,no=4,missing=4
+		3:leaf=0.0595954768
+		4:leaf=0.0292582791
+	2:[number_diagnoses lt= 5.5<1] yes=5,no=6,missing=6
+		5:leaf=-0.0169468522
+		6:leaf=-0.0631321371
+
+0:[number_inpatient lt= 0.5<1] yes=1,no=2,missing=2
+	1:[number_diagnoses lt= 5.5<1] yes=3,no=4,missing=4
+		3:leaf=0.0536865667
+		4:leaf=0.0263417307
+	2:[number_diagnoses lt= 5.5<1] yes=5,no=6,missing=6
+		5:leaf=-0.0152534842
+		6:leaf=-0.056879878
+
+0:[number_inpatient lt= 0.5<1] yes=1,no=2,missing=2
+	1:[number_diagnoses lt= 5.5<1] yes=3,no=4,missing=4
+		3:leaf=0.0484367497
+		4:leaf=0.0237245858
+	2:[number_diagnoses lt= 5.5<1] yes=5,no=6,missing=6
+		5:leaf=-0.0137310019
+		6:leaf=-0.0513338931
+
+0:[number_inpatient lt= 0.5<1] yes=1,no=2,missing=2
+	1:[number_diagnoses lt= 5.5<1] yes=3,no=4,missing=4
+		3:leaf=0.0437468104
+		4:leaf=0.0213728845
+	2:[number_diagnoses lt= 5.5<1] yes=5,no=6,missing=6
+		5:leaf=-0.0123615544
+		6:leaf=-0.0463840626
+
+0:[number_inpatient lt= 0.5<1] yes=1,no=2,missing=2
+	1:[number_diagnoses lt= 5.5<1] yes=3,no=4,missing=4
+		3:leaf=0.0395394005
+		4:leaf=0.019257592
+	2:[number_diagnoses lt= 5.5<1] yes=5,no=6,missing=6
+		5:leaf=-0.0111293104
+		6:leaf=-0.0419454724
+
+0:[number_inpatient lt= 0.5<1] yes=1,no=2,missing=2
+	1:[number_diagnoses lt= 5.5<1] yes=3,no=4,missing=4
+		3:leaf=0.0357529148
+		4:leaf=0.01735349
+	2:[number_diagnoses lt= 5.5<1] yes=5,no=6,missing=6
+		5:leaf=-0.0100202439
+		6:leaf=-0.0379511118
+
+0:[number_inpatient lt= 0.5<1] yes=1,no=2,missing=2
+	1:[number_diagnoses lt= 5.5<1] yes=3,no=4,missing=4
+		3:leaf=0.0323372222
+		4:leaf=0.0156385396
+	2:[number_diagnoses lt= 5.5<1] yes=5,no=6,missing=6
+		5:leaf=-0.00902187359
+		6:leaf=-0.0343470201
+
+0:[number_inpatient lt= 0.5<1] yes=1,no=2,missing=2
+	1:[number_diagnoses lt= 5.5<1] yes=3,no=4,missing=4
+		3:leaf=0.0292507838
+		4:leaf=0.0140933245
+	2:[number_diagnoses lt= 5.5<1] yes=5,no=6,missing=6
+		5:leaf=-0.00812301878
+		6:leaf=-0.0310887881
+
+0:[number_inpatient lt= 0.5<1] yes=1,no=2,missing=2
+	1:[number_diagnoses lt= 5.5<1] yes=3,no=4,missing=4
+		3:leaf=0.0264584906
+		4:leaf=0.0127007216
+	2:[number_diagnoses lt= 5.5<1] yes=5,no=6,missing=6
+		5:leaf=-0.00731370598
+		6:leaf=-0.0281392466
+
+0:[number_inpatient lt= 0.5<1] yes=1,no=2,missing=2
+	1:[number_diagnoses lt= 5.5<1] yes=3,no=4,missing=4
+		3:leaf=0.0239303987
+		4:leaf=0.0114453947
+	2:[number_diagnoses lt= 5.5<1] yes=5,no=6,missing=6
+		5:leaf=-0.00658497727
+		6:leaf=-0.0254667941
+
+0:[number_inpatient lt= 0.5<1] yes=1,no=2,missing=2
+	1:[number_diagnoses lt= 5.5<1] yes=3,no=4,missing=4
+		3:leaf=0.0216403548
+		4:leaf=0.0103137046
+	2:[number_diagnoses lt= 5.5<1] yes=5,no=6,missing=6
+		5:leaf=-0.00592875713
+		6:leaf=-0.0230440553
+
+0:[number_inpatient lt= 0.5<1] yes=1,no=2,missing=2
+	1:[number_diagnoses lt= 5.5<1] yes=3,no=4,missing=4
+		3:leaf=0.0195654687
+		4:leaf=0.00929344818
+	2:[number_diagnoses lt= 5.5<1] yes=5,no=6,missing=6
+		5:leaf=-0.00533784973
+		6:leaf=-0.0208470784
+
+0:[number_inpatient lt= 0.5<1] yes=1,no=2,missing=2
+	1:[number_diagnoses lt= 5.5<1] yes=3,no=4,missing=4
+		3:leaf=0.0176854208
+		4:leaf=0.00837363303
+	2:[number_diagnoses lt= 5.5<1] yes=5,no=6,missing=6
+		5:leaf=-0.00480570225
+		6:leaf=-0.0188546889
+
+0:[number_inpatient lt= 0.5<1] yes=1,no=2,missing=2
+	1:[number_diagnoses lt= 5.5<1] yes=3,no=4,missing=4
+		3:leaf=0.015982097
+		4:leaf=0.00754438713
+	2:[number_diagnoses lt= 5.5<1] yes=5,no=6,missing=6
+		5:leaf=-0.00432656612
+		6:leaf=-0.0170479845
+
+0:[number_inpatient lt= 0.5<1] yes=1,no=2,missing=2
+	1:[number_diagnoses lt= 5.5<1] yes=3,no=4,missing=4
+		3:leaf=0.0144390976
+		4:leaf=0.00679685408
+	2:[number_diagnoses lt= 5.5<1] yes=5,no=6,missing=6
+		5:leaf=-0.00389509439
+		6:leaf=-0.0154099902
+
+0:[number_inpatient lt= 0.5<1] yes=1,no=2,missing=2
+	1:[number_diagnoses lt= 5.5<1] yes=3,no=4,missing=4
+		3:leaf=0.0130416891
+		4:leaf=0.00612297561
+	2:[number_diagnoses lt= 5.5<1] yes=5,no=6,missing=6
+		5:leaf=-0.003506582
+		6:leaf=-0.0139253503
+
+0:[number_inpatient lt= 0.5<1] yes=1,no=2,missing=2
+	1:[number_diagnoses lt= 5.5<1] yes=3,no=4,missing=4
+		3:leaf=0.0117765618
+		4:leaf=0.00551561126
+	2:[number_diagnoses lt= 5.5<1] yes=5,no=6,missing=6
+		5:leaf=-0.00315676141
+		6:leaf=-0.0125801507
+
+0:[number_inpatient lt= 0.5<1] yes=1,no=2,missing=2
+	1:[number_diagnoses lt= 5.5<1] yes=3,no=4,missing=4
+		3:leaf=0.0106315194
+		4:leaf=0.004968205
+	2:[number_diagnoses lt= 5.5<1] yes=5,no=6,missing=6
+		5:leaf=-0.0028417618
+		6:leaf=-0.0113617368
+
+0:[number_inpatient lt= 0.5<1] yes=1,no=2,missing=2
+	1:[number_diagnoses lt= 5.5<1] yes=3,no=4,missing=4
+		3:leaf=0.00959553942
+		4:leaf=0.00447486155
+	2:[number_diagnoses lt= 5.5<1] yes=5,no=6,missing=6
+		5:leaf=-0.00255817943
+		6:leaf=-0.0102586066
+
+0:[number_inpatient lt= 0.5<1] yes=1,no=2,missing=2
+	1:[number_diagnoses lt= 5.5<1] yes=3,no=4,missing=4
+		3:leaf=0.0086585395
+		4:leaf=0.00403027656
+	2:[number_diagnoses lt= 5.5<1] yes=5,no=6,missing=6
+		5:leaf=-0.00230283942
+		6:leaf=-0.00926021393
+
+0:[number_inpatient lt= 0.5<1] yes=1,no=2,missing=2
+	1:[number_diagnoses lt= 5.5<1] yes=3,no=4,missing=4
+		3:leaf=0.00781138334
+		4:leaf=0.00362969609
+	2:[number_diagnoses lt= 5.5<1] yes=5,no=6,missing=6
+		5:leaf=-0.00207297411
+		6:leaf=-0.00835698098
+
+0:[number_inpatient lt= 0.5<1] yes=1,no=2,missing=2
+	1:[number_diagnoses lt= 5.5<1] yes=3,no=4,missing=4
+		3:leaf=0.0070456909
+		4:leaf=0.00326879765
+	2:[number_diagnoses lt= 5.5<1] yes=5,no=6,missing=6
+		5:leaf=-0.00186600257
+		6:leaf=-0.00754013145
+
+0:[number_inpatient lt= 0.5<1] yes=1,no=2,missing=2
+	1:[number_diagnoses lt= 5.5<1] yes=3,no=4,missing=4
+		3:leaf=0.00635387143
+		4:leaf=0.00294364826
+	2:[number_diagnoses lt= 5.5<1] yes=5,no=6,missing=6
+		5:leaf=-0.00167967472
+		6:leaf=-0.00680170674
+
+0:[number_inpatient lt= 0.5<1] yes=1,no=2,missing=2
+	1:[number_diagnoses lt= 5.5<1] yes=3,no=4,missing=4
+		3:leaf=0.00572897587
+		4:leaf=0.00265072915
+	2:[number_diagnoses lt= 5.5<1] yes=5,no=6,missing=6
+		5:leaf=-0.00151191407
+		6:leaf=-0.00613436522
+
+0:[number_inpatient lt= 0.5<1] yes=1,no=2,missing=2
+	1:[number_diagnoses lt= 5.5<1] yes=3,no=4,missing=4
+		3:leaf=0.00516472012
+		4:leaf=0.00238686963
+	2:[number_diagnoses lt= 5.5<1] yes=5,no=6,missing=6
+		5:leaf=-0.0013609142
+		6:leaf=-0.00553151127

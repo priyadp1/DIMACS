@@ -1,0 +1,60 @@
+{
+  "dataset": "compas",
+  "param_tag": "nest30_depth3",
+  "root_features_dropped": [
+    "priors_count"
+  ],
+  "n_dropped_columns": 13,
+  "baseline": {
+    "tgb_accuracy": 0.6837916063675832,
+    "tgb_ci95": [
+      0.658465991316932,
+      0.7076700434153401
+    ],
+    "tgb_split_features": [
+      "age",
+      "priors_count"
+    ],
+    "gosdt_accuracy": 0.6758321273516642,
+    "gosdt_ci95": [
+      0.6512301013024602,
+      0.7011577424023154
+    ],
+    "gosdt_split_features": [
+      "age",
+      "priors_count",
+      "sex=female"
+    ],
+    "gosdt_tgb_overlap_jaccard": 0.6666666666666666
+  },
+  "ablated": {
+    "tgb_accuracy": 0.6287988422575976,
+    "tgb_ci95": [
+      0.6027496382054993,
+      0.6541244573082489
+    ],
+    "tgb_split_features": [
+      "age",
+      "current_charge_degree=felony",
+      "juvenile_crimes",
+      "sex=female"
+    ],
+    "gosdt_accuracy": 0.6295224312590448,
+    "gosdt_ci95": [
+      0.6041968162083936,
+      0.6548480463096961
+    ],
+    "gosdt_split_features": [
+      "age",
+      "current_charge_degree=felony",
+      "juvenile_crimes",
+      "sex=female"
+    ],
+    "gosdt_tgb_overlap_jaccard": 1.0
+  },
+  "delta": {
+    "tgb_accuracy": -0.05499276410998555,
+    "gosdt_accuracy": -0.04630969609261937,
+    "overlap_jaccard": 0.33333333333333337
+  }
+}

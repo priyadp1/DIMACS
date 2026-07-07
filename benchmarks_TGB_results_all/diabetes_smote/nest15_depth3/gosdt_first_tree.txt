@@ -1,0 +1,12 @@
+<class 'gosdt._tree.Tree'>: { feature: 15, orig feature: 15, [ left child: { feature: 12, orig feature: 12, [ left child: { feature: 13, orig feature: 13, [ left child: { prediction: 0, loss: 0.22209998965263367 }, right child: { prediction: 1, loss: 0.015199999324977398 }] }, right child: { feature: 8, orig feature: 8, [ left child: { prediction: 0, loss: 0.012199999764561653 }, right child: { prediction: 1, loss: 0.02290000021457672 }] }] }, right child: { feature: 4, orig feature: 4, [ left child: { prediction: 1, loss: 0.1054999977350235 }, right child: { prediction: 0, loss: 0.01529999915510416 }] }] }, Index(['gender <= 0.5', 'age <= 5.5', 'age <= 6.5',
+       'discharge_disposition_id <= 2.5', 'discharge_disposition_id <= 10.0',
+       'discharge_disposition_id <= 10.5', 'discharge_disposition_id <= 14.5',
+       'admission_source_id <= 6.5', 'num_lab_procedures <= 30.5',
+       'num_lab_procedures <= 35.5', 'num_procedures <= 0.5',
+       'num_medications <= 6.5', 'number_outpatient <= 0.5',
+       'number_emergency <= 0.5', 'number_emergency <= 1.5',
+       'number_inpatient <= 0.5', 'number_inpatient <= 1.5',
+       'number_inpatient <= 2.5', 'number_inpatient <= 3.5', 'diag_1 <= 98.5',
+       'number_diagnoses <= 5.5', 'number_diagnoses <= 6.5',
+       'metformin <= 1.5', 'change <= 0.5', 'number_emergency <= 2.5'],
+      dtype='str'), 2

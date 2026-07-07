@@ -28,11 +28,22 @@ if (out_dir / "gosdt_results.txt").exists() and (out_dir / "gosdt_first_tree.txt
     print(f"  [GOSDT] Skipping {dataset_name} — results already exist.")
     sys.exit(0)
 
+GOSDT_MAX_ROWS = 10000
+
 X_train     = pd.read_csv(tgb_dir / "X_train_guessed.csv")
 X_test      = pd.read_csv(tgb_dir / "X_test_guessed.csv")
 y_train     = pd.read_csv(tgb_dir / "y_train.csv").squeeze()
 y_test      = pd.read_csv(tgb_dir / "y_test.csv").squeeze()
 warm_labels = pd.read_csv(tgb_dir / "warm_labels.csv").squeeze().to_numpy()
+
+if len(X_train) > GOSDT_MAX_ROWS:
+    import numpy as np
+    rng = np.random.default_rng(42)
+    idx = rng.choice(len(X_train), GOSDT_MAX_ROWS, replace=False)
+    X_train     = X_train.iloc[idx].reset_index(drop=True)
+    y_train     = y_train.iloc[idx].reset_index(drop=True)
+    warm_labels = warm_labels[idx]
+    print(f"  [GOSDT] Subsampled to {GOSDT_MAX_ROWS} rows for memory.")
 
 clf = GOSDTClassifier(
     regularization=GOSDT_REG,

@@ -1,0 +1,51 @@
+Accuracy: 0.623682861536709
+Confusion Matrix:
+[[6197 2582]
+ [4025 4753]]
+Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.61      0.71      0.65      8779
+           1       0.65      0.54      0.59      8778
+
+    accuracy                           0.62     17557
+   macro avg       0.63      0.62      0.62     17557
+weighted avg       0.63      0.62      0.62     17557
+
+XGBoost completed in 0.09 seconds
+All Features:
+                          Feature  Importance
+         number_inpatient lt= 0.5    0.254836
+         number_inpatient lt= 1.5    0.069523
+         number_diagnoses lt= 6.5    0.049406
+         number_diagnoses lt= 5.5    0.048787
+         number_inpatient lt= 2.5    0.047375
+                   change lt= 0.5    0.034979
+         num_medications lt= 11.5    0.034868
+        number_outpatient lt= 0.5    0.033606
+         number_emergency lt= 0.5    0.032915
+discharge_disposition_id lt= 14.5    0.030558
+           num_procedures lt= 1.5    0.029129
+                metformin lt= 1.5    0.026612
+          num_medications lt= 6.5    0.025468
+                   gender lt= 0.5    0.024178
+                     race lt= 0.5    0.023541
+discharge_disposition_id lt= 10.0    0.022343
+                  insulin lt= 1.5    0.021723
+           num_procedures lt= 0.5    0.021395
+         number_inpatient lt= 3.5    0.020656
+                      age lt= 5.5    0.020051
+         number_inpatient lt= 4.5    0.016791
+      admission_source_id lt= 4.5    0.016164
+                      age lt= 6.5    0.015957
+         number_emergency lt= 1.5    0.014915
+                      age lt= 7.5    0.014037
+                  diag_1 lt= 98.5    0.013379
+ discharge_disposition_id lt= 1.5    0.010689
+         number_emergency lt= 2.5    0.009155
+      num_lab_procedures lt= 30.5    0.008618
+                 diag_1 lt= 103.5    0.008346
+                 diag_1 lt= 338.5    0.000000
+discharge_disposition_id lt= 10.5    0.000000
+          num_medications lt= 7.5    0.000000
+Tree Size: 25 trees, 200 total leaves, 8.0 avg leaves/tree

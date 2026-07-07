@@ -1,0 +1,87 @@
+{
+  "dataset": "diabetes",
+  "param_tag": "nest25_depth3",
+  "root_features_dropped": [
+    "num_medications"
+  ],
+  "n_dropped_columns": 5,
+  "baseline": {
+    "tgb_accuracy": 0.6833333333333333,
+    "tgb_ci95": [
+      0.5666666666666667,
+      0.8
+    ],
+    "tgb_split_features": [
+      "admission_source_id",
+      "age_[80-90)",
+      "diag_1_493",
+      "diag_2_250.6",
+      "diag_2_781",
+      "diag_3_250",
+      "diag_3_682",
+      "gender_Female",
+      "num_lab_procedures",
+      "num_medications",
+      "number_inpatient",
+      "race_?",
+      "time_in_hospital"
+    ],
+    "gosdt_accuracy": 0.7166666666666667,
+    "gosdt_ci95": [
+      0.6,
+      0.8333333333333334
+    ],
+    "gosdt_split_features": [
+      "age_[70-80)",
+      "diag_2_250.6",
+      "diag_2_781",
+      "diag_3_599",
+      "discharge_disposition_id",
+      "gender_Female",
+      "num_lab_procedures",
+      "num_medications",
+      "number_inpatient",
+      "time_in_hospital"
+    ],
+    "gosdt_tgb_overlap_jaccard": 0.4375
+  },
+  "ablated": {
+    "tgb_accuracy": 0.7,
+    "tgb_ci95": [
+      0.5666666666666667,
+      0.8166666666666667
+    ],
+    "tgb_split_features": [
+      "age_[80-90)",
+      "diag_1_428",
+      "diag_2_250.6",
+      "diag_2_781",
+      "diag_3_250",
+      "num_lab_procedures",
+      "number_inpatient",
+      "race_?",
+      "time_in_hospital"
+    ],
+    "gosdt_accuracy": 0.7166666666666667,
+    "gosdt_ci95": [
+      0.6,
+      0.8333333333333334
+    ],
+    "gosdt_split_features": [
+      "diag_2_250.6",
+      "diag_2_781",
+      "diag_3_250",
+      "discharge_disposition_id",
+      "gender_Female",
+      "num_lab_procedures",
+      "number_inpatient",
+      "time_in_hospital"
+    ],
+    "gosdt_tgb_overlap_jaccard": 0.5454545454545454
+  },
+  "delta": {
+    "tgb_accuracy": 0.016666666666666607,
+    "gosdt_accuracy": 0.0,
+    "overlap_jaccard": 0.10795454545454541
+  }
+}

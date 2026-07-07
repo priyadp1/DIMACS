@@ -1,0 +1,80 @@
+{
+  "dataset": "spambase",
+  "param_tag": "nest35_depth1",
+  "root_features_dropped": [
+    "char_freq_$"
+  ],
+  "n_dropped_columns": 4,
+  "baseline": {
+    "tgb_accuracy": 0.9185667752442996,
+    "tgb_ci95": [
+      0.9011943539630836,
+      0.9359391965255157
+    ],
+    "tgb_split_features": [
+      "capital_run_length_average",
+      "char_freq_!",
+      "char_freq_$",
+      "word_freq_free",
+      "word_freq_hp",
+      "word_freq_money",
+      "word_freq_remove",
+      "word_freq_your"
+    ],
+    "gosdt_accuracy": 0.8990228013029316,
+    "gosdt_ci95": [
+      0.8783930510314875,
+      0.9174809989142236
+    ],
+    "gosdt_split_features": [
+      "capital_run_length_longest",
+      "char_freq_!",
+      "char_freq_$",
+      "word_freq_free",
+      "word_freq_george",
+      "word_freq_hp",
+      "word_freq_remove"
+    ],
+    "gosdt_tgb_overlap_jaccard": 0.5
+  },
+  "ablated": {
+    "tgb_accuracy": 0.9087947882736156,
+    "tgb_ci95": [
+      0.8903365906623235,
+      0.9272529858849077
+    ],
+    "tgb_split_features": [
+      "capital_run_length_average",
+      "char_freq_!",
+      "word_freq_free",
+      "word_freq_george",
+      "word_freq_hp",
+      "word_freq_money",
+      "word_freq_remove",
+      "word_freq_your"
+    ],
+    "gosdt_accuracy": 0.8957654723127035,
+    "gosdt_ci95": [
+      0.8751357220412594,
+      0.9142236699239956
+    ],
+    "gosdt_split_features": [
+      "capital_run_length_average",
+      "capital_run_length_longest",
+      "char_freq_!",
+      "word_freq_free",
+      "word_freq_george",
+      "word_freq_hp",
+      "word_freq_money",
+      "word_freq_our",
+      "word_freq_remove",
+      "word_freq_your"
+    ],
+    "gosdt_tgb_overlap_jaccard": 0.8
+  },
+  "delta": {
+    "tgb_accuracy": -0.009771986970684043,
+    "gosdt_accuracy": -0.0032573289902280145,
+    "overlap_jaccard": 0.30000000000000004
+  }
+}

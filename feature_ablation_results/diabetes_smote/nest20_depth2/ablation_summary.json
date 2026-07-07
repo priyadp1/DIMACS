@@ -1,0 +1,76 @@
+{
+  "dataset": "diabetes_smote",
+  "param_tag": "nest20_depth2",
+  "root_features_dropped": [
+    "number_inpatient"
+  ],
+  "n_dropped_columns": 5,
+  "baseline": {
+    "tgb_accuracy": 0.6212906533006778,
+    "tgb_ci95": [
+      0.6142250954035426,
+      0.6286965312980577
+    ],
+    "tgb_split_features": [
+      "change",
+      "discharge_disposition_id",
+      "number_diagnoses",
+      "number_inpatient",
+      "number_outpatient"
+    ],
+    "gosdt_accuracy": 0.6145127299652561,
+    "gosdt_ci95": [
+      0.6075069772740218,
+      0.621976989235063
+    ],
+    "gosdt_split_features": [
+      "age",
+      "change",
+      "discharge_disposition_id",
+      "gender",
+      "metformin",
+      "num_lab_procedures",
+      "number_diagnoses",
+      "number_emergency",
+      "number_inpatient",
+      "number_outpatient"
+    ],
+    "gosdt_tgb_overlap_jaccard": 0.5
+  },
+  "ablated": {
+    "tgb_accuracy": 0.5914450076892408,
+    "tgb_ci95": [
+      0.5839835962863815,
+      0.5984507603804751
+    ],
+    "tgb_split_features": [
+      "age",
+      "change",
+      "discharge_disposition_id",
+      "num_lab_procedures",
+      "number_diagnoses",
+      "number_emergency",
+      "number_outpatient"
+    ],
+    "gosdt_accuracy": 0.5752691234265536,
+    "gosdt_ci95": [
+      0.5680910747849861,
+      0.5825596628125534
+    ],
+    "gosdt_split_features": [
+      "change",
+      "discharge_disposition_id",
+      "gender",
+      "metformin",
+      "number_diagnoses",
+      "number_emergency",
+      "number_outpatient"
+    ],
+    "gosdt_tgb_overlap_jaccard": 0.5555555555555556
+  },
+  "delta": {
+    "tgb_accuracy": -0.02984564561143699,
+    "gosdt_accuracy": -0.039243606538702513,
+    "overlap_jaccard": 0.05555555555555558
+  }
+}

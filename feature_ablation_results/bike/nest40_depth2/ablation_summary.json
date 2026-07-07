@@ -1,0 +1,69 @@
+{
+  "dataset": "bike",
+  "param_tag": "nest40_depth2",
+  "root_features_dropped": [
+    "hr"
+  ],
+  "n_dropped_columns": 10,
+  "baseline": {
+    "tgb_accuracy": 0.8837744533947065,
+    "tgb_ci95": [
+      0.872554660529344,
+      0.8944188722669736
+    ],
+    "tgb_split_features": [
+      "atemp",
+      "hr",
+      "season",
+      "temp",
+      "yr"
+    ],
+    "gosdt_accuracy": 0.8722669735327964,
+    "gosdt_ci95": [
+      0.8601697353279631,
+      0.8829185845799771
+    ],
+    "gosdt_split_features": [
+      "hr",
+      "mnth",
+      "season",
+      "temp",
+      "weathersit",
+      "workingday",
+      "yr"
+    ],
+    "gosdt_tgb_overlap_jaccard": 0.5
+  },
+  "ablated": {
+    "tgb_accuracy": 0.7330264672036824,
+    "tgb_ci95": [
+      0.7186349252013808,
+      0.7480005753739931
+    ],
+    "tgb_split_features": [
+      "atemp",
+      "hum",
+      "season",
+      "temp",
+      "yr"
+    ],
+    "gosdt_accuracy": 0.7203682393555811,
+    "gosdt_ci95": [
+      0.7054013233601841,
+      0.7344649021864211
+    ],
+    "gosdt_split_features": [
+      "atemp",
+      "hum",
+      "season",
+      "temp",
+      "yr"
+    ],
+    "gosdt_tgb_overlap_jaccard": 1.0
+  },
+  "delta": {
+    "tgb_accuracy": -0.15074798619102414,
+    "gosdt_accuracy": -0.15189873417721522,
+    "overlap_jaccard": 0.5
+  }
+}

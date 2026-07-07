@@ -1,0 +1,30 @@
+Accuracy: 0.8777330264672036
+Confusion Matrix:
+[[1424  318]
+ [ 107 1627]]
+Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.93      0.82      0.87      1742
+           1       0.84      0.94      0.88      1734
+
+    accuracy                           0.88      3476
+   macro avg       0.88      0.88      0.88      3476
+weighted avg       0.88      0.88      0.88      3476
+
+XGBoost completed in 0.05 seconds
+All Features:
+   Feature  Importance
+      temp    0.200199
+        hr    0.164760
+    season    0.159551
+     atemp    0.158568
+       hum    0.105530
+weathersit    0.084355
+        yr    0.048832
+      mnth    0.035215
+   weekday    0.023019
+workingday    0.019971
+   holiday    0.000000
+ windspeed    0.000000
+Tree Size: 25 trees, 199 total leaves, 8.0 avg leaves/tree

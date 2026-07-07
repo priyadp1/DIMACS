@@ -1,0 +1,83 @@
+{
+  "dataset": "spambase",
+  "param_tag": "nest10_depth3",
+  "root_features_dropped": [
+    "char_freq_$"
+  ],
+  "n_dropped_columns": 5,
+  "baseline": {
+    "tgb_accuracy": 0.9142236699239956,
+    "tgb_ci95": [
+      0.8946796959826275,
+      0.9326818675352877
+    ],
+    "tgb_split_features": [
+      "capital_run_length_average",
+      "capital_run_length_longest",
+      "capital_run_length_total",
+      "char_freq_!",
+      "char_freq_$",
+      "word_freq_free",
+      "word_freq_george",
+      "word_freq_hp",
+      "word_freq_money",
+      "word_freq_remove",
+      "word_freq_your"
+    ],
+    "gosdt_accuracy": 0.8816503800217155,
+    "gosdt_ci95": [
+      0.8609934853420196,
+      0.9001357220412595
+    ],
+    "gosdt_split_features": [
+      "capital_run_length_total",
+      "char_freq_!",
+      "char_freq_$",
+      "word_freq_edu",
+      "word_freq_george",
+      "word_freq_hp",
+      "word_freq_remove"
+    ],
+    "gosdt_tgb_overlap_jaccard": 0.5
+  },
+  "ablated": {
+    "tgb_accuracy": 0.9131378935939196,
+    "tgb_ci95": [
+      0.8935939196525515,
+      0.9305103148751357
+    ],
+    "tgb_split_features": [
+      "capital_run_length_average",
+      "capital_run_length_longest",
+      "capital_run_length_total",
+      "char_freq_!",
+      "word_freq_free",
+      "word_freq_george",
+      "word_freq_hp",
+      "word_freq_money",
+      "word_freq_remove",
+      "word_freq_your"
+    ],
+    "gosdt_accuracy": 0.8968512486427795,
+    "gosdt_ci95": [
+      0.8762214983713354,
+      0.9153094462540716
+    ],
+    "gosdt_split_features": [
+      "capital_run_length_total",
+      "char_freq_!",
+      "word_freq_edu",
+      "word_freq_free",
+      "word_freq_george",
+      "word_freq_hp",
+      "word_freq_money",
+      "word_freq_remove"
+    ],
+    "gosdt_tgb_overlap_jaccard": 0.6363636363636364
+  },
+  "delta": {
+    "tgb_accuracy": -0.0010857763300760048,
+    "gosdt_accuracy": 0.015200868621064068,
+    "overlap_jaccard": 0.13636363636363635
+  }
+}

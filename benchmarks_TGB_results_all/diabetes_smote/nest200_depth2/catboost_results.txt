@@ -1,0 +1,21 @@
+Accuracy: 0.6162784074728028
+Confusion Matrix:
+[[6566 2213]
+ [4524 4254]]
+Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.59      0.75      0.66      8779
+           1       0.66      0.48      0.56      8778
+
+    accuracy                           0.62     17557
+   macro avg       0.62      0.62      0.61     17557
+weighted avg       0.62      0.62      0.61     17557
+
+CatBoost completed in 0.29 seconds
+Top 3 Features:
+                Feature  Importance
+          change <= 0.5   33.575669
+     diabetesMed <= 0.5   30.851884
+number_inpatient <= 0.5   12.604156
+Tree Size: 25 trees, 200 total leaves, 8.0 avg leaves/tree

@@ -1,0 +1,87 @@
+{
+  "dataset": "spambase",
+  "param_tag": "nest30_depth3",
+  "root_features_dropped": [
+    "char_freq_$"
+  ],
+  "n_dropped_columns": 7,
+  "baseline": {
+    "tgb_accuracy": 0.9305103148751357,
+    "tgb_ci95": [
+      0.9131378935939196,
+      0.9457111834961998
+    ],
+    "tgb_split_features": [
+      "capital_run_length_average",
+      "capital_run_length_longest",
+      "capital_run_length_total",
+      "char_freq_!",
+      "char_freq_$",
+      "word_freq_free",
+      "word_freq_hp",
+      "word_freq_money",
+      "word_freq_remove",
+      "word_freq_your"
+    ],
+    "gosdt_accuracy": 0.9109663409337676,
+    "gosdt_ci95": [
+      0.8925081433224755,
+      0.9283659066232356
+    ],
+    "gosdt_split_features": [
+      "capital_run_length_total",
+      "char_freq_!",
+      "char_freq_$",
+      "word_freq_edu",
+      "word_freq_free",
+      "word_freq_george",
+      "word_freq_hp",
+      "word_freq_meeting",
+      "word_freq_remove"
+    ],
+    "gosdt_tgb_overlap_jaccard": 0.46153846153846156
+  },
+  "ablated": {
+    "tgb_accuracy": 0.9250814332247557,
+    "tgb_ci95": [
+      0.9066232356134636,
+      0.9413680781758957
+    ],
+    "tgb_split_features": [
+      "capital_run_length_average",
+      "capital_run_length_longest",
+      "capital_run_length_total",
+      "char_freq_!",
+      "word_freq_000",
+      "word_freq_free",
+      "word_freq_george",
+      "word_freq_hp",
+      "word_freq_money",
+      "word_freq_remove",
+      "word_freq_your"
+    ],
+    "gosdt_accuracy": 0.8957654723127035,
+    "gosdt_ci95": [
+      0.8762214983713354,
+      0.9142236699239956
+    ],
+    "gosdt_split_features": [
+      "capital_run_length_longest",
+      "capital_run_length_total",
+      "char_freq_!",
+      "word_freq_000",
+      "word_freq_edu",
+      "word_freq_free",
+      "word_freq_george",
+      "word_freq_hp",
+      "word_freq_money",
+      "word_freq_remove"
+    ],
+    "gosdt_tgb_overlap_jaccard": 0.75
+  },
+  "delta": {
+    "tgb_accuracy": -0.005428881650380024,
+    "gosdt_accuracy": -0.015200868621064068,
+    "overlap_jaccard": 0.28846153846153844
+  }
+}

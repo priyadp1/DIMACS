@@ -1,0 +1,29 @@
+{
+  "dataset": "diabetes_smote",
+  "param_tag": "nest15_depth1",
+  "root_features_dropped": [
+    "number_inpatient"
+  ],
+  "n_dropped_columns": 2,
+  "baseline": {
+    "tgb_accuracy": 0.5969698695676938,
+    "tgb_ci95": [
+      0.5900210742154126,
+      0.6042604089536937
+    ],
+    "tgb_split_features": [
+      "number_inpatient"
+    ],
+    "gosdt_accuracy": 0.5969698695676938,
+    "gosdt_ci95": [
+      0.5900210742154126,
+      0.6042604089536937
+    ],
+    "gosdt_split_features": [
+      "number_inpatient"
+    ],
+    "gosdt_tgb_overlap_jaccard": 1.0
+  },
+  "ablated": null,
+  "error": "ablating root feature(s) removed all columns; skipped"
+}

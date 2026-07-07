@@ -1,0 +1,21 @@
+Accuracy: 0.6129179244745685
+Confusion Matrix:
+[[6346 2433]
+ [4363 4415]]
+Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.59      0.72      0.65      8779
+           1       0.64      0.50      0.57      8778
+
+    accuracy                           0.61     17557
+   macro avg       0.62      0.61      0.61     17557
+weighted avg       0.62      0.61      0.61     17557
+
+CatBoost completed in 0.09 seconds
+Top 3 Features:
+                         Feature  Importance
+         number_inpatient <= 0.5   35.081498
+         number_inpatient <= 1.5   19.305646
+discharge_disposition_id <= 10.5   15.673003
+Tree Size: 25 trees, 200 total leaves, 8.0 avg leaves/tree

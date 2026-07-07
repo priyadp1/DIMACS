@@ -1,0 +1,60 @@
+Accuracy: 0.6243663496041465
+Confusion Matrix:
+[[6208 2571]
+ [4024 4754]]
+Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.61      0.71      0.65      8779
+           1       0.65      0.54      0.59      8778
+
+    accuracy                           0.62     17557
+   macro avg       0.63      0.62      0.62     17557
+weighted avg       0.63      0.62      0.62     17557
+
+XGBoost completed in 0.11 seconds
+All Features:
+                 Feature  Importance
+             diabetesMed    0.237371
+        number_inpatient    0.183818
+        number_diagnoses    0.063990
+       number_outpatient    0.050321
+                  change    0.049146
+         num_medications    0.042705
+          num_procedures    0.039951
+               metformin    0.036472
+                    race    0.034634
+        number_emergency    0.034036
+                  gender    0.032800
+     admission_source_id    0.032293
+discharge_disposition_id    0.031518
+       admission_type_id    0.028844
+        time_in_hospital    0.024379
+                  diag_1    0.022734
+                     age    0.022632
+                 insulin    0.019364
+      num_lab_procedures    0.012993
+              tolazamide    0.000000
+                 examide    0.000000
+             citoglipton    0.000000
+glimepiride-pioglitazone    0.000000
+     glyburide-metformin    0.000000
+     glipizide-metformin    0.000000
+                miglitol    0.000000
+ metformin-rosiglitazone    0.000000
+  metformin-pioglitazone    0.000000
+            troglitazone    0.000000
+             tolbutamide    0.000000
+                acarbose    0.000000
+           rosiglitazone    0.000000
+            pioglitazone    0.000000
+               glyburide    0.000000
+               glipizide    0.000000
+           acetohexamide    0.000000
+          chlorpropamide    0.000000
+             nateglinide    0.000000
+             repaglinide    0.000000
+                  diag_3    0.000000
+                  diag_2    0.000000
+             glimepiride    0.000000
+Tree Size: 25 trees, 200 total leaves, 8.0 avg leaves/tree

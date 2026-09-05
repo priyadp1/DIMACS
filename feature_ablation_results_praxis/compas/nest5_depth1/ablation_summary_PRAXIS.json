@@ -1,0 +1,29 @@
+{
+  "dataset": "compas",
+  "param_tag": "nest5_depth1",
+  "root_features_dropped": [
+    "priors_count"
+  ],
+  "n_dropped_columns": 2,
+  "baseline": {
+    "tgb_accuracy": 0.6497829232995659,
+    "tgb_ci95": [
+      0.6251808972503617,
+      0.6736613603473227
+    ],
+    "tgb_split_features": [
+      "priors_count"
+    ],
+    "praxis_accuracy": 0.6497829232995659,
+    "praxis_ci95": [
+      0.6251808972503617,
+      0.6736613603473227
+    ],
+    "praxis_split_features": [
+      "priors_count"
+    ],
+    "praxis_tgb_overlap_jaccard": 1.0
+  },
+  "ablated": null,
+  "error": "ablating root feature(s) removed all columns; skipped"
+}

@@ -1,0 +1,29 @@
+{
+  "dataset": "creditcard_fraud_smote",
+  "param_tag": "nest5_depth1",
+  "root_features_dropped": [
+    "V14"
+  ],
+  "n_dropped_columns": 3,
+  "baseline": {
+    "tgb_accuracy": 0.9226541805431904,
+    "tgb_ci95": [
+      0.9209062881260922,
+      0.9243248590365021
+    ],
+    "tgb_split_features": [
+      "V14"
+    ],
+    "praxis_accuracy": 0.9226541805431904,
+    "praxis_ci95": [
+      0.9209062881260922,
+      0.9243248590365021
+    ],
+    "praxis_split_features": [
+      "V14"
+    ],
+    "praxis_tgb_overlap_jaccard": 1.0
+  },
+  "ablated": null,
+  "error": "ablating root feature(s) removed all columns; skipped"
+}

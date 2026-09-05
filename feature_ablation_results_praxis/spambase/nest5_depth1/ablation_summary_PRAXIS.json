@@ -1,0 +1,56 @@
+{
+  "dataset": "spambase",
+  "param_tag": "nest5_depth1",
+  "root_features_dropped": [
+    "char_freq_$"
+  ],
+  "n_dropped_columns": 2,
+  "baseline": {
+    "tgb_accuracy": 0.8349619978284474,
+    "tgb_ci95": [
+      0.8110749185667753,
+      0.8577633007600435
+    ],
+    "tgb_split_features": [
+      "char_freq_!",
+      "char_freq_$",
+      "word_freq_remove"
+    ],
+    "praxis_accuracy": 0.8317046688382194,
+    "praxis_ci95": [
+      0.8067318132464713,
+      0.8545059717698155
+    ],
+    "praxis_split_features": [
+      "char_freq_$",
+      "word_freq_remove"
+    ],
+    "praxis_tgb_overlap_jaccard": 0.6666666666666666
+  },
+  "ablated": {
+    "tgb_accuracy": 0.8295331161780674,
+    "tgb_ci95": [
+      0.8034744842562432,
+      0.8523615635179154
+    ],
+    "tgb_split_features": [
+      "char_freq_!",
+      "word_freq_remove"
+    ],
+    "praxis_accuracy": 0.8295331161780674,
+    "praxis_ci95": [
+      0.8034744842562432,
+      0.8523615635179154
+    ],
+    "praxis_split_features": [
+      "char_freq_!",
+      "word_freq_remove"
+    ],
+    "praxis_tgb_overlap_jaccard": 1.0
+  },
+  "delta": {
+    "tgb_accuracy": -0.005428881650380024,
+    "praxis_accuracy": -0.0021715526601520097,
+    "overlap_jaccard": 0.33333333333333337
+  }
+}

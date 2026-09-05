@@ -7,3 +7,8 @@ TGB_Variables_Feature_Importance/
 TGB_Variables/
 Presentation_Slides/
 tmp_splits_no_tgb/
+benchmarks_TGB_results_all/
+benchmarks_TGB_results_all/bike
+praxis_rid_matrix_csvs/
+split_details_csvs/
+split_matrix_csvs/

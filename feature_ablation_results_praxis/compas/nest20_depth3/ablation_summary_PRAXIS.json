@@ -1,0 +1,55 @@
+{
+  "dataset": "compas",
+  "param_tag": "nest20_depth3",
+  "root_features_dropped": [
+    "priors_count"
+  ],
+  "n_dropped_columns": 10,
+  "baseline": {
+    "tgb_accuracy": 0.6758321273516642,
+    "tgb_ci95": [
+      0.6519356005788712,
+      0.7004341534008683
+    ],
+    "tgb_split_features": [
+      "age",
+      "priors_count"
+    ],
+    "praxis_accuracy": 0.6548480463096961,
+    "praxis_ci95": [
+      0.6295224312590448,
+      0.6801736613603473
+    ],
+    "praxis_split_features": [
+      "age",
+      "priors_count"
+    ],
+    "praxis_tgb_overlap_jaccard": 1.0
+  },
+  "ablated": {
+    "tgb_accuracy": 0.6063675832127352,
+    "tgb_ci95": [
+      0.581041968162084,
+      0.6309696092619392
+    ],
+    "tgb_split_features": [
+      "age",
+      "sex=female"
+    ],
+    "praxis_accuracy": 0.605643994211288,
+    "praxis_ci95": [
+      0.5795947901591896,
+      0.630246020260492
+    ],
+    "praxis_split_features": [
+      "age",
+      "sex=female"
+    ],
+    "praxis_tgb_overlap_jaccard": 1.0
+  },
+  "delta": {
+    "tgb_accuracy": -0.069464544138929,
+    "praxis_accuracy": -0.04920405209840806,
+    "overlap_jaccard": 0.0
+  }
+}

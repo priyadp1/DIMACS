@@ -1,0 +1,52 @@
+{
+  "dataset": "diabetes_smote",
+  "param_tag": "nest5_depth2",
+  "root_features_dropped": [
+    "number_inpatient"
+  ],
+  "n_dropped_columns": 1,
+  "baseline": {
+    "tgb_accuracy": 0.5969698695676938,
+    "tgb_ci95": [
+      0.5900210742154126,
+      0.6042604089536937
+    ],
+    "tgb_split_features": [
+      "number_diagnoses",
+      "number_inpatient"
+    ],
+    "praxis_accuracy": 0.5969698695676938,
+    "praxis_ci95": [
+      0.5900210742154126,
+      0.6042604089536937
+    ],
+    "praxis_split_features": [
+      "number_inpatient"
+    ],
+    "praxis_tgb_overlap_jaccard": 0.5
+  },
+  "ablated": {
+    "tgb_accuracy": 0.5460500085436009,
+    "tgb_ci95": [
+      0.5387566212906533,
+      0.5528848892179757
+    ],
+    "tgb_split_features": [
+      "number_diagnoses"
+    ],
+    "praxis_accuracy": 0.5460500085436009,
+    "praxis_ci95": [
+      0.5387566212906533,
+      0.5528848892179757
+    ],
+    "praxis_split_features": [
+      "number_diagnoses"
+    ],
+    "praxis_tgb_overlap_jaccard": 1.0
+  },
+  "delta": {
+    "tgb_accuracy": -0.05091986102409296,
+    "praxis_accuracy": -0.05091986102409296,
+    "overlap_jaccard": 0.5
+  }
+}

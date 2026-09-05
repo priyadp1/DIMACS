@@ -1,0 +1,29 @@
+{
+  "dataset": "bike",
+  "param_tag": "nest5_depth1",
+  "root_features_dropped": [
+    "hr"
+  ],
+  "n_dropped_columns": 1,
+  "baseline": {
+    "tgb_accuracy": 0.7678365937859609,
+    "tgb_ci95": [
+      0.7537399309551208,
+      0.7816455696202531
+    ],
+    "tgb_split_features": [
+      "hr"
+    ],
+    "praxis_accuracy": 0.7678365937859609,
+    "praxis_ci95": [
+      0.7537399309551208,
+      0.7816455696202531
+    ],
+    "praxis_split_features": [
+      "hr"
+    ],
+    "praxis_tgb_overlap_jaccard": 1.0
+  },
+  "ablated": null,
+  "error": "ablating root feature(s) removed all columns; skipped"
+}

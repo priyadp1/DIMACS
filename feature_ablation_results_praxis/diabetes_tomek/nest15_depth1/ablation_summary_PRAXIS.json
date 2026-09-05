@@ -1,0 +1,29 @@
+{
+  "dataset": "diabetes_tomek",
+  "param_tag": "nest15_depth1",
+  "root_features_dropped": [
+    "number_inpatient"
+  ],
+  "n_dropped_columns": 2,
+  "baseline": {
+    "tgb_accuracy": 0.6024814916369619,
+    "tgb_ci95": [
+      0.594118453523444,
+      0.6106491636961887
+    ],
+    "tgb_split_features": [
+      "number_inpatient"
+    ],
+    "praxis_accuracy": 0.6024814916369619,
+    "praxis_ci95": [
+      0.594118453523444,
+      0.6106491636961887
+    ],
+    "praxis_split_features": [
+      "number_inpatient"
+    ],
+    "praxis_tgb_overlap_jaccard": 1.0
+  },
+  "ablated": null,
+  "error": "ablating root feature(s) removed all columns; skipped"
+}

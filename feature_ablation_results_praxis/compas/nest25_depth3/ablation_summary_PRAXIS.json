@@ -1,0 +1,57 @@
+{
+  "dataset": "compas",
+  "param_tag": "nest25_depth3",
+  "root_features_dropped": [
+    "priors_count"
+  ],
+  "n_dropped_columns": 14,
+  "baseline": {
+    "tgb_accuracy": 0.6881331403762663,
+    "tgb_ci95": [
+      0.6642547033285094,
+      0.711287988422576
+    ],
+    "tgb_split_features": [
+      "age",
+      "priors_count"
+    ],
+    "praxis_accuracy": 0.6548480463096961,
+    "praxis_ci95": [
+      0.6295224312590448,
+      0.6801736613603473
+    ],
+    "praxis_split_features": [
+      "age",
+      "priors_count"
+    ],
+    "praxis_tgb_overlap_jaccard": 1.0
+  },
+  "ablated": {
+    "tgb_accuracy": 0.6280752532561505,
+    "tgb_ci95": [
+      0.6020260492040521,
+      0.6534008683068018
+    ],
+    "tgb_split_features": [
+      "age",
+      "current_charge_degree=felony",
+      "juvenile_crimes",
+      "sex=female"
+    ],
+    "praxis_accuracy": 0.605643994211288,
+    "praxis_ci95": [
+      0.5803183791606368,
+      0.6302641099855282
+    ],
+    "praxis_split_features": [
+      "age",
+      "juvenile_crimes"
+    ],
+    "praxis_tgb_overlap_jaccard": 0.5
+  },
+  "delta": {
+    "tgb_accuracy": -0.06005788712011573,
+    "praxis_accuracy": -0.04920405209840806,
+    "overlap_jaccard": -0.5
+  }
+}

@@ -1,0 +1,82 @@
+{
+  "dataset": "diabetes",
+  "param_tag": "nest5_depth3",
+  "root_features_dropped": [
+    "num_medications"
+  ],
+  "n_dropped_columns": 3,
+  "baseline": {
+    "tgb_accuracy": 0.7166666666666667,
+    "tgb_ci95": [
+      0.6,
+      0.8333333333333334
+    ],
+    "tgb_split_features": [
+      "admission_source_id",
+      "diag_1_493",
+      "diag_2_250.6",
+      "diag_2_781",
+      "diag_3_250",
+      "diag_3_682",
+      "gender_Female",
+      "num_lab_procedures",
+      "num_medications",
+      "number_inpatient",
+      "race_?",
+      "time_in_hospital"
+    ],
+    "praxis_accuracy": 0.7,
+    "praxis_ci95": [
+      0.5833333333333334,
+      0.8166666666666667
+    ],
+    "praxis_split_features": [
+      "admission_source_id",
+      "diag_3_599",
+      "discharge_disposition_id",
+      "gender_Female",
+      "num_medications",
+      "number_inpatient",
+      "time_in_hospital"
+    ],
+    "praxis_tgb_overlap_jaccard": 0.35714285714285715
+  },
+  "ablated": {
+    "tgb_accuracy": 0.7333333333333333,
+    "tgb_ci95": [
+      0.6166666666666667,
+      0.8333333333333334
+    ],
+    "tgb_split_features": [
+      "diag_1_574",
+      "diag_2_250.6",
+      "diag_2_781",
+      "diag_3_250",
+      "num_lab_procedures",
+      "number_inpatient",
+      "race_?",
+      "time_in_hospital"
+    ],
+    "praxis_accuracy": 0.6666666666666666,
+    "praxis_ci95": [
+      0.5333333333333333,
+      0.7833333333333333
+    ],
+    "praxis_split_features": [
+      "admission_source_id",
+      "diag_2_250.6",
+      "diag_3_250",
+      "diag_3_599",
+      "discharge_disposition_id",
+      "gender_Female",
+      "number_inpatient",
+      "time_in_hospital"
+    ],
+    "praxis_tgb_overlap_jaccard": 0.3333333333333333
+  },
+  "delta": {
+    "tgb_accuracy": 0.016666666666666607,
+    "praxis_accuracy": -0.033333333333333326,
+    "overlap_jaccard": -0.023809523809523836
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "dataset": "diabetes_undersampled",
+  "param_tag": "nest5_depth1",
+  "root_features_dropped": [
+    "number_inpatient"
+  ],
+  "n_dropped_columns": 2,
+  "baseline": {
+    "tgb_accuracy": 0.6028382970217869,
+    "tgb_ci95": [
+      0.5950429742154707,
+      0.6108351655673263
+    ],
+    "tgb_split_features": [
+      "number_inpatient"
+    ],
+    "praxis_accuracy": 0.6028382970217869,
+    "praxis_ci95": [
+      0.5950429742154707,
+      0.6108351655673263
+    ],
+    "praxis_split_features": [
+      "number_inpatient"
+    ],
+    "praxis_tgb_overlap_jaccard": 1.0
+  },
+  "ablated": null,
+  "error": "ablating root feature(s) removed all columns; skipped"
+}

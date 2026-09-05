@@ -12,19 +12,19 @@ while current.name != "DIMACS":
 BASEDIR = current
 tgb_results_dir = BASEDIR / "TGB_Variables_Feature_Importance"
 
-# Sequential blue ramp (light -> dark), one hue for magnitude
-SEQUENTIAL_BLUE = [
-    "#cde2fb", "#b7d3f6", "#9ec5f4", "#86b6ef", "#6da7ec", "#5598e7",
-    "#3987e5", "#2a78d6", "#256abf", "#1c5cab", "#184f95", "#104281", "#0d366b",
+# Sequential red ramp (light -> dark), one hue for magnitude
+SEQUENTIAL_RED = [
+    "#fbdccd", "#f8c6b1", "#f5b096", "#f2997a", "#ef825e", "#ec6b43",
+    "#e85430", "#d4402a", "#bc3325", "#a3271f", "#8a1c19", "#711214", "#590a0e",
 ]
-IMPORTANCE_CMAP = LinearSegmentedColormap.from_list("importance_blue", SEQUENTIAL_BLUE)
+IMPORTANCE_CMAP = LinearSegmentedColormap.from_list("importance_red", SEQUENTIAL_RED)
 NOT_USED_COLOR = "#e1e0d9"   # gridline-hairline gray: split wasn't among the top splits at that setting
 GRIDLINE_COLOR = "#e1e0d9"
 MUTED_INK = "#898781"
 PRIMARY_INK = "#0b0b0b"
 
 parameters = ["nest5_depth1", "nest5_depth2", "nest5_depth3", "nest10_depth1", "nest10_depth2", "nest10_depth3", "nest15_depth1", "nest15_depth2", "nest15_depth3", "nest20_depth1", "nest20_depth2", "nest20_depth3" , "nest25_depth1", "nest25_depth2", "nest25_depth3" , "nest30_depth1", "nest30_depth2", "nest30_depth3", "nest35_depth1", "nest35_depth2", "nest35_depth3", "nest40_depth1", "nest40_depth2", "nest40_depth3", "nest100_depth1", "nest100_depth2", "nest100_depth3", "nest200_depth1", "nest200_depth2", "nest200_depth3"]
-datasets = ["bike" , "breast_cancer" , "creditcard_fraud" , "diabetes" , "heloc_original" , "creditcard_fraud_smote" , "diabetes_smote"  , "spambase"]
+datasets = ["compas"]
 
 
 def parse_param(param):
@@ -71,8 +71,8 @@ def plot_split_heatmap(matrix_df, dataset, out_path):
     values = plot_df.to_numpy(dtype=float)
     n_rows, n_cols = values.shape
 
-    fig_w = max(8, n_cols * 0.35 + 3)
-    fig_h = max(4, n_rows * 0.22 + 1.5)
+    fig_w = max(18, n_cols * 0.8 + 6)
+    fig_h = max(6, n_rows * 0.45 + 2)
     fig, ax = plt.subplots(figsize=(fig_w, fig_h))
 
     cmap = IMPORTANCE_CMAP.copy()
@@ -83,10 +83,10 @@ def plot_split_heatmap(matrix_df, dataset, out_path):
     ax.set_xticks(range(n_cols))
     ax.set_xticklabels(
         [p.replace("nest", "n").replace("_depth", " d") for p in param_cols],
-        rotation=90, fontsize=7, color=MUTED_INK,
+        rotation=90, fontsize=14, color=MUTED_INK,
     )
     ax.set_yticks(range(n_rows))
-    ax.set_yticklabels(plot_df.index, fontsize=7, color=PRIMARY_INK)
+    ax.set_yticklabels(plot_df.index, fontsize=14, color=PRIMARY_INK)
 
     # Recessive hairline grid between cells
     ax.set_xticks(np.arange(-0.5, n_cols, 1), minor=True)
@@ -101,12 +101,12 @@ def plot_split_heatmap(matrix_df, dataset, out_path):
     for x in range(2, n_cols - 1, 3):
         ax.axvline(x + 0.5, color=GRIDLINE_COLOR, linewidth=1.4)
 
-    cbar = fig.colorbar(im, ax=ax, fraction=0.03, pad=0.02)
-    cbar.set_label("Importance", color=MUTED_INK, fontsize=8)
-    cbar.ax.tick_params(labelsize=7, color=MUTED_INK, labelcolor=MUTED_INK)
+    cbar = fig.colorbar(im, ax=ax, fraction=0.02, pad=0.015)
+    cbar.set_label("Importance", color=MUTED_INK, fontsize=15)
+    cbar.ax.tick_params(labelsize=13, color=MUTED_INK, labelcolor=MUTED_INK)
 
     ax.set_title(f"{dataset}: TGB split importance across parameter sweep",
-                 fontsize=10, color=PRIMARY_INK, loc="left")
+                 fontsize=19, color=PRIMARY_INK, loc="left", pad=14)
     fig.tight_layout()
     fig.savefig(out_path, dpi=150)
     plt.close(fig)

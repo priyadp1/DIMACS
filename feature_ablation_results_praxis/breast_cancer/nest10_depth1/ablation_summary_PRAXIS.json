@@ -1,0 +1,52 @@
+{
+  "dataset": "breast_cancer",
+  "param_tag": "nest10_depth1",
+  "root_features_dropped": [
+    "perimeter_worst"
+  ],
+  "n_dropped_columns": 1,
+  "baseline": {
+    "tgb_accuracy": 0.9298245614035088,
+    "tgb_ci95": [
+      0.8859649122807017,
+      0.9736842105263158
+    ],
+    "tgb_split_features": [
+      "concave points_worst",
+      "perimeter_worst"
+    ],
+    "praxis_accuracy": 0.8771929824561403,
+    "praxis_ci95": [
+      0.8157894736842105,
+      0.9385964912280702
+    ],
+    "praxis_split_features": [
+      "perimeter_worst"
+    ],
+    "praxis_tgb_overlap_jaccard": 0.5
+  },
+  "ablated": {
+    "tgb_accuracy": 0.9122807017543859,
+    "tgb_ci95": [
+      0.8596491228070176,
+      0.9649122807017544
+    ],
+    "tgb_split_features": [
+      "concave points_worst"
+    ],
+    "praxis_accuracy": 0.9122807017543859,
+    "praxis_ci95": [
+      0.8596491228070176,
+      0.9649122807017544
+    ],
+    "praxis_split_features": [
+      "concave points_worst"
+    ],
+    "praxis_tgb_overlap_jaccard": 1.0
+  },
+  "delta": {
+    "tgb_accuracy": -0.01754385964912286,
+    "praxis_accuracy": 0.03508771929824561,
+    "overlap_jaccard": 0.5
+  }
+}

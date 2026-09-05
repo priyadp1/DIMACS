@@ -1,0 +1,57 @@
+{
+  "dataset": "creditcard_fraud_smote",
+  "param_tag": "nest10_depth2",
+  "root_features_dropped": [
+    "V14"
+  ],
+  "n_dropped_columns": 10,
+  "baseline": {
+    "tgb_accuracy": 0.9373055912772996,
+    "tgb_ci95": [
+      0.9357882415009727,
+      0.9388006836592256
+    ],
+    "tgb_split_features": [
+      "V10",
+      "V12",
+      "V14",
+      "V4",
+      "V8"
+    ],
+    "praxis_accuracy": 0.9226871544608215,
+    "praxis_ci95": [
+      0.9209612446554775,
+      0.92433667469032
+    ],
+    "praxis_split_features": [
+      "V14"
+    ],
+    "praxis_tgb_overlap_jaccard": 0.2
+  },
+  "ablated": {
+    "tgb_accuracy": 0.9283256943757487,
+    "tgb_ci95": [
+      0.9267976280761917,
+      0.9299197085105682
+    ],
+    "tgb_split_features": [
+      "V10",
+      "V4"
+    ],
+    "praxis_accuracy": 0.9196205801211242,
+    "praxis_ci95": [
+      0.9179606181510425,
+      0.921313516008837
+    ],
+    "praxis_split_features": [
+      "V10",
+      "V4"
+    ],
+    "praxis_tgb_overlap_jaccard": 1.0
+  },
+  "delta": {
+    "tgb_accuracy": -0.008979896901550877,
+    "praxis_accuracy": -0.003066574339697259,
+    "overlap_jaccard": 0.8
+  }
+}

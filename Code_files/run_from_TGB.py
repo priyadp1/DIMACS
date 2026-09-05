@@ -47,15 +47,8 @@ print(f"TGB dir  : {TGB_DIR}")
 print(f"Results  : {RESULTS_DIR}")
 
 DATASETS = [
-    "bike",
-    "breast_cancer",
-    "spambase",
-    "compas",
-    "creditcard_fraud_smote",
-    "diabetes_smote"
-    "diabetes",
-    "creditcard_fraud",
-    "heloc_original"
+    "german_credit"
+    
 ]  # Add more dataset names as needed, matching subdirectories in TGB_Variables
 
 # ── GOSDT parameters (match run_gosdt.py) ────────────────────────────────────
@@ -148,6 +141,11 @@ for dataset_name in DATASETS:
         "xgboost_ensemble.txt",
         "lightgbm_ensemble.txt",
         "treefarms_results.txt",
+        "praxis_results.txt",
+        "praxis_first_tree.txt",
+        "praxis_rid.json",
+        "praxis_sampled_trees.json" ,
+        "praxis_first_tree_paths.txt"
     ]
 
         if all((out_dir / f).exists() for f in _expected_results):
@@ -428,17 +426,38 @@ for dataset_name in DATASETS:
         #     print(f"  [CatBoost] Accuracy: {accuracy_score(y_test, y_pred_cb):.4f} | Time: {cb_duration:.2f}s")
 
         # ── TREEFARMS (subprocess to avoid potential library conflicts) ───────
-        if (out_dir / "treefarms_results.txt").exists():
-            print(f"  [SKIP] TREEFARMS already exists for {dataset_name}/{param_tag}")
+        # if (out_dir / "treefarms_results.txt").exists():
+        #     print(f"  [SKIP] TREEFARMS already exists for {dataset_name}/{param_tag}")
+        # else:
+        #     print(f"\n  [TREEFARMS] Training on {dataset_name}/{param_tag}...")
+        #     _treefarms_script = Path(__file__).parent / "run_treefarms.py"
+        #     _result = subprocess.run(
+        #         [sys.executable, str(_treefarms_script), dataset_name, param_tag],
+        #         capture_output=False,
+        #     )
+        #     if _result.returncode != 0:
+        #         print(f"  [TREEFARMS] ERROR: subprocess exited with code {_result.returncode}")
+
+        # ── PRAXIS (subprocess to avoid potential library conflicts) ──────────
+        _praxis_expected = [
+            "praxis_results.txt",
+            "praxis_first_tree.txt",
+            "praxis_tree_size.json",
+            "praxis_sampled_trees.json",
+            "praxis_first_tree_paths.txt",
+            "praxis_rid.json",
+        ]
+        if all((out_dir / f).exists() for f in _praxis_expected):
+            print(f"  [SKIP] PRAXIS already exists for {dataset_name}/{param_tag}")
         else:
-            print(f"\n  [TREEFARMS] Training on {dataset_name}/{param_tag}...")
-            _treefarms_script = Path(__file__).parent / "run_treefarms.py"
+            print(f"\n  [PRAXIS] Training on {dataset_name}/{param_tag}...")
+            _praxis_script = Path(__file__).parent / "run_PRAXIS.py"
             _result = subprocess.run(
-                [sys.executable, str(_treefarms_script), dataset_name, param_tag],
+                [sys.executable, str(_praxis_script), dataset_name, param_tag],
                 capture_output=False,
             )
             if _result.returncode != 0:
-                print(f"  [TREEFARMS] ERROR: subprocess exited with code {_result.returncode}")
+                print(f"  [PRAXIS] ERROR: subprocess exited with code {_result.returncode}")
 
         # ── LicketySPLIT ──────────────────────────────────────────────────────
         # if (out_dir / "licketysplit_results.txt").exists():

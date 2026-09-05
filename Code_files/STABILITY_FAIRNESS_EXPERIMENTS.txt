@@ -1,0 +1,184 @@
+PRAXIS RASHOMON SET - STABILITY & FAIRNESS EXPERIMENTS
+========================================================
+
+OVERVIEW
+--------
+- Post-hoc analyses run ON TOP OF already-generated PRAXIS Rashomon sets
+- Nothing is retrained
+- run_PRAXIS.py produces praxis_sampled_trees.json for each <dataset>/<param_tag>
+  under benchmarks_TGB_results_all/
+- param_tag = nest{N}_depth{D}, matching the TGB sweep grid from run_TGB.py
+- Each tree is stored as root-to-leaf path strings, e.g. "[+56, -3]"
+  = feature 56 == 1 AND feature 3 == 0, plus per-leaf predictions
+- Both scripts below:
+  - reuse praxis_rashomon_common.py to discover cached param_tags, load
+    TGB-guessed train/test CSVs, and rebuild each tree as a TreeClassifier
+  - skip a param_tag if its output summary JSON already exists (idempotent)
+  - write one summary JSON per param_tag back into
+    benchmarks_TGB_results_all/<dataset>/<param_tag>/
+- Sibling script calculate_robustness_rashomon.py does the same pattern for
+  an L0/Hamming bit-flip robustness metric (not covered in this doc)
+
+
+STABILITY
+=========
+Script: Code_files/calculate_stability_rashomon.py
+Metric: StabilityMetric (rashomon-framework/module/metric/stability_metric.py)
+
+Parameters
+----------
+- MAX_TREE_SAMPLE = 70
+  - cap on how many cached trees to evaluate per param_tag
+  - keeps runtime bounded (cost scales as n_trees x NUM_TRIALS x 5 noise variants)
+- NUM_TRIALS = 10
+  - number of independent noisy resamples averaged per tree, per noise variant
+  - much lower than StabilityMetric's own default (5000) since this is a
+    per-tree Rashomon-set sweep, not a single-model evaluation
+- NOISE_MEAN = 0.9
+- NOISE_STD = 0.1
+  - parameters of Normal(0.9, 0.1) that the per-feature noise parameter q_f
+    is drawn from
+  - matches the defaults rashomon-framework's own experiment.py uses for
+    stability runs, so results are comparable to that pipeline
+- SEED = 42
+  - seeds the q_f draw and the per-trial train/test noise RNGs
+  - every tree in a param_tag sees IDENTICAL noise realizations -> paired
+    comparison, not independent noise per tree
+- SMALL_DATASETS = [breast_cancer, spambase, compas, heloc_original, bike]
+  - stability is only computed for these datasets (small enough splits to
+    keep NUM_TRIALS x MAX_TREE_SAMPLE tractable)
+
+Noise model
+-----------
+- Each TGB-guessed binary feature gets its own q_f ~ Normal(0.9, 0.1),
+  clipped to (0, 1]
+- High q_f (mean 0.9) -> geometric distribution concentrated near 0 ->
+  small/rare perturbations by default (mostly-clean data, occasional noise)
+- Per row, per feature: random sign (+-1, coin flip) x magnitude from
+  Geometric(q_f) - 1, added to the feature value
+- Features are cast to int64 (perturbation can be negative)
+- A nonzero perturbation risks flipping which side of a threshold split a
+  row falls on
+
+What gets computed
+-------------------
+- For each of the (up to 70) cached trees: run NUM_TRIALS noisy resamples
+  of the test set, measure accuracy each time, aggregate mean/std/min
+- Repeated for 5 variants of q_f, noisiest to cleanest:
+  - "_minus0.2": q_f - 0.2 (most noise)
+  - "_minus0.1": q_f - 0.1
+  - (no suffix): q_f as drawn (default, mean 0.9)
+  - "_plus0.1": q_f + 0.1 (least noise)
+  - "_resample0.05": q_f re-drawn uniformly in [q_f-0.05, q_f+0.05]
+    (a resampling sensitivity check, not part of the shift ordering)
+- Note: StabilityMetric also implements train-side accuracy and
+  prediction-flip-rate metrics, but those lines are commented out in
+  stability_metric.py -- only test_stability_acc_* fields are returned
+
+Output file
+-----------
+praxis_stability_summary.json
+
+Top level:
+- num_trials, noise_mean, noise_std
+- n_total_trees, n_trees_evaluated
+- trees: list of per-tree rows
+- most_stable_tree: row with max default-noise test_stability_acc_mean
+
+Per-tree row fields:
+- tree_index, n_leaves
+- accuracy (clean test accuracy)
+- test_stability_acc_mean / _std / _min (default noise)
+- test_stability_acc_mean_plus0.1 (least noise)
+- test_stability_acc_mean_minus0.1
+- test_stability_acc_mean_minus0.2 (most noise)
+- test_stability_acc_mean_resample0.05
+- plus matching _std / _min for every suffix above
+
+Plots (plot_files/fairness_stability_robustness_plots.py -> plot_stability)
+-----------------------------------------------------------------------
+- stability_heatmap.png (one per dataset)
+  - nest x depth grid
+  - colored by best tree's default-noise test_stability_acc_mean
+  - each cell shows that value + the tree's clean accuracy
+- stability_noise_sensitivity.png (one per dataset)
+  - for the single best (nest, depth) config
+  - bar chart of test_stability_acc_mean +- std across all 5 noise variants
+  - ordered noisiest -> cleanest, resample last
+  - dashed reference line at clean accuracy
+
+
+FAIRNESS
+========
+Script: Code_files/calculate_fairness_rashomon.py
+Metric functions: rashomon-framework/module/metric/fairness_metric.py
+
+Parameters
+----------
+- MAX_TREE_SAMPLE = 1000
+  - cap on how many cached trees to evaluate per param_tag
+  - higher than stability's 70 since each tree here is a single forward
+    pass, not 10 x 5 noisy resamples
+- SENSITIVE_ATTR_MAP:
+  - compas -> ["sex=female <= 0.5"]
+  - diabetes_smote -> ["race <= 0.5", "gender <= 0.5"]
+- fairness is deterministic given the trees + test set, so there is no
+  NUM_TRIALS / SEED / noise config
+- a dataset/param_tag is skipped (with a log line) if none of its mapped
+  sensitive columns appear among that TGB run's guessed features
+- currently only compas and diabetes_smote have a mapping at all
+
+What gets computed
+-------------------
+For each sensitive column present, and each cached tree (up to 1000), using
+the column's 0/1 value as sensitive attribute A:
+- statistical_parity_difference = |P(pred=1 | A=0) - P(pred=1 | A=1)|
+- equal_opportunity_difference = |TPR(A=0) - TPR(A=1)|, restricted to
+  y_true = 1
+- equalized_odds_difference = max(|TPR gap|, |FPR gap|)
+- all three: lower = fairer, 0 = perfect parity
+
+Output file
+-----------
+praxis_fairness_summary.json
+
+Top level:
+- sensitive_attributes
+- n_total_trees, n_trees_evaluated
+- by_attribute: {attribute_name: {...}}
+
+Per attribute:
+- trees: list of per-tree rows
+- most_fair_by_statistical_parity
+- most_fair_by_equal_opportunity
+- most_fair_by_equalized_odds
+
+Per-tree row fields:
+- tree_index, n_leaves, accuracy
+- statistical_parity_difference
+- equal_opportunity_difference
+- equalized_odds_difference
+
+Plots (plot_files/fairness_stability_robustness_plots.py -> plot_fairness)
+-----------------------------------------------------------------------
+- fairness_heatmap_<attr_slug>.png (one per sensitive attribute)
+  - e.g. fairness_heatmap_sex_female_0_5.png, fairness_heatmap_race_0_5.png,
+    fairness_heatmap_gender_0_5.png
+  - nest x depth grid, reversed-viridis colormap (lower SPD = fairer)
+  - colored by best tree's statistical_parity_difference
+  - each cell shows that value + the tree's clean accuracy
+
+
+RE-RUNNING
+==========
+- python Code_files/calculate_stability_rashomon.py
+- python Code_files/calculate_fairness_rashomon.py
+- python plot_files/fairness_stability_robustness_plots.py
+
+Notes:
+- requires praxis_sampled_trees.json to already exist for a given
+  <dataset>/<param_tag> (produced by run_PRAXIS.py)
+- both compute scripts skip a param_tag whose output summary already
+  exists -> re-running only fills in what's missing
+- delete the specific praxis_stability_summary.json /
+  praxis_fairness_summary.json to force a recompute of just that one

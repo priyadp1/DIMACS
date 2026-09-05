@@ -1,0 +1,61 @@
+{
+  "dataset": "diabetes_undersampled",
+  "param_tag": "nest25_depth2",
+  "root_features_dropped": [
+    "number_inpatient"
+  ],
+  "n_dropped_columns": 4,
+  "baseline": {
+    "tgb_accuracy": 0.6238257045772536,
+    "tgb_ci95": [
+      0.6164934372709708,
+      0.6322872942900926
+    ],
+    "tgb_split_features": [
+      "discharge_disposition_id",
+      "number_diagnoses",
+      "number_emergency",
+      "number_inpatient",
+      "number_outpatient"
+    ],
+    "praxis_accuracy": 0.6028382970217869,
+    "praxis_ci95": [
+      0.5950429742154707,
+      0.6108351655673263
+    ],
+    "praxis_split_features": [
+      "number_inpatient"
+    ],
+    "praxis_tgb_overlap_jaccard": 0.2
+  },
+  "ablated": {
+    "tgb_accuracy": 0.5913118795389433,
+    "tgb_ci95": [
+      0.5835148910653608,
+      0.598908987940569
+    ],
+    "tgb_split_features": [
+      "admission_source_id",
+      "discharge_disposition_id",
+      "num_lab_procedures",
+      "number_diagnoses",
+      "number_emergency",
+      "number_outpatient"
+    ],
+    "praxis_accuracy": 0.5590645612632421,
+    "praxis_ci95": [
+      0.5511359850756213,
+      0.5664634552601772
+    ],
+    "praxis_split_features": [
+      "discharge_disposition_id",
+      "number_diagnoses"
+    ],
+    "praxis_tgb_overlap_jaccard": 0.3333333333333333
+  },
+  "delta": {
+    "tgb_accuracy": -0.03251382503831035,
+    "praxis_accuracy": -0.04377373575854482,
+    "overlap_jaccard": 0.1333333333333333
+  }
+}

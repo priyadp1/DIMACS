@@ -1,0 +1,29 @@
+{
+  "dataset": "diabetes",
+  "param_tag": "nest5_depth1",
+  "root_features_dropped": [
+    "num_medications"
+  ],
+  "n_dropped_columns": 2,
+  "baseline": {
+    "tgb_accuracy": 0.65,
+    "tgb_ci95": [
+      0.5333333333333333,
+      0.7666666666666667
+    ],
+    "tgb_split_features": [
+      "num_medications"
+    ],
+    "praxis_accuracy": 0.65,
+    "praxis_ci95": [
+      0.5333333333333333,
+      0.7666666666666667
+    ],
+    "praxis_split_features": [
+      "num_medications"
+    ],
+    "praxis_tgb_overlap_jaccard": 1.0
+  },
+  "ablated": null,
+  "error": "ablating root feature(s) removed all columns; skipped"
+}

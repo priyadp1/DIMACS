@@ -153,11 +153,52 @@ DATASETS = {
     #     "drop_cols": ['Class'],
     #     "label_map": None,
     # },
-    "heloc_original": {
-        "path": BASEDIR / "datasets" / "Mine" / "heloc_original.csv",
-        "target_col": 'RiskPerformance',
-        "drop_cols": ['RiskPerformance'],
-        "label_map": None,
+    #"heloc_original": {
+        #"path": BASEDIR / "datasets" / "Mine" / "heloc_original.csv",
+        #"target_col": 'RiskPerformance',
+        #"drop_cols": ['RiskPerformance'],
+        #"label_map": None,
+    # "diabetes_tomek": {
+    #     "path": BASEDIR / "datasets" / "Mine" / "diabetes_smote_tomek.csv",
+    #     "target_col": 'readmitted',
+    #     "drop_cols": ['readmitted'],
+    #     "label_map": None,
+    # },
+    # "diabetes_oversampled": {
+    #     "path": BASEDIR / "datasets" / "Mine" / "diabetes_oversampled.csv",
+    #     "target_col": 'readmitted',
+    #     "drop_cols": ['readmitted'],
+    #     "label_map": None,
+    # },
+    # "diabetes_undersampled": {
+    #     "path": BASEDIR / "datasets" / "Mine" / "diabetes_undersampled.csv",
+    #     "target_col": 'readmitted',
+    #     "drop_cols": ['readmitted'],
+    #     "label_map": None,
+    # },
+    # "creditcard_fraud_oversampled": {
+    #     "path": BASEDIR / "datasets" / "Mine" / "creditcard_fraud_oversampled.csv",
+    #     "target_col": 'Class',
+    #     "drop_cols": ['Class'],
+    #     "label_map": None,
+    # },
+    # "creditcard_fraud_undersampled": {
+    #     "path": BASEDIR / "datasets" / "Mine" / "creditcard_fraud_undersampled.csv",
+    #     "target_col": 'Class',
+    #     "drop_cols": ['Class'],
+    #     "label_map": None,
+    # },
+    # "creditcard_fraud_tomek": {
+    #     "path": BASEDIR / "datasets" / "Mine" / "creditcard_fraud_tomek.csv",
+    #     "target_col": 'Class',
+    #     "drop_cols": ['Class'],
+    #     "label_map": None,
+    # },
+    "german_credit": {
+        "path": BASEDIR / "datasets" / "Mine" / "german_credit_data.csv",
+        "target_col": 'Risk',
+        "drop_cols": ['Risk'],
+        "label_map": {"good": 0, "bad": 1},
     }
 }
 

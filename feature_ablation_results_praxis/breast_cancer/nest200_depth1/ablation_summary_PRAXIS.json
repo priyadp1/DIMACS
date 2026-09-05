@@ -1,0 +1,71 @@
+{
+  "dataset": "breast_cancer",
+  "param_tag": "nest200_depth1",
+  "root_features_dropped": [
+    "perimeter_worst"
+  ],
+  "n_dropped_columns": 3,
+  "baseline": {
+    "tgb_accuracy": 0.9824561403508771,
+    "tgb_ci95": [
+      0.956140350877193,
+      1.0
+    ],
+    "tgb_split_features": [
+      "area_se",
+      "area_worst",
+      "concave points_mean",
+      "concave points_worst",
+      "concavity_worst",
+      "perimeter_worst",
+      "radius_worst",
+      "smoothness_worst",
+      "texture_mean",
+      "texture_worst"
+    ],
+    "praxis_accuracy": 0.9649122807017544,
+    "praxis_ci95": [
+      0.9298245614035088,
+      0.9912280701754386
+    ],
+    "praxis_split_features": [
+      "area_worst",
+      "concave points_mean",
+      "texture_worst"
+    ],
+    "praxis_tgb_overlap_jaccard": 0.3
+  },
+  "ablated": {
+    "tgb_accuracy": 0.9824561403508771,
+    "tgb_ci95": [
+      0.956140350877193,
+      1.0
+    ],
+    "tgb_split_features": [
+      "area_worst",
+      "concave points_mean",
+      "concave points_worst",
+      "concavity_worst",
+      "radius_worst",
+      "symmetry_worst",
+      "texture_mean",
+      "texture_worst"
+    ],
+    "praxis_accuracy": 0.9649122807017544,
+    "praxis_ci95": [
+      0.9298245614035088,
+      0.9912280701754386
+    ],
+    "praxis_split_features": [
+      "area_worst",
+      "concave points_mean",
+      "texture_worst"
+    ],
+    "praxis_tgb_overlap_jaccard": 0.375
+  },
+  "delta": {
+    "tgb_accuracy": 0.0,
+    "praxis_accuracy": 0.0,
+    "overlap_jaccard": 0.07500000000000001
+  }
+}

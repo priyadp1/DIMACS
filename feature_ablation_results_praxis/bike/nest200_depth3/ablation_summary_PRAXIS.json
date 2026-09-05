@@ -1,0 +1,61 @@
+{
+  "dataset": "bike",
+  "param_tag": "nest200_depth3",
+  "root_features_dropped": [
+    "hr"
+  ],
+  "n_dropped_columns": 17,
+  "baseline": {
+    "tgb_accuracy": 0.8889528193325662,
+    "tgb_ci95": [
+      0.8777330264672036,
+      0.8993095512082854
+    ],
+    "tgb_split_features": [
+      "atemp",
+      "hr",
+      "season",
+      "temp",
+      "yr"
+    ],
+    "praxis_accuracy": 0.8380322209436134,
+    "praxis_ci95": [
+      0.8253739930955121,
+      0.8509781357882624
+    ],
+    "praxis_split_features": [
+      "hr",
+      "temp"
+    ],
+    "praxis_tgb_overlap_jaccard": 0.4
+  },
+  "ablated": {
+    "tgb_accuracy": 0.748849252013809,
+    "tgb_ci95": [
+      0.7350402761795167,
+      0.7629602991944764
+    ],
+    "tgb_split_features": [
+      "atemp",
+      "hum",
+      "season",
+      "temp",
+      "yr"
+    ],
+    "praxis_accuracy": 0.7123130034522439,
+    "praxis_ci95": [
+      0.6967779056386652,
+      0.7275676064441887
+    ],
+    "praxis_split_features": [
+      "atemp",
+      "hum"
+    ],
+    "praxis_tgb_overlap_jaccard": 0.4
+  },
+  "delta": {
+    "tgb_accuracy": -0.14010356731875717,
+    "praxis_accuracy": -0.1257192174913695,
+    "overlap_jaccard": 0.0
+  }
+}

@@ -1,0 +1,30 @@
+Dataset: diabetes_smote
+n = 87782, k = 5 bins, eps = 0.05
+Attribute binned: num_medications
+Group attribute: race (6 groups)
+Overall group proportions: [0.0216, 0.1898, 0.0171, 0.7387, 0.0191, 0.0137]
+
+--- unbiased_binning ---
+  Runtime: 0.0808s
+  Infeasible: no valid binning satisfying the constraint was found.
+
+--- ebias_binning ---
+  Runtime: 5.5209s
+  Subsampled to n=1500 (exact DP is quadratic in n)
+  Max group-proportion deviation across bins: 0.0574
+    bin[0:295) size=295 proportions=[0.041, 0.217, 0.01, 0.681, 0.034, 0.017]
+    bin[295:591) size=296 proportions=[0.034, 0.213, 0.007, 0.693, 0.044, 0.01]
+    bin[591:887) size=296 proportions=[0.01, 0.169, 0.034, 0.764, 0.017, 0.007]
+    bin[887:1184) size=297 proportions=[0.017, 0.165, 0.024, 0.758, 0.02, 0.017]
+    bin[1184:1500) size=316 proportions=[0.009, 0.174, 0.016, 0.778, 0.016, 0.006]
+
+--- ebias_dnc ---
+  Runtime: 0.0519s
+  Objective (bin-size disparity): 1
+  Max group-proportion deviation across bins: 0.0417
+    bin[0:17556) size=17556 proportions=[0.024, 0.217, 0.019, 0.697, 0.027, 0.017]
+    bin[17556:35112) size=17556 proportions=[0.02, 0.199, 0.021, 0.724, 0.021, 0.016]
+    bin[35112:52668) size=17556 proportions=[0.023, 0.181, 0.016, 0.747, 0.019, 0.013]
+    bin[52668:70225) size=17557 proportions=[0.022, 0.178, 0.017, 0.755, 0.017, 0.012]
+    bin[70225:87782) size=17557 proportions=[0.02, 0.174, 0.012, 0.771, 0.012, 0.011]
+

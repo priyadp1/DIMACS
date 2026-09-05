@@ -1,0 +1,18 @@
+Accuracy: 0.6190476190476191
+Confusion Matrix:
+[[40 19]
+ [21 25]]
+Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.66      0.68      0.67        59
+           1       0.57      0.54      0.56        46
+
+    accuracy                           0.62       105
+   macro avg       0.61      0.61      0.61       105
+weighted avg       0.62      0.62      0.62       105
+
+PRAXIS completed in 0.10 seconds
+Rashomon set size: 464426
+Tree Size (tree 0): 8 leaves, 15 total nodes
+RID computed in 2.47 seconds (see praxis_rid.json)

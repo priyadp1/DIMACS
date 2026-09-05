@@ -1,0 +1,269 @@
+{
+  "dataset": "compas",
+  "n": 6907,
+  "n_groups": 2,
+  "k_bins": 5,
+  "epsilon": 0.05,
+  "x_col": "age",
+  "group_col": "sex=female",
+  "overall_group_proportions": [
+    0.8077312871000434,
+    0.19226871289995656
+  ],
+  "algorithms": {
+    "unbiased_binning": {
+      "feasible": true,
+      "boundary_values": [
+        40.0,
+        42.0,
+        60.0,
+        64.0
+      ],
+      "boundary_indices": [
+        4983,
+        5151,
+        6672,
+        6788,
+        6906
+      ],
+      "n_boundary_candidates": 38,
+      "duration_sec": 0.008203750010579824,
+      "bin_group_ratios": [
+        {
+          "start": 0,
+          "end": 4983,
+          "size": 4983,
+          "group_counts": [
+            4026,
+            957
+          ],
+          "group_proportions": [
+            0.8079470198675497,
+            0.19205298013245034
+          ]
+        },
+        {
+          "start": 4983,
+          "end": 5151,
+          "size": 168,
+          "group_counts": [
+            135,
+            33
+          ],
+          "group_proportions": [
+            0.8035714285714286,
+            0.19642857142857142
+          ]
+        },
+        {
+          "start": 5151,
+          "end": 6672,
+          "size": 1521,
+          "group_counts": [
+            1228,
+            293
+          ],
+          "group_proportions": [
+            0.8073635765943459,
+            0.19263642340565418
+          ]
+        },
+        {
+          "start": 6672,
+          "end": 6788,
+          "size": 116,
+          "group_counts": [
+            95,
+            21
+          ],
+          "group_proportions": [
+            0.8189655172413793,
+            0.1810344827586207
+          ]
+        },
+        {
+          "start": 6788,
+          "end": 6907,
+          "size": 119,
+          "group_counts": [
+            95,
+            24
+          ],
+          "group_proportions": [
+            0.7983193277310925,
+            0.20168067226890757
+          ]
+        }
+      ],
+      "max_group_proportion_deviation": 0.011234230141335955
+    },
+    "ebias_binning": {
+      "feasible": true,
+      "boundary_values": [
+        24.0,
+        28.0,
+        34.0,
+        45.0
+      ],
+      "boundary_indices": [
+        299,
+        599,
+        899,
+        1199,
+        1499
+      ],
+      "duration_sec": 4.436349000316113,
+      "subsampled": true,
+      "n_used": 1500,
+      "bin_group_ratios": [
+        {
+          "start": 0,
+          "end": 299,
+          "size": 299,
+          "group_counts": [
+            252,
+            47
+          ],
+          "group_proportions": [
+            0.842809364548495,
+            0.15719063545150502
+          ]
+        },
+        {
+          "start": 299,
+          "end": 599,
+          "size": 300,
+          "group_counts": [
+            250,
+            50
+          ],
+          "group_proportions": [
+            0.8333333333333334,
+            0.16666666666666666
+          ]
+        },
+        {
+          "start": 599,
+          "end": 899,
+          "size": 300,
+          "group_counts": [
+            248,
+            52
+          ],
+          "group_proportions": [
+            0.8266666666666667,
+            0.17333333333333334
+          ]
+        },
+        {
+          "start": 899,
+          "end": 1199,
+          "size": 300,
+          "group_counts": [
+            234,
+            66
+          ],
+          "group_proportions": [
+            0.78,
+            0.22
+          ]
+        },
+        {
+          "start": 1199,
+          "end": 1500,
+          "size": 301,
+          "group_counts": [
+            247,
+            54
+          ],
+          "group_proportions": [
+            0.8205980066445183,
+            0.17940199335548174
+          ]
+        }
+      ],
+      "max_group_proportion_deviation": 0.035078077448451594
+    },
+    "ebias_dnc": {
+      "feasible": true,
+      "boundaries": [
+        0,
+        1381,
+        2762,
+        4143,
+        5525,
+        6907
+      ],
+      "objective": 1,
+      "duration_sec": 0.0038808337412774563,
+      "bin_group_ratios": [
+        {
+          "start": 0,
+          "end": 1381,
+          "size": 1381,
+          "group_counts": [
+            1133,
+            248
+          ],
+          "group_proportions": [
+            0.8204199855177408,
+            0.17958001448225924
+          ]
+        },
+        {
+          "start": 1381,
+          "end": 2762,
+          "size": 1381,
+          "group_counts": [
+            1119,
+            262
+          ],
+          "group_proportions": [
+            0.8102824040550326,
+            0.18971759594496743
+          ]
+        },
+        {
+          "start": 2762,
+          "end": 4143,
+          "size": 1381,
+          "group_counts": [
+            1112,
+            269
+          ],
+          "group_proportions": [
+            0.8052136133236785,
+            0.1947863866763215
+          ]
+        },
+        {
+          "start": 4143,
+          "end": 5525,
+          "size": 1382,
+          "group_counts": [
+            1093,
+            289
+          ],
+          "group_proportions": [
+            0.7908827785817656,
+            0.20911722141823444
+          ]
+        },
+        {
+          "start": 5525,
+          "end": 6907,
+          "size": 1382,
+          "group_counts": [
+            1122,
+            260
+          ],
+          "group_proportions": [
+            0.8118668596237337,
+            0.18813314037626627
+          ]
+        }
+      ],
+      "max_group_proportion_deviation": 0.016848508518277877
+    }
+  }
+}

@@ -1,0 +1,34 @@
+Dataset: german_credit
+n = 1000, k = 5 bins, eps = 0.05
+Attribute binned: Age
+Group attribute: Sex (2 groups)
+Overall group proportions: [0.69, 0.31]
+
+--- unbiased_binning ---
+  Runtime: 0.0015s
+  Max group-proportion deviation across bins: 0.0397
+    bin[0:887) size=887 proportions=[0.69, 0.31]
+    bin[887:924) size=37 proportions=[0.73, 0.27]
+    bin[924:970) size=46 proportions=[0.652, 0.348]
+    bin[970:983) size=13 proportions=[0.692, 0.308]
+    bin[983:1000) size=17 proportions=[0.706, 0.294]
+
+--- ebias_binning ---
+  Runtime: 1.7534s
+  Max group-proportion deviation across bins: 0.2277
+    bin[0:199) size=199 proportions=[0.462, 0.538]
+    bin[199:399) size=200 proportions=[0.65, 0.35]
+    bin[399:599) size=200 proportions=[0.77, 0.23]
+    bin[599:799) size=200 proportions=[0.81, 0.19]
+    bin[799:1000) size=201 proportions=[0.756, 0.244]
+
+--- ebias_dnc ---
+  Runtime: 0.0006s
+  Objective (bin-size disparity): 0
+  Max group-proportion deviation across bins: 0.2250
+    bin[0:200) size=200 proportions=[0.465, 0.535]
+    bin[200:400) size=200 proportions=[0.645, 0.355]
+    bin[400:600) size=200 proportions=[0.775, 0.225]
+    bin[600:800) size=200 proportions=[0.81, 0.19]
+    bin[800:1000) size=200 proportions=[0.755, 0.245]
+

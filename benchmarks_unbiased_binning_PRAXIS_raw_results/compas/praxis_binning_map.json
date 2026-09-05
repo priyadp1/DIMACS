@@ -1,0 +1,103 @@
+{
+  "group_names": [
+    "sex=female",
+    "age",
+    "juv_fel_count",
+    "juv_misd_count",
+    "juvenile_crimes",
+    "priors_count",
+    "current_charge_degree=felony"
+  ],
+  "binning_map": {
+    "0": [
+      0
+    ],
+    "1": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "2": [
+      5
+    ],
+    "3": [
+      6
+    ],
+    "4": [
+      7
+    ],
+    "5": [
+      8,
+      9,
+      10,
+      11
+    ],
+    "6": [
+      12
+    ]
+  },
+  "per_feature_info": {
+    "sex=female": {
+      "type": "binary_passthrough"
+    },
+    "age": {
+      "type": "fairness_binned",
+      "method": "unbiased_binning",
+      "n_bins": 5,
+      "cut_values": [
+        41.0,
+        42.0,
+        48.0,
+        62.0
+      ]
+    },
+    "juv_fel_count": {
+      "type": "fairness_binned",
+      "method": "unbiased_binning",
+      "n_bins": 5,
+      "cut_values": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "juv_misd_count": {
+      "type": "fairness_binned",
+      "method": "unbiased_binning",
+      "n_bins": 5,
+      "cut_values": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "juvenile_crimes": {
+      "type": "fairness_binned",
+      "method": "unbiased_binning",
+      "n_bins": 5,
+      "cut_values": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "priors_count": {
+      "type": "fairness_binned",
+      "method": "ebias_binning",
+      "n_bins": 5,
+      "cut_values": [
+        0.0,
+        1.0,
+        2.0,
+        5.0
+      ]
+    },
+    "current_charge_degree=felony": {
+      "type": "binary_passthrough"
+    }
+  }
+}

@@ -1,0 +1,128 @@
+{
+  "group_names": [
+    "Age",
+    "Sex",
+    "Job",
+    "Housing",
+    "Saving accounts",
+    "Checking account",
+    "Credit amount",
+    "Duration",
+    "Purpose"
+  ],
+  "binning_map": {
+    "0": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "1": [
+      4
+    ],
+    "2": [
+      5,
+      6
+    ],
+    "3": [
+      7,
+      8,
+      9
+    ],
+    "4": [
+      10,
+      11,
+      12,
+      13
+    ],
+    "5": [
+      14,
+      15,
+      16
+    ],
+    "6": [
+      17,
+      18,
+      19
+    ],
+    "7": [
+      20,
+      21,
+      22
+    ],
+    "8": [
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30
+    ]
+  },
+  "per_feature_info": {
+    "Age": {
+      "type": "fairness_binned",
+      "method": "unbiased_binning",
+      "n_bins": 5,
+      "cut_values": [
+        47.0,
+        48.0,
+        51.0,
+        55.0
+      ]
+    },
+    "Sex": {
+      "type": "binary_passthrough"
+    },
+    "Job": {
+      "type": "fairness_binned",
+      "method": "unbiased_binning",
+      "n_bins": 4,
+      "cut_values": [
+        2.0,
+        2.0,
+        3.0
+      ]
+    },
+    "Housing": {
+      "type": "categorical",
+      "n_columns": 3
+    },
+    "Saving accounts": {
+      "type": "categorical",
+      "n_columns": 4
+    },
+    "Checking account": {
+      "type": "categorical",
+      "n_columns": 3
+    },
+    "Credit amount": {
+      "type": "fairness_binned",
+      "method": "unbiased_binning",
+      "n_bins": 5,
+      "cut_values": [
+        7297.0,
+        14318.0,
+        15945.0,
+        15945.0
+      ]
+    },
+    "Duration": {
+      "type": "fairness_binned",
+      "method": "unbiased_binning",
+      "n_bins": 5,
+      "cut_values": [
+        12.0,
+        12.0,
+        15.0,
+        36.0
+      ]
+    },
+    "Purpose": {
+      "type": "categorical",
+      "n_columns": 8
+    }
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "n_total_trees": 1,
+  "n_sampled_trees": 1,
+  "trees": [
+    {
+      "tree_index": 0,
+      "paths": [
+        "[]"
+      ],
+      "predictions": [
+        0
+      ]
+    }
+  ]
+}

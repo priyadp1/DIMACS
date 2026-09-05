@@ -1,0 +1,35 @@
+Dataset: compas
+n = 6907, k = 5 bins, eps = 0.05
+Attribute binned: age
+Group attribute: sex=female (2 groups)
+Overall group proportions: [0.8077, 0.1923]
+
+--- unbiased_binning ---
+  Runtime: 0.0082s
+  Max group-proportion deviation across bins: 0.0112
+    bin[0:4983) size=4983 proportions=[0.808, 0.192]
+    bin[4983:5151) size=168 proportions=[0.804, 0.196]
+    bin[5151:6672) size=1521 proportions=[0.807, 0.193]
+    bin[6672:6788) size=116 proportions=[0.819, 0.181]
+    bin[6788:6907) size=119 proportions=[0.798, 0.202]
+
+--- ebias_binning ---
+  Runtime: 4.4363s
+  Subsampled to n=1500 (exact DP is quadratic in n)
+  Max group-proportion deviation across bins: 0.0351
+    bin[0:299) size=299 proportions=[0.843, 0.157]
+    bin[299:599) size=300 proportions=[0.833, 0.167]
+    bin[599:899) size=300 proportions=[0.827, 0.173]
+    bin[899:1199) size=300 proportions=[0.78, 0.22]
+    bin[1199:1500) size=301 proportions=[0.821, 0.179]
+
+--- ebias_dnc ---
+  Runtime: 0.0039s
+  Objective (bin-size disparity): 1
+  Max group-proportion deviation across bins: 0.0168
+    bin[0:1381) size=1381 proportions=[0.82, 0.18]
+    bin[1381:2762) size=1381 proportions=[0.81, 0.19]
+    bin[2762:4143) size=1381 proportions=[0.805, 0.195]
+    bin[4143:5525) size=1382 proportions=[0.791, 0.209]
+    bin[5525:6907) size=1382 proportions=[0.812, 0.188]
+

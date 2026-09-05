@@ -1,0 +1,269 @@
+{
+  "dataset": "german_credit",
+  "n": 1000,
+  "n_groups": 2,
+  "k_bins": 5,
+  "epsilon": 0.05,
+  "x_col": "Age",
+  "group_col": "Sex",
+  "overall_group_proportions": [
+    0.69,
+    0.31
+  ],
+  "algorithms": {
+    "unbiased_binning": {
+      "feasible": true,
+      "boundary_values": [
+        51.0,
+        55.0,
+        63.0,
+        66.0
+      ],
+      "boundary_indices": [
+        887,
+        924,
+        970,
+        983,
+        999
+      ],
+      "n_boundary_candidates": 13,
+      "duration_sec": 0.0014805831015110016,
+      "bin_group_ratios": [
+        {
+          "start": 0,
+          "end": 887,
+          "size": 887,
+          "group_counts": [
+            612,
+            275
+          ],
+          "group_proportions": [
+            0.6899661781285231,
+            0.3100338218714769
+          ]
+        },
+        {
+          "start": 887,
+          "end": 924,
+          "size": 37,
+          "group_counts": [
+            27,
+            10
+          ],
+          "group_proportions": [
+            0.7297297297297297,
+            0.2702702702702703
+          ]
+        },
+        {
+          "start": 924,
+          "end": 970,
+          "size": 46,
+          "group_counts": [
+            30,
+            16
+          ],
+          "group_proportions": [
+            0.6521739130434783,
+            0.34782608695652173
+          ]
+        },
+        {
+          "start": 970,
+          "end": 983,
+          "size": 13,
+          "group_counts": [
+            9,
+            4
+          ],
+          "group_proportions": [
+            0.6923076923076923,
+            0.3076923076923077
+          ]
+        },
+        {
+          "start": 983,
+          "end": 1000,
+          "size": 17,
+          "group_counts": [
+            12,
+            5
+          ],
+          "group_proportions": [
+            0.7058823529411765,
+            0.29411764705882354
+          ]
+        }
+      ],
+      "max_group_proportion_deviation": 0.03972972972972977
+    },
+    "ebias_binning": {
+      "feasible": true,
+      "boundary_values": [
+        26.0,
+        30.0,
+        36.0,
+        45.0
+      ],
+      "boundary_indices": [
+        199,
+        399,
+        599,
+        799,
+        999
+      ],
+      "duration_sec": 1.7533610840328038,
+      "subsampled": false,
+      "n_used": 1000,
+      "bin_group_ratios": [
+        {
+          "start": 0,
+          "end": 199,
+          "size": 199,
+          "group_counts": [
+            92,
+            107
+          ],
+          "group_proportions": [
+            0.4623115577889447,
+            0.5376884422110553
+          ]
+        },
+        {
+          "start": 199,
+          "end": 399,
+          "size": 200,
+          "group_counts": [
+            130,
+            70
+          ],
+          "group_proportions": [
+            0.65,
+            0.35
+          ]
+        },
+        {
+          "start": 399,
+          "end": 599,
+          "size": 200,
+          "group_counts": [
+            154,
+            46
+          ],
+          "group_proportions": [
+            0.77,
+            0.23
+          ]
+        },
+        {
+          "start": 599,
+          "end": 799,
+          "size": 200,
+          "group_counts": [
+            162,
+            38
+          ],
+          "group_proportions": [
+            0.81,
+            0.19
+          ]
+        },
+        {
+          "start": 799,
+          "end": 1000,
+          "size": 201,
+          "group_counts": [
+            152,
+            49
+          ],
+          "group_proportions": [
+            0.7562189054726368,
+            0.24378109452736318
+          ]
+        }
+      ],
+      "max_group_proportion_deviation": 0.22768844221105528
+    },
+    "ebias_dnc": {
+      "feasible": true,
+      "boundaries": [
+        0,
+        200,
+        400,
+        600,
+        800,
+        1000
+      ],
+      "objective": 0,
+      "duration_sec": 0.000582417007535696,
+      "bin_group_ratios": [
+        {
+          "start": 0,
+          "end": 200,
+          "size": 200,
+          "group_counts": [
+            93,
+            107
+          ],
+          "group_proportions": [
+            0.465,
+            0.535
+          ]
+        },
+        {
+          "start": 200,
+          "end": 400,
+          "size": 200,
+          "group_counts": [
+            129,
+            71
+          ],
+          "group_proportions": [
+            0.645,
+            0.355
+          ]
+        },
+        {
+          "start": 400,
+          "end": 600,
+          "size": 200,
+          "group_counts": [
+            155,
+            45
+          ],
+          "group_proportions": [
+            0.775,
+            0.225
+          ]
+        },
+        {
+          "start": 600,
+          "end": 800,
+          "size": 200,
+          "group_counts": [
+            162,
+            38
+          ],
+          "group_proportions": [
+            0.81,
+            0.19
+          ]
+        },
+        {
+          "start": 800,
+          "end": 1000,
+          "size": 200,
+          "group_counts": [
+            151,
+            49
+          ],
+          "group_proportions": [
+            0.755,
+            0.245
+          ]
+        }
+      ],
+      "max_group_proportion_deviation": 0.22500000000000003
+    }
+  }
+}

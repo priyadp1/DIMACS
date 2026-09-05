@@ -1,0 +1,777 @@
+{
+  "n_total_trees": 67,
+  "n_sampled_trees": 67,
+  "trees": [
+    {
+      "tree_index": 0,
+      "paths": [
+        "[+796]",
+        "[-796]"
+      ],
+      "predictions": [
+        0,
+        1
+      ]
+    },
+    {
+      "tree_index": 1,
+      "paths": [
+        "[+794]",
+        "[-794]"
+      ],
+      "predictions": [
+        0,
+        1
+      ]
+    },
+    {
+      "tree_index": 2,
+      "paths": [
+        "[]"
+      ],
+      "predictions": [
+        0
+      ]
+    },
+    {
+      "tree_index": 3,
+      "paths": [
+        "[+795]",
+        "[-795]"
+      ],
+      "predictions": [
+        0,
+        1
+      ]
+    },
+    {
+      "tree_index": 4,
+      "paths": [
+        "[+785]",
+        "[-785]"
+      ],
+      "predictions": [
+        0,
+        1
+      ]
+    },
+    {
+      "tree_index": 5,
+      "paths": [
+        "[+793]",
+        "[-793]"
+      ],
+      "predictions": [
+        0,
+        1
+      ]
+    },
+    {
+      "tree_index": 6,
+      "paths": [
+        "[+783]",
+        "[-783]"
+      ],
+      "predictions": [
+        0,
+        1
+      ]
+    },
+    {
+      "tree_index": 7,
+      "paths": [
+        "[+797]",
+        "[-797]"
+      ],
+      "predictions": [
+        0,
+        1
+      ]
+    },
+    {
+      "tree_index": 8,
+      "paths": [
+        "[+784]",
+        "[-784]"
+      ],
+      "predictions": [
+        0,
+        1
+      ]
+    },
+    {
+      "tree_index": 9,
+      "paths": [
+        "[+776]",
+        "[-776]"
+      ],
+      "predictions": [
+        0,
+        1
+      ]
+    },
+    {
+      "tree_index": 10,
+      "paths": [
+        "[+792]",
+        "[-792]"
+      ],
+      "predictions": [
+        0,
+        1
+      ]
+    },
+    {
+      "tree_index": 11,
+      "paths": [
+        "[+798]",
+        "[-798]"
+      ],
+      "predictions": [
+        0,
+        1
+      ]
+    },
+    {
+      "tree_index": 12,
+      "paths": [
+        "[+780]",
+        "[-780]"
+      ],
+      "predictions": [
+        0,
+        1
+      ]
+    },
+    {
+      "tree_index": 13,
+      "paths": [
+        "[+782]",
+        "[-782]"
+      ],
+      "predictions": [
+        0,
+        1
+      ]
+    },
+    {
+      "tree_index": 14,
+      "paths": [
+        "[+788]",
+        "[-788]"
+      ],
+      "predictions": [
+        0,
+        1
+      ]
+    },
+    {
+      "tree_index": 15,
+      "paths": [
+        "[+802]",
+        "[-802]"
+      ],
+      "predictions": [
+        0,
+        1
+      ]
+    },
+    {
+      "tree_index": 16,
+      "paths": [
+        "[+786]",
+        "[-786]"
+      ],
+      "predictions": [
+        0,
+        1
+      ]
+    },
+    {
+      "tree_index": 17,
+      "paths": [
+        "[+779]",
+        "[-779]"
+      ],
+      "predictions": [
+        0,
+        1
+      ]
+    },
+    {
+      "tree_index": 18,
+      "paths": [
+        "[+801]",
+        "[-801]"
+      ],
+      "predictions": [
+        0,
+        1
+      ]
+    },
+    {
+      "tree_index": 19,
+      "paths": [
+        "[+773]",
+        "[-773]"
+      ],
+      "predictions": [
+        0,
+        1
+      ]
+    },
+    {
+      "tree_index": 20,
+      "paths": [
+        "[+757]",
+        "[-757]"
+      ],
+      "predictions": [
+        0,
+        1
+      ]
+    },
+    {
+      "tree_index": 21,
+      "paths": [
+        "[+781]",
+        "[-781]"
+      ],
+      "predictions": [
+        0,
+        1
+      ]
+    },
+    {
+      "tree_index": 22,
+      "paths": [
+        "[+787]",
+        "[-787]"
+      ],
+      "predictions": [
+        0,
+        1
+      ]
+    },
+    {
+      "tree_index": 23,
+      "paths": [
+        "[+803]",
+        "[-803]"
+      ],
+      "predictions": [
+        0,
+        1
+      ]
+    },
+    {
+      "tree_index": 24,
+      "paths": [
+        "[+761]",
+        "[-761]"
+      ],
+      "predictions": [
+        0,
+        1
+      ]
+    },
+    {
+      "tree_index": 25,
+      "paths": [
+        "[+777]",
+        "[-777]"
+      ],
+      "predictions": [
+        0,
+        1
+      ]
+    },
+    {
+      "tree_index": 26,
+      "paths": [
+        "[+791]",
+        "[-791]"
+      ],
+      "predictions": [
+        0,
+        1
+      ]
+    },
+    {
+      "tree_index": 27,
+      "paths": [
+        "[+799]",
+        "[-799]"
+      ],
+      "predictions": [
+        0,
+        1
+      ]
+    },
+    {
+      "tree_index": 28,
+      "paths": [
+        "[+775]",
+        "[-775]"
+      ],
+      "predictions": [
+        0,
+        1
+      ]
+    },
+    {
+      "tree_index": 29,
+      "paths": [
+        "[+789]",
+        "[-789]"
+      ],
+      "predictions": [
+        0,
+        1
+      ]
+    },
+    {
+      "tree_index": 30,
+      "paths": [
+        "[+790]",
+        "[-790]"
+      ],
+      "predictions": [
+        0,
+        1
+      ]
+    },
+    {
+      "tree_index": 31,
+      "paths": [
+        "[+760]",
+        "[-760]"
+      ],
+      "predictions": [
+        0,
+        1
+      ]
+    },
+    {
+      "tree_index": 32,
+      "paths": [
+        "[+754]",
+        "[-754]"
+      ],
+      "predictions": [
+        0,
+        1
+      ]
+    },
+    {
+      "tree_index": 33,
+      "paths": [
+        "[+756]",
+        "[-756]"
+      ],
+      "predictions": [
+        0,
+        1
+      ]
+    },
+    {
+      "tree_index": 34,
+      "paths": [
+        "[+758]",
+        "[-758]"
+      ],
+      "predictions": [
+        0,
+        1
+      ]
+    },
+    {
+      "tree_index": 35,
+      "paths": [
+        "[+764]",
+        "[-764]"
+      ],
+      "predictions": [
+        0,
+        1
+      ]
+    },
+    {
+      "tree_index": 36,
+      "paths": [
+        "[+774]",
+        "[-774]"
+      ],
+      "predictions": [
+        0,
+        1
+      ]
+    },
+    {
+      "tree_index": 37,
+      "paths": [
+        "[+804]",
+        "[-804]"
+      ],
+      "predictions": [
+        0,
+        1
+      ]
+    },
+    {
+      "tree_index": 38,
+      "paths": [
+        "[+762]",
+        "[-762]"
+      ],
+      "predictions": [
+        0,
+        1
+      ]
+    },
+    {
+      "tree_index": 39,
+      "paths": [
+        "[+772]",
+        "[-772]"
+      ],
+      "predictions": [
+        0,
+        1
+      ]
+    },
+    {
+      "tree_index": 40,
+      "paths": [
+        "[+778]",
+        "[-778]"
+      ],
+      "predictions": [
+        0,
+        1
+      ]
+    },
+    {
+      "tree_index": 41,
+      "paths": [
+        "[+800]",
+        "[-800]"
+      ],
+      "predictions": [
+        0,
+        1
+      ]
+    },
+    {
+      "tree_index": 42,
+      "paths": [
+        "[+23, +833]",
+        "[+23, -833]",
+        "[-23]"
+      ],
+      "predictions": [
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "tree_index": 43,
+      "paths": [
+        "[+23, +834]",
+        "[+23, -834]",
+        "[-23]"
+      ],
+      "predictions": [
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "tree_index": 44,
+      "paths": [
+        "[+22, +697]",
+        "[+22, -697]",
+        "[-22]"
+      ],
+      "predictions": [
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "tree_index": 45,
+      "paths": [
+        "[+22, +695]",
+        "[+22, -695]",
+        "[-22]"
+      ],
+      "predictions": [
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "tree_index": 46,
+      "paths": [
+        "[+22, +698]",
+        "[+22, -698]",
+        "[-22]"
+      ],
+      "predictions": [
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "tree_index": 47,
+      "paths": [
+        "[+22, +696]",
+        "[+22, -696]",
+        "[-22]"
+      ],
+      "predictions": [
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "tree_index": 48,
+      "paths": [
+        "[+22, +699]",
+        "[+22, -699]",
+        "[-22]"
+      ],
+      "predictions": [
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "tree_index": 49,
+      "paths": [
+        "[+22, +833]",
+        "[+22, -833]",
+        "[-22]"
+      ],
+      "predictions": [
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "tree_index": 50,
+      "paths": [
+        "[+22, +834]",
+        "[+22, -834]",
+        "[-22]"
+      ],
+      "predictions": [
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "tree_index": 51,
+      "paths": [
+        "[+697]",
+        "[-697, +22]",
+        "[-697, -22]"
+      ],
+      "predictions": [
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "tree_index": 52,
+      "paths": [
+        "[+755]",
+        "[-755]"
+      ],
+      "predictions": [
+        0,
+        1
+      ]
+    },
+    {
+      "tree_index": 53,
+      "paths": [
+        "[+699]",
+        "[-699, +22]",
+        "[-699, -22]"
+      ],
+      "predictions": [
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "tree_index": 54,
+      "paths": [
+        "[+753]",
+        "[-753]"
+      ],
+      "predictions": [
+        0,
+        1
+      ]
+    },
+    {
+      "tree_index": 55,
+      "paths": [
+        "[+763]",
+        "[-763]"
+      ],
+      "predictions": [
+        0,
+        1
+      ]
+    },
+    {
+      "tree_index": 56,
+      "paths": [
+        "[+695]",
+        "[-695, +22]",
+        "[-695, -22]"
+      ],
+      "predictions": [
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "tree_index": 57,
+      "paths": [
+        "[+698]",
+        "[-698, +22]",
+        "[-698, -22]"
+      ],
+      "predictions": [
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "tree_index": 58,
+      "paths": [
+        "[+771]",
+        "[-771]"
+      ],
+      "predictions": [
+        0,
+        1
+      ]
+    },
+    {
+      "tree_index": 59,
+      "paths": [
+        "[+696]",
+        "[-696, +22]",
+        "[-696, -22]"
+      ],
+      "predictions": [
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "tree_index": 60,
+      "paths": [
+        "[+759]",
+        "[-759]"
+      ],
+      "predictions": [
+        0,
+        1
+      ]
+    },
+    {
+      "tree_index": 61,
+      "paths": [
+        "[+765]",
+        "[-765]"
+      ],
+      "predictions": [
+        0,
+        1
+      ]
+    },
+    {
+      "tree_index": 62,
+      "paths": [
+        "[+805]",
+        "[-805]"
+      ],
+      "predictions": [
+        0,
+        1
+      ]
+    },
+    {
+      "tree_index": 63,
+      "paths": [
+        "[+833]",
+        "[-833, +22]",
+        "[-833, -22]"
+      ],
+      "predictions": [
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "tree_index": 64,
+      "paths": [
+        "[+833]",
+        "[-833, +23]",
+        "[-833, -23]"
+      ],
+      "predictions": [
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "tree_index": 65,
+      "paths": [
+        "[+834]",
+        "[-834, +22]",
+        "[-834, -22]"
+      ],
+      "predictions": [
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "tree_index": 66,
+      "paths": [
+        "[+834]",
+        "[-834, +23]",
+        "[-834, -23]"
+      ],
+      "predictions": [
+        0,
+        1,
+        0
+      ]
+    }
+  ]
+}

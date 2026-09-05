@@ -1,0 +1,1 @@
+{"feature_names": ["sex=female", "age", "juv_fel_count", "juv_misd_count", "juvenile_crimes", "priors_count", "current_charge_degree=felony"], "mean_sub_mr": [6.382660948993843e-05, 0.0, 0.06330994920887527, 2.0839806401976525e-06, 0.0, 0.000615000981961896, 0.131447579273957]}

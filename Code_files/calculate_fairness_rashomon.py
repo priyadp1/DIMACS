@@ -2,10 +2,22 @@ import json
 import numpy as np
 
 from praxis_rashomon_common import (
-    RESULTS_DIR,
-    discover_param_tags,
-    load_sampled_trees,
-    load_test_data,
+    RESULTS_DIR as PRAXIS_RESULTS_DIR,
+    discover_param_tags as praxis_discover_param_tags,
+    load_sampled_trees as praxis_load_sampled_trees,
+    load_test_data as praxis_load_test_data,
+)
+from arborenum_rashomon_common import (
+    RESULTS_DIRS as ARBORENUM_RESULTS_DIRS,
+    discover_param_tags as arborenum_discover_param_tags,
+    load_sampled_trees as arborenum_load_sampled_trees,
+    load_test_data as arborenum_load_test_data,
+)
+from praxis_unbiased_binning_rashomon_common import (
+    RESULTS_DIR as UNBIASED_BINNING_RESULTS_DIR,
+    discover_param_tags as unbiased_binning_discover_param_tags,
+    load_sampled_trees as unbiased_binning_load_sampled_trees,
+    load_test_data as unbiased_binning_load_test_data,
 )
 from module.metric.fairness_metric import (  # noqa: E402  (path set up by praxis_rashomon_common)
     statistical_parity_difference,
@@ -14,14 +26,67 @@ from module.metric.fairness_metric import (  # noqa: E402  (path set up by praxi
 )
 from sklearn.metrics import accuracy_score
 
-# dataset -> guessed threshold column(s) usable as a binary sensitive attribute
+# dataset -> guessed threshold column(s) usable as a binary sensitive attribute, for the two
+# backends whose binary threshold columns are named "<raw column> <= 0.5": praxis_rashomon_common's
+# TGB-guessed features and arborenum_rashomon_common's reconstructed internal features.
 SENSITIVE_ATTR_MAP = {
     "compas": ["sex=female <= 0.5"],
     "diabetes_smote": ["race <= 0.5", "gender <= 0.5"],
     "german_credit": ["Sex_female <= 0.5"],
+    "german_credit_dropna": ["Sex_female <= 0.5"],
+}
+
+# praxis_unbiased_binning_rashomon_common's fairness-aware binarization names columns
+# differently: already-binary raw columns pass through under their own name with no
+# "<= 0.5" suffix (e.g. "sex=female", "Sex" -- german_credit's group_map remaps Sex to 0/1
+# *before* binarize_features sees it, so it's binary_passthrough there too, unlike the
+# TGB/ArborEnum backends where Sex is one-hot encoded into "Sex_female"/"Sex_male"), and
+# multi-valued columns are cut at whatever fairness-binning happened to choose rather than
+# a fixed 0.5 (see praxis_binning_map.json's per_feature_info) -- "race <= 2.0" here is
+# simply the first cut point that binning landed on for the cached diabetes_smote run.
+SENSITIVE_ATTR_MAP_UNBIASED_BINNING = {
+    "compas": ["sex=female"],
+    "diabetes_smote": ["race <= 2.0"],
+    "german_credit": ["Sex"],
+    "german_credit_dropna": ["Sex"],
 }
 
 MAX_TREE_SAMPLE = 1000  # cap on how many cached sampled trees to evaluate per param_tag
+
+# Each backend supplies its own dataset/tree loading, sensitive-attribute map (column
+# naming conventions differ, see SENSITIVE_ATTR_MAP_UNBIASED_BINNING above), and where to
+# write "<prefix>_fairness_summary.json" / "<prefix>_fairness_extreme_trees.json". Each
+# backend's dataset universe is its own sensitive-attr map's keys -- a dataset with no
+# sensitive-attribute mapping can't be evaluated regardless of which Rashomon set backs it.
+BACKENDS = [
+    {
+        "label": "PRAXIS",
+        "prefix": "praxis",
+        "sensitive_attr_map": SENSITIVE_ATTR_MAP,
+        "discover_param_tags": praxis_discover_param_tags,
+        "load_test_data": praxis_load_test_data,
+        "load_sampled_trees": praxis_load_sampled_trees,
+        "output_dir": lambda dataset_name, param_tag: PRAXIS_RESULTS_DIR / dataset_name / param_tag,
+    },
+    {
+        "label": "ArborEnum",
+        "prefix": "arborenum",
+        "sensitive_attr_map": SENSITIVE_ATTR_MAP,
+        "discover_param_tags": arborenum_discover_param_tags,
+        "load_test_data": arborenum_load_test_data,
+        "load_sampled_trees": arborenum_load_sampled_trees,
+        "output_dir": lambda dataset_name, param_tag: ARBORENUM_RESULTS_DIRS[param_tag] / dataset_name,
+    },
+    {
+        "label": "PRAXIS-UnbiasedBinning",
+        "prefix": "unbiased_binning",
+        "sensitive_attr_map": SENSITIVE_ATTR_MAP_UNBIASED_BINNING,
+        "discover_param_tags": unbiased_binning_discover_param_tags,
+        "load_test_data": unbiased_binning_load_test_data,
+        "load_sampled_trees": unbiased_binning_load_sampled_trees,
+        "output_dir": lambda dataset_name, param_tag: UNBIASED_BINNING_RESULTS_DIR / dataset_name,
+    },
+]
 
 
 def _feature_root(col_name):
@@ -140,14 +205,14 @@ def compute_fairness_for_attr(trees, X_test, y_test, sens_attr, feature_names):
     }
 
 
-def compute_fairness_for_param_tag(dataset_name, param_tag, sens_cols):
-    X_test, y_test, feature_names = load_test_data(dataset_name, param_tag)
+def compute_fairness_for_param_tag(dataset_name, param_tag, sens_cols, load_test_data_fn, load_sampled_trees_fn):
+    X_test, y_test, feature_names = load_test_data_fn(dataset_name, param_tag)
     available = [c for c in sens_cols if c in feature_names]
     if not available:
         print(f"  [SKIP] {dataset_name}/{param_tag}: none of {sens_cols} among guessed features")
         return None
 
-    trees, meta = load_sampled_trees(dataset_name, param_tag, n_features=X_test.shape[1], max_trees=MAX_TREE_SAMPLE)
+    trees, meta = load_sampled_trees_fn(dataset_name, param_tag, n_features=X_test.shape[1], max_trees=MAX_TREE_SAMPLE)
 
     by_attribute = {}
     for sens_col in available:
@@ -201,29 +266,32 @@ def extract_extreme_trees(result):
     }
 
 
-def main():
-    for dataset_name, sens_cols in SENSITIVE_ATTR_MAP.items():
-        print(f"\n{'='*60}\n  Dataset: {dataset_name} (sensitive attributes: {sens_cols})\n{'='*60}")
-        param_tags = discover_param_tags(dataset_name)
+def run_backend(backend):
+    for dataset_name, sens_cols in backend["sensitive_attr_map"].items():
+        print(f"\n{'='*60}\n  [{backend['label']}] Dataset: {dataset_name} (sensitive attributes: {sens_cols})\n{'='*60}")
+        param_tags = backend["discover_param_tags"](dataset_name)
         if not param_tags:
-            print(f"  [SKIP] No cached PRAXIS Rashomon sets found for {dataset_name}")
+            print(f"  [SKIP] No cached {backend['label']} Rashomon sets found for {dataset_name}")
             continue
 
         for param_tag in param_tags:
-            out_path = RESULTS_DIR / dataset_name / param_tag / "praxis_fairness_summary.json"
+            out_dir = backend["output_dir"](dataset_name, param_tag)
+            out_path = out_dir / f"{backend['prefix']}_fairness_summary.json"
             if out_path.exists():
-                print(f"  [SKIP] {dataset_name}/{param_tag}: praxis_fairness_summary.json already exists")
+                print(f"  [SKIP] {dataset_name}/{param_tag}: {out_path.name} already exists")
                 continue
 
             print(f"  --- {param_tag} ---")
-            result = compute_fairness_for_param_tag(dataset_name, param_tag, sens_cols)
+            result = compute_fairness_for_param_tag(
+                dataset_name, param_tag, sens_cols, backend["load_test_data"], backend["load_sampled_trees"]
+            )
             if result is None:
                 continue
 
             with open(out_path, "w", encoding="utf-8") as f:
                 json.dump(result, f, indent=2)
 
-            extremes_path = RESULTS_DIR / dataset_name / param_tag / "praxis_fairness_extreme_trees.json"
+            extremes_path = out_dir / f"{backend['prefix']}_fairness_extreme_trees.json"
             with open(extremes_path, "w", encoding="utf-8") as f:
                 json.dump(extract_extreme_trees(result), f, indent=2)
 
@@ -235,6 +303,11 @@ def main():
                 for attr, r in result["by_attribute"].items()
             )
             print(f"    {summaries}")
+
+
+def main():
+    for backend in BACKENDS:
+        run_backend(backend)
 
 
 if __name__ == "__main__":

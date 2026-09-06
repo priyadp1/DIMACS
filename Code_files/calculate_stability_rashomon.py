@@ -6,11 +6,27 @@ from sklearn.metrics import accuracy_score
 
 from praxis_rashomon_common import (
     BASEDIR,
-    RESULTS_DIR,
-    discover_param_tags,
-    load_sampled_trees,
-    load_test_data,
-    load_train_data,
+    RESULTS_DIR as PRAXIS_RESULTS_DIR,
+    discover_param_tags as praxis_discover_param_tags,
+    load_sampled_trees as praxis_load_sampled_trees,
+    load_test_data as praxis_load_test_data,
+    load_train_data as praxis_load_train_data,
+)
+from arborenum_rashomon_common import (
+    RESULTS_DIRS as ARBORENUM_RESULTS_DIRS,
+    discover_all_datasets as arborenum_discover_all_datasets,
+    discover_param_tags as arborenum_discover_param_tags,
+    load_sampled_trees as arborenum_load_sampled_trees,
+    load_test_data as arborenum_load_test_data,
+    load_train_data as arborenum_load_train_data,
+)
+from praxis_unbiased_binning_rashomon_common import (
+    RESULTS_DIR as UNBIASED_BINNING_RESULTS_DIR,
+    discover_all_datasets as unbiased_binning_discover_all_datasets,
+    discover_param_tags as unbiased_binning_discover_param_tags,
+    load_sampled_trees as unbiased_binning_load_sampled_trees,
+    load_test_data as unbiased_binning_load_test_data,
+    load_train_data as unbiased_binning_load_train_data,
 )
 
 sys.path.insert(0, str(BASEDIR / "rashomon-framework"))
@@ -22,7 +38,49 @@ NUM_TRIALS = 10  # passed through as StabilityMetric's num_trials (its own defau
 NOISE_MEAN = 0.9  # matches experiment.py's stability defaults (noise_mean/noise_std)
 NOISE_STD = 0.1
 SEED = 42
-SMALL_DATASETS = ["breast_cancer", "spambase", "compas", "heloc_original", "bike", "german_credit", "diabetes_smote"]
+SMALL_DATASETS = [
+    "breast_cancer", "spambase", "compas", "heloc_original", "bike",
+    "german_credit", "german_credit_dropna", "diabetes_smote",
+]
+
+# Each backend supplies its own dataset discovery / tree loading and where to write
+# "<prefix>_stability_summary.json". PRAXIS's dataset list stays the fixed SMALL_DATASETS
+# (its TGB param_tags are per-dataset feature-importance runs, not auto-enumerable the same
+# way); ArborEnum's and the unbiased-binning PRAXIS backend's dataset names/configs differ
+# (e.g. german_credit_dropna, no "heloc_original" alias) so their dataset lists are whatever
+# each *_rashomon_common module actually finds cached.
+BACKENDS = [
+    {
+        "label": "PRAXIS",
+        "prefix": "praxis",
+        "datasets": SMALL_DATASETS,
+        "discover_param_tags": praxis_discover_param_tags,
+        "load_train_data": praxis_load_train_data,
+        "load_test_data": praxis_load_test_data,
+        "load_sampled_trees": praxis_load_sampled_trees,
+        "output_dir": lambda dataset_name, param_tag: PRAXIS_RESULTS_DIR / dataset_name / param_tag,
+    },
+    {
+        "label": "ArborEnum",
+        "prefix": "arborenum",
+        "datasets": arborenum_discover_all_datasets(),
+        "discover_param_tags": arborenum_discover_param_tags,
+        "load_train_data": arborenum_load_train_data,
+        "load_test_data": arborenum_load_test_data,
+        "load_sampled_trees": arborenum_load_sampled_trees,
+        "output_dir": lambda dataset_name, param_tag: ARBORENUM_RESULTS_DIRS[param_tag] / dataset_name,
+    },
+    {
+        "label": "PRAXIS-UnbiasedBinning",
+        "prefix": "unbiased_binning",
+        "datasets": unbiased_binning_discover_all_datasets(),
+        "discover_param_tags": unbiased_binning_discover_param_tags,
+        "load_train_data": unbiased_binning_load_train_data,
+        "load_test_data": unbiased_binning_load_test_data,
+        "load_sampled_trees": unbiased_binning_load_sampled_trees,
+        "output_dir": lambda dataset_name, param_tag: UNBIASED_BINNING_RESULTS_DIR / dataset_name,
+    },
+]
 
 
 class _DummySplit:
@@ -88,25 +146,25 @@ def stability_for_param_tag(trees, X_train, y_train, X_test, y_test, n_features)
     return rows
 
 
-def main():
-    datasets = sys.argv[1:] if len(sys.argv) > 1 else SMALL_DATASETS
-    for dataset_name in datasets:
-        print(f"\n{'='*60}\n  Dataset: {dataset_name}\n{'='*60}")
-        param_tags = discover_param_tags(dataset_name)
+def run_backend(backend, dataset_names):
+    for dataset_name in dataset_names:
+        print(f"\n{'='*60}\n  [{backend['label']}] Dataset: {dataset_name}\n{'='*60}")
+        param_tags = backend["discover_param_tags"](dataset_name)
         if not param_tags:
-            print(f"  [SKIP] No cached PRAXIS Rashomon sets found for {dataset_name}")
+            print(f"  [SKIP] No cached {backend['label']} Rashomon sets found for {dataset_name}")
             continue
 
         for param_tag in param_tags:
-            out_path = RESULTS_DIR / dataset_name / param_tag / "praxis_stability_summary.json"
+            out_dir = backend["output_dir"](dataset_name, param_tag)
+            out_path = out_dir / f"{backend['prefix']}_stability_summary.json"
             if out_path.exists():
-                print(f"  [SKIP] {dataset_name}/{param_tag}: praxis_stability_summary.json already exists")
+                print(f"  [SKIP] {dataset_name}/{param_tag}: {out_path.name} already exists")
                 continue
 
             print(f"  --- {param_tag} ---")
-            X_train, y_train, _ = load_train_data(dataset_name, param_tag)
-            X_test, y_test, _ = load_test_data(dataset_name, param_tag)
-            trees, meta = load_sampled_trees(
+            X_train, y_train, _ = backend["load_train_data"](dataset_name, param_tag)
+            X_test, y_test, _ = backend["load_test_data"](dataset_name, param_tag)
+            trees, meta = backend["load_sampled_trees"](
                 dataset_name, param_tag, n_features=X_test.shape[1], max_trees=MAX_TREE_SAMPLE
             )
 
@@ -128,6 +186,12 @@ def main():
             print(f"    Evaluated {len(rows)} trees; most stable: tree {most_stable['tree_index']} "
                   f"(test_stability_acc_mean={most_stable['test_stability_acc_mean']:.4f}, "
                   f"clean_acc={most_stable['accuracy']:.4f})")
+
+
+def main():
+    cli_datasets = sys.argv[1:] or None
+    for backend in BACKENDS:
+        run_backend(backend, cli_datasets if cli_datasets is not None else backend["datasets"])
 
 
 if __name__ == "__main__":

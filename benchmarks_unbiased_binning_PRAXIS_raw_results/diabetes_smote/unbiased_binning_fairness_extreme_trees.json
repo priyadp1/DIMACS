@@ -1,0 +1,477 @@
+{
+  "sensitive_attributes": [
+    "race <= 2.0"
+  ],
+  "n_total_trees": 205,
+  "n_trees_loaded": 205,
+  "by_attribute": {
+    "race <= 2.0": {
+      "most_fair_by_statistical_parity": {
+        "tree_index": 5,
+        "n_leaves": 3,
+        "accuracy": 0.5973116136014125,
+        "statistical_parity_difference": 0.0037728491070103676,
+        "equal_opportunity_difference": 0.0017791978768355032,
+        "equalized_odds_difference": 0.0017791978768355032,
+        "leaf_fairness": [
+          {
+            "leaf_id": 1,
+            "predicted_label": 0,
+            "n_samples": 1798,
+            "group_counts": {
+              "sens=0": 1379,
+              "sens=1": 419
+            },
+            "group_counts_where_y=1": {
+              "sens=0": 502,
+              "sens=1": 198
+            },
+            "group_counts_where_y=0": {
+              "sens=0": 877,
+              "sens=1": 221
+            },
+            "spd_contribution": 0.0,
+            "eod_contribution": 0.0,
+            "fpr_gap_contribution": -0.0
+          },
+          {
+            "leaf_id": 3,
+            "predicted_label": 1,
+            "n_samples": 5256,
+            "group_counts": {
+              "sens=0": 4052,
+              "sens=1": 1204
+            },
+            "group_counts_where_y=1": {
+              "sens=0": 2670,
+              "sens=1": 812
+            },
+            "group_counts_where_y=0": {
+              "sens=0": 1382,
+              "sens=1": 392
+            },
+            "spd_contribution": 0.0037728491070103676,
+            "eod_contribution": 0.0017791978768355032,
+            "fpr_gap_contribution": -0.00041513744407239983
+          },
+          {
+            "leaf_id": 4,
+            "predicted_label": 0,
+            "n_samples": 10503,
+            "group_counts": {
+              "sens=0": 8143,
+              "sens=1": 2360
+            },
+            "group_counts_where_y=1": {
+              "sens=0": 3566,
+              "sens=1": 1030
+            },
+            "group_counts_where_y=0": {
+              "sens=0": 4577,
+              "sens=1": 1330
+            },
+            "spd_contribution": -0.0,
+            "eod_contribution": -0.0,
+            "fpr_gap_contribution": 0.0
+          }
+        ],
+        "tree_structure": "[discharge_disposition_id <= 6.0 <= 0.5]\n  * leaf: proba=[1.0, 0.0]\n[else]\n  [number_inpatient <= 0.0 <= 0.5]\n    * leaf: proba=[0.0, 1.0]\n  [else]\n    * leaf: proba=[1.0, 0.0]"
+      },
+      "least_fair_by_statistical_parity": {
+        "tree_index": 203,
+        "n_leaves": 4,
+        "accuracy": 0.60164037136185,
+        "statistical_parity_difference": 0.030758708154862202,
+        "equal_opportunity_difference": 0.034205472037434737,
+        "equalized_odds_difference": 0.034205472037434737,
+        "leaf_fairness": [
+          {
+            "leaf_id": 1,
+            "predicted_label": 0,
+            "n_samples": 1798,
+            "group_counts": {
+              "sens=0": 1379,
+              "sens=1": 419
+            },
+            "group_counts_where_y=1": {
+              "sens=0": 502,
+              "sens=1": 198
+            },
+            "group_counts_where_y=0": {
+              "sens=0": 877,
+              "sens=1": 221
+            },
+            "spd_contribution": 0.0,
+            "eod_contribution": 0.0,
+            "fpr_gap_contribution": -0.0
+          },
+          {
+            "leaf_id": 3,
+            "predicted_label": 1,
+            "n_samples": 2660,
+            "group_counts": {
+              "sens=0": 2214,
+              "sens=1": 446
+            },
+            "group_counts_where_y=1": {
+              "sens=0": 1348,
+              "sens=1": 279
+            },
+            "group_counts_where_y=0": {
+              "sens=0": 866,
+              "sens=1": 167
+            },
+            "spd_contribution": -0.05113004025765758,
+            "eod_contribution": -0.06329465891432262,
+            "fpr_gap_contribution": -0.04073270780136164
+          },
+          {
+            "leaf_id": 5,
+            "predicted_label": 1,
+            "n_samples": 3986,
+            "group_counts": {
+              "sens=0": 3019,
+              "sens=1": 967
+            },
+            "group_counts_where_y=1": {
+              "sens=0": 1941,
+              "sens=1": 647
+            },
+            "group_counts_where_y=0": {
+              "sens=0": 1078,
+              "sens=1": 320
+            },
+            "spd_contribution": 0.020371332102795375,
+            "eod_contribution": 0.029089186876887885,
+            "fpr_gap_contribution": 0.006999214295544731
+          },
+          {
+            "leaf_id": 6,
+            "predicted_label": 0,
+            "n_samples": 9113,
+            "group_counts": {
+              "sens=0": 6962,
+              "sens=1": 2151
+            },
+            "group_counts_where_y=1": {
+              "sens=0": 2947,
+              "sens=1": 916
+            },
+            "group_counts_where_y=0": {
+              "sens=0": 4015,
+              "sens=1": 1235
+            },
+            "spd_contribution": 0.0,
+            "eod_contribution": 0.0,
+            "fpr_gap_contribution": 0.0
+          }
+        ],
+        "tree_structure": "[discharge_disposition_id <= 6.0 <= 0.5]\n  * leaf: proba=[1.0, 0.0]\n[else]\n  [number_outpatient <= 0.0 <= 0.5]\n    * leaf: proba=[0.0, 1.0]\n  [else]\n    [number_inpatient <= 0.0 <= 0.5]\n      * leaf: proba=[0.0, 1.0]\n    [else]\n      * leaf: proba=[1.0, 0.0]"
+      },
+      "most_fair_by_equal_opportunity": {
+        "tree_index": 5,
+        "n_leaves": 3,
+        "accuracy": 0.5973116136014125,
+        "statistical_parity_difference": 0.0037728491070103676,
+        "equal_opportunity_difference": 0.0017791978768355032,
+        "equalized_odds_difference": 0.0017791978768355032,
+        "leaf_fairness": [
+          {
+            "leaf_id": 1,
+            "predicted_label": 0,
+            "n_samples": 1798,
+            "group_counts": {
+              "sens=0": 1379,
+              "sens=1": 419
+            },
+            "group_counts_where_y=1": {
+              "sens=0": 502,
+              "sens=1": 198
+            },
+            "group_counts_where_y=0": {
+              "sens=0": 877,
+              "sens=1": 221
+            },
+            "spd_contribution": 0.0,
+            "eod_contribution": 0.0,
+            "fpr_gap_contribution": -0.0
+          },
+          {
+            "leaf_id": 3,
+            "predicted_label": 1,
+            "n_samples": 5256,
+            "group_counts": {
+              "sens=0": 4052,
+              "sens=1": 1204
+            },
+            "group_counts_where_y=1": {
+              "sens=0": 2670,
+              "sens=1": 812
+            },
+            "group_counts_where_y=0": {
+              "sens=0": 1382,
+              "sens=1": 392
+            },
+            "spd_contribution": 0.0037728491070103676,
+            "eod_contribution": 0.0017791978768355032,
+            "fpr_gap_contribution": -0.00041513744407239983
+          },
+          {
+            "leaf_id": 4,
+            "predicted_label": 0,
+            "n_samples": 10503,
+            "group_counts": {
+              "sens=0": 8143,
+              "sens=1": 2360
+            },
+            "group_counts_where_y=1": {
+              "sens=0": 3566,
+              "sens=1": 1030
+            },
+            "group_counts_where_y=0": {
+              "sens=0": 4577,
+              "sens=1": 1330
+            },
+            "spd_contribution": -0.0,
+            "eod_contribution": -0.0,
+            "fpr_gap_contribution": 0.0
+          }
+        ],
+        "tree_structure": "[discharge_disposition_id <= 6.0 <= 0.5]\n  * leaf: proba=[1.0, 0.0]\n[else]\n  [number_inpatient <= 0.0 <= 0.5]\n    * leaf: proba=[0.0, 1.0]\n  [else]\n    * leaf: proba=[1.0, 0.0]"
+      },
+      "least_fair_by_equal_opportunity": {
+        "tree_index": 203,
+        "n_leaves": 4,
+        "accuracy": 0.60164037136185,
+        "statistical_parity_difference": 0.030758708154862202,
+        "equal_opportunity_difference": 0.034205472037434737,
+        "equalized_odds_difference": 0.034205472037434737,
+        "leaf_fairness": [
+          {
+            "leaf_id": 1,
+            "predicted_label": 0,
+            "n_samples": 1798,
+            "group_counts": {
+              "sens=0": 1379,
+              "sens=1": 419
+            },
+            "group_counts_where_y=1": {
+              "sens=0": 502,
+              "sens=1": 198
+            },
+            "group_counts_where_y=0": {
+              "sens=0": 877,
+              "sens=1": 221
+            },
+            "spd_contribution": 0.0,
+            "eod_contribution": 0.0,
+            "fpr_gap_contribution": -0.0
+          },
+          {
+            "leaf_id": 3,
+            "predicted_label": 1,
+            "n_samples": 2660,
+            "group_counts": {
+              "sens=0": 2214,
+              "sens=1": 446
+            },
+            "group_counts_where_y=1": {
+              "sens=0": 1348,
+              "sens=1": 279
+            },
+            "group_counts_where_y=0": {
+              "sens=0": 866,
+              "sens=1": 167
+            },
+            "spd_contribution": -0.05113004025765758,
+            "eod_contribution": -0.06329465891432262,
+            "fpr_gap_contribution": -0.04073270780136164
+          },
+          {
+            "leaf_id": 5,
+            "predicted_label": 1,
+            "n_samples": 3986,
+            "group_counts": {
+              "sens=0": 3019,
+              "sens=1": 967
+            },
+            "group_counts_where_y=1": {
+              "sens=0": 1941,
+              "sens=1": 647
+            },
+            "group_counts_where_y=0": {
+              "sens=0": 1078,
+              "sens=1": 320
+            },
+            "spd_contribution": 0.020371332102795375,
+            "eod_contribution": 0.029089186876887885,
+            "fpr_gap_contribution": 0.006999214295544731
+          },
+          {
+            "leaf_id": 6,
+            "predicted_label": 0,
+            "n_samples": 9113,
+            "group_counts": {
+              "sens=0": 6962,
+              "sens=1": 2151
+            },
+            "group_counts_where_y=1": {
+              "sens=0": 2947,
+              "sens=1": 916
+            },
+            "group_counts_where_y=0": {
+              "sens=0": 4015,
+              "sens=1": 1235
+            },
+            "spd_contribution": 0.0,
+            "eod_contribution": 0.0,
+            "fpr_gap_contribution": 0.0
+          }
+        ],
+        "tree_structure": "[discharge_disposition_id <= 6.0 <= 0.5]\n  * leaf: proba=[1.0, 0.0]\n[else]\n  [number_outpatient <= 0.0 <= 0.5]\n    * leaf: proba=[0.0, 1.0]\n  [else]\n    [number_inpatient <= 0.0 <= 0.5]\n      * leaf: proba=[0.0, 1.0]\n    [else]\n      * leaf: proba=[1.0, 0.0]"
+      },
+      "most_fair_by_equalized_odds": {
+        "tree_index": 5,
+        "n_leaves": 3,
+        "accuracy": 0.5973116136014125,
+        "statistical_parity_difference": 0.0037728491070103676,
+        "equal_opportunity_difference": 0.0017791978768355032,
+        "equalized_odds_difference": 0.0017791978768355032,
+        "leaf_fairness": [
+          {
+            "leaf_id": 1,
+            "predicted_label": 0,
+            "n_samples": 1798,
+            "group_counts": {
+              "sens=0": 1379,
+              "sens=1": 419
+            },
+            "group_counts_where_y=1": {
+              "sens=0": 502,
+              "sens=1": 198
+            },
+            "group_counts_where_y=0": {
+              "sens=0": 877,
+              "sens=1": 221
+            },
+            "spd_contribution": 0.0,
+            "eod_contribution": 0.0,
+            "fpr_gap_contribution": -0.0
+          },
+          {
+            "leaf_id": 3,
+            "predicted_label": 1,
+            "n_samples": 5256,
+            "group_counts": {
+              "sens=0": 4052,
+              "sens=1": 1204
+            },
+            "group_counts_where_y=1": {
+              "sens=0": 2670,
+              "sens=1": 812
+            },
+            "group_counts_where_y=0": {
+              "sens=0": 1382,
+              "sens=1": 392
+            },
+            "spd_contribution": 0.0037728491070103676,
+            "eod_contribution": 0.0017791978768355032,
+            "fpr_gap_contribution": -0.00041513744407239983
+          },
+          {
+            "leaf_id": 4,
+            "predicted_label": 0,
+            "n_samples": 10503,
+            "group_counts": {
+              "sens=0": 8143,
+              "sens=1": 2360
+            },
+            "group_counts_where_y=1": {
+              "sens=0": 3566,
+              "sens=1": 1030
+            },
+            "group_counts_where_y=0": {
+              "sens=0": 4577,
+              "sens=1": 1330
+            },
+            "spd_contribution": -0.0,
+            "eod_contribution": -0.0,
+            "fpr_gap_contribution": 0.0
+          }
+        ],
+        "tree_structure": "[discharge_disposition_id <= 6.0 <= 0.5]\n  * leaf: proba=[1.0, 0.0]\n[else]\n  [number_inpatient <= 0.0 <= 0.5]\n    * leaf: proba=[0.0, 1.0]\n  [else]\n    * leaf: proba=[1.0, 0.0]"
+      },
+      "least_fair_by_equalized_odds": {
+        "tree_index": 3,
+        "n_leaves": 3,
+        "accuracy": 0.5995899071595375,
+        "statistical_parity_difference": 0.02691215180355616,
+        "equal_opportunity_difference": 0.018502173799172406,
+        "equalized_odds_difference": 0.042025551506405356,
+        "leaf_fairness": [
+          {
+            "leaf_id": 1,
+            "predicted_label": 1,
+            "n_samples": 2863,
+            "group_counts": {
+              "sens=0": 2386,
+              "sens=1": 477
+            },
+            "group_counts_where_y=1": {
+              "sens=0": 1423,
+              "sens=1": 296
+            },
+            "group_counts_where_y=0": {
+              "sens=0": 963,
+              "sens=1": 181
+            },
+            "spd_contribution": -0.056018245511598744,
+            "eod_contribution": -0.06609222495765893,
+            "fpr_gap_contribution": -0.04771693980612464
+          },
+          {
+            "leaf_id": 3,
+            "predicted_label": 1,
+            "n_samples": 4511,
+            "group_counts": {
+              "sens=0": 3398,
+              "sens=1": 1113
+            },
+            "group_counts_where_y=1": {
+              "sens=0": 2107,
+              "sens=1": 735
+            },
+            "group_counts_where_y=0": {
+              "sens=0": 1291,
+              "sens=1": 378
+            },
+            "spd_contribution": 0.02910609370804257,
+            "eod_contribution": 0.047590051158486524,
+            "fpr_gap_contribution": 0.005691388299719297
+          },
+          {
+            "leaf_id": 4,
+            "predicted_label": 0,
+            "n_samples": 10183,
+            "group_counts": {
+              "sens=0": 7790,
+              "sens=1": 2393
+            },
+            "group_counts_where_y=1": {
+              "sens=0": 3208,
+              "sens=1": 1009
+            },
+            "group_counts_where_y=0": {
+              "sens=0": 4582,
+              "sens=1": 1384
+            },
+            "spd_contribution": 0.0,
+            "eod_contribution": 0.0,
+            "fpr_gap_contribution": 0.0
+          }
+        ],
+        "tree_structure": "[number_outpatient <= 0.0 <= 0.5]\n  * leaf: proba=[0.0, 1.0]\n[else]\n  [number_inpatient <= 0.0 <= 0.5]\n    * leaf: proba=[0.0, 1.0]\n  [else]\n    * leaf: proba=[1.0, 0.0]"
+      }
+    }
+  }
+}

@@ -1,5 +1,6 @@
 import json
 import re
+import sys
 from pathlib import Path
 
 import numpy as np
@@ -16,6 +17,17 @@ BASEDIR = current
 RESULTS_DIR = BASEDIR / "benchmarks_TGB_results_all"
 PLOTS_DIR = BASEDIR / "threshold_plots"
 PLOTS_DIR.mkdir(exist_ok=True)
+
+sys.path.insert(0, str(BASEDIR / "Code_files"))
+from arborenum_rashomon_common import (  # noqa: E402
+    RESULTS_DIRS as ARBORENUM_RESULTS_DIRS,
+    discover_all_datasets as arborenum_discover_all_datasets,
+    discover_param_tags as arborenum_discover_param_tags,
+)
+from praxis_unbiased_binning_rashomon_common import (  # noqa: E402
+    RESULTS_DIR as UNBIASED_BINNING_RESULTS_DIR,
+    discover_all_datasets as unbiased_binning_discover_all_datasets,
+)
 
 PARAM_RE = re.compile(r"nest(\d+)_depth(\d+)")
 
@@ -72,6 +84,48 @@ def load_fairness_trees(dataset_dir):
 
 def list_datasets():
     return sorted(p.name for p in RESULTS_DIR.iterdir() if p.is_dir())
+
+
+def load_stability_trees_arborenum(dataset_name):
+    """param_tag ("standard"/"anytime") -> list of tree dicts, for one ArborEnum dataset.
+
+    ArborEnum has no nest/depth sweep -- each dataset has at most one "standard" and one
+    "anytime" run, cached at ARBORENUM_RESULTS_DIRS[tag]/dataset_name/ rather than under a
+    nest{N}_depth{D} subdirectory the way PRAXIS's TGB results are.
+    """
+    out = {}
+    for tag in arborenum_discover_param_tags(dataset_name):
+        f = ARBORENUM_RESULTS_DIRS[tag] / dataset_name / "arborenum_stability_summary.json"
+        if f.exists():
+            out[tag] = json.loads(f.read_text()).get("trees", [])
+    return out
+
+
+def load_fairness_trees_arborenum(dataset_name):
+    """param_tag -> {attr: attr_data}, for one ArborEnum dataset."""
+    out = {}
+    for tag in arborenum_discover_param_tags(dataset_name):
+        f = ARBORENUM_RESULTS_DIRS[tag] / dataset_name / "arborenum_fairness_summary.json"
+        if f.exists():
+            out[tag] = json.loads(f.read_text()).get("by_attribute", {})
+    return out
+
+
+def load_stability_trees_unbiased_binning(dataset_name):
+    """List of tree dicts for one dataset, PRAXIS-on-fairness-binned-features backend.
+
+    Unlike PRAXIS/ArborEnum, this backend caches exactly one run per dataset (no
+    nest/depth sweep, no "standard"/"anytime" split) directly under
+    UNBIASED_BINNING_RESULTS_DIR/dataset_name/.
+    """
+    f = UNBIASED_BINNING_RESULTS_DIR / dataset_name / "unbiased_binning_stability_summary.json"
+    return json.loads(f.read_text()).get("trees", []) if f.exists() else []
+
+
+def load_fairness_trees_unbiased_binning(dataset_name):
+    """{attr: attr_data} for one dataset, PRAXIS-on-fairness-binned-features backend."""
+    f = UNBIASED_BINNING_RESULTS_DIR / dataset_name / "unbiased_binning_fairness_summary.json"
+    return json.loads(f.read_text()).get("by_attribute", {}) if f.exists() else {}
 
 
 # ── 1. Hyperparameter sweep vs thresholds ─────────────────────────────────────
@@ -207,33 +261,74 @@ def plot_thresholds_vs_stability():
 
 # ── 4. Box plot of thresholds per dataset (with points, min/max whiskers) ────
 
-def _box_with_points(ax, labels, data, point_color="#2ca02c"):
-    """Draw a box plot with whiskers pinned to true min/max, individual jittered
-    points overlaid, and explicit min/max markers."""
-    positions = np.arange(1, len(labels) + 1)
+def _box_with_points(ax, labels, data, point_color="#2ca02c", max_points=250, seed=0):
+    """"Raincloud"-style box plot: a light violin for distribution shape, a compact
+    box (whiskers pinned to true min/max) on top of it, and a jittered strip of
+    points offset to one side -- so groups with thousands of leaves/trees don't
+    render as a single dense blob that hides the box and median underneath (the
+    previous version scattered every point directly on top of the box with no
+    offset, which is what made these look messy for the bigger groups).
 
-    # whis=(0, 100) forces the whiskers to sit at the true min/max
-    # rather than the default 1.5*IQR rule.
+    The violin and the true min/max markers are always computed from the FULL
+    data; only the scatter strip is capped at `max_points` for legibility.
+    """
+    positions = np.arange(1, len(labels) + 1)
+    rng = np.random.default_rng(seed)
+
+    # Violin drawn first (low zorder) purely for distribution shape -- very
+    # transparent so it reads as background texture, not a competing series.
+    # Skipped per-group when there's no variance (violinplot's KDE errors on a
+    # single repeated value), which doesn't lose anything since a degenerate
+    # violin would just be a flat line anyway.
+    for pos, vals in zip(positions, data):
+        vals_arr = np.asarray(vals, dtype=float)
+        if np.unique(vals_arr).size <= 1:
+            continue
+        try:
+            parts = ax.violinplot(
+                [vals_arr], positions=[pos], widths=0.7,
+                showmeans=False, showmedians=False, showextrema=False,
+            )
+        except Exception:
+            continue
+        for body in parts["bodies"]:
+            body.set_facecolor(point_color)
+            body.set_edgecolor("none")
+            body.set_alpha(0.15)
+            body.set_zorder(1)
+
+    # Point strip offset to the right of the box (raincloud style) instead of
+    # jittered directly over it, and capped at max_points per group so a group
+    # with thousands of values doesn't just paint one solid smear.
+    for pos, vals in zip(positions, data):
+        vals_arr = np.asarray(vals, dtype=float)
+        sample = (
+            vals_arr if vals_arr.size <= max_points
+            else rng.choice(vals_arr, size=max_points, replace=False)
+        )
+        jitter = rng.uniform(0.22, 0.45, size=sample.size)
+        ax.scatter(pos + jitter, sample, s=7, alpha=0.25, color=point_color, zorder=2, linewidths=0)
+
+    # whis=(0, 100) forces the whiskers to sit at the true min/max rather than
+    # the default 1.5*IQR rule. Narrower + higher zorder + darker outline than
+    # before so it stays legible drawn over the violin/points instead of under.
     ax.boxplot(
-        data, positions=positions, widths=0.5, whis=(0, 100),
+        data, positions=positions, widths=0.3, whis=(0, 100),
         showfliers=False,
-        boxprops=dict(color="#4C72B0"),
-        medianprops=dict(color="#DD8452", linewidth=2),
-        whiskerprops=dict(color="#4C72B0"),
-        capprops=dict(color="#4C72B0"),
+        boxprops=dict(color="#333333", linewidth=1.3),
+        medianprops=dict(color="#DD8452", linewidth=2.2),
+        whiskerprops=dict(color="#333333", linewidth=1.3),
+        capprops=dict(color="#333333", linewidth=1.3),
+        zorder=4,
     )
 
-    rng = np.random.default_rng(0)
     for pos, vals in zip(positions, data):
-        jitter = rng.uniform(-0.15, 0.15, size=len(vals))
-        ax.scatter(pos + jitter, vals, s=10, alpha=0.4, color=point_color, zorder=3)
-
-    for pos, vals in zip(positions, data):
-        ax.scatter(pos, min(vals), marker="v", s=40, color="black", zorder=4)
-        ax.scatter(pos, max(vals), marker="^", s=40, color="black", zorder=4)
+        ax.scatter(pos, min(vals), marker="v", s=40, color="black", zorder=5)
+        ax.scatter(pos, max(vals), marker="^", s=40, color="black", zorder=5)
 
     ax.set_xticks(positions)
     ax.set_xticklabels(labels, rotation=30, ha="right")
+    ax.set_xlim(0.5, len(labels) + 1.0)
     ax.grid(axis="y", linestyle="--", alpha=0.5)
 
 
@@ -259,6 +354,77 @@ def plot_thresholds_boxplot_by_dataset():
                  fontweight="bold")
     fig.tight_layout()
     out_path = PLOTS_DIR / "thresholds_boxplot_by_dataset.png"
+    fig.savefig(out_path, dpi=150)
+    plt.close(fig)
+    print(f"  Saved {out_path}")
+
+
+# ── 4b. Same box plot, ArborEnum's cached Rashomon sets ──────────────────────
+
+def plot_thresholds_boxplot_by_dataset_arborenum():
+    """One box per (dataset, run config) -- "standard" and "anytime" are kept as
+    separate boxes rather than pooled, since they're different search configs
+    (see run_standard_arborenum.py vs run_anytime_arborenum.py) whose tree
+    complexity is worth comparing directly rather than blending together."""
+    per_group = {}
+    for dataset_name in arborenum_discover_all_datasets():
+        stability = load_stability_trees_arborenum(dataset_name)
+        for tag, trees in stability.items():
+            splits = [n_splits(t["n_leaves"]) for t in trees]
+            if splits:
+                per_group[f"{dataset_name}\n({tag})"] = splits
+
+    if not per_group:
+        print("  No ArborEnum data found, skipping thresholds box plot.")
+        return
+
+    labels = sorted(per_group, key=lambda k: np.mean(per_group[k]))
+    data = [per_group[label] for label in labels]
+
+    # Floor the width so the (fairly long) title doesn't get clipped when there
+    # are only 1-2 groups -- unlike the PRAXIS version, which always has enough
+    # nest/depth combinations per dataset to pad the figure out on its own.
+    fig, ax = plt.subplots(figsize=(max(1.4 * len(labels) + 3, 9), 6))
+    _box_with_points(ax, labels, data)
+    ax.set_ylabel("Number of decision splits (thresholds) per tree")
+    ax.set_title(
+        "Distribution of Tree Thresholds by Dataset & Run Config — ArborEnum\n"
+        "(points = individual trees, ▲▼ = max/min, box = IQR/median)",
+        fontweight="bold",
+    )
+    fig.tight_layout()
+    out_path = PLOTS_DIR / "arborenum_thresholds_boxplot_by_dataset.png"
+    fig.savefig(out_path, dpi=150)
+    plt.close(fig)
+    print(f"  Saved {out_path}")
+
+
+# ── 4c. Same box plot, the unbiased-binning PRAXIS backend's cached Rashomon sets ─
+
+def plot_thresholds_boxplot_by_dataset_unbiased_binning():
+    per_dataset = {}
+    for dataset_name in unbiased_binning_discover_all_datasets():
+        splits = [n_splits(t["n_leaves"]) for t in load_stability_trees_unbiased_binning(dataset_name)]
+        if splits:
+            per_dataset[dataset_name] = splits
+
+    if not per_dataset:
+        print("  No unbiased-binning PRAXIS data found, skipping thresholds box plot.")
+        return
+
+    labels = sorted(per_dataset, key=lambda d: np.mean(per_dataset[d]))
+    data = [per_dataset[d] for d in labels]
+
+    fig, ax = plt.subplots(figsize=(max(1.4 * len(labels) + 3, 11), 6))
+    _box_with_points(ax, labels, data)
+    ax.set_ylabel("Number of decision splits (thresholds) per tree")
+    ax.set_title(
+        "Distribution of Tree Thresholds by Dataset — PRAXIS on Unbiased-Binned Features\n"
+        "(points = individual trees, ▲▼ = max/min, box = IQR/median)",
+        fontweight="bold",
+    )
+    fig.tight_layout()
+    out_path = PLOTS_DIR / "unbiased_binning_thresholds_boxplot_by_dataset.png"
     fig.savefig(out_path, dpi=150)
     plt.close(fig)
     print(f"  Saved {out_path}")
@@ -312,6 +478,95 @@ def plot_leaf_fairness_boxplot(metric_key, metric_label, out_name, point_color):
     fig.suptitle(f"Leaf-Level {metric_label} by Dataset", fontweight="bold", fontsize=13, y=0.99)
     fig.tight_layout(rect=[0, 0, 1, 0.94])
     out_path = PLOTS_DIR / out_name
+    fig.savefig(out_path, dpi=150)
+    plt.close(fig)
+    print(f"  Saved {out_path}")
+
+
+# ── 5b. Same box plot, ArborEnum's cached Rashomon sets ──────────────────────
+
+def plot_leaf_fairness_boxplot_arborenum(metric_key, metric_label, out_name, point_color):
+    """One box per (dataset, attribute, run config) -- "standard" and "anytime"
+    kept separate rather than pooled (see plot_thresholds_boxplot_by_dataset_arborenum)."""
+    per_group = {}  # "dataset\n(attr, tag)" -> list of leaf contribution values
+    for dataset_name in arborenum_discover_all_datasets():
+        by_tag = load_fairness_trees_arborenum(dataset_name)
+        for tag, by_attr in by_tag.items():
+            for attr, attr_data in by_attr.items():
+                vals = []
+                for row in attr_data.get("trees", []):
+                    if not row.get("leaf_fairness"):
+                        continue
+                    leaf_vals = get_leaf_values(row, metric_key)
+                    vals.extend(
+                        v for leaf, v in zip(row["leaf_fairness"], leaf_vals) if leaf["predicted_label"] == 1
+                    )
+                if vals:
+                    label = f"{dataset_name}\n({attr.split(' ')[0]}, {tag})"
+                    per_group[label] = vals
+
+    if not per_group:
+        print(f"  No ArborEnum leaf fairness data with '{metric_key}', skipping leaf fairness box plot ({metric_label}).")
+        return
+
+    labels = sorted(per_group, key=lambda k: np.mean(np.abs(per_group[k])))
+    data = [per_group[label] for label in labels]
+
+    # Floor the width so the (fairly long) title doesn't get clipped when there
+    # are only 1-2 (dataset, attribute) groups -- ArborEnum only has cached
+    # fairness summaries for a couple of datasets so far, unlike PRAXIS's full
+    # nest/depth sweep.
+    fig, ax = plt.subplots(figsize=(max(1.6 * len(labels) + 3, 9), 6))
+    _box_with_points(ax, labels, data, point_color=point_color)
+    ax.axhline(0, color="black", linewidth=0.8, alpha=0.6)
+    ax.set_ylabel(f"Per-leaf {metric_label.lower()}\n(signed, positive-predicting leaves only)")
+    ax.set_title("points = individual leaves, pooled across all trees/settings; ▲▼ = max/min", fontsize=8.5, pad=10)
+    fig.suptitle(f"Leaf-Level {metric_label} by Dataset — ArborEnum", fontweight="bold", fontsize=13, y=0.99)
+    fig.tight_layout(rect=[0, 0, 1, 0.94])
+    out_path = PLOTS_DIR / f"arborenum_{out_name}"
+    fig.savefig(out_path, dpi=150)
+    plt.close(fig)
+    print(f"  Saved {out_path}")
+
+
+# ── 5d. Same box plot, the unbiased-binning PRAXIS backend's cached Rashomon sets ─
+
+def plot_leaf_fairness_boxplot_unbiased_binning(metric_key, metric_label, out_name, point_color):
+    per_group = {}  # "dataset\n(attr)" -> list of leaf contribution values
+    for dataset_name in unbiased_binning_discover_all_datasets():
+        by_attr = load_fairness_trees_unbiased_binning(dataset_name)
+        for attr, attr_data in by_attr.items():
+            vals = []
+            for row in attr_data.get("trees", []):
+                if not row.get("leaf_fairness"):
+                    continue
+                leaf_vals = get_leaf_values(row, metric_key)
+                vals.extend(
+                    v for leaf, v in zip(row["leaf_fairness"], leaf_vals) if leaf["predicted_label"] == 1
+                )
+            if vals:
+                label = f"{dataset_name}\n({attr.split(' ')[0]})"
+                per_group[label] = vals
+
+    if not per_group:
+        print(f"  No unbiased-binning PRAXIS leaf fairness data with '{metric_key}', skipping leaf fairness box plot ({metric_label}).")
+        return
+
+    labels = sorted(per_group, key=lambda k: np.mean(np.abs(per_group[k])))
+    data = [per_group[label] for label in labels]
+
+    # Higher width floor than the other backends' versions -- "PRAXIS on Unbiased-Binned
+    # Features" is a longer suptitle suffix than "ArborEnum" and clips otherwise when
+    # there are only a couple of groups.
+    fig, ax = plt.subplots(figsize=(max(1.6 * len(labels) + 3, 11), 6))
+    _box_with_points(ax, labels, data, point_color=point_color)
+    ax.axhline(0, color="black", linewidth=0.8, alpha=0.6)
+    ax.set_ylabel(f"Per-leaf {metric_label.lower()}\n(signed, positive-predicting leaves only)")
+    ax.set_title("points = individual leaves, pooled across all trees/settings; ▲▼ = max/min", fontsize=8.5, pad=10)
+    fig.suptitle(f"Leaf-Level {metric_label} by Dataset — PRAXIS on Unbiased-Binned Features",
+                 fontweight="bold", fontsize=13, y=0.99)
+    fig.tight_layout(rect=[0, 0, 1, 0.94])
+    out_path = PLOTS_DIR / f"unbiased_binning_{out_name}"
     fig.savefig(out_path, dpi=150)
     plt.close(fig)
     print(f"  Saved {out_path}")
@@ -625,6 +880,20 @@ def main():
     print("\nLeaf-level fairness contributions:")
     for metric_key, metric_label, out_name, point_color in LEAF_CONTRIBUTION_METRICS:
         plot_leaf_fairness_boxplot(metric_key, metric_label, out_name, point_color)
+
+    print("\nArborEnum — thresholds box plot by dataset:")
+    plot_thresholds_boxplot_by_dataset_arborenum()
+
+    print("\nArborEnum — leaf-level fairness contributions:")
+    for metric_key, metric_label, out_name, point_color in LEAF_CONTRIBUTION_METRICS:
+        plot_leaf_fairness_boxplot_arborenum(metric_key, metric_label, out_name, point_color)
+
+    print("\nUnbiased-Binning PRAXIS — thresholds box plot by dataset:")
+    plot_thresholds_boxplot_by_dataset_unbiased_binning()
+
+    print("\nUnbiased-Binning PRAXIS — leaf-level fairness contributions:")
+    for metric_key, metric_label, out_name, point_color in LEAF_CONTRIBUTION_METRICS:
+        plot_leaf_fairness_boxplot_unbiased_binning(metric_key, metric_label, out_name, point_color)
 
     groups = load_fairness_groups()
 

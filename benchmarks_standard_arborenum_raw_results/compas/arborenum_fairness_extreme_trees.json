@@ -1,0 +1,577 @@
+{
+  "sensitive_attributes": [
+    "sex=female <= 0.5"
+  ],
+  "n_total_trees": 941,
+  "n_trees_loaded": 941,
+  "by_attribute": {
+    "sex=female <= 0.5": {
+      "most_fair_by_statistical_parity": {
+        "tree_index": 550,
+        "n_leaves": 4,
+        "accuracy": 0.6562952243125905,
+        "statistical_parity_difference": 0.16396344656340267,
+        "equal_opportunity_difference": 0.14759439848407824,
+        "equalized_odds_difference": 0.14759439848407824,
+        "leaf_fairness": [
+          {
+            "leaf_id": 2,
+            "predicted_label": 0,
+            "n_samples": 194,
+            "group_counts": {
+              "sens=0": 36,
+              "sens=1": 158
+            },
+            "group_counts_where_y=1": {
+              "sens=0": 5,
+              "sens=1": 59
+            },
+            "group_counts_where_y=0": {
+              "sens=0": 31,
+              "sens=1": 99
+            },
+            "spd_contribution": 0.0,
+            "eod_contribution": 0.0,
+            "fpr_gap_contribution": 0.0
+          },
+          {
+            "leaf_id": 4,
+            "predicted_label": 1,
+            "n_samples": 436,
+            "group_counts": {
+              "sens=0": 56,
+              "sens=1": 380
+            },
+            "group_counts_where_y=1": {
+              "sens=0": 26,
+              "sens=1": 261
+            },
+            "group_counts_where_y=0": {
+              "sens=0": 30,
+              "sens=1": 119
+            },
+            "spd_contribution": 0.12887620141551664,
+            "eod_contribution": 0.1267504737255627,
+            "fpr_gap_contribution": 0.054839946329308026
+          },
+          {
+            "leaf_id": 5,
+            "predicted_label": 0,
+            "n_samples": 572,
+            "group_counts": {
+              "sens=0": 146,
+              "sens=1": 426
+            },
+            "group_counts_where_y=1": {
+              "sens=0": 35,
+              "sens=1": 150
+            },
+            "group_counts_where_y=0": {
+              "sens=0": 111,
+              "sens=1": 276
+            },
+            "spd_contribution": -0.0,
+            "eod_contribution": -0.0,
+            "fpr_gap_contribution": -0.0
+          },
+          {
+            "leaf_id": 6,
+            "predicted_label": 1,
+            "n_samples": 180,
+            "group_counts": {
+              "sens=0": 27,
+              "sens=1": 153
+            },
+            "group_counts_where_y=1": {
+              "sens=0": 11,
+              "sens=1": 92
+            },
+            "group_counts_where_y=0": {
+              "sens=0": 16,
+              "sens=1": 61
+            },
+            "spd_contribution": 0.035087245147886,
+            "eod_contribution": 0.020843924758515514,
+            "fpr_gap_contribution": 0.02480352693118651
+          }
+        ],
+        "tree_structure": "[age <= 22.5 <= 0.5]\n  [age <= 48.5 <= 0.5]\n    * leaf: proba=[1.0, 0.0]\n  [else]\n    [priors_count <= 2.5 <= 0.5]\n      * leaf: proba=[0.0, 1.0]\n    [else]\n      * leaf: proba=[1.0, 0.0]\n[else]\n  * leaf: proba=[0.0, 1.0]"
+      },
+      "least_fair_by_statistical_parity": {
+        "tree_index": 847,
+        "n_leaves": 5,
+        "accuracy": 0.6664254703328509,
+        "statistical_parity_difference": 0.2046249218763197,
+        "equal_opportunity_difference": 0.15277071682765642,
+        "equalized_odds_difference": 0.15277071682765642,
+        "leaf_fairness": [
+          {
+            "leaf_id": 3,
+            "predicted_label": 1,
+            "n_samples": 75,
+            "group_counts": {
+              "sens=0": 3,
+              "sens=1": 72
+            },
+            "group_counts_where_y=1": {
+              "sens=0": 1,
+              "sens=1": 49
+            },
+            "group_counts_where_y=0": {
+              "sens=0": 2,
+              "sens=1": 23
+            },
+            "spd_contribution": 0.05313761591865003,
+            "eod_contribution": 0.07420159911263113,
+            "fpr_gap_contribution": 0.030803143569101014
+          },
+          {
+            "leaf_id": 4,
+            "predicted_label": 0,
+            "n_samples": 305,
+            "group_counts": {
+              "sens=0": 71,
+              "sens=1": 234
+            },
+            "group_counts_where_y=1": {
+              "sens=0": 17,
+              "sens=1": 66
+            },
+            "group_counts_where_y=0": {
+              "sens=0": 54,
+              "sens=1": 168
+            },
+            "spd_contribution": -0.0,
+            "eod_contribution": -0.0,
+            "fpr_gap_contribution": 0.0
+          },
+          {
+            "leaf_id": 6,
+            "predicted_label": 1,
+            "n_samples": 469,
+            "group_counts": {
+              "sens=0": 65,
+              "sens=1": 404
+            },
+            "group_counts_where_y=1": {
+              "sens=0": 32,
+              "sens=1": 266
+            },
+            "group_counts_where_y=0": {
+              "sens=0": 33,
+              "sens=1": 138
+            },
+            "spd_contribution": 0.1164000608097836,
+            "eod_contribution": 0.05772519295650963,
+            "fpr_gap_contribution": 0.07311673375503164
+          },
+          {
+            "leaf_id": 7,
+            "predicted_label": 0,
+            "n_samples": 353,
+            "group_counts": {
+              "sens=0": 99,
+              "sens=1": 254
+            },
+            "group_counts_where_y=1": {
+              "sens=0": 16,
+              "sens=1": 89
+            },
+            "group_counts_where_y=0": {
+              "sens=0": 83,
+              "sens=1": 165
+            },
+            "spd_contribution": -0.0,
+            "eod_contribution": -0.0,
+            "fpr_gap_contribution": -0.0
+          },
+          {
+            "leaf_id": 8,
+            "predicted_label": 1,
+            "n_samples": 180,
+            "group_counts": {
+              "sens=0": 27,
+              "sens=1": 153
+            },
+            "group_counts_where_y=1": {
+              "sens=0": 11,
+              "sens=1": 92
+            },
+            "group_counts_where_y=0": {
+              "sens=0": 16,
+              "sens=1": 61
+            },
+            "spd_contribution": 0.035087245147886,
+            "eod_contribution": 0.020843924758515514,
+            "fpr_gap_contribution": 0.02480352693118651
+          }
+        ],
+        "tree_structure": "[age <= 22.5 <= 0.5]\n  [age <= 38.5 <= 0.5]\n    [priors_count <= 7.5 <= 0.5]\n      * leaf: proba=[0.0, 1.0]\n    [else]\n      * leaf: proba=[1.0, 0.0]\n  [else]\n    [priors_count <= 1.5 <= 0.5]\n      * leaf: proba=[0.0, 1.0]\n    [else]\n      * leaf: proba=[1.0, 0.0]\n[else]\n  * leaf: proba=[0.0, 1.0]"
+      },
+      "most_fair_by_equal_opportunity": {
+        "tree_index": 817,
+        "n_leaves": 5,
+        "accuracy": 0.6700434153400868,
+        "statistical_parity_difference": 0.16875728450532934,
+        "equal_opportunity_difference": 0.09458335259047002,
+        "equalized_odds_difference": 0.10280812727621239,
+        "leaf_fairness": [
+          {
+            "leaf_id": 3,
+            "predicted_label": 1,
+            "n_samples": 71,
+            "group_counts": {
+              "sens=0": 3,
+              "sens=1": 68
+            },
+            "group_counts_where_y=1": {
+              "sens=0": 1,
+              "sens=1": 47
+            },
+            "group_counts_where_y=0": {
+              "sens=0": 2,
+              "sens=1": 21
+            },
+            "spd_contribution": 0.04955659532778163,
+            "eod_contribution": 0.07064288025142117,
+            "fpr_gap_contribution": 0.027199539965497413
+          },
+          {
+            "leaf_id": 4,
+            "predicted_label": 0,
+            "n_samples": 378,
+            "group_counts": {
+              "sens=0": 81,
+              "sens=1": 297
+            },
+            "group_counts_where_y=1": {
+              "sens=0": 18,
+              "sens=1": 94
+            },
+            "group_counts_where_y=0": {
+              "sens=0": 63,
+              "sens=1": 203
+            },
+            "spd_contribution": -0.0,
+            "eod_contribution": -0.0,
+            "fpr_gap_contribution": 0.0
+          },
+          {
+            "leaf_id": 6,
+            "predicted_label": 1,
+            "n_samples": 449,
+            "group_counts": {
+              "sens=0": 65,
+              "sens=1": 384
+            },
+            "group_counts_where_y=1": {
+              "sens=0": 33,
+              "sens=1": 259
+            },
+            "group_counts_where_y=0": {
+              "sens=0": 32,
+              "sens=1": 125
+            },
+            "spd_contribution": 0.09849495785544166,
+            "eod_contribution": 0.03228266395526186,
+            "fpr_gap_contribution": 0.055012459267778424
+          },
+          {
+            "leaf_id": 7,
+            "predicted_label": 0,
+            "n_samples": 367,
+            "group_counts": {
+              "sens=0": 98,
+              "sens=1": 269
+            },
+            "group_counts_where_y=1": {
+              "sens=0": 16,
+              "sens=1": 101
+            },
+            "group_counts_where_y=0": {
+              "sens=0": 82,
+              "sens=1": 168
+            },
+            "spd_contribution": -0.0,
+            "eod_contribution": -0.0,
+            "fpr_gap_contribution": -0.0
+          },
+          {
+            "leaf_id": 8,
+            "predicted_label": 1,
+            "n_samples": 117,
+            "group_counts": {
+              "sens=0": 18,
+              "sens=1": 99
+            },
+            "group_counts_where_y=1": {
+              "sens=0": 9,
+              "sens=1": 61
+            },
+            "group_counts_where_y=0": {
+              "sens=0": 9,
+              "sens=1": 38
+            },
+            "spd_contribution": 0.02070573132210604,
+            "eod_contribution": -0.008342191616212968,
+            "fpr_gap_contribution": 0.02059612804293655
+          }
+        ],
+        "tree_structure": "[age <= 21.5 <= 0.5]\n  [age <= 36.5 <= 0.5]\n    [priors_count <= 9.5 <= 0.5]\n      * leaf: proba=[0.0, 1.0]\n    [else]\n      * leaf: proba=[1.0, 0.0]\n  [else]\n    [priors_count <= 1.5 <= 0.5]\n      * leaf: proba=[0.0, 1.0]\n    [else]\n      * leaf: proba=[1.0, 0.0]\n[else]\n  * leaf: proba=[0.0, 1.0]"
+      },
+      "least_fair_by_equal_opportunity": {
+        "tree_index": 240,
+        "n_leaves": 3,
+        "accuracy": 0.6548480463096961,
+        "statistical_parity_difference": 0.20188172497086204,
+        "equal_opportunity_difference": 0.24171557979387165,
+        "equalized_odds_difference": 0.24171557979387165,
+        "leaf_fairness": [
+          {
+            "leaf_id": 2,
+            "predicted_label": 1,
+            "n_samples": 422,
+            "group_counts": {
+              "sens=0": 46,
+              "sens=1": 376
+            },
+            "group_counts_where_y=1": {
+              "sens=0": 21,
+              "sens=1": 255
+            },
+            "group_counts_where_y=0": {
+              "sens=0": 25,
+              "sens=1": 121
+            },
+            "spd_contribution": 0.16303102988125204,
+            "eod_contribution": 0.18100938207699774,
+            "fpr_gap_contribution": 0.0850392946137627
+          },
+          {
+            "leaf_id": 3,
+            "predicted_label": 0,
+            "n_samples": 708,
+            "group_counts": {
+              "sens=0": 179,
+              "sens=1": 529
+            },
+            "group_counts_where_y=1": {
+              "sens=0": 43,
+              "sens=1": 178
+            },
+            "group_counts_where_y=0": {
+              "sens=0": 136,
+              "sens=1": 351
+            },
+            "spd_contribution": -0.0,
+            "eod_contribution": -0.0,
+            "fpr_gap_contribution": -0.0
+          },
+          {
+            "leaf_id": 4,
+            "predicted_label": 1,
+            "n_samples": 252,
+            "group_counts": {
+              "sens=0": 40,
+              "sens=1": 212
+            },
+            "group_counts_where_y=1": {
+              "sens=0": 13,
+              "sens=1": 129
+            },
+            "group_counts_where_y=0": {
+              "sens=0": 27,
+              "sens=1": 83
+            },
+            "spd_contribution": 0.03885069508960998,
+            "eod_contribution": 0.06070619771687388,
+            "fpr_gap_contribution": 0.005932528272953791
+          }
+        ],
+        "tree_structure": "[age <= 23.5 <= 0.5]\n  [priors_count <= 3.5 <= 0.5]\n    * leaf: proba=[0.0, 1.0]\n  [else]\n    * leaf: proba=[1.0, 0.0]\n[else]\n  * leaf: proba=[0.0, 1.0]"
+      },
+      "most_fair_by_equalized_odds": {
+        "tree_index": 104,
+        "n_leaves": 5,
+        "accuracy": 0.678726483357453,
+        "statistical_parity_difference": 0.1727234337257817,
+        "equal_opportunity_difference": 0.099921430882285,
+        "equalized_odds_difference": 0.1008338125359402,
+        "leaf_fairness": [
+          {
+            "leaf_id": 2,
+            "predicted_label": 1,
+            "n_samples": 136,
+            "group_counts": {
+              "sens=0": 10,
+              "sens=1": 126
+            },
+            "group_counts_where_y=1": {
+              "sens=0": 5,
+              "sens=1": 83
+            },
+            "group_counts_where_y=0": {
+              "sens=0": 5,
+              "sens=1": 43
+            },
+            "spd_contribution": 0.07506629955575075,
+            "eod_contribution": 0.08275176780514859,
+            "fpr_gap_contribution": 0.05088173279662642
+          },
+          {
+            "leaf_id": 3,
+            "predicted_label": 0,
+            "n_samples": 416,
+            "group_counts": {
+              "sens=0": 97,
+              "sens=1": 319
+            },
+            "group_counts_where_y=1": {
+              "sens=0": 22,
+              "sens=1": 96
+            },
+            "group_counts_where_y=0": {
+              "sens=0": 75,
+              "sens=1": 223
+            },
+            "spd_contribution": -0.0,
+            "eod_contribution": -0.0,
+            "fpr_gap_contribution": 0.0
+          },
+          {
+            "leaf_id": 6,
+            "predicted_label": 1,
+            "n_samples": 378,
+            "group_counts": {
+              "sens=0": 56,
+              "sens=1": 322
+            },
+            "group_counts_where_y=1": {
+              "sens=0": 29,
+              "sens=1": 226
+            },
+            "group_counts_where_y=0": {
+              "sens=0": 27,
+              "sens=1": 96
+            },
+            "spd_contribution": 0.07695140284792484,
+            "eod_contribution": 0.025511854693349323,
+            "fpr_gap_contribution": 0.029355951696377225
+          },
+          {
+            "leaf_id": 7,
+            "predicted_label": 0,
+            "n_samples": 335,
+            "group_counts": {
+              "sens=0": 84,
+              "sens=1": 251
+            },
+            "group_counts_where_y=1": {
+              "sens=0": 12,
+              "sens=1": 96
+            },
+            "group_counts_where_y=0": {
+              "sens=0": 72,
+              "sens=1": 155
+            },
+            "spd_contribution": -0.0,
+            "eod_contribution": 0.0,
+            "fpr_gap_contribution": -0.0
+          },
+          {
+            "leaf_id": 8,
+            "predicted_label": 1,
+            "n_samples": 117,
+            "group_counts": {
+              "sens=0": 18,
+              "sens=1": 99
+            },
+            "group_counts_where_y=1": {
+              "sens=0": 9,
+              "sens=1": 61
+            },
+            "group_counts_where_y=0": {
+              "sens=0": 9,
+              "sens=1": 38
+            },
+            "spd_contribution": 0.02070573132210604,
+            "eod_contribution": -0.008342191616212968,
+            "fpr_gap_contribution": 0.02059612804293655
+          }
+        ],
+        "tree_structure": "[age <= 33.5 <= 0.5]\n  [priors_count <= 6.5 <= 0.5]\n    * leaf: proba=[0.0, 1.0]\n  [else]\n    * leaf: proba=[1.0, 0.0]\n[else]\n  [age <= 21.5 <= 0.5]\n    [priors_count <= 1.5 <= 0.5]\n      * leaf: proba=[0.0, 1.0]\n    [else]\n      * leaf: proba=[1.0, 0.0]\n  [else]\n    * leaf: proba=[0.0, 1.0]"
+      },
+      "least_fair_by_equalized_odds": {
+        "tree_index": 240,
+        "n_leaves": 3,
+        "accuracy": 0.6548480463096961,
+        "statistical_parity_difference": 0.20188172497086204,
+        "equal_opportunity_difference": 0.24171557979387165,
+        "equalized_odds_difference": 0.24171557979387165,
+        "leaf_fairness": [
+          {
+            "leaf_id": 2,
+            "predicted_label": 1,
+            "n_samples": 422,
+            "group_counts": {
+              "sens=0": 46,
+              "sens=1": 376
+            },
+            "group_counts_where_y=1": {
+              "sens=0": 21,
+              "sens=1": 255
+            },
+            "group_counts_where_y=0": {
+              "sens=0": 25,
+              "sens=1": 121
+            },
+            "spd_contribution": 0.16303102988125204,
+            "eod_contribution": 0.18100938207699774,
+            "fpr_gap_contribution": 0.0850392946137627
+          },
+          {
+            "leaf_id": 3,
+            "predicted_label": 0,
+            "n_samples": 708,
+            "group_counts": {
+              "sens=0": 179,
+              "sens=1": 529
+            },
+            "group_counts_where_y=1": {
+              "sens=0": 43,
+              "sens=1": 178
+            },
+            "group_counts_where_y=0": {
+              "sens=0": 136,
+              "sens=1": 351
+            },
+            "spd_contribution": -0.0,
+            "eod_contribution": -0.0,
+            "fpr_gap_contribution": -0.0
+          },
+          {
+            "leaf_id": 4,
+            "predicted_label": 1,
+            "n_samples": 252,
+            "group_counts": {
+              "sens=0": 40,
+              "sens=1": 212
+            },
+            "group_counts_where_y=1": {
+              "sens=0": 13,
+              "sens=1": 129
+            },
+            "group_counts_where_y=0": {
+              "sens=0": 27,
+              "sens=1": 83
+            },
+            "spd_contribution": 0.03885069508960998,
+            "eod_contribution": 0.06070619771687388,
+            "fpr_gap_contribution": 0.005932528272953791
+          }
+        ],
+        "tree_structure": "[age <= 23.5 <= 0.5]\n  [priors_count <= 3.5 <= 0.5]\n    * leaf: proba=[0.0, 1.0]\n  [else]\n    * leaf: proba=[1.0, 0.0]\n[else]\n  * leaf: proba=[0.0, 1.0]"
+      }
+    }
+  }
+}
